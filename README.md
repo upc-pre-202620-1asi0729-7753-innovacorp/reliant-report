@@ -178,9 +178,97 @@ Segundo, diagnóstico de fallas dependiente de conocimiento tácito. Cuando el e
 
 Tercero, imposibilidad de análisis retrospectivo contra el PCR. Las piezas recubiertas se entregan con una expectativa de vida útil formalizada en el Planned Component Replacement (PCR). Cuando una pieza retorna del campo antes de alcanzar ese objetivo, no es posible reconstruir con qué parámetros fue recubierta ni determinar si la falla prematura tuvo origen en el proceso de recubrimiento, en el material, o en las condiciones de operación en mina.
 
-El costo de esta brecha de información es significativo. El reporte True Cost of Downtime de Siemens estima que las 500 mayores empresas del mundo pierden alrededor del 11 % de sus ingresos por paradas no planificadas, equivalente a US$ 1.4 billones anuales, y la falla de componentes críticos representa el 45 % de los casos reportados de downtime. En el sector minero específicamente, estimaciones de la industria sitúan el costo promedio de una parada de equipo en torno a US$ 180,000 por incidente.
+El costo de esta brecha de información es significativo. El reporte True Cost of Downtime de Siemens estima que las 500 mayores empresas del mundo pierden alrededor del 11 % de sus ingresos por paradas no planificadas, equivalente a USD 1.4 billones anuales, y la falla de componentes críticos representa el 45 % de los casos reportados de downtime. En el sector minero específicamente, estimaciones de la industria sitúan el costo promedio de una parada de equipo en torno a US$ 180,000 por incidente.
 
 En síntesis, existe una desconexión entre los datos que la máquina HVOF ya genera y la capacidad de la organización para convertirlos en trazabilidad verificable, diagnóstico oportuno y aprendizaje sobre el desempeño en campo. Reliant se propone cerrar esa brecha mediante una plataforma que capture la telemetría del proceso, la vincule a la orden de trabajo y a la pieza del cliente, correlacione las fallas con el componente de máquina implicado, y permita contrastar el desempeño real en operación contra el PCR comprometido.
+
+A continuación, se muestra un árbol de problemas que ordena visualmente las causas y efectos del problema mencionados anteriormente.
+
+```mermaid
+flowchart BT
+
+classDef efectoFinal fill:#C62828,stroke:#8E0000,stroke-width:2px,color:#FFFFFF
+classDef efectoDirecto fill:#EF9A9A,stroke:#C62828,stroke-width:1px,color:#000000
+classDef central fill:#FFB300,stroke:#E65100,stroke-width:3px,color:#000000
+classDef causaDirecta fill:#90CAF9,stroke:#1565C0,stroke-width:1px,color:#000000
+classDef causaRaiz fill:#C8E6C9,stroke:#2E7D32,stroke-width:1px,color:#000000
+
+PC["<b>PROBLEMA CENTRAL</b><br/><br/>Las empresas de servicio de recubrimiento HVOF<br/>no logran convertir los datos que genera el proceso<br/>en trazabilidad verificable, diagnostico oportuno<br/>ni aprendizaje sobre el desempeno en campo"]
+
+CR1["La telemetria del PLC se guarda<br/>en archivos locales no consultables"]
+CR2["No existe vinculo entre el dato de proceso<br/>y la OF / WO / cliente / modelo"]
+CR3["El registro de la sesion de rociado<br/>se lleva de forma manual o en papel"]
+
+CR4["No hay catalogo formal de reglas<br/>causa-efecto para las fallas"]
+CR5["La falla no se correlaciona<br/>con el componente de maquina responsable"]
+CR6["El diagnostico exige revision manual<br/>de logs crudos del PLC"]
+
+CR7["El PCR comprometido no se registra<br/>de forma digital ni consultable"]
+CR8["El retorno de la pieza desde mina<br/>no se vincula a su sesion de rociado"]
+
+CR9["Los umbrales nominales por equipo<br/>no estan parametrizados en el sistema"]
+CR10["La desviacion depende de que el operador<br/>la advierta en el tablero de la maquina"]
+
+CD1["<b>C1.</b> Perdida de trazabilidad<br/>del proceso de rociado"]
+CD2["<b>C2.</b> Diagnostico de fallas dependiente<br/>del conocimiento tacito de pocas personas"]
+CD3["<b>C3.</b> Imposibilidad de analisis retrospectivo<br/>del desempeno en campo contra el PCR"]
+CD4["<b>C4.</b> Deteccion tardia de desviaciones<br/>durante la operacion"]
+
+ED1["<b>E1.</b> Imposible emitir evidencia documentada<br/>de calidad al cliente minero"]
+ED2["<b>E2.</b> Tiempo de diagnostico prolongado<br/>ante cada parada del equipo"]
+ED3["<b>E3.</b> Fallas recurrentes no detectadas<br/>ni atribuidas a un componente"]
+ED4["<b>E4.</b> Piezas recubiertas fuera de tolerancia<br/>sin que se advierta a tiempo"]
+ED5["<b>E5.</b> No se puede determinar el origen<br/>de una falla prematura en campo"]
+
+EF1["<b>EF1.</b> Paradas no planificadas<br/>y sobrecosto operativo"]
+EF2["<b>EF2.</b> Componentes que fallan<br/>antes de alcanzar su PCR"]
+EF3["<b>EF3.</b> Perdida de confianza y de contratos<br/>con clientes del sector minero"]
+EF4["<b>EF4.</b> El conocimiento del proceso no se acumula:<br/>cada falla se resuelve desde cero"]
+
+CR1 --> CD1
+CR2 --> CD1
+CR3 --> CD1
+
+CR4 --> CD2
+CR5 --> CD2
+CR6 --> CD2
+
+CR7 --> CD3
+CR8 --> CD3
+
+CR9 --> CD4
+CR10 --> CD4
+
+CD1 --> PC
+CD2 --> PC
+CD3 --> PC
+CD4 --> PC
+
+%% Main problem
+
+PC --> ED1
+PC --> ED2
+PC --> ED3
+PC --> ED4
+PC --> ED5
+
+ED1 --> EF3
+ED2 --> EF1
+ED3 --> EF1
+ED3 --> EF4
+ED4 --> EF2
+ED5 --> EF2
+ED5 --> EF4
+ED4 --> EF3
+
+%% Styles
+
+class PC central
+class CD1,CD2,CD3,CD4 causaDirecta
+class CR1,CR2,CR3,CR4,CR5,CR6,CR7,CR8,CR9,CR10 causaRaiz
+class ED1,ED2,ED3,ED4,ED5 efectoDirecto
+class EF1,EF2,EF3,EF4 efectoFinal
+```
 
 ### 1.2.2 Lean UX Process.
 #### 1.2.2.1. Lean UX Problem Statements.
@@ -265,5 +353,23 @@ En síntesis, existe una desconexión entre los datos que la máquina HVOF ya ge
 ## Video About-the-Team.
 
 # Bibliografía
+
+- Automation World. (2025). *How to solve the hidden risks of paper manufacturing on the factory floor*. https://www.automationworld.com/control/article/55378030/how-to-solve-the-hidden-risks-of-paper-manufacturing-on-the-factory-floor
+
+- Innovapptive. (2024, 26 de febrero). *Overcoming equipment maintenance challenges in mining industry*. https://www.innovapptive.com/blog/overcoming-equipment-maintenance-challenges-in-mining-industry
+
+- Khan, M. N., Shah, S., & Shamim, T. (2019). *Investigation of operating parameters on high-velocity oxyfuel thermal spray coating quality for aerospace applications. The International Journal of Advanced Manufacturing Technology*, 103, 2677–2690. https://doi.org/10.1007/s00170-019-03696-0
+
+- Malamousi, K., Delibasis, K., & Kamnis, S. (2024). Real-time thermal spray process monitoring using convolution neural network deep learning architectures. *Journal of Thermal Spray Technology*, 33(1), 17–32. https://doi.org/10.1007/s11666-024-01713-7
+
+- Mauer, G. (2022). Process diagnostics and control in thermal spray. *Journal of Thermal Spray Technology*, 31(4), 818–828.
+
+- Ministerio de Energía y Minas. (2026). *Boletín Estadístico Minero: Balance anual 2025*. [Citado en Revista Tecnología Minera]. https://tecnologiaminera.com/noticia/minem-peru-alcanza-us-62848-millones-en-exportaciones-en-2025-1774388279
+
+- Oerlikon Metco. (2025). *Thermal spray process parameters*. https://www.oerlikon.com/metco/en/solutions-technologies/what-is-thermal-spray/thermal-spray-process-parameters/
+
+- Siemens. (2022). *The true cost of downtime 2022*. https://assets.new.siemens.com/siemens/assets/api/uuid:3d606495-dbe0-43e4-80b1-d04e27ada920/dics-b10153-00-7600truecostofdowntime2022-144.pdf
+
+- Springer Nature. (2025). Outlook of Industry 4.0 integrated technologies in thermal spray processes and applications. *Journal of Thermal Spray Technology*. https://doi.org/10.1007/s11666-025-02096-z
 
 # Anexos

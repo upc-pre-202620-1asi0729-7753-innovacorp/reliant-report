@@ -1,0 +1,86 @@
+---
+title: Arbol de Problemas - Reliant (InnovaCorp)
+---
+flowchart BT
+
+    classDef efectoFinal fill:#C62828,stroke:#8E0000,stroke-width:2px,color:#FFFFFF
+    classDef efectoDirecto fill:#EF9A9A,stroke:#C62828,stroke-width:1px,color:#000000
+    classDef central fill:#FFB300,stroke:#E65100,stroke-width:3px,color:#000000
+    classDef causaDirecta fill:#90CAF9,stroke:#1565C0,stroke-width:1px,color:#000000
+    classDef causaRaiz fill:#C8E6C9,stroke:#2E7D32,stroke-width:1px,color:#000000
+
+    PC["<b>PROBLEMA CENTRAL</b><br/><br/>Las empresas de servicio de recubrimiento HVOF<br/>no logran convertir los datos que genera el proceso<br/>en trazabilidad verificable, diagnostico oportuno<br/>ni aprendizaje sobre el desempeno en campo"]
+
+    CR1["La telemetria del PLC se guarda<br/>en archivos locales no consultables"]
+    CR2["No existe vinculo entre el dato de proceso<br/>y la OF / WO / cliente / modelo"]
+    CR3["El registro de la sesion de rociado<br/>se lleva de forma manual o en papel"]
+
+    CR4["No hay catalogo formal de reglas<br/>causa-efecto para las fallas"]
+    CR5["La falla no se correlaciona<br/>con el componente de maquina responsable"]
+    CR6["El diagnostico exige revision manual<br/>de logs crudos del PLC"]
+
+    CR7["El PCR comprometido no se registra<br/>de forma digital ni consultable"]
+    CR8["El retorno de la pieza desde mina<br/>no se vincula a su sesion de rociado"]
+
+    CR9["Los umbrales nominales por equipo<br/>no estan parametrizados en el sistema"]
+    CR10["La desviacion depende de que el operador<br/>la advierta en el tablero de la maquina"]
+
+    CD1["<b>C1.</b> Perdida de trazabilidad<br/>del proceso de rociado"]
+    CD2["<b>C2.</b> Diagnostico de fallas dependiente<br/>del conocimiento tacito de pocas personas"]
+    CD3["<b>C3.</b> Imposibilidad de analisis retrospectivo<br/>del desempeno en campo contra el PCR"]
+    CD4["<b>C4.</b> Deteccion tardia de desviaciones<br/>durante la operacion"]
+
+    ED1["<b>E1.</b> Imposible emitir evidencia documentada<br/>de calidad al cliente minero"]
+    ED2["<b>E2.</b> Tiempo de diagnostico prolongado<br/>ante cada parada del equipo"]
+    ED3["<b>E3.</b> Fallas recurrentes no detectadas<br/>ni atribuidas a un componente"]
+    ED4["<b>E4.</b> Piezas recubiertas fuera de tolerancia<br/>sin que se advierta a tiempo"]
+    ED5["<b>E5.</b> No se puede determinar el origen<br/>de una falla prematura en campo"]
+
+    EF1["<b>EF1.</b> Paradas no planificadas<br/>y sobrecosto operativo"]
+    EF2["<b>EF2.</b> Componentes que fallan<br/>antes de alcanzar su PCR"]
+    EF3["<b>EF3.</b> Perdida de confianza y de contratos<br/>con clientes del sector minero"]
+    EF4["<b>EF4.</b> El conocimiento del proceso no se acumula:<br/>cada falla se resuelve desde cero"]
+
+    CR1 --> CD1
+    CR2 --> CD1
+    CR3 --> CD1
+
+    CR4 --> CD2
+    CR5 --> CD2
+    CR6 --> CD2
+
+    CR7 --> CD3
+    CR8 --> CD3
+
+    CR9 --> CD4
+    CR10 --> CD4
+
+    CD1 --> PC
+    CD2 --> PC
+    CD3 --> PC
+    CD4 --> PC
+
+%% Main problem
+
+    PC --> ED1
+    PC --> ED2
+    PC --> ED3
+    PC --> ED4
+    PC --> ED5
+
+    ED1 --> EF3
+    ED2 --> EF1
+    ED3 --> EF1
+    ED3 --> EF4
+    ED4 --> EF2
+    ED5 --> EF2
+    ED5 --> EF4
+    ED4 --> EF3
+
+%% Styles
+
+    class PC central
+    class CD1,CD2,CD3,CD4 causaDirecta
+    class CR1,CR2,CR3,CR4,CR5,CR6,CR7,CR8,CR9,CR10 causaRaiz
+    class ED1,ED2,ED3,ED4,ED5 efectoDirecto
+    class EF1,EF2,EF3,EF4 efectoFinal
