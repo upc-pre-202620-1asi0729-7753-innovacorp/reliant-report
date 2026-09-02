@@ -154,6 +154,44 @@ Ser la plataforma de referencia en Latinoamérica para el monitoreo y la trazabi
 
 
 ### 1.1.2. Perfiles de integrantes del equipo
+| Foto de participante                                                   | Nombres y apellidos                | Código de estudiante | Descripción de carrera                                            | Principales conocimiento técnicos y habilidades                                                                                                                                          |
+|------------------------------------------------------------------------|------------------------------------|----------------------|-------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| <img src="assets/img/chapter-i/startup-profile/carolina-navarro.jpeg"> | Carolina Celeste Navarro Aldoradin | u20241b962           | Ingeniería de Software, Universidad Peruana de Ciencias Aplicadas | Cuento con conocimiento del lenguaje Java, C#, C++, Javascript, Python y Ladder. Asimismo, cuento con experiencia en proyectos de integración, monitoreo e IoT en entornos industriales. |
+|                                                                        |                                    |                      |                                                                   |                                                                                                                                                                                          |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+|                     |                      |                        |                                                 |  
+
 ## 1.2. Solution Profile
 ### 1.2.1 Antecedentes y problemática
 ### 1.2.2 Lean UX Process.
