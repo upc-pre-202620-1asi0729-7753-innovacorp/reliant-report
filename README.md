@@ -682,6 +682,68 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | C4 | ¿Algo que no le pregunté y debería saber? | — | Cierre abierto |
 
 ### 2.2.2. Registro de entrevistas.
+
+| Segmento: RecuperationSupplier | Entrevista #1 |
+|:--:|:--:|
+| Nombres y Apellidos | |
+| Edad | |
+| Distrito | |
+| Ocupacion | |
+| Timing inicio | |
+| Duracion ||
+| URL ||
+| Screenshot||
+| Resumen |
+
+| Segmento: RecuperationSupplier | Entrevista #2 |
+|--|--|
+| Nombres y Apellidos | |
+| Edad | |
+| Distrito | |
+| Ocupacion | |
+| Timing inicio | |
+| Duracion ||
+| URL ||
+| Screenshot||
+| Resumen |
+
+
+| Segmento: AssetOwner | Entrevista #1 |
+|--|--|
+| Nombres y Apellidos | |
+| Edad | |
+| Distrito | |
+| Ocupacion | |
+| Timing inicio | |
+| Duracion ||
+| URL ||
+| Screenshot||
+| Resumen |
+
+| Segmento: AssetOwner | Entrevista #2 |
+|--|--|
+| Nombres y Apellidos | |
+| Edad | |
+| Distrito | |
+| Ocupacion | |
+| Timing inicio | |
+| Duracion ||
+| URL ||
+| Screenshot||
+| Resumen |
+
+| Segmento: AssetOwner | Entrevista #3 |
+|--|--|
+| Nombres y Apellidos | |
+| Edad | |
+| Distrito | |
+| Ocupacion | |
+| Timing inicio | |
+| Duracion ||
+| URL ||
+| Screenshot||
+| Resumen |
+
 ### 2.2.3. Análisis de entrevistas.
 ## 2.3. Needfinding.
 ### 2.3.1. User Personas.
