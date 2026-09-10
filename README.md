@@ -747,6 +747,17 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 ### 2.2.3. Análisis de entrevistas.
 ## 2.3. Needfinding.
 ### 2.3.1. User Personas.
+
+#### Ficha de User Persona 1 — Segmento 1: Empresas de servicio especializado en recubrimiento HVOF (RecuperationSupplier)
+
+![Rosa Miranda Alegria](./assets/img/chapter-ii/needfinding/User_Persona-Rosa_Miranda_Alegria.png)
+
+---
+
+#### Ficha de User Persona 2 — Segmento 2: Plantas industriales con línea de recubrimiento in-house
+
+![Jorge Salinas Paredes](./assets/img/chapter-ii/needfinding/User_Persona-Jorge_Salinas_Paredes.png)
+
 ### 2.3.2. User Task Matrix.
 ### 2.3.3. User Journey Mapping.
 ### 2.3.4. Empathy Mapping.
