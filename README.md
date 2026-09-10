@@ -759,6 +759,27 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 ![Jorge Salinas Paredes](./assets/img/chapter-ii/needfinding/User_Persona-Jorge_Salinas_Paredes.png)
 
 ### 2.3.2. User Task Matrix.
+
+| Tarea | Rosa — Frecuencia | Rosa — Importancia | Jorge — Frecuencia | Jorge — Importancia |
+|---|---|---|---|---|
+| Ejecutar y supervisar una sesión de recubrimiento en la cabina | Baja | Media | Baja | Media |
+| Verificar que los parámetros de proceso se mantengan dentro de especificación | Alta | Alta | Media | Alta |
+| Registrar a qué pieza, cliente y orden corresponde cada sesión ejecutada | Alta | Alta | Baja | Media |
+| Sustentar ante el cliente que un lote fue recubierto dentro de tolerancias | Alta | Alta | N/A | N/A |
+| Determinar la causa de una parada o falla del equipo | Baja | Media | Alta | Alta |
+| Decidir qué componente de la máquina requiere mantenimiento o repuesto | Baja | Media | Alta | Alta |
+| Anticipar fallas recurrentes del equipo | Media | Media | Alta | Alta |
+| Verificar el desempeño de una pieza recubierta cuando retorna de campo | Alta | Alta | Media | Media |
+| Reportar métricas de calidad o de disponibilidad a la gerencia | Media | Alta | Media | Alta |
+| Transferir el conocimiento del proceso entre operadores y técnicos | Media | Media | Media | Alta |
+
+**Tareas con mayor frecuencia e importancia.** Para Rosa, las tareas de mayor peso son sustentar ante el cliente que un lote fue recubierto dentro de tolerancias y registrar la correspondencia entre sesión, pieza, cliente y orden: ambas son diarias y determinan directamente la continuidad del contrato con el cliente minero. Para Jorge, las tareas de mayor peso son determinar la causa de una parada y decidir qué componente atender, dado que de ellas depende la disponibilidad del equipo y el cumplimiento de la ventana de mantenimiento.
+
+**Coincidencias.** Ambos roles comparten como tarea de alta importancia verificar que los parámetros de proceso se mantengan dentro de especificación y reportar métricas a la gerencia, lo que confirma que la trazabilidad del proceso es una necesidad transversal a los dos segmentos, aunque motivada por razones distintas (evidencia comercial en un caso, disponibilidad operativa en el otro).
+
+**Diferencias.** Rosa realiza con alta frecuencia tareas orientadas a documentar y sustentar el proceso ante un tercero externo (el cliente minero), mientras que Jorge realiza con alta frecuencia tareas orientadas a diagnosticar y decidir sobre el propio equipo, sin que un cliente externo participe en esa decisión. Esta diferencia es consistente con la distinción establecida en la sección 1.3 entre el recubrimiento como negocio principal (Segmento 1) y como proceso de soporte al mantenimiento (Segmento 2).
+
+
 ### 2.3.3. User Journey Mapping.
 ### 2.3.4. Empathy Mapping.
 ## 2.4. Big Picture Event Storming.
