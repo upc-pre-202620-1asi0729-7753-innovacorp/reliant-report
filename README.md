@@ -417,7 +417,109 @@ Se formula un hypothesis statement por cada feature assumption enunciado en la s
 ---
 
 ### 1.2.2.4. Lean UX Canvas.
+
+A continuación se presenta el Lean UX Canvas (versión 2, Jeff Gothelf) elaborado por el equipo, el cual consolida en un solo artefacto el problema de negocio, los resultados esperados, los usuarios, las soluciones propuestas y las hipótesis derivadas de las secciones anteriores. Los cuadros 7 y 8 establecen la prioridad de aprendizaje del equipo para el primer ciclo de validación.
+
 ## 1.3. Segmentos objetivo.
+
+Reliant se dirige a organizaciones que **operan** un proceso de recubrimiento térmico HVOF, no a quienes consumen sus resultados. Esta distinción es determinante: las empresas mineras son las que exigen la garantía de vida útil y las que sufren el costo de una falla prematura, pero no operan equipos HVOF ni serían las usuarias directas de la plataforma. Actúan como la fuente de presión contractual que motiva la adquisición del producto, no como segmento de usuario. En consecuencia, se han definido dos segmentos objetivo diferenciados por el **tipo de operación** que realizan y no por su tamaño, ya que es el tipo de operación—servicio a terceros frente a operación interna, el que genera necesidades y motivaciones de compra distintas.
+
+### Contexto de mercado
+
+La minería constituye el principal motor exportador de la economía peruana. Según el Boletín Estadístico Minero del Ministerio de Energía y Minas, las exportaciones de productos mineros totalizaron **US$ 62,848 millones durante 2025**, un crecimiento de **27.2 %** respecto al año anterior, y representaron alrededor del **67.5 %** del valor total exportado por el país (MINEM, 2026). A octubre de 2025 existían en el Perú **19,151 titulares mineros** con derechos sobre **55,783 concesiones** (CooperAcción, 2025), lo que dimensiona la escala de la actividad que demanda servicios de mantenimiento y recuperación de componentes.
+
+El ecosistema de proveedores que atiende a este sector tiene además una trayectoria de crecimiento proyectada. De acuerdo con estimaciones de la Sociedad Nacional de Industrias, el aporte de los proveedores mineros al PBI nacional se sitúa actualmente entre **3.5 % y 3.8 %**, y podría alcanzar hasta el **12 % para 2030** si se ejecuta la cartera de proyectos mineros estimada en **US$ 52,000 millones** (Energiminas, 2025).
+
+El costo del problema que Reliant atiende también está documentado. El reporte *True Cost of Downtime* de Siemens estima que las 500 mayores empresas del mundo pierden alrededor del **11 % de sus ingresos** por paradas no planificadas, y la falla de componentes críticos representa el **45 %** de los casos reportados de downtime. En el sector minero específicamente, estimaciones de la industria sitúan el costo promedio de una parada de equipo en torno a **US$ 180,000 por incidente** (Innovapptive, 2024).
+
+---
+
+### Segmento 1: Empresas de servicio especializado en recubrimiento HVOF
+
+**Descripción**
+
+Empresas que ofrecen recubrimiento térmico HVOF como servicio a terceros, operando una o más cabinas de rociado y atendiendo simultáneamente a varios clientes industriales, principalmente del sector minero. Su negocio depende de la capacidad de demostrar que el recubrimiento se ejecutó dentro de las especificaciones acordadas, ya que el cliente vincula la vida útil esperada de la pieza (PCR) a la calidad del proceso. En el mercado peruano este segmento es reducido y altamente especializado, lo que lo convierte en un nicho de alta concentración: pocos actores, contratos de alto valor y fuerte dependencia de la reputación técnica.
+
+**Características demográficas y organizacionales**
+
+| Variable | Descripción |
+|---|---|
+| Tipo de organización | Empresa de servicios industriales / metalmecánica especializada |
+| Tamaño | Mediana empresa; entre 50 y 500 colaboradores |
+| Ubicación | Lima Metropolitana y Callao (zonas industriales), con presencia comercial en regiones mineras (Arequipa, Cajamarca, Áncash, Junín) |
+| Sector económico | Servicios de mantenimiento y recuperación de componentes industriales |
+| Clientes principales | Empresas mineras de gran y mediana minería, oil & gas, generación eléctrica |
+| Antigüedad | Organizaciones consolidadas, típicamente con más de 10 años de operación |
+| Nivel de digitalización | Medio; cuentan con ERP administrativo, pero los datos de proceso permanecen en registros locales o en papel |
+
+**Perfil del usuario dentro de la organización**
+
+| Variable | Descripción |
+|---|---|
+| Rol principal | Ingeniero de Calidad / Jefe de Procesos |
+| Rol secundario | Supervisor de Mantenimiento, Operador de cabina de rociado |
+| Edad | 28 a 50 años |
+| Formación | Ingeniería Mecánica, Metalúrgica, Industrial o de Materiales |
+| Competencia en el dominio | Alta |
+| Competencia digital | Media; usuario habitual de hojas de cálculo y ERP, no de herramientas analíticas |
+| Dispositivo de preferencia | Computador de escritorio o laptop en oficina y taller; móvil para consulta de alertas |
+| Idioma de trabajo | Español, con manejo de terminología técnica en inglés |
+
+**Motivación de compra**
+
+Este segmento adquiere Reliant porque **sin trazabilidad no puede sostener la garantía que sus clientes le exigen**. La presión es comercial antes que operativa: la incapacidad de entregar evidencia documentada del proceso compromete la renovación de contratos con clientes mineros que auditan a sus proveedores.
+
+---
+
+### Segmento 2: Plantas industriales con línea de recubrimiento in-house
+
+**Descripción**
+
+Organizaciones cuyo negocio principal no es el recubrimiento, pero que operan una cabina de thermal spray dentro de sus instalaciones para recuperar sus propios componentes críticos. El recubrimiento es para ellos un proceso de soporte al mantenimiento, no un producto. Su preocupación central es la disponibilidad del equipo: una falla de la cabina durante una ventana de parada programada compromete todo el cronograma de mantenimiento de la planta. En el Perú este segmento es menos frecuente que el primero y se concentra en operaciones de gran escala; su presencia es considerablemente mayor en mercados como Chile, Brasil, Estados Unidos y Europa, lo que lo posiciona como vía natural de expansión regional.
+
+**Características demográficas y organizacionales**
+
+| Variable | Descripción |
+|---|---|
+| Tipo de organización | Planta industrial de gran escala con taller de mantenimiento propio |
+| Tamaño | Gran empresa; más de 500 colaboradores |
+| Ubicación | Regiones mineras e industriales del Perú (Áncash, Arequipa, Cajamarca, Moquegua, Ica) y mercados regionales de expansión |
+| Sector económico | Minería, oil & gas, generación eléctrica, cemento, siderurgia |
+| Cliente del proceso | Interno (áreas de operación y mantenimiento de la propia planta) |
+| Nivel de digitalización | Medio-alto; cuentan con CMMS o SAP PM para gestión de mantenimiento, sin integración con datos de proceso del equipo de spray |
+
+**Perfil del usuario dentro de la organización**
+
+| Variable | Descripción |
+|---|---|
+| Rol principal | Jefe o Supervisor de Mantenimiento |
+| Rol secundario | Ingeniero de Confiabilidad, Técnico de mantenimiento, Planner |
+| Edad | 30 a 55 años |
+| Formación | Ingeniería Mecánica o Industrial; personal técnico con formación en institutos tecnológicos |
+| Competencia en el dominio del spray | Media; son especialistas en mantenimiento general, no en thermal spray específicamente |
+| Competencia digital | Media-alta; usuarios habituales de CMMS y sistemas de gestión de activos |
+| Dispositivo de preferencia | Computador de escritorio en oficina de mantenimiento; móvil o tablet en planta |
+| Idioma de trabajo | Español, con manejo de terminología técnica en inglés |
+
+**Motivación de compra**
+
+Este segmento adquiere Reliant porque **no puede permitirse que el equipo de recubrimiento falle durante una ventana crítica**. La presión es operativa: dado que sus técnicos no son especialistas en thermal spray, el diagnóstico asistido compensa la brecha de expertise y reduce la dependencia de asistencia técnica externa del fabricante del equipo.
+
+---
+
+### Síntesis comparativa
+
+| Criterio | Segmento 1: Servicio especializado | Segmento 2: Línea in-house |
+|---|---|---|
+| Naturaleza del proceso | Negocio principal | Proceso de soporte |
+| Quién decide la compra | Gerencia General / Gerencia Comercial | Jefatura de Planta / Gerencia de Mantenimiento |
+| Dolor principal | Pérdida de contratos por falta de evidencia de calidad | Parada no programada durante ventana crítica |
+| Usuario primario | Ingeniero de Calidad | Jefe de Mantenimiento |
+| Prioridad de features | Trazabilidad OF/WO, certificados de calidad, análisis PCR | Alertas en tiempo real, diagnóstico por componente, patrones recurrentes |
+| Presencia en Perú | Nicho concentrado, pocos actores | Reducida; mayor en mercados regionales |
+| Rol en la estrategia | Segmento de foco inicial | Segmento de expansión |
+
+Ambos segmentos comparten el núcleo funcional de la plataforma: ingesta de telemetría, detección de desviaciones y diagnóstico de fallas, pero difieren en el peso relativo que asignan a cada capacidad. Esta convergencia funcional con divergencia de prioridades permite a InnovaCorp sostener un único producto atendiendo a dos motivaciones de compra distintas, y justifica el enfoque inicial en el Segmento 1, cuyo dolor es más agudo y cuyo ciclo de venta es más corto en el mercado peruano.
 
 # Capítulo II: Requirements Elicitation & Analysis
 ## 2.1. Competidores.
