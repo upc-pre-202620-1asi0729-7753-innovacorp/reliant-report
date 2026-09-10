@@ -1,0 +1,212 @@
+@startuml classDiagram
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+
+package "Equipment" {
+
+    class HVOFCell <<Aggregate Root>> {
+        - HVOFCellId: Id
+        - MainSupplier: string
+        - SubSystemsList: List
+        - Status: EquipmentStatus
+    }
+
+    class PLCConfiguration {
+        + Id:
+    }
+
+    enum EquipmentStatus {
+        OUT_OF_SERVICE
+        READY_TO_USE
+    }
+
+
+    record PLCTag <<Value Object>> {
+        - TagDescription: string
+        - tagPath: string
+        - dataType: string
+        - unit: Unit
+    }
+
+    class HVOFCellPart <<Entity>> {
+        - SerialNumber: string
+        - PartFabricant: string
+        - TagsList: List<PLCTag>
+
+    }
+
+}
+
+package "ProcessMonitoring" {
+    record MonitoringReading  {
+        - Timestamp: EpochTimestamp
+
+    }
+
+}
+
+package "Traceability" {
+    class Component <<Entity>> {
+        - ComponentId: uuid
+        - ComponentDescription: string
+        - Model: ModelEnum
+        - PCR: decimal
+        - PartNumber: string
+    }
+
+    class Recuperation <<Aggregate Root>> {
+        - WorkOrder: string
+        - Segment: string
+        - Operation: string
+        - PartListRefurbish: string
+        - FabricationOrder: string
+        - PartDescription: string
+        - Customer: customerId
+        - Component: componentId
+        - Weight: Weight
+        - Quantity: integer
+        - Hourmeter: Hourmeter
+        - RegisterDate: DateTime
+        - DustType: DustType
+
+    }
+
+    class RecuperationCustomer <<Entity>> {
+        - CustomerId: CustomerId
+        - CustomerName: string
+        - CustomerRUC: RUC
+        - CustomerLegalName: string
+
+    }
+
+    record RUC <<Value Object>> {
+        - Value: string
+        + Validate()
+    }
+
+
+    record Weight <<Value Object>> {
+        - Number: decimal
+        - Unit: Unit
+
+    }
+    record DustType <<Value Object>> {
+        - DustSupplier: string
+        - DustChemicalComposition: string
+    }
+
+    record Model <<Value Object>> {
+        - Fabricant: FabricantEnum
+        - Model: ModelEnum
+    }
+
+
+    enum MachineModelEnum {
+        797F
+        798
+        794AC
+        3516
+        793C
+        785C
+        994
+        789
+        789A
+        789B
+        994D
+        785
+        SR4
+        793D
+    }
+
+    enum ComponentTypeEnum {
+        Front Rod
+        Block Cylinder
+        Rod As
+        Post Cylinder
+    }
+
+    enum FabricantEnum {
+        Caterpillar
+        Komatsu
+
+
+    }
+}
+
+
+package "FaultDiagnosis" {
+    class Fault {
+        - FaultId: uuid
+        - Timestamp: EpochTimestamp
+    }
+
+
+
+}
+
+package "SharedKernel" {
+    record Unit <<Value Object>> {
+        + Symbol: string
+        + Name: string
+        + Category: UnitCategoryEnum
+        + Validate()
+        + System: UnitSystemEnum
+    }
+    enum UnitCategoryEnum {
+        Speed
+        Pressure
+        Temperature
+        Percentage
+        Dimensionless
+        Flow
+        Current
+        Voltage
+    }
+    enum UnitSystemEnum{
+        International System
+        Imperial System
+    }
+
+    interface UnitConversionService {
+        + Convert(value: decimal, from: Unit, to: Unit): decimal
+    }
+
+    record DateTime {
+        +value: string
+
+    }
+
+    record EpochTimestamp{}
+
+   record "Money" <<Value Object>> {
+   -amount : BigDecimal
+   -currency : Currency
+   --
+   +add(other)
+   +multiply(multiplier)
+   +isPositive(): boolean
+   +isZero(): boolean
+   +isNegative(): boolean
+   }
+
+
+
+}
+
+
+package IAM {
+
+
+}
+
+package Billing&Subscriptions {
+    class Suscription{
+
+    }
+
+
+}
+
+
+
+@enduml
