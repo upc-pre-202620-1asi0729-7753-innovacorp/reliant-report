@@ -801,6 +801,16 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | Registro y aprendizaje | Documenta la solución de forma informal | "Espero acordarme la próxima vez que pase esto" | Resignación | El aprendizaje no queda registrado ni es consultable por otros |
 
 ### 2.3.4. Empathy Mapping.
+
+#### Empathy Map — Rosa Miranda (Segmento 1)
+
+![Rosa Miranda Alegria](./assets/img/chapter-ii/neefinding/Empathy_Map-Rosa_Miranda_Alegria.png)
+
+#### Empathy Map — Jorge Salinas (Segmento 2)
+
+![Jorge Salinas Paredes](./assets/img/chapter-ii/neefinding/Empathy_Map-Jorge_Salinas_Paredes.png)
+
+
 ## 2.4. Big Picture Event Storming.
 ## 2.5. Ubiquitous Language.
 
