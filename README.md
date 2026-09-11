@@ -1208,6 +1208,34 @@ flowchart RL
 El evento descubierto, *CustomerLinkedToAssetOwnerOrganization*, resuelve una pregunta que nadie había hecho: ¿cómo puede un ingeniero de confiabilidad de la minera registrar el retorno de una pieza si la minera fue registrada como *Customer* por Fesa y no tiene cuenta propia? La respuesta es que cuando una organización Asset Owner se suscribe con el mismo RUC que un cliente ya registrado por un proveedor, ambos registros se vinculan. Este evento dio origen al segundo escenario de la US13.
 
 
+### Paso 9. Cierre
+
+Al terminar la sesión el equipo evaluó los resultados contra los tres criterios que propone la guía:
+
+**Entendimiento compartido del dominio.** Los integrantes sin experiencia en planta pudieron narrar la historia completa del front rod sin ayuda al final de la sesión. La distinción entre *Component* (pieza del cliente) y *HVOF Cell Part* (parte de la máquina), que había generado confusión en reuniones previas, quedó resuelta.
+
+**Problemas identificados.** Siete hotspots, seis resueltos en sesión y uno pendiente de validación externa. Las decisiones tomadas se convirtieron en criterios de aceptación, lo que evitó que las ambigüedades llegaran a la implementación.
+
+**Primeras definiciones del lenguaje ubicuo.** Siete términos capturados, que constituyen el punto de partida del glosario de la sección 2.5.
+
+**Trazabilidad hacia las User Stories.** Los eventos ordenados en el Paso 5 se distribuyen en las épicas del Capítulo III de la siguiente forma:
+
+| Fase del tablero | Eventos | Épica | User Stories |
+|---|---|---|---|
+| 0. Configuración | OrganizationRegistered, RoleAssigned, PlanSelected, SubscriptionActivated | E01, E02 | US01–US06 |
+| 0. Configuración | HvofCellRegistered … NominalRangesConfigured, DiagnosticRuleCreated | E03, E06 | US07–US12, US28 |
+| 0. Configuración | CustomerRegistered, PcrTargetDefined | E04 | US13, US16 |
+| 1. Recepción | ComponentReceived, RecuperationCreated | E04 | US14, US15 |
+| 2. Corrida | SpraySessionStarted … SpraySessionCompleted/Aborted | E05 | US19–US24 |
+| 2b. Desviaciones | ParameterOutOfRangeDetected, OutOfRangeAlertRaised, AlertDelivered | E05, E07 | US21, US31–US34 |
+| 2b. Fallas | FaultFlagActivated … RecurringFaultPatternDetected | E06 | US25–US30 |
+| 3. Cierre y entrega | RecuperationClosed, QualityCertificateIssued, ComponentDelivered | E04, E08 | US17, US18, US35, US36 |
+| 4. Campo y PCR | ComponentReturnedFromField … PrematureFailureCorrelatedWithSession | E09 | US39–US43 |
+| 5. Reportes | EvidenceExported, FaultFrequencyReportGenerated, PcrComplianceReportGenerated | E08, E09 | US37, US38, US42 |
+| Externos | AlertDelivered (EMAIL), VisitorSubscribedToNewsletter | E11, E10 | US49, US51, US52 |
+
+
+
 ## 2.5. Ubiquitous Language.
 
 # Capítulo III: Requirements Specification
