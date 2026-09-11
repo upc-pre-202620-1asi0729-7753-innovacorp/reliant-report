@@ -1047,6 +1047,82 @@ Al ordenar, el equipo hizo explícitas tres cosas que estaban implícitas:
 - *ManualDiagnosisRequired* apareció al preguntar "¿y si ninguna regla coincide?". Es el flujo alternativo de *DiagnosticRulesApplied*.
 - *SpraySessionAborted* no cierra la orden: obliga a una nueva corrida. Por eso la flecha punteada regresa a *SpraySessionStarted*.
 
+### Paso 6. Actores y sistemas externos
+
+Con la historia ya ordenada, el equipo identificó quién dispara cada cadena de eventos (post-its amarillos) y qué sistemas fuera de la plataforma participan (post-its azules). Siguiendo la guía, se colocó un actor al inicio de cada cadena y no en cada evento.
+
+```mermaid
+flowchart LR
+    classDef evento fill:#FFA726,stroke:#E65100,color:#000
+    classDef actor fill:#FFF176,stroke:#F9A825,color:#000
+    classDef externo fill:#64B5F6,stroke:#1565C0,color:#000
+
+    subgraph AC["Actores"]
+        direction TB
+        Adm["Administrador de organización"]:::actor
+        Op["Operador HVOF"]:::actor
+        SupOp["Supervisor de operación"]:::actor
+        SupMant["Supervisor de mantenimiento de máquina"]:::actor
+        IngCal["Ingeniero de calidad"]:::actor
+        IngConf["Ingeniero de confiabilidad"]:::actor
+        Compras["Analista de compras"]:::actor
+        Vis["Visitante"]:::actor
+    end
+
+    subgraph EX["Sistemas externos"]
+        direction TB
+        Gw["Gateway PLC<br/>(Raspberry Pi + pylogix / simulador)"]:::externo
+        Plc["PLC CompactLogix<br/>de la celda HVOF"]:::externo
+        Mc["Mailchimp"]:::externo
+    end
+
+    subgraph EV["Inicio de cada cadena de eventos"]
+        direction TB
+        e1["OrganizationRegistered"]:::evento
+        e2["PlanSelected"]:::evento
+        e3["RoleAssigned"]:::evento
+        e4["HvofCellRegistered"]:::evento
+        e5["PlcTagFileImported"]:::evento
+        e6["TagMappingConfirmed"]:::evento
+        e7["NominalRangesConfigured"]:::evento
+        e8["DiagnosticRuleCreated"]:::evento
+        e9["CustomerRegistered"]:::evento
+        e10["PcrTargetDefined"]:::evento
+        e11["ComponentReceived"]:::evento
+        e12["RecuperationCreated"]:::evento
+        e13["SpraySessionStarted"]:::evento
+        e14["TelemetryBatchIngested"]:::evento
+        e15["FaultFlagActivated"]:::evento
+        e16["RootCauseConfirmed"]:::evento
+        e17["SpraySessionCompleted / Aborted"]:::evento
+        e18["RecuperationClosed"]:::evento
+        e19["QualityCertificateIssued"]:::evento
+        e20["ComponentReturnedFromField"]:::evento
+        e21["PcrComplianceReportGenerated"]:::evento
+        e22["AlertDelivered (EMAIL)"]:::evento
+        e23["VisitorSubscribedToNewsletter"]:::evento
+    end
+
+    Adm --> e1 & e2 & e3
+    SupMant --> e4 & e5 & e6 & e16
+    IngCal --> e7 & e8 & e10 & e19
+    SupOp --> e9 & e12 & e18
+    Op --> e11 & e13 & e17
+    IngConf --> e20
+    Compras --> e21
+    Vis --> e23
+
+    Plc --> Gw --> e14
+    Plc -. tag de falla .-> e15
+    e22 --> Mc
+    e23 --> Mc
+```
+
+Dos decisiones surgieron en este paso:
+
+- El **PLC** y el **gateway** se modelaron como dos sistemas externos distintos. El PLC es la fuente del dato; el gateway es quien lo lee vía EtherNet/IP y lo envía a la plataforma por REST. Para la demostración del curso, el gateway será un simulador que expone el mismo contrato, de modo que la plataforma no distingue si el origen es hardware real o simulado.
+- El **ingeniero de confiabilidad** de la minera (Asset Owner) es quien dispara *ComponentReturnedFromField*, no el proveedor. Es el único que sabe cuántas horas trabajó la pieza en mina. Esta observación fue la que consolidó a la minera como segundo segmento pagante.
+
 
 ## 2.5. Ubiquitous Language.
 
