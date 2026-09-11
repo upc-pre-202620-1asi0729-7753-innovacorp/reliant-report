@@ -973,6 +973,80 @@ Durante la depuración se tomaron dos decisiones que quedaron registradas para e
 - Los eventos de falla específicos del PLC (*FeederZeroFeedrateAborted*, *HopperOverpressureBlocked*, *SpindleRotationFaulted*, *XAxisMotionFaulted*, *TimedShutdownFaultTriggered*, *DustHouseOverloaded*) se agruparon bajo un evento genérico *FaultFlagActivated* con el tipo de falla como atributo. Esto evita que el tablero tenga un post-it por cada uno de los más de treinta tags de falla del PLC y refleja cómo lo procesa el sistema: el tag mapeado como indicador de falla se activa, y eso abre el caso.
 - *FlameTemperatureOutOfRange* se absorbió en *ParameterOutOfRangeDetected*, por la misma razón.
 
+### Paso 5. Ordenamiento cronológico
+
+Aquí comenzó la discusión. El equipo ordenó los eventos de izquierda a derecha y, al hacerlo, aparecieron dos flujos concurrentes que se representaron como carriles: mientras la sesión de rociado registra lecturas, en paralelo pueden abrirse casos de falla y generarse alertas. También apareció un flujo alternativo: la sesión puede terminar completada o abortada.
+
+```mermaid
+flowchart LR
+    classDef evento fill:#FFA726,stroke:#E65100,color:#000
+    classDef fase fill:#FAFAFA,stroke:#BDBDBD,color:#616161
+
+    subgraph F0["0. Configuración"]
+        direction TB
+        OrganizationRegistered:::evento --> PlanSelected:::evento --> SubscriptionActivated:::evento --> RoleAssigned:::evento
+        HvofCellRegistered:::evento --> HvofCellPartRegistered:::evento --> PlcTagFileImported:::evento --> TagMappingProposed:::evento --> TagMappingConfirmed:::evento --> NominalRangesConfigured:::evento
+        CustomerRegistered:::evento --> PcrTargetDefined:::evento
+        DiagnosticRuleCreated:::evento
+    end
+
+    subgraph F1["1. Recepción"]
+        direction TB
+        ComponentReceived:::evento --> RecuperationCreated:::evento --> ComponentMarkedInProcess:::evento
+    end
+
+    subgraph F2["2. Corrida de rociado"]
+        direction TB
+        SpraySessionStarted:::evento --> TelemetryBatchIngested:::evento --> ProcessReadingRecorded:::evento
+        ProcessReadingRecorded --> SpraySessionCompleted:::evento
+        ProcessReadingRecorded --> SpraySessionAborted:::evento
+    end
+
+    subgraph F2B["2b. Carril concurrente — Desviaciones y fallas"]
+        direction TB
+        ParameterOutOfRangeDetected:::evento --> OutOfRangeAlertRaised:::evento --> AlertDelivered:::evento --> AlertAcknowledged:::evento
+        FaultFlagActivated:::evento --> FaultCaseOpened:::evento --> FaultSymptomsRecorded:::evento --> DiagnosticRulesApplied:::evento
+        DiagnosticRulesApplied --> ProbableCauseSuggested:::evento --> SuspectPartIdentified:::evento --> CriticalFaultAlertRaised:::evento
+        DiagnosticRulesApplied --> ManualDiagnosisRequired:::evento
+        SuspectPartIdentified --> RootCauseConfirmed:::evento --> FaultCaseClosed:::evento
+        ManualDiagnosisRequired --> RootCauseConfirmed
+        FaultCaseClosed --> RecurringFaultPatternDetected:::evento
+        TelemetryStreamInterrupted:::evento
+    end
+
+    subgraph F3["3. Cierre y entrega"]
+        direction TB
+        RecuperationClosed:::evento --> HourmeterAtDeliveryRecorded:::evento --> QualityCertificateIssued:::evento --> ComponentDelivered:::evento
+        SessionReportGenerated:::evento
+    end
+
+    subgraph F4["4. Campo y PCR"]
+        direction TB
+        ComponentReturnedFromField:::evento --> ServiceLifeRecorded:::evento
+        ServiceLifeRecorded --> PcrTargetMet:::evento
+        ServiceLifeRecorded --> PrematureFailureDetected:::evento --> PrematureFailureCorrelatedWithSession:::evento
+    end
+
+    subgraph F5["5. Reportes"]
+        direction TB
+        EvidenceExported:::evento
+        FaultFrequencyReportGenerated:::evento
+        PcrComplianceReportGenerated:::evento
+    end
+
+    F0 --> F1 --> F2 --> F3 --> F4 --> F5
+    ProcessReadingRecorded -. dispara .-> ParameterOutOfRangeDetected
+    ProcessReadingRecorded -. dispara .-> FaultFlagActivated
+    SpraySessionCompleted --> RecuperationClosed
+    SpraySessionAborted -. requiere nueva corrida .-> SpraySessionStarted
+```
+
+Al ordenar, el equipo hizo explícitas tres cosas que estaban implícitas:
+
+- *HourmeterAtDeliveryRecorded* no existía en la generación inicial de todos; apareció cuando se preguntó "¿contra qué se compara el horómetro de retorno?". Sin ese dato, *ServiceLifeRecorded* no puede calcular horas logradas.
+- *ManualDiagnosisRequired* apareció al preguntar "¿y si ninguna regla coincide?". Es el flujo alternativo de *DiagnosticRulesApplied*.
+- *SpraySessionAborted* no cierra la orden: obliga a una nueva corrida. Por eso la flecha punteada regresa a *SpraySessionStarted*.
+
 
 ## 2.5. Ubiquitous Language.
 
