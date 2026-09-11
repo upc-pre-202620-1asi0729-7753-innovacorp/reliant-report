@@ -866,6 +866,113 @@ La facilitadora (Carolina) presentó el objetivo, el alcance y los casos de uso 
 | Casos de uso guía | (1) Recuperar un front rod de un cliente minero y entregarlo con evidencia de calidad. (2) Diagnosticar por qué la celda se detuvo durante una corrida. (3) Determinar si una pieza que falló en mina antes de su PCR fue mal recubierta |
 | Convenciones | Eventos en inglés, en pasado, en PascalCase. Un evento por post-it. Se permite duplicar; se depura al ordenar |
 
+### Paso 4. Generación de Domain Events
+
+Durante veinticinco minutos cada integrante colocó, de forma individual y sin discutir, todos los eventos que recordaba del dominio. La tasa de generación decayó hacia el minuto veinte, señal de pasar al siguiente paso. Se obtuvieron sesenta y ocho post-its, incluidos duplicados y eventos que después se reformularon. El tablero, tal como quedó antes de ordenar:
+
+```mermaid
+flowchart TB
+    classDef evento fill:#FFA726,stroke:#E65100,color:#000
+
+    subgraph W["Tablero — zona OPEN (sin orden)"]
+        direction TB
+        subgraph R1[" "]
+            direction LR
+            a1["ComponentReceived"]:::evento
+            a2["QualityCertificateIssued"]:::evento
+            a3["FeederZeroFeedrateAborted"]:::evento
+            a4["SpraySessionStarted"]:::evento
+            a5["ComponentReturnedFromField"]:::evento
+            a6["RoleAssigned"]:::evento
+            a7["PlcTagFileImported"]:::evento
+            a8["AlertAcknowledged"]:::evento
+        end
+        subgraph R2[" "]
+            direction LR
+            b1["HvofCellRegistered"]:::evento
+            b2["PrematureFailureDetected"]:::evento
+            b3["ParameterOutOfRangeDetected"]:::evento
+            b4["RecuperationCreated"]:::evento
+            b5["RootCauseConfirmed"]:::evento
+            b6["SubscriptionActivated"]:::evento
+            b7["HopperOverpressureBlocked"]:::evento
+            b8["PcrComplianceReportGenerated"]:::evento
+        end
+        subgraph R3[" "]
+            direction LR
+            c1["TelemetryBatchIngested"]:::evento
+            c2["OrganizationRegistered"]:::evento
+            c3["SuspectPartIdentified"]:::evento
+            c4["ComponentDelivered"]:::evento
+            c5["NominalRangesConfigured"]:::evento
+            c6["CriticalFaultAlertRaised"]:::evento
+            c7["ServiceLifeRecorded"]:::evento
+            c8["SpraySessionCompleted"]:::evento
+        end
+        subgraph R4[" "]
+            direction LR
+            d1["FaultCaseOpened"]:::evento
+            d2["CustomerRegistered"]:::evento
+            d3["TagMappingConfirmed"]:::evento
+            d4["SpindleRotationFaulted"]:::evento
+            d5["PcrTargetDefined"]:::evento
+            d6["OutOfRangeAlertRaised"]:::evento
+            d7["RecuperationClosed"]:::evento
+            d8["DiagnosticRulesApplied"]:::evento
+        end
+        subgraph R5[" "]
+            direction LR
+            e1["PlanSelected"]:::evento
+            e2["RecurringFaultPatternDetected"]:::evento
+            e3["ProcessReadingRecorded"]:::evento
+            e4["TimedShutdownFaultTriggered"]:::evento
+            e5["SessionReportGenerated"]:::evento
+            e6["HvofCellPartRegistered"]:::evento
+            e7["ProbableCauseSuggested"]:::evento
+            e8["UserAuthenticated"]:::evento
+        end
+        subgraph R6[" "]
+            direction LR
+            f1["SpraySessionAborted"]:::evento
+            f2["TagMappingProposed"]:::evento
+            f3["PcrTargetMet"]:::evento
+            f4["FaultCaseClosed"]:::evento
+            f5["EvidenceExported"]:::evento
+            f6["AlertDelivered"]:::evento
+            f7["TelemetryStreamInterrupted"]:::evento
+            f8["DustHouseOverloaded"]:::evento
+        end
+        subgraph R7[" "]
+            direction LR
+            g1["FaultFlagActivated"]:::evento
+            g2["PrematureFailureCorrelatedWithSession"]:::evento
+            g3["DiagnosticRuleCreated"]:::evento
+            g4["HvofCellStatusChanged"]:::evento
+            g5["FaultFrequencyReportGenerated"]:::evento
+            g6["AlertEscalated"]:::evento
+            g7["VisitorSubscribedToNewsletter"]:::evento
+            g8["ManualDiagnosisRequired"]:::evento
+        end
+        subgraph R8[" "]
+            direction LR
+            h1["SubscriptionExpired"]:::evento
+            h2["NotificationPreferenceUpdated"]:::evento
+            h3["FaultSymptomsRecorded"]:::evento
+            h4["XAxisMotionFaulted"]:::evento
+            h5["AccessDenied"]:::evento
+            h6["FlameTemperatureOutOfRange"]:::evento
+            h7["HourmeterAtDeliveryRecorded"]:::evento
+            h8["ComponentMarkedInProcess"]:::evento
+        end
+        R1 ~~~ R2 ~~~ R3 ~~~ R4 ~~~ R5 ~~~ R6 ~~~ R7 ~~~ R8
+    end
+```
+
+Durante la depuración se tomaron dos decisiones que quedaron registradas para el paso siguiente:
+
+- Los eventos de falla específicos del PLC (*FeederZeroFeedrateAborted*, *HopperOverpressureBlocked*, *SpindleRotationFaulted*, *XAxisMotionFaulted*, *TimedShutdownFaultTriggered*, *DustHouseOverloaded*) se agruparon bajo un evento genérico *FaultFlagActivated* con el tipo de falla como atributo. Esto evita que el tablero tenga un post-it por cada uno de los más de treinta tags de falla del PLC y refleja cómo lo procesa el sistema: el tag mapeado como indicador de falla se activa, y eso abre el caso.
+- *FlameTemperatureOutOfRange* se absorbió en *ParameterOutOfRangeDetected*, por la misma razón.
+
 
 ## 2.5. Ubiquitous Language.
 
