@@ -1123,6 +1123,58 @@ Dos decisiones surgieron en este paso:
 - El **PLC** y el **gateway** se modelaron como dos sistemas externos distintos. El PLC es la fuente del dato; el gateway es quien lo lee vía EtherNet/IP y lo envía a la plataforma por REST. Para la demostración del curso, el gateway será un simulador que expone el mismo contrato, de modo que la plataforma no distingue si el origen es hardware real o simulado.
 - El **ingeniero de confiabilidad** de la minera (Asset Owner) es quien dispara *ComponentReturnedFromField*, no el proveedor. Es el único que sabe cuántas horas trabajó la pieza en mina. Esta observación fue la que consolidó a la minera como segundo segmento pagante.
 
+### Paso 7. Storytelling
+
+Un integrante narró la historia completa recorriendo el tablero de izquierda a derecha, usando el caso de uso guía del front rod. La audiencia interrumpió cuando algo no cuadraba. Las incoherencias que no se pudieron resolver en la sesión se estacionaron como post-its rosados (hotspots).
+
+```mermaid
+flowchart LR
+    classDef evento fill:#FFA726,stroke:#E65100,color:#000
+    classDef problema fill:#F48FB1,stroke:#AD1457,color:#000
+
+    TagMappingConfirmed:::evento
+    P1["¿Qué pasa con una lectura cuyo tag<br/>aún no tiene mapeo confirmado?<br/>→ Se almacena como pendiente, no se descarta"]:::problema
+    TagMappingConfirmed -.- P1
+
+    RecuperationClosed:::evento
+    P2["¿Se puede cerrar una orden cuya<br/>única sesión fue abortada?<br/>→ No. Requiere al menos una completada"]:::problema
+    RecuperationClosed -.- P2
+
+    QualityCertificateIssued:::evento
+    P3["¿Se emite certificado si hubo<br/>lecturas fuera de rango?<br/>→ Sí, con no conformidad y justificación"]:::problema
+    QualityCertificateIssued -.- P3
+
+    ServiceLifeRecorded:::evento
+    P4["¿PCR se mide en horas de horómetro<br/>o en meses calendario?<br/>→ Horas. Requiere horómetro de entrega"]:::problema
+    ServiceLifeRecorded -.- P4
+
+    PrematureFailureCorrelatedWithSession:::evento
+    P5["¿La minera ve los parámetros crudos<br/>del proveedor?<br/>→ No. Ve cumplimiento por parámetro, no valores"]:::problema
+    PrematureFailureCorrelatedWithSession -.- P5
+
+    RecurringFaultPatternDetected:::evento
+    P6["¿Quién define el umbral de recurrencia<br/>y en qué ventana de tiempo?<br/>→ PENDIENTE: validar con Fesa"]:::problema
+    RecurringFaultPatternDetected -.- P6
+
+    SuspectPartIdentified:::evento
+    P7["¿Y si dos reglas coinciden con<br/>partes distintas?<br/>→ Gana la de mayor prioridad; ambas quedan registradas"]:::problema
+    SuspectPartIdentified -.- P7
+```
+
+Seis de los siete hotspots se resolvieron en la sesión y sus decisiones se trasladaron directamente a los criterios de aceptación de las User Stories (US11, US18, US35, US40, US41 y US26 respectivamente). El hotspot P6 quedó pendiente de validación con el supervisor de mantenimiento durante las entrevistas de la sección 2.2.
+
+Durante la narración se capturaron también las primeras definiciones del lenguaje ubicuo, que se desarrollan en la sección 2.5:
+
+| Término | Definición capturada en la sesión |
+|---|---|
+| Component | Pieza del cliente que se recupera (front rod, cylinder block). No confundir con las partes de la celda |
+| HVOF Cell Part | Parte de la máquina HVOF (feeder, hopper, spindle, ejes, dust collector) |
+| Recuperation | Orden de recuperación identificada por OF y WO; es el trabajo sobre un componente |
+| Spray Session | Una corrida de rociado sobre un componente en una celda. Una orden puede tener varias |
+| PCR Target | Horas de operación esperadas para el componente recuperado (Planned Component Replacement) |
+| Fault Case | Caso abierto cuando un tag de falla se activa; se diagnostica, se confirma y se cierra |
+| Suspect Part | Parte de la celda que las reglas señalan como probable responsable de la falla |
+
 
 ## 2.5. Ubiquitous Language.
 
