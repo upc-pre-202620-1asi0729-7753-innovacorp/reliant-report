@@ -1175,6 +1175,37 @@ Durante la narración se capturaron también las primeras definiciones del lengu
 | Fault Case | Caso abierto cuando un tag de falla se activa; se diagnostica, se confirma y se cierra |
 | Suspect Part | Parte de la celda que las reglas señalan como probable responsable de la falla |
 
+### Paso 8. Reverse storytelling
+
+Como fase opcional, el equipo tomó el evento de mayor valor de negocio, *PrematureFailureDetected*, y recorrió la historia hacia atrás preguntando repetidamente "¿qué tuvo que ocurrir antes para que esto pasara?". El ejercicio confirmó la cadena de trazabilidad completa y reveló un evento que faltaba.
+
+```mermaid
+flowchart RL
+    classDef evento fill:#FFA726,stroke:#E65100,color:#000
+    classDef nuevo fill:#FFA726,stroke:#AD1457,stroke-width:3px,color:#000
+
+    A["PrematureFailureDetected"]:::evento
+    B["ServiceLifeRecorded"]:::evento
+    C["ComponentReturnedFromField"]:::evento
+    D["ComponentDelivered"]:::evento
+    E["HourmeterAtDeliveryRecorded"]:::evento
+    F["QualityCertificateIssued"]:::evento
+    G["RecuperationClosed"]:::evento
+    H["SpraySessionCompleted"]:::evento
+    I["ProcessReadingRecorded"]:::evento
+    J["SpraySessionStarted"]:::evento
+    K["RecuperationCreated"]:::evento
+    L["ComponentReceived"]:::evento
+    M["PcrTargetDefined"]:::evento
+    N["CustomerLinkedToAssetOwnerOrganization"]:::nuevo
+
+    A -->|"¿qué lo disparó?"| B -->|"¿qué lo disparó?"| C
+    C -->|"¿qué debió existir?"| D --> E --> F --> G --> H --> I --> J --> K --> L
+    B -->|"¿contra qué se comparó?"| M
+    C -->|"¿quién pudo registrarlo?"| N
+```
+
+El evento descubierto, *CustomerLinkedToAssetOwnerOrganization*, resuelve una pregunta que nadie había hecho: ¿cómo puede un ingeniero de confiabilidad de la minera registrar el retorno de una pieza si la minera fue registrada como *Customer* por Fesa y no tiene cuenta propia? La respuesta es que cuando una organización Asset Owner se suscribe con el mismo RUC que un cliente ya registrado por un proveedor, ambos registros se vinculan. Este evento dio origen al segundo escenario de la US13.
 
 
 ## 2.5. Ubiquitous Language.
