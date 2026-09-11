@@ -825,6 +825,36 @@ Dado que la sesión se realizó de forma remota, la "sala" fue un tablero compar
 - La leyenda de colores.
 - Un Domain Event inicial preparado por la facilitadora (*SpraySessionStarted*), siguiendo el truco de Alberto Brandolini de "encender" la sesión con un evento ya colocado en el centro del tablero.
 
+```mermaid
+flowchart LR
+    classDef evento fill:#FFA726,stroke:#E65100,color:#000
+    classDef actor fill:#FFF176,stroke:#F9A825,color:#000
+    classDef externo fill:#64B5F6,stroke:#1565C0,color:#000
+    classDef problema fill:#F48FB1,stroke:#AD1457,color:#000
+    classDef zona fill:#FAFAFA,stroke:#BDBDBD,color:#616161
+
+    subgraph L["Leyenda de la sesión"]
+        direction LR
+        E["Domain Event<br/>(algo que ya ocurrió, en pasado)"]:::evento
+        A["Actor<br/>(persona con un rol)"]:::actor
+        X["External System<br/>(sistema fuera de nuestro control)"]:::externo
+        P["Problem / Hotspot<br/>(duda, conflicto o riesgo)"]:::problema
+    end
+
+    subgraph T["Tablero"]
+        direction LR
+        O["OPEN<br/>Generación de eventos"]:::zona
+        EX["EXPLORE<br/>Ordenar · Actores · Externos · Storytelling"]:::zona
+        C["CLOSE<br/>Definiciones · Problemas · Siguientes pasos"]:::zona
+        S0["SpraySessionStarted"]:::evento
+        O --> EX --> C
+        S0 -.- EX
+    end
+```
+### Paso 2. Energizante
+
+La sesión inició con una dinámica breve de cinco minutos en la que cada integrante describió, en una frase y sin usar términos técnicos, qué pasa con una pieza minera desde que se desgasta hasta que vuelve a operar. El ejercicio sirvió para nivelar el vocabulario entre los integrantes con experiencia en planta y los que no la tenían, y para dejar claro desde el inicio que el tablero se llenaría con hechos del negocio y no con funciones de software.
+
 
 ## 2.5. Ubiquitous Language.
 
