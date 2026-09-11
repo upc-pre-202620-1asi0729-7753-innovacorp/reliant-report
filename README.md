@@ -1176,6 +1176,7 @@ Durante la narración se capturaron también las primeras definiciones del lengu
 | Suspect Part | Parte de la celda que las reglas señalan como probable responsable de la falla |
 
 
+
 ## 2.5. Ubiquitous Language.
 
 # Capítulo III: Requirements Specification
