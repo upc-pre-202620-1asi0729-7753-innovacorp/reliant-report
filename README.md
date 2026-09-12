@@ -18,7 +18,7 @@ Docente: Bautista Ubillús, Efrain Ricardo
 | Código     | Apellidos         | Nombres          |
 |------------|-------------------|------------------| 
 | u20241b962 | Navarro Aldoradin | Carolina Celeste |
-|            |                   |                  |
+| u202421137 | Benjamin Bardales |  Benjamin Elias  |
 |            |                   |                  |
 |            |                   |                  |
 |            |                   |                  |
