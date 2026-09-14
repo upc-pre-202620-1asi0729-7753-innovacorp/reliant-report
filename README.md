@@ -218,6 +218,8 @@ CR8["El retorno de la pieza desde mina<br/>no se vincula a su sesion de rociado"
 
 CR9["Los umbrales nominales por equipo<br/>no estan parametrizados en el sistema"]
 CR10["La desviacion depende de que el operador<br/>la advierta en el tablero de la maquina"]
+CR11["Cada proveedor entrega su evidencia<br/>en su propio formato"]
+CR12["El retorno de campo se registra en hojas<br/>de calculo, sin vinculo con la pieza"]
 
 CD1["<b>C1.</b> Perdida de trazabilidad<br/>del proceso de rociado"]
 CD2["<b>C2.</b> Diagnostico de fallas dependiente<br/>del conocimiento tacito de pocas personas"]
