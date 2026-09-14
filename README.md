@@ -373,7 +373,7 @@ Se formula un hypothesis statement por cada feature assumption enunciado en la s
 **Hypothesis Statement 01. Ingesta de telemetría de proceso**
 
 **We believe we will achieve** an increase in the number of spray sessions with complete process records stored in the platform  
-**If** Quality Engineers at HVOF coating service providers and Maintenance Supervisors at in-house coating plants  
+**If** Quality Engineers at Recuperation Suppliers and Reliability Engineers at Asset Owners  
 **Attain** a permanent, queryable record of the conditions under which every spray session was executed  
 **With** a RESTful telemetry ingestion endpoint that registers process readings throughout the spray session.
 
@@ -385,12 +385,12 @@ Se formula un hypothesis statement por cada feature assumption enunciado en la s
 **Attain** the ability to reconstruct the complete history of any coated component on demand  
 **With** the linking of every spray session to its manufacturing order, work order, client and component model.
 ---
-**Hypothesis Statement 03. Rangos nominales y detección de desviaciones**
+**Hypothesis Statement 03. Recetas y bandas de umbral**
 
-**We believe we will achieve** a reduction in the number of components coated outside specification without detection  
+**We believe we will achieve** a reduction in components coated outside the quality band without detection and in sessions run with the wrong recipe  
 **If** Quality Engineers and spray booth Operators  
 **Attain** automatic identification of out-of-tolerance conditions without depending on continuous manual supervision  
-**With** per-equipment nominal parameter range configuration and automatic deviation detection.
+**With** per-system recipes that define setpoints and threshold bands linked to the applicable component types and models, with automatic band classification of every reading and recipe-mismatch warnings.
 ---
 **Hypothesis Statement 04. Alertas en tiempo real**
 
@@ -403,15 +403,15 @@ Se formula un hypothesis statement por cada feature assumption enunciado en la s
 
 **We believe we will achieve** a reduction of at least 40% in the time required to determine the probable cause of an equipment stoppage  
 **If** Maintenance Supervisors and maintenance technicians  
-**Attain** a diagnosis that points to the specific machine part involved instead of a raw fault code  
-**With** a configurable cause-effect rule catalog that correlates the fault with a suspect machine part.
+**Attain** a diagnosis that points to the specific HVOF subsystem or part involved instead of a raw fault code  
+**With** a configurable cause-effect rule catalog that correlates the fault with a suspect subsystem or part.
 ---
 **Hypothesis Statement 06. Detección de patrones recurrentes de falla**
 
 **We believe we will** achieve a reduction in unplanned stoppages during committed production windows    
-**If** Maintenance Supervisors at both coating service providers and in-house coating plants  
-**Attain** early visibility of machine parts that are failing repeatedly  
-**With** automatic detection of recurring fault patterns grouped by machine part and equipment.
+**If** Maintenance Supervisors at Recuperation Suppliers  
+**Attain** early visibility of HVOF parts that are failing repeatedly  
+**With** automatic detection of recurring fault patterns grouped by subsystem, part and HVOF system.
 ---
 **Hypothesis Statement 07. Certificados de calidad por orden de trabajo**
 
@@ -423,7 +423,7 @@ Se formula un hypothesis statement por cada feature assumption enunciado en la s
 **Hypothesis Statement 08. Registro de vida útil contra PCR**
 
 **We believe we will achieve** field service life recorded and compared against PCR for at least 60% of returned components  
-**If** Quality Engineers and Maintenance Supervisors  
+**If** Reliability Engineers at Asset Owners and Quality Engineers at Recuperation Suppliers.  
 **Attain** the ability to determine whether a premature field failure originated in the coating process or elsewhere  
 **With** field service life recording contrasted against the committed Planned Component Replacement target.
 --- 
@@ -431,9 +431,9 @@ Se formula un hypothesis statement por cada feature assumption enunciado en la s
 **Hypothesis Statement 09. Reportes de tasa de falla por cliente y modelo**
 
 **We believe we will achieve** an increase in the number of process improvement decisions supported by historical evidence  
-**If** Quality Engineers and Plant Managers  
+**If** Reliability Engineers and Procurement Analysts at Asset Owners, and Quality Engineers at Recuperation Suppliers  
 **Attain** visibility of failure patterns that are not observable from individual work orders  
-**With** failure rate reports grouped by client and by component model.
+**With** failure rate and PCR compliance reports grouped by supplier, client, machine model and component type.
 ---
 
 ### 1.2.2.4. Lean UX Canvas.
