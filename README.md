@@ -323,6 +323,7 @@ A continuación se enumeran las creencias resultantes de la sesión de discusió
 4. Creemos que Innovacorp puede construir y operar la plataforma con tecnologías open source (Spring Boot, Angular, PostgreSQL) sin incurrir en costos de licenciamiento que comprometan el margen.
 5. Creemos que la integración con el equipo HVOF puede realizarse mediante un gateway que exponga la telemetría vía API REST, sin requerir modificar el PLC ni el software del fabricante del equipo.
 6. Creemos que el conocimiento del dominio industrial que posee el equipo constituye una barrera de entrada frente a competidores de software genérico de mantenimiento.
+7. Creemos que las mineras pagarán por una vista consolidada del desempeño de sus componentes recuperados porque ningún proveedor individual puede ofrecerles la comparación entre proveedores.
 
 **Business Outcome Assumptions**
 1. Creemos que el éxito se evidenciará en la cantidad de órdenes de trabajo cerradas en la plataforma con certificado de calidad emitido.
