@@ -436,6 +436,21 @@ Se formula un hypothesis statement por cada feature assumption enunciado en la s
 **With** failure rate and PCR compliance reports grouped by supplier, client, machine model and component type.
 ---
 
+**Hypothesis Statement 10. Vista consolidada multi-proveedor**
+
+**We believe we will achieve** adoption of the Asset Owner plan by mining companies
+**If** Reliability Engineers and Procurement Analysts at Asset Owners
+**Attain** a single view of every recovered component in operation, regardless of which supplier recovered it
+**With** a consolidated component view linked to each supplier's quality certificate and field-return record.
+---
+
+**Hypothesis Statement 11. Plantillas de reporte personalizables**
+
+**We believe we will achieve** an increase in reports generated and shared from the platform instead of rebuilt in spreadsheets
+**If** Quality Engineers and Reliability Engineers
+**Attain** reports that carry their organization's branding and show only the variables, views and units they need
+**With** customizable report templates that can be shared within the organization.
+
 ### 1.2.2.4. Lean UX Canvas.
 
 A continuación se presenta el Lean UX Canvas (versión 2, Jeff Gothelf) elaborado por el equipo, el cual consolida en un solo artefacto el problema de negocio, los resultados esperados, los usuarios, las soluciones propuestas y las hipótesis derivadas de las secciones anteriores. Los cuadros 7 y 8 establecen la prioridad de aprendizaje del equipo para el primer ciclo de validación.
