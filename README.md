@@ -358,10 +358,10 @@ A continuación se enumeran las creencias resultantes de la sesión de discusió
 3. Creemos que definir recetas por sistema HVOF con setpoints y bandas de umbral (calidad, advertencia y parada), vinculadas a los tipos y modelos de componente a los que aplican, permitirá detectar desviaciones de calidad que el PLC no alarma y advertir cuando la receta cargada no corresponde al componente de la orden.
 4. Creemos que un módulo de alertas en tiempo real notificará al responsable en el momento en que la desviación ocurre.
 5. Creemos que un catálogo configurable de reglas causa-efecto que identifique el subsistema o parte del sistema HVOF sospechoso reducirá el tiempo de diagnóstico.
-6. Creemos que la detección de patrones recurrentes de falla por componente permitirá anticipar problemas antes de que provoquen una parada mayor.
+6. Creemos que la detección de patrones recurrentes de falla por subsistema o parte permitirá anticipar problemas antes de que provoquen una parada mayor.
 7. Creemos que la generación exportable de certificados de calidad por orden de trabajo permitirá entregar evidencia documentada al cliente.
 8. Creemos que el registro de vida útil en campo contrastado contra el PCR comprometido permitirá evaluar el desempeño real del recubrimiento a lo largo del tiempo.
-9. Creemos que reportes de tasa de falla agrupados por cliente y por modelo de componente revelarán patrones que hoy no son visibles para la organización.
+9. Creemos que reportes de tasa de falla y cumplimiento de PCR agrupados por proveedor, cliente, modelo y tipo de componente revelarán patrones que hoy no son visibles para la organización.
 
 ### 1.2.2.3. Lean UX Hypothesis Statements.
 
