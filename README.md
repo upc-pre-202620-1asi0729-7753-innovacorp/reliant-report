@@ -19,7 +19,7 @@ Docente: Bautista Ubillús, Efrain Ricardo
 |------------|-------------------|------------------| 
 | u20241b962 | Navarro Aldoradin | Carolina Celeste |
 | u202421137 | Benjamin Bardales |  Benjamin Elias  |
-|            |                   |                  |
+| U2021f577  | Rivera Aguilar    | Scarlet Josefina |
 |            |                   |                  |
 |            |                   |                  |
 
