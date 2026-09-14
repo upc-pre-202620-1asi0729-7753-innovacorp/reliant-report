@@ -255,7 +255,7 @@ CR10 --> CD4
 
 CR11 --> CD5
 CR12 --> CD5
-CD5 --> PC
+
 PC --> ED6
 ED6 --> EF3
 ED6 --> EF4
@@ -264,6 +264,7 @@ CD1 --> PC
 CD2 --> PC
 CD3 --> PC
 CD4 --> PC
+CD5 --> PC
 
 %% Main problem
 
@@ -285,9 +286,9 @@ ED4 --> EF3
 %% Styles
 
 class PC central
-class CD1,CD2,CD3,CD4 causaDirecta
-class CR1,CR2,CR3,CR4,CR5,CR6,CR7,CR8,CR9,CR10 causaRaiz
-class ED1,ED2,ED3,ED4,ED5 efectoDirecto
+class CD1,CD2,CD3,CD4, CD5 causaDirecta
+class CR1,CR2,CR3,CR4,CR5,CR6,CR7,CR8,CR9,CR10, CR11, CR12, causaRaiz
+class ED1,ED2,ED3,ED4,ED5, ED6 efectoDirecto
 class EF1,EF2,EF3,EF4 efectoFinal
 ```
 
