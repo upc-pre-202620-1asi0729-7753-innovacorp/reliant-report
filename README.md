@@ -232,6 +232,7 @@ ED2["<b>E2.</b> Tiempo de diagnostico prolongado<br/>ante cada parada del equipo
 ED3["<b>E3.</b> Fallas recurrentes no detectadas<br/>ni atribuidas a un componente"]
 ED4["<b>E4.</b> Piezas recubiertas fuera de tolerancia<br/>sin que se advierta a tiempo"]
 ED5["<b>E5.</b> No se puede determinar el origen<br/>de una falla prematura en campo"]
+ED6["<b>E6.</b> Decisiones de contrato con proveedores<br/>basadas en percepcion, no en datos"]
 
 EF1["<b>EF1.</b> Paradas no planificadas<br/>y sobrecosto operativo"]
 EF2["<b>EF2.</b> Componentes que fallan<br/>antes de alcanzar su PCR"]
