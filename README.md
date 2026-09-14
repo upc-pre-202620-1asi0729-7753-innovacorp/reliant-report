@@ -253,6 +253,13 @@ CR8 --> CD3
 CR9 --> CD4
 CR10 --> CD4
 
+CR11 --> CD5
+CR12 --> CD5
+CD5 --> PC
+PC --> ED6
+ED6 --> EF3
+ED6 --> EF4
+
 CD1 --> PC
 CD2 --> PC
 CD3 --> PC
