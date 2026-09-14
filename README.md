@@ -895,7 +895,7 @@ La facilitadora (Carolina) presentó el objetivo, el alcance y los casos de uso 
 | Elemento | Definición acordada |
 |---|---|
 | Objetivo | Entender de extremo a extremo cómo un componente pasa por el proceso de recuperación HVOF y cómo se conoce su resultado en campo |
-| Alcance | Desde la recepción del componente del cliente hasta el registro de su retorno de campo y la evaluación contra el PCR. Incluye la operación de la celda HVOF y el diagnóstico de sus fallas. Excluye la gestión de mantenimiento correctivo/preventivo de la celda |
+| Alcance | Desde la recepción del componente del cliente hasta el registro de su retorno de campo y la evaluación contra el PCR. Incluye la operación del sistema HVOF y el diagnóstico de sus fallas. Excluye la gestión de mantenimiento correctivo/preventivo de la celda |
 | Casos de uso guía | (1) Recuperar un front rod de un cliente minero y entregarlo con evidencia de calidad. (2) Diagnosticar por qué la celda se detuvo durante una corrida. (3) Determinar si una pieza que falló en mina antes de su PCR fue mal recubierta |
 | Convenciones | Eventos en inglés, en pasado, en PascalCase. Un evento por post-it. Se permite duplicar; se depura al ordenar |
 
@@ -922,7 +922,7 @@ flowchart TB
         end
         subgraph R2[" "]
             direction LR
-            b1["HvofCellRegistered"]:::evento
+            b1["HvofSystemRegistered"]:::evento
             b2["PrematureFailureDetected"]:::evento
             b3["ParameterOutOfRangeDetected"]:::evento
             b4["RecuperationCreated"]:::evento
@@ -960,9 +960,10 @@ flowchart TB
             e3["ProcessReadingRecorded"]:::evento
             e4["TimedShutdownFaultTriggered"]:::evento
             e5["SessionReportGenerated"]:::evento
-            e6["HvofCellPartRegistered"]:::evento
+            e6["HvofSubsystemRegistered"]:::evento
             e7["ProbableCauseSuggested"]:::evento
             e8["UserAuthenticated"]:::evento
+            e9["HvofPartRegistered"]:::evento
         end
         subgraph R6[" "]
             direction LR
@@ -980,7 +981,7 @@ flowchart TB
             g1["FaultFlagActivated"]:::evento
             g2["PrematureFailureCorrelatedWithSession"]:::evento
             g3["DiagnosticRuleCreated"]:::evento
-            g4["HvofCellStatusChanged"]:::evento
+            g4["HvofSystemStatusChanged"]:::evento
             g5["FaultFrequencyReportGenerated"]:::evento
             g6["AlertEscalated"]:::evento
             g7["VisitorSubscribedToNewsletter"]:::evento
@@ -1105,7 +1106,7 @@ flowchart LR
     subgraph EX["Sistemas externos"]
         direction TB
         Gw["Gateway PLC<br/>(Raspberry Pi + pylogix / simulador)"]:::externo
-        Plc["PLC CompactLogix<br/>de la celda HVOF"]:::externo
+        Plc["PLC CompactLogix<br/>del sistema HVOF"]:::externo
         Mc["Mailchimp"]:::externo
     end
 
@@ -1245,7 +1246,7 @@ El evento descubierto, *CustomerLinkedToAssetOwnerOrganization*, resuelve una pr
 
 Al terminar la sesión el equipo evaluó los resultados contra los tres criterios que propone la guía:
 
-**Entendimiento compartido del dominio.** Los integrantes sin experiencia en planta pudieron narrar la historia completa del front rod sin ayuda al final de la sesión. La distinción entre *Component* (pieza del cliente) y *HVOF Cell Part* (parte de la máquina), que había generado confusión en reuniones previas, quedó resuelta.
+**Entendimiento compartido del dominio.** Los integrantes sin experiencia en planta pudieron narrar la historia completa del front rod sin ayuda al final de la sesión. La distinción entre *Component* (pieza del cliente) y *HVOF Part* (parte física de un subsistema del sistema HVOF), que había generado confusión en reuniones previas, quedó resuelta.
 
 **Problemas identificados.** Siete hotspots, seis resueltos en sesión y uno pendiente de validación externa. Las decisiones tomadas se convirtieron en criterios de aceptación, lo que evitó que las ambigüedades llegaran a la implementación.
 
@@ -1285,9 +1286,9 @@ Las definiciones de proceso y recubrimiento se basan en el glosario de proyecci�
 | **Asset Owner** (Propietario de activos) | Empresa, típicamente minera, dueña de los componentes que se envían a recuperar. Recibe la pieza recuperada, la pone en operación y conoce su desempeño real en campo. Es el segundo segmento objetivo. |
 | **Organization** (Organización) | Empresa registrada en la plataforma, ya sea como Recuperation Supplier o como Asset Owner. Cada organización tiene sus propios usuarios, celdas, componentes y suscripción. |
 | **Customer** (Cliente) | Empresa a la que un Recuperation Supplier le presta el servicio. Un Customer puede existir sin tener cuenta en la plataforma; cuando la misma empresa se registra como Asset Owner, ambos registros se vinculan por RUC. |
-| **HVOF Operator** (Operador HVOF) | Técnico que opera la celda HVOF: inicia y finaliza las corridas, monta la pieza y atiende las alertas durante la operación. |
+| **HVOF Operator** (Operador HVOF) | Técnico que opera el sistema HVOF: inicia y finaliza las corridas, monta la pieza y atiende las alertas durante la operación. |
 | **Operation Supervisor** (Supervisor de operación) | Responsable del flujo de trabajo del taller: registra clientes y órdenes de recuperación, cierra las órdenes y valida los reportes de sesión. |
-| **Machine Maintenance Supervisor** (Supervisor de mantenimiento de máquina) | Responsable de la disponibilidad de la celda HVOF: registra la celda y sus partes, carga y confirma el mapeo de tags del PLC, y confirma la causa raíz de los casos de falla. |
+| **Machine Maintenance Supervisor** (Supervisor de mantenimiento de máquina) | Responsable de la disponibilidad del sistema HVOF: registra la celda y sus partes, carga y confirma el mapeo de tags del PLC, y confirma la causa raíz de los casos de falla. |
 | **Quality Engineer** (Ingeniero de calidad) | Responsable de que el recubrimiento cumpla la especificación: define rangos nominales, PCR objetivo y reglas de diagnóstico, y emite los certificados de calidad. |
 | **Reliability Engineer** (Ingeniero de confiabilidad) | Especialista del Asset Owner que da seguimiento a la vida útil de los componentes en operación y registra su retorno de campo. |
 | **Procurement Analyst** (Analista de compras) | Responsable del Asset Owner que evalúa el desempeño de los proveedores de recuperación para sustentar decisiones contractuales. |
@@ -1323,14 +1324,14 @@ Las definiciones de proceso y recubrimiento se basan en el glosario de proyecci�
 | **PCR Compliance Rate** (Tasa de cumplimiento de PCR) | Proporción de componentes que alcanzaron su PCR sobre el total de componentes retornados en un periodo. Puede calcularse por proveedor, por modelo de máquina o por tipo de componente. |
 | **Supplier Performance** (Desempeño de proveedor) | Evaluación que hace el Asset Owner de un Recuperation Supplier en función de la tasa de cumplimiento de PCR de los componentes que este recuperó. |
 
-### 2.5.4. Celda HVOF y sus partes
+### 2.5.4. Sistema HVOF y sus partes
 
 | Término | Definición |
 |---|---|
 | **HVOF — High Velocity Oxygen Fuel** | Proceso de proyección térmica en el que un polvo metálico es fundido y proyectado a alta velocidad mediante la combustión de oxígeno y combustible, para depositar una capa protectora sobre la superficie de un componente. |
 | **Thermal Spray** (Proyección térmica) | Familia de procesos de recubrimiento a la que pertenece HVOF. En este dominio se usa como sinónimo del proceso de recuperación. |
-| **HVOF Cell** (Celda HVOF) | Unidad completa de equipo que ejecuta el proceso: pistola, alimentador, sistema de gases, manipulador de ejes, colector de polvo y PLC de control. Es el activo que el Recuperation Supplier opera y que la plataforma monitorea. |
-| **HVOF Cell Part** (Parte de la celda) | Componente físico de la celda HVOF que puede ser origen de una falla: feeder, hopper, spindle, ejes, dust collector, nozzle, unidad de enfriamiento. **No debe confundirse con Component**, que es la pieza del cliente. |
+| **HVOF System** (Sistema HVOF) | Unidad completa de equipo que ejecuta el proceso: pistola, alimentador, sistema de gases, manipulador de ejes, colector de polvo y PLC de control. Es el activo que el Recuperation Supplier opera y que la plataforma monitorea. |
+| **HVOF Subsystem / HVOF Part** (Subsistema o parte del sistema) | Subsistema del sistema HVOF (feeder, consola de gases, chiller, ejes…) y parte física dentro de él, que puede ser origen de una falla: feeder, hopper, spindle, ejes, dust collector, nozzle, unidad de enfriamiento. **No debe confundirse con Component**, que es la pieza del cliente. |
 | **Powder Feeder** (Alimentador de polvo) | Parte que dosifica el polvo metálico hacia la pistola a una tasa controlada. Su falla más frecuente es la detención por feedrate cero. |
 | **Hopper** (Tolva) | Depósito de polvo que alimenta al feeder. Una sobrepresión en la tolva indica bloqueo aguas abajo. |
 | **Spindle** (Husillo) | Eje rotatorio que hace girar el componente durante el rociado para lograr un recubrimiento uniforme. |
