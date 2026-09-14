@@ -225,6 +225,7 @@ CD1["<b>C1.</b> Perdida de trazabilidad<br/>del proceso de rociado"]
 CD2["<b>C2.</b> Diagnostico de fallas dependiente<br/>del conocimiento tacito de pocas personas"]
 CD3["<b>C3.</b> Imposibilidad de analisis retrospectivo<br/>del desempeno en campo contra el PCR"]
 CD4["<b>C4.</b> Deteccion tardia de desviaciones<br/>durante la operacion"]
+CD5["<b>C5.</b> Sin vista consolidada del desempeno<br/>de componentes por proveedor"]
 
 ED1["<b>E1.</b> Imposible emitir evidencia documentada<br/>de calidad al cliente minero"]
 ED2["<b>E2.</b> Tiempo de diagnostico prolongado<br/>ante cada parada del equipo"]
