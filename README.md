@@ -216,8 +216,8 @@ CR6["El diagnostico exige revision manual<br/>de logs crudos del PLC"]
 CR7["El PCR comprometido no se registra<br/>de forma digital ni consultable"]
 CR8["El retorno de la pieza desde mina<br/>no se vincula a su sesion de rociado"]
 
-CR9["Los umbrales nominales por equipo<br/>no estan parametrizados en el sistema"]
-CR10["La desviacion depende de que el operador<br/>la advierta en el tablero de la maquina"]
+CR9["Las recetas del controlador definen umbrales<br/>de seguridad, pero no la banda de calidad<br/>que exige el cliente"]
+CR10["El PLC solo alarma al cruzar el umbral de parada;<br/>una desviacion dentro de ese margen<br/>pasa inadvertida"]
 CR11["Cada proveedor entrega su evidencia<br/>en su propio formato"]
 CR12["El retorno de campo se registra en hojas<br/>de calculo, sin vinculo con la pieza"]
 
