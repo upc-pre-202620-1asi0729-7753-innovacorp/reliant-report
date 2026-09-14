@@ -332,6 +332,7 @@ A continuación se enumeran las creencias resultantes de la sesión de discusió
 4. Creemos que el éxito se evidenciará en el número de componentes retornados de campo cuyo desempeño real fue registrado y contrastado contra su PCR.
 5. Creemos que el éxito se evidenciará en la cantidad de sesiones de rociado registradas por mes y por sistema HVOF, como indicador de adopción sostenida.
 6. Creemos que el éxito se evidenciará en la reducción del número de reclamos de clientes por fallas prematuras que no pudieron ser explicadas.
+7. Creemos que el éxito se evidenciará en el número de organizaciones Asset Owner que consultan el reporte de cumplimiento de PCR por proveedor para sustentar una decisión contractual.
 
 **User Assumptions**
 1. Creemos que el usuario principal del segmento de empresas de servicio es el Ingeniero de Calidad o Jefe de Procesos, responsable de que el recubrimiento cumpla las especificaciones acordadas con el cliente.
