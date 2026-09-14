@@ -355,7 +355,7 @@ A continuación se enumeran las creencias resultantes de la sesión de discusió
 **Feature Assumptions**
 1. Creemos que un endpoint REST de ingesta de telemetría que registre las lecturas de proceso durante la sesión de rociado permitirá conservar el dato que hoy se pierde.
 2. Creemos que vincular cada sesión de rociado con su OF, WO, cliente y modelo de componente permitirá reconstruir la historia completa de cualquier pieza.
-3. Creemos que permitir la configuración de rangos nominales por equipo y la detección automática de desviaciones permitirá identificar condiciones fuera de tolerancia sin depender de la vigilancia del operador.
+3. Creemos que definir recetas por sistema HVOF con setpoints y bandas de umbral (calidad, advertencia y parada), vinculadas a los tipos y modelos de componente a los que aplican, permitirá detectar desviaciones de calidad que el PLC no alarma y advertir cuando la receta cargada no corresponde al componente de la orden.
 4. Creemos que un módulo de alertas en tiempo real notificará al responsable en el momento en que la desviación ocurre.
 5. Creemos que un catálogo configurable de reglas causa-efecto que identifique el subsistema o parte del sistema HVOF responsable sospechoso reducirá el tiempo de diagnóstico.
 6. Creemos que la detección de patrones recurrentes de falla por componente permitirá anticipar problemas antes de que provoquen una parada mayor.
