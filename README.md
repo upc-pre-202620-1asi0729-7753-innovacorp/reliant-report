@@ -18,7 +18,7 @@ Docente: Bautista Ubillús, Efrain Ricardo
 | Código     | Apellidos         | Nombres          |
 |------------|-------------------|------------------| 
 | u20241b962 | Navarro Aldoradin | Carolina Celeste |
-|            |                   |                  |
+| u20241f577 | Rivera Aguilar    | Scarlet Josefina |
 |            |                   |                  |
 |            |                   |                  |
 |            |                   |                  |
