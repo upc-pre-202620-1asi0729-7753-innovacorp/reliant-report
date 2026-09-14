@@ -362,6 +362,8 @@ A continuación se enumeran las creencias resultantes de la sesión de discusió
 7. Creemos que la generación exportable de certificados de calidad por orden de trabajo permitirá entregar evidencia documentada al cliente.
 8. Creemos que el registro de vida útil en campo contrastado contra el PCR comprometido permitirá evaluar el desempeño real del recubrimiento a lo largo del tiempo.
 9. Creemos que reportes de tasa de falla y cumplimiento de PCR agrupados por proveedor, cliente, modelo y tipo de componente revelarán patrones que hoy no son visibles para la organización.
+10. Creemos que una vista consolidada de todos los componentes recuperados de una minera, sin importar qué proveedor los trabajó, eliminará el cruce manual de información entre formatos distintos.
+11. Creemos que plantillas de reporte personalizables con logo, layout, variables, tipos de vista y unidades, compartibles dentro de la organización, harán que los reportes se adopten en lugar de rehacerse en Excel.
 
 ### 1.2.2.3. Lean UX Hypothesis Statements.
 
