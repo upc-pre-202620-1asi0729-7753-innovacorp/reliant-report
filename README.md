@@ -344,7 +344,7 @@ A continuación se enumeran las creencias resultantes de la sesión de discusió
 
 **User Outcome and Benefit Assumptions**
 1. Creemos que el Ingeniero de Calidad busca poder respaldar ante su cliente que un lote fue recubierto dentro de tolerancias, sin depender de reconstruir información desde registros dispersos.
-2. Creemos que el Jefe de Mantenimiento busca reducir el tiempo que dedica a determinar por qué se detuvo el equipo.
+2. Creemos que el Supervisor de Mantenimiento de máquina busca reducir el tiempo que dedica a determinar por qué se detuvo el sistema HVOF.
 3. Creemos que ambos perfiles buscan anticipar fallas recurrentes antes de que impacten una ventana de producción comprometida.
 4. Creemos que el usuario obtiene valor al poder responder, frente a una falla prematura en campo, si el origen estuvo en el proceso de recubrimiento o fue ajeno a él.
 5. Creemos que el usuario valora que el conocimiento sobre fallas quede registrado en el sistema y no dependa de la permanencia de un especialista en la organización.
