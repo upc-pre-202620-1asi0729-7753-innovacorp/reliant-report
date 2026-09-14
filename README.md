@@ -330,7 +330,7 @@ A continuación se enumeran las creencias resultantes de la sesión de discusió
 2. Creemos que el éxito se evidenciará en la reducción del tiempo promedio entre la ocurrencia de una falla y la identificación de su causa probable.
 3. Creemos que el éxito se evidenciará en la tasa de renovación de la suscripción al término del primer año.
 4. Creemos que el éxito se evidenciará en el número de componentes retornados de campo cuyo desempeño real fue registrado y contrastado contra su PCR.
-5. Creemos que el éxito se evidenciará en la cantidad de sesiones de rociado registradas por mes y por equipo, como indicador de adopción sostenida.
+5. Creemos que el éxito se evidenciará en la cantidad de sesiones de rociado registradas por mes y por sistema HVOF, como indicador de adopción sostenida.
 6. Creemos que el éxito se evidenciará en la reducción del número de reclamos de clientes por fallas prematuras que no pudieron ser explicadas.
 
 **User Assumptions**
