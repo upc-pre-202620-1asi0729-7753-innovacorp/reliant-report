@@ -7,12 +7,10 @@ skinparam nodesep 40
 skinparam ranksep 60
 hide empty members
 
-' ============================================================
-' SHARED KERNEL
-' ============================================================
+
 package "SharedKernel" #F5F5F5 {
 
-    package "domain" {
+    package "shared.domain" {
         abstract class AuditableModel {
             - id: Long
             - createdAt: Instant
@@ -30,6 +28,7 @@ package "SharedKernel" #F5F5F5 {
             - sourceContext: String
             - organizationId: Long
         }
+
 
         class PlcTimestamp <<Value Object>> {
             - epochMillis: long
@@ -59,6 +58,7 @@ package "SharedKernel" #F5F5F5 {
             MONTHLY
         }
         ReportingPeriod --> PeriodGroupingEnum
+
 
         class Unit <<Value Object>> {
             - symbol: String
@@ -113,13 +113,13 @@ package "SharedKernel" #F5F5F5 {
         Weight "1" --> "1" Unit : measuredIn
     }
 
-    package "application" {
+    package "shared.application" {
         interface IntegrationEventPublisher <<Port>> {
             + publish(event: IntegrationEvent): void
         }
     }
 
-    package "infrastructure" {
+    package "shared.infrastructure" {
         class SpringIntegrationEventPublisher <<Adapter>> {
             - applicationEventPublisher: ApplicationEventPublisher
             + publish(event: IntegrationEvent): void
@@ -140,7 +140,7 @@ package "SharedKernel" #F5F5F5 {
         IntegrationEventPublisher <|.. SpringIntegrationEventPublisher
     }
 
-    package "interfaces" {
+    package "shared.interfaces" {
         class HealthController <<REST>> {
             + health(): ResponseEntity
         }
@@ -158,12 +158,11 @@ package "SharedKernel" #F5F5F5 {
     }
 }
 
-' ============================================================
-' IAM
-' ============================================================
+
+
 package "IAM" #E8F0FE {
 
-    package "domain" {
+    package "iam.domain" {
         class Organization <<Aggregate Root>> {
             - name: String
             - ruc: Ruc
@@ -234,9 +233,24 @@ package "IAM" #E8F0FE {
         UserPreference --> UnitSystemEnum
         UnitOverride "1" --> "1" Unit : uses
         Role --> RoleEnum
+
+        ' ---- Repositorios (contratos) ----
+        interface OrganizationRepository <<Repository>> {
+            + findByRuc(ruc: Ruc): Optional<Organization>
+            + save(organization: Organization): Organization
+        }
+        interface UserRepository <<Repository>> {
+            + findByEmail(email: EmailAddress): Optional<User>
+            + findByOrganizationIdAndRolesName(organizationId: Long, role: RoleEnum): List<User>
+            + save(user: User): User
+        }
+        interface UserPreferenceRepository <<Repository>> {
+            + findByUserId(userId: Long): Optional<UserPreference>
+            + save(preference: UserPreference): UserPreference
+        }
     }
 
-    package "application" {
+    package "iam.application" {
         interface HashingService <<Port>> {
             + hash(raw: String): String
             + matches(raw: String, hashed: String): boolean
@@ -258,16 +272,24 @@ package "IAM" #E8F0FE {
         UserPreferenceCommandServiceImpl ..> UserPreference
     }
 
-    package "infrastructure" {
+    package "iam.infrastructure" {
         class BCryptHashingService <<Adapter>>
         class JwtTokenService <<Adapter>>
         class JwtAuthenticationFilter <<Adapter>>
         HashingService <|.. BCryptHashingService
         TokenService <|.. JwtTokenService
         JwtAuthenticationFilter ..> TokenService
+
+
+        interface JpaOrganizationRepository <<Spring Data>>
+        interface JpaUserRepository <<Spring Data>>
+        interface JpaUserPreferenceRepository <<Spring Data>>
+        OrganizationRepository <|-- JpaOrganizationRepository
+        UserRepository <|-- JpaUserRepository
+        UserPreferenceRepository <|-- JpaUserPreferenceRepository
     }
 
-    package "interfaces" {
+    package "iam.interfaces" {
         class AuthenticationController <<REST>>
         class UserPreferenceController <<REST>>
         class IamContextFacade <<Open Host Service>> {
@@ -289,14 +311,21 @@ package "IAM" #E8F0FE {
         IamContextFacade ..> User
         IamContextFacade ..> UserPreference
         IntegrationEvent <|-- OrganizationRegisteredIntegrationEvent
+        ' ---- Uso de repositorios ----
+        UserCommandServiceImpl ..> UserRepository
+        UserCommandServiceImpl ..> OrganizationRepository
+        UserPreferenceCommandServiceImpl ..> UserPreferenceRepository
+        IamContextFacade ..> OrganizationRepository
+        IamContextFacade ..> UserRepository
+        IamContextFacade ..> UserPreferenceRepository
     }
 }
 
-' ============================================================
-' BILLING
-' ============================================================
+
+
+
 package "Billing" #FFF8E1 {
-    package "domain" {
+    package "billing.domain" {
         class Plan <<Aggregate Root>> {
             - name: String
             - planType: PlanTypeEnum
@@ -328,8 +357,18 @@ package "Billing" #FFF8E1 {
         Plan --> PlanTypeEnum
         Subscription "*" --> "1" Plan : subscribedTo
         Subscription --> SubscriptionStatusEnum
+
+
+        interface PlanRepository <<Repository>> {
+            + findByPlanType(planType: PlanTypeEnum): List<Plan>
+            + save(plan: Plan): Plan
+        }
+        interface SubscriptionRepository <<Repository>> {
+            + findByOrganizationIdAndStatus(organizationId: Long, status: SubscriptionStatusEnum): Optional<Subscription>
+            + save(subscription: Subscription): Subscription
+        }
     }
-    package "application" {
+    package "billing.application" {
         class "ExternalIamService" as bilExtIam <<ACL>> {
             + fetchOrganizationType(organizationId: Long): Optional<String>
         }
@@ -338,7 +377,15 @@ package "Billing" #FFF8E1 {
         SubscriptionCommandServiceImpl ..> Subscription
         bilExtIam ..> IamContextFacade : «ACL»
     }
-    package "interfaces" {
+    package "billing.infrastructure" {
+
+        interface JpaPlanRepository <<Spring Data>>
+        interface JpaSubscriptionRepository <<Spring Data>>
+        PlanRepository <|-- JpaPlanRepository
+        SubscriptionRepository <|-- JpaSubscriptionRepository
+    }
+
+    package "billing.interfaces" {
         class SubscriptionController <<REST>>
         class BillingContextFacade <<Open Host Service>> {
             + hasActiveSubscription(organizationId: Long): boolean
@@ -346,15 +393,17 @@ package "Billing" #FFF8E1 {
         }
         SubscriptionController ..> SubscriptionCommandServiceImpl
         BillingContextFacade ..> Subscription
+
+        SubscriptionCommandServiceImpl ..> SubscriptionRepository
+        SubscriptionCommandServiceImpl ..> PlanRepository
+        BillingContextFacade ..> SubscriptionRepository
     }
 }
 
-' ============================================================
-' EQUIPMENT
-' ============================================================
+
 package "Equipment" #E8F5E9 {
 
-    package "domain" {
+    package "equipment.domain" {
 
         class HVOFSystem <<Aggregate Root>> {
             - code: String
@@ -417,6 +466,14 @@ package "Equipment" #E8F5E9 {
             - supportedProtocols: Set<ProtocolEnum>
             + validatePartNumber(): void
         }
+        class IpAddressV4 <<Value Object>> {
+            - value: String
+            + {static} of(value: String): IpAddressV4
+            + octets(): int[]
+            + isPrivate(): boolean
+            + isLoopback(): boolean
+            + isInSameSubnetAs(other: IpAddressV4, prefixLength: int): boolean
+        }
         class NetworkEndpoint <<Value Object>> {
             - ipAddress: IpAddressV4
             - port: Integer
@@ -425,17 +482,6 @@ package "Equipment" #E8F5E9 {
             - endpointUrl: String
             + validateFor(protocol: ProtocolEnum): void
         }
-
-        class IpAddressV4 <<Value Object>> {
-            - value: String
-            + {static} of(value: String): IpAddressV4
-            + octets(): int[]
-            + isPrivate(): boolean
-            + isLoopback(): boolean
-            + isInSameSubnetAs(other: IpAddressV4, prefixLength: int): boolean
-            + toString(): String
-        }
-
         class TagMapping <<Value Object>> {
             - tagPath: String
             - controllerId: Long
@@ -448,7 +494,7 @@ package "Equipment" #E8F5E9 {
             - confirmed: boolean
         }
 
-        ' ---- Receta: setpoints y bandas de umbral ----
+
         class Recipe <<Aggregate Root>> {
             - hvofSystemId: Long
             - recipeNumber: Integer
@@ -485,7 +531,7 @@ package "Equipment" #E8F5E9 {
             + bandFor(value: BigDecimal): ThresholdBandEnum
         }
 
-        ' ---- Catálogo de tags: un aggregate por controlador ----
+
         class ControllerTagCatalog <<Aggregate Root>> {
             - controllerId: Long
             - manufacturer: ControllerManufacturerEnum
@@ -694,6 +740,7 @@ package "Equipment" #E8F5E9 {
         HvofPart --> HvofPartTypeEnum
         Controller "1" --> "1" DeviceInfo : describedBy
         Controller "1" --> "1" NetworkEndpoint : reachableAt
+        NetworkEndpoint "1" --> "1" IpAddressV4 : at
         Controller --> DeviceTypeEnum
         Controller ..> ControllerTagCatalog : catalogedBy (por id)
         DeviceInfo --> ControllerManufacturerEnum
@@ -720,10 +767,29 @@ package "Equipment" #E8F5E9 {
         TagMappingRule --> HvofSubsystemTypeEnum
         TagMappingRule --> TagKindEnum
         TagMappingRule --> StatusRoleEnum
-        NetworkEndpoint "1" --> "1" IpAddressV4 : has
+
+
+        interface HVOFSystemRepository <<Repository>> {
+            + findByOrganizationId(organizationId: Long): List<HVOFSystem>
+            + existsByOrganizationIdAndCode(organizationId: Long, code: String): boolean
+            + save(system: HVOFSystem): HVOFSystem
+        }
+        interface RecipeRepository <<Repository>> {
+            + findByHvofSystemIdAndRecipeNumber(systemId: Long, recipeNumber: Integer): Optional<Recipe>
+            + findByHvofSystemId(systemId: Long): List<Recipe>
+            + save(recipe: Recipe): Recipe
+        }
+        interface ControllerTagCatalogRepository <<Repository>> {
+            + findByControllerId(controllerId: Long): Optional<ControllerTagCatalog>
+            + save(catalog: ControllerTagCatalog): ControllerTagCatalog
+        }
+        interface TagMappingRuleRepository <<Repository>> {
+            + findAllByOrderByPriorityAsc(): List<TagMappingRule>
+            + save(rule: TagMappingRule): TagMappingRule
+        }
     }
 
-    package "application" {
+    package "equipment.application" {
         class "ExternalBillingService" as eqExtBilling <<ACL>> {
             + canRegisterAnotherSystem(organizationId: Long): boolean
         }
@@ -744,7 +810,7 @@ package "Equipment" #E8F5E9 {
         eqExtBilling ..> BillingContextFacade : «ACL»
     }
 
-    package "infrastructure" {
+    package "equipment.infrastructure" {
         interface TagFileParser <<Port>> {
             + parse(file: MultipartFile): List<ImportedTagRow>
         }
@@ -753,9 +819,19 @@ package "Equipment" #E8F5E9 {
         TagFileParser <|.. Studio5000CsvTagFileParser
         TagFileParser <|.. JsonTagFileParser
         HvofSystemCommandServiceImpl ..> TagFileParser
+
+
+        interface JpaHVOFSystemRepository <<Spring Data>>
+        interface JpaRecipeRepository <<Spring Data>>
+        interface JpaControllerTagCatalogRepository <<Spring Data>>
+        interface JpaTagMappingRuleRepository <<Spring Data>>
+        HVOFSystemRepository <|-- JpaHVOFSystemRepository
+        RecipeRepository <|-- JpaRecipeRepository
+        ControllerTagCatalogRepository <|-- JpaControllerTagCatalogRepository
+        TagMappingRuleRepository <|-- JpaTagMappingRuleRepository
     }
 
-    package "interfaces" {
+    package "equipment.interfaces" {
         class HvofSystemController <<REST>>
         class RecipeController <<REST>>
         class EquipmentContextFacade <<Open Host Service>> {
@@ -772,15 +848,21 @@ package "Equipment" #E8F5E9 {
         RecipeController ..> RecipeCommandServiceImpl
         EquipmentContextFacade ..> HVOFSystem
         EquipmentContextFacade ..> Recipe
+
+        HvofSystemCommandServiceImpl ..> HVOFSystemRepository
+        HvofSystemCommandServiceImpl ..> ControllerTagCatalogRepository
+        HvofSystemCommandServiceImpl ..> TagMappingRuleRepository
+        RecipeCommandServiceImpl ..> RecipeRepository
+        EquipmentContextFacade ..> HVOFSystemRepository
+        EquipmentContextFacade ..> RecipeRepository
     }
 }
 
-' ============================================================
-' TRACEABILITY
-' ============================================================
+
+
 package "Traceability" #FCE4EC {
 
-    package "domain" {
+    package "traceability.domain" {
         class Customer <<Aggregate Root>> {
             - supplierOrganizationId: Long
             - linkedAssetOwnerOrganizationId: Long
@@ -889,9 +971,27 @@ package "Traceability" #FCE4EC {
         Recuperation "1" --> "1" Weight : weighs
         Recuperation --> RecuperationStatusEnum
         MachineModel --> MachineManufacturerEnum
+
+
+        interface CustomerRepository <<Repository>> {
+            + findByRuc(ruc: Ruc): Optional<Customer>
+            + findBySupplierOrganizationId(organizationId: Long): List<Customer>
+            + save(customer: Customer): Customer
+        }
+        interface ComponentRepository <<Repository>> {
+            + findBySerialNumberAndCustomerId(serialNumber: String, customerId: Long): Optional<Component>
+            + findByCustomerIdAndStatus(customerId: Long, status: ComponentStatusEnum): List<Component>
+            + save(component: Component): Component
+        }
+        interface RecuperationRepository <<Repository>> {
+            + findByWorkOrderNumber(wo: WorkOrderNumber): Optional<Recuperation>
+            + existsByManufacturingOrderNumber(of: ManufacturingOrderNumber): boolean
+            + findByComponentId(componentId: Long): List<Recuperation>
+            + save(recuperation: Recuperation): Recuperation
+        }
     }
 
-    package "application" {
+    package "traceability.application" {
         class "ExternalIamService" as trExtIam <<ACL>> {
             + fetchAssetOwnerOrganizationIdByRuc(ruc: String): Optional<Long>
         }
@@ -909,7 +1009,17 @@ package "Traceability" #FCE4EC {
         trExtIam ..> IamContextFacade : «ACL»
     }
 
-    package "interfaces" {
+    package "traceability.infrastructure" {
+
+        interface JpaCustomerRepository <<Spring Data>>
+        interface JpaComponentRepository <<Spring Data>>
+        interface JpaRecuperationRepository <<Spring Data>>
+        CustomerRepository <|-- JpaCustomerRepository
+        ComponentRepository <|-- JpaComponentRepository
+        RecuperationRepository <|-- JpaRecuperationRepository
+    }
+
+    package "traceability.interfaces" {
         class RecuperationController <<REST>>
         class ComponentController <<REST>>
         class TraceabilityContextFacade <<Open Host Service>> {
@@ -927,15 +1037,22 @@ package "Traceability" #FCE4EC {
         ComponentController ..> ComponentCommandServiceImpl
         TraceabilityContextFacade ..> Recuperation
         IntegrationEvent <|-- PrematureFailureDetectedIntegrationEvent
+
+        RecuperationCommandServiceImpl ..> RecuperationRepository
+        RecuperationCommandServiceImpl ..> ComponentRepository
+        ComponentCommandServiceImpl ..> ComponentRepository
+        trHandler ..> CustomerRepository
+        trHandler ..> RecuperationRepository
+        TraceabilityContextFacade ..> RecuperationRepository
+        TraceabilityContextFacade ..> ComponentRepository
     }
 }
 
-' ============================================================
-' PROCESS MONITORING
-' ============================================================
+
+
 package "ProcessMonitoring" #E0F7FA {
 
-    package "domain" {
+    package "processmonitoring.domain" {
         class SpraySession <<Aggregate Root>> {
             - hvofSystemId: Long
             - recuperationId: Long
@@ -1045,9 +1162,16 @@ package "ProcessMonitoring" #E0F7FA {
         ProcessReading "1" --> "1" PlcTimestamp : at
         ProcessReading "1" --> "1" Unit : measuredIn
         TelemetryBatch "1" o-- "1..*" ProcessReading : carries
+
+
+        interface SpraySessionRepository <<Repository>> {
+            + findByHvofSystemIdAndStatus(systemId: Long, status: SessionStatusEnum): Optional<SpraySession>
+            + findByRecuperationId(recuperationId: Long): List<SpraySession>
+            + save(session: SpraySession): SpraySession
+        }
     }
 
-    package "application" {
+    package "processmonitoring.application" {
         class "ExternalEquipmentService" as pmExtEquip <<ACL>> {
             + isSystemActive(systemId: Long): boolean
             + resolveTag(systemId: Long, tagPath: String): Optional<ResolvedTag>
@@ -1106,14 +1230,18 @@ package "ProcessMonitoring" #E0F7FA {
         pmExtIam ..> IamContextFacade : «ACL»
     }
 
-    package "infrastructure" {
+    package "processmonitoring.infrastructure" {
         class SpelExpressionEvaluator <<Adapter>> {
             + evaluate(expression: String, inputs: Map<String, BigDecimal>): BigDecimal
         }
         ExpressionEvaluator <|.. SpelExpressionEvaluator
+
+
+        interface JpaSpraySessionRepository <<Spring Data>>
+        SpraySessionRepository <|-- JpaSpraySessionRepository
     }
 
-    package "interfaces" {
+    package "processmonitoring.interfaces" {
         class SpraySessionController <<REST>> {
             + startSession(resource): ResponseEntity
             + ingestReadings(sessionId, resource): ResponseEntity
@@ -1165,15 +1293,18 @@ package "ProcessMonitoring" #E0F7FA {
         IntegrationEvent <|-- SpraySessionCompletedIntegrationEvent
         IntegrationEvent <|-- UnassignedSessionOpenedIntegrationEvent
         IntegrationEvent <|-- RecipeMismatchIntegrationEvent
+
+        SpraySessionCommandServiceImpl ..> SpraySessionRepository
+        SpraySessionQueryServiceImpl ..> SpraySessionRepository
+        ProcessMonitoringContextFacade ..> SpraySessionRepository
     }
 }
 
-' ============================================================
-' FAULT DIAGNOSIS
-' ============================================================
+
+
 package "FaultDiagnosis" #FFF3E0 {
 
-    package "domain" {
+    package "faultdiagnosis.domain" {
         class FaultCase <<Aggregate Root>> {
             - sessionId: Long
             - hvofSystemId: Long
@@ -1266,9 +1397,24 @@ package "FaultDiagnosis" #FFF3E0 {
         FaultPattern --> FaultTypeEnum
         FaultPattern "1" --> "1" TimeWindow : observedIn
         FaultPattern ..> RecurringFaultPatternDetectedEvent : registers
+
+
+        interface FaultCaseRepository <<Repository>> {
+            + findBySessionIdAndFaultTypeAndStatusNot(sessionId: Long, type: FaultTypeEnum, status: FaultCaseStatusEnum): Optional<FaultCase>
+            + findByHvofSystemIdAndDetectedAtBetween(systemId: Long, from: Instant, to: Instant): List<FaultCase>
+            + save(faultCase: FaultCase): FaultCase
+        }
+        interface DiagnosticRuleRepository <<Repository>> {
+            + findByActiveTrueOrderByPriorityAsc(): List<DiagnosticRule>
+            + save(rule: DiagnosticRule): DiagnosticRule
+        }
+        interface FaultPatternRepository <<Repository>> {
+            + findByHvofSystemIdAndSuspectPartIdAndFaultType(systemId: Long, partId: Long, type: FaultTypeEnum): Optional<FaultPattern>
+            + save(pattern: FaultPattern): FaultPattern
+        }
     }
 
-    package "application" {
+    package "faultdiagnosis.application" {
         class "ExternalEquipmentService" as fdExtEquip <<ACL>> {
             + fetchSubsystemAndPart(systemId: Long, subsystemId: Long, partId: Long): Optional<SubsystemPart>
             + fetchPartIdByType(systemId: Long, subsystemType: String, partType: String): Optional<Long>
@@ -1291,7 +1437,17 @@ package "FaultDiagnosis" #FFF3E0 {
         fdExtEquip ..> EquipmentContextFacade : «ACL»
     }
 
-    package "interfaces" {
+    package "faultdiagnosis.infrastructure" {
+
+        interface JpaFaultCaseRepository <<Spring Data>>
+        interface JpaDiagnosticRuleRepository <<Spring Data>>
+        interface JpaFaultPatternRepository <<Spring Data>>
+        FaultCaseRepository <|-- JpaFaultCaseRepository
+        DiagnosticRuleRepository <|-- JpaDiagnosticRuleRepository
+        FaultPatternRepository <|-- JpaFaultPatternRepository
+    }
+
+    package "faultdiagnosis.interfaces" {
         class FaultCaseController <<REST>>
         class DiagnosticRuleController <<REST>>
         class FaultDiagnosisContextFacade <<Open Host Service>> {
@@ -1315,15 +1471,19 @@ package "FaultDiagnosis" #FFF3E0 {
         FaultDiagnosisContextFacade ..> FaultCase
         IntegrationEvent <|-- FaultCaseOpenedIntegrationEvent
         IntegrationEvent <|-- RecurringFaultPatternIntegrationEvent
+
+        FaultCaseCommandServiceImpl ..> FaultCaseRepository
+        FaultCaseCommandServiceImpl ..> DiagnosticRuleRepository
+        FaultCaseCommandServiceImpl ..> FaultPatternRepository
+        DiagnosticRuleController ..> DiagnosticRuleRepository
+        FaultDiagnosisContextFacade ..> FaultCaseRepository
     }
 }
 
-' ============================================================
-' NOTIFICATIONS
-' ============================================================
+
 package "Notifications" #EDE7F6 {
 
-    package "domain" {
+    package "notifications.domain" {
         class Alert <<Aggregate Root>> {
             - organizationId: Long
             - recipientUserId: Long
@@ -1374,9 +1534,22 @@ package "Notifications" #EDE7F6 {
         Alert --> SeverityEnum
         Alert --> AlertStatusEnum
         NotificationPreference --> ChannelEnum
+
+        interface AlertRepository <<Repository>> {
+            + findByRecipientUserIdAndStatus(userId: Long, status: AlertStatusEnum): List<Alert>
+            + save(alert: Alert): Alert
+        }
+        interface NotificationPreferenceRepository <<Repository>> {
+            + findByUserId(userId: Long): Optional<NotificationPreference>
+            + save(preference: NotificationPreference): NotificationPreference
+        }
+        interface NewsletterSubscriptionRepository <<Repository>> {
+            + existsByEmail(email: String): boolean
+            + save(subscription: NewsletterSubscription): NewsletterSubscription
+        }
     }
 
-    package "application" {
+    package "notifications.application" {
         class "ExternalIamService" as ntExtIam <<ACL>> {
             + fetchUserIdsByRole(organizationId: Long, role: String): List<Long>
             + fetchUserEmail(userId: Long): Optional<String>
@@ -1404,28 +1577,37 @@ package "Notifications" #EDE7F6 {
         ntExtIam ..> IamContextFacade : «ACL»
     }
 
-    package "infrastructure" {
+    package "notifications.infrastructure" {
         class MailchimpNotificationDeliveryAdapter <<Adapter>>
         class MailchimpNewsletterAdapter <<Adapter>>
         NotificationDeliveryPort <|.. MailchimpNotificationDeliveryAdapter
         NewsletterPort <|.. MailchimpNewsletterAdapter
+
+        interface JpaAlertRepository <<Spring Data>>
+        interface JpaNotificationPreferenceRepository <<Spring Data>>
+        interface JpaNewsletterSubscriptionRepository <<Spring Data>>
+        AlertRepository <|-- JpaAlertRepository
+        NotificationPreferenceRepository <|-- JpaNotificationPreferenceRepository
+        NewsletterSubscriptionRepository <|-- JpaNewsletterSubscriptionRepository
     }
 
-    package "interfaces" {
+    package "notifications.interfaces" {
         class AlertController <<REST>>
         class NewsletterController <<REST>>
         AlertController ..> AlertCommandServiceImpl
         NewsletterController ..> NewsletterPort
         NewsletterController ..> NewsletterSubscription
+        ' ---- Uso de repositorios ----
+        AlertCommandServiceImpl ..> AlertRepository
+        AlertCommandServiceImpl ..> NotificationPreferenceRepository
+        NewsletterController ..> NewsletterSubscriptionRepository
     }
 }
 
-' ============================================================
-' REPORTING
-' ============================================================
+
 package "Reporting" #F1F8E9 {
 
-    package "domain" {
+    package "reporting.domain" {
         class ReportingEvent <<Aggregate Root>> {
             - eventType: String
             - sourceContext: String
@@ -1484,7 +1666,6 @@ package "Reporting" #F1F8E9 {
         PcrComplianceReport "1" --> "1" ReportingPeriod : covers
         PcrComplianceReport --> ReportGroupingEnum
 
-        ' ---- Plantillas de reporte personalizables ----
         class ReportTemplate <<Aggregate Root>> {
             - organizationId: Long
             - ownerUserId: Long
@@ -1627,9 +1808,30 @@ package "Reporting" #F1F8E9 {
         GeneratedReport "*" --> "1" ReportTemplate : renderedFrom
         GeneratedReport "1" --> "1" ReportingPeriod : covers
         GeneratedReport --> ReportFormatEnum
+
+        interface ReportingEventRepository <<Repository>> {
+            + findByOrganizationIdAndOccurredAtBetween(organizationId: Long, from: Instant, to: Instant): List<ReportingEvent>
+            + save(event: ReportingEvent): ReportingEvent
+        }
+        interface QualityCertificateRepository <<Repository>> {
+            + findByRecuperationId(recuperationId: Long): Optional<QualityCertificate>
+            + save(certificate: QualityCertificate): QualityCertificate
+        }
+        interface PcrComplianceReportRepository <<Repository>> {
+            + save(report: PcrComplianceReport): PcrComplianceReport
+        }
+        interface ReportTemplateRepository <<Repository>> {
+            + findAccessibleBy(userId: Long, organizationId: Long): List<ReportTemplate>
+            + findByOrganizationIdAndReportKindAndDefaultForKindTrue(organizationId: Long, kind: ReportKindEnum): Optional<ReportTemplate>
+            + save(template: ReportTemplate): ReportTemplate
+        }
+        interface GeneratedReportRepository <<Repository>> {
+            + findByTemplateId(templateId: Long): List<GeneratedReport>
+            + save(report: GeneratedReport): GeneratedReport
+        }
     }
 
-    package "application" {
+    package "reporting.application" {
         class "ExternalProcessMonitoringService" as rpExtPm <<ACL>> {
             + fetchOutOfRangeSummary(sessionIds: List<Long>): List<ParameterComplianceSummary>
         }
@@ -1698,7 +1900,7 @@ package "Reporting" #F1F8E9 {
         rpExtFd ..> FaultDiagnosisContextFacade : «ACL»
     }
 
-    package "infrastructure" {
+    package "reporting.infrastructure" {
         class PdfReportRenderer <<Adapter>> {
             + render(template, data, format): byte[]
         }
@@ -1713,9 +1915,20 @@ package "Reporting" #F1F8E9 {
         ReportRenderer <|.. PdfReportRenderer
         ReportRenderer <|.. CsvReportRenderer
         ReportAssetStoragePort <|.. FileSystemAssetStorageAdapter
+
+        interface JpaReportingEventRepository <<Spring Data>>
+        interface JpaQualityCertificateRepository <<Spring Data>>
+        interface JpaPcrComplianceReportRepository <<Spring Data>>
+        interface JpaReportTemplateRepository <<Spring Data>>
+        interface JpaGeneratedReportRepository <<Spring Data>>
+        ReportingEventRepository <|-- JpaReportingEventRepository
+        QualityCertificateRepository <|-- JpaQualityCertificateRepository
+        PcrComplianceReportRepository <|-- JpaPcrComplianceReportRepository
+        ReportTemplateRepository <|-- JpaReportTemplateRepository
+        GeneratedReportRepository <|-- JpaGeneratedReportRepository
     }
 
-    package "interfaces" {
+    package "reporting.interfaces" {
         class QualityCertificateController <<REST>>
         class PcrComplianceReportController <<REST>>
         class ReportTemplateController <<REST>> {
@@ -1733,6 +1946,13 @@ package "Reporting" #F1F8E9 {
         PcrComplianceReportController ..> PcrComplianceReport
         ReportTemplateController ..> ReportTemplateCommandServiceImpl
         GeneratedReportController ..> ReportGenerationServiceImpl
+        ' ---- Uso de repositorios ----
+        rpHandler ..> ReportingEventRepository
+        QualityCertificateCommandServiceImpl ..> QualityCertificateRepository
+        ReportTemplateCommandServiceImpl ..> ReportTemplateRepository
+        ReportGenerationServiceImpl ..> ReportTemplateRepository
+        ReportGenerationServiceImpl ..> GeneratedReportRepository
+        PcrComplianceReportController ..> PcrComplianceReportRepository
     }
 }
 
@@ -1747,7 +1967,6 @@ FaultCaseOpenedIntegrationEvent ..> ntHandler : consumedBy
 RecurringFaultPatternIntegrationEvent ..> ntHandler : consumedBy
 PrematureFailureDetectedIntegrationEvent ..> ntHandler : consumedBy
 IntegrationEvent ..> rpHandler : allConsumedBy
-
 
 AuditableAbstractAggregateRoot <|-- Organization
 AuditableAbstractAggregateRoot <|-- User
