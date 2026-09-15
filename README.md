@@ -846,8 +846,7 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 
 ## 2.4. Big Picture Event Storming.
 
-
-En esta sección se introduce y resume el proceso realizado por nuestro equipo, presentando las evidencias y explicaciones de las etapas del Big Picture Event Storming. En una sesión colaborativa, nuestro equipo se enfocó en entender el dominio del negocio en general, plasmando los eventos significativos y sus relaciones. Es una primera aproximación visual de alto nivel que explora el landscape del negocio, identificando procesos clave, exponiendo potenciales problemas u oportunidades del procesos de recuperación de componentes mediante recubrimiento HVOF, desde la recepción de la pieza del cliente hasta la evaluación de su desempeño en campo. La sesión siguió la guía paso a paso del Event Storming Journal (Bourgau, 2022) y fue documentada con diagramas Mermaid, alternativa permitida por el enunciado del proyecto para Diagram-as-Code. Se conservó la convención de colores del método: naranja para Domain Events, amarillo para Actors, azul para External Systems y rosado para Problems (hotspots).
+En esta sección se introduce y resume el proceso realizado por nuestro equipo, presentando las evidencias y explicaciones de las etapas del Big Picture Event Storming. En una sesión colaborativa, nuestro equipo se enfocó en entender el dominio del negocio en general, plasmando los eventos significativos y sus relaciones. Es una primera aproximación visual de alto nivel que explora el landscape del negocio, identificando procesos clave y exponiendo potenciales problemas u oportunidades del proceso de recuperación de componentes mediante recubrimiento HVOF, desde la recepción de la pieza del cliente hasta la evaluación de su desempeño en campo. La sesión siguió la guía paso a paso del Event Storming Journal (Bourgau, 2022) y fue documentada con diagramas Mermaid, alternativa permitida por el enunciado del proyecto para Diagram-as-Code. Se conservó la convención de colores del método: naranja para Domain Events, amarillo para Actors, azul para External Systems y rosado para Problems (hotspots).
 
 ### Paso 1. Preparación del tablero
 
@@ -884,6 +883,7 @@ flowchart LR
         S0 -.- EX
     end
 ```
+
 ### Paso 2. Energizante
 
 La sesión inició con una dinámica breve de cinco minutos en la que cada integrante describió, en una frase y sin usar términos técnicos, qué pasa con una pieza minera desde que se desgasta hasta que vuelve a operar. El ejercicio sirvió para nivelar el vocabulario entre los integrantes con experiencia en planta y los que no la tenían, y para dejar claro desde el inicio que el tablero se llenaría con hechos del negocio y no con funciones de software.
@@ -895,13 +895,13 @@ La facilitadora (Carolina) presentó el objetivo, el alcance y los casos de uso 
 | Elemento | Definición acordada |
 |---|---|
 | Objetivo | Entender de extremo a extremo cómo un componente pasa por el proceso de recuperación HVOF y cómo se conoce su resultado en campo |
-| Alcance | Desde la recepción del componente del cliente hasta el registro de su retorno de campo y la evaluación contra el PCR. Incluye la operación de la celda HVOF y el diagnóstico de sus fallas. Excluye la gestión de mantenimiento correctivo/preventivo de la celda |
-| Casos de uso guía | (1) Recuperar un front rod de un cliente minero y entregarlo con evidencia de calidad. (2) Diagnosticar por qué la celda se detuvo durante una corrida. (3) Determinar si una pieza que falló en mina antes de su PCR fue mal recubierta |
+| Alcance | Desde la recepción del componente del cliente hasta el registro de su retorno de campo y la evaluación contra el PCR. Incluye la operación del sistema HVOF y el diagnóstico de sus fallas. Excluye la gestión de mantenimiento correctivo/preventivo del sistema HVOF |
+| Casos de uso guía | (1) Recuperar un front rod de un cliente minero y entregarlo con evidencia de calidad. (2) Diagnosticar por qué el sistema HVOF se detuvo durante una corrida. (3) Determinar si una pieza que falló en mina antes de su PCR fue mal recubierta |
 | Convenciones | Eventos en inglés, en pasado, en PascalCase. Un evento por post-it. Se permite duplicar; se depura al ordenar |
 
 ### Paso 4. Generación de Domain Events
 
-Durante veinticinco minutos cada integrante colocó, de forma individual y sin discutir, todos los eventos que recordaba del dominio. La tasa de generación decayó hacia el minuto veinte, señal de pasar al siguiente paso. Se obtuvieron sesenta y ocho post-its, incluidos duplicados y eventos que después se reformularon. El tablero, tal como quedó antes de ordenar:
+Durante veinticinco minutos cada integrante colocó, de forma individual y sin discutir, todos los eventos que recordaba del dominio. La tasa de generación decayó hacia el minuto veinte, señal de pasar al siguiente paso. Se obtuvieron setenta y nueve post-its, incluidos duplicados y eventos que después se reformularon. El tablero, tal como quedó antes de ordenar:
 
 ```mermaid
 flowchart TB
@@ -922,7 +922,7 @@ flowchart TB
         end
         subgraph R2[" "]
             direction LR
-            b1["HvofCellRegistered"]:::evento
+            b1["HvofSystemRegistered"]:::evento
             b2["PrematureFailureDetected"]:::evento
             b3["ParameterOutOfRangeDetected"]:::evento
             b4["RecuperationCreated"]:::evento
@@ -937,7 +937,7 @@ flowchart TB
             c2["OrganizationRegistered"]:::evento
             c3["SuspectPartIdentified"]:::evento
             c4["ComponentDelivered"]:::evento
-            c5["NominalRangesConfigured"]:::evento
+            c5["RecipeDefined"]:::evento
             c6["CriticalFaultAlertRaised"]:::evento
             c7["ServiceLifeRecorded"]:::evento
             c8["SpraySessionCompleted"]:::evento
@@ -960,9 +960,10 @@ flowchart TB
             e3["ProcessReadingRecorded"]:::evento
             e4["TimedShutdownFaultTriggered"]:::evento
             e5["SessionReportGenerated"]:::evento
-            e6["HvofCellPartRegistered"]:::evento
+            e6["HvofSubsystemRegistered"]:::evento
             e7["ProbableCauseSuggested"]:::evento
             e8["UserAuthenticated"]:::evento
+            e9["HvofPartRegistered"]:::evento
         end
         subgraph R6[" "]
             direction LR
@@ -980,7 +981,7 @@ flowchart TB
             g1["FaultFlagActivated"]:::evento
             g2["PrematureFailureCorrelatedWithSession"]:::evento
             g3["DiagnosticRuleCreated"]:::evento
-            g4["HvofCellStatusChanged"]:::evento
+            g4["HvofSystemStatusChanged"]:::evento
             g5["FaultFrequencyReportGenerated"]:::evento
             g6["AlertEscalated"]:::evento
             g7["VisitorSubscribedToNewsletter"]:::evento
@@ -997,18 +998,38 @@ flowchart TB
             h7["HourmeterAtDeliveryRecorded"]:::evento
             h8["ComponentMarkedInProcess"]:::evento
         end
-        R1 ~~~ R2 ~~~ R3 ~~~ R4 ~~~ R5 ~~~ R6 ~~~ R7 ~~~ R8
+        subgraph R9[" "]
+            direction LR
+            i1["RecipeApplicabilityDefined"]:::evento
+            i2["RecipeApproved"]:::evento
+            i3["DerivedParameterDefined"]:::evento
+            i4["UnitPreferenceUpdated"]:::evento
+            i5["SprayingStarted"]:::evento
+            i6["SprayingStopped"]:::evento
+            i7["UnassignedSessionOpened"]:::evento
+            i8["RecipeMismatchDetected"]:::evento
+        end
+        subgraph R10[" "]
+            direction LR
+            j1["RecipeVerified"]:::evento
+            j2["DerivedParameterComputed"]:::evento
+            j3["ReportTemplateCreated"]:::evento
+            j4["ReportTemplateShared"]:::evento
+            j5["ReportGeneratedFromTemplate"]:::evento
+            j6["RecipeNotFoundFaulted"]:::evento
+        end
+        R1 ~~~ R2 ~~~ R3 ~~~ R4 ~~~ R5 ~~~ R6 ~~~ R7 ~~~ R8 ~~~ R9 ~~~ R10
     end
 ```
 
 Durante la depuración se tomaron dos decisiones que quedaron registradas para el paso siguiente:
 
-- Los eventos de falla específicos del PLC (*FeederZeroFeedrateAborted*, *HopperOverpressureBlocked*, *SpindleRotationFaulted*, *XAxisMotionFaulted*, *TimedShutdownFaultTriggered*, *DustHouseOverloaded*) se agruparon bajo un evento genérico *FaultFlagActivated* con el tipo de falla como atributo. Esto evita que el tablero tenga un post-it por cada uno de los más de treinta tags de falla del PLC y refleja cómo lo procesa el sistema: el tag mapeado como indicador de falla se activa, y eso abre el caso.
-- *FlameTemperatureOutOfRange* se absorbió en *ParameterOutOfRangeDetected*, por la misma razón.
+- Los eventos de falla específicos del PLC (*FeederZeroFeedrateAborted*, *HopperOverpressureBlocked*, *SpindleRotationFaulted*, *XAxisMotionFaulted*, *TimedShutdownFaultTriggered*, *DustHouseOverloaded*, *RecipeNotFoundFaulted*) se agruparon bajo un evento genérico *FaultFlagActivated* con el tipo de falla como atributo. Esto evita que el tablero tenga un post-it por cada uno de los más de treinta tags de falla del PLC y refleja cómo lo procesa el sistema: el tag mapeado como indicador de falla se activa, y eso abre el caso.
+- *FlameTemperatureOutOfRange* se absorbió en *ParameterOutOfRangeDetected*, por la misma razón. Este evento lleva como atributo la banda alcanzada (advertencia o parada), ya que la receta define bandas de umbral y no un único rango.
 
 ### Paso 5. Ordenamiento cronológico
 
-Aquí comenzó la discusión. El equipo ordenó los eventos de izquierda a derecha y, al hacerlo, aparecieron dos flujos concurrentes que se representaron como carriles: mientras la sesión de rociado registra lecturas, en paralelo pueden abrirse casos de falla y generarse alertas. También apareció un flujo alternativo: la sesión puede terminar completada o abortada.
+Aquí comenzó la discusión. El equipo ordenó los eventos de izquierda a derecha y, al hacerlo, aparecieron dos flujos concurrentes que se representaron como carriles: mientras la sesión de rociado registra lecturas, en paralelo pueden abrirse casos de falla y generarse alertas. También aparecieron dos flujos alternativos: la sesión puede terminar completada o abortada, y puede abrirse sin orden asignada cuando el PLC reporta rociado activo sin que el operador haya iniciado una sesión.
 
 ```mermaid
 flowchart LR
@@ -1017,10 +1038,13 @@ flowchart LR
 
     subgraph F0["0. Configuración"]
         direction TB
-        OrganizationRegistered:::evento --> PlanSelected:::evento --> SubscriptionActivated:::evento --> RoleAssigned:::evento
-        HvofCellRegistered:::evento --> HvofCellPartRegistered:::evento --> PlcTagFileImported:::evento --> TagMappingProposed:::evento --> TagMappingConfirmed:::evento --> NominalRangesConfigured:::evento
+        OrganizationRegistered:::evento --> PlanSelected:::evento --> SubscriptionActivated:::evento --> RoleAssigned:::evento --> UnitPreferenceUpdated:::evento
+        HvofSystemRegistered:::evento --> HvofSubsystemRegistered:::evento --> HvofPartRegistered:::evento --> PlcTagFileImported:::evento --> TagMappingProposed:::evento --> TagMappingConfirmed:::evento
+        TagMappingConfirmed --> RecipeDefined:::evento --> RecipeApplicabilityDefined:::evento --> RecipeApproved:::evento
+        TagMappingConfirmed --> DerivedParameterDefined:::evento
         CustomerRegistered:::evento --> PcrTargetDefined:::evento
         DiagnosticRuleCreated:::evento
+        ReportTemplateCreated:::evento --> ReportTemplateShared:::evento
     end
 
     subgraph F1["1. Recepción"]
@@ -1030,16 +1054,20 @@ flowchart LR
 
     subgraph F2["2. Corrida de rociado"]
         direction TB
-        SpraySessionStarted:::evento --> TelemetryBatchIngested:::evento --> ProcessReadingRecorded:::evento
-        ProcessReadingRecorded --> SpraySessionCompleted:::evento
-        ProcessReadingRecorded --> SpraySessionAborted:::evento
+        SpraySessionStarted:::evento --> RecipeVerified:::evento --> TelemetryBatchIngested:::evento --> ProcessReadingRecorded:::evento
+        ProcessReadingRecorded --> DerivedParameterComputed:::evento
+        ProcessReadingRecorded --> SprayingStarted:::evento --> SprayingStopped:::evento
+        SprayingStopped --> SpraySessionCompleted:::evento
+        SprayingStopped --> SpraySessionAborted:::evento
+        UnassignedSessionOpened:::evento -. requiere vincular orden .-> SpraySessionStarted
     end
 
     subgraph F2B["2b. Carril concurrente — Desviaciones y fallas"]
         direction TB
         ParameterOutOfRangeDetected:::evento --> OutOfRangeAlertRaised:::evento --> AlertDelivered:::evento --> AlertAcknowledged:::evento
+        RecipeMismatchDetected:::evento --> CriticalFaultAlertRaised:::evento
         FaultFlagActivated:::evento --> FaultCaseOpened:::evento --> FaultSymptomsRecorded:::evento --> DiagnosticRulesApplied:::evento
-        DiagnosticRulesApplied --> ProbableCauseSuggested:::evento --> SuspectPartIdentified:::evento --> CriticalFaultAlertRaised:::evento
+        DiagnosticRulesApplied --> ProbableCauseSuggested:::evento --> SuspectPartIdentified:::evento --> CriticalFaultAlertRaised
         DiagnosticRulesApplied --> ManualDiagnosisRequired:::evento
         SuspectPartIdentified --> RootCauseConfirmed:::evento --> FaultCaseClosed:::evento
         ManualDiagnosisRequired --> RootCauseConfirmed
@@ -1062,6 +1090,7 @@ flowchart LR
 
     subgraph F5["5. Reportes"]
         direction TB
+        ReportGeneratedFromTemplate:::evento
         EvidenceExported:::evento
         FaultFrequencyReportGenerated:::evento
         PcrComplianceReportGenerated:::evento
@@ -1069,16 +1098,20 @@ flowchart LR
 
     F0 --> F1 --> F2 --> F3 --> F4 --> F5
     ProcessReadingRecorded -. dispara .-> ParameterOutOfRangeDetected
+    DerivedParameterComputed -. dispara .-> ParameterOutOfRangeDetected
     ProcessReadingRecorded -. dispara .-> FaultFlagActivated
+    RecipeVerified -. si no aplica .-> RecipeMismatchDetected
     SpraySessionCompleted --> RecuperationClosed
     SpraySessionAborted -. requiere nueva corrida .-> SpraySessionStarted
 ```
 
-Al ordenar, el equipo hizo explícitas tres cosas que estaban implícitas:
+Al ordenar, el equipo hizo explícitas cinco cosas que estaban implícitas:
 
 - *HourmeterAtDeliveryRecorded* no existía en la generación inicial de todos; apareció cuando se preguntó "¿contra qué se compara el horómetro de retorno?". Sin ese dato, *ServiceLifeRecorded* no puede calcular horas logradas.
 - *ManualDiagnosisRequired* apareció al preguntar "¿y si ninguna regla coincide?". Es el flujo alternativo de *DiagnosticRulesApplied*.
 - *SpraySessionAborted* no cierra la orden: obliga a una nueva corrida. Por eso la flecha punteada regresa a *SpraySessionStarted*.
+- *SprayingStarted* y *SprayingStopped* dividen la sesión en pasadas. La sesión la abre el operador porque el PLC no conoce la OF/WO, pero el rociado efectivo lo detecta el tag de estado de rociado activo.
+- *RecipeVerified* ocurre entre el inicio de la sesión y la primera lectura: el sistema compara la receta cargada en el controlador con el tipo y modelo del componente de la orden. Si no corresponde, se dispara *RecipeMismatchDetected*.
 
 ### Paso 6. Actores y sistemas externos
 
@@ -1105,7 +1138,7 @@ flowchart LR
     subgraph EX["Sistemas externos"]
         direction TB
         Gw["Gateway PLC<br/>(Raspberry Pi + pylogix / simulador)"]:::externo
-        Plc["PLC CompactLogix<br/>de la celda HVOF"]:::externo
+        Plc["PLC CompactLogix<br/>del sistema HVOF"]:::externo
         Mc["Mailchimp"]:::externo
     end
 
@@ -1114,47 +1147,53 @@ flowchart LR
         e1["OrganizationRegistered"]:::evento
         e2["PlanSelected"]:::evento
         e3["RoleAssigned"]:::evento
-        e4["HvofCellRegistered"]:::evento
+        e4["HvofSystemRegistered"]:::evento
         e5["PlcTagFileImported"]:::evento
         e6["TagMappingConfirmed"]:::evento
-        e7["NominalRangesConfigured"]:::evento
-        e8["DiagnosticRuleCreated"]:::evento
-        e9["CustomerRegistered"]:::evento
-        e10["PcrTargetDefined"]:::evento
-        e11["ComponentReceived"]:::evento
-        e12["RecuperationCreated"]:::evento
-        e13["SpraySessionStarted"]:::evento
-        e14["TelemetryBatchIngested"]:::evento
-        e15["FaultFlagActivated"]:::evento
-        e16["RootCauseConfirmed"]:::evento
-        e17["SpraySessionCompleted / Aborted"]:::evento
-        e18["RecuperationClosed"]:::evento
-        e19["QualityCertificateIssued"]:::evento
-        e20["ComponentReturnedFromField"]:::evento
-        e21["PcrComplianceReportGenerated"]:::evento
-        e22["AlertDelivered (EMAIL)"]:::evento
-        e23["VisitorSubscribedToNewsletter"]:::evento
+        e7["RecipeDefined"]:::evento
+        e8["DerivedParameterDefined"]:::evento
+        e9["DiagnosticRuleCreated"]:::evento
+        e10["CustomerRegistered"]:::evento
+        e11["PcrTargetDefined"]:::evento
+        e12["ComponentReceived"]:::evento
+        e13["RecuperationCreated"]:::evento
+        e14["SpraySessionStarted"]:::evento
+        e15["TelemetryBatchIngested"]:::evento
+        e16["SprayingStarted"]:::evento
+        e17["FaultFlagActivated"]:::evento
+        e18["RootCauseConfirmed"]:::evento
+        e19["SpraySessionCompleted / Aborted"]:::evento
+        e20["RecuperationClosed"]:::evento
+        e21["QualityCertificateIssued"]:::evento
+        e22["ComponentReturnedFromField"]:::evento
+        e23["PcrComplianceReportGenerated"]:::evento
+        e24["ReportTemplateCreated"]:::evento
+        e25["UnitPreferenceUpdated"]:::evento
+        e26["AlertDelivered (EMAIL)"]:::evento
+        e27["VisitorSubscribedToNewsletter"]:::evento
     end
 
     Adm --> e1 & e2 & e3
-    SupMant --> e4 & e5 & e6 & e16
-    IngCal --> e7 & e8 & e10 & e19
-    SupOp --> e9 & e12 & e18
-    Op --> e11 & e13 & e17
-    IngConf --> e20
-    Compras --> e21
-    Vis --> e23
+    SupMant --> e4 & e5 & e6 & e18
+    IngCal --> e7 & e8 & e9 & e11 & e21 & e24
+    SupOp --> e10 & e13 & e20
+    Op --> e12 & e14 & e19
+    IngConf --> e22 & e24 & e25
+    Compras --> e23
+    Vis --> e27
 
-    Plc --> Gw --> e14
-    Plc -. tag de falla .-> e15
-    e22 --> Mc
-    e23 --> Mc
+    Plc --> Gw --> e15
+    Plc -. tag de falla .-> e17
+    Plc -. tag SPRAY_ACTIVE .-> e16
+    e26 --> Mc
+    e27 --> Mc
 ```
 
-Dos decisiones surgieron en este paso:
+Tres decisiones surgieron en este paso:
 
 - El **PLC** y el **gateway** se modelaron como dos sistemas externos distintos. El PLC es la fuente del dato; el gateway es quien lo lee vía EtherNet/IP y lo envía a la plataforma por REST. Para la demostración del curso, el gateway será un simulador que expone el mismo contrato, de modo que la plataforma no distingue si el origen es hardware real o simulado.
 - El **ingeniero de confiabilidad** de la minera (Asset Owner) es quien dispara *ComponentReturnedFromField*, no el proveedor. Es el único que sabe cuántas horas trabajó la pieza en mina. Esta observación fue la que consolidó a la minera como segundo segmento pagante.
+- El **PLC** dispara *SprayingStarted* a través del tag de estado de rociado activo, y no el operador. Esto define que la sesión la abre una persona, pero las pasadas de rociado dentro de ella las detecta la máquina.
 
 ### Paso 7. Storytelling
 
@@ -1174,7 +1213,7 @@ flowchart LR
     RecuperationClosed -.- P2
 
     QualityCertificateIssued:::evento
-    P3["¿Se emite certificado si hubo<br/>lecturas fuera de rango?<br/>→ Sí, con no conformidad y justificación"]:::problema
+    P3["¿Se emite certificado si hubo lecturas<br/>fuera de la banda nominal de la receta?<br/>→ Sí, con no conformidad y justificación"]:::problema
     QualityCertificateIssued -.- P3
 
     ServiceLifeRecorded:::evento
@@ -1182,7 +1221,7 @@ flowchart LR
     ServiceLifeRecorded -.- P4
 
     PrematureFailureCorrelatedWithSession:::evento
-    P5["¿La minera ve los parámetros crudos<br/>del proveedor?<br/>→ No. Ve cumplimiento por parámetro, no valores"]:::problema
+    P5["¿La minera ve los parámetros crudos<br/>del proveedor?<br/>→ No. Ve cumplimiento por banda, no valores"]:::problema
     PrematureFailureCorrelatedWithSession -.- P5
 
     RecurringFaultPatternDetected:::evento
@@ -1192,21 +1231,31 @@ flowchart LR
     SuspectPartIdentified:::evento
     P7["¿Y si dos reglas coinciden con<br/>partes distintas?<br/>→ Gana la de mayor prioridad; ambas quedan registradas"]:::problema
     SuspectPartIdentified -.- P7
+
+    SpraySessionStarted:::evento
+    P8["¿Cómo sabe el sistema que empezó a rociar,<br/>si el PLC no conoce la OF/WO?<br/>→ La sesión la abre el operador; las pasadas<br/>las detecta el tag SPRAY_ACTIVE"]:::problema
+    SpraySessionStarted -.- P8
+
+    RecipeVerified:::evento
+    P9["¿Y si el operador cargó la receta<br/>del cylinder block para un front rod?<br/>→ Alerta RECIPE_MISMATCH al iniciar la sesión"]:::problema
+    RecipeVerified -.- P9
 ```
 
-Seis de los siete hotspots se resolvieron en la sesión y sus decisiones se trasladaron directamente a los criterios de aceptación de las User Stories (US11, US18, US35, US40, US41 y US26 respectivamente). El hotspot P6 quedó pendiente de validación con el supervisor de mantenimiento durante las entrevistas de la sección 2.2.
+Ocho de los nueve hotspots se resolvieron en la sesión y sus decisiones se trasladaron directamente a los criterios de aceptación de las User Stories (US11, US18, US35, US40, US41, US26, US57 y US56 respectivamente). El hotspot P6 quedó pendiente de validación con el supervisor de mantenimiento durante las entrevistas de la sección 2.2.
 
 Durante la narración se capturaron también las primeras definiciones del lenguaje ubicuo, que se desarrollan en la sección 2.5:
 
 | Término | Definición capturada en la sesión |
 |---|---|
-| Component | Pieza del cliente que se recupera (front rod, cylinder block). No confundir con las partes de la celda |
-| HVOF Cell Part | Parte de la máquina HVOF (feeder, hopper, spindle, ejes, dust collector) |
+| Component | Pieza del cliente que se recupera (front rod, cylinder block). No confundir con las partes del sistema HVOF |
+| HVOF Subsystem / HVOF Part | Subsistema del sistema HVOF (alimentador de polvo, consola de gases, chiller, manipulación, colector de polvo) y parte física dentro de él (hopper, disco dosificador, boquilla, spindle) |
 | Recuperation | Orden de recuperación identificada por OF y WO; es el trabajo sobre un componente |
-| Spray Session | Una corrida de rociado sobre un componente en una celda. Una orden puede tener varias |
+| Recipe | Conjunto de setpoints y bandas de umbral cargado en el controlador, aplicable a uno o más tipos y modelos de componente |
+| Spray Session | Una corrida de rociado sobre un componente en un sistema HVOF. Una orden puede tener varias |
+| Spray Pass | Intervalo de rociado efectivo dentro de una sesión, detectado desde el tag de estado del PLC |
 | PCR Target | Horas de operación esperadas para el componente recuperado (Planned Component Replacement) |
 | Fault Case | Caso abierto cuando un tag de falla se activa; se diagnostica, se confirma y se cierra |
-| Suspect Part | Parte de la celda que las reglas señalan como probable responsable de la falla |
+| Suspect Part | Parte del sistema HVOF que las reglas señalan como probable responsable de la falla |
 
 ### Paso 8. Reverse storytelling
 
@@ -1226,47 +1275,49 @@ flowchart RL
     G["RecuperationClosed"]:::evento
     H["SpraySessionCompleted"]:::evento
     I["ProcessReadingRecorded"]:::evento
-    J["SpraySessionStarted"]:::evento
-    K["RecuperationCreated"]:::evento
-    L["ComponentReceived"]:::evento
-    M["PcrTargetDefined"]:::evento
-    N["CustomerLinkedToAssetOwnerOrganization"]:::nuevo
+    J["RecipeVerified"]:::evento
+    K["SpraySessionStarted"]:::evento
+    L["RecuperationCreated"]:::evento
+    M["ComponentReceived"]:::evento
+    N["PcrTargetDefined"]:::evento
+    O["CustomerLinkedToAssetOwnerOrganization"]:::nuevo
 
     A -->|"¿qué lo disparó?"| B -->|"¿qué lo disparó?"| C
-    C -->|"¿qué debió existir?"| D --> E --> F --> G --> H --> I --> J --> K --> L
-    B -->|"¿contra qué se comparó?"| M
-    C -->|"¿quién pudo registrarlo?"| N
+    C -->|"¿qué debió existir?"| D --> E --> F --> G --> H --> I --> J --> K --> L --> M
+    B -->|"¿contra qué se comparó?"| N
+    C -->|"¿quién pudo registrarlo?"| O
 ```
 
 El evento descubierto, *CustomerLinkedToAssetOwnerOrganization*, resuelve una pregunta que nadie había hecho: ¿cómo puede un ingeniero de confiabilidad de la minera registrar el retorno de una pieza si la minera fue registrada como *Customer* por Fesa y no tiene cuenta propia? La respuesta es que cuando una organización Asset Owner se suscribe con el mismo RUC que un cliente ya registrado por un proveedor, ambos registros se vinculan. Este evento dio origen al segundo escenario de la US13.
-
 
 ### Paso 9. Cierre
 
 Al terminar la sesión el equipo evaluó los resultados contra los tres criterios que propone la guía:
 
-**Entendimiento compartido del dominio.** Los integrantes sin experiencia en planta pudieron narrar la historia completa del front rod sin ayuda al final de la sesión. La distinción entre *Component* (pieza del cliente) y *HVOF Cell Part* (parte de la máquina), que había generado confusión en reuniones previas, quedó resuelta.
+**Entendimiento compartido del dominio.** Los integrantes sin experiencia en planta pudieron narrar la historia completa del front rod sin ayuda al final de la sesión. La distinción entre *Component* (pieza del cliente) y *HVOF Part* (parte física de un subsistema del sistema HVOF), que había generado confusión en reuniones previas, quedó resuelta.
 
-**Problemas identificados.** Siete hotspots, seis resueltos en sesión y uno pendiente de validación externa. Las decisiones tomadas se convirtieron en criterios de aceptación, lo que evitó que las ambigüedades llegaran a la implementación.
+**Problemas identificados.** Nueve hotspots, ocho resueltos en sesión y uno pendiente de validación externa. Las decisiones tomadas se convirtieron en criterios de aceptación, lo que evitó que las ambigüedades llegaran a la implementación.
 
-**Primeras definiciones del lenguaje ubicuo.** Siete términos capturados, que constituyen el punto de partida del glosario de la sección 2.5.
+**Primeras definiciones del lenguaje ubicuo.** Nueve términos capturados, que constituyen el punto de partida del glosario de la sección 2.5.
 
 **Trazabilidad hacia las User Stories.** Los eventos ordenados en el Paso 5 se distribuyen en las épicas del Capítulo III de la siguiente forma:
 
 | Fase del tablero | Eventos | Épica | User Stories |
 |---|---|---|---|
-| 0. Configuración | OrganizationRegistered, RoleAssigned, PlanSelected, SubscriptionActivated | E01, E02 | US01–US06 |
-| 0. Configuración | HvofCellRegistered … NominalRangesConfigured, DiagnosticRuleCreated | E03, E06 | US07–US12, US28 |
+| 0. Configuración | OrganizationRegistered, RoleAssigned, PlanSelected, SubscriptionActivated, UnitPreferenceUpdated | E01, E02 | US01–US06, US58 |
+| 0. Configuración | HvofSystemRegistered, HvofSubsystemRegistered, HvofPartRegistered, PlcTagFileImported … TagMappingConfirmed, RecipeDefined … RecipeApproved, DerivedParameterDefined, DiagnosticRuleCreated | E03, E06 | US07–US12, US53–US55, US28 |
 | 0. Configuración | CustomerRegistered, PcrTargetDefined | E04 | US13, US16 |
+| 0. Configuración | ReportTemplateCreated, ReportTemplateShared | E08 | US59–US61, US63 |
 | 1. Recepción | ComponentReceived, RecuperationCreated | E04 | US14, US15 |
-| 2. Corrida | SpraySessionStarted … SpraySessionCompleted/Aborted | E05 | US19–US24 |
-| 2b. Desviaciones | ParameterOutOfRangeDetected, OutOfRangeAlertRaised, AlertDelivered | E05, E07 | US21, US31–US34 |
+| 2. Corrida | SpraySessionStarted, RecipeVerified, SprayingStarted/Stopped, UnassignedSessionOpened, DerivedParameterComputed … SpraySessionCompleted/Aborted | E05 | US19–US24, US55–US57 |
+| 2b. Desviaciones | ParameterOutOfRangeDetected, RecipeMismatchDetected, OutOfRangeAlertRaised, AlertDelivered | E05, E07 | US21, US31–US34, US56 |
 | 2b. Fallas | FaultFlagActivated … RecurringFaultPatternDetected | E06 | US25–US30 |
 | 3. Cierre y entrega | RecuperationClosed, QualityCertificateIssued, ComponentDelivered | E04, E08 | US17, US18, US35, US36 |
 | 4. Campo y PCR | ComponentReturnedFromField … PrematureFailureCorrelatedWithSession | E09 | US39–US43 |
-| 5. Reportes | EvidenceExported, FaultFrequencyReportGenerated, PcrComplianceReportGenerated | E08, E09 | US37, US38, US42 |
+| 5. Reportes | ReportGeneratedFromTemplate, EvidenceExported, FaultFrequencyReportGenerated, PcrComplianceReportGenerated | E08, E09 | US37, US38, US42, US62, US64 |
 | Externos | AlertDelivered (EMAIL), VisitorSubscribedToNewsletter | E11, E10 | US49, US51, US52 |
 
+**Siguientes pasos acordados.** (1) Validar el hotspot P6 en las entrevistas con supervisores de mantenimiento. (2) Llevar el tablero ordenado al Design-Level Event Storming para identificar Commands, Aggregates, Policies y Read Models por bounded context. (3) Completar el glosario de lenguaje ubicuo. Responsable de los siguientes pasos: la facilitadora de la sesión.
 
 
 ## 2.5. Ubiquitous Language.
@@ -1285,9 +1336,9 @@ Las definiciones de proceso y recubrimiento se basan en el glosario de proyecci�
 | **Asset Owner** (Propietario de activos) | Empresa, típicamente minera, dueña de los componentes que se envían a recuperar. Recibe la pieza recuperada, la pone en operación y conoce su desempeño real en campo. Es el segundo segmento objetivo. |
 | **Organization** (Organización) | Empresa registrada en la plataforma, ya sea como Recuperation Supplier o como Asset Owner. Cada organización tiene sus propios usuarios, celdas, componentes y suscripción. |
 | **Customer** (Cliente) | Empresa a la que un Recuperation Supplier le presta el servicio. Un Customer puede existir sin tener cuenta en la plataforma; cuando la misma empresa se registra como Asset Owner, ambos registros se vinculan por RUC. |
-| **HVOF Operator** (Operador HVOF) | Técnico que opera la celda HVOF: inicia y finaliza las corridas, monta la pieza y atiende las alertas durante la operación. |
+| **HVOF Operator** (Operador HVOF) | Técnico que opera el sistema HVOF: inicia y finaliza las corridas, monta la pieza y atiende las alertas durante la operación. |
 | **Operation Supervisor** (Supervisor de operación) | Responsable del flujo de trabajo del taller: registra clientes y órdenes de recuperación, cierra las órdenes y valida los reportes de sesión. |
-| **Machine Maintenance Supervisor** (Supervisor de mantenimiento de máquina) | Responsable de la disponibilidad de la celda HVOF: registra la celda y sus partes, carga y confirma el mapeo de tags del PLC, y confirma la causa raíz de los casos de falla. |
+| **Machine Maintenance Supervisor** (Supervisor de mantenimiento de máquina) | Responsable de la disponibilidad del sistema HVOF: registra la celda y sus partes, carga y confirma el mapeo de tags del PLC, y confirma la causa raíz de los casos de falla. |
 | **Quality Engineer** (Ingeniero de calidad) | Responsable de que el recubrimiento cumpla la especificación: define rangos nominales, PCR objetivo y reglas de diagnóstico, y emite los certificados de calidad. |
 | **Reliability Engineer** (Ingeniero de confiabilidad) | Especialista del Asset Owner que da seguimiento a la vida útil de los componentes en operación y registra su retorno de campo. |
 | **Procurement Analyst** (Analista de compras) | Responsable del Asset Owner que evalúa el desempeño de los proveedores de recuperación para sustentar decisiones contractuales. |
@@ -1323,14 +1374,14 @@ Las definiciones de proceso y recubrimiento se basan en el glosario de proyecci�
 | **PCR Compliance Rate** (Tasa de cumplimiento de PCR) | Proporción de componentes que alcanzaron su PCR sobre el total de componentes retornados en un periodo. Puede calcularse por proveedor, por modelo de máquina o por tipo de componente. |
 | **Supplier Performance** (Desempeño de proveedor) | Evaluación que hace el Asset Owner de un Recuperation Supplier en función de la tasa de cumplimiento de PCR de los componentes que este recuperó. |
 
-### 2.5.4. Celda HVOF y sus partes
+### 2.5.4. Sistema HVOF y sus partes
 
 | Término | Definición |
 |---|---|
 | **HVOF — High Velocity Oxygen Fuel** | Proceso de proyección térmica en el que un polvo metálico es fundido y proyectado a alta velocidad mediante la combustión de oxígeno y combustible, para depositar una capa protectora sobre la superficie de un componente. |
 | **Thermal Spray** (Proyección térmica) | Familia de procesos de recubrimiento a la que pertenece HVOF. En este dominio se usa como sinónimo del proceso de recuperación. |
-| **HVOF Cell** (Celda HVOF) | Unidad completa de equipo que ejecuta el proceso: pistola, alimentador, sistema de gases, manipulador de ejes, colector de polvo y PLC de control. Es el activo que el Recuperation Supplier opera y que la plataforma monitorea. |
-| **HVOF Cell Part** (Parte de la celda) | Componente físico de la celda HVOF que puede ser origen de una falla: feeder, hopper, spindle, ejes, dust collector, nozzle, unidad de enfriamiento. **No debe confundirse con Component**, que es la pieza del cliente. |
+| **HVOF System** (Sistema HVOF) | Unidad completa de equipo que ejecuta el proceso: pistola, alimentador, sistema de gases, manipulador de ejes, colector de polvo y PLC de control. Es el activo que el Recuperation Supplier opera y que la plataforma monitorea. |
+| **HVOF Subsystem / HVOF Part** (Subsistema o parte del sistema) | Subsistema del sistema HVOF (feeder, consola de gases, chiller, ejes…) y parte física dentro de él, que puede ser origen de una falla: feeder, hopper, spindle, ejes, dust collector, nozzle, unidad de enfriamiento. **No debe confundirse con Component**, que es la pieza del cliente. |
 | **Powder Feeder** (Alimentador de polvo) | Parte que dosifica el polvo metálico hacia la pistola a una tasa controlada. Su falla más frecuente es la detención por feedrate cero. |
 | **Hopper** (Tolva) | Depósito de polvo que alimenta al feeder. Una sobrepresión en la tolva indica bloqueo aguas abajo. |
 | **Spindle** (Husillo) | Eje rotatorio que hace girar el componente durante el rociado para lograr un recubrimiento uniforme. |
