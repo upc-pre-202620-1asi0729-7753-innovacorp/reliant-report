@@ -1,0 +1,175 @@
+@startuml Reliant_Notifications_v4
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam nodesep 40
+skinparam ranksep 60
+hide empty members
+
+package "SharedKernel" #F5F5F5 {
+
+    package "shared.domain" {
+        abstract class AuditableModel {
+            - id: Long
+            - createdAt: Instant
+            - updatedAt: Instant
+        }
+        abstract class AuditableAbstractAggregateRoot {
+            + registerEvent(event: Object): void
+            + clearDomainEvents(): void
+        }
+        AuditableModel <|-- AuditableAbstractAggregateRoot
+
+    }
+
+}
+
+package "Notifications" #EDE7F6 {
+
+    package "notifications.domain" {
+        class Alert <<Aggregate Root>> {
+            - organizationId: Long
+            - recipientUserId: Long
+            - alertType: AlertTypeEnum
+            - severity: SeverityEnum
+            - title: String
+            - message: String
+            - sourceEventId: UUID
+            - status: AlertStatusEnum
+            + acknowledge(userId: Long): void
+            + escalate(): void
+        }
+        class NotificationPreference <<Aggregate Root>> {
+            - userId: Long
+            - channel: ChannelEnum
+            - enabledAlertTypes: Set<AlertTypeEnum>
+            + allows(alertType: AlertTypeEnum, channel: ChannelEnum): boolean
+        }
+        class NewsletterSubscription <<Aggregate Root>> {
+            - email: String
+            - subscribedAt: Instant
+        }
+        enum AlertTypeEnum {
+            PARAMETER_WARNING
+            PARAMETER_SHUTDOWN
+            CRITICAL_FAULT
+            RECURRING_FAULT_PATTERN
+            PREMATURE_FAILURE
+            UNASSIGNED_SESSION
+            RECIPE_MISMATCH
+            SESSION_ABORTED
+        }
+        enum SeverityEnum {
+            INFO
+            WARNING
+            CRITICAL
+        }
+        enum ChannelEnum {
+            IN_APP
+            EMAIL
+        }
+        enum AlertStatusEnum {
+            RAISED
+            ACKNOWLEDGED
+            ESCALATED
+        }
+        Alert --> AlertTypeEnum
+        Alert --> SeverityEnum
+        Alert --> AlertStatusEnum
+        NotificationPreference --> ChannelEnum
+
+        interface AlertRepository <<Repository>> {
+            + findByRecipientUserIdAndStatus(userId: Long, status: AlertStatusEnum): List<Alert>
+            + save(alert: Alert): Alert
+        }
+        interface NotificationPreferenceRepository <<Repository>> {
+            + findByUserId(userId: Long): Optional<NotificationPreference>
+            + save(preference: NotificationPreference): NotificationPreference
+        }
+        interface NewsletterSubscriptionRepository <<Repository>> {
+            + existsByEmail(email: String): boolean
+            + save(subscription: NewsletterSubscription): NewsletterSubscription
+        }
+    }
+
+    package "notifications.application" {
+        class "ExternalIamService" as ntExtIam <<ACL>> {
+            + fetchUserIdsByRole(organizationId: Long, role: String): List<Long>
+            + fetchUserEmail(userId: Long): Optional<String>
+        }
+        interface NotificationDeliveryPort <<Port>> {
+            + deliver(alert: Alert, recipientEmail: String): void
+        }
+        interface NewsletterPort <<Port>> {
+            + subscribe(email: String): void
+        }
+        class AlertCommandServiceImpl <<Application Service>>
+        class "NotificationIntegrationEventHandler" as ntHandler <<Policy>> {
+            + on(event: ParameterOutOfRangeIntegrationEvent): void
+            + on(event: FaultCaseOpenedIntegrationEvent): void
+            + on(event: RecurringFaultPatternIntegrationEvent): void
+            + on(event: PrematureFailureDetectedIntegrationEvent): void
+            + on(event: UnassignedSessionOpenedIntegrationEvent): void
+            + on(event: RecipeMismatchIntegrationEvent): void
+        }
+        ntHandler ..> AlertCommandServiceImpl
+        AlertCommandServiceImpl ..> ntExtIam
+        AlertCommandServiceImpl ..> NotificationDeliveryPort
+        AlertCommandServiceImpl ..> Alert
+        AlertCommandServiceImpl ..> NotificationPreference
+        ntExtIam ..> IamContextFacade : «ACL»
+    }
+
+    package "notifications.infrastructure" {
+        class MailchimpNotificationDeliveryAdapter <<Adapter>>
+        class MailchimpNewsletterAdapter <<Adapter>>
+        NotificationDeliveryPort <|.. MailchimpNotificationDeliveryAdapter
+        NewsletterPort <|.. MailchimpNewsletterAdapter
+
+        interface JpaAlertRepository <<Spring Data>>
+        interface JpaNotificationPreferenceRepository <<Spring Data>>
+        interface JpaNewsletterSubscriptionRepository <<Spring Data>>
+        AlertRepository <|-- JpaAlertRepository
+        NotificationPreferenceRepository <|-- JpaNotificationPreferenceRepository
+        NewsletterSubscriptionRepository <|-- JpaNewsletterSubscriptionRepository
+    }
+
+    package "notifications.interfaces" {
+        class AlertController <<REST>>
+        class NewsletterController <<REST>>
+        AlertController ..> AlertCommandServiceImpl
+        NewsletterController ..> NewsletterPort
+        NewsletterController ..> NewsletterSubscription
+        AlertCommandServiceImpl ..> AlertRepository
+        AlertCommandServiceImpl ..> NotificationPreferenceRepository
+        NewsletterController ..> NewsletterSubscriptionRepository
+    }
+}
+
+package "FaultDiagnosis" #EEEEEE {
+    class FaultCaseOpenedIntegrationEvent <<Integration Event>>
+    class RecurringFaultPatternIntegrationEvent <<Integration Event>>
+}
+package "IAM" #EEEEEE {
+    class IamContextFacade <<Open Host Service>>
+}
+package "ProcessMonitoring" #EEEEEE {
+    class ParameterOutOfRangeIntegrationEvent <<Integration Event>>
+    class RecipeMismatchIntegrationEvent <<Integration Event>>
+    class UnassignedSessionOpenedIntegrationEvent <<Integration Event>>
+}
+package "Traceability" #EEEEEE {
+    class PrematureFailureDetectedIntegrationEvent <<Integration Event>>
+}
+
+ParameterOutOfRangeIntegrationEvent ..> ntHandler : consumedBy
+UnassignedSessionOpenedIntegrationEvent ..> ntHandler : consumedBy
+RecipeMismatchIntegrationEvent ..> ntHandler : consumedBy
+FaultCaseOpenedIntegrationEvent ..> ntHandler : consumedBy
+RecurringFaultPatternIntegrationEvent ..> ntHandler : consumedBy
+PrematureFailureDetectedIntegrationEvent ..> ntHandler : consumedBy
+AuditableAbstractAggregateRoot <|-- Alert
+AuditableAbstractAggregateRoot <|-- NotificationPreference
+AuditableAbstractAggregateRoot <|-- NewsletterSubscription
+
+@enduml
