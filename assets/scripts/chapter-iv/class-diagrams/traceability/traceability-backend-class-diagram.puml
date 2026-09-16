@@ -1,0 +1,301 @@
+@startuml Reliant_Traceability
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam nodesep 40
+skinparam ranksep 60
+hide empty members
+
+package "SharedKernel" #F5F5F5 {
+
+    package "shared.domain" {
+        abstract class AuditableModel {
+            - id: Long
+            - createdAt: Instant
+            - updatedAt: Instant
+        }
+        abstract class AuditableAbstractAggregateRoot {
+            + registerEvent(event: Object): void
+            + clearDomainEvents(): void
+        }
+        AuditableModel <|-- AuditableAbstractAggregateRoot
+
+        abstract class IntegrationEvent {
+            - eventId: UUID
+            - occurredAt: Instant
+            - sourceContext: String
+            - organizationId: Long
+        }
+
+        class Unit <<Value Object>> {
+            - symbol: String
+            - category: UnitCategoryEnum
+            - system: UnitSystemEnum
+            + validate(): void
+        }
+        enum UnitCategoryEnum {
+            PRESSURE
+            TEMPERATURE
+            FLOW
+            SPEED
+            LENGTH
+            MASS
+            TIME
+            RATIO
+            DIMENSIONLESS
+        }
+        enum UnitSystemEnum {
+            INTERNATIONAL_SYSTEM
+            IMPERIAL_SYSTEM
+        }
+        Unit --> UnitCategoryEnum
+        Unit --> UnitSystemEnum
+
+        class Hourmeter <<Value Object>> {
+            - hours: BigDecimal
+            + minus(other: Hourmeter): Hourmeter
+        }
+        class Weight <<Value Object>> {
+            - value: BigDecimal
+            - unit: Unit
+        }
+        class Ruc <<Value Object>> {
+            - value: String
+            + validate(): void
+        }
+        Weight "1" --> "1" Unit : measuredIn
+    }
+
+    package "shared.application" {
+        interface IntegrationEventPublisher <<Port>> {
+            + publish(event: IntegrationEvent): void
+        }
+    }
+
+    package "shared.infrastructure" {
+        class SpringIntegrationEventPublisher <<Adapter>> {
+            - applicationEventPublisher: ApplicationEventPublisher
+            + publish(event: IntegrationEvent): void
+        }
+        IntegrationEventPublisher <|.. SpringIntegrationEventPublisher
+    }
+
+}
+
+package "Traceability" #FCE4EC {
+
+    package "traceability.domain" {
+        class Customer <<Aggregate Root>> {
+            - supplierOrganizationId: Long
+            - linkedAssetOwnerOrganizationId: Long
+            - legalName: String
+            - ruc: Ruc
+            - mineSite: String
+            + linkToAssetOwner(organizationId: Long): void
+        }
+        class Component <<Aggregate Root>> {
+            - serialNumber: String
+            - partNumber: String
+            - componentType: ComponentTypeEnum
+            - machineModel: MachineModel
+            - customerId: Long
+            - pcrTarget: PcrTarget
+            - status: ComponentStatusEnum
+            - serviceLifeRecords: List<ServiceLifeRecord>
+            + deliver(hourmeterAtDelivery: Hourmeter): void
+            + registerFieldReturn(record: ServiceLifeRecord): void
+        }
+        class ServiceLifeRecord <<Entity>> {
+            - recuperationId: Long
+            - hoursAtDelivery: Hourmeter
+            - hoursAtReturn: Hourmeter
+            - returnReason: String
+            - metPcr: boolean
+            + evaluateAgainst(target: PcrTarget): void
+        }
+        class Recuperation <<Aggregate Root>> {
+            - workOrderNumber: WorkOrderNumber
+            - manufacturingOrderNumber: ManufacturingOrderNumber
+            - componentId: Long
+            - customerId: Long
+            - supplierOrganizationId: Long
+            - segment: String
+            - operation: String
+            - weight: Weight
+            - hourmeterAtEntry: Hourmeter
+            - powderLot: PowderLot
+            - linkedSessionIds: List<Long>
+            - status: RecuperationStatusEnum
+            + linkSpraySession(sessionId: Long): void
+            + close(): void
+        }
+        class WorkOrderNumber <<Value Object>> {
+            - value: String
+            + validate(): void
+        }
+        class ManufacturingOrderNumber <<Value Object>> {
+            - value: String
+            + validate(): void
+        }
+        class MachineModel <<Value Object>> {
+            - manufacturer: MachineManufacturerEnum
+            - model: String
+        }
+        class PcrTarget <<Value Object>> {
+            - targetHours: Hourmeter
+            + isMetBy(achieved: Hourmeter): boolean
+        }
+        class PowderLot <<Value Object>> {
+            - supplier: String
+            - lotNumber: String
+            - chemicalComposition: String
+        }
+        class PrematureFailureDetectedEvent <<Domain Event>> {
+            - componentId: Long
+            - recuperationId: Long
+        }
+        enum ComponentTypeEnum {
+            FRONT_ROD
+            CYLINDER_BLOCK
+            ROD_ASSEMBLY
+            REAR_CYLINDER
+        }
+        enum ComponentStatusEnum {
+            RECEIVED
+            IN_PROCESS
+            COATED
+            DELIVERED
+            RETURNED
+        }
+        enum RecuperationStatusEnum {
+            RECEIVED
+            IN_PROCESS
+            COATED
+            CLOSED
+        }
+        enum MachineManufacturerEnum {
+            CATERPILLAR
+            KOMATSU
+        }
+        Customer "1" --> "1" Ruc : identifiedBy
+        Component "*" --> "1" Customer : ownedBy
+        Component "1" --> "1" MachineModel : fitsIn
+        Component "1" --> "1" PcrTarget : expectedToLast
+        Component "1" *-- "0..*" ServiceLifeRecord : tracks
+        Component --> ComponentTypeEnum
+        Component --> ComponentStatusEnum
+        Component ..> PrematureFailureDetectedEvent : registers
+        Recuperation "*" --> "1" Component : recovers
+        Recuperation "*" --> "1" Customer : requestedBy
+        Recuperation "1" --> "1" WorkOrderNumber : identifiedBy
+        Recuperation "1" --> "1" ManufacturingOrderNumber : identifiedBy
+        Recuperation "1" --> "1" PowderLot : sprayedWith
+        Recuperation "1" --> "1" Weight : weighs
+        Recuperation --> RecuperationStatusEnum
+        MachineModel --> MachineManufacturerEnum
+
+        interface CustomerRepository <<Repository>> {
+            + findByRuc(ruc: Ruc): Optional<Customer>
+            + findBySupplierOrganizationId(organizationId: Long): List<Customer>
+            + save(customer: Customer): Customer
+        }
+        interface ComponentRepository <<Repository>> {
+            + findBySerialNumberAndCustomerId(serialNumber: String, customerId: Long): Optional<Component>
+            + findByCustomerIdAndStatus(customerId: Long, status: ComponentStatusEnum): List<Component>
+            + save(component: Component): Component
+        }
+        interface RecuperationRepository <<Repository>> {
+            + findByWorkOrderNumber(wo: WorkOrderNumber): Optional<Recuperation>
+            + existsByManufacturingOrderNumber(of: ManufacturingOrderNumber): boolean
+            + findByComponentId(componentId: Long): List<Recuperation>
+            + save(recuperation: Recuperation): Recuperation
+        }
+    }
+
+    package "traceability.application" {
+        class "ExternalIamService" as trExtIam <<ACL>> {
+            + fetchAssetOwnerOrganizationIdByRuc(ruc: String): Optional<Long>
+        }
+        class RecuperationQueryServiceImpl <<Application Service>> {
+            + handle(query: GetRecuperationByIdQuery): Optional<Recuperation>
+            + handle(query: GetRecuperationsByCustomerQuery): List<Recuperation>
+        }
+        class ComponentQueryServiceImpl <<Application Service>> {
+            + handle(query: GetComponentHistoryQuery): Optional<Component>
+            + handle(query: GetComponentsByOrganizationQuery): List<Component>
+        }
+        RecuperationQueryServiceImpl ..> RecuperationRepository
+        ComponentQueryServiceImpl ..> ComponentRepository
+        class RecuperationCommandServiceImpl <<Application Service>>
+        class ComponentCommandServiceImpl <<Application Service>>
+        class "TraceabilityIntegrationEventHandler" as trHandler <<Event Handler>> {
+            + on(event: OrganizationRegisteredIntegrationEvent): void
+            + on(event: SpraySessionCompletedIntegrationEvent): void
+        }
+        RecuperationCommandServiceImpl ..> Recuperation
+        ComponentCommandServiceImpl ..> Component
+        ComponentCommandServiceImpl ..> IntegrationEventPublisher
+        trHandler ..> Customer
+        trHandler ..> Recuperation
+        trExtIam ..> IamContextFacade : «ACL»
+    }
+
+    package "traceability.infrastructure" {
+        interface JpaCustomerRepository <<Spring Data>>
+        interface JpaComponentRepository <<Spring Data>>
+        interface JpaRecuperationRepository <<Spring Data>>
+        CustomerRepository <|-- JpaCustomerRepository
+        ComponentRepository <|-- JpaComponentRepository
+        RecuperationRepository <|-- JpaRecuperationRepository
+    }
+
+    package "traceability.interfaces" {
+        class RecuperationController <<REST>>
+        class ComponentController <<REST>>
+        class TraceabilityContextFacade <<Context Facade>> {
+            + isRecuperationInProcess(recuperationId: Long): boolean
+            + fetchSupplierOrganizationId(recuperationId: Long): Optional<Long>
+            + fetchLinkedSessionIds(recuperationId: Long): List<Long>
+            + fetchComponentTypeAndModel(recuperationId: Long): Optional<ComponentSpecDto>
+        }
+        class PrematureFailureDetectedIntegrationEvent <<Integration Event>> {
+            - componentId: Long
+            - recuperationId: Long
+            - supplierOrganizationId: Long
+        }
+        RecuperationController ..> RecuperationCommandServiceImpl
+        RecuperationController ..> RecuperationQueryServiceImpl
+        ComponentController ..> ComponentQueryServiceImpl
+        ComponentController ..> ComponentCommandServiceImpl
+        TraceabilityContextFacade ..> Recuperation
+        IntegrationEvent <|-- PrematureFailureDetectedIntegrationEvent
+        RecuperationCommandServiceImpl ..> RecuperationRepository
+        RecuperationCommandServiceImpl ..> ComponentRepository
+        ComponentCommandServiceImpl ..> ComponentRepository
+        trHandler ..> CustomerRepository
+        trHandler ..> RecuperationRepository
+        TraceabilityContextFacade ..> RecuperationRepository
+        TraceabilityContextFacade ..> ComponentRepository
+    }
+}
+
+package "IAM" #EEEEEE {
+    class IamContextFacade <<Context Facade>>
+    class OrganizationRegisteredIntegrationEvent <<Integration Event>>
+}
+package "Notifications" #EEEEEE {
+    class "NotificationIntegrationEventHandler" as ntHandler <<Event Handler>>
+}
+package "ProcessMonitoring" #EEEEEE {
+    class SpraySessionCompletedIntegrationEvent <<Integration Event>>
+}
+
+OrganizationRegisteredIntegrationEvent ..> trHandler : consumedBy
+SpraySessionCompletedIntegrationEvent ..> trHandler : consumedBy
+PrematureFailureDetectedIntegrationEvent ..> ntHandler : consumedBy
+AuditableAbstractAggregateRoot <|-- Customer
+AuditableAbstractAggregateRoot <|-- Component
+AuditableAbstractAggregateRoot <|-- Recuperation
+AuditableModel <|-- ServiceLifeRecord
+
+@enduml

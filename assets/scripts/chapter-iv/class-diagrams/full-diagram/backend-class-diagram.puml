@@ -1,4 +1,4 @@
-@startuml Reliant_ClassDiagram_v4
+@startuml Reliant_ClassDiagram
 skinparam packageStyle rectangle
 skinparam classAttributeIconSize 0
 skinparam linetype ortho
