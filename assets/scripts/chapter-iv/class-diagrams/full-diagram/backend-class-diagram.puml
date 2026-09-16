@@ -1,0 +1,2024 @@
+@startuml Reliant_ClassDiagram_v4
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam nodesep 40
+skinparam ranksep 60
+hide empty members
+
+package "SharedKernel" #F5F5F5 {
+
+package "shared.domain" {
+abstract class AuditableModel {
+- id: Long
+- createdAt: Instant
+- updatedAt: Instant
+}
+abstract class AuditableAbstractAggregateRoot {
++ registerEvent(event: Object): void
++ clearDomainEvents(): void
+}
+AuditableModel <|-- AuditableAbstractAggregateRoot
+
+abstract class IntegrationEvent {
+- eventId: UUID
+- occurredAt: Instant
+- sourceContext: String
+- organizationId: Long
+}
+
+class PlcTimestamp <<Value Object>> {
+- epochMillis: long
+- plcClockOffsetMillis: long
++ toInstant(): Instant
+}
+class TimeWindow <<Value Object>> {
+- start: Instant
+- end: Instant
+- zone: ZoneId
++ duration(): Duration
++ contains(instant: Instant): boolean
+}
+class ReportingPeriod <<Value Object>> {
+- from: LocalDate
+- to: LocalDate
+- grouping: PeriodGroupingEnum
++ validate(): void
+}
+class SamplingInterval <<Value Object>> {
+- millis: int
++ validate(): void
+}
+enum PeriodGroupingEnum {
+DAILY
+WEEKLY
+MONTHLY
+}
+ReportingPeriod --> PeriodGroupingEnum
+
+class Unit <<Value Object>> {
+- symbol: String
+- category: UnitCategoryEnum
+- system: UnitSystemEnum
++ validate(): void
+}
+enum UnitCategoryEnum {
+PRESSURE
+TEMPERATURE
+FLOW
+SPEED
+LENGTH
+MASS
+TIME
+RATIO
+DIMENSIONLESS
+}
+enum UnitSystemEnum {
+INTERNATIONAL_SYSTEM
+IMPERIAL_SYSTEM
+}
+Unit --> UnitCategoryEnum
+Unit --> UnitSystemEnum
+
+class Money <<Value Object>> {
+- amount: BigDecimal
+- currency: Currency
+}
+class Hourmeter <<Value Object>> {
+- hours: BigDecimal
++ minus(other: Hourmeter): Hourmeter
+}
+class Weight <<Value Object>> {
+- value: BigDecimal
+- unit: Unit
+}
+class Ruc <<Value Object>> {
+- value: String
++ validate(): void
+}
+Weight "1" --> "1" Unit : measuredIn
+}
+
+package "shared.application" {
+interface IntegrationEventPublisher <<Port>> {
++ publish(event: IntegrationEvent): void
+}
+interface UnitConversionService <<Port>> {
++ convert(value: BigDecimal, from: Unit, to: Unit): BigDecimal
++ canonicalUnitFor(category: UnitCategoryEnum): Unit
+}
+}
+
+package "shared.infrastructure" {
+class SpringIntegrationEventPublisher <<Adapter>> {
+- applicationEventPublisher: ApplicationEventPublisher
++ publish(event: IntegrationEvent): void
+}
+class SnakeCasePhysicalNamingStrategy <<Persistence>> {
++ toPhysicalTableName(name, context): Identifier
++ toPhysicalColumnName(name, context): Identifier
+}
+class SecurityConfig <<Configuration>> {
++ filterChain(http: HttpSecurity): SecurityFilterChain
+}
+class CorsConfig <<Configuration>> {
++ corsConfigurer(): WebMvcConfigurer
+}
+class OpenApiConfiguration <<Configuration>> {
++ customOpenApi(): OpenAPI
+}
+class StandardUnitConversionService <<Adapter>> {
+- conversionTable: Map<UnitPair, BigDecimal>
++ convert(value: BigDecimal, from: Unit, to: Unit): BigDecimal
++ canonicalUnitFor(category: UnitCategoryEnum): Unit
+}
+IntegrationEventPublisher <|.. SpringIntegrationEventPublisher
+UnitConversionService <|.. StandardUnitConversionService
+}
+
+package "shared.interfaces" {
+class HealthController <<REST>> {
++ health(): ResponseEntity
+}
+class GlobalExceptionHandler <<REST Advice>> {
++ handleDomainException(ex): ResponseEntity<ErrorResource>
++ handleValidation(ex): ResponseEntity<ErrorResource>
++ handleNotFound(ex): ResponseEntity<ErrorResource>
+}
+class ErrorResource <<Resource>> {
+- code: String
+- message: String
+- timestamp: Instant
+}
+GlobalExceptionHandler ..> ErrorResource
+}
+}
+
+package "IAM" #E8F0FE {
+
+package "iam.domain" {
+class Organization <<Aggregate Root>> {
+- name: String
+- ruc: Ruc
+- organizationType: OrganizationTypeEnum
+- status: OrganizationStatusEnum
+- timeZone: ZoneId
++ activate(): void
++ suspend(): void
+}
+class User <<Aggregate Root>> {
+- fullName: String
+- email: EmailAddress
+- passwordHash: String
+- organizationId: Long
+- roles: Set<Role>
++ assignRole(role: Role): void
+}
+class UserPreference <<Aggregate Root>> {
+- userId: Long
+- defaultUnitSystem: UnitSystemEnum
+- unitOverrides: List<UnitOverride>
+- language: String
++ overrideUnit(override: UnitOverride): void
++ resolveUnit(category: UnitCategoryEnum, parameter: String): Unit
+}
+class UnitOverride <<Value Object>> {
+- category: UnitCategoryEnum
+- parameter: String
+- unit: Unit
+}
+class Role <<Entity>> {
+- name: RoleEnum
+}
+class EmailAddress <<Value Object>> {
+- value: String
++ validate(): void
+}
+enum OrganizationTypeEnum {
+RECUPERATION_SUPPLIER
+ASSET_OWNER
+}
+enum OrganizationStatusEnum {
+ACTIVE
+SUSPENDED
+}
+enum RoleEnum {
+ROLE_ADMIN
+ROLE_HVOF_OPERATOR
+ROLE_OPERATION_SUPERVISOR
+ROLE_MAINTENANCE_SUPERVISOR
+ROLE_QUALITY_ENGINEER
+ROLE_RELIABILITY_ENGINEER
+ROLE_PROCUREMENT_ANALYST
+}
+class OrganizationRegisteredEvent <<Domain Event>> {
+- organizationId: Long
+- ruc: String
+}
+Organization "1" --> "1" Ruc : identifiedBy
+Organization --> OrganizationTypeEnum
+Organization --> OrganizationStatusEnum
+Organization ..> OrganizationRegisteredEvent : registers
+User "1" --> "1" EmailAddress : contactedAt
+User "1" o-- "1..*" Role : holds
+User "*" --> "1" Organization : belongsTo
+UserPreference "1" --> "1" User : belongsTo
+UserPreference "1" *-- "0..*" UnitOverride : overrides
+UserPreference --> UnitSystemEnum
+UnitOverride "1" --> "1" Unit : uses
+Role --> RoleEnum
+
+interface OrganizationRepository <<Repository>> {
++ findByRuc(ruc: Ruc): Optional<Organization>
++ save(organization: Organization): Organization
+}
+interface UserRepository <<Repository>> {
++ findByEmail(email: EmailAddress): Optional<User>
++ findByOrganizationIdAndRolesName(organizationId: Long, role: RoleEnum): List<User>
++ save(user: User): User
+}
+interface UserPreferenceRepository <<Repository>> {
++ findByUserId(userId: Long): Optional<UserPreference>
++ save(preference: UserPreference): UserPreference
+}
+}
+
+package "iam.application" {
+interface HashingService <<Port>> {
++ hash(raw: String): String
++ matches(raw: String, hashed: String): boolean
+}
+interface TokenService <<Port>> {
++ generateToken(username: String): String
++ validateToken(token: String): boolean
+}
+class UserCommandServiceImpl <<Application Service>> {
++ handle(command: SignUpCommand): Optional<User>
++ handle(command: SignInCommand): Optional<Pair<User, String>>
+}
+class UserQueryServiceImpl <<Application Service>> {
++ handle(query: GetUserByIdQuery): Optional<User>
++ handle(query: GetUsersByOrganizationQuery): List<User>
+}
+UserQueryServiceImpl ..> UserRepository
+UserPreferenceCommandServiceImpl ..> UserPreferenceRepository
+class UserPreferenceCommandServiceImpl <<Application Service>> {
++ handle(command: UpdateUnitPreferenceCommand): Optional<UserPreference>
+}
+UserCommandServiceImpl ..> HashingService
+UserCommandServiceImpl ..> TokenService
+UserCommandServiceImpl ..> User
+UserPreferenceCommandServiceImpl ..> UserPreference
+}
+
+package "iam.infrastructure" {
+class BCryptHashingService <<Adapter>>
+class JwtTokenService <<Adapter>>
+class JwtAuthenticationFilter <<Adapter>>
+HashingService <|.. BCryptHashingService
+TokenService <|.. JwtTokenService
+JwtAuthenticationFilter ..> TokenService
+
+interface JpaOrganizationRepository <<Spring Data>>
+interface JpaUserRepository <<Spring Data>>
+interface JpaUserPreferenceRepository <<Spring Data>>
+OrganizationRepository <|-- JpaOrganizationRepository
+UserRepository <|-- JpaUserRepository
+UserPreferenceRepository <|-- JpaUserPreferenceRepository
+}
+
+package "iam.interfaces" {
+class AuthenticationController <<REST>>
+class UserPreferenceController <<REST>>
+class IamContextFacade <<Context Facade>> {
++ fetchOrganizationIdByRuc(ruc: String): Optional<Long>
++ fetchOrganizationType(organizationId: Long): String
++ fetchOrganizationTimeZone(organizationId: Long): ZoneId
++ fetchUserIdsByRole(organizationId: Long, role: String): List<Long>
++ fetchUserEmail(userId: Long): Optional<String>
++ fetchUnitPreference(userId: Long, category: String, parameter: String): Unit
+}
+class OrganizationRegisteredIntegrationEvent <<Integration Event>> {
+- organizationId: Long
+- ruc: String
+- organizationType: String
+}
+AuthenticationController ..> UserCommandServiceImpl
+UserPreferenceController ..> UserQueryServiceImpl
+UserPreferenceController ..> UserPreferenceCommandServiceImpl
+IamContextFacade ..> Organization
+IamContextFacade ..> User
+IamContextFacade ..> UserPreference
+IntegrationEvent <|-- OrganizationRegisteredIntegrationEvent
+UserCommandServiceImpl ..> UserRepository
+UserCommandServiceImpl ..> OrganizationRepository
+UserPreferenceCommandServiceImpl ..> UserPreferenceRepository
+IamContextFacade ..> OrganizationRepository
+IamContextFacade ..> UserRepository
+IamContextFacade ..> UserPreferenceRepository
+}
+}
+
+package "Billing" #FFF8E1 {
+package "billing.domain" {
+class Plan <<Aggregate Root>> {
+- name: String
+- planType: PlanTypeEnum
+- monthlyPrice: Money
+- maxMonitoredSystems: Integer
+- maxTrackedComponents: Integer
++ isCompatibleWith(organizationType: String): boolean
+}
+class Subscription <<Aggregate Root>> {
+- organizationId: Long
+- planId: Long
+- startDate: LocalDate
+- endDate: LocalDate
+- status: SubscriptionStatusEnum
++ activate(): void
++ cancel(): void
++ isActive(): boolean
+}
+enum PlanTypeEnum {
+OPERATOR
+ASSET_OWNER
+}
+enum SubscriptionStatusEnum {
+ACTIVE
+CANCELLED
+EXPIRED
+}
+Plan "1" --> "1" Money : pricedAt
+Plan --> PlanTypeEnum
+Subscription "*" --> "1" Plan : subscribedTo
+Subscription --> SubscriptionStatusEnum
+
+interface PlanRepository <<Repository>> {
++ findByPlanType(planType: PlanTypeEnum): List<Plan>
++ save(plan: Plan): Plan
+}
+interface SubscriptionRepository <<Repository>> {
++ findByOrganizationIdAndStatus(organizationId: Long, status: SubscriptionStatusEnum): Optional<Subscription>
++ save(subscription: Subscription): Subscription
+}
+}
+package "billing.application" {
+class "ExternalIamService" as bilExtIam <<ACL>> {
++ fetchOrganizationType(organizationId: Long): Optional<String>
+}
+class SubscriptionQueryServiceImpl <<Application Service>> {
++ handle(query: GetSubscriptionByOrganizationQuery): Optional<Subscription>
++ handle(query: GetAllPlansQuery): List<Plan>
+}
+SubscriptionQueryServiceImpl ..> SubscriptionRepository
+SubscriptionQueryServiceImpl ..> PlanRepository
+class SubscriptionCommandServiceImpl <<Application Service>>
+SubscriptionCommandServiceImpl ..> bilExtIam
+SubscriptionCommandServiceImpl ..> Subscription
+bilExtIam ..> IamContextFacade : «ACL»
+}
+package "billing.infrastructure" {
+interface JpaPlanRepository <<Spring Data>>
+interface JpaSubscriptionRepository <<Spring Data>>
+PlanRepository <|-- JpaPlanRepository
+SubscriptionRepository <|-- JpaSubscriptionRepository
+}
+
+package "billing.interfaces" {
+class SubscriptionController <<REST>>
+class BillingContextFacade <<Context Facade>> {
++ hasActiveSubscription(organizationId: Long): boolean
++ fetchMaxMonitoredSystems(organizationId: Long): Integer
+}
+SubscriptionController ..> SubscriptionCommandServiceImpl
+SubscriptionController ..> SubscriptionQueryServiceImpl
+BillingContextFacade ..> Subscription
+SubscriptionCommandServiceImpl ..> SubscriptionRepository
+SubscriptionCommandServiceImpl ..> PlanRepository
+BillingContextFacade ..> SubscriptionRepository
+}
+}
+
+package "Equipment" #E8F5E9 {
+
+package "equipment.domain" {
+
+class HVOFSystem <<Aggregate Root>> {
+- code: String
+- organizationId: Long
+- serialNumber: String
+- status: EquipmentStatusEnum
+- systemModel: HvofSystemModel
+- fuelType: FuelTypeEnum
+- subsystems: List<HvofSubsystem>
+- controllers: List<Controller>
+- tagMappings: List<TagMapping>
+- derivedParameters: List<DerivedParameterDefinition>
++ changeStatus(status: EquipmentStatusEnum): void
++ addSubsystem(subsystem: HvofSubsystem): void
++ addController(controller: Controller): void
++ proposeTagMappings(tagPaths: List<String>, rules: List<TagMappingRule>): List<TagMapping>
++ confirmTagMapping(mapping: TagMapping): void
++ defineDerivedParameter(definition: DerivedParameterDefinition): void
++ resolveTag(tagPath: String): Optional<TagMapping>
++ findTagPathByRole(role: StatusRoleEnum): Optional<String>
++ canStartSession(): boolean
+}
+class HvofSubsystem <<Entity>> {
+- subsystemType: HvofSubsystemTypeEnum
+- name: String
+- alias: String
+- parameters: Set<ProcessParameterEnum>
+- parts: List<HvofPart>
++ addPart(part: HvofPart): void
+}
+class HvofPart <<Entity>> {
+- partType: HvofPartTypeEnum
+- serialNumber: String
+- manufacturer: String
+}
+class Controller <<Entity>> {
+- controllerNumber: Integer
+- deviceType: DeviceTypeEnum
+- serialNumber: String
+- deviceInfo: DeviceInfo
+- endpoint: NetworkEndpoint
+- tagCatalogId: Long
+}
+class DerivedParameterDefinition <<Entity>> {
+- name: String
+- parameter: ProcessParameterEnum
+- expression: String
+- inputTagPaths: List<String>
+- unit: Unit
++ validateExpression(): void
+}
+class HvofSystemModel <<Value Object>> {
+- manufacturer: String
+- model: String
+}
+class DeviceInfo <<Value Object>> {
+- manufacturer: ControllerManufacturerEnum
+- model: String
+- partNumber: String
+- supportedProtocols: Set<ProtocolEnum>
++ validatePartNumber(): void
+}
+class IpAddressV4 <<Value Object>> {
+- value: String
++ {static} of(value: String): IpAddressV4
++ octets(): int[]
++ isPrivate(): boolean
++ isLoopback(): boolean
++ isInSameSubnetAs(other: IpAddressV4, prefixLength: int): boolean
+}
+class NetworkEndpoint <<Value Object>> {
+- ipAddress: IpAddressV4
+- port: Integer
+- rack: Integer
+- slot: Integer
+- endpointUrl: String
++ validateFor(protocol: ProtocolEnum): void
+}
+class TagMapping <<Value Object>> {
+- tagPath: String
+- controllerId: Long
+- subsystemId: Long
+- partId: Long
+- parameter: ProcessParameterEnum
+- tagKind: TagKindEnum
+- statusRole: StatusRoleEnum
+- matchedRuleId: Long
+- confirmed: boolean
+}
+
+class Recipe <<Aggregate Root>> {
+- hvofSystemId: Long
+- recipeNumber: Integer
+- name: String
+- powderSpecification: String
+- applicability: List<RecipeApplicability>
+- parameters: List<RecipeParameter>
+- status: RecipeStatusEnum
++ defineParameter(parameter: RecipeParameter): void
++ addApplicability(applicability: RecipeApplicability): void
++ appliesTo(componentType: String, machineModel: String): boolean
++ limitsFor(parameter: ProcessParameterEnum): Optional<ParameterLimits>
++ approve(): void
+}
+class RecipeApplicability <<Value Object>> {
+- componentType: String
+- machineModel: String
+- position: String
+}
+class RecipeParameter <<Value Object>> {
+- parameter: ProcessParameterEnum
+- setpoint: BigDecimal
+- limits: ParameterLimits
+- unit: Unit
+}
+class ParameterLimits <<Value Object>> {
+- lowerShutdown: BigDecimal
+- lowerWarning: BigDecimal
+- nominalMin: BigDecimal
+- nominalMax: BigDecimal
+- upperWarning: BigDecimal
+- upperShutdown: BigDecimal
++ validateOrder(): void
++ bandFor(value: BigDecimal): ThresholdBandEnum
+}
+
+class ControllerTagCatalog <<Aggregate Root>> {
+- controllerId: Long
+- manufacturer: ControllerManufacturerEnum
+- importedAt: Instant
+- roots: List<TagNode>
++ rebuildFrom(rows: List<ImportedTagRow>, normalizer: DataTypeNormalizer): void
++ findByPath(tagPath: String): Optional<TagNode>
++ leaves(): List<TagNode>
+}
+class TagNode <<Entity>> {
+- name: String
+- kind: TagNodeKindEnum
+- vendorDataType: String
+- dataType: CanonicalDataTypeEnum
+- style: DisplayStyleEnum
+- description: String
+- children: List<TagNode>
++ tagPath(): String
++ isLeaf(): boolean
+}
+class ImportedTagRow <<Value Object>> {
+- scope: String
+- name: String
+- vendorDataType: String
+- description: String
+- attributes: String
+}
+
+class TagMappingRule <<Aggregate Root>> {
+- pattern: String
+- subsystemType: HvofSubsystemTypeEnum
+- partType: HvofPartTypeEnum
+- parameter: ProcessParameterEnum
+- tagKind: TagKindEnum
+- statusRole: StatusRoleEnum
+- priority: Integer
++ matches(tagPath: String): boolean
+}
+
+enum EquipmentStatusEnum {
+ACTIVE
+IN_MAINTENANCE
+OUT_OF_SERVICE
+}
+enum FuelTypeEnum {
+KEROSENE
+PROPANE
+PROPYLENE
+HYDROGEN
+NATURAL_GAS
+}
+enum HvofSubsystemTypeEnum {
+SPRAY_GUN
+GAS_CONTROL_CONSOLE
+POWDER_FEED
+COOLING
+FUEL_SUPPLY
+OXYGEN_SUPPLY
+COMPRESSED_AIR
+GUN_MANIPULATION
+WORKPIECE_HANDLING
+ENCLOSURE_VENTILATION
+DUST_COLLECTION
+GAS_DETECTION
+CONTROL_AND_SAFETY
+}
+enum HvofPartTypeEnum {
+COMBUSTION_CHAMBER
+NOZZLE
+INJECTOR
+HOPPER
+METERING_DISC
+VIBRATOR
+CHILLER
+WATER_PUMP
+FUEL_PUMP
+REGULATOR
+MASS_FLOW_CONTROLLER
+X_AXIS
+Z_AXIS
+SPINDLE
+TURNTABLE
+DUST_COLLECTOR
+FILTER
+DOOR_INTERLOCK
+GAS_SENSOR
+}
+enum DeviceTypeEnum {
+PLC
+HMI
+VFD
+REMOTE_IO
+}
+enum ControllerManufacturerEnum {
+ALLEN_BRADLEY
+SIEMENS
+SCHNEIDER
+MITSUBISHI
+DELTA
+OMRON
+OTHER
+}
+enum ProtocolEnum {
+ETHERNET_IP
+S7
+OPC_UA
+MODBUS_TCP
+}
+enum TagNodeKindEnum {
+PROGRAM
+STRUCTURE
+ARRAY
+ATOMIC
+}
+enum CanonicalDataTypeEnum {
+BOOLEAN
+INTEGER
+FLOAT
+STRING
+STRUCTURE
+ARRAY
+}
+enum DisplayStyleEnum {
+DECIMAL
+FLOAT
+BINARY
+HEX
+ASCII
+}
+enum TagKindEnum {
+ANALOG_READING
+SETPOINT
+FAULT_FLAG
+STATUS
+}
+enum StatusRoleEnum {
+NONE
+MACHINE_RUNNING
+GUN_IGNITED
+FEEDER_RUNNING
+SPRAY_ACTIVE
+RECIPE_NUMBER
+}
+enum RecipeStatusEnum {
+DRAFT
+APPROVED
+RETIRED
+}
+enum ThresholdBandEnum {
+NOMINAL
+WARNING_LOW
+WARNING_HIGH
+SHUTDOWN_LOW
+SHUTDOWN_HIGH
+}
+enum ProcessParameterEnum {
+OXYGEN_PRESSURE
+OXYGEN_FLOW
+FUEL_PRESSURE
+FUEL_FLOW
+OXYGEN_FUEL_RATIO
+CARRIER_GAS_PRESSURE
+CARRIER_GAS_FLOW
+FLAME_TEMPERATURE
+POWDER_FEEDRATE
+FEEDER_DISC_SPEED
+HOPPER_PRESSURE
+COOLING_WATER_FLOW
+COOLING_WATER_INLET_TEMPERATURE
+COOLING_WATER_PRESSURE
+SPINDLE_SPEED
+X_AXIS_POSITION
+Z_AXIS_POSITION
+TRAVERSE_SPEED
+AIR_PRESSURE
+DUST_COLLECTOR_DIFFERENTIAL_PRESSURE
+}
+
+HVOFSystem "1" *-- "1..*" HvofSubsystem : composedOf
+HVOFSystem "1" *-- "1..*" Controller : controlledBy
+HVOFSystem "1" *-- "0..*" TagMapping : maps
+HVOFSystem "1" *-- "0..*" DerivedParameterDefinition : computes
+HVOFSystem "1" --> "1" HvofSystemModel : is
+HVOFSystem --> EquipmentStatusEnum
+HVOFSystem --> FuelTypeEnum
+HVOFSystem ..> TagMappingRule : evaluates
+Recipe "1..*" --> "1" HVOFSystem : loadedIn (por id)
+HvofSubsystem "1" *-- "0..*" HvofPart : contains
+HvofSubsystem --> HvofSubsystemTypeEnum
+HvofPart --> HvofPartTypeEnum
+Controller "1" --> "1" DeviceInfo : describedBy
+Controller "1" --> "1" NetworkEndpoint : reachableAt
+NetworkEndpoint "1" --> "1" IpAddressV4 : at
+Controller --> DeviceTypeEnum
+Controller ..> ControllerTagCatalog : catalogedBy (por id)
+DeviceInfo --> ControllerManufacturerEnum
+DeviceInfo --> ProtocolEnum
+DerivedParameterDefinition --> ProcessParameterEnum
+DerivedParameterDefinition "1" --> "1" Unit : expressedIn
+TagMapping --> ProcessParameterEnum
+TagMapping --> TagKindEnum
+TagMapping --> StatusRoleEnum
+Recipe "1" *-- "1..*" RecipeParameter : defines
+Recipe "1" *-- "1..*" RecipeApplicability : appliesTo
+Recipe --> RecipeStatusEnum
+RecipeParameter "1" --> "1" ParameterLimits : boundedBy
+RecipeParameter --> ProcessParameterEnum
+RecipeParameter "1" --> "1" Unit : expressedIn
+ParameterLimits ..> ThresholdBandEnum : classifies
+ControllerTagCatalog "1" *-- "1..*" TagNode : roots
+ControllerTagCatalog ..> ImportedTagRow : builtFrom
+TagNode "1" *-- "0..*" TagNode : children
+TagNode --> TagNodeKindEnum
+TagNode --> CanonicalDataTypeEnum
+TagNode --> DisplayStyleEnum
+TagMappingRule --> HvofSubsystemTypeEnum
+TagMappingRule --> TagKindEnum
+TagMappingRule --> StatusRoleEnum
+
+interface HVOFSystemRepository <<Repository>> {
++ findByOrganizationId(organizationId: Long): List<HVOFSystem>
++ existsByOrganizationIdAndCode(organizationId: Long, code: String): boolean
++ save(system: HVOFSystem): HVOFSystem
+}
+interface RecipeRepository <<Repository>> {
++ findByHvofSystemIdAndRecipeNumber(systemId: Long, recipeNumber: Integer): Optional<Recipe>
++ findByHvofSystemId(systemId: Long): List<Recipe>
++ save(recipe: Recipe): Recipe
+}
+interface ControllerTagCatalogRepository <<Repository>> {
++ findByControllerId(controllerId: Long): Optional<ControllerTagCatalog>
++ save(catalog: ControllerTagCatalog): ControllerTagCatalog
+}
+interface TagMappingRuleRepository <<Repository>> {
++ findAllByOrderByPriorityAsc(): List<TagMappingRule>
++ save(rule: TagMappingRule): TagMappingRule
+}
+}
+
+package "equipment.application" {
+interface DataTypeNormalizer <<Port>> {
++ supports(manufacturer: ControllerManufacturerEnum): boolean
++ normalize(vendorDataType: String): CanonicalDataTypeEnum
+}
+class "ExternalBillingService" as eqExtBilling <<ACL>> {
++ canRegisterAnotherSystem(organizationId: Long): boolean
+}
+class HvofSystemCommandServiceImpl <<Application Service>> {
++ handle(command: RegisterHvofSystemCommand): Optional<HVOFSystem>
++ handle(command: ImportControllerTagsCommand): List<TagMapping>
++ handle(command: ConfirmTagMappingCommand): Optional<HVOFSystem>
++ handle(command: DefineDerivedParameterCommand): Optional<HVOFSystem>
+}
+class HvofSystemQueryServiceImpl <<Application Service>> {
++ handle(query: GetHvofSystemByIdQuery): Optional<HVOFSystem>
++ handle(query: GetHvofSystemsByOrganizationQuery): List<HVOFSystem>
++ handle(query: GetTagCatalogByControllerQuery): Optional<ControllerTagCatalog>
+}
+class RecipeQueryServiceImpl <<Application Service>> {
++ handle(query: GetRecipesBySystemQuery): List<Recipe>
+}
+HvofSystemQueryServiceImpl ..> HVOFSystemRepository
+HvofSystemQueryServiceImpl ..> ControllerTagCatalogRepository
+RecipeQueryServiceImpl ..> RecipeRepository
+class RecipeCommandServiceImpl <<Application Service>> {
++ handle(command: CreateRecipeCommand): Optional<Recipe>
++ handle(command: ApproveRecipeCommand): Optional<Recipe>
+}
+HvofSystemCommandServiceImpl ..> eqExtBilling
+HvofSystemCommandServiceImpl ..> DataTypeNormalizer
+HvofSystemCommandServiceImpl ..> HVOFSystem
+HvofSystemCommandServiceImpl ..> ControllerTagCatalog
+RecipeCommandServiceImpl ..> Recipe
+eqExtBilling ..> BillingContextFacade : «ACL»
+}
+
+package "equipment.infrastructure" {
+interface TagFileParser <<Port>> {
++ parse(file: MultipartFile): List<ImportedTagRow>
+}
+class Studio5000CsvTagFileParser <<Adapter>>
+class JsonTagFileParser <<Adapter>>
+class AllenBradleyDataTypeNormalizer <<Adapter>>
+class SiemensDataTypeNormalizer <<Adapter>>
+class SchneiderDataTypeNormalizer <<Adapter>>
+class MitsubishiDataTypeNormalizer <<Adapter>>
+class DeltaDataTypeNormalizer <<Adapter>>
+class OmronDataTypeNormalizer <<Adapter>>
+TagFileParser <|.. Studio5000CsvTagFileParser
+TagFileParser <|.. JsonTagFileParser
+DataTypeNormalizer <|.. AllenBradleyDataTypeNormalizer
+DataTypeNormalizer <|.. SiemensDataTypeNormalizer
+DataTypeNormalizer <|.. SchneiderDataTypeNormalizer
+DataTypeNormalizer <|.. MitsubishiDataTypeNormalizer
+DataTypeNormalizer <|.. DeltaDataTypeNormalizer
+DataTypeNormalizer <|.. OmronDataTypeNormalizer
+HvofSystemCommandServiceImpl ..> TagFileParser
+
+interface JpaHVOFSystemRepository <<Spring Data>>
+interface JpaRecipeRepository <<Spring Data>>
+interface JpaControllerTagCatalogRepository <<Spring Data>>
+interface JpaTagMappingRuleRepository <<Spring Data>>
+HVOFSystemRepository <|-- JpaHVOFSystemRepository
+RecipeRepository <|-- JpaRecipeRepository
+ControllerTagCatalogRepository <|-- JpaControllerTagCatalogRepository
+TagMappingRuleRepository <|-- JpaTagMappingRuleRepository
+}
+
+package "equipment.interfaces" {
+class HvofSystemController <<REST>>
+class RecipeController <<REST>>
+class EquipmentContextFacade <<Context Facade>> {
++ isSystemActive(systemId: Long): boolean
++ resolveTag(systemId: Long, tagPath: String): Optional<ResolvedTagDto>
++ fetchTagPathByRole(systemId: Long, role: String): Optional<String>
++ fetchRecipeLimits(systemId: Long, recipeNumber: Integer): List<ParameterLimitsDto>
++ recipeAppliesTo(systemId: Long, recipeNumber: Integer, componentType: String, machineModel: String): boolean
++ fetchDerivedParameters(systemId: Long): List<DerivedParameterDto>
++ fetchSubsystemAndPart(systemId: Long, subsystemId: Long, partId: Long): Optional<SubsystemPartDto>
++ fetchAvailableVariables(systemId: Long): List<VariableDto>
+}
+HvofSystemController ..> HvofSystemCommandServiceImpl
+HvofSystemController ..> HvofSystemQueryServiceImpl
+RecipeController ..> RecipeQueryServiceImpl
+RecipeController ..> RecipeCommandServiceImpl
+EquipmentContextFacade ..> HVOFSystem
+EquipmentContextFacade ..> Recipe
+HvofSystemCommandServiceImpl ..> HVOFSystemRepository
+HvofSystemCommandServiceImpl ..> ControllerTagCatalogRepository
+HvofSystemCommandServiceImpl ..> TagMappingRuleRepository
+RecipeCommandServiceImpl ..> RecipeRepository
+EquipmentContextFacade ..> HVOFSystemRepository
+EquipmentContextFacade ..> RecipeRepository
+}
+}
+
+package "Traceability" #FCE4EC {
+
+package "traceability.domain" {
+class Customer <<Aggregate Root>> {
+- supplierOrganizationId: Long
+- linkedAssetOwnerOrganizationId: Long
+- legalName: String
+- ruc: Ruc
+- mineSite: String
++ linkToAssetOwner(organizationId: Long): void
+}
+class Component <<Aggregate Root>> {
+- serialNumber: String
+- partNumber: String
+- componentType: ComponentTypeEnum
+- machineModel: MachineModel
+- customerId: Long
+- pcrTarget: PcrTarget
+- status: ComponentStatusEnum
+- serviceLifeRecords: List<ServiceLifeRecord>
++ deliver(hourmeterAtDelivery: Hourmeter): void
++ registerFieldReturn(record: ServiceLifeRecord): void
+}
+class ServiceLifeRecord <<Entity>> {
+- recuperationId: Long
+- hoursAtDelivery: Hourmeter
+- hoursAtReturn: Hourmeter
+- returnReason: String
+- metPcr: boolean
++ evaluateAgainst(target: PcrTarget): void
+}
+class Recuperation <<Aggregate Root>> {
+- workOrderNumber: WorkOrderNumber
+- manufacturingOrderNumber: ManufacturingOrderNumber
+- componentId: Long
+- customerId: Long
+- supplierOrganizationId: Long
+- segment: String
+- operation: String
+- weight: Weight
+- hourmeterAtEntry: Hourmeter
+- powderLot: PowderLot
+- linkedSessionIds: List<Long>
+- status: RecuperationStatusEnum
++ linkSpraySession(sessionId: Long): void
++ close(): void
+}
+class WorkOrderNumber <<Value Object>> {
+- value: String
++ validate(): void
+}
+class ManufacturingOrderNumber <<Value Object>> {
+- value: String
++ validate(): void
+}
+class MachineModel <<Value Object>> {
+- manufacturer: MachineManufacturerEnum
+- model: String
+}
+class PcrTarget <<Value Object>> {
+- targetHours: Hourmeter
++ isMetBy(achieved: Hourmeter): boolean
+}
+class PowderLot <<Value Object>> {
+- supplier: String
+- lotNumber: String
+- chemicalComposition: String
+}
+class PrematureFailureDetectedEvent <<Domain Event>> {
+- componentId: Long
+- recuperationId: Long
+}
+enum ComponentTypeEnum {
+FRONT_ROD
+CYLINDER_BLOCK
+ROD_ASSEMBLY
+REAR_CYLINDER
+}
+enum ComponentStatusEnum {
+RECEIVED
+IN_PROCESS
+COATED
+DELIVERED
+RETURNED
+}
+enum RecuperationStatusEnum {
+RECEIVED
+IN_PROCESS
+COATED
+CLOSED
+}
+enum MachineManufacturerEnum {
+CATERPILLAR
+KOMATSU
+}
+Customer "1" --> "1" Ruc : identifiedBy
+Component "*" --> "1" Customer : ownedBy
+Component "1" --> "1" MachineModel : fitsIn
+Component "1" --> "1" PcrTarget : expectedToLast
+Component "1" *-- "0..*" ServiceLifeRecord : tracks
+Component --> ComponentTypeEnum
+Component --> ComponentStatusEnum
+Component ..> PrematureFailureDetectedEvent : registers
+Recuperation "*" --> "1" Component : recovers
+Recuperation "*" --> "1" Customer : requestedBy
+Recuperation "1" --> "1" WorkOrderNumber : identifiedBy
+Recuperation "1" --> "1" ManufacturingOrderNumber : identifiedBy
+Recuperation "1" --> "1" PowderLot : sprayedWith
+Recuperation "1" --> "1" Weight : weighs
+Recuperation --> RecuperationStatusEnum
+MachineModel --> MachineManufacturerEnum
+
+interface CustomerRepository <<Repository>> {
++ findByRuc(ruc: Ruc): Optional<Customer>
++ findBySupplierOrganizationId(organizationId: Long): List<Customer>
++ save(customer: Customer): Customer
+}
+interface ComponentRepository <<Repository>> {
++ findBySerialNumberAndCustomerId(serialNumber: String, customerId: Long): Optional<Component>
++ findByCustomerIdAndStatus(customerId: Long, status: ComponentStatusEnum): List<Component>
++ save(component: Component): Component
+}
+interface RecuperationRepository <<Repository>> {
++ findByWorkOrderNumber(wo: WorkOrderNumber): Optional<Recuperation>
++ existsByManufacturingOrderNumber(of: ManufacturingOrderNumber): boolean
++ findByComponentId(componentId: Long): List<Recuperation>
++ save(recuperation: Recuperation): Recuperation
+}
+}
+
+package "traceability.application" {
+class "ExternalIamService" as trExtIam <<ACL>> {
++ fetchAssetOwnerOrganizationIdByRuc(ruc: String): Optional<Long>
+}
+class RecuperationQueryServiceImpl <<Application Service>> {
++ handle(query: GetRecuperationByIdQuery): Optional<Recuperation>
++ handle(query: GetRecuperationsByCustomerQuery): List<Recuperation>
+}
+class ComponentQueryServiceImpl <<Application Service>> {
++ handle(query: GetComponentHistoryQuery): Optional<Component>
++ handle(query: GetComponentsByOrganizationQuery): List<Component>
+}
+RecuperationQueryServiceImpl ..> RecuperationRepository
+ComponentQueryServiceImpl ..> ComponentRepository
+class RecuperationCommandServiceImpl <<Application Service>>
+class ComponentCommandServiceImpl <<Application Service>>
+class "TraceabilityIntegrationEventHandler" as trHandler <<Event Handler>> {
++ on(event: OrganizationRegisteredIntegrationEvent): void
++ on(event: SpraySessionCompletedIntegrationEvent): void
+}
+RecuperationCommandServiceImpl ..> Recuperation
+ComponentCommandServiceImpl ..> Component
+ComponentCommandServiceImpl ..> IntegrationEventPublisher
+trHandler ..> Customer
+trHandler ..> Recuperation
+trExtIam ..> IamContextFacade : «ACL»
+}
+
+package "traceability.infrastructure" {
+interface JpaCustomerRepository <<Spring Data>>
+interface JpaComponentRepository <<Spring Data>>
+interface JpaRecuperationRepository <<Spring Data>>
+CustomerRepository <|-- JpaCustomerRepository
+ComponentRepository <|-- JpaComponentRepository
+RecuperationRepository <|-- JpaRecuperationRepository
+}
+
+package "traceability.interfaces" {
+class RecuperationController <<REST>>
+class ComponentController <<REST>>
+class TraceabilityContextFacade <<Context Facade>> {
++ isRecuperationInProcess(recuperationId: Long): boolean
++ fetchSupplierOrganizationId(recuperationId: Long): Optional<Long>
++ fetchLinkedSessionIds(recuperationId: Long): List<Long>
++ fetchComponentTypeAndModel(recuperationId: Long): Optional<ComponentSpecDto>
+}
+class PrematureFailureDetectedIntegrationEvent <<Integration Event>> {
+- componentId: Long
+- recuperationId: Long
+- supplierOrganizationId: Long
+}
+RecuperationController ..> RecuperationCommandServiceImpl
+RecuperationController ..> RecuperationQueryServiceImpl
+ComponentController ..> ComponentQueryServiceImpl
+ComponentController ..> ComponentCommandServiceImpl
+TraceabilityContextFacade ..> Recuperation
+IntegrationEvent <|-- PrematureFailureDetectedIntegrationEvent
+RecuperationCommandServiceImpl ..> RecuperationRepository
+RecuperationCommandServiceImpl ..> ComponentRepository
+ComponentCommandServiceImpl ..> ComponentRepository
+trHandler ..> CustomerRepository
+trHandler ..> RecuperationRepository
+TraceabilityContextFacade ..> RecuperationRepository
+TraceabilityContextFacade ..> ComponentRepository
+}
+}
+
+package "ProcessMonitoring" #E0F7FA {
+
+package "processmonitoring.domain" {
+class SpraySession <<Aggregate Root>> {
+- hvofSystemId: Long
+- recuperationId: Long
+- operatorId: Long
+- recipeNumber: Integer
+- window: TimeWindow
+- status: SessionStatusEnum
+- sprayPasses: List<SprayPass>
+- readings: List<ProcessReading>
++ start(): void
++ complete(): void
++ abort(reason: String): void
++ assignRecuperation(recuperationId: Long): void
++ verifyRecipe(loadedRecipeNumber: Integer, applies: boolean): void
++ recordReading(reading: ProcessReading, limits: Optional<ParameterLimitsSnapshot>): void
++ onSprayActiveChanged(active: boolean, at: PlcTimestamp): void
+}
+class SprayPass <<Entity>> {
+- passNumber: Integer
+- startedAt: Instant
+- endedAt: Instant
++ duration(): Duration
+}
+class ProcessReading <<Entity>> {
+- timestamp: PlcTimestamp
+- tagPath: String
+- parameter: String
+- subsystemId: Long
+- partId: Long
+- value: BigDecimal
+- unit: Unit
+- band: String
+- derived: boolean
+- mappingPending: boolean
++ evaluateAgainst(limits: ParameterLimitsSnapshot): void
+}
+class ParameterLimitsSnapshot <<Value Object>> {
+- parameter: String
+- lowerShutdown: BigDecimal
+- lowerWarning: BigDecimal
+- nominalMin: BigDecimal
+- nominalMax: BigDecimal
+- upperWarning: BigDecimal
+- upperShutdown: BigDecimal
++ bandFor(value: BigDecimal): String
+}
+class TelemetryBatch <<Value Object>> {
+- sessionId: Long
+- hvofSystemId: Long
+- receivedAt: Instant
+- readings: List<ProcessReading>
+}
+class ParameterOutOfRangeDetectedEvent <<Domain Event>> {
+- sessionId: Long
+- hvofSystemId: Long
+- parameter: String
+- value: BigDecimal
+- band: String
+}
+class FaultFlagActivatedEvent <<Domain Event>> {
+- sessionId: Long
+- hvofSystemId: Long
+- tagPath: String
+- subsystemId: Long
+- partId: Long
+- snapshot: Map<String, BigDecimal>
+}
+class SprayingStartedEvent <<Domain Event>> {
+- sessionId: Long
+- passNumber: Integer
+}
+class SprayingStoppedEvent <<Domain Event>> {
+- sessionId: Long
+- passNumber: Integer
+}
+class UnassignedSessionOpenedEvent <<Domain Event>> {
+- sessionId: Long
+- hvofSystemId: Long
+}
+class RecipeMismatchDetectedEvent <<Domain Event>> {
+- sessionId: Long
+- loadedRecipeNumber: Integer
+- componentType: String
+- machineModel: String
+}
+enum SessionStatusEnum {
+UNASSIGNED
+STARTED
+PAUSED
+COMPLETED
+ABORTED
+}
+SpraySession "1" *-- "0..*" SprayPass : dividedInto
+SpraySession "1" *-- "0..*" ProcessReading : records
+SpraySession "1" --> "1" TimeWindow : spans
+SpraySession --> SessionStatusEnum
+SpraySession ..> ParameterLimitsSnapshot : evaluatesWith
+SpraySession ..> ParameterOutOfRangeDetectedEvent : registers
+SpraySession ..> FaultFlagActivatedEvent : registers
+SpraySession ..> SprayingStartedEvent : registers
+SpraySession ..> SprayingStoppedEvent : registers
+SpraySession ..> UnassignedSessionOpenedEvent : registers
+SpraySession ..> RecipeMismatchDetectedEvent : registers
+ProcessReading "1" --> "1" PlcTimestamp : at
+ProcessReading "1" --> "1" Unit : measuredIn
+TelemetryBatch "1" o-- "1..*" ProcessReading : carries
+
+interface SpraySessionRepository <<Repository>> {
++ findByHvofSystemIdAndStatus(systemId: Long, status: SessionStatusEnum): Optional<SpraySession>
++ findByRecuperationId(recuperationId: Long): List<SpraySession>
++ save(session: SpraySession): SpraySession
+}
+}
+
+package "processmonitoring.application" {
+interface ExpressionEvaluator <<Port>> {
++ evaluate(expression: String, inputs: Map<String, BigDecimal>): BigDecimal
+}
+class "ExternalEquipmentService" as pmExtEquip <<ACL>> {
++ isSystemActive(systemId: Long): boolean
++ resolveTag(systemId: Long, tagPath: String): Optional<ResolvedTag>
++ fetchSprayActiveTagPath(systemId: Long): Optional<String>
++ fetchRecipeLimits(systemId: Long, recipeNumber: Integer): List<ParameterLimitsSnapshot>
++ recipeAppliesTo(systemId: Long, recipeNumber: Integer, componentType: String, machineModel: String): boolean
++ fetchDerivedParameters(systemId: Long): List<DerivedParameterSpec>
+}
+class "ExternalTraceabilityService" as pmExtTrace <<ACL>> {
++ isRecuperationInProcess(recuperationId: Long): boolean
++ fetchComponentSpec(recuperationId: Long): Optional<ComponentSpec>
+}
+class ComponentSpec <<Value Object>> {
+- componentType: String
+- machineModel: String
+}
+class "ExternalIamService" as pmExtIam <<ACL>> {
++ existsOperator(userId: Long): boolean
++ resolveUnitFor(userId: Long, parameter: String): Unit
+}
+class ResolvedTag <<Value Object>> {
+- subsystemId: Long
+- partId: Long
+- parameter: String
+- tagKind: String
+- statusRole: String
+}
+class DerivedParameterSpec <<Value Object>> {
+- parameter: String
+- expression: String
+- inputTagPaths: List<String>
+- unit: Unit
+}
+class SpraySessionCommandServiceImpl <<Application Service>> {
++ handle(command: StartSpraySessionCommand): Optional<SpraySession>
++ handle(command: IngestTelemetryCommand): IngestionResult
++ handle(command: AssignRecuperationCommand): Optional<SpraySession>
++ handle(command: CompleteSpraySessionCommand): Optional<SpraySession>
+}
+class SpraySessionQueryServiceImpl <<Application Service>> {
++ handle(query: GetLiveReadingsQuery, userId: Long): List<ReadingView>
+}
+SpraySessionCommandServiceImpl ..> pmExtEquip
+SpraySessionCommandServiceImpl ..> pmExtTrace
+SpraySessionCommandServiceImpl ..> pmExtIam
+SpraySessionCommandServiceImpl ..> SpraySession
+SpraySessionCommandServiceImpl ..> ExpressionEvaluator
+SpraySessionCommandServiceImpl ..> IntegrationEventPublisher
+SpraySessionQueryServiceImpl ..> pmExtIam
+SpraySessionQueryServiceImpl ..> UnitConversionService
+pmExtEquip ..> ResolvedTag
+pmExtEquip ..> DerivedParameterSpec
+pmExtTrace ..> ComponentSpec
+pmExtEquip ..> EquipmentContextFacade : «ACL»
+pmExtTrace ..> TraceabilityContextFacade : «ACL»
+pmExtIam ..> IamContextFacade : «ACL»
+}
+
+package "processmonitoring.infrastructure" {
+class SpelExpressionEvaluator <<Adapter>> {
++ evaluate(expression: String, inputs: Map<String, BigDecimal>): BigDecimal
+}
+ExpressionEvaluator <|.. SpelExpressionEvaluator
+
+interface JpaSpraySessionRepository <<Spring Data>>
+SpraySessionRepository <|-- JpaSpraySessionRepository
+}
+
+package "processmonitoring.interfaces" {
+class SpraySessionController <<REST>> {
++ startSession(resource): ResponseEntity
++ ingestReadings(sessionId, resource): ResponseEntity
++ ingestUnassigned(systemId, resource): ResponseEntity
++ assignRecuperation(sessionId, resource): ResponseEntity
++ completeSession(sessionId): ResponseEntity
++ getLiveReadings(sessionId): ResponseEntity
+}
+class ProcessMonitoringContextFacade <<Context Facade>> {
++ fetchSessionSummary(sessionId: Long): SessionSummaryDto
++ fetchOutOfRangeReadings(sessionId: Long): List<ReadingDto>
+}
+class ParameterOutOfRangeIntegrationEvent <<Integration Event>> {
+- sessionId: Long
+- hvofSystemId: Long
+- operatorId: Long
+- parameter: String
+- band: String
+}
+class FaultFlagActivatedIntegrationEvent <<Integration Event>> {
+- sessionId: Long
+- hvofSystemId: Long
+- tagPath: String
+- subsystemId: Long
+- partId: Long
+- snapshot: Map<String, BigDecimal>
+}
+class SpraySessionCompletedIntegrationEvent <<Integration Event>> {
+- sessionId: Long
+- recuperationId: Long
+- outOfRangeCount: Integer
+}
+class UnassignedSessionOpenedIntegrationEvent <<Integration Event>> {
+- sessionId: Long
+- hvofSystemId: Long
+}
+class RecipeMismatchIntegrationEvent <<Integration Event>> {
+- sessionId: Long
+- hvofSystemId: Long
+- operatorId: Long
+- loadedRecipeNumber: Integer
+- expectedComponent: String
+}
+SpraySessionController ..> SpraySessionCommandServiceImpl
+SpraySessionController ..> SpraySessionQueryServiceImpl
+ProcessMonitoringContextFacade ..> SpraySession
+IntegrationEvent <|-- ParameterOutOfRangeIntegrationEvent
+IntegrationEvent <|-- FaultFlagActivatedIntegrationEvent
+IntegrationEvent <|-- SpraySessionCompletedIntegrationEvent
+IntegrationEvent <|-- UnassignedSessionOpenedIntegrationEvent
+IntegrationEvent <|-- RecipeMismatchIntegrationEvent
+SpraySessionCommandServiceImpl ..> SpraySessionRepository
+SpraySessionQueryServiceImpl ..> SpraySessionRepository
+ProcessMonitoringContextFacade ..> SpraySessionRepository
+}
+}
+
+package "FaultDiagnosis" #FFF3E0 {
+
+package "faultdiagnosis.domain" {
+class FaultCase <<Aggregate Root>> {
+- sessionId: Long
+- hvofSystemId: Long
+- faultType: FaultTypeEnum
+- detectedAt: Instant
+- sourceTagPath: String
+- suspectSubsystemId: Long
+- suspectPartId: Long
+- probableCause: String
+- rootCause: String
+- correctiveAction: String
+- confirmedByUserId: Long
+- status: FaultCaseStatusEnum
+- symptoms: List<FaultSymptom>
++ applyRules(rules: List<DiagnosticRule>): void
++ confirmRootCause(rootCause: String, action: String, userId: Long): void
++ close(): void
+}
+class FaultSymptom <<Value Object>> {
+- parameter: String
+- observedValue: BigDecimal
+- band: String
+- observedAt: Instant
+}
+class DiagnosticRule <<Aggregate Root>> {
+- faultType: FaultTypeEnum
+- triggerParameter: String
+- condition: RuleCondition
+- probableCause: String
+- suspectSubsystemType: String
+- suspectPartType: String
+- priority: Integer
+- active: boolean
++ matches(symptoms: List<FaultSymptom>): boolean
+}
+class RuleCondition <<Value Object>> {
+- operator: ConditionOperatorEnum
+- threshold: BigDecimal
+- requiredBand: String
++ evaluate(symptom: FaultSymptom): boolean
+}
+class FaultPattern <<Aggregate Root>> {
+- hvofSystemId: Long
+- suspectPartId: Long
+- faultType: FaultTypeEnum
+- occurrences: Integer
+- window: TimeWindow
+- recurrent: boolean
++ registerOccurrence(threshold: Integer): void
+}
+class FaultCaseOpenedEvent <<Domain Event>>
+class RecurringFaultPatternDetectedEvent <<Domain Event>>
+enum FaultTypeEnum {
+SPINDLE_LOW_SPEED_FAULT
+SPINDLE_HIGH_SPEED_FAULT
+SPINDLE_ROTATION_FAULT
+X_AXIS_MOTION_FAULT
+Z_AXIS_MOTION_FAULT
+FEEDER_ZERO_FEEDRATE_ABORT
+HOPPER_OVERPRESSURE_BLOCK
+FLAME_OUT
+DUST_HOUSE_OVERLOADED
+GAS_DETECTED
+RECIPE_NOT_VALID
+RECIPE_NOT_FOUND
+RECIPE_VERIFY_FAILED
+TIMED_SHUTDOWN_FAULT
+EMERGENCY_STOP
+}
+enum FaultCaseStatusEnum {
+OPEN
+DIAGNOSED
+CONFIRMED
+CLOSED
+}
+enum ConditionOperatorEnum {
+GREATER_THAN
+LESS_THAN
+EQUALS
+IN_BAND
+}
+FaultCase "1" *-- "1..*" FaultSymptom : describedBy
+FaultCase --> FaultTypeEnum
+FaultCase --> FaultCaseStatusEnum
+FaultCase ..> DiagnosticRule : evaluatedBy
+FaultCase ..> FaultCaseOpenedEvent : registers
+DiagnosticRule "1" --> "1" RuleCondition : triggeredBy
+DiagnosticRule --> FaultTypeEnum
+RuleCondition --> ConditionOperatorEnum
+FaultPattern --> FaultTypeEnum
+FaultPattern "1" --> "1" TimeWindow : observedIn
+FaultPattern ..> RecurringFaultPatternDetectedEvent : registers
+
+interface FaultCaseRepository <<Repository>> {
++ findBySessionIdAndFaultTypeAndStatusNot(sessionId: Long, type: FaultTypeEnum, status: FaultCaseStatusEnum): Optional<FaultCase>
++ findByHvofSystemIdAndDetectedAtBetween(systemId: Long, from: Instant, to: Instant): List<FaultCase>
++ save(faultCase: FaultCase): FaultCase
+}
+interface DiagnosticRuleRepository <<Repository>> {
++ findByActiveTrueOrderByPriorityAsc(): List<DiagnosticRule>
++ save(rule: DiagnosticRule): DiagnosticRule
+}
+interface FaultPatternRepository <<Repository>> {
++ findByHvofSystemIdAndSuspectPartIdAndFaultType(systemId: Long, partId: Long, type: FaultTypeEnum): Optional<FaultPattern>
++ save(pattern: FaultPattern): FaultPattern
+}
+}
+
+package "faultdiagnosis.application" {
+class "ExternalEquipmentService" as fdExtEquip <<ACL>> {
++ fetchSubsystemAndPart(systemId: Long, subsystemId: Long, partId: Long): Optional<SubsystemPart>
++ fetchPartIdByType(systemId: Long, subsystemType: String, partType: String): Optional<Long>
+}
+class SubsystemPart <<Value Object>> {
+- subsystemType: String
+- subsystemAlias: String
+- partType: String
+}
+class FaultCaseQueryServiceImpl <<Application Service>> {
++ handle(query: GetFaultCasesQuery): List<FaultCase>
++ handle(query: GetFaultCaseByIdQuery): Optional<FaultCase>
+}
+FaultCaseQueryServiceImpl ..> FaultCaseRepository
+class FaultCaseCommandServiceImpl <<Application Service>>
+class "FaultDiagnosisIntegrationEventHandler" as fdHandler <<Event Handler>> {
++ on(event: FaultFlagActivatedIntegrationEvent): void
+}
+fdHandler ..> FaultCaseCommandServiceImpl
+FaultCaseCommandServiceImpl ..> fdExtEquip
+FaultCaseCommandServiceImpl ..> FaultCase
+FaultCaseCommandServiceImpl ..> FaultPattern
+FaultCaseCommandServiceImpl ..> IntegrationEventPublisher
+fdExtEquip ..> SubsystemPart
+fdExtEquip ..> EquipmentContextFacade : «ACL»
+}
+
+package "faultdiagnosis.infrastructure" {
+interface JpaFaultCaseRepository <<Spring Data>>
+interface JpaDiagnosticRuleRepository <<Spring Data>>
+interface JpaFaultPatternRepository <<Spring Data>>
+FaultCaseRepository <|-- JpaFaultCaseRepository
+DiagnosticRuleRepository <|-- JpaDiagnosticRuleRepository
+FaultPatternRepository <|-- JpaFaultPatternRepository
+}
+
+package "faultdiagnosis.interfaces" {
+class FaultCaseController <<REST>>
+class DiagnosticRuleController <<REST>>
+class FaultDiagnosisContextFacade <<Context Facade>> {
++ fetchFaultCountBySession(sessionId: Long): Integer
+}
+class FaultCaseOpenedIntegrationEvent <<Integration Event>> {
+- faultCaseId: Long
+- hvofSystemId: Long
+- faultType: String
+- suspectSubsystemId: Long
+- suspectPartId: Long
+- severity: String
+}
+class RecurringFaultPatternIntegrationEvent <<Integration Event>> {
+- hvofSystemId: Long
+- suspectPartId: Long
+- occurrences: Integer
+}
+FaultCaseController ..> FaultCaseCommandServiceImpl
+FaultCaseController ..> FaultCaseQueryServiceImpl
+DiagnosticRuleController ..> DiagnosticRuleRepository
+FaultDiagnosisContextFacade ..> FaultCase
+IntegrationEvent <|-- FaultCaseOpenedIntegrationEvent
+IntegrationEvent <|-- RecurringFaultPatternIntegrationEvent
+FaultCaseCommandServiceImpl ..> FaultCaseRepository
+FaultCaseCommandServiceImpl ..> DiagnosticRuleRepository
+FaultCaseCommandServiceImpl ..> FaultPatternRepository
+DiagnosticRuleController ..> DiagnosticRuleRepository
+FaultDiagnosisContextFacade ..> FaultCaseRepository
+}
+}
+
+package "Notifications" #EDE7F6 {
+
+package "notifications.domain" {
+class Alert <<Aggregate Root>> {
+- organizationId: Long
+- recipientUserId: Long
+- alertType: AlertTypeEnum
+- severity: SeverityEnum
+- title: String
+- message: String
+- sourceEventId: UUID
+- status: AlertStatusEnum
++ acknowledge(userId: Long): void
++ escalate(): void
+}
+class NotificationPreference <<Aggregate Root>> {
+- userId: Long
+- channel: ChannelEnum
+- enabledAlertTypes: Set<AlertTypeEnum>
++ allows(alertType: AlertTypeEnum, channel: ChannelEnum): boolean
+}
+class NewsletterSubscription <<Aggregate Root>> {
+- email: String
+- subscribedAt: Instant
+}
+enum AlertTypeEnum {
+PARAMETER_WARNING
+PARAMETER_SHUTDOWN
+CRITICAL_FAULT
+RECURRING_FAULT_PATTERN
+PREMATURE_FAILURE
+UNASSIGNED_SESSION
+RECIPE_MISMATCH
+SESSION_ABORTED
+}
+enum SeverityEnum {
+INFO
+WARNING
+CRITICAL
+}
+enum ChannelEnum {
+IN_APP
+EMAIL
+}
+enum AlertStatusEnum {
+RAISED
+ACKNOWLEDGED
+ESCALATED
+}
+Alert --> AlertTypeEnum
+Alert --> SeverityEnum
+Alert --> AlertStatusEnum
+NotificationPreference --> ChannelEnum
+
+interface AlertRepository <<Repository>> {
++ findByRecipientUserIdAndStatus(userId: Long, status: AlertStatusEnum): List<Alert>
++ save(alert: Alert): Alert
+}
+interface NotificationPreferenceRepository <<Repository>> {
++ findByUserId(userId: Long): Optional<NotificationPreference>
++ save(preference: NotificationPreference): NotificationPreference
+}
+interface NewsletterSubscriptionRepository <<Repository>> {
++ existsByEmail(email: String): boolean
++ save(subscription: NewsletterSubscription): NewsletterSubscription
+}
+}
+
+package "notifications.application" {
+class "ExternalIamService" as ntExtIam <<ACL>> {
++ fetchUserIdsByRole(organizationId: Long, role: String): List<Long>
++ fetchUserEmail(userId: Long): Optional<String>
+}
+interface NotificationDeliveryPort <<Port>> {
++ deliver(alert: Alert, recipientEmail: String): void
+}
+interface NewsletterPort <<Port>> {
++ subscribe(email: String): void
+}
+class AlertQueryServiceImpl <<Application Service>> {
++ handle(query: GetAlertsByUserQuery): List<Alert>
+}
+AlertQueryServiceImpl ..> AlertRepository
+class AlertCommandServiceImpl <<Application Service>>
+class "NotificationIntegrationEventHandler" as ntHandler <<Event Handler>> {
++ on(event: ParameterOutOfRangeIntegrationEvent): void
++ on(event: FaultCaseOpenedIntegrationEvent): void
++ on(event: RecurringFaultPatternIntegrationEvent): void
++ on(event: PrematureFailureDetectedIntegrationEvent): void
++ on(event: UnassignedSessionOpenedIntegrationEvent): void
++ on(event: RecipeMismatchIntegrationEvent): void
+}
+ntHandler ..> AlertCommandServiceImpl
+AlertCommandServiceImpl ..> ntExtIam
+AlertCommandServiceImpl ..> NotificationDeliveryPort
+AlertCommandServiceImpl ..> Alert
+AlertCommandServiceImpl ..> NotificationPreference
+ntExtIam ..> IamContextFacade : «ACL»
+}
+
+package "notifications.infrastructure" {
+class MailchimpNotificationDeliveryAdapter <<Adapter>>
+class MailchimpNewsletterAdapter <<Adapter>>
+NotificationDeliveryPort <|.. MailchimpNotificationDeliveryAdapter
+NewsletterPort <|.. MailchimpNewsletterAdapter
+
+interface JpaAlertRepository <<Spring Data>>
+interface JpaNotificationPreferenceRepository <<Spring Data>>
+interface JpaNewsletterSubscriptionRepository <<Spring Data>>
+AlertRepository <|-- JpaAlertRepository
+NotificationPreferenceRepository <|-- JpaNotificationPreferenceRepository
+NewsletterSubscriptionRepository <|-- JpaNewsletterSubscriptionRepository
+}
+
+package "notifications.interfaces" {
+class AlertController <<REST>>
+class NewsletterController <<REST>>
+AlertController ..> AlertCommandServiceImpl
+AlertController ..> AlertQueryServiceImpl
+NewsletterController ..> NewsletterPort
+NewsletterController ..> NewsletterSubscription
+AlertCommandServiceImpl ..> AlertRepository
+AlertCommandServiceImpl ..> NotificationPreferenceRepository
+NewsletterController ..> NewsletterSubscriptionRepository
+}
+}
+
+package "Reporting" #F1F8E9 {
+
+package "reporting.domain" {
+class ReportingEvent <<Aggregate Root>> {
+- eventType: String
+- sourceContext: String
+- aggregateId: Long
+- organizationId: Long
+- occurredAt: Instant
+- payload: String
+}
+class QualityCertificate <<Aggregate Root>> {
+- recuperationId: Long
+- componentId: Long
+- customerId: Long
+- supplierOrganizationId: Long
+- sessionIds: List<Long>
+- issuedByUserId: Long
+- issuedAt: Instant
+- parameterCompliance: List<ParameterComplianceSummary>
+- justification: String
+- status: CertificateStatusEnum
++ issue(justification: Optional<String>): void
++ isFullyCompliant(): boolean
+}
+class ParameterComplianceSummary <<Value Object>> {
+- parameter: String
+- minObserved: BigDecimal
+- maxObserved: BigDecimal
+- withinNominal: boolean
+}
+class PcrComplianceReport <<Aggregate Root>> {
+- organizationId: Long
+- period: ReportingPeriod
+- groupedBy: ReportGroupingEnum
+- entries: List<PcrComplianceEntry>
++ complianceRate(): BigDecimal
+}
+class PcrComplianceEntry <<Value Object>> {
+- groupKey: String
+- totalComponents: Integer
+- metPcrCount: Integer
+- prematureFailureCount: Integer
+}
+enum CertificateStatusEnum {
+DRAFT
+ISSUED
+REVOKED
+}
+enum ReportGroupingEnum {
+BY_SUPPLIER
+BY_CUSTOMER
+BY_MACHINE_MODEL
+BY_COMPONENT_TYPE
+}
+QualityCertificate "1" *-- "1..*" ParameterComplianceSummary : summarizes
+QualityCertificate --> CertificateStatusEnum
+PcrComplianceReport "1" *-- "1..*" PcrComplianceEntry : aggregates
+PcrComplianceReport "1" --> "1" ReportingPeriod : covers
+PcrComplianceReport --> ReportGroupingEnum
+
+class ReportTemplate <<Aggregate Root>> {
+- organizationId: Long
+- ownerUserId: Long
+- name: String
+- description: String
+- reportKind: ReportKindEnum
+- branding: Branding
+- layout: Layout
+- sections: List<ReportSection>
+- visibility: TemplateVisibilityEnum
+- sharedWithUserIds: Set<Long>
+- defaultForKind: boolean
+- status: TemplateStatusEnum
++ addSection(section: ReportSection): void
++ reorderSections(order: List<Long>): void
++ shareWithOrganization(): void
++ shareWith(userId: Long): void
++ markAsDefault(): void
++ publish(): void
++ isAccessibleBy(userId: Long, organizationId: Long): boolean
+}
+class ReportSection <<Entity>> {
+- title: String
+- order: Integer
+- widgets: List<ReportWidget>
++ addWidget(widget: ReportWidget): void
+}
+class ReportWidget <<Value Object>> {
+- variable: ReportVariable
+- viewType: ViewTypeEnum
+- aggregation: AggregationEnum
+- unitOverride: Unit
+- position: Integer
+- width: WidgetWidthEnum
+}
+class ReportVariable <<Value Object>> {
+- source: VariableSourceEnum
+- code: String
+- label: String
+}
+class Branding <<Value Object>> {
+- logoAssetKey: String
+- primaryColor: String
+- secondaryColor: String
+- headerText: String
+- footerText: String
+}
+class Layout <<Value Object>> {
+- pageSize: PageSizeEnum
+- orientation: OrientationEnum
+- columns: Integer
+- showSignatureBlock: boolean
+}
+class GeneratedReport <<Aggregate Root>> {
+- templateId: Long
+- organizationId: Long
+- generatedByUserId: Long
+- subjectType: ReportKindEnum
+- subjectId: Long
+- period: ReportingPeriod
+- format: ReportFormatEnum
+- storageKey: String
+- generatedAt: Instant
++ markStored(storageKey: String): void
+}
+class ReportTemplateSharedEvent <<Domain Event>> {
+- templateId: Long
+- organizationId: Long
+}
+enum ReportKindEnum {
+SESSION_REPORT
+QUALITY_CERTIFICATE
+FAULT_FREQUENCY
+PCR_COMPLIANCE
+SUPPLIER_PERFORMANCE
+}
+enum VariableSourceEnum {
+PROCESS_PARAMETER
+DERIVED_PARAMETER
+METRIC
+}
+enum ViewTypeEnum {
+LINE_CHART
+BAR_CHART
+GAUGE
+TABLE
+KPI_CARD
+MIN_MAX_AVG
+BAND_TIMELINE
+}
+enum AggregationEnum {
+RAW
+AVG
+MIN
+MAX
+COUNT
+}
+enum WidgetWidthEnum {
+THIRD
+HALF
+FULL
+}
+enum PageSizeEnum {
+A4
+LETTER
+}
+enum OrientationEnum {
+PORTRAIT
+LANDSCAPE
+}
+enum TemplateVisibilityEnum {
+PRIVATE
+ORGANIZATION
+}
+enum TemplateStatusEnum {
+DRAFT
+PUBLISHED
+ARCHIVED
+}
+enum ReportFormatEnum {
+PDF
+CSV
+}
+ReportTemplate "1" *-- "1..*" ReportSection : composedOf
+ReportTemplate "1" --> "1" Branding : styledWith
+ReportTemplate "1" --> "1" Layout : laidOutAs
+ReportTemplate --> ReportKindEnum
+ReportTemplate --> TemplateVisibilityEnum
+ReportTemplate --> TemplateStatusEnum
+ReportTemplate ..> ReportTemplateSharedEvent : registers
+ReportSection "1" *-- "1..*" ReportWidget : shows
+ReportWidget "1" --> "1" ReportVariable : plots
+ReportWidget "0..1" --> "1" Unit : unitOverride
+ReportWidget --> ViewTypeEnum
+ReportWidget --> AggregationEnum
+ReportWidget --> WidgetWidthEnum
+ReportVariable --> VariableSourceEnum
+Layout --> PageSizeEnum
+Layout --> OrientationEnum
+GeneratedReport "*" --> "1" ReportTemplate : renderedFrom
+GeneratedReport "1" --> "1" ReportingPeriod : covers
+GeneratedReport --> ReportFormatEnum
+
+interface ReportingEventRepository <<Repository>> {
++ findByOrganizationIdAndOccurredAtBetween(organizationId: Long, from: Instant, to: Instant): List<ReportingEvent>
++ save(event: ReportingEvent): ReportingEvent
+}
+interface QualityCertificateRepository <<Repository>> {
++ findByRecuperationId(recuperationId: Long): Optional<QualityCertificate>
++ save(certificate: QualityCertificate): QualityCertificate
+}
+interface PcrComplianceReportRepository <<Repository>> {
++ save(report: PcrComplianceReport): PcrComplianceReport
+}
+interface ReportTemplateRepository <<Repository>> {
++ findAccessibleBy(userId: Long, organizationId: Long): List<ReportTemplate>
++ findByOrganizationIdAndReportKindAndDefaultForKindTrue(organizationId: Long, kind: ReportKindEnum): Optional<ReportTemplate>
++ save(template: ReportTemplate): ReportTemplate
+}
+interface GeneratedReportRepository <<Repository>> {
++ findByTemplateId(templateId: Long): List<GeneratedReport>
++ save(report: GeneratedReport): GeneratedReport
+}
+}
+
+package "reporting.application" {
+class "ExternalProcessMonitoringService" as rpExtPm <<ACL>> {
++ fetchOutOfRangeSummary(sessionIds: List<Long>): List<ParameterComplianceSummary>
+}
+class "ExternalTraceabilityService" as rpExtTrace <<ACL>> {
++ fetchLinkedSessionIds(recuperationId: Long): List<Long>
+}
+class "ExternalFaultDiagnosisService" as rpExtFd <<ACL>> {
++ fetchFaultCountBySession(sessionId: Long): Integer
+}
+class "ExternalIamService" as rpExtIam <<ACL>> {
++ resolveUnitFor(userId: Long, parameter: String): Unit
++ belongsToOrganization(userId: Long, organizationId: Long): boolean
+}
+class "ExternalEquipmentService" as rpExtEquip <<ACL>> {
++ fetchAvailableVariables(systemId: Long): List<ReportVariable>
+}
+interface ReportRenderer <<Port>> {
++ render(template: ReportTemplate, data: ReportDataSet, format: ReportFormatEnum): byte[]
+}
+interface ReportAssetStoragePort <<Port>> {
++ store(content: byte[], contentType: String): String
++ load(storageKey: String): byte[]
+}
+class ReportDataSet <<Value Object>> {
+- series: Map<ReportVariable, List<DataPoint>>
+- metrics: Map<String, BigDecimal>
+}
+class ReportQueryServiceImpl <<Application Service>> {
++ handle(query: GetAccessibleTemplatesQuery): List<ReportTemplate>
++ handle(query: GetQualityCertificateByRecuperationQuery): Optional<QualityCertificate>
++ handle(query: GetPcrComplianceReportQuery): PcrComplianceReport
+}
+ReportQueryServiceImpl ..> ReportTemplateRepository
+ReportQueryServiceImpl ..> QualityCertificateRepository
+ReportQueryServiceImpl ..> PcrComplianceReportRepository
+class QualityCertificateCommandServiceImpl <<Application Service>>
+class ReportTemplateCommandServiceImpl <<Application Service>> {
++ handle(command: CreateReportTemplateCommand): Optional<ReportTemplate>
++ handle(command: UpdateTemplateSectionsCommand): Optional<ReportTemplate>
++ handle(command: ShareReportTemplateCommand): Optional<ReportTemplate>
++ handle(command: UploadTemplateLogoCommand): Optional<ReportTemplate>
+}
+class ReportGenerationServiceImpl <<Application Service>> {
++ handle(command: GenerateReportCommand): Optional<GeneratedReport>
+- collectData(template: ReportTemplate, subjectId: Long): ReportDataSet
+- resolveUnit(widget: ReportWidget, userId: Long): Unit
+}
+class "ReportingIntegrationEventHandler" as rpHandler <<Event Handler>> {
++ on(event: IntegrationEvent): void
+}
+rpHandler ..> ReportingEvent
+QualityCertificateCommandServiceImpl ..> rpExtPm
+QualityCertificateCommandServiceImpl ..> rpExtTrace
+QualityCertificateCommandServiceImpl ..> rpExtFd
+QualityCertificateCommandServiceImpl ..> QualityCertificate
+ReportTemplateCommandServiceImpl ..> ReportTemplate
+ReportTemplateCommandServiceImpl ..> ReportAssetStoragePort
+ReportTemplateCommandServiceImpl ..> rpExtIam
+ReportTemplateCommandServiceImpl ..> rpExtEquip
+ReportGenerationServiceImpl ..> ReportTemplate
+ReportGenerationServiceImpl ..> GeneratedReport
+ReportGenerationServiceImpl ..> ReportDataSet
+ReportGenerationServiceImpl ..> ReportRenderer
+ReportGenerationServiceImpl ..> ReportAssetStoragePort
+ReportGenerationServiceImpl ..> UnitConversionService
+ReportGenerationServiceImpl ..> rpExtPm
+ReportGenerationServiceImpl ..> rpExtTrace
+ReportGenerationServiceImpl ..> rpExtFd
+ReportGenerationServiceImpl ..> rpExtIam
+rpExtIam ..> IamContextFacade : «ACL»
+rpExtEquip ..> EquipmentContextFacade : «ACL»
+rpExtPm ..> ProcessMonitoringContextFacade : «ACL»
+rpExtTrace ..> TraceabilityContextFacade : «ACL»
+rpExtFd ..> FaultDiagnosisContextFacade : «ACL»
+}
+
+package "reporting.infrastructure" {
+class PdfReportRenderer <<Adapter>> {
++ render(template, data, format): byte[]
+}
+class CsvReportRenderer <<Adapter>> {
++ render(template, data, format): byte[]
+}
+class FileSystemAssetStorageAdapter <<Adapter>> {
+- basePath: String
++ store(content: byte[], contentType: String): String
++ load(storageKey: String): byte[]
+}
+ReportRenderer <|.. PdfReportRenderer
+ReportRenderer <|.. CsvReportRenderer
+ReportAssetStoragePort <|.. FileSystemAssetStorageAdapter
+
+interface JpaReportingEventRepository <<Spring Data>>
+interface JpaQualityCertificateRepository <<Spring Data>>
+interface JpaPcrComplianceReportRepository <<Spring Data>>
+interface JpaReportTemplateRepository <<Spring Data>>
+interface JpaGeneratedReportRepository <<Spring Data>>
+ReportingEventRepository <|-- JpaReportingEventRepository
+QualityCertificateRepository <|-- JpaQualityCertificateRepository
+PcrComplianceReportRepository <|-- JpaPcrComplianceReportRepository
+ReportTemplateRepository <|-- JpaReportTemplateRepository
+GeneratedReportRepository <|-- JpaGeneratedReportRepository
+}
+
+package "reporting.interfaces" {
+class QualityCertificateController <<REST>>
+class PcrComplianceReportController <<REST>>
+class ReportTemplateController <<REST>> {
++ create(resource): ResponseEntity
++ updateSections(templateId, resource): ResponseEntity
++ uploadLogo(templateId, file): ResponseEntity
++ share(templateId, resource): ResponseEntity
++ listAccessible(): ResponseEntity
+}
+class GeneratedReportController <<REST>> {
++ generate(resource): ResponseEntity
++ download(reportId, format): ResponseEntity
+}
+QualityCertificateController ..> QualityCertificateCommandServiceImpl
+QualityCertificateController ..> ReportQueryServiceImpl
+ReportTemplateController ..> ReportQueryServiceImpl
+PcrComplianceReportController ..> ReportQueryServiceImpl
+ReportTemplateController ..> ReportTemplateCommandServiceImpl
+GeneratedReportController ..> ReportGenerationServiceImpl
+rpHandler ..> ReportingEventRepository
+QualityCertificateCommandServiceImpl ..> QualityCertificateRepository
+ReportTemplateCommandServiceImpl ..> ReportTemplateRepository
+ReportGenerationServiceImpl ..> ReportTemplateRepository
+ReportGenerationServiceImpl ..> GeneratedReportRepository
+}
+}
+
+OrganizationRegisteredIntegrationEvent ..> trHandler : consumedBy
+SpraySessionCompletedIntegrationEvent ..> trHandler : consumedBy
+FaultFlagActivatedIntegrationEvent ..> fdHandler : consumedBy
+ParameterOutOfRangeIntegrationEvent ..> ntHandler : consumedBy
+UnassignedSessionOpenedIntegrationEvent ..> ntHandler : consumedBy
+RecipeMismatchIntegrationEvent ..> ntHandler : consumedBy
+FaultCaseOpenedIntegrationEvent ..> ntHandler : consumedBy
+RecurringFaultPatternIntegrationEvent ..> ntHandler : consumedBy
+PrematureFailureDetectedIntegrationEvent ..> ntHandler : consumedBy
+IntegrationEvent ..> rpHandler : allConsumedBy
+
+AuditableAbstractAggregateRoot <|-- Organization
+AuditableAbstractAggregateRoot <|-- User
+AuditableAbstractAggregateRoot <|-- UserPreference
+AuditableAbstractAggregateRoot <|-- Plan
+AuditableAbstractAggregateRoot <|-- Subscription
+AuditableAbstractAggregateRoot <|-- HVOFSystem
+AuditableAbstractAggregateRoot <|-- Recipe
+AuditableAbstractAggregateRoot <|-- ControllerTagCatalog
+AuditableAbstractAggregateRoot <|-- TagMappingRule
+AuditableAbstractAggregateRoot <|-- Customer
+AuditableAbstractAggregateRoot <|-- Component
+AuditableAbstractAggregateRoot <|-- Recuperation
+AuditableAbstractAggregateRoot <|-- SpraySession
+AuditableAbstractAggregateRoot <|-- FaultCase
+AuditableAbstractAggregateRoot <|-- DiagnosticRule
+AuditableAbstractAggregateRoot <|-- FaultPattern
+AuditableAbstractAggregateRoot <|-- Alert
+AuditableAbstractAggregateRoot <|-- NotificationPreference
+AuditableAbstractAggregateRoot <|-- NewsletterSubscription
+AuditableAbstractAggregateRoot <|-- ReportingEvent
+AuditableAbstractAggregateRoot <|-- QualityCertificate
+AuditableAbstractAggregateRoot <|-- PcrComplianceReport
+AuditableAbstractAggregateRoot <|-- ReportTemplate
+AuditableAbstractAggregateRoot <|-- GeneratedReport
+AuditableModel <|-- ReportSection
+AuditableModel <|-- Role
+AuditableModel <|-- HvofSubsystem
+AuditableModel <|-- HvofPart
+AuditableModel <|-- Controller
+AuditableModel <|-- DerivedParameterDefinition
+AuditableModel <|-- TagNode
+AuditableModel <|-- ServiceLifeRecord
+AuditableModel <|-- SprayPass
+AuditableModel <|-- ProcessReading
+
+@enduml
