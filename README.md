@@ -729,7 +729,7 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | Resumen |
 
 | Segmento: RecuperationSupplier | Entrevista #2 |
-|--|--|
+|:--:|:--:|
 | Nombres y Apellidos | |
 | Edad | |
 | Distrito | |
@@ -741,7 +741,7 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | Resumen |
 
 | Segmento: RecuperationSupplier | Entrevista #3 |
-|--|--|
+|:--:|:--:|
 | Nombres y Apellidos | |
 | Edad | |
 | Distrito | |
@@ -754,7 +754,7 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 
 
 | Segmento: AssetOwner | Entrevista #1 |
-|--|--|
+|:--:|:--:|
 | Nombres y Apellidos | Rivaldo Muñoz |
 | Edad | 25 años|
 | Distrito | Lima |
@@ -766,7 +766,7 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | Resumen |
 
 | Segmento: AssetOwner | Entrevista #2 |
-|--|--|
+|:--:|:--:|
 | Nombres y Apellidos | Wilson Bardales |
 | Edad | 65 años |
 | Distrito | Lima |
@@ -778,7 +778,7 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | Resumen |
 
 | Segmento: AssetOwner | Entrevista #3 |
-|--|--|
+|:--:|:--:|
 | Nombres y Apellidos | |
 | Edad | |
 | Distrito | |
