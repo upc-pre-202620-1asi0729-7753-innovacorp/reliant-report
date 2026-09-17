@@ -1,0 +1,56 @@
+@startuml Reliant_Billing_v4
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam nodesep 40
+skinparam ranksep 60
+hide empty members
+
+
+package "Billing" #FFF8E1 {
+    package "billing.domain" {
+        class Plan <<Aggregate Root>> {
+            - name: String
+            - planType: PlanTypeEnum
+            - monthlyPrice: Money
+            - maxMonitoredSystems: Integer
+            - maxTrackedComponents: Integer
+            + isCompatibleWith(organizationType: String): boolean
+        }
+        class Subscription <<Aggregate Root>> {
+            - organizationId: Long
+            - planId: Long
+            - startDate: LocalDate
+            - endDate: LocalDate
+            - status: SubscriptionStatusEnum
+            + activate(): void
+            + cancel(): void
+            + isActive(): boolean
+        }
+        enum PlanTypeEnum {
+            OPERATOR
+            ASSET_OWNER
+        }
+        enum SubscriptionStatusEnum {
+            ACTIVE
+            CANCELLED
+            EXPIRED
+        }
+        Plan "1" --> "1" Money : pricedAt
+        Plan --> PlanTypeEnum
+        Subscription "*" --> "1" Plan : subscribedTo
+        Subscription --> SubscriptionStatusEnum
+
+        interface PlanRepository <<Repository>> {
+            + findByPlanType(planType: PlanTypeEnum): List<Plan>
+            + save(plan: Plan): Plan
+        }
+        interface SubscriptionRepository <<Repository>> {
+            + findByOrganizationIdAndStatus(organizationId: Long, status: SubscriptionStatusEnum): Optional<Subscription>
+            + save(subscription: Subscription): Subscription
+        }
+    }
+
+}
+
+@enduml
