@@ -54,3 +54,4 @@ AuditableAbstractAggregateRoot <|-- ControllerTagCatalog
 
 
 @enduml
+
