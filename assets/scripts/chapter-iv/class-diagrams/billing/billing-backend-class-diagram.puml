@@ -1,0 +1,118 @@
+@startuml Reliant_Billing_v4
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam nodesep 40
+skinparam ranksep 60
+hide empty members
+
+package "SharedKernel" #F5F5F5 {
+
+    package "shared.domain" {
+        abstract class AuditableModel {
+            - id: Long
+            - createdAt: Instant
+            - updatedAt: Instant
+        }
+        abstract class AuditableAbstractAggregateRoot {
+            + registerEvent(event: Object): void
+            + clearDomainEvents(): void
+        }
+        AuditableModel <|-- AuditableAbstractAggregateRoot
+
+        class Money <<Value Object>> {
+            - amount: BigDecimal
+            - currency: Currency
+        }
+    }
+
+}
+
+package "Billing" #FFF8E1 {
+    package "billing.domain" {
+        class Plan <<Aggregate Root>> {
+            - name: String
+            - planType: PlanTypeEnum
+            - monthlyPrice: Money
+            - maxMonitoredSystems: Integer
+            - maxTrackedComponents: Integer
+            + isCompatibleWith(organizationType: String): boolean
+        }
+        class Subscription <<Aggregate Root>> {
+            - organizationId: Long
+            - planId: Long
+            - startDate: LocalDate
+            - endDate: LocalDate
+            - status: SubscriptionStatusEnum
+            + activate(): void
+            + cancel(): void
+            + isActive(): boolean
+        }
+        enum PlanTypeEnum {
+            OPERATOR
+            ASSET_OWNER
+        }
+        enum SubscriptionStatusEnum {
+            ACTIVE
+            CANCELLED
+            EXPIRED
+        }
+        Plan "1" --> "1" Money : pricedAt
+        Plan --> PlanTypeEnum
+        Subscription "*" --> "1" Plan : subscribedTo
+        Subscription --> SubscriptionStatusEnum
+
+        interface PlanRepository <<Repository>> {
+            + findByPlanType(planType: PlanTypeEnum): List<Plan>
+            + save(plan: Plan): Plan
+        }
+        interface SubscriptionRepository <<Repository>> {
+            + findByOrganizationIdAndStatus(organizationId: Long, status: SubscriptionStatusEnum): Optional<Subscription>
+            + save(subscription: Subscription): Subscription
+        }
+    }
+    package "billing.application" {
+        class "ExternalIamService" as bilExtIam <<ACL>> {
+            + fetchOrganizationType(organizationId: Long): Optional<String>
+        }
+        class SubscriptionQueryServiceImpl <<Application Service>> {
+            + handle(query: GetSubscriptionByOrganizationQuery): Optional<Subscription>
+            + handle(query: GetAllPlansQuery): List<Plan>
+        }
+        SubscriptionQueryServiceImpl ..> SubscriptionRepository
+        SubscriptionQueryServiceImpl ..> PlanRepository
+        class SubscriptionCommandServiceImpl <<Application Service>>
+        SubscriptionCommandServiceImpl ..> bilExtIam
+        SubscriptionCommandServiceImpl ..> Subscription
+        bilExtIam ..> IamContextFacade : «ACL»
+    }
+    package "billing.infrastructure" {
+        interface JpaPlanRepository <<Spring Data>>
+        interface JpaSubscriptionRepository <<Spring Data>>
+        PlanRepository <|-- JpaPlanRepository
+        SubscriptionRepository <|-- JpaSubscriptionRepository
+    }
+
+    package "billing.interfaces" {
+        class SubscriptionController <<REST>>
+        class BillingContextFacade <<Context Facade>> {
+            + hasActiveSubscription(organizationId: Long): boolean
+            + fetchMaxMonitoredSystems(organizationId: Long): Integer
+        }
+        SubscriptionController ..> SubscriptionCommandServiceImpl
+        SubscriptionController ..> SubscriptionQueryServiceImpl
+        BillingContextFacade ..> Subscription
+        SubscriptionCommandServiceImpl ..> SubscriptionRepository
+        SubscriptionCommandServiceImpl ..> PlanRepository
+        BillingContextFacade ..> SubscriptionRepository
+    }
+}
+
+package "IAM" #EEEEEE {
+    class IamContextFacade <<Context Facade>>
+}
+
+AuditableAbstractAggregateRoot <|-- Plan
+AuditableAbstractAggregateRoot <|-- Subscription
+
+@enduml
