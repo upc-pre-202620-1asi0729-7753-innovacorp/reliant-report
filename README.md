@@ -762,7 +762,7 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | Timing inicio | |
 | Duracion | 6:23 minutos|
 | URL | https://drive.google.com/file/d/1ILOcCsmve1HAfWLCpJpk45e7fVArVkVu/view?usp=sharing |
-| Screenshot| <img src="<img src="assets/img/chapter-ii/needfinding/Captura de pantalla 2026-09-17 131808.png"> |
+| Screenshot| <img src="<img src="assets/img/chapter-ii/needfinding/Captura de pantalla 2026-09-17 140442.png"> |
 | Resumen |
 
 | Segmento: AssetOwner | Entrevista #2 |
