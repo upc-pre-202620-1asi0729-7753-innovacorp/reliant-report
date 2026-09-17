@@ -767,14 +767,14 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 
 | Segmento: AssetOwner | Entrevista #2 |
 |--|--|
-| Nombres y Apellidos | |
-| Edad | |
-| Distrito | |
-| Ocupacion | |
+| Nombres y Apellidos | Wilson Bardales |
+| Edad | 65 años |
+| Distrito | Lima |
+| Ocupacion | Gerente de procesos |
 | Timing inicio | |
-| Duracion ||
-| URL ||
-| Screenshot| <img src="<img src="assets/img/chapter-ii/needfinding/ ">  |
+| Duracion | 11:19 minutos |
+| URL | https://youtu.be/ELUn_X1SDxo?si=Av2cGm2uR-eTnTVn |
+| Screenshot| <img src="<img src="assets/img/chapter-ii/needfinding/Captura de pantalla 2026-09-17 141725.png">  |
 | Resumen |
 
 | Segmento: AssetOwner | Entrevista #3 |
