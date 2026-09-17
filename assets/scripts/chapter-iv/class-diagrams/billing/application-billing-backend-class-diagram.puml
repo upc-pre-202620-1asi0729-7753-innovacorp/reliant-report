@@ -1,0 +1,31 @@
+@startuml Reliant_Billing_v4
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam nodesep 40
+skinparam ranksep 60
+hide empty members
+
+
+package "Billing" #FFF8E1 {
+
+    package "billing.application" {
+        class "ExternalIamService" as bilExtIam <<ACL>> {
+            + fetchOrganizationType(organizationId: Long): Optional<String>
+        }
+        class SubscriptionQueryServiceImpl <<Application Service>> {
+            + handle(query: GetSubscriptionByOrganizationQuery): Optional<Subscription>
+            + handle(query: GetAllPlansQuery): List<Plan>
+        }
+        SubscriptionQueryServiceImpl ..> SubscriptionRepository
+        SubscriptionQueryServiceImpl ..> PlanRepository
+        class SubscriptionCommandServiceImpl <<Application Service>>
+        SubscriptionCommandServiceImpl ..> bilExtIam
+        SubscriptionCommandServiceImpl ..> Subscription
+        bilExtIam ..> IamContextFacade : «ACL»
+    }
+
+}
+
+
+@enduml
