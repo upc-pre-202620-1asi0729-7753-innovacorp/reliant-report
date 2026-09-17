@@ -18,7 +18,7 @@ Docente: Bautista Ubillús, Efrain Ricardo
 | Código     | Apellidos         | Nombres          |
 |------------|-------------------|------------------| 
 | u20241b962 | Navarro Aldoradin | Carolina Celeste |
-|            |                   |                  |
+| u20241f577 | Rivera Aguilar    | Scarlet Josefina |
 |            |                   |                  |
 |            |                   |                  |
 |            |                   |                  |
@@ -165,7 +165,7 @@ Ser la plataforma de referencia en Latinoamérica para el monitoreo y la trazabi
 | Foto de participante                                                    | Nombres y apellidos                | Código de estudiante  | Descripción de carrera                                            | Principales conocimiento técnicos y habilidades                                                                                                                                           |
 |:------------------------------------------------------------------------|------------------------------------|-----------------------|-------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | <img src="assets/img/chapter-i/startup-profile/carolina-navarro.jpeg">  | Carolina Celeste Navarro Aldoradin | u20241b962            | Ingeniería de Software, Universidad Peruana de Ciencias Aplicadas | Cuento con conocimiento del lenguaje Java, C#, C++, Javascript, Python y Ladder. Asimismo, cuento con experiencia en proyectos de integración, monitoreo e IoT en entornos industriales.  |
-|                                                                         |                                    |                       |                                                                   |                                                                                                                                                                                           |
+| <img src="assets/img/chapter-i/startup-profile/Captura de pantalla 2026-09-14 104228.png"> | Scarlet Josefina Rivera Aguilar    | u20241f577            | Ingeniería de Software, Universidad Peruana de Ciencias Aplicadas | Durante mi formación en Ingeniería de Software, actualmente en quinto ciclo, he desarrollado conocimientos en distintos lenguajes de programación, organización y planificación de proyectos. Asimismo, he participado en proyectos académicos relacionados con el desarrollo de aplicaciones web, diseño de interfaces y elaboración de prototipos. |
 
 ## 1.2. Solution Profile
 
@@ -778,6 +778,7 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | Resumen |
 
 ### 2.2.3. Análisis de entrevistas.
+
 ## 2.3. Needfinding.
 ### 2.3.1. User Personas.
 
