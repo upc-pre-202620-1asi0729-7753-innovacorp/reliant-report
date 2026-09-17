@@ -1,0 +1,25 @@
+@startuml Reliant_Notifications_v4
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam nodesep 40
+skinparam ranksep 60
+hide empty members
+
+package "Notifications" #EDE7F6 {
+
+
+    package "notifications.interfaces" {
+        class AlertController <<REST>>
+        class NewsletterController <<REST>>
+        AlertController ..> AlertCommandServiceImpl
+        AlertController ..> AlertQueryServiceImpl
+        NewsletterController ..> NewsletterPort
+        NewsletterController ..> NewsletterSubscription
+        AlertCommandServiceImpl ..> AlertRepository
+        AlertCommandServiceImpl ..> NotificationPreferenceRepository
+        NewsletterController ..> NewsletterSubscriptionRepository
+    }
+}
+
+@enduml
