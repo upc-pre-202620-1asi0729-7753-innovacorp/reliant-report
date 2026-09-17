@@ -1,0 +1,25 @@
+@startuml Reliant_FaultDiagnosis_v4
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam nodesep 40
+skinparam ranksep 60
+hide empty members
+
+
+package "FaultDiagnosis" #FFF3E0 {
+
+
+    package "faultdiagnosis.infrastructure" {
+        interface JpaFaultCaseRepository <<Spring Data>>
+        interface JpaDiagnosticRuleRepository <<Spring Data>>
+        interface JpaFaultPatternRepository <<Spring Data>>
+        FaultCaseRepository <|-- JpaFaultCaseRepository
+        DiagnosticRuleRepository <|-- JpaDiagnosticRuleRepository
+        FaultPatternRepository <|-- JpaFaultPatternRepository
+    }
+
+
+}
+
+@enduml

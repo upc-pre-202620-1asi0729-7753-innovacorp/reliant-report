@@ -74,8 +74,5 @@ package "Notifications" #EEEEEE {
 
 FaultCaseOpenedIntegrationEvent ..> ntHandler : consumedBy
 RecurringFaultPatternIntegrationEvent ..> ntHandler : consumedBy
-AuditableAbstractAggregateRoot <|-- FaultCase
-AuditableAbstractAggregateRoot <|-- DiagnosticRule
-AuditableAbstractAggregateRoot <|-- FaultPattern
 
 @enduml
