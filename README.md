@@ -718,14 +718,14 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 
 | Segmento: RecuperationSupplier | Entrevista #1 |
 |:--:|:--:|
-| Nombres y Apellidos | |
-| Edad | |
-| Distrito | |
-| Ocupacion | |
+| Nombres y Apellidos | Cristian Rimac |
+| Edad | 29 |
+| Distrito | San Miguel |
+| Ocupacion | Ingeniero de Proyectos |
 | Timing inicio | |
-| Duracion ||
-| URL ||
-| Screenshot||
+| Duracion | 16:13 |
+| URL | https://drive.google.com/file/d/1Kz4-cB8Z7LLDR8P2sAM7_8ShWzVvMpjP/view?usp=sharing |
+| Screenshot| <img src=" assets/img/chapter-ii/needfinding/Captura de pantalla 2026-09-17 131808.png "> |
 | Resumen |
 
 | Segmento: RecuperationSupplier | Entrevista #2 |
@@ -737,7 +737,19 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | Timing inicio | |
 | Duracion ||
 | URL ||
-| Screenshot||
+| Screenshot| <img src=" "> |
+| Resumen |
+
+| Segmento: RecuperationSupplier | Entrevista #3 |
+|--|--|
+| Nombres y Apellidos | |
+| Edad | |
+| Distrito | |
+| Ocupacion | |
+| Timing inicio | |
+| Duracion ||
+| URL ||
+| Screenshot| <img src=" "> |
 | Resumen |
 
 
@@ -750,7 +762,7 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | Timing inicio | |
 | Duracion ||
 | URL ||
-| Screenshot||
+| Screenshot| <img src=" ">|
 | Resumen |
 
 | Segmento: AssetOwner | Entrevista #2 |
@@ -762,7 +774,7 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | Timing inicio | |
 | Duracion ||
 | URL ||
-| Screenshot||
+| Screenshot| <img src=" "> |
 | Resumen |
 
 | Segmento: AssetOwner | Entrevista #3 |
@@ -774,7 +786,7 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | Timing inicio | |
 | Duracion ||
 | URL ||
-| Screenshot||
+| Screenshot| <img src=" "> |
 | Resumen |
 
 ### 2.2.3. Análisis de entrevistas.
