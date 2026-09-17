@@ -722,11 +722,11 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | Edad | 29 años |
 | Distrito | San Miguel |
 | Ocupacion | Ingeniero de Proyectos |
-| Timing inicio | |
+| Timing inicio | 7:35 minutos|
 | Duracion | 16:13 minutos |
 | URL | https://drive.google.com/file/d/1Kz4-cB8Z7LLDR8P2sAM7_8ShWzVvMpjP/view?usp=sharing |
 | Screenshot| <img src="assets/img/chapter-ii/needfinding/Captura de pantalla 2026-09-17 131808.png"> |
-| Resumen |
+| Resumen | Cristian Rimac, de 29 años, es ingeniero de proyectos y vive en San Miguel. Durante la entrevista, explicó que los componentes recibidos de los clientes se identifican principalmente mediante el número de orden de trabajo. Sin embargo, mencionó que en ocasiones resulta complicado localizar las piezas dentro del taller, por lo que deben buscarlas o consultar con otros trabajadores. Asimismo, indicó que los parámetros del proceso de recuperación pueden quedar registrados, pero no existe un control completo y organizado de la información. Esto dificulta realizar un seguimiento adecuado de las piezas recuperadas y consultar los datos de procesos anteriores. La entrevista permitió identificar problemas relacionados con la trazabilidad de los componentes y la gestión de la información durante el proceso de recuperación.
 
 | Segmento: RecuperationSupplier | Entrevista #2 |
 |:--:|:--:|
@@ -759,7 +759,7 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | Edad | 25 años|
 | Distrito | Lima |
 | Ocupacion | Supervisor |
-| Timing inicio | |
+| Timing inicio | 2:40 minutos |
 | Duracion | 6:23 minutos|
 | URL | https://drive.google.com/file/d/1ILOcCsmve1HAfWLCpJpk45e7fVArVkVu/view?usp=sharing |
 | Screenshot| <img src="<img src="assets/img/chapter-ii/needfinding/Captura de pantalla 2026-09-17 140442.png"> |
