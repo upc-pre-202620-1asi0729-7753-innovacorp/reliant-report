@@ -762,7 +762,7 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | Timing inicio | 2:40 minutos |
 | Duracion | 8:22 minutos|
 | URL | https://drive.google.com/file/d/1cCIuMAmfq9RqDE42EzkCLZKO2DNnXMVh/view?usp=sharing |
-| Screenshot| <img src="<img src="assets/img/chapter-ii/needfinding/Captura de pantalla 2026-09-17 140442.png"> |
+| Screenshot| <img src="assets/img/chapter-ii/needfinding/Captura de pantalla 2026-09-17 140442.png"> |
 | Resumen | Rivaldo Muñoz, de 25 años, es supervisor de mantenimiento y cuenta con experiencia en la gestión de equipos y componentes. Durante la entrevista, explicó que uno de sus principales problemas es la dispersión de información sobre los componentes recuperados, ya que los registros se encuentran en sistemas, archivos Excel, correos y documentos de proveedores. Asimismo, mencionó que cuando un componente falla antes de lo esperado, resulta complicado encontrar rápidamente su historial, identificar la causa de la falla y evaluar el desempeño del proveedor. Por ello, considera importante contar con una herramienta que permita consultar la trazabilidad completa de cada componente, realizar un seguimiento de su vida útil y tomar decisiones basadas en información confiable.
 
 | Segmento: AssetOwner | Entrevista #2 |
@@ -774,7 +774,7 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | Timing inicio | 4:18 minutos |
 | Duracion | 11:19 minutos |
 | URL | https://youtu.be/ELUn_X1SDxo?si=Av2cGm2uR-eTnTVn |
-| Screenshot| <img src="<img src="assets/img/chapter-ii/needfinding/Captura de pantalla 2026-09-17 141725.png">  |
+| Screenshot| <img src="assets/img/chapter-ii/needfinding/Captura de pantalla 2026-09-17 141725.png">  |
 | Resumen | Wilson Bardales, de 65 años, es gerente de procesos y vive en Lima. Durante la entrevista, explicó que la empresa trabaja en el área de mantenimiento preventivo y utiliza proveedores como Epiroc y Desmozambic, principalmente para las perforadoras de producción. Asimismo, relató un caso en el que una bomba de una perforadora nueva presentaba fallas frecuentes. En conjunto con el proveedor, identificaron problemas relacionados con la calidad del agua utilizada en el sistema de enfriamiento y una baja eficiencia del componente. Como parte de la solución, se recomendó cambiar el motor y realizar correcciones en algunas piezas.La entrevista permitió identificar la importancia de mejorar el seguimiento de la vida útil de los componentes, analizar las causas de fallas prematuras y trabajar con los proveedores para mejorar el desempeño de los equipos.
 
 | Segmento: AssetOwner | Entrevista #3 |
