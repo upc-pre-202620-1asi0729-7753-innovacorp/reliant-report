@@ -763,7 +763,8 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | Duracion | 6:23 minutos|
 | URL | https://drive.google.com/file/d/1ILOcCsmve1HAfWLCpJpk45e7fVArVkVu/view?usp=sharing |
 | Screenshot| <img src="<img src="assets/img/chapter-ii/needfinding/Captura de pantalla 2026-09-17 140442.png"> |
-| Resumen |
+| Resumen | Rivaldo Muñoz, de 25 años, es supervisor de mantenimiento y cuenta con experiencia en la gestión de equipos y componentes. Durante la entrevista, explicó que uno de sus principales problemas es la dispersión de información sobre los componentes recuperados, ya que los registros se encuentran en sistemas, archivos Excel, correos y documentos de proveedores.
+Asimismo, mencionó que cuando un componente falla antes de lo esperado, resulta complicado encontrar rápidamente su historial, identificar la causa de la falla y evaluar el desempeño del proveedor. Por ello, considera importante contar con una herramienta que permita consultar la trazabilidad completa de cada componente, realizar un seguimiento de su vida útil y tomar decisiones basadas en información confiable. |
 
 | Segmento: AssetOwner | Entrevista #2 |
 |:--:|:--:|
