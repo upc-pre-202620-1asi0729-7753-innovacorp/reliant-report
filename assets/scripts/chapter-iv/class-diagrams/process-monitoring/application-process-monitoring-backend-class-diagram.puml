@@ -1,0 +1,78 @@
+@startuml Reliant_ProcessMonitoring_v4
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam nodesep 40
+skinparam ranksep 60
+hide empty members
+
+
+
+package "ProcessMonitoring" #E0F7FA {
+
+    package "processmonitoring.application" {
+        interface ExpressionEvaluator <<Port>> {
+            + evaluate(expression: String, inputs: Map<String, BigDecimal>): BigDecimal
+        }
+        class "ExternalEquipmentService" as pmExtEquip <<ACL>> {
+            + isSystemActive(systemId: Long): boolean
+            + resolveTag(systemId: Long, tagPath: String): Optional<ResolvedTag>
+            + fetchSprayActiveTagPath(systemId: Long): Optional<String>
+            + fetchRecipeLimits(systemId: Long, recipeNumber: Integer): List<ParameterLimitsSnapshot>
+            + recipeAppliesTo(systemId: Long, recipeNumber: Integer, componentType: String, machineModel: String): boolean
+            + fetchDerivedParameters(systemId: Long): List<DerivedParameterSpec>
+        }
+        class "ExternalTraceabilityService" as pmExtTrace <<ACL>> {
+            + isRecuperationInProcess(recuperationId: Long): boolean
+            + fetchComponentSpec(recuperationId: Long): Optional<ComponentSpec>
+        }
+        class ComponentSpec <<Value Object>> {
+            - componentType: String
+            - machineModel: String
+        }
+        class "ExternalIamService" as pmExtIam <<ACL>> {
+            + existsOperator(userId: Long): boolean
+            + resolveUnitFor(userId: Long, parameter: String): Unit
+        }
+        class ResolvedTag <<Value Object>> {
+            - subsystemId: Long
+            - partId: Long
+            - parameter: String
+            - tagKind: String
+            - statusRole: String
+        }
+        class DerivedParameterSpec <<Value Object>> {
+            - parameter: String
+            - expression: String
+            - inputTagPaths: List<String>
+            - unit: Unit
+        }
+        class SpraySessionCommandServiceImpl <<Application Service>> {
+            + handle(command: StartSpraySessionCommand): Optional<SpraySession>
+            + handle(command: IngestTelemetryCommand): IngestionResult
+            + handle(command: AssignRecuperationCommand): Optional<SpraySession>
+            + handle(command: CompleteSpraySessionCommand): Optional<SpraySession>
+        }
+        class SpraySessionQueryServiceImpl <<Application Service>> {
+            + handle(query: GetLiveReadingsQuery, userId: Long): List<ReadingView>
+        }
+        SpraySessionCommandServiceImpl ..> pmExtEquip
+        SpraySessionCommandServiceImpl ..> pmExtTrace
+        SpraySessionCommandServiceImpl ..> pmExtIam
+        SpraySessionCommandServiceImpl ..> SpraySession
+        SpraySessionCommandServiceImpl ..> ExpressionEvaluator
+        SpraySessionCommandServiceImpl ..> IntegrationEventPublisher
+        SpraySessionQueryServiceImpl ..> pmExtIam
+        SpraySessionQueryServiceImpl ..> UnitConversionService
+        pmExtEquip ..> ResolvedTag
+        pmExtEquip ..> DerivedParameterSpec
+        pmExtTrace ..> ComponentSpec
+        pmExtEquip ..> EquipmentContextFacade : «ACL»
+        pmExtTrace ..> TraceabilityContextFacade : «ACL»
+        pmExtIam ..> IamContextFacade : «ACL»
+    }
+
+
+}
+
+@enduml
