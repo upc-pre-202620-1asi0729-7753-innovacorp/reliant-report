@@ -1650,13 +1650,31 @@ Los wireframes de la Landing Page de Relient muestran la distribución prelimina
 La elaboración de los wireframes facilita la identificación de posibles problemas de distribución y permite realizar ajustes antes de desarrollar la interfaz definitiva. También ayuda a comprobar que los elementos principales, como el logotipo, los enlaces de navegación y los botones de acción, se encuentren ubicados de acuerdo con la estructura propuesta.
 
 ## Desktop Web Browser
+## Mobile Web Browser
 
 ### 4.3.2. Landing Page Mock-up.
+
+## Desktop Web Browser
+## Mobile Web Browser
+
+
 ## 4.4. Web Applications UX/UI Design.
+El diseño UX/UI de la Web Application de Relient, desarrollada por InnovaCorp, se plantea a partir de los resultados obtenidos durante el proceso de UX Research, los User Stories establecidos en el Product Backlog y los lineamientos visuales definidos previamente.
+El propósito de esta sección es representar la organización, navegación e interacción de las funcionalidades principales de la plataforma, facilitando que los usuarios puedan realizar sus actividades de manera comprensible, ordenada y eficiente.
+Para lograrlo, se elaborarán wireframes, wireflows, mock-ups y user flow diagrams que permitan visualizar la distribución de los componentes de la interfaz y los distintos recorridos que los usuarios pueden seguir dentro de la Web Application. Estos recursos estarán orientados a las funciones de gestión de usuarios, equipos, componentes, señales, alertas, reportes e inventario.
+
 ### 4.4.1. Web Applications Wireframes.
+Los wireframes de la Web Application de Relient presentan una representación inicial de la estructura y distribución de las pantallas principales de la plataforma. Estos esquemas permiten definir la ubicación de los elementos de navegación, botones, formularios, tarjetas, tablas y secciones informativas antes de incorporar el diseño visual final.
+Asimismo, los wireframes ayudan a organizar las funcionalidades de acuerdo con las necesidades de los usuarios y los User Stories definidos, facilitando la revisión de la experiencia de navegación y la identificación de posibles mejoras en la interfaz.
+
 ### 4.4.2. Web Applications Wireflow Diagrams.
-### 4.4.2. Web Applications Mock-ups.
-### 4.4.3. Web Applications User Flow Diagrams.
+
+### 4.4.3. Web Applications Mock-ups.
+
+### 4.4.4. Web Applications User Flow Diagrams.
+
+
+
 ## 4.5. Web Applications Prototyping.
 ## 4.6. Domain-Driven Software Architecture.
 ### 4.6.1. Design-Level Event Storming.
