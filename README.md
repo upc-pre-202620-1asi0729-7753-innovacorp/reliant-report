@@ -1697,13 +1697,13 @@ Asimismo, los wireframes ayudan a organizar las funcionalidades de acuerdo con l
 <img src="assets/img/chapter-ii/needfinding/w1.png"> 
 <img src="assets/img/chapter-ii/needfinding/w2.png"> 
 <img src="assets/img/chapter-ii/needfinding/w3.png "> 
-<img src="assets/img/chapter-ii/needfinding/ w4.png"> 
+<img src="assets/img/chapter-ii/needfinding/w4.png"> 
 <img src="assets/img/chapter-ii/needfinding/w5.png "> 
 <img src="assets/img/chapter-ii/needfinding/w6.png "> 
-<img src="assets/img/chapter-ii/needfinding/ w7.png"> 
+<img src="assets/img/chapter-ii/needfinding/w7.png"> 
 <img src="assets/img/chapter-ii/needfinding/w8.png "> 
 <img src="assets/img/chapter-ii/needfinding/w9.png "> 
-<img src="assets/img/chapter-ii/needfinding/w10.png "> 
+<img src="assets/img/chapter-ii/needfinding/w10.png"> 
 <img src="assets/img/chapter-ii/needfinding/w11.png"> 
 <img src="assets/img/chapter-ii/needfinding/w12.png "> 
 <img src="assets/img/chapter-ii/needfinding/w13.png "> 
