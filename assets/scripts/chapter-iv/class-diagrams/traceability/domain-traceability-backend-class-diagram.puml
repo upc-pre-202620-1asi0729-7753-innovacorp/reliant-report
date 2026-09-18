@@ -1,4 +1,4 @@
-@startuml Reliant_Traceability
+@startuml Reliant_Traceability_Domain
 skinparam packageStyle rectangle
 skinparam classAttributeIconSize 0
 skinparam linetype ortho

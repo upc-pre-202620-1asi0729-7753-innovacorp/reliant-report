@@ -1,4 +1,4 @@
-@startuml Reliant_ProcessMonitoring_v4
+@startuml Reliant_ProcessMonitoring_Infrastructure
 skinparam packageStyle rectangle
 skinparam classAttributeIconSize 0
 skinparam linetype ortho

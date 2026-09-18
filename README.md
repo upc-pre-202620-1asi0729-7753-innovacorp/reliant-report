@@ -1563,6 +1563,67 @@ Las definiciones de proceso y recubrimiento se basan en el glosario de proyecci�
 ### 4.6.4. Software Architecture Components Diagrams.
 ## 4.7. Software Object-Oriented Design.
 ### 4.7.1. Class Diagrams.
+
+El diagrama de clases traduce los agregados del Event Storming (4.6.1) al modelo de objetos que sustentará la implementación en el Capítulo V.
+Debido a la complejidad del sistema, a la cantidad de Bounded Contexts definidos y a la cantidad de clases por capa de Domain-Driven Design, se muestra el diagrama de clases subdividido para una mejor visualización.
+
+#### Equipment
+
+<img src="assets/img/chapter-iv/class-diagrams/equipment/Reliant_Equipment_Domain.png">
+<img src="assets/img/chapter-iv/class-diagrams/equipment/Reliant_Equipment_Application.png">
+<img src="assets/img/chapter-iv/class-diagrams/equipment/Reliant_Equipment_Interfaces.png">
+<img src="assets/img/chapter-iv/class-diagrams/equipment/Reliant_Equipment_Infrastructure.png">
+
+#### FaultDiagnosis
+<img src="assets/img/chapter-iv/class-diagrams/fault-diagnosis/Reliant_FaultDiagnosis_Domain.png">
+<img src="assets/img/chapter-iv/class-diagrams/fault-diagnosis/Reliant_FaultDiagnosis_Application.png">
+<img src="assets/img/chapter-iv/class-diagrams/fault-diagnosis/Reliant_FaultDiagnosis_Interfaces.png">
+<img src="assets/img/chapter-iv/class-diagrams/fault-diagnosis/Reliant_FaultDiagnosis_Infrastructure.png">
+
+#### ProcessMonitoring
+<img src="assets/img/chapter-iv/class-diagrams/process-monitoring/Reliant_ProcessMonitoring_Domain.png">
+<img src="assets/img/chapter-iv/class-diagrams/process-monitoring/Reliant_ProcessMonitoring_Application.png">
+<img src="assets/img/chapter-iv/class-diagrams/process-monitoring/Reliant_ProcessMonitoring_Interfaces.png">
+<img src="assets/img/chapter-iv/class-diagrams/process-monitoring/Reliant_ProcessMonitoring_Infrastructure.png">
+
+#### Traceability
+<img src="assets/img/chapter-iv/class-diagrams/traceability/Reliant_Traceability_Domain.png">
+<img src="assets/img/chapter-iv/class-diagrams/traceability/Reliant_Traceability_Application.png">
+<img src="assets/img/chapter-iv/class-diagrams/traceability/Reliant_Traceability_Interfaces.png">
+<img src="assets/img/chapter-iv/class-diagrams/traceability/Reliant_Traceability_Infrastructure.png">
+
+#### Reporting
+<img src="assets/img/chapter-iv/class-diagrams/reporting/Reliant_Reporting_Domain.png">
+<img src="assets/img/chapter-iv/class-diagrams/reporting/Reliant_Reporting_Application.png">
+<img src="assets/img/chapter-iv/class-diagrams/reporting/Reliant_Reporting_Interfaces.png">
+<img src="assets/img/chapter-iv/class-diagrams/reporting/Reliant_Reporting_Infrastructure.png">
+
+#### Notifications
+<img src="assets/img/chapter-iv/class-diagrams/notifications/Reliant_Notifications_Domain.png">
+<img src="assets/img/chapter-iv/class-diagrams/notifications/Reliant_Notifications_Application.png">
+<img src="assets/img/chapter-iv/class-diagrams/notifications/Reliant_Notifications_Interfaces.png">
+<img src="assets/img/chapter-iv/class-diagrams/notifications/Reliant_Notifications_Infrastructure.png">
+
+#### Billing
+<img src="assets/img/chapter-iv/class-diagrams/billing/Reliant_Billing_Domain.png">
+<img src="assets/img/chapter-iv/class-diagrams/billing/Reliant_Billing_Application.png">
+<img src="assets/img/chapter-iv/class-diagrams/billing/Reliant_Billing_Interfaces.png">
+<img src="assets/img/chapter-iv/class-diagrams/billing/Reliant_Billing_Infrastructure.png">
+
+#### IAM
+<img src="assets/img/chapter-iv/class-diagrams/iam/Reliant_IAM_Domain.png">
+<img src="assets/img/chapter-iv/class-diagrams/iam/Reliant_IAM_Application.png">
+<img src="assets/img/chapter-iv/class-diagrams/iam/Reliant_IAM_Interfaces.png">
+<img src="assets/img/chapter-iv/class-diagrams/iam/Reliant_IAM_Infrastructure.png">
+
+#### Shared
+<img src="assets/img/chapter-iv/class-diagrams/shared-kernel/Reliant_SharedKernel_Domain.png">
+<img src="assets/img/chapter-iv/class-diagrams/shared-kernel/Reliant_SharedKernel_Application.png">
+<img src="assets/img/chapter-iv/class-diagrams/shared-kernel/Reliant_SharedKernel_Interfaces.png">
+<img src="assets/img/chapter-iv/class-diagrams/shared-kernel/Reliant_SharedKernel_Infrastructure.png">
+
+
+
 ## 4.8. Database Design.
 ### 4.8.1. Database Diagrams.
 
