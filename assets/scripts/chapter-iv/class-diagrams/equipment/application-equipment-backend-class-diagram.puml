@@ -1,0 +1,57 @@
+@startuml Reliant_Equipment_Application
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam nodesep 40
+skinparam ranksep 60
+hide empty members
+
+package "Equipment" #E8F5E9 {
+
+    package "equipment.application" {
+        interface DataTypeNormalizer <<Port>> {
+            + supports(manufacturer: ControllerManufacturerEnum): boolean
+            + normalize(vendorDataType: String): CanonicalDataTypeEnum
+        }
+        class "ExternalBillingService" as eqExtBilling <<ACL>> {
+            + canRegisterAnotherSystem(organizationId: Long): boolean
+        }
+        class HvofSystemCommandServiceImpl <<Application Service>> {
+            + handle(command: RegisterHvofSystemCommand): Optional<HVOFSystem>
+            + handle(command: ImportControllerTagsCommand): List<TagMapping>
+            + handle(command: ConfirmTagMappingCommand): Optional<HVOFSystem>
+            + handle(command: DefineDerivedParameterCommand): Optional<HVOFSystem>
+        }
+        class HvofSystemQueryServiceImpl <<Application Service>> {
+            + handle(query: GetHvofSystemByIdQuery): Optional<HVOFSystem>
+            + handle(query: GetHvofSystemsByOrganizationQuery): List<HVOFSystem>
+            + handle(query: GetTagCatalogByControllerQuery): Optional<ControllerTagCatalog>
+        }
+        class RecipeQueryServiceImpl <<Application Service>> {
+            + handle(query: GetRecipesBySystemQuery): List<Recipe>
+        }
+        HvofSystemQueryServiceImpl ..> HVOFSystemRepository
+        HvofSystemQueryServiceImpl ..> ControllerTagCatalogRepository
+        RecipeQueryServiceImpl ..> RecipeRepository
+        class RecipeCommandServiceImpl <<Application Service>> {
+            + handle(command: CreateRecipeCommand): Optional<Recipe>
+            + handle(command: ApproveRecipeCommand): Optional<Recipe>
+        }
+        HvofSystemCommandServiceImpl ..> eqExtBilling
+        HvofSystemCommandServiceImpl ..> DataTypeNormalizer
+        HvofSystemCommandServiceImpl ..> HVOFSystem
+        HvofSystemCommandServiceImpl ..> ControllerTagCatalog
+        RecipeCommandServiceImpl ..> Recipe
+        eqExtBilling ..> BillingContextFacade : «ACL»
+    }
+
+}
+
+
+AuditableAbstractAggregateRoot <|-- HVOFSystem
+AuditableAbstractAggregateRoot <|-- Recipe
+AuditableAbstractAggregateRoot <|-- ControllerTagCatalog
+
+
+@enduml
+

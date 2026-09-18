@@ -1,4 +1,4 @@
-@startuml classDiagram
+@startuml ReliantClassDiagram
 skinparam packageStyle rectangle
 skinparam classAttributeIconSize 0
 

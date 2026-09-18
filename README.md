@@ -1,33 +1,42 @@
 <div align="center">
  <img src="assets/img/logoUPC.png">
 
-# UNIVERSIDAD PERUANA DE CIENCIAS APLICADAS
-**Facultad de Ingeniería**  
-***Carrera de Ingeniería de Software***  
-*5to ciclo*  
+Universidad Peruana de Ciencias Aplicadas  
+Carrera de Ingeniería de Software  
+
 **1ASI0729**  
+
+
 **Desarrollo de Aplicaciones Open Source**  
-NRC: 7753  
-Docente: Bautista Ubillús, Efrain Ricardo
-## **"Informe del Trabajo Final"**
-#### *InnovaCorp*
-#### *Reliant*
+NRC  
+**7753**  
+### **Informe del Trabajo Final**  
+Docente  
+**Bautista Ubillús, Efrain Ricardo**
+
+
+  
+Equipo  
+**InnovaCorp**  
+Proyecto  
+**Reliant**
 
 **Integrantes**
 
-| Código     | Apellidos         | Nombres          |
-|------------|-------------------|------------------| 
-| u20241b962 | Navarro Aldoradin | Carolina Celeste |
-| u20241f577 | Rivera Aguilar    | Scarlet Josefina |
-|            |                   |                  |
-|            |                   |                  |
-|            |                   |                  |
+| Código     | Apellidos y Nombres                  |
+|:----------:|:-------------------------------------| 
+| u20241b962 | Navarro Aldoradin, Carolina Celeste  |
+| u20241f577 | Rivera Aguilar, Scarlet Josefina     |
+| u202317807 | Fernandez Seer, Mario Alonso         |
+| U202421137 | Bardales Rodríguez, Benjamín Elías   |
+| U202410376 | Yopla Romero, Jonathan Alberto       |
+
+**Periodo 202620**  
 
 
-*Setiembre, 2026*
+**Setiembre, 2026**
 
 </div>
-
 
 <div style="page-break-after: always"></div>
 
@@ -145,8 +154,8 @@ El curso contribuye al cumplimiento del Student Outcome ABET: ABET – EAC - Stu
 
 | Criterio específico                                                                             | Acciones realizadas | Conclusiones |
 |:-----------------------------------------------------------------------------------------------:|:-------------------:|:------------:|
-| Trabaja en equipo para proporcionar liderazgo en forma conjunta                                 |                     |              |
-| Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos. |                     |              |
+| Trabaja en equipo para proporcionar liderazgo en forma conjunta                                 | AV1:                Mario Fernandez: Planificó, ejecutó y documentó la entrevista al segmento Asset Owner. Elaboró wireframes que tradujeron hallazgos mineros en flujos y pantallas. Apoyó mockups, consistencia visual y evidencias UX/UI y del About the Team.                   Scarlet Rivera: Participé en el desarrollo de la etapa de investigación de usuarios de InnovaCorp – Reliant mediante el diseño, registro y análisis de entrevistas, así como la realización de entrevistas personales. A través de este proceso, se recopilaron y analizaron las necesidades, experiencias y dificultades de los usuarios relacionados con la gestión de procesos industriales, considerando los segmentos objetivo definidos para el proyecto. Los resultados obtenidos permitieron comprender la problemática actual, identificar oportunidades de mejora y establecer una base para el diseño de una solución que contribuya a la trazabilidad, seguridad y eficiencia de las operaciones industriales                   Jonathan Yopla: Desarrolle el landing page diversos recursos visuales importantes para el proyecto, así como el readme markdown.                Carolina Navaro: Me encargué de realizar multiples tareas escenciales para alcanzar el éxito del trabajo, tales como la formulación de preguntas para las encuestas, el desarrollo de gráficos y múltiples commits y push sobre el markdown README.                Benjamin Bardales:  Hice la landing, entrevista y el fidgma de las conecciones y que los botones influyan. |Se concluye que el liderazgo compartido permitió aprovechar las fortalezas de cada integrante, facilitando la coordinación, la toma de decisiones y el avance conjunto hacia los objetivos del proyecto.|
+| Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos. |AV1:              Mario Fernandez: Considero que logré establecer metas pragmáticas que contribuyeron al éxtio del startup.               Scarlet Rivera: Participé en el diseño y organización de la experiencia de usuario de InnovaCorp – Reliant mediante la elaboración de los Style Guidelines, la arquitectura de información y el diseño de las interfaces web. Para ello, desarrollé las guías generales y web de estilo, los sistemas de organización, etiquetado, búsqueda y navegación, así como los SEO Tags y Meta Tags. Asimismo, elaboré los wireframes, mockups y diagramas de flujo de la Landing Page y la Web Application, complementando el proceso con el prototipado de las funcionalidades. Estas actividades permitieron estructurar la información, definir la organización visual y establecer una experiencia de navegación coherente con las necesidades de los usuarios y los objetivos del proyecto.            Jonathan Yopla: Logré analizar los diferentes inputs proporcionados por mis compañeros para sintetizarlos en un solo video entrevista de URL en Microsoft Stream, actualmente ClipChamp.            Carolina Navarro: Me encargué de dirigir este equipo a través de diversas tribulaciones siempre manteniendo una dirección firme y trato coordial con mis campñeros y mediante estas habilidades blandas, pudimos formar un excelente equipo el cual logró integrarse para dar como resultado este startup llamado InnovaCorp con el Resiliant.             Benjamín Bardales: Yo me encargué de diversas actividades colaborativas como el desarrollo del Landing el cual hice con mi compañero Yopla y logramos hacer un buen equipo ya que mantuvimos siempre un trato inclusivo y cordial lo cual considero se alinea con los objetivos de este apartado. |Se concluye que establecer metas claras, distribuir responsabilidades y mantener una comunicación colaborativa permitió organizar el trabajo de manera efectiva y cumplir los objetivos planteados.|
 
 
 # Capítulo I: Introducción
@@ -166,6 +175,10 @@ Ser la plataforma de referencia en Latinoamérica para el monitoreo y la trazabi
 |:------------------------------------------------------------------------|------------------------------------|-----------------------|-------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | <img src="assets/img/chapter-i/startup-profile/carolina-navarro.jpeg">  | Carolina Celeste Navarro Aldoradin | u20241b962            | Ingeniería de Software, Universidad Peruana de Ciencias Aplicadas | Cuento con conocimiento del lenguaje Java, C#, C++, Javascript, Python y Ladder. Asimismo, cuento con experiencia en proyectos de integración, monitoreo e IoT en entornos industriales.  |
 | <img src="assets/img/chapter-i/startup-profile/Captura de pantalla 2026-09-14 104228.png"> | Scarlet Josefina Rivera Aguilar    | u20241f577            | Ingeniería de Software, Universidad Peruana de Ciencias Aplicadas | Durante mi formación en Ingeniería de Software, actualmente en quinto ciclo, he desarrollado conocimientos en distintos lenguajes de programación, organización y planificación de proyectos. Asimismo, he participado en proyectos académicos relacionados con el desarrollo de aplicaciones web, diseño de interfaces y elaboración de prototipos. |
+|  <img src="assets/img/chapter-i/startup-profile/Captura de pantalla 2026-09-14 104228.png">| Scarlet josefina Rivera Aguilar    | u20241f577            | Ingeniería de Software, Universidad Peruana de Ciencias Aplicadas | Durante mi formación en Ingeniería de Software, actualmente en quinto ciclo, he desarrollado conocimientos en distintos lenguajes de programación, organización y planificación de proyectos. Asimismo, he participado en proyectos académicos relacionados con el desarrollo de aplicaciones web, diseño de interfaces y elaboración de prototipos.  |
+| <img width="640" height="641" alt="image" src="https://github.com/user-attachments/assets/841e55fc-64c0-4acc-9e4f-a4f0530d995a" /> | Mario Alonso Fernández Seer | U202317807 | Ingeniería de Software, Universidad Peruana de Ciencias Aplicadas | Cuento con conocimientos en C++, Python, JavaScript, desarrollo web y diseño de bases de datos. Asimismo, poseo habilidades para el análisis de requerimientos, la documentación de proyectos y la investigación de usuarios. En Reliant participé en el levantamiento y análisis de información del segmento Asset Owner. |
+| <img src="assets/img/chapter-i/startup-profile/yopla_imagen.png">  | Jonathan Alberto Yopla Romero | u202410376            | Ingeniería de Software, Universidad Peruana de Ciencias Aplicadas | Cuento con experiencia programando en diversos lenguajes como C++, Javascript y utilizo herramientas para el desarrollo web. Además, domino el inglés a nivel conversacional.  |
+
 
 ## 1.2. Solution Profile
 
@@ -754,16 +767,16 @@ ed%2Eview%2E001f7777%2D3095%2D43ae%2Dbdb0%2D89ae880547ea |
 
 
 | Segmento: AssetOwner | Entrevista #1 |
-|:--:|:--:|
-| Nombres y Apellidos | Rivaldo Muñoz |
-| Edad | 25 años|
-| Distrito | Lima |
-| Ocupacion | Supervisor |
-| Duracion | 8:22 minutos|
-| URL | https://drive.google.com/file/d/1cCIuMAmfq9RqDE42EzkCLZKO2DNnXMVh/view?usp=sharing |
-| Screenshot| <img src="assets/img/chapter-ii/needfinding/Captura de pantalla 2026-09-18 130439.png"> |
-| Resumen | Rivaldo Muñoz, de 25 años, es supervisor de mantenimiento y cuenta con experiencia en la gestión de equipos y componentes. Durante la entrevista, explicó que uno de sus principales problemas es la dispersión de información sobre los componentes recuperados, ya que los registros se encuentran en sistemas, archivos Excel, correos y documentos de proveedores. Asimismo, mencionó que cuando un componente falla antes de lo esperado, resulta complicado encontrar rápidamente su historial, identificar la causa de la falla y evaluar el desempeño del proveedor. Por ello, considera importante contar con una herramienta que permita consultar la trazabilidad completa de cada componente, realizar un seguimiento de su vida útil y tomar decisiones basadas en información confiable.
-
+|---|---|
+| Nombres y Apellidos | Valeria Aranguri |
+| Edad | 21 años |
+| Distrito | Surco |
+| Ocupación | Estudiante de Ingeniería Industrial y asistente de construcción y proyectos con experiencia en operaciones mineras |
+| Timing inicio | 00:00 |
+| Duración | 13 minutos con 40 segundos |
+| URL | [Entrevista Segmento 2 - Asset Owner](https://drive.google.com/file/d/1lfzvUGM0Sf1K5balZaaP8kYs97IqWC2X/view?usp=sharing) |
+| Screenshot | Pendiente de agregar |
+| Resumen | La entrevistada cuenta con experiencia como asistente de construcción y proyectos en operaciones mineras como Quellaveco, Las Bambas y Chinalco. Sus responsabilidades incluyeron brindar soporte a ingenieros y supervisores, realizar seguimiento de actividades, coordinar con distintas áreas y elaborar reportes desde campo. Señaló que las fallas de equipos afectan la programación, el personal y los recursos disponibles. Asimismo, explicó que el seguimiento se apoya principalmente en Excel, reportes, llamadas, WhatsApp y sistemas internos que no siempre son visibles para el personal de operación. Para evaluar proveedores se consideran la documentación presentada, el cumplimiento de requisitos, los plazos de entrega y los antecedentes del servicio. Finalmente, manifestó la necesidad de una plataforma centralizada que muestre el estado, ubicación, responsable, proveedor y fecha estimada de disponibilidad de cada componente. |
 | Segmento: AssetOwner | Entrevista #2 |
 |:--:|:--:|
 | Nombres y Apellidos | Wilson Bardales |
@@ -1768,15 +1781,349 @@ https://youtu.be/ImzFsoEMSIk
 ### 4.6.4. Software Architecture Components Diagrams.
 ## 4.7. Software Object-Oriented Design.
 ### 4.7.1. Class Diagrams.
+
+El diagrama de clases traduce los agregados del Event Storming (4.6.1) al modelo de objetos que sustentará la implementación en el Capítulo V.
+Debido a la complejidad del sistema, a la cantidad de Bounded Contexts definidos y a la cantidad de clases por capa de Domain-Driven Design, se muestra el diagrama de clases subdividido para una mejor visualización.
+
+#### Equipment
+
+<img src="assets/img/chapter-iv/class-diagrams/equipment/Reliant_Equipment_Domain.png">
+<img src="assets/img/chapter-iv/class-diagrams/equipment/Reliant_Equipment_Application.png">
+<img src="assets/img/chapter-iv/class-diagrams/equipment/Reliant_Equipment_Interfaces.png">
+<img src="assets/img/chapter-iv/class-diagrams/equipment/Reliant_Equipment_Infrastructure.png">
+
+#### FaultDiagnosis
+<img src="assets/img/chapter-iv/class-diagrams/fault-diagnosis/Reliant_FaultDiagnosis_Domain.png">
+<img src="assets/img/chapter-iv/class-diagrams/fault-diagnosis/Reliant_FaultDiagnosis_Application.png">
+<img src="assets/img/chapter-iv/class-diagrams/fault-diagnosis/Reliant_FaultDiagnosis_Interfaces.png">
+<img src="assets/img/chapter-iv/class-diagrams/fault-diagnosis/Reliant_FaultDiagnosis_Infrastructure.png">
+
+#### ProcessMonitoring
+<img src="assets/img/chapter-iv/class-diagrams/process-monitoring/Reliant_ProcessMonitoring_Domain.png">
+<img src="assets/img/chapter-iv/class-diagrams/process-monitoring/Reliant_ProcessMonitoring_Application.png">
+<img src="assets/img/chapter-iv/class-diagrams/process-monitoring/Reliant_ProcessMonitoring_Interfaces.png">
+<img src="assets/img/chapter-iv/class-diagrams/process-monitoring/Reliant_ProcessMonitoring_Infrastructure.png">
+
+#### Traceability
+<img src="assets/img/chapter-iv/class-diagrams/traceability/Reliant_Traceability_Domain.png">
+<img src="assets/img/chapter-iv/class-diagrams/traceability/Reliant_Traceability_Application.png">
+<img src="assets/img/chapter-iv/class-diagrams/traceability/Reliant_Traceability_Interfaces.png">
+<img src="assets/img/chapter-iv/class-diagrams/traceability/Reliant_Traceability_Infrastructure.png">
+
+#### Reporting
+<img src="assets/img/chapter-iv/class-diagrams/reporting/Reliant_Reporting_Domain.png">
+<img src="assets/img/chapter-iv/class-diagrams/reporting/Reliant_Reporting_Application.png">
+<img src="assets/img/chapter-iv/class-diagrams/reporting/Reliant_Reporting_Interfaces.png">
+<img src="assets/img/chapter-iv/class-diagrams/reporting/Reliant_Reporting_Infrastructure.png">
+
+#### Notifications
+<img src="assets/img/chapter-iv/class-diagrams/notifications/Reliant_Notifications_Domain.png">
+<img src="assets/img/chapter-iv/class-diagrams/notifications/Reliant_Notifications_Application.png">
+<img src="assets/img/chapter-iv/class-diagrams/notifications/Reliant_Notifications_Interfaces.png">
+<img src="assets/img/chapter-iv/class-diagrams/notifications/Reliant_Notifications_Infrastructure.png">
+
+#### Billing
+<img src="assets/img/chapter-iv/class-diagrams/billing/Reliant_Billing_Domain.png">
+<img src="assets/img/chapter-iv/class-diagrams/billing/Reliant_Billing_Application.png">
+<img src="assets/img/chapter-iv/class-diagrams/billing/Reliant_Billing_Interfaces.png">
+<img src="assets/img/chapter-iv/class-diagrams/billing/Reliant_Billing_Infrastructure.png">
+
+#### IAM
+<img src="assets/img/chapter-iv/class-diagrams/iam/Reliant_IAM_Domain.png">
+<img src="assets/img/chapter-iv/class-diagrams/iam/Reliant_IAM_Application.png">
+<img src="assets/img/chapter-iv/class-diagrams/iam/Reliant_IAM_Interfaces.png">
+<img src="assets/img/chapter-iv/class-diagrams/iam/Reliant_IAM_Infrastructure.png">
+
+#### Shared
+<img src="assets/img/chapter-iv/class-diagrams/shared-kernel/Reliant_SharedKernel_Domain.png">
+<img src="assets/img/chapter-iv/class-diagrams/shared-kernel/Reliant_SharedKernel_Application.png">
+<img src="assets/img/chapter-iv/class-diagrams/shared-kernel/Reliant_SharedKernel_Interfaces.png">
+<img src="assets/img/chapter-iv/class-diagrams/shared-kernel/Reliant_SharedKernel_Infrastructure.png">
+
+
+
 ## 4.8. Database Design.
 ### 4.8.1. Database Diagrams.
 
+El modelo relacional se despliega sobre PostgreSQL y refleja de forma directa el diagrama de clases de 4.7.1, con tablas puente derivadas de las relaciones muchos-a-muchos implícitas en el dominio.
+
+
+<img src="assets/img/chapter-iv/database-diagrams/Reliant_Equipment_Database.png">
+
+<img src="assets/img/chapter-iv/database-diagrams/Reliant_FaultDiagnosis_Database.png">
+
+<img src="assets/img/chapter-iv/database-diagrams/Reliant_ProcessMonitoring_Database.png">
+
+<img src="assets/img/chapter-iv/database-diagrams/Reliant_Reporting_Database.png">
+
+<img src="assets/img/chapter-iv/database-diagrams/Reliant_Traceability_Database.png">
+
+<img src="assets/img/chapter-iv/database-diagrams/Reliant_Notifications_Database.png">
+
+<img src="assets/img/chapter-iv/database-diagrams/Reliant_IAM_Database.png">
+
+<img src="assets/img/chapter-iv/database-diagrams/Reliant_Billing_Database.png">
+
 # Capítulo V: Product Implementation, Validation & Deployment
 ## 5.1. Software Configuration Management.
+
+En esta sección se establecen las decisiones y convenciones que permiten mantener la consistencia del proyecto Reliant durante todo su ciclo de vida: las herramientas que utiliza el equipo de InnovaCorp, el esquema de control de versiones, las guías de estilo para cada lenguaje y la configuración de despliegue de cada producto. Todas las decisiones aplican por igual a los cuatro repositorios del proyecto: el informe, el Landing Page, la Frontend Web Application y los Web Services.
+
 ### 5.1.1. Software Development Environment Configuration.
+
+A continuación se especifican los productos de software que utilizan los miembros del equipo, agrupados por tipo de actividad, con su propósito en el proyecto y la ruta de referencia o descarga.
+
+**Project Management**
+
+| Producto | Propósito en el proyecto | Ruta |
+|---|---|---|
+| Trello | Product Backlog priorizado, Sprint Backlogs con tasks por historia y tablero de estado (To Do / In Process / To Review / Done) | https://trello.com |
+| Agile Tools by Corrello (Power-Up) | Story Points en las tarjetas y suma por lista para calcular la velocity | https://trello.com/power-ups |
+| Microsoft Teams | Reuniones de Sprint Planning, Review y Retrospective; comunicación con el docente | https://www.microsoft.com/microsoft-teams |
+| WhatsApp | Coordinación diaria del equipo | https://www.whatsapp.com |
+
+**Requirements Management**
+
+| Producto | Propósito en el proyecto | Ruta |
+|---|---|---|
+| GitHub (repositorio del informe) | Redacción colaborativa del informe en Markdown, con historial de versiones por commit | https://github.com |
+| Trello | Registro de User Stories y Technical Stories con estimación y prioridad | https://trello.com |
+
+**Product UX/UI Design**
+
+| Producto | Propósito en el proyecto | Ruta |
+|---|---|---|
+| UXPressia | User Personas, Empathy Maps, User Journey Maps e Impact Map | https://uxpressia.com |
+| Figma | Wireframes, mock-ups y prototipos del Landing Page y la Web Application | https://www.figma.com |
+| FigJam | Wireflows y User Flows | https://www.figma.com/figjam |
+| Mermaid | Big Picture y Design-Level Event Storming, árbol de problemas | https://mermaid.js.org |
+| PlantUML | Diagramas de clases y de base de datos (Diagram-as-Code) | https://plantuml.com |
+| Structurizr | Diagramas C4 (Context, Container, Component) | https://structurizr.com |
+
+**Software Development**
+
+| Producto | Propósito en el proyecto | Ruta |
+|---|---|---|
+| Java Development Kit 21 (LTS) | Lenguaje y runtime de los Web Services | https://adoptium.net |
+| Spring Boot 3.x + Spring Data JPA | Framework del RESTful API, persistencia y seguridad | https://spring.io/projects/spring-boot |
+| Apache Maven | Gestión de dependencias y construcción del backend | https://maven.apache.org |
+| IntelliJ IDEA Community | IDE para el desarrollo del backend | https://www.jetbrains.com/idea |
+| Node.js 20 LTS + npm | Runtime y gestor de paquetes del frontend | https://nodejs.org |
+| Angular CLI 18 | Framework de la Frontend Web Application | https://angular.dev |
+| Angular Material | Biblioteca de componentes UI basada en Material Design | https://material.angular.io |
+| Visual Studio Code | Editor para el Landing Page (HTML5, CSS3, JavaScript) y la Web Application | https://code.visualstudio.com |
+| PostgreSQL 16 | Base de datos relacional de los Web Services | https://www.postgresql.org |
+| Docker Desktop | Contenedores para PostgreSQL en desarrollo y empaquetado del backend | https://www.docker.com |
+| Postman | Pruebas manuales de los endpoints | https://www.postman.com |
+| Python 3.12 | Simulador de telemetría del gateway PLC | https://www.python.org |
+
+**Software Deployment**
+
+| Producto | Propósito en el proyecto | Ruta |
+|---|---|---|
+| GitHub Pages | Despliegue del Landing Page | https://pages.github.com |
+| Netlify | Despliegue de la Frontend Web Application | https://www.netlify.com |
+| Render | Despliegue de los Web Services (contenedor Docker) y de PostgreSQL gestionado | https://render.com |
+| GitHub Actions | Integración continua: build y pruebas en cada pull request | https://github.com/features/actions |
+
+**Software Documentation**
+
+| Producto | Propósito en el proyecto | Ruta |
+|---|---|---|
+| Markdown | Formato del informe y de los README de cada repositorio | https://www.markdownguide.org |
+| OpenAPI / Swagger UI (springdoc) | Documentación interactiva de los endpoints del RESTful API | https://springdoc.org |
+| Mailchimp | Servicio externo para newsletter y alertas por correo | https://mailchimp.com |
+| OBS Studio y Clipchamp | Grabación y edición de los videos de exposición, entrevistas y About-the-Product | https://obsproject.com · https://clipchamp.com |
+| Microsoft Stream | Publicación de los videos del proyecto | https://www.microsoft.com/microsoft-stream |
+
 ### 5.1.2. Source Code Management.
+
+El equipo utiliza GitHub como plataforma de control de versiones bajo una organización pública. Cada producto tiene su propio repositorio:
+
+| Repositorio | Contenido | URL |
+|---|---|---|
+| `reliant-report` | Informe del proyecto en Markdown (README.md principal y archivos por capítulo) | https://github.com/[organizacion]/reliant-report |
+| `reliant-landing-page` | Sitio web estático (Landing Page) en HTML5, CSS3 y JavaScript | https://github.com/[organizacion]/reliant-landing-page |
+| `reliant-webapp` | Frontend Web Application en Angular | https://github.com/[organizacion]/reliant-webapp |
+| `reliant-platform` | RESTful API en Spring Boot, con pruebas unitarias y de integración | https://github.com/[organizacion]/reliant-platform |
+
+**GitFlow como workflow de control de versiones**
+
+Se aplica el modelo de ramas propuesto por Vincent Driessen. Las ramas y sus convenciones de nombre son:
+
+| Rama | Propósito | Convención de nombre | Ejemplo |
+|---|---|---|---|
+| `main` | Código en producción. Solo recibe merges desde `release/*` y `hotfix/*`. Cada merge se etiqueta con una versión | `main` | — |
+| `develop` | Rama de integración. Recibe los merges de las `feature/*` terminadas | `develop` | — |
+| `feature/*` | Una rama por User Story o Technical Story. Nace de `develop` y vuelve a `develop` por pull request | `feature/<story-id>-<descripcion-kebab>` | `feature/US07-register-hvof-system` |
+| `release/*` | Preparación de una versión: correcciones menores, versión en `pom.xml` / `package.json`. Nace de `develop`, se fusiona en `main` y `develop` | `release/v<MAJOR>.<MINOR>.<PATCH>` | `release/v1.2.0` |
+| `hotfix/*` | Corrección urgente sobre producción. Nace de `main`, se fusiona en `main` y `develop` | `hotfix/v<MAJOR>.<MINOR>.<PATCH>` | `hotfix/v1.2.1` |
+
+Cada `feature/*` se integra mediante pull request con al menos una revisión de otro integrante antes del merge. No se realizan commits directos sobre `main` ni `develop`.
+
+**Semantic Versioning para los releases**
+
+Los releases siguen Semantic Versioning 2.0.0 con el formato `vMAJOR.MINOR.PATCH`:
+
+| Componente | Se incrementa cuando |
+|---|---|
+| MAJOR | Se introduce un cambio incompatible en el API (por ejemplo, cambio de contrato de un endpoint en uso) |
+| MINOR | Se agrega funcionalidad compatible (una nueva User Story implementada) |
+| PATCH | Se corrige un error sin cambiar funcionalidad |
+
+Versiones previstas por entrega: `v0.1.0` (AV1, Landing Page), `v0.2.0` (TB1, primera Web Application), `v0.3.0` (AV2, Web Services), `v1.0.0` (TB2, release final).
+
+**Conventional Commits para los mensajes**
+
+Todo mensaje de commit sigue la especificación Conventional Commits con la estructura `<tipo>(<alcance>): <descripción>`, en inglés, en imperativo y en minúsculas. El alcance es opcional y, cuando se usa, corresponde al bounded context o al producto afectado.
+
+| Tipo | Uso | Ejemplo |
+|---|---|---|
+| `feat` | Nueva funcionalidad | `feat(equipment): add recipe applicability by component model` |
+| `fix` | Corrección de un error | `fix(processmonitoring): evaluate band only on value change` |
+| `docs` | Cambios en documentación o en el informe | `docs(report): add design-level event storming section` |
+| `style` | Formato, sin cambio de lógica | `style(webapp): apply prettier to iam module` |
+| `refactor` | Cambio de código que no agrega funcionalidad ni corrige errores | `refactor(traceability): extract WorkOrderNumber value object` |
+| `test` | Pruebas nuevas o corregidas | `test(faultdiagnosis): cover rule priority resolution` |
+| `chore` | Tareas de mantenimiento, dependencias | `chore: bump spring boot to 3.3.4` |
+| `ci` | Cambios en la integración continua | `ci: add maven build workflow` |
+| `build` | Cambios en el sistema de construcción o despliegue | `build(platform): add multi-stage dockerfile` |
+
+Los cambios incompatibles se señalan con `!` después del tipo o con un pie `BREAKING CHANGE:`, y elevan la versión MAJOR.
+
 ### 5.1.3. Source Code Style Guide & Conventions.
+
+Toda la nomenclatura del código (identificadores, archivos, paquetes, rutas, tablas, mensajes de commit) se redacta en inglés. Las convenciones adoptadas por lenguaje son:
+
+**HTML5 y CSS3 (Landing Page y templates de Angular)**
+
+Se sigue la HTML Style Guide de W3Schools y la Google HTML/CSS Style Guide.
+
+| Regla | Aplicación |
+|---|---|
+| Declarar `<!DOCTYPE html>`, `lang` y `charset` | `<html lang="en">`, `<meta charset="utf-8">` |
+| Elementos y atributos en minúsculas; valores de atributo entre comillas dobles | `<section class="hero">` |
+| Semántica antes que `div` genéricos | `header`, `nav`, `main`, `section`, `article`, `footer` |
+| Atributo `alt` en toda imagen y atributos ARIA en controles interactivos | `aria-label`, `aria-expanded`, `role` |
+| Clases en kebab-case con nomenclatura BEM cuando hay variantes | `.plan-card`, `.plan-card--featured`, `.plan-card__price` |
+| Sin estilos inline; colores, tipografía y espaciado como variables CSS | `--color-primary`, `--font-heading`, `--space-md` |
+| Indentación de dos espacios | — |
+
+**JavaScript y TypeScript**
+
+Se sigue la Google TypeScript Style Guide.
+
+| Regla | Aplicación |
+|---|---|
+| `camelCase` para variables, funciones y propiedades; `PascalCase` para clases, interfaces y tipos; `UPPER_SNAKE_CASE` para constantes | `sprayEnergy`, `SpraySession`, `MAX_READINGS_PER_BATCH` |
+| `const` por defecto, `let` solo cuando hay reasignación; nunca `var` | — |
+| Tipado explícito en firmas públicas; sin `any` | `handle(command: StartSpraySessionCommand): Observable<SpraySession>` |
+| Comillas simples, punto y coma obligatorio, dos espacios de indentación | — |
+| Un módulo por concepto; importaciones ordenadas (Angular, terceros, propias) | — |
+
+**Angular**
+
+Se sigue la Angular Coding Style Guide oficial.
+
+| Regla | Aplicación |
+|---|---|
+| Nombres de archivo en kebab-case con sufijo por tipo | `spray-session-card.component.ts`, `iam.facade.ts`, `process-monitoring-api.service.ts` |
+| Selectores de componente con prefijo de la aplicación | `app-spray-session-card` |
+| Estructura por bounded context con capas | `src/app/<bc>/presentation`, `application`, `domain`, `infrastructure` |
+| Un componente nunca hace HTTP directo: delega en la facade, que usa el servicio de infraestructura | `component → facade → api service` |
+| Componentes standalone, `OnPush` y signals para el estado | — |
+| Solo Angular Material como biblioteca de componentes | — |
+
+**Java y Spring Boot**
+
+Se sigue la Google Java Style Guide y las convenciones de Spring Boot.
+
+| Regla | Aplicación |
+|---|---|
+| Paquetes en minúsculas, sin guiones bajos; `PascalCase` para clases, `camelCase` para métodos y atributos, `UPPER_SNAKE_CASE` para constantes y valores de enum | `com.innovacorp.reliant.equipment.domain.model.aggregates.HVOFSystem` |
+| Siglas tratadas como palabras en nombres compuestos | `HvofSystemController`, `JwtTokenService` |
+| Estructura por bounded context con cuatro capas | `<bc>/domain`, `application`, `infrastructure`, `interfaces` |
+| Sufijos por rol DDD | `*Command`, `*Query`, `*Event`, `*CommandServiceImpl`, `*QueryServiceImpl`, `*Repository`, `*Resource`, `*Assembler`, `*ContextFacade`, `External*Service` |
+| Value Objects como `record`; enums con `EnumType.STRING` | `record IpAddressV4(String value)` |
+| Indentación de dos espacios, límite de 100 columnas, llaves en la misma línea | — |
+| Inyección por constructor; sin `@Autowired` en campos | — |
+| Endpoints REST: `/api/v1`, sustantivos en plural, kebab-case, verbos HTTP semánticos y códigos de estado estándar | `POST /api/v1/spray-sessions/{sessionId}/readings` → `202 Accepted` |
+| Base de datos: tablas y columnas en snake_case, tablas en plural, generadas con `SnakeCasePhysicalNamingStrategy` | `spray_sessions`, `hvof_system_id` |
+
+**Gherkin (criterios de aceptación y pruebas de aceptación)**
+
+Se siguen las Gherkin Conventions for Readable Specifications: un escenario por comportamiento, pasos `Given / When / Then / And` en tercera persona y tiempo presente, sin detalles de interfaz de usuario, y `Feature` nombrada igual que la User Story que cubre.
+
+**Python (simulador de telemetría)**
+
+Se sigue PEP 8: `snake_case` para funciones y variables, `PascalCase` para clases, cuatro espacios de indentación, y tipado con anotaciones en las funciones públicas.
+
 ### 5.1.4. Software Deployment Configuration.
+
+Cada producto se despliega de forma independiente a partir de su repositorio. La configuración se describe a continuación.
+
+**Landing Page → GitHub Pages**
+
+| Paso | Descripción |
+|---|---|
+| 1 | En el repositorio `reliant-landing-page`, el sitio estático vive en la raíz (`index.html`, `css/`, `js/`, `assets/`, `i18n/`) |
+| 2 | En Settings → Pages se selecciona la rama `main` y la carpeta `/ (root)` como origen |
+| 3 | Cada merge a `main` publica automáticamente en `https://[organizacion].github.io/reliant-landing-page/` |
+| 4 | Los call-to-action apuntan a la URL pública de la Web Application con el segmento como parámetro (`?segment=recuperation-supplier`) |
+
+**Frontend Web Application → Netlify**
+
+| Paso | Descripción |
+|---|---|
+| 1 | Se conecta el repositorio `reliant-webapp` a Netlify con despliegue automático desde `main` |
+| 2 | Build command: `npm ci && npx ng build --configuration production` |
+| 3 | Publish directory: `dist/reliant-webapp/browser` |
+| 4 | Se agrega `public/_redirects` con `/* /index.html 200` para que el enrutamiento de Angular funcione al recargar |
+| 5 | La URL del API se define por entorno en `src/environments/environment.prod.ts` (`apiBaseUrl`) |
+
+**Web Services → Render (contenedor Docker)**
+
+| Paso | Descripción |
+|---|---|
+| 1 | El repositorio `reliant-platform` incluye un `Dockerfile` multi-stage: la primera etapa compila con Maven sobre `eclipse-temurin:21-jdk`; la segunda ejecuta el `jar` sobre `eclipse-temurin:21-jre` |
+| 2 | Se crea en Render un Web Service de tipo Docker conectado a la rama `main` |
+| 3 | Se definen las variables de entorno: `SPRING_PROFILES_ACTIVE=prod`, `DATABASE_URL`, `DATABASE_USERNAME`, `DATABASE_PASSWORD`, `JWT_SECRET`, `JWT_EXPIRATION_DAYS`, `MAILCHIMP_API_KEY`, `MAILCHIMP_AUDIENCE_ID`, `CORS_ALLOWED_ORIGINS` |
+| 4 | Render ejecuta el health check sobre `GET /api/v1/health` (`HealthController`) |
+| 5 | La documentación OpenAPI queda publicada en `https://[servicio].onrender.com/swagger-ui.html` |
+
+```dockerfile
+FROM eclipse-temurin:21-jdk AS build
+WORKDIR /app
+COPY pom.xml .
+COPY src ./src
+RUN ./mvnw -q -DskipTests package
+
+FROM eclipse-temurin:21-jre
+WORKDIR /app
+COPY --from=build /app/target/*.jar app.jar
+EXPOSE 8080
+ENTRYPOINT ["java", "-jar", "app.jar"]
+```
+
+**Base de datos → PostgreSQL gestionado en Render**
+
+| Paso | Descripción |
+|---|---|
+| 1 | Se crea una instancia PostgreSQL 16 en Render en la misma región que el Web Service |
+| 2 | La URL interna se inyecta como `DATABASE_URL` en el Web Service |
+| 3 | El perfil `prod` usa `spring.jpa.hibernate.ddl-auto=validate`; el esquema se crea desde los scripts versionados en `src/main/resources/db/migration`. El perfil `dev` usa `update` sobre un contenedor local `postgres:16` |
+
+**Perfiles de Spring Boot**
+
+| Archivo | Uso |
+|---|---|
+| `application.properties` | Configuración base: zona horaria `America/Lima`, `SnakeCasePhysicalNamingStrategy`, springdoc |
+| `application-dev.properties` | Base de datos local en Docker, CORS a `http://localhost:4200`, logging detallado |
+| `application-prod.properties` | Variables de entorno de Render, CORS al dominio de Netlify, logging mínimo |
+
+**Simulador de telemetría (gateway)**
+
+El script `telemetry_simulator.py` se ejecuta localmente durante las demostraciones y envía lotes de lecturas por `POST /api/v1/spray-sessions/{sessionId}/readings` a la URL del API desplegado, autenticándose con las credenciales de la organización. No se despliega en la nube: representa al gateway que en producción se conecta al PLC.
 ## 5.2. Landing Page, Services & Applications Implementation.
 ### 5.2.X. Sprint n
 #### 5.2.X.1. Sprint Planning n.

@@ -1,0 +1,36 @@
+@startuml Reliant_IAM_Infrastructure
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam nodesep 40
+skinparam ranksep 60
+hide empty members
+
+
+
+package "IAM" #E8F0FE {
+
+    package "iam.infrastructure" {
+        class BCryptHashingService <<Adapter>>
+        class JwtTokenService <<Adapter>>
+        class JwtAuthenticationFilter <<Adapter>>
+        HashingService <|.. BCryptHashingService
+        TokenService <|.. JwtTokenService
+        JwtAuthenticationFilter ..> TokenService
+
+        interface JpaOrganizationRepository <<Spring Data>>
+        interface JpaUserRepository <<Spring Data>>
+        interface JpaUserPreferenceRepository <<Spring Data>>
+        OrganizationRepository <|-- JpaOrganizationRepository
+        UserRepository <|-- JpaUserRepository
+        UserPreferenceRepository <|-- JpaUserPreferenceRepository
+    }
+
+
+}
+
+
+
+
+
+@enduml

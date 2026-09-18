@@ -1,0 +1,27 @@
+@startuml Reliant_Billing_Interfaces
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam nodesep 40
+skinparam ranksep 60
+hide empty members
+
+
+package "Billing" #FFF8E1 {
+
+    package "billing.interfaces" {
+        class SubscriptionController <<REST>>
+        class BillingContextFacade <<Context Facade>> {
+            + hasActiveSubscription(organizationId: Long): boolean
+            + fetchMaxMonitoredSystems(organizationId: Long): Integer
+        }
+        SubscriptionController ..> SubscriptionCommandServiceImpl
+        SubscriptionController ..> SubscriptionQueryServiceImpl
+        BillingContextFacade ..> Subscription
+        SubscriptionCommandServiceImpl ..> SubscriptionRepository
+        SubscriptionCommandServiceImpl ..> PlanRepository
+        BillingContextFacade ..> SubscriptionRepository
+    }
+}
+
+@enduml

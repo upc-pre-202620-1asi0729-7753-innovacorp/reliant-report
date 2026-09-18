@@ -1,0 +1,46 @@
+@startuml Reliant_IAM_Interfaces
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam nodesep 40
+skinparam ranksep 60
+hide empty members
+
+
+
+package "IAM" #E8F0FE {
+
+    package "iam.interfaces" {
+        class AuthenticationController <<REST>>
+        class UserPreferenceController <<REST>>
+        class IamContextFacade <<Context Facade>> {
+            + fetchOrganizationIdByRuc(ruc: String): Optional<Long>
+            + fetchOrganizationType(organizationId: Long): String
+            + fetchOrganizationTimeZone(organizationId: Long): ZoneId
+            + fetchUserIdsByRole(organizationId: Long, role: String): List<Long>
+            + fetchUserEmail(userId: Long): Optional<String>
+            + fetchUnitPreference(userId: Long, category: String, parameter: String): Unit
+        }
+        class OrganizationRegisteredIntegrationEvent <<Integration Event>> {
+            - organizationId: Long
+            - ruc: String
+            - organizationType: String
+        }
+        AuthenticationController ..> UserCommandServiceImpl
+        UserPreferenceController ..> UserQueryServiceImpl
+        UserPreferenceController ..> UserPreferenceCommandServiceImpl
+        IamContextFacade ..> Organization
+        IamContextFacade ..> User
+        IamContextFacade ..> UserPreference
+        IntegrationEvent <|-- OrganizationRegisteredIntegrationEvent
+        UserCommandServiceImpl ..> UserRepository
+        UserCommandServiceImpl ..> OrganizationRepository
+        UserPreferenceCommandServiceImpl ..> UserPreferenceRepository
+        IamContextFacade ..> OrganizationRepository
+        IamContextFacade ..> UserRepository
+        IamContextFacade ..> UserPreferenceRepository
+    }
+}
+
+
+@enduml

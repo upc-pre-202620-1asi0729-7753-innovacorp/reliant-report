@@ -1,0 +1,43 @@
+@startuml Reliant_Reporting_Infrastructure
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam nodesep 40
+skinparam ranksep 60
+hide empty members
+
+
+package "Reporting" #F1F8E9 {
+
+    package "reporting.infrastructure" {
+        class PdfReportRenderer <<Adapter>> {
+            + render(template, data, format): byte[]
+        }
+        class CsvReportRenderer <<Adapter>> {
+            + render(template, data, format): byte[]
+        }
+        class FileSystemAssetStorageAdapter <<Adapter>> {
+            - basePath: String
+            + store(content: byte[], contentType: String): String
+            + load(storageKey: String): byte[]
+        }
+        ReportRenderer <|.. PdfReportRenderer
+        ReportRenderer <|.. CsvReportRenderer
+        ReportAssetStoragePort <|.. FileSystemAssetStorageAdapter
+
+        interface JpaReportingEventRepository <<Spring Data>>
+        interface JpaQualityCertificateRepository <<Spring Data>>
+        interface JpaPcrComplianceReportRepository <<Spring Data>>
+        interface JpaReportTemplateRepository <<Spring Data>>
+        interface JpaGeneratedReportRepository <<Spring Data>>
+        ReportingEventRepository <|-- JpaReportingEventRepository
+        QualityCertificateRepository <|-- JpaQualityCertificateRepository
+        PcrComplianceReportRepository <|-- JpaPcrComplianceReportRepository
+        ReportTemplateRepository <|-- JpaReportTemplateRepository
+        GeneratedReportRepository <|-- JpaGeneratedReportRepository
+    }
+
+
+}
+
+@enduml

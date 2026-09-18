@@ -1,0 +1,46 @@
+@startuml Reliant_IAM_Application
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam nodesep 40
+skinparam ranksep 60
+hide empty members
+
+
+
+package "IAM" #E8F0FE {
+
+    package "iam.application" {
+        interface HashingService <<Port>> {
+            + hash(raw: String): String
+            + matches(raw: String, hashed: String): boolean
+        }
+        interface TokenService <<Port>> {
+            + generateToken(username: String): String
+            + validateToken(token: String): boolean
+        }
+        class UserCommandServiceImpl <<Application Service>> {
+            + handle(command: SignUpCommand): Optional<User>
+            + handle(command: SignInCommand): Optional<Pair<User, String>>
+        }
+        class UserQueryServiceImpl <<Application Service>> {
+            + handle(query: GetUserByIdQuery): Optional<User>
+            + handle(query: GetUsersByOrganizationQuery): List<User>
+        }
+        UserQueryServiceImpl ..> UserRepository
+        UserPreferenceCommandServiceImpl ..> UserPreferenceRepository
+        class UserPreferenceCommandServiceImpl <<Application Service>> {
+            + handle(command: UpdateUnitPreferenceCommand): Optional<UserPreference>
+        }
+        UserCommandServiceImpl ..> HashingService
+        UserCommandServiceImpl ..> TokenService
+        UserCommandServiceImpl ..> User
+        UserPreferenceCommandServiceImpl ..> UserPreference
+    }
+
+
+}
+
+
+
+@enduml

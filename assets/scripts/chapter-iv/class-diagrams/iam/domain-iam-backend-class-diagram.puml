@@ -1,0 +1,106 @@
+@startuml Reliant_IAM_Domain
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam nodesep 40
+skinparam ranksep 60
+hide empty members
+
+
+
+package "IAM" #E8F0FE {
+
+    package "iam.domain" {
+        class Organization <<Aggregate Root>> {
+            - name: String
+            - ruc: Ruc
+            - organizationType: OrganizationTypeEnum
+            - status: OrganizationStatusEnum
+            - timeZone: ZoneId
+            + activate(): void
+            + suspend(): void
+        }
+        class User <<Aggregate Root>> {
+            - fullName: String
+            - email: EmailAddress
+            - passwordHash: String
+            - organizationId: Long
+            - roles: Set<Role>
+            + assignRole(role: Role): void
+        }
+        class UserPreference <<Aggregate Root>> {
+            - userId: Long
+            - defaultUnitSystem: UnitSystemEnum
+            - unitOverrides: List<UnitOverride>
+            - language: String
+            + overrideUnit(override: UnitOverride): void
+            + resolveUnit(category: UnitCategoryEnum, parameter: String): Unit
+        }
+        class UnitOverride <<Value Object>> {
+            - category: UnitCategoryEnum
+            - parameter: String
+            - unit: Unit
+        }
+        class Role <<Entity>> {
+            - name: RoleEnum
+        }
+        class EmailAddress <<Value Object>> {
+            - value: String
+            + validate(): void
+        }
+        enum OrganizationTypeEnum {
+            RECUPERATION_SUPPLIER
+            ASSET_OWNER
+        }
+        enum OrganizationStatusEnum {
+            ACTIVE
+            SUSPENDED
+        }
+        enum RoleEnum {
+            ROLE_ADMIN
+            ROLE_HVOF_OPERATOR
+            ROLE_OPERATION_SUPERVISOR
+            ROLE_MAINTENANCE_SUPERVISOR
+            ROLE_QUALITY_ENGINEER
+            ROLE_RELIABILITY_ENGINEER
+            ROLE_PROCUREMENT_ANALYST
+        }
+        class OrganizationRegisteredEvent <<Domain Event>> {
+            - organizationId: Long
+            - ruc: String
+        }
+        Organization "1" --> "1" Ruc : identifiedBy
+        Organization --> OrganizationTypeEnum
+        Organization --> OrganizationStatusEnum
+        Organization ..> OrganizationRegisteredEvent : registers
+        User "1" --> "1" EmailAddress : contactedAt
+        User "1" o-- "1..*" Role : holds
+        User "*" --> "1" Organization : belongsTo
+        UserPreference "1" --> "1" User : belongsTo
+        UserPreference "1" *-- "0..*" UnitOverride : overrides
+        UserPreference --> UnitSystemEnum
+        UnitOverride "1" --> "1" Unit : uses
+        Role --> RoleEnum
+
+        interface OrganizationRepository <<Repository>> {
+            + findByRuc(ruc: Ruc): Optional<Organization>
+            + save(organization: Organization): Organization
+        }
+        interface UserRepository <<Repository>> {
+            + findByEmail(email: EmailAddress): Optional<User>
+            + findByOrganizationIdAndRolesName(organizationId: Long, role: RoleEnum): List<User>
+            + save(user: User): User
+        }
+        interface UserPreferenceRepository <<Repository>> {
+            + findByUserId(userId: Long): Optional<UserPreference>
+            + save(preference: UserPreference): UserPreference
+        }
+    }
+
+
+
+}
+
+
+
+@enduml

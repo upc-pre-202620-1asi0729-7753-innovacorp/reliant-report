@@ -1,0 +1,68 @@
+@startuml Reliant_FaultDiagnosis_Database
+skinparam linetype ortho
+skinparam packageStyle rectangle
+hide circle
+hide empty members
+
+package "FaultDiagnosis" #FFF3E0 {
+entity "fault_cases" as fault_cases {
+  * id : BIGINT <<PK>>
+  --
+  * session_id : BIGINT 
+  * hvof_system_id : BIGINT 
+  * fault_type : VARCHAR(40) 
+  * detected_at : TIMESTAMPTZ 
+  * source_tag_path : VARCHAR(400) 
+  suspect_subsystem_id : BIGINT 
+  suspect_part_id : BIGINT 
+  probable_cause : VARCHAR(255) 
+  root_cause : VARCHAR(255) 
+  corrective_action : VARCHAR(255) 
+  confirmed_by_user_id : BIGINT 
+  * status : VARCHAR(20) 
+  * created_at : TIMESTAMPTZ 
+  * updated_at : TIMESTAMPTZ 
+}
+entity "fault_case_symptoms" as fault_case_symptoms {
+  * fault_case_id : BIGINT <<PK>> <<FK>>
+  * parameter : VARCHAR(50) <<PK>>
+  --
+  * observed_value : NUMERIC(18,6) 
+  band : VARCHAR(15) 
+  * observed_at : TIMESTAMPTZ 
+}
+entity "diagnostic_rules" as diagnostic_rules {
+  * id : BIGINT <<PK>>
+  --
+  * fault_type : VARCHAR(40) 
+  trigger_parameter : VARCHAR(50) 
+  * condition_operator : VARCHAR(20) 
+  condition_threshold : NUMERIC(18,6) 
+  condition_required_band : VARCHAR(15) 
+  * probable_cause : VARCHAR(255) 
+  suspect_subsystem_type : VARCHAR(30) 
+  suspect_part_type : VARCHAR(30) 
+  * priority : INTEGER 
+  * active : BOOLEAN 
+  * created_at : TIMESTAMPTZ 
+  * updated_at : TIMESTAMPTZ 
+}
+entity "fault_patterns" as fault_patterns {
+  * id : BIGINT <<PK>>
+  --
+  * hvof_system_id : BIGINT 
+  * suspect_part_id : BIGINT 
+  * fault_type : VARCHAR(40) 
+  * occurrences : INTEGER 
+  * window_start : TIMESTAMPTZ 
+  * window_end : TIMESTAMPTZ 
+  * time_zone : VARCHAR(40) 
+  * recurrent : BOOLEAN 
+  * created_at : TIMESTAMPTZ 
+  * updated_at : TIMESTAMPTZ 
+  .. UNIQUE (hvof_system_id, suspect_part_id, fault_type) ..
+}
+fault_case_symptoms }o--|| fault_cases : fault_case_id
+}
+
+@enduml

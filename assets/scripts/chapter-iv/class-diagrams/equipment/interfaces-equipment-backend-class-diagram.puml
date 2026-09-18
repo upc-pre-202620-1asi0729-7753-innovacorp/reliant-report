@@ -1,0 +1,47 @@
+@startuml Reliant_Equipment_Interfaces
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam nodesep 40
+skinparam ranksep 60
+hide empty members
+
+
+
+package "Equipment" #E8F5E9 {
+
+
+    package "equipment.interfaces" {
+        class HvofSystemController <<REST>>
+        class RecipeController <<REST>>
+        class EquipmentContextFacade <<Context Facade>> {
+            + isSystemActive(systemId: Long): boolean
+            + resolveTag(systemId: Long, tagPath: String): Optional<ResolvedTagDto>
+            + fetchTagPathByRole(systemId: Long, role: String): Optional<String>
+            + fetchRecipeLimits(systemId: Long, recipeNumber: Integer): List<ParameterLimitsDto>
+            + recipeAppliesTo(systemId: Long, recipeNumber: Integer, componentType: String, machineModel: String): boolean
+            + fetchDerivedParameters(systemId: Long): List<DerivedParameterDto>
+            + fetchSubsystemAndPart(systemId: Long, subsystemId: Long, partId: Long): Optional<SubsystemPartDto>
+            + fetchAvailableVariables(systemId: Long): List<VariableDto>
+        }
+        HvofSystemController ..> HvofSystemCommandServiceImpl
+        HvofSystemController ..> HvofSystemQueryServiceImpl
+        RecipeController ..> RecipeQueryServiceImpl
+        RecipeController ..> RecipeCommandServiceImpl
+        EquipmentContextFacade ..> HVOFSystem
+        EquipmentContextFacade ..> Recipe
+        HvofSystemCommandServiceImpl ..> HVOFSystemRepository
+        HvofSystemCommandServiceImpl ..> ControllerTagCatalogRepository
+        HvofSystemCommandServiceImpl ..> TagMappingRuleRepository
+        RecipeCommandServiceImpl ..> RecipeRepository
+        EquipmentContextFacade ..> HVOFSystemRepository
+        EquipmentContextFacade ..> RecipeRepository
+    }
+}
+
+
+AuditableAbstractAggregateRoot <|-- HVOFSystem
+AuditableAbstractAggregateRoot <|-- Recipe
+
+
+@enduml

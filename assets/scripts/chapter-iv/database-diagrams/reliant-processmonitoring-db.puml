@@ -1,0 +1,56 @@
+@startuml Reliant_ProcessMonitoring_Database
+skinparam linetype ortho
+skinparam packageStyle rectangle
+hide circle
+hide empty members
+
+package "ProcessMonitoring" #E0F7FA {
+entity "spray_sessions" as spray_sessions {
+  * id : BIGINT <<PK>>
+  --
+  * hvof_system_id : BIGINT 
+  recuperation_id : BIGINT 
+  operator_id : BIGINT 
+  recipe_number : INTEGER 
+  * started_at : TIMESTAMPTZ 
+  ended_at : TIMESTAMPTZ 
+  * time_zone : VARCHAR(40) 
+  * status : VARCHAR(20) 
+  * created_at : TIMESTAMPTZ 
+  * updated_at : TIMESTAMPTZ 
+}
+entity "spray_passes" as spray_passes {
+  * id : BIGINT <<PK>>
+  --
+  * spray_session_id : BIGINT <<FK>>
+  * pass_number : INTEGER 
+  * started_at : TIMESTAMPTZ 
+  ended_at : TIMESTAMPTZ 
+  * created_at : TIMESTAMPTZ 
+  * updated_at : TIMESTAMPTZ 
+  .. UNIQUE (spray_session_id, pass_number) ..
+}
+entity "process_readings" as process_readings {
+  * id : BIGINT <<PK>>
+  --
+  * spray_session_id : BIGINT <<FK>>
+  * epoch_millis : BIGINT 
+  * plc_clock_offset_millis : BIGINT 
+  * tag_path : VARCHAR(400) 
+  parameter : VARCHAR(50) 
+  subsystem_id : BIGINT 
+  part_id : BIGINT 
+  * value : NUMERIC(18,6) 
+  * unit_symbol : VARCHAR(15) 
+  * unit_category : VARCHAR(20) 
+  band : VARCHAR(15) 
+  * derived : BOOLEAN 
+  * mapping_pending : BOOLEAN 
+  * created_at : TIMESTAMPTZ 
+  * updated_at : TIMESTAMPTZ 
+}
+spray_passes }o--|| spray_sessions : spray_session_id
+process_readings }o--|| spray_sessions : spray_session_id
+}
+
+@enduml

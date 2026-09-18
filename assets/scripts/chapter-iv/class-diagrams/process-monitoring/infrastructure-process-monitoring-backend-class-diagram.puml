@@ -1,0 +1,23 @@
+@startuml Reliant_ProcessMonitoring_Infrastructure
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam nodesep 40
+skinparam ranksep 60
+hide empty members
+
+package "ProcessMonitoring" #E0F7FA {
+
+    package "processmonitoring.infrastructure" {
+        class SpelExpressionEvaluator <<Adapter>> {
+            + evaluate(expression: String, inputs: Map<String, BigDecimal>): BigDecimal
+        }
+        ExpressionEvaluator <|.. SpelExpressionEvaluator
+
+        interface JpaSpraySessionRepository <<Spring Data>>
+        SpraySessionRepository <|-- JpaSpraySessionRepository
+    }
+
+
+}
+@enduml
