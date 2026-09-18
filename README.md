@@ -154,8 +154,8 @@ El curso contribuye al cumplimiento del Student Outcome ABET: ABET – EAC - Stu
 
 | Criterio específico                                                                             | Acciones realizadas | Conclusiones |
 |:-----------------------------------------------------------------------------------------------:|:-------------------:|:------------:|
-| Trabaja en equipo para proporcionar liderazgo en forma conjunta                                 |                     |              |
-| Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos. |                     |              |
+| Trabaja en equipo para proporcionar liderazgo en forma conjunta                                 |                     |Se concluye que el liderazgo compartido permitió aprovechar las fortalezas de cada integrante, facilitando la coordinación, la toma de decisiones y el avance conjunto hacia los objetivos del proyecto.|
+| Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos. |                     |Se concluye que establecer metas claras, distribuir responsabilidades y mantener una comunicación colaborativa permitió organizar el trabajo de manera efectiva y cumplir los objetivos planteados.|
 
 
 # Capítulo I: Introducción
