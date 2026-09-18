@@ -1694,42 +1694,34 @@ Para lograrlo, se elaborarán wireframes, wireflows, mock-ups y user flow diagra
 Los wireframes de la Web Application de Relient presentan una representación inicial de la estructura y distribución de las pantallas principales de la plataforma. Estos esquemas permiten definir la ubicación de los elementos de navegación, botones, formularios, tarjetas, tablas y secciones informativas antes de incorporar el diseño visual final.
 Asimismo, los wireframes ayudan a organizar las funcionalidades de acuerdo con las necesidades de los usuarios y los User Stories definidos, facilitando la revisión de la experiencia de navegación y la identificación de posibles mejoras en la interfaz.
 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
+<img src="assets/img/chapter-ii/needfinding/w1.png"> 
+<img src="assets/img/chapter-ii/needfinding/w2.png"> 
+<img src="assets/img/chapter-ii/needfinding/w3.png "> 
+<img src="assets/img/chapter-ii/needfinding/ w4.png"> 
+<img src="assets/img/chapter-ii/needfinding/w5.png "> 
+<img src="assets/img/chapter-ii/needfinding/w6.png "> 
+<img src="assets/img/chapter-ii/needfinding/ w7.png"> 
+<img src="assets/img/chapter-ii/needfinding/w8.png "> 
+<img src="assets/img/chapter-ii/needfinding/w9.png "> 
+<img src="assets/img/chapter-ii/needfinding/w10.png "> 
+<img src="assets/img/chapter-ii/needfinding/w11.png"> 
+<img src="assets/img/chapter-ii/needfinding/w12.png "> 
+<img src="assets/img/chapter-ii/needfinding/w13.png "> 
+<img src="assets/img/chapter-ii/needfinding/w14.png"> 
+<img src="assets/img/chapter-ii/needfinding/w15.png"> 
+<img src="assets/img/chapter-ii/needfinding/w16.png "> 
+<img src="assets/img/chapter-ii/needfinding/w17.png"> 
+<img src="assets/img/chapter-ii/needfinding/w18.png "> 
+<img src="assets/img/chapter-ii/needfinding/w19.png "> 
+<img src="assets/img/chapter-ii/needfinding/w20.png"> 
+<img src="assets/img/chapter-ii/needfinding/w21.png "> 
+
 
 
 
 
 ### 4.4.2. Web Applications Wireflow Diagrams.
-<img src="assets/img/chapter-ii/needfinding/ "> 
+<img src="assets/img/chapter-ii/needfinding/wireflow.png "> 
 
 
 
