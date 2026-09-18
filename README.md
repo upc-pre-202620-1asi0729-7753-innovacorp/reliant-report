@@ -1541,92 +1541,76 @@ Las definiciones de proceso y recubrimiento se basan en el glosario de proyecci�
 
 # Capítulo IV: Product Design
 ## 4.1. Style Guidelines.
-
 Durante el desarrollo de Relient, resulta importante establecer lineamientos visuales que permitan mantener una identidad coherente en las diferentes interfaces del producto. Las inconsistencias en los colores, tipografías, componentes y estilos de interacción pueden afectar la comprensión y experiencia de los usuarios.
 Por ello, se establecen las Style Guidelines para definir los recursos visuales de la Landing Page y la Web Application de Relient. Estas pautas consideran las necesidades de los usuarios relacionados con la gestión y monitoreo de procesos, equipos, componentes y recursos del sector industrial y minero. Asimismo, se busca
 mantener una interfaz clara, organizada y funcional, que facilite la consulta de información, el seguimiento de alertas y la gestión de los diferentes módulos de la plataforma.
 
 ### 4.1.1. General Style Guidelines.
-
 Para esta sección, se han definido los estilos de tipografía, colores y espaciado que se aplicarán en las interfaces web de Relient. Estos elementos buscan mantener una identidad visual consistente y facilitar la interacción de los usuarios con la plataforma.
 
 ## Typography
-
 La propuesta visual de Relient utiliza principalmente las tipografías Balsamiq Sans, Goblin One y Kaushan Script. La tipografía Balsamiq Sans se utiliza para textos generales, etiquetas y componentes informativos. Goblin One se emplea en títulos y elementos destacados, mientras que Kaushan Script se utiliza en elementos
 decorativos o distintivos de la identidad visual. La combinación de estas tipografías permite establecer una jerarquía visual entre los diferentes elementos de la interfaz y mantener una presentación coherente en la Landing Page y la Web Application.
 
 ## Colors
-
 La paleta de colores de Relient está conformada por El marrón oscuro se utiliza en textos y elementos principales, mientras que el crema claro y el blanco permiten construir fondos y espacios visuales. El naranja se emplea para destacar botones, acciones principales y elementos relevantes de la interfaz.
 
 ## Spacing
-
 El sistema de espaciado de Relient busca mantener una distribución ordenada de los contenidos y evitar la saturación visual. Para ello, se utilizan separaciones consistentes entre títulos, textos, botones, formularios, tablas y componentes de navegación.La configuración del espaciado 
 se establece mediante las herramientas de diseño utilizadas en Figma, considerando la distribución de los elementos y la legibilidad de la información en las diferentes vistas de la plataforma.
 
 ## Tone of Voice
-
 El tono de comunicación de Relient se caracteriza por ser profesional, claro, directo y orientado a la eficiencia operativa. Debido a que la plataforma está relacionada con el monitoreo y la gestión de procesos industriales, la comunicación busca transmitir control, prevención y confiabilidad. Los mensajes deben utilizar
 términos comprensibles y evitar expresiones excesivamente técnicas cuando no sean necesarias. Asimismo, las etiquetas y notificaciones deben orientar al usuario sobre las acciones que puede realizar y los estados de los registros o equipos.
 
 ### 4.1.2. Web Style Guidelines.
-
 Las Web Style Guidelines de Relient establecen los criterios visuales y de interacción para las interfaces web del producto. Estas reglas buscan asegurar la consistencia entre la Landing Page y la Web Application, facilitando la navegación y el uso de las funcionalidades disponibles.
 
  ## Navigation Bar
- 
-La barra de navegación de la Landing Page se ubica en la parte superior de la interfaz y permite acceder a las principales secciones informativas del producto. También incorpora las opciones de ingreso y registro de usuarios.
+ La barra de navegación de la Landing Page se ubica en la parte superior de la interfaz y permite acceder a las principales secciones informativas del producto. También incorpora las opciones de ingreso y registro de usuarios.
 En la Web Application, la navegación se organiza mediante una barra superior y un menú lateral que permite acceder a los módulos de Usuarios, Equipos, Componentes, Señales, Alertas, Reportes e Inventario.
 
 ## Buttons
-
 Los botones utilizan una jerarquía visual que permite diferenciar las acciones principales de las secundarias. El color naranja #E2942E se emplea para destacar las acciones más importantes, como ingresar, registrar información, guardar cambios o iniciar una operación.
 Los botones también consideran estados visuales como hover y focus, con el objetivo de proporcionar retroalimentación al usuario durante la interacción.
 
 ## Cards
-
 Las tarjetas se utilizan para presentar información de manera organizada e independiente. En la Web Application de Relient pueden emplearse para mostrar indicadores, estados de equipos, alertas, componentes y otros datos relacionados con la operación.
 El uso de tarjetas permite separar visualmente la información y facilitar su lectura, especialmente cuando se presentan diferentes registros o indicadores dentro de una misma vista.
 
 ## Forms
-
 Los formularios de Relient utilizan una estructura organizada y etiquetas visibles asociadas a cada campo de entrada. Los campos deben contar con espacios adecuados, bordes definidos y estados de focus que permitan identificar el elemento activo.
 Los formularios se utilizan en procesos como el registro de usuarios, equipos, componentes, señales e información de inventario. Se busca que los campos sean comprensibles y que los mensajes de validación orienten al usuario cuando se produzca un error.
-## Interaction States
 
+## Interaction States
 Los principales componentes interactivos consideran estados visuales de hover, focus, seleccionado y deshabilitado. Estos estados permiten comunicar qué elementos pueden ser seleccionados o activados.
 En Relient, estos criterios también pueden utilizarse para representar estados relacionados con los equipos, las señales y las alertas, facilitando la identificación de información que requiere atención o seguimiento.
 
 ## Responsive Web Design
-
 La interfaz de Relient considera un enfoque responsive para adaptar la presentación de los contenidos a diferentes tamaños de pantalla. En la versión de escritorio se utiliza una estructura con menú lateral, tablas y componentes de gestión.
 En dispositivos de menor tamaño, los elementos deben reorganizarse para conservar la legibilidad, evitar desbordamientos horizontales y facilitar la interacción con los botones, formularios y registros de la plataforma.
 
 ## Accessibility
-
 La experiencia web de Relient considera prácticas básicas de accesibilidad, como el uso de etiquetas visibles en los formularios, contraste entre colores, estados de focus y nombres comprensibles para los botones y elementos de navegación.
 Asimismo, la información debe organizarse mediante una jerarquía visual clara, permitiendo que los usuarios identifiquen las funciones y comprendan los mensajes presentados por la plataforma.
 
 ## 4.2. Information Architecture.
-
 La arquitectura de información de Relient define la manera en que se distribuyen, relacionan y presentan los contenidos de la plataforma. Su propósito es ayudar a los usuarios a identificar las funcionalidades disponibles y encontrar la información requerida sin realizar pasos innecesarios.
 La propuesta contempla la Landing Page y la Web Application de InnovaCorp. Ambas interfaces deben mantener criterios similares en la organización de los contenidos, las etiquetas y los recorridos de navegación. De esta manera, el usuario puede reconocer la identidad y la estructura del producto desde la primera interacción hasta el uso de sus funcionalidades internas.
-### 4.2.1. Organization Systems.
 
+### 4.2.1. Organization Systems.
 Relient utiliza una organización basada principalmente en una estructura jerárquica y temática. La organización jerárquica permite mostrar primero la información más importante y posteriormente dirigir al usuario hacia contenidos específicos. La organización temática agrupa las funcionalidades según el tipo de tarea o información que gestionan.
 En la Landing Page, el contenido se distribuye desde la presentación inicial de InnovaCorp y la propuesta de valor de Relient hacia las secciones informativas que explican el funcionamiento de la solución. También se consideran los accesos a About Us, How does it work?, FAQs y Contact, de acuerdo con la estructura de los mockups.
 En la Web Application, la información se divide en módulos relacionados con las actividades principales de la plataforma. Estos módulos incluyen Usuarios, Equipos, Componentes, Señales, Alertas, Reportes e Inventario. Cada sección reúne los registros y acciones correspondientes a su finalidad, permitiendo que el usuario pueda consultar y administrar la información de manera más ordenada.
 La organización de los módulos también puede incorporar una secuencia de pasos cuando se necesita registrar, actualizar o revisar un elemento. Por ejemplo, una operación puede comenzar con el ingreso de datos, continuar con la validación de la información y finalizar con la confirmación del registro.
 
 ### 4.2.2. Labeling Systems.
-
 El sistema de etiquetado de Relient busca utilizar nombres breves, reconocibles y relacionados directamente con las funciones de la plataforma. Las etiquetas deben permitir que el usuario anticipe el contenido de una sección antes de ingresar a ella.
 En la Landing Page se utilizan nombres como Home, About Us, How does it work?, FAQs y Contact. Estas denominaciones ayudan a separar la información institucional, la explicación del producto y los canales de comunicación.
 En la Web Application, las etiquetas principales corresponden a los módulos de Usuarios, Equipos, Componentes, Señales, Alertas, Reportes e Inventario. Cada nombre se relaciona con el tipo de información que el usuario puede consultar o administrar dentro de la plataforma.
 Las acciones deben utilizar expresiones orientadas a la tarea, como “Registrar”, “Guardar”, “Editar”, “Consultar”, “Filtrar” o “Generar reporte”, siempre que correspondan con la funcionalidad implementada. Se evitarán términos excesivamente técnicos, abreviaturas poco claras o denominaciones diferentes para una misma acción.
 
 ### 4.2.3. SEO Tags and Meta Tags
-
 Las etiquetas SEO y los Meta Tags de Relient se plantean como recursos para describir el contenido de la Landing Page y facilitar su identificación por parte de los motores de búsqueda. Estos valores permiten comunicar el nombre del producto, su finalidad y los temas relacionados con la solución.
 Para InnovaCorp se proponen los siguientes contenidos:
 
@@ -1641,7 +1625,6 @@ Los valores anteriores representan una propuesta inicial y deben validarse duran
 Estas etiquetas se incorporan dentro del elemento <head> del documento HTML. En el caso de la Web Application, los títulos y descripciones pueden ajustarse de acuerdo con la vista o funcionalidad que se esté mostrando.
 
 ### 4.2.4. Searching Systems.
-
 El sistema de búsqueda de Relient se define según la cantidad y el tipo de información que debe consultar el usuario en cada interfaz.
 En la Landing Page no se considera necesaria una barra de búsqueda principal, debido a que sus contenidos se encuentran distribuidos en secciones específicas y pueden localizarse mediante la navegación superior. El usuario puede dirigirse a las secciones informativas utilizando los enlaces disponibles.
 En la Web Application, la búsqueda adquiere mayor importancia porque se gestionan registros relacionados con usuarios, equipos, componentes, señales, alertas, reportes e inventarios. Por este motivo, se pueden incorporar campos de búsqueda y filtros que faciliten la localización de información.
@@ -1649,7 +1632,6 @@ Los criterios de filtrado pueden variar según el módulo. Por ejemplo, se puede
 Los filtros deben ser comprensibles y permitir que el usuario modifique o elimine los criterios seleccionados. De esta manera, se evita que la búsqueda se convierta en un proceso complicado o que se presenten demasiadas opciones al mismo tiempo.
 
 ### 4.2.5. Navigation Systems.
-
 El sistema de navegación de Relient tiene como objetivo facilitar el desplazamiento entre las distintas secciones de la experiencia digital. Para ello, se establecen rutas claras que permitan al usuario comprender dónde se encuentra y qué acciones puede realizar.
 En la Landing Page, la navegación principal se presenta en la parte superior e incluye los accesos a Home, About Us, How does it work?, FAQs y Contact. Estos enlaces permiten desplazarse hacia las secciones correspondientes de la página. Además, se consideran acciones como “Empezar ya”, Login y Sign Up, las cuales dirigen al usuario hacia los puntos de interacción definidos en los mockups.
 En la Web Application, la navegación se organiza alrededor de los módulos principales de Relient. Los accesos a Usuarios, Equipos, Componentes, Señales, Alertas, Reportes e Inventario deben mantenerse visibles y ordenados para facilitar el acceso a las funciones de gestión y monitoreo.
@@ -1657,13 +1639,11 @@ El footer de la Landing Page complementa la navegación mediante información ad
 En pantallas pequeñas, los elementos de navegación deben reorganizarse para conservar su visibilidad y permitir una interacción adecuada. Dentro de la Web Application, los recorridos deben mantener una relación clara entre los módulos, los registros y las acciones disponibles, evitando que el usuario pierda el contexto de la tarea que está realizando.
 
 ## 4.3. Landing Page UI Design.
-
 El diseño de la interfaz de la Landing Page de Relient representa visualmente la propuesta de InnovaCorp y permite presentar el propósito de la solución de manera ordenada. Su estructura se desarrolla a partir de los criterios definidos en las Style Guidelines y en la arquitectura de información.
 La interfaz busca comunicar el valor de Relient, explicar de manera sencilla su finalidad y facilitar el acceso a las principales acciones de navegación. Para ello, se utilizan recursos como la jerarquía tipográfica, la paleta de colores, los espacios entre secciones y los componentes interactivos.
 El diseño considera una presentación adaptable a diferentes tamaños de pantalla, manteniendo una relación visual entre los elementos de la marca y las funcionalidades que posteriormente se encuentran disponibles en la Web Application.
 
 ### 4.3.1. Landing Page Wireframe.
-
 Los wireframes de la Landing Page de Relient muestran la distribución preliminar de los elementos que conforman la interfaz antes de aplicar todos los estilos visuales. Estos esquemas permiten revisar la ubicación de los contenidos, la organización de la navegación y la jerarquía de las secciones principales.
 La elaboración de los wireframes facilita la identificación de posibles problemas de distribución y permite realizar ajustes antes de desarrollar la interfaz definitiva. También ayuda a comprobar que los elementos principales, como el logotipo, los enlaces de navegación y los botones de acción, se encuentren ubicados de acuerdo con la estructura propuesta.
 
