@@ -1654,18 +1654,18 @@ Los wireframes de la Landing Page de Relient muestran la distribución prelimina
 La elaboración de los wireframes facilita la identificación de posibles problemas de distribución y permite realizar ajustes antes de desarrollar la interfaz definitiva. También ayuda a comprobar que los elementos principales, como el logotipo, los enlaces de navegación y los botones de acción, se encuentren ubicados de acuerdo con la estructura propuesta.
 
 ## Desktop Web Browser
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
+<img src="assets/img/chapter-ii/needfinding/webW1.png "> 
+<img src="assets/img/chapter-ii/needfinding/webW2.png "> 
+<img src="assets/img/chapter-ii/needfinding/webW3.png "> 
+<img src="assets/img/chapter-ii/needfinding/webW4.png "> 
+<img src="assets/img/chapter-ii/needfinding/webW5.png "> 
 
 ## Mobile Web Browser
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
+<img src="assets/img/chapter-ii/needfinding/movilW1.png "> 
+<img src="assets/img/chapter-ii/needfinding/movilW2.png "> 
+<img src="assets/img/chapter-ii/needfinding/movilW3.png "> 
+<img src="assets/img/chapter-ii/needfinding/movilW4.png "> 
+<img src="assets/img/chapter-ii/needfinding/movilW5.png "> 
 
 
 ### 4.3.2. Landing Page Mock-up.
