@@ -1,0 +1,394 @@
+@startuml Reliant_Equipment_v4
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam nodesep 40
+skinparam ranksep 60
+hide empty members
+
+package "Equipment" #E8F5E9 {
+
+    package "equipment.domain" {
+
+        class HVOFSystem <<Aggregate Root>> {
+            - code: String
+            - organizationId: Long
+            - serialNumber: String
+            - status: EquipmentStatusEnum
+            - systemModel: HvofSystemModel
+            - fuelType: FuelTypeEnum
+            - subsystems: List<HvofSubsystem>
+            - controllers: List<Controller>
+            - tagMappings: List<TagMapping>
+            - derivedParameters: List<DerivedParameterDefinition>
+            + changeStatus(status: EquipmentStatusEnum): void
+            + addSubsystem(subsystem: HvofSubsystem): void
+            + addController(controller: Controller): void
+            + proposeTagMappings(tagPaths: List<String>, rules: List<TagMappingRule>): List<TagMapping>
+            + confirmTagMapping(mapping: TagMapping): void
+            + defineDerivedParameter(definition: DerivedParameterDefinition): void
+            + resolveTag(tagPath: String): Optional<TagMapping>
+            + findTagPathByRole(role: StatusRoleEnum): Optional<String>
+            + canStartSession(): boolean
+        }
+        class HvofSubsystem <<Entity>> {
+            - subsystemType: HvofSubsystemTypeEnum
+            - name: String
+            - alias: String
+            - parameters: Set<ProcessParameterEnum>
+            - parts: List<HvofPart>
+            + addPart(part: HvofPart): void
+        }
+        class HvofPart <<Entity>> {
+            - partType: HvofPartTypeEnum
+            - serialNumber: String
+            - manufacturer: String
+        }
+        class Controller <<Entity>> {
+            - controllerNumber: Integer
+            - deviceType: DeviceTypeEnum
+            - serialNumber: String
+            - deviceInfo: DeviceInfo
+            - endpoint: NetworkEndpoint
+            - tagCatalogId: Long
+        }
+        class DerivedParameterDefinition <<Entity>> {
+            - name: String
+            - parameter: ProcessParameterEnum
+            - expression: String
+            - inputTagPaths: List<String>
+            - unit: Unit
+            + validateExpression(): void
+        }
+        class HvofSystemModel <<Value Object>> {
+            - manufacturer: String
+            - model: String
+        }
+        class DeviceInfo <<Value Object>> {
+            - manufacturer: ControllerManufacturerEnum
+            - model: String
+            - partNumber: String
+            - supportedProtocols: Set<ProtocolEnum>
+            + validatePartNumber(): void
+        }
+        class IpAddressV4 <<Value Object>> {
+            - value: String
+            + {static} of(value: String): IpAddressV4
+            + octets(): int[]
+            + isPrivate(): boolean
+            + isLoopback(): boolean
+            + isInSameSubnetAs(other: IpAddressV4, prefixLength: int): boolean
+        }
+        class NetworkEndpoint <<Value Object>> {
+            - ipAddress: IpAddressV4
+            - port: Integer
+            - rack: Integer
+            - slot: Integer
+            - endpointUrl: String
+            + validateFor(protocol: ProtocolEnum): void
+        }
+        class TagMapping <<Value Object>> {
+            - tagPath: String
+            - controllerId: Long
+            - subsystemId: Long
+            - partId: Long
+            - parameter: ProcessParameterEnum
+            - tagKind: TagKindEnum
+            - statusRole: StatusRoleEnum
+            - matchedRuleId: Long
+            - confirmed: boolean
+        }
+
+        class Recipe <<Aggregate Root>> {
+            - hvofSystemId: Long
+            - recipeNumber: Integer
+            - name: String
+            - powderSpecification: String
+            - applicability: List<RecipeApplicability>
+            - parameters: List<RecipeParameter>
+            - status: RecipeStatusEnum
+            + defineParameter(parameter: RecipeParameter): void
+            + addApplicability(applicability: RecipeApplicability): void
+            + appliesTo(componentType: String, machineModel: String): boolean
+            + limitsFor(parameter: ProcessParameterEnum): Optional<ParameterLimits>
+            + approve(): void
+        }
+        class RecipeApplicability <<Value Object>> {
+            - componentType: String
+            - machineModel: String
+            - position: String
+        }
+        class RecipeParameter <<Value Object>> {
+            - parameter: ProcessParameterEnum
+            - setpoint: BigDecimal
+            - limits: ParameterLimits
+            - unit: Unit
+        }
+        class ParameterLimits <<Value Object>> {
+            - lowerShutdown: BigDecimal
+            - lowerWarning: BigDecimal
+            - nominalMin: BigDecimal
+            - nominalMax: BigDecimal
+            - upperWarning: BigDecimal
+            - upperShutdown: BigDecimal
+            + validateOrder(): void
+            + bandFor(value: BigDecimal): ThresholdBandEnum
+        }
+
+        class ControllerTagCatalog <<Aggregate Root>> {
+            - controllerId: Long
+            - manufacturer: ControllerManufacturerEnum
+            - importedAt: Instant
+            - roots: List<TagNode>
+            + rebuildFrom(rows: List<ImportedTagRow>, normalizer: DataTypeNormalizer): void
+            + findByPath(tagPath: String): Optional<TagNode>
+            + leaves(): List<TagNode>
+        }
+        class TagNode <<Entity>> {
+            - name: String
+            - kind: TagNodeKindEnum
+            - vendorDataType: String
+            - dataType: CanonicalDataTypeEnum
+            - style: DisplayStyleEnum
+            - description: String
+            - children: List<TagNode>
+            + tagPath(): String
+            + isLeaf(): boolean
+        }
+        class ImportedTagRow <<Value Object>> {
+            - scope: String
+            - name: String
+            - vendorDataType: String
+            - description: String
+            - attributes: String
+        }
+
+        class TagMappingRule <<Aggregate Root>> {
+            - pattern: String
+            - subsystemType: HvofSubsystemTypeEnum
+            - partType: HvofPartTypeEnum
+            - parameter: ProcessParameterEnum
+            - tagKind: TagKindEnum
+            - statusRole: StatusRoleEnum
+            - priority: Integer
+            + matches(tagPath: String): boolean
+        }
+
+        enum EquipmentStatusEnum {
+            ACTIVE
+            IN_MAINTENANCE
+            OUT_OF_SERVICE
+        }
+        enum FuelTypeEnum {
+            KEROSENE
+            PROPANE
+            PROPYLENE
+            HYDROGEN
+            NATURAL_GAS
+        }
+        enum HvofSubsystemTypeEnum {
+            SPRAY_GUN
+            GAS_CONTROL_CONSOLE
+            POWDER_FEED
+            COOLING
+            FUEL_SUPPLY
+            OXYGEN_SUPPLY
+            COMPRESSED_AIR
+            GUN_MANIPULATION
+            WORKPIECE_HANDLING
+            ENCLOSURE_VENTILATION
+            DUST_COLLECTION
+            GAS_DETECTION
+            CONTROL_AND_SAFETY
+        }
+        enum HvofPartTypeEnum {
+            COMBUSTION_CHAMBER
+            NOZZLE
+            INJECTOR
+            HOPPER
+            METERING_DISC
+            VIBRATOR
+            CHILLER
+            WATER_PUMP
+            FUEL_PUMP
+            REGULATOR
+            MASS_FLOW_CONTROLLER
+            X_AXIS
+            Z_AXIS
+            SPINDLE
+            TURNTABLE
+            DUST_COLLECTOR
+            FILTER
+            DOOR_INTERLOCK
+            GAS_SENSOR
+        }
+        enum DeviceTypeEnum {
+            PLC
+            HMI
+            VFD
+            REMOTE_IO
+        }
+        enum ControllerManufacturerEnum {
+            ALLEN_BRADLEY
+            SIEMENS
+            SCHNEIDER
+            MITSUBISHI
+            DELTA
+            OMRON
+            OTHER
+        }
+        enum ProtocolEnum {
+            ETHERNET_IP
+            S7
+            OPC_UA
+            MODBUS_TCP
+        }
+        enum TagNodeKindEnum {
+            PROGRAM
+            STRUCTURE
+            ARRAY
+            ATOMIC
+        }
+        enum CanonicalDataTypeEnum {
+            BOOLEAN
+            INTEGER
+            FLOAT
+            STRING
+            STRUCTURE
+            ARRAY
+        }
+        enum DisplayStyleEnum {
+            DECIMAL
+            FLOAT
+            BINARY
+            HEX
+            ASCII
+        }
+        enum TagKindEnum {
+            ANALOG_READING
+            SETPOINT
+            FAULT_FLAG
+            STATUS
+        }
+        enum StatusRoleEnum {
+            NONE
+            MACHINE_RUNNING
+            GUN_IGNITED
+            FEEDER_RUNNING
+            SPRAY_ACTIVE
+            RECIPE_NUMBER
+        }
+        enum RecipeStatusEnum {
+            DRAFT
+            APPROVED
+            RETIRED
+        }
+        enum ThresholdBandEnum {
+            NOMINAL
+            WARNING_LOW
+            WARNING_HIGH
+            SHUTDOWN_LOW
+            SHUTDOWN_HIGH
+        }
+        enum ProcessParameterEnum {
+            OXYGEN_PRESSURE
+            OXYGEN_FLOW
+            FUEL_PRESSURE
+            FUEL_FLOW
+            OXYGEN_FUEL_RATIO
+            CARRIER_GAS_PRESSURE
+            CARRIER_GAS_FLOW
+            FLAME_TEMPERATURE
+            POWDER_FEEDRATE
+            FEEDER_DISC_SPEED
+            HOPPER_PRESSURE
+            COOLING_WATER_FLOW
+            COOLING_WATER_INLET_TEMPERATURE
+            COOLING_WATER_PRESSURE
+            SPINDLE_SPEED
+            X_AXIS_POSITION
+            Z_AXIS_POSITION
+            TRAVERSE_SPEED
+            AIR_PRESSURE
+            DUST_COLLECTOR_DIFFERENTIAL_PRESSURE
+        }
+
+        HVOFSystem "1" *-- "1..*" HvofSubsystem : composedOf
+        HVOFSystem "1" *-- "1..*" Controller : controlledBy
+        HVOFSystem "1" *-- "0..*" TagMapping : maps
+        HVOFSystem "1" *-- "0..*" DerivedParameterDefinition : computes
+        HVOFSystem "1" --> "1" HvofSystemModel : is
+        HVOFSystem --> EquipmentStatusEnum
+        HVOFSystem --> FuelTypeEnum
+        HVOFSystem ..> TagMappingRule : evaluates
+        Recipe "1..*" --> "1" HVOFSystem : loadedIn (por id)
+        HvofSubsystem "1" *-- "0..*" HvofPart : contains
+        HvofSubsystem --> HvofSubsystemTypeEnum
+        HvofPart --> HvofPartTypeEnum
+        Controller "1" --> "1" DeviceInfo : describedBy
+        Controller "1" --> "1" NetworkEndpoint : reachableAt
+        NetworkEndpoint "1" --> "1" IpAddressV4 : at
+        Controller --> DeviceTypeEnum
+        Controller ..> ControllerTagCatalog : catalogedBy (por id)
+        DeviceInfo --> ControllerManufacturerEnum
+        DeviceInfo --> ProtocolEnum
+        DerivedParameterDefinition --> ProcessParameterEnum
+        DerivedParameterDefinition "1" --> "1" Unit : expressedIn
+        TagMapping --> ProcessParameterEnum
+        TagMapping --> TagKindEnum
+        TagMapping --> StatusRoleEnum
+        Recipe "1" *-- "1..*" RecipeParameter : defines
+        Recipe "1" *-- "1..*" RecipeApplicability : appliesTo
+        Recipe --> RecipeStatusEnum
+        RecipeParameter "1" --> "1" ParameterLimits : boundedBy
+        RecipeParameter --> ProcessParameterEnum
+        RecipeParameter "1" --> "1" Unit : expressedIn
+        ParameterLimits ..> ThresholdBandEnum : classifies
+        ControllerTagCatalog "1" *-- "1..*" TagNode : roots
+        ControllerTagCatalog ..> ImportedTagRow : builtFrom
+        TagNode "1" *-- "0..*" TagNode : children
+        TagNode --> TagNodeKindEnum
+        TagNode --> CanonicalDataTypeEnum
+        TagNode --> DisplayStyleEnum
+        TagMappingRule --> HvofSubsystemTypeEnum
+        TagMappingRule --> TagKindEnum
+        TagMappingRule --> StatusRoleEnum
+
+        interface HVOFSystemRepository <<Repository>> {
+            + findByOrganizationId(organizationId: Long): List<HVOFSystem>
+            + existsByOrganizationIdAndCode(organizationId: Long, code: String): boolean
+            + save(system: HVOFSystem): HVOFSystem
+        }
+        interface RecipeRepository <<Repository>> {
+            + findByHvofSystemIdAndRecipeNumber(systemId: Long, recipeNumber: Integer): Optional<Recipe>
+            + findByHvofSystemId(systemId: Long): List<Recipe>
+            + save(recipe: Recipe): Recipe
+        }
+        interface ControllerTagCatalogRepository <<Repository>> {
+            + findByControllerId(controllerId: Long): Optional<ControllerTagCatalog>
+            + save(catalog: ControllerTagCatalog): ControllerTagCatalog
+        }
+        interface TagMappingRuleRepository <<Repository>> {
+            + findAllByOrderByPriorityAsc(): List<TagMappingRule>
+            + save(rule: TagMappingRule): TagMappingRule
+        }
+    }
+
+
+}
+
+package "Billing" #EEEEEE {
+    class BillingContextFacade <<Context Facade>>
+}
+
+AuditableAbstractAggregateRoot <|-- HVOFSystem
+AuditableAbstractAggregateRoot <|-- Recipe
+AuditableAbstractAggregateRoot <|-- ControllerTagCatalog
+AuditableAbstractAggregateRoot <|-- TagMappingRule
+AuditableModel <|-- HvofSubsystem
+AuditableModel <|-- HvofPart
+AuditableModel <|-- Controller
+AuditableModel <|-- DerivedParameterDefinition
+AuditableModel <|-- TagNode
+
+@enduml

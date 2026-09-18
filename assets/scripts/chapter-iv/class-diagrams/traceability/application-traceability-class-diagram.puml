@@ -1,0 +1,55 @@
+@startuml Reliant_Traceability
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam nodesep 40
+skinparam ranksep 60
+hide empty members
+
+
+
+package "Traceability" #FCE4EC {
+
+    package "traceability.application" {
+        class "ExternalIamService" as trExtIam <<ACL>> {
+            + fetchAssetOwnerOrganizationIdByRuc(ruc: String): Optional<Long>
+        }
+        class RecuperationQueryServiceImpl <<Application Service>> {
+            + handle(query: GetRecuperationByIdQuery): Optional<Recuperation>
+            + handle(query: GetRecuperationsByCustomerQuery): List<Recuperation>
+        }
+        class ComponentQueryServiceImpl <<Application Service>> {
+            + handle(query: GetComponentHistoryQuery): Optional<Component>
+            + handle(query: GetComponentsByOrganizationQuery): List<Component>
+        }
+        RecuperationQueryServiceImpl ..> RecuperationRepository
+        ComponentQueryServiceImpl ..> ComponentRepository
+        class RecuperationCommandServiceImpl <<Application Service>>
+        class ComponentCommandServiceImpl <<Application Service>>
+        class "TraceabilityIntegrationEventHandler" as trHandler <<Event Handler>> {
+            + on(event: OrganizationRegisteredIntegrationEvent): void
+            + on(event: SpraySessionCompletedIntegrationEvent): void
+        }
+        RecuperationCommandServiceImpl ..> Recuperation
+        ComponentCommandServiceImpl ..> Component
+        ComponentCommandServiceImpl ..> IntegrationEventPublisher
+        trHandler ..> Customer
+        trHandler ..> Recuperation
+        trExtIam ..> IamContextFacade : «ACL»
+    }
+
+}
+
+package "IAM" #EEEEEE {
+    class IamContextFacade <<Context Facade>>
+    class OrganizationRegisteredIntegrationEvent <<Integration Event>>
+}
+
+package "ProcessMonitoring" #EEEEEE {
+    class SpraySessionCompletedIntegrationEvent <<Integration Event>>
+}
+
+OrganizationRegisteredIntegrationEvent ..> trHandler : consumedBy
+SpraySessionCompletedIntegrationEvent ..> trHandler : consumedBy
+
+@enduml

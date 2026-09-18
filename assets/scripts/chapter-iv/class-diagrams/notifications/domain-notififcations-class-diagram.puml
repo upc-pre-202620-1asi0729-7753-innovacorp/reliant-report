@@ -1,0 +1,128 @@
+@startuml Reliant_Notifications_v4
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam nodesep 40
+skinparam ranksep 60
+hide empty members
+
+package "SharedKernel" #F5F5F5 {
+
+    package "shared.domain" {
+
+        abstract class AuditableAbstractAggregateRoot {
+            + registerEvent(event: Object): void
+            + clearDomainEvents(): void
+        }
+
+    }
+
+}
+
+package "Notifications" #EDE7F6 {
+
+    package "notifications.domain" {
+        class Alert <<Aggregate Root>> {
+            - organizationId: Long
+            - recipientUserId: Long
+            - alertType: AlertTypeEnum
+            - severity: SeverityEnum
+            - title: String
+            - message: String
+            - sourceEventId: UUID
+            - status: AlertStatusEnum
+            + acknowledge(userId: Long): void
+            + escalate(): void
+        }
+        class NotificationPreference <<Aggregate Root>> {
+            - userId: Long
+            - channel: ChannelEnum
+            - enabledAlertTypes: Set<AlertTypeEnum>
+            + allows(alertType: AlertTypeEnum, channel: ChannelEnum): boolean
+        }
+        class NewsletterSubscription <<Aggregate Root>> {
+            - email: String
+            - subscribedAt: Instant
+        }
+        enum AlertTypeEnum {
+            PARAMETER_WARNING
+            PARAMETER_SHUTDOWN
+            CRITICAL_FAULT
+            RECURRING_FAULT_PATTERN
+            PREMATURE_FAILURE
+            UNASSIGNED_SESSION
+            RECIPE_MISMATCH
+            SESSION_ABORTED
+        }
+        enum SeverityEnum {
+            INFO
+            WARNING
+            CRITICAL
+        }
+        enum ChannelEnum {
+            IN_APP
+            EMAIL
+        }
+        enum AlertStatusEnum {
+            RAISED
+            ACKNOWLEDGED
+            ESCALATED
+        }
+        Alert --> AlertTypeEnum
+        Alert --> SeverityEnum
+        Alert --> AlertStatusEnum
+        NotificationPreference --> ChannelEnum
+
+        interface AlertRepository <<Repository>> {
+            + findByRecipientUserIdAndStatus(userId: Long, status: AlertStatusEnum): List<Alert>
+            + save(alert: Alert): Alert
+        }
+        interface NotificationPreferenceRepository <<Repository>> {
+            + findByUserId(userId: Long): Optional<NotificationPreference>
+            + save(preference: NotificationPreference): NotificationPreference
+        }
+        interface NewsletterSubscriptionRepository <<Repository>> {
+            + existsByEmail(email: String): boolean
+            + save(subscription: NewsletterSubscription): NewsletterSubscription
+        }
+    }
+
+    package "notifications.application" {
+
+
+
+        class AlertCommandServiceImpl <<Application Service>>
+
+        AlertCommandServiceImpl ..> Alert
+        AlertCommandServiceImpl ..> NotificationPreference
+    }
+
+    package "notifications.infrastructure" {
+
+
+        interface JpaAlertRepository <<Spring Data>>
+        interface JpaNotificationPreferenceRepository <<Spring Data>>
+        interface JpaNewsletterSubscriptionRepository <<Spring Data>>
+        AlertRepository <|-- JpaAlertRepository
+        NotificationPreferenceRepository <|-- JpaNotificationPreferenceRepository
+        NewsletterSubscriptionRepository <|-- JpaNewsletterSubscriptionRepository
+    }
+
+    package "notifications.interfaces" {
+        class NewsletterController <<REST>>
+
+        NewsletterController ..> NewsletterPort
+        NewsletterController ..> NewsletterSubscription
+        AlertCommandServiceImpl ..> AlertRepository
+        AlertCommandServiceImpl ..> NotificationPreferenceRepository
+        NewsletterController ..> NewsletterSubscriptionRepository
+    }
+}
+
+
+
+AuditableAbstractAggregateRoot <|-- Alert
+AuditableAbstractAggregateRoot <|-- NotificationPreference
+AuditableAbstractAggregateRoot <|-- NewsletterSubscription
+
+@enduml

@@ -1,0 +1,20 @@
+@startuml Reliant_Billing_v4
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam nodesep 40
+skinparam ranksep 60
+hide empty members
+
+package "Billing" #FFF8E1 {
+
+    package "billing.infrastructure" {
+        interface JpaPlanRepository <<Spring Data>>
+        interface JpaSubscriptionRepository <<Spring Data>>
+        PlanRepository <|-- JpaPlanRepository
+        SubscriptionRepository <|-- JpaSubscriptionRepository
+    }
+
+}
+
+@enduml

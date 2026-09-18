@@ -1,0 +1,46 @@
+@startuml Reliant_Equipment_v4
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam nodesep 40
+skinparam ranksep 60
+hide empty members
+
+
+package "Equipment" #E8F5E9 {
+
+    package "equipment.infrastructure" {
+        interface TagFileParser <<Port>> {
+            + parse(file: MultipartFile): List<ImportedTagRow>
+        }
+        class Studio5000CsvTagFileParser <<Adapter>>
+        class JsonTagFileParser <<Adapter>>
+        class AllenBradleyDataTypeNormalizer <<Adapter>>
+        class SiemensDataTypeNormalizer <<Adapter>>
+        class SchneiderDataTypeNormalizer <<Adapter>>
+        class MitsubishiDataTypeNormalizer <<Adapter>>
+        class DeltaDataTypeNormalizer <<Adapter>>
+        class OmronDataTypeNormalizer <<Adapter>>
+        TagFileParser <|.. Studio5000CsvTagFileParser
+        TagFileParser <|.. JsonTagFileParser
+        DataTypeNormalizer <|.. AllenBradleyDataTypeNormalizer
+        DataTypeNormalizer <|.. SiemensDataTypeNormalizer
+        DataTypeNormalizer <|.. SchneiderDataTypeNormalizer
+        DataTypeNormalizer <|.. MitsubishiDataTypeNormalizer
+        DataTypeNormalizer <|.. DeltaDataTypeNormalizer
+        DataTypeNormalizer <|.. OmronDataTypeNormalizer
+        HvofSystemCommandServiceImpl ..> TagFileParser
+
+        interface JpaHVOFSystemRepository <<Spring Data>>
+        interface JpaRecipeRepository <<Spring Data>>
+        interface JpaControllerTagCatalogRepository <<Spring Data>>
+        interface JpaTagMappingRuleRepository <<Spring Data>>
+        HVOFSystemRepository <|-- JpaHVOFSystemRepository
+        RecipeRepository <|-- JpaRecipeRepository
+        ControllerTagCatalogRepository <|-- JpaControllerTagCatalogRepository
+        TagMappingRuleRepository <|-- JpaTagMappingRuleRepository
+    }
+
+}
+
+@enduml

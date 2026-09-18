@@ -1,0 +1,24 @@
+@startuml Reliant_Traceability
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam nodesep 40
+skinparam ranksep 60
+hide empty members
+
+
+package "Traceability" #FCE4EC {
+
+    package "traceability.infrastructure" {
+        interface JpaCustomerRepository <<Spring Data>>
+        interface JpaComponentRepository <<Spring Data>>
+        interface JpaRecuperationRepository <<Spring Data>>
+        CustomerRepository <|-- JpaCustomerRepository
+        ComponentRepository <|-- JpaComponentRepository
+        RecuperationRepository <|-- JpaRecuperationRepository
+    }
+
+
+}
+
+@enduml

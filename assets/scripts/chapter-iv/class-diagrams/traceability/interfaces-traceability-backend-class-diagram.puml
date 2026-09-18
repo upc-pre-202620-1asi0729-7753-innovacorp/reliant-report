@@ -1,0 +1,62 @@
+@startuml Reliant_Traceability
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam nodesep 40
+skinparam ranksep 60
+hide empty members
+
+package "SharedKernel" #F5F5F5 {
+
+
+package "Traceability" #FCE4EC {
+
+    package "traceability.interfaces" {
+        class RecuperationController <<REST>>
+        class ComponentController <<REST>>
+        class TraceabilityContextFacade <<Context Facade>> {
+            + isRecuperationInProcess(recuperationId: Long): boolean
+            + fetchSupplierOrganizationId(recuperationId: Long): Optional<Long>
+            + fetchLinkedSessionIds(recuperationId: Long): List<Long>
+            + fetchComponentTypeAndModel(recuperationId: Long): Optional<ComponentSpecDto>
+        }
+        class PrematureFailureDetectedIntegrationEvent <<Integration Event>> {
+            - componentId: Long
+            - recuperationId: Long
+            - supplierOrganizationId: Long
+        }
+        RecuperationController ..> RecuperationCommandServiceImpl
+        RecuperationController ..> RecuperationQueryServiceImpl
+        ComponentController ..> ComponentQueryServiceImpl
+        ComponentController ..> ComponentCommandServiceImpl
+        TraceabilityContextFacade ..> Recuperation
+        IntegrationEvent <|-- PrematureFailureDetectedIntegrationEvent
+        RecuperationCommandServiceImpl ..> RecuperationRepository
+        RecuperationCommandServiceImpl ..> ComponentRepository
+        ComponentCommandServiceImpl ..> ComponentRepository
+        trHandler ..> CustomerRepository
+        trHandler ..> RecuperationRepository
+        TraceabilityContextFacade ..> RecuperationRepository
+        TraceabilityContextFacade ..> ComponentRepository
+    }
+}
+
+package "IAM" #EEEEEE {
+    class IamContextFacade <<Context Facade>>
+    class OrganizationRegisteredIntegrationEvent <<Integration Event>>
+}
+package "Notifications" #EEEEEE {
+    class "NotificationIntegrationEventHandler" as ntHandler <<Event Handler>>
+}
+package "ProcessMonitoring" #EEEEEE {
+    class SpraySessionCompletedIntegrationEvent <<Integration Event>>
+}
+
+OrganizationRegisteredIntegrationEvent ..> trHandler : consumedBy
+SpraySessionCompletedIntegrationEvent ..> trHandler : consumedBy
+PrematureFailureDetectedIntegrationEvent ..> ntHandler : consumedBy
+AuditableAbstractAggregateRoot <|-- Customer
+AuditableAbstractAggregateRoot <|-- Component
+AuditableAbstractAggregateRoot <|-- Recuperation
+
+@enduml
