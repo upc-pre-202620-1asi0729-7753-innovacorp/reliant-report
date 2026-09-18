@@ -730,15 +730,15 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 
 | Segmento: RecuperationSupplier | Entrevista #2 |
 |:--:|:--:|
-| Nombres y Apellidos | |
-| Edad | |
-| Distrito | |
-| Ocupacion | |
-| Timing inicio | |
-| Duracion ||
-| URL ||
-| Screenshot| <img src="<img src="assets/img/chapter-ii/needfinding/ "> |
-| Resumen |
+| Nombres y Apellidos | Aron Ramirez |
+| Edad | 30 años |
+| Distrito | Surquillo |
+| Ocupacion | especialista en investigación de desarrollo |
+| Timing inicio | 3:30 minutoas|
+| Duracion | 8:50 minutos |
+| URL | https://drive.google.com/file/d/1C9NDE2k5fsSGtt2NXbIFq6dNA72oELuV/view?usp=sharing |
+| Screenshot| <img src="<img src="assets/img/chapter-ii/needfinding/Captura de pantalla 2026-09-18 063515.png"> |
+| Resumen | 
 
 | Segmento: RecuperationSupplier | Entrevista #3 |
 |:--:|:--:|
