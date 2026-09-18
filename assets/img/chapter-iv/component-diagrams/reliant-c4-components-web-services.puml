@@ -1,0 +1,53 @@
+@startuml "Components-Web-Services"
+!includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+title Reliant - Web Services Component Diagram (Bounded Contexts)
+
+Container(webapp, "Web Application", "Angular", "Single Page Application used by platform users")
+Container(landing, "Landing Page", "HTML5, CSS3, JavaScript", "Static site with newsletter subscription")
+ContainerDb(db, "Database", "PostgreSQL 16", "Persistence of every bounded context")
+System_Ext(gateway, "Telemetry Gateway", "Pushes telemetry batches read from the HVOF controller")
+System_Ext(mailchimp, "Mailchimp", "E-mail delivery and newsletter audience")
+
+Container_Boundary(api, "Web Services") {
+    Component(iam, "IAM", "Spring Boot", "Organizations, users, roles, unit preferences; JWT authentication and BCrypt hashing")
+    Component(billing, "Billing", "Spring Boot", "Operator and Asset Owner plans and subscriptions")
+    Component(equipment, "Equipment", "Spring Boot", "HVOF systems, subsystems, parts, controllers, tag catalogs and mappings, recipes with threshold bands, derived parameters")
+    Component(traceability, "Traceability", "Spring Boot", "Customers, components, recuperation orders (OF/WO), PCR targets and field returns")
+    Component(monitoring, "Process Monitoring", "Spring Boot", "Spray sessions, telemetry ingestion, band evaluation, spray passes, recipe verification")
+    Component(diagnosis, "Fault Diagnosis", "Spring Boot", "Fault cases, cause-effect rules, suspect subsystem and part, recurring patterns")
+    Component(notifications, "Notifications", "Spring Boot", "Alerts, notification preferences, e-mail delivery, newsletter subscriptions")
+    Component(reporting, "Reporting", "Spring Boot", "Quality certificates, PCR compliance, report templates, generated reports, reporting events")
+    Component(shared, "Shared Kernel", "Spring Boot", "Auditable models, integration event publisher, units and conversion, time value objects, security and CORS configuration, global exception handling")
+}
+
+Rel(webapp, iam, "Signs up and signs in through", "HTTPS / JSON")
+Rel(webapp, equipment, "Configures systems and recipes through", "HTTPS / JSON")
+Rel(webapp, traceability, "Registers components and orders through", "HTTPS / JSON")
+Rel(webapp, monitoring, "Starts sessions and reads live data through", "HTTPS / JSON")
+Rel(webapp, diagnosis, "Reviews and confirms fault cases through", "HTTPS / JSON")
+Rel(webapp, reporting, "Issues certificates and builds report templates through", "HTTPS / JSON")
+Rel(landing, notifications, "Subscribes to the newsletter through", "HTTPS / JSON")
+Rel(gateway, monitoring, "Pushes telemetry batches to", "HTTPS / JSON")
+
+Rel(billing, iam, "Fetches organization type from", "ACL → IamContextFacade")
+Rel(equipment, billing, "Checks monitored system quota through", "ACL → BillingContextFacade")
+Rel(monitoring, equipment, "Resolves tags, recipe limits and derived parameters from", "ACL → EquipmentContextFacade")
+Rel(monitoring, traceability, "Checks recuperation status and component spec from", "ACL → TraceabilityContextFacade")
+Rel(diagnosis, equipment, "Resolves subsystem and part from", "ACL → EquipmentContextFacade")
+Rel(reporting, monitoring, "Fetches out-of-range summaries from", "ACL → ProcessMonitoringContextFacade")
+Rel(reporting, traceability, "Fetches linked sessions from", "ACL → TraceabilityContextFacade")
+Rel(reporting, diagnosis, "Fetches fault counts from", "ACL → FaultDiagnosisContextFacade")
+Rel(notifications, iam, "Resolves recipients by role from", "ACL → IamContextFacade")
+
+Rel(monitoring, diagnosis, "FaultFlagActivated", "Integration Event")
+Rel(monitoring, notifications, "ParameterOutOfRange, RecipeMismatch, UnassignedSession", "Integration Event")
+Rel(monitoring, traceability, "SpraySessionCompleted", "Integration Event")
+Rel(diagnosis, notifications, "FaultCaseOpened, RecurringFaultPattern", "Integration Event")
+Rel(traceability, notifications, "PrematureFailureDetected", "Integration Event")
+Rel(iam, traceability, "OrganizationRegistered", "Integration Event")
+Rel(shared, reporting, "Every integration event", "Integration Event")
+
+Rel(notifications, mailchimp, "Sends e-mails and subscriptions to", "HTTPS")
+Rel(shared, db, "Persists all bounded contexts in", "JDBC")
+@enduml

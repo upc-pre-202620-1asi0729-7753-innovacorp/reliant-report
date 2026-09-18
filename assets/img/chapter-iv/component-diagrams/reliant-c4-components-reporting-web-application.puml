@@ -1,0 +1,22 @@
+@startuml "Components-Reporting-Frontend"
+!includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+title Reliant - Reporting Component Diagram (Web Application)
+
+Container(api, "Web Services", "Spring Boot", "Exposes /api/v1/quality-certificates, /api/v1/report-templates, /api/v1/reports")
+Container(shared, "Shared", "Angular", "Layout, navigation, auth interceptor, guards, i18n and unit formatting")
+
+Container_Boundary(bc, "Reporting Bounded Context") {
+    Component(presentation, "Presentation", "Angular Components", "QualityCertificatePage, PcrCompliancePage, ReportTemplatesPage, TemplateEditorPage, GeneratedReportsPage")
+    Component(application, "Application", "Facade, Store, Commands", "ReportingFacade, ReportTemplateStore, IssueQualityCertificateCommand, CreateReportTemplateCommand, GenerateReportCommand")
+    Component(domain, "Domain", "Client-side entities", "QualityCertificate, PcrComplianceReport, ReportTemplate, ReportSection, ReportWidget, GeneratedReport")
+    Component(infrastructure, "Infrastructure", "Api services, Assemblers", "QualityCertificatesApi, ReportTemplatesApi, ReportsApi, assemblers")
+}
+
+Rel(shared, presentation, "Routes to and wraps")
+Rel(presentation, application, "Dispatches commands and reads state from")
+Rel(application, domain, "Manages")
+Rel(application, infrastructure, "Calls through")
+Rel(infrastructure, domain, "Builds")
+Rel(infrastructure, api, "Calls /api/v1/quality-certificates on", "HTTPS / JSON, JWT")
+@enduml
