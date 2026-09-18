@@ -1554,12 +1554,12 @@ La identidad visual de Relent está orientada a representar innovación, control
 La propuesta visual de Relient utiliza principalmente las tipografías Balsamiq Sans, Goblin One y Kaushan Script. La tipografía Balsamiq Sans se utiliza para textos generales, etiquetas y componentes informativos. Goblin One se emplea en títulos y elementos destacados, mientras que Kaushan Script se utiliza en elementos
 decorativos o distintivos de la identidad visual. La combinación de estas tipografías permite establecer una jerarquía visual entre los diferentes elementos de la interfaz y mantener una presentación coherente en la Landing Page y la Web Application.
 
-<img src="<img src="assets/img/chapter-ii/needfinding/tipoletra.png"> 
+<img src="assets/img/chapter-ii/needfinding/tipoletra.png"> 
 
 ## Colors
 La paleta de colores de Relient está conformada por El marrón oscuro se utiliza en textos y elementos principales, mientras que el crema claro y el blanco permiten construir fondos y espacios visuales. El naranja se emplea para destacar botones, acciones principales y elementos relevantes de la interfaz.
 
-<img src="<img src="assets/img/chapter-ii/needfinding/colors.png "> 
+<img src="assets/img/chapter-ii/needfinding/colors.png "> 
 
 ## Spacing
 El sistema de espaciado de Relient busca mantener una distribución ordenada de los contenidos y evitar la saturación visual. Para ello, se utilizan separaciones consistentes entre títulos, textos, botones, formularios, tablas y componentes de navegación.La configuración del espaciado 
@@ -1654,35 +1654,35 @@ Los wireframes de la Landing Page de Relient muestran la distribución prelimina
 La elaboración de los wireframes facilita la identificación de posibles problemas de distribución y permite realizar ajustes antes de desarrollar la interfaz definitiva. También ayuda a comprobar que los elementos principales, como el logotipo, los enlaces de navegación y los botones de acción, se encuentren ubicados de acuerdo con la estructura propuesta.
 
 ## Desktop Web Browser
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
+<img src="assets/img/chapter-ii/needfinding/ "> 
+<img src="assets/img/chapter-ii/needfinding/ "> 
+<img src="assets/img/chapter-ii/needfinding/ "> 
+<img src="assets/img/chapter-ii/needfinding/ "> 
+<img src="assets/img/chapter-ii/needfinding/ "> 
 
 ## Mobile Web Browser
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
+<img src="assets/img/chapter-ii/needfinding/ "> 
+<img src="assets/img/chapter-ii/needfinding/ "> 
+<img src="assets/img/chapter-ii/needfinding/ "> 
+<img src="assets/img/chapter-ii/needfinding/ "> 
+<img src="assets/img/chapter-ii/needfinding/ "> 
 
 
 ### 4.3.2. Landing Page Mock-up.
 
 ## Desktop Web Browser
-<img src="<img src="assets/img/chapter-ii/needfinding/mockups web1.png "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/mockups web2.png "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/mockups web3.png "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/mockups web4.png "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/mockups web5.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups web1.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups web2.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups web3.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups web4.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups web5.png "> 
 
 ## Mobile Web Browser
-<img src="<img src="assets/img/chapter-ii/needfinding/mockups app1.png "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/mockups app2.png "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/mockups app3.png "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/mockups app4.png "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/mockups app5.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app1.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app2.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app3.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app4.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app5.png "> 
 
 
 ## 4.4. Web Applications UX/UI Design.
@@ -1693,77 +1693,79 @@ Para lograrlo, se elaborarán wireframes, wireflows, mock-ups y user flow diagra
 ### 4.4.1. Web Applications Wireframes.
 Los wireframes de la Web Application de Relient presentan una representación inicial de la estructura y distribución de las pantallas principales de la plataforma. Estos esquemas permiten definir la ubicación de los elementos de navegación, botones, formularios, tarjetas, tablas y secciones informativas antes de incorporar el diseño visual final.
 Asimismo, los wireframes ayudan a organizar las funcionalidades de acuerdo con las necesidades de los usuarios y los User Stories definidos, facilitando la revisión de la experiencia de navegación y la identificación de posibles mejoras en la interfaz.
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app1.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app2.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app3.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app4.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app5.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app1.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app2.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app3.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app4.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app5.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app1.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app2.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app3.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app4.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app5.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app1.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app2.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app3.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app4.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app5.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app1.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app2.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app3.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app4.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app5.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app1.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app2.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app3.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app4.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app5.png "> 
+
 
 
 ### 4.4.2. Web Applications Wireflow Diagrams.
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
+<img src="assets/img/chapter-ii/needfinding/ "> 
 
 
 
 ### 4.4.3. Web Applications Mock-ups.
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app1.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app2.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app3.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app4.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app5.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app1.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app2.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app3.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app4.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app5.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app1.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app2.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app3.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app4.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app5.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app1.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app2.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app3.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app4.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app5.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app1.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app2.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app3.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app4.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app5.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app1.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app2.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app3.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app4.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockups app5.png "> 
+
 
 ### 4.4.4. Web Applications User Flow Diagrams.
-<img src="<img src="assets/img/chapter-ii/needfinding/user flow.png"> 
+<img src="assets/img/chapter-ii/needfinding/user flow.png"> 
 
 
 
