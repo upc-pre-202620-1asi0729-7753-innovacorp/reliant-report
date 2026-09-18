@@ -733,12 +733,12 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | Nombres y Apellidos | Aron Ramirez |
 | Edad | 30 años |
 | Distrito | Surquillo |
-| Ocupacion | especialista en investigación de desarrollo |
+| Ocupacion | Especialista en investigación de desarrollo |
 | Timing inicio | 3:30 minutoas|
 | Duracion | 8:50 minutos |
 | URL | https://drive.google.com/file/d/1C9NDE2k5fsSGtt2NXbIFq6dNA72oELuV/view?usp=sharing |
 | Screenshot| <img src="<img src="assets/img/chapter-ii/needfinding/Captura de pantalla 2026-09-18 063515.png"> |
-| Resumen | 
+| Resumen | Durante la entrevista, Aron Ramires, de 30 años, explicó que el proceso de recuperación inicia con la recepción e identificación de las piezas del cliente, utilizando órdenes de trabajo y registros internos. Durante el rociado se almacenan datos como los parámetros de la máquina, materiales utilizados y tiempo de trabajo, aunque la búsqueda de registros antiguos puede resultar complicada. Asimismo, mencionó que los clientes solicitan certificados, informes y evidencias de calidad. Cuando se presentan reclamos, es necesario revisar la información del proceso, lo que puede generar demoras. También señaló que existen compromisos relacionados con la duración de las piezas recuperadas (PCR) y que algunas fallas de las máquinas se repiten, pero no siempre están registradas de manera organizada. Finalmente, explicó que cuando una pieza falla en el cliente, se requiere revisar los registros para determinar si el problema está relacionado con el recubrimiento, evidenciando dificultades en la trazabilidad y el análisis de fallas.
 
 | Segmento: RecuperationSupplier | Entrevista #3 |
 |:--:|:--:|
