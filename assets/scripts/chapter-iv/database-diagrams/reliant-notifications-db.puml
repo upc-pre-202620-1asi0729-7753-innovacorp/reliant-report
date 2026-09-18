@@ -1,0 +1,48 @@
+@startuml Reliant_Notifications_Database
+skinparam linetype ortho
+skinparam packageStyle rectangle
+hide circle
+hide empty members
+
+package "Notifications" #EDE7F6 {
+entity "alerts" as alerts {
+  * id : BIGINT <<PK>>
+  --
+  * organization_id : BIGINT 
+  * recipient_user_id : BIGINT 
+  * alert_type : VARCHAR(30) 
+  * severity : VARCHAR(10) 
+  * title : VARCHAR(120) 
+  * message : VARCHAR(500) 
+  source_event_id : UUID 
+  * status : VARCHAR(20) 
+  acknowledged_at : TIMESTAMPTZ 
+  * created_at : TIMESTAMPTZ 
+  * updated_at : TIMESTAMPTZ 
+}
+entity "notification_preferences" as notification_preferences {
+  * id : BIGINT <<PK>>
+  --
+  * user_id : BIGINT 
+  * channel : VARCHAR(10) 
+  * created_at : TIMESTAMPTZ 
+  * updated_at : TIMESTAMPTZ 
+  .. UNIQUE (user_id, channel) ..
+}
+entity "notification_preference_alert_types" as notification_preference_alert_types {
+  * notification_preference_id : BIGINT <<PK>> <<FK>>
+  * alert_type : VARCHAR(30) <<PK>>
+  --
+}
+entity "newsletter_subscriptions" as newsletter_subscriptions {
+  * id : BIGINT <<PK>>
+  --
+  * email : VARCHAR(150) <<UK>>
+  * subscribed_at : TIMESTAMPTZ 
+  * created_at : TIMESTAMPTZ 
+  * updated_at : TIMESTAMPTZ 
+}
+notification_preference_alert_types }o--|| notification_preferences : notification_preference_id
+}
+
+@enduml

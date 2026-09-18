@@ -1,0 +1,195 @@
+@startuml Reliant_Equipment_Database
+skinparam linetype ortho
+skinparam packageStyle rectangle
+hide circle
+hide empty members
+
+package "Equipment" #E8F5E9 {
+entity "hvof_systems" as hvof_systems {
+  * id : BIGINT <<PK>>
+  --
+  * code : VARCHAR(40) 
+  * organization_id : BIGINT 
+  * serial_number : VARCHAR(80) 
+  * status : VARCHAR(20) 
+  * system_manufacturer : VARCHAR(80) 
+  * system_model : VARCHAR(80) 
+  * fuel_type : VARCHAR(20) 
+  * created_at : TIMESTAMPTZ 
+  * updated_at : TIMESTAMPTZ 
+  .. UNIQUE (organization_id, code) ..
+}
+entity "hvof_subsystems" as hvof_subsystems {
+  * id : BIGINT <<PK>>
+  --
+  * hvof_system_id : BIGINT <<FK>>
+  * subsystem_type : VARCHAR(30) 
+  * name : VARCHAR(80) 
+  * alias : VARCHAR(10) 
+  * created_at : TIMESTAMPTZ 
+  * updated_at : TIMESTAMPTZ 
+  .. UNIQUE (hvof_system_id, alias) ..
+}
+entity "hvof_subsystem_parameters" as hvof_subsystem_parameters {
+  * hvof_subsystem_id : BIGINT <<PK>> <<FK>>
+  * parameter : VARCHAR(50) <<PK>>
+  --
+}
+entity "hvof_parts" as hvof_parts {
+  * id : BIGINT <<PK>>
+  --
+  * hvof_subsystem_id : BIGINT <<FK>>
+  * part_type : VARCHAR(30) 
+  serial_number : VARCHAR(80) 
+  manufacturer : VARCHAR(80) 
+  * created_at : TIMESTAMPTZ 
+  * updated_at : TIMESTAMPTZ 
+}
+entity "controllers" as controllers {
+  * id : BIGINT <<PK>>
+  --
+  * hvof_system_id : BIGINT <<FK>>
+  * controller_number : INTEGER 
+  * device_type : VARCHAR(20) 
+  serial_number : VARCHAR(80) 
+  * manufacturer : VARCHAR(20) 
+  * model : VARCHAR(80) 
+  part_number : VARCHAR(80) 
+  * ip_address : VARCHAR(15) 
+  port : INTEGER 
+  rack : INTEGER 
+  slot : INTEGER 
+  endpoint_url : VARCHAR(200) 
+  tag_catalog_id : BIGINT <<FK>>
+  * created_at : TIMESTAMPTZ 
+  * updated_at : TIMESTAMPTZ 
+  .. UNIQUE (hvof_system_id, controller_number) ..
+}
+entity "controller_supported_protocols" as controller_supported_protocols {
+  * controller_id : BIGINT <<PK>> <<FK>>
+  * protocol : VARCHAR(20) <<PK>>
+  --
+}
+entity "controller_tag_catalogs" as controller_tag_catalogs {
+  * id : BIGINT <<PK>>
+  --
+  * controller_id : BIGINT <<UK>>
+  * manufacturer : VARCHAR(20) 
+  * imported_at : TIMESTAMPTZ 
+  * created_at : TIMESTAMPTZ 
+  * updated_at : TIMESTAMPTZ 
+}
+entity "tag_nodes" as tag_nodes {
+  * id : BIGINT <<PK>>
+  --
+  * tag_catalog_id : BIGINT <<FK>>
+  parent_id : BIGINT <<FK>>
+  * name : VARCHAR(120) 
+  * tag_path : VARCHAR(400) 
+  * kind : VARCHAR(15) 
+  vendor_data_type : VARCHAR(40) 
+  * data_type : VARCHAR(15) 
+  style : VARCHAR(10) 
+  description : VARCHAR(255) 
+  * created_at : TIMESTAMPTZ 
+  * updated_at : TIMESTAMPTZ 
+  .. UNIQUE (tag_catalog_id, tag_path) ..
+}
+entity "tag_mappings" as tag_mappings {
+  * hvof_system_id : BIGINT <<PK>> <<FK>>
+  * tag_path : VARCHAR(400) <<PK>>
+  --
+  * controller_id : BIGINT <<FK>>
+  subsystem_id : BIGINT <<FK>>
+  part_id : BIGINT <<FK>>
+  parameter : VARCHAR(50) 
+  * tag_kind : VARCHAR(20) 
+  * status_role : VARCHAR(20) 
+  matched_rule_id : BIGINT <<FK>>
+  * confirmed : BOOLEAN 
+}
+entity "derived_parameter_definitions" as derived_parameter_definitions {
+  * id : BIGINT <<PK>>
+  --
+  * hvof_system_id : BIGINT <<FK>>
+  * name : VARCHAR(80) 
+  * parameter : VARCHAR(50) 
+  * expression : VARCHAR(500) 
+  * unit_symbol : VARCHAR(15) 
+  * unit_category : VARCHAR(20) 
+  * created_at : TIMESTAMPTZ 
+  * updated_at : TIMESTAMPTZ 
+  .. UNIQUE (hvof_system_id, parameter) ..
+}
+entity "derived_parameter_input_tags" as derived_parameter_input_tags {
+  * derived_parameter_id : BIGINT <<PK>> <<FK>>
+  * tag_path : VARCHAR(400) <<PK>>
+  --
+}
+entity "recipes" as recipes {
+  * id : BIGINT <<PK>>
+  --
+  * hvof_system_id : BIGINT <<FK>>
+  * recipe_number : INTEGER 
+  * name : VARCHAR(80) 
+  powder_specification : VARCHAR(120) 
+  * status : VARCHAR(20) 
+  * created_at : TIMESTAMPTZ 
+  * updated_at : TIMESTAMPTZ 
+  .. UNIQUE (hvof_system_id, recipe_number) ..
+}
+entity "recipe_applicabilities" as recipe_applicabilities {
+  * recipe_id : BIGINT <<PK>> <<FK>>
+  * component_type : VARCHAR(30) <<PK>>
+  * machine_model : VARCHAR(30) <<PK>>
+  * position : VARCHAR(10) <<PK>>
+  --
+}
+entity "recipe_parameters" as recipe_parameters {
+  * recipe_id : BIGINT <<PK>> <<FK>>
+  * parameter : VARCHAR(50) <<PK>>
+  --
+  * setpoint : NUMERIC(18,6) 
+  * lower_shutdown : NUMERIC(18,6) 
+  * lower_warning : NUMERIC(18,6) 
+  * nominal_min : NUMERIC(18,6) 
+  * nominal_max : NUMERIC(18,6) 
+  * upper_warning : NUMERIC(18,6) 
+  * upper_shutdown : NUMERIC(18,6) 
+  * unit_symbol : VARCHAR(15) 
+  * unit_category : VARCHAR(20) 
+}
+entity "tag_mapping_rules" as tag_mapping_rules {
+  * id : BIGINT <<PK>>
+  --
+  * pattern : VARCHAR(120) 
+  subsystem_type : VARCHAR(30) 
+  part_type : VARCHAR(30) 
+  parameter : VARCHAR(50) 
+  * tag_kind : VARCHAR(20) 
+  * status_role : VARCHAR(20) 
+  * priority : INTEGER 
+  * created_at : TIMESTAMPTZ 
+  * updated_at : TIMESTAMPTZ 
+}
+hvof_subsystems }o--|| hvof_systems : hvof_system_id
+hvof_subsystem_parameters }o--|| hvof_subsystems : hvof_subsystem_id
+hvof_parts }o--|| hvof_subsystems : hvof_subsystem_id
+controllers }o--|| hvof_systems : hvof_system_id
+controllers }o--o| controller_tag_catalogs : tag_catalog_id
+controller_supported_protocols }o--|| controllers : controller_id
+tag_nodes }o--|| controller_tag_catalogs : tag_catalog_id
+tag_nodes }o--o| tag_nodes : parent_id
+tag_mappings }o--|| hvof_systems : hvof_system_id
+tag_mappings }o--|| controllers : controller_id
+tag_mappings }o--o| hvof_subsystems : subsystem_id
+tag_mappings }o--o| hvof_parts : part_id
+tag_mappings }o--o| tag_mapping_rules : matched_rule_id
+derived_parameter_definitions }o--|| hvof_systems : hvof_system_id
+derived_parameter_input_tags }o--|| derived_parameter_definitions : derived_parameter_id
+recipes }o--|| hvof_systems : hvof_system_id
+recipe_applicabilities }o--|| recipes : recipe_id
+recipe_parameters }o--|| recipes : recipe_id
+}
+
+@enduml

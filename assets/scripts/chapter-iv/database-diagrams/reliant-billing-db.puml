@@ -1,0 +1,35 @@
+@startuml Reliant_Billing_Database
+skinparam linetype ortho
+skinparam packageStyle rectangle
+hide circle
+hide empty members
+
+package "Billing" #FFF8E1 {
+entity "plans" as plans {
+  * id : BIGINT <<PK>>
+  --
+  * name : VARCHAR(80) <<UK>>
+  * plan_type : VARCHAR(20) 
+  * monthly_price_amount : NUMERIC(12,2) 
+  * monthly_price_currency : VARCHAR(3) 
+  * max_monitored_systems : INTEGER 
+  * max_tracked_components : INTEGER 
+  * created_at : TIMESTAMPTZ 
+  * updated_at : TIMESTAMPTZ 
+}
+entity "subscriptions" as subscriptions {
+  * id : BIGINT <<PK>>
+  --
+  * organization_id : BIGINT 
+  * plan_id : BIGINT <<FK>>
+  * start_date : DATE 
+  * end_date : DATE 
+  * status : VARCHAR(20) 
+  * created_at : TIMESTAMPTZ 
+  * updated_at : TIMESTAMPTZ 
+  .. UNIQUE (organization_id, status) ..
+}
+subscriptions }o--|| plans : plan_id
+}
+
+@enduml

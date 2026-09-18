@@ -1627,6 +1627,25 @@ Debido a la complejidad del sistema, a la cantidad de Bounded Contexts definidos
 ## 4.8. Database Design.
 ### 4.8.1. Database Diagrams.
 
+El modelo relacional se despliega sobre PostgreSQL y refleja de forma directa el diagrama de clases de 4.7.1, con tablas puente derivadas de las relaciones muchos-a-muchos implícitas en el dominio.
+
+
+<img src="assets/img/chapter-iv/database-diagrams/Reliant_Equipment_Database.png">
+
+<img src="assets/img/chapter-iv/database-diagrams/Reliant_FaultDiagnosis_Database.png">
+
+<img src="assets/img/chapter-iv/database-diagrams/Reliant_ProcessMonitoring_Database.png">
+
+<img src="assets/img/chapter-iv/database-diagrams/Reliant_Reporting_Database.png">
+
+<img src="assets/img/chapter-iv/database-diagrams/Reliant_Traceability_Database.png">
+
+<img src="assets/img/chapter-iv/database-diagrams/Reliant_Notifications_Database.png">
+
+<img src="assets/img/chapter-iv/database-diagrams/Reliant_IAM_Database.png">
+
+<img src="assets/img/chapter-iv/database-diagrams/Reliant_Billing_Database.png">
+
 # Capítulo V: Product Implementation, Validation & Deployment
 ## 5.1. Software Configuration Management.
 ### 5.1.1. Software Development Environment Configuration.
