@@ -175,6 +175,8 @@ Ser la plataforma de referencia en Latinoamérica para el monitoreo y la trazabi
 |:------------------------------------------------------------------------|------------------------------------|-----------------------|-------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | <img src="assets/img/chapter-i/startup-profile/carolina-navarro.jpeg">  | Carolina Celeste Navarro Aldoradin | u20241b962            | Ingeniería de Software, Universidad Peruana de Ciencias Aplicadas | Cuento con conocimiento del lenguaje Java, C#, C++, Javascript, Python y Ladder. Asimismo, cuento con experiencia en proyectos de integración, monitoreo e IoT en entornos industriales.  |
 |  <img src="assets/img/chapter-i/startup-profile/Captura de pantalla 2026-09-14 104228.png">| Scarlet josefina Rivera Aguilar    | u20241f577            | Ingeniería de Software, Universidad Peruana de Ciencias Aplicadas | Durante mi formación en Ingeniería de Software, actualmente en quinto ciclo, he desarrollado conocimientos en distintos lenguajes de programación, organización y planificación de proyectos. Asimismo, he participado en proyectos académicos relacionados con el desarrollo de aplicaciones web, diseño de interfaces y elaboración de prototipos.  |
+| <img width="640" height="641" alt="image" src="https://github.com/user-attachments/assets/841e55fc-64c0-4acc-9e4f-a4f0530d995a" /> | Mario Alonso Fernández Seer | U202317807 | Ingeniería de Software, Universidad Peruana de Ciencias Aplicadas | Cuento con conocimientos en C++, Python, JavaScript, desarrollo web y diseño de bases de datos. Asimismo, poseo habilidades para el análisis de requerimientos, la documentación de proyectos y la investigación de usuarios. En Reliant participé en el levantamiento y análisis de información del segmento Asset Owner. |
+
 
 ## 1.2. Solution Profile
 
@@ -751,17 +753,16 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 
 
 | Segmento: AssetOwner | Entrevista #1 |
-|--|--|
-| Nombres y Apellidos | |
-| Edad | |
-| Distrito | |
-| Ocupacion | |
-| Timing inicio | |
-| Duracion ||
-| URL ||
-| Screenshot||
-| Resumen |
-
+|---|---|
+| Nombres y Apellidos | Valeria Aranguri |
+| Edad | 21 años |
+| Distrito | Surco |
+| Ocupación | Estudiante de Ingeniería Industrial y asistente de construcción y proyectos con experiencia en operaciones mineras |
+| Timing inicio | 00:00 |
+| Duración | 13 minutos con 40 segundos |
+| URL | [Entrevista Segmento 2 - Asset Owner](https://drive.google.com/file/d/1lfzvUGM0Sf1K5balZaaP8kYs97IqWC2X/view?usp=sharing)) |
+| Screenshot | Pendiente de agregar |
+| Resumen | La entrevistada cuenta con experiencia como asistente de construcción y proyectos en operaciones mineras como Quellaveco, Las Bambas y Chinalco. Sus responsabilidades incluyeron brindar soporte a ingenieros y supervisores, realizar seguimiento de actividades, coordinar con distintas áreas y elaborar reportes desde campo. Señaló que las fallas de equipos afectan la programación, el personal y los recursos disponibles. Asimismo, explicó que el seguimiento se apoya principalmente en Excel, reportes, llamadas, WhatsApp y sistemas internos que no siempre son visibles para el personal de operación. Para evaluar proveedores se consideran la documentación presentada, el cumplimiento de requisitos, los plazos de entrega y los antecedentes del servicio. Finalmente, manifestó la necesidad de una plataforma centralizada que muestre el estado, ubicación, responsable, proveedor y fecha estimada de disponibilidad de cada componente. |
 | Segmento: AssetOwner | Entrevista #2 |
 |--|--|
 | Nombres y Apellidos | |
