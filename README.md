@@ -1635,7 +1635,7 @@ Para InnovaCorp se proponen los siguientes contenidos:
 |Title | InnovaCorp - Monitoreo inteligente de procesos industriales |
 | Description | InnovaCorp ofrece soluciones tecnológicas para monitorear procesos, anticipar fallas y mejorar la trazabilidad industrial|
 | Keywords | InnovaCorp, Relient, monitoreo industrial, trazabilidad, prevención de fallas |
-| Author | InnovaCorp |
+| Author | InnovaCorp 
 
 Los valores anteriores representan una propuesta inicial y deben validarse durante la implementación del sitio web. El atributo Title identifica el nombre principal de la página, mientras que la Description presenta una síntesis del servicio ofrecido. Las Keywords reúnen términos relacionados con la actividad de InnovaCorp y el propósito de Relient.
 Estas etiquetas se incorporan dentro del elemento <head> del documento HTML. En el caso de la Web Application, los títulos y descripciones pueden ajustarse de acuerdo con la vista o funcionalidad que se esté mostrando.
