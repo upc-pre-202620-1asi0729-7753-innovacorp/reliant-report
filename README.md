@@ -1547,6 +1547,8 @@ mantener una interfaz clara, organizada y funcional, que facilite la consulta de
 
 ### 4.1.1. General Style Guidelines.
 Para esta sección, se han definido los estilos de tipografía, colores y espaciado que se aplicarán en las interfaces web de Relient. Estos elementos buscan mantener una identidad visual consistente y facilitar la interacción de los usuarios con la plataforma.
+## Branding
+La identidad visual de Relent está orientada a representar innovación, control y eficiencia dentro del sector industrial y minero. El diseño utiliza una estructura ordenada y minimalista, permitiendo que la información operativa sea clara y fácil de interpretar.
 
 ## Typography
 La propuesta visual de Relient utiliza principalmente las tipografías Balsamiq Sans, Goblin One y Kaushan Script. La tipografía Balsamiq Sans se utiliza para textos generales, etiquetas y componentes informativos. Goblin One se emplea en títulos y elementos destacados, mientras que Kaushan Script se utiliza en elementos
