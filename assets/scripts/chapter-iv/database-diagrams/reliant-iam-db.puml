@@ -1,0 +1,67 @@
+@startuml Reliant_IAM_Database
+skinparam linetype ortho
+skinparam packageStyle rectangle
+hide circle
+hide empty members
+
+package "IAM" #E8F0FE {
+entity "organizations" as organizations {
+  * id : BIGINT <<PK>>
+  --
+  * name : VARCHAR(150) 
+  * ruc : VARCHAR(11) <<UK>>
+  * organization_type : VARCHAR(30) 
+  * status : VARCHAR(20) 
+  * time_zone : VARCHAR(40) 
+  * created_at : TIMESTAMPTZ 
+  * updated_at : TIMESTAMPTZ 
+}
+entity "users" as users {
+  * id : BIGINT <<PK>>
+  --
+  * full_name : VARCHAR(120) 
+  * email : VARCHAR(150) <<UK>>
+  * password_hash : VARCHAR(120) 
+  * organization_id : BIGINT <<FK>>
+  * status : VARCHAR(20) 
+  * created_at : TIMESTAMPTZ 
+  * updated_at : TIMESTAMPTZ 
+}
+entity "roles" as roles {
+  * id : BIGINT <<PK>>
+  --
+  * name : VARCHAR(40) <<UK>>
+  * created_at : TIMESTAMPTZ 
+  * updated_at : TIMESTAMPTZ 
+}
+entity "user_roles" as user_roles {
+  * user_id : BIGINT <<PK>> <<FK>>
+  * role_id : BIGINT <<PK>> <<FK>>
+  --
+}
+entity "user_preferences" as user_preferences {
+  * id : BIGINT <<PK>>
+  --
+  * user_id : BIGINT <<FK>> <<UK>>
+  * default_unit_system : VARCHAR(25) 
+  * language : VARCHAR(10) 
+  * created_at : TIMESTAMPTZ 
+  * updated_at : TIMESTAMPTZ 
+}
+entity "user_preference_unit_overrides" as user_preference_unit_overrides {
+  * user_preference_id : BIGINT <<PK>> <<FK>>
+  * category : VARCHAR(20) <<PK>>
+  * parameter : VARCHAR(50) <<PK>>
+  --
+  * unit_symbol : VARCHAR(15) 
+  * unit_category : VARCHAR(20) 
+  * unit_system : VARCHAR(25) 
+}
+users }o--|| organizations : organization_id
+user_roles }o--|| users : user_id
+user_roles }o--|| roles : role_id
+user_preferences |o--|| users : user_id
+user_preference_unit_overrides }o--|| user_preferences : user_preference_id
+}
+
+@enduml
