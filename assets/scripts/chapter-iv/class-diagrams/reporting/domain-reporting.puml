@@ -1,0 +1,238 @@
+@startuml Reliant_Reporting_Domain
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam nodesep 40
+skinparam ranksep 60
+hide empty members
+
+
+
+package "Reporting" #F1F8E9 {
+
+    package "reporting.domain" {
+        class ReportingEvent <<Aggregate Root>> {
+            - eventType: String
+            - sourceContext: String
+            - aggregateId: Long
+            - organizationId: Long
+            - occurredAt: Instant
+            - payload: String
+        }
+        class QualityCertificate <<Aggregate Root>> {
+            - recuperationId: Long
+            - componentId: Long
+            - customerId: Long
+            - supplierOrganizationId: Long
+            - sessionIds: List<Long>
+            - issuedByUserId: Long
+            - issuedAt: Instant
+            - parameterCompliance: List<ParameterComplianceSummary>
+            - justification: String
+            - status: CertificateStatusEnum
+            + issue(justification: Optional<String>): void
+            + isFullyCompliant(): boolean
+        }
+        class ParameterComplianceSummary <<Value Object>> {
+            - parameter: String
+            - minObserved: BigDecimal
+            - maxObserved: BigDecimal
+            - withinNominal: boolean
+        }
+        class PcrComplianceReport <<Aggregate Root>> {
+            - organizationId: Long
+            - period: ReportingPeriod
+            - groupedBy: ReportGroupingEnum
+            - entries: List<PcrComplianceEntry>
+            + complianceRate(): BigDecimal
+        }
+        class PcrComplianceEntry <<Value Object>> {
+            - groupKey: String
+            - totalComponents: Integer
+            - metPcrCount: Integer
+            - prematureFailureCount: Integer
+        }
+        enum CertificateStatusEnum {
+            DRAFT
+            ISSUED
+            REVOKED
+        }
+        enum ReportGroupingEnum {
+            BY_SUPPLIER
+            BY_CUSTOMER
+            BY_MACHINE_MODEL
+            BY_COMPONENT_TYPE
+        }
+        QualityCertificate "1" *-- "1..*" ParameterComplianceSummary : summarizes
+        QualityCertificate --> CertificateStatusEnum
+        PcrComplianceReport "1" *-- "1..*" PcrComplianceEntry : aggregates
+        PcrComplianceReport "1" --> "1" ReportingPeriod : covers
+        PcrComplianceReport --> ReportGroupingEnum
+
+        class ReportTemplate <<Aggregate Root>> {
+            - organizationId: Long
+            - ownerUserId: Long
+            - name: String
+            - description: String
+            - reportKind: ReportKindEnum
+            - branding: Branding
+            - layout: Layout
+            - sections: List<ReportSection>
+            - visibility: TemplateVisibilityEnum
+            - sharedWithUserIds: Set<Long>
+            - defaultForKind: boolean
+            - status: TemplateStatusEnum
+            + addSection(section: ReportSection): void
+            + reorderSections(order: List<Long>): void
+            + shareWithOrganization(): void
+            + shareWith(userId: Long): void
+            + markAsDefault(): void
+            + publish(): void
+            + isAccessibleBy(userId: Long, organizationId: Long): boolean
+        }
+        class ReportSection <<Entity>> {
+            - title: String
+            - order: Integer
+            - widgets: List<ReportWidget>
+            + addWidget(widget: ReportWidget): void
+        }
+        class ReportWidget <<Value Object>> {
+            - variable: ReportVariable
+            - viewType: ViewTypeEnum
+            - aggregation: AggregationEnum
+            - unitOverride: Unit
+            - position: Integer
+            - width: WidgetWidthEnum
+        }
+        class ReportVariable <<Value Object>> {
+            - source: VariableSourceEnum
+            - code: String
+            - label: String
+        }
+        class Branding <<Value Object>> {
+            - logoAssetKey: String
+            - primaryColor: String
+            - secondaryColor: String
+            - headerText: String
+            - footerText: String
+        }
+        class Layout <<Value Object>> {
+            - pageSize: PageSizeEnum
+            - orientation: OrientationEnum
+            - columns: Integer
+            - showSignatureBlock: boolean
+        }
+        class GeneratedReport <<Aggregate Root>> {
+            - templateId: Long
+            - organizationId: Long
+            - generatedByUserId: Long
+            - subjectType: ReportKindEnum
+            - subjectId: Long
+            - period: ReportingPeriod
+            - format: ReportFormatEnum
+            - storageKey: String
+            - generatedAt: Instant
+            + markStored(storageKey: String): void
+        }
+        class ReportTemplateSharedEvent <<Domain Event>> {
+            - templateId: Long
+            - organizationId: Long
+        }
+        enum ReportKindEnum {
+            SESSION_REPORT
+            QUALITY_CERTIFICATE
+            FAULT_FREQUENCY
+            PCR_COMPLIANCE
+            SUPPLIER_PERFORMANCE
+        }
+        enum VariableSourceEnum {
+            PROCESS_PARAMETER
+            DERIVED_PARAMETER
+            METRIC
+        }
+        enum ViewTypeEnum {
+            LINE_CHART
+            BAR_CHART
+            GAUGE
+            TABLE
+            KPI_CARD
+            MIN_MAX_AVG
+            BAND_TIMELINE
+        }
+        enum AggregationEnum {
+            RAW
+            AVG
+            MIN
+            MAX
+            COUNT
+        }
+        enum WidgetWidthEnum {
+            THIRD
+            HALF
+            FULL
+        }
+        enum PageSizeEnum {
+            A4
+            LETTER
+        }
+        enum OrientationEnum {
+            PORTRAIT
+            LANDSCAPE
+        }
+        enum TemplateVisibilityEnum {
+            PRIVATE
+            ORGANIZATION
+        }
+        enum TemplateStatusEnum {
+            DRAFT
+            PUBLISHED
+            ARCHIVED
+        }
+        enum ReportFormatEnum {
+            PDF
+            CSV
+        }
+        ReportTemplate "1" *-- "1..*" ReportSection : composedOf
+        ReportTemplate "1" --> "1" Branding : styledWith
+        ReportTemplate "1" --> "1" Layout : laidOutAs
+        ReportTemplate --> ReportKindEnum
+        ReportTemplate --> TemplateVisibilityEnum
+        ReportTemplate --> TemplateStatusEnum
+        ReportTemplate ..> ReportTemplateSharedEvent : registers
+        ReportSection "1" *-- "1..*" ReportWidget : shows
+        ReportWidget "1" --> "1" ReportVariable : plots
+        ReportWidget "0..1" --> "1" Unit : unitOverride
+        ReportWidget --> ViewTypeEnum
+        ReportWidget --> AggregationEnum
+        ReportWidget --> WidgetWidthEnum
+        ReportVariable --> VariableSourceEnum
+        Layout --> PageSizeEnum
+        Layout --> OrientationEnum
+        GeneratedReport "*" --> "1" ReportTemplate : renderedFrom
+        GeneratedReport "1" --> "1" ReportingPeriod : covers
+        GeneratedReport --> ReportFormatEnum
+
+        interface ReportingEventRepository <<Repository>> {
+            + findByOrganizationIdAndOccurredAtBetween(organizationId: Long, from: Instant, to: Instant): List<ReportingEvent>
+            + save(event: ReportingEvent): ReportingEvent
+        }
+        interface QualityCertificateRepository <<Repository>> {
+            + findByRecuperationId(recuperationId: Long): Optional<QualityCertificate>
+            + save(certificate: QualityCertificate): QualityCertificate
+        }
+        interface PcrComplianceReportRepository <<Repository>> {
+            + save(report: PcrComplianceReport): PcrComplianceReport
+        }
+        interface ReportTemplateRepository <<Repository>> {
+            + findAccessibleBy(userId: Long, organizationId: Long): List<ReportTemplate>
+            + findByOrganizationIdAndReportKindAndDefaultForKindTrue(organizationId: Long, kind: ReportKindEnum): Optional<ReportTemplate>
+            + save(template: ReportTemplate): ReportTemplate
+        }
+        interface GeneratedReportRepository <<Repository>> {
+            + findByTemplateId(templateId: Long): List<GeneratedReport>
+            + save(report: GeneratedReport): GeneratedReport
+        }
+    }
+
+
+@enduml
