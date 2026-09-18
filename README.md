@@ -1734,37 +1734,27 @@ Asimismo, los wireframes ayudan a organizar las funcionalidades de acuerdo con l
 
 
 ### 4.4.3. Web Applications Mock-ups.
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="assets/img/chapter-ii/needfinding/ "> 
-
+<img src="assets/img/chapter-ii/needfinding/MW1.png "> 
+<img src="assets/img/chapter-ii/needfinding/MW2.png"> 
+<img src="assets/img/chapter-ii/needfinding/MW3.png "> 
+<img src="assets/img/chapter-ii/needfinding/MW4.png "> 
+<img src="assets/img/chapter-ii/needfinding/MW5.png "> 
+<img src="assets/img/chapter-ii/needfinding/MW6.png "> 
+<img src="assets/img/chapter-ii/needfinding/MW7.png "> 
+<img src="assets/img/chapter-ii/needfinding/MW8.png "> 
+<img src="assets/img/chapter-ii/needfinding/MW9.png "> 
+<img src="assets/img/chapter-ii/needfinding/MW10.png "> 
+<img src="assets/img/chapter-ii/needfinding/MW11.png"> 
+<img src="assets/img/chapter-ii/needfinding/MW12.png "> 
+<img src="assets/img/chapter-ii/needfinding/MW13.png "> 
+<img src="assets/img/chapter-ii/needfinding/MW14.png "> 
+<img src="assets/img/chapter-ii/needfinding/MW15.png "> 
+<img src="assets/img/chapter-ii/needfinding/MW16.png "> 
+<img src="assets/img/chapter-ii/needfinding/MW17.png "> 
+<img src="assets/img/chapter-ii/needfinding/MW18.png"> 
+<img src="assets/img/chapter-ii/needfinding/MW19.png "> 
+<img src="assets/img/chapter-ii/needfinding/MW20.png "> 
+<img src="assets/img/chapter-ii/needfinding/MW21.png"> 
 
 
 ### 4.4.4. Web Applications User Flow Diagrams.
