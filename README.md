@@ -1554,12 +1554,12 @@ La identidad visual de Relent está orientada a representar innovación, control
 La propuesta visual de Relient utiliza principalmente las tipografías Balsamiq Sans, Goblin One y Kaushan Script. La tipografía Balsamiq Sans se utiliza para textos generales, etiquetas y componentes informativos. Goblin One se emplea en títulos y elementos destacados, mientras que Kaushan Script se utiliza en elementos
 decorativos o distintivos de la identidad visual. La combinación de estas tipografías permite establecer una jerarquía visual entre los diferentes elementos de la interfaz y mantener una presentación coherente en la Landing Page y la Web Application.
 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
+<img src="<img src="assets/img/chapter-ii/needfinding/tipoletra.png"> 
 
 ## Colors
 La paleta de colores de Relient está conformada por El marrón oscuro se utiliza en textos y elementos principales, mientras que el crema claro y el blanco permiten construir fondos y espacios visuales. El naranja se emplea para destacar botones, acciones principales y elementos relevantes de la interfaz.
 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
+<img src="<img src="assets/img/chapter-ii/needfinding/colors.png "> 
 
 ## Spacing
 El sistema de espaciado de Relient busca mantener una distribución ordenada de los contenidos y evitar la saturación visual. Para ello, se utilizan separaciones consistentes entre títulos, textos, botones, formularios, tablas y componentes de navegación.La configuración del espaciado 
@@ -1671,18 +1671,18 @@ La elaboración de los wireframes facilita la identificación de posibles proble
 ### 4.3.2. Landing Page Mock-up.
 
 ## Desktop Web Browser
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
+<img src="<img src="assets/img/chapter-ii/needfinding/mockups web1.png "> 
+<img src="<img src="assets/img/chapter-ii/needfinding/mockups web2.png "> 
+<img src="<img src="assets/img/chapter-ii/needfinding/mockups web3.png "> 
+<img src="<img src="assets/img/chapter-ii/needfinding/mockups web4.png "> 
+<img src="<img src="assets/img/chapter-ii/needfinding/mockups web5.png "> 
 
 ## Mobile Web Browser
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
+<img src="<img src="assets/img/chapter-ii/needfinding/mockups app1.png "> 
+<img src="<img src="assets/img/chapter-ii/needfinding/mockups app2.png "> 
+<img src="<img src="assets/img/chapter-ii/needfinding/mockups app3.png "> 
+<img src="<img src="assets/img/chapter-ii/needfinding/mockups app4.png "> 
+<img src="<img src="assets/img/chapter-ii/needfinding/mockups app5.png "> 
 
 
 ## 4.4. Web Applications UX/UI Design.
@@ -1727,10 +1727,7 @@ Asimismo, los wireframes ayudan a organizar las funcionalidades de acuerdo con l
 
 ### 4.4.2. Web Applications Wireflow Diagrams.
 <img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
+
 
 
 ### 4.4.3. Web Applications Mock-ups.
@@ -1766,7 +1763,7 @@ Asimismo, los wireframes ayudan a organizar las funcionalidades de acuerdo con l
 <img src="<img src="assets/img/chapter-ii/needfinding/ "> 
 
 ### 4.4.4. Web Applications User Flow Diagrams.
-<img src="<img src="assets/img/chapter-ii/needfinding/ "> 
+<img src="<img src="assets/img/chapter-ii/needfinding/user flow.png"> 
 
 
 
