@@ -722,7 +722,6 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | Edad | 29 años |
 | Distrito | San Miguel |
 | Ocupacion | Ingeniero de Proyectos |
-| Timing inicio | 7:35 minutos|
 | Duracion | 16:13 minutos |
 | URL | https://drive.google.com/file/d/1Kz4-cB8Z7LLDR8P2sAM7_8ShWzVvMpjP/view?usp=sharing |
 | Screenshot| <img src="assets/img/chapter-ii/needfinding/Captura de pantalla 2026-09-17 131808.png"> |
@@ -734,7 +733,6 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | Edad | 30 años |
 | Distrito | Surquillo |
 | Ocupacion | Especialista en investigación de desarrollo |
-| Timing inicio | 3:30 minutoas|
 | Duracion | 8:50 minutos |
 | URL | https://drive.google.com/file/d/1C9NDE2k5fsSGtt2NXbIFq6dNA72oELuV/view?usp=sharing |
 | Screenshot| <img src="<img src="assets/img/chapter-ii/needfinding/Captura de pantalla 2026-09-18 063515.png"> |
@@ -742,15 +740,14 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 
 | Segmento: RecuperationSupplier | Entrevista #3 |
 |:--:|:--:|
-| Nombres y Apellidos | |
-| Edad | |
-| Distrito | |
-| Ocupacion | |
-| Timing inicio | |
-| Duracion ||
-| URL ||
-| Screenshot| <img src="<img src="assets/img/chapter-ii/needfinding/ ">  |
-| Resumen |
+| Nombres y Apellidos | Belisa Paredes|
+| Edad | 46 años |
+| Distrito | Surquillo |
+| Ocupacion | supervisora |
+| Duracion | 11:35 minutos |
+| URL | https://upcedupe-my.sharepoint.com/personal/u202410376_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu202410376%5Fupc%5Fedu%5Fpe%2FDocuments%2FDesarrolloAplicacionesOpenSource%2Emp4&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E001f7777%2D3095%2D43ae%2Dbdb0%2D89ae880547ea |
+| Screenshot| <img src="<img src="assets/img/chapter-ii/needfinding/fran.png">  |
+| Resumen | La entrevista busca conocer el proceso de recuperación de piezas, desde su recepción hasta la entrega al cliente, identificando cómo se registran las corridas de rociado, qué evidencias solicitan los clientes y cómo se gestionan los problemas de calidad. También se pretende comprender las fallas de las máquinas, la repetición de errores y el seguimiento de la vida útil de las piezas recuperadas, con el fin de identificar dificultades en la trazabilidad, el diagnóstico y el análisis de fallas.
 
 
 | Segmento: AssetOwner | Entrevista #1 |
@@ -759,7 +756,6 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | Edad | 25 años|
 | Distrito | Lima |
 | Ocupacion | Supervisor |
-| Timing inicio | 2:40 minutos |
 | Duracion | 8:22 minutos|
 | URL | https://drive.google.com/file/d/1cCIuMAmfq9RqDE42EzkCLZKO2DNnXMVh/view?usp=sharing |
 | Screenshot| <img src="assets/img/chapter-ii/needfinding/Captura de pantalla 2026-09-18 130439.png"> |
@@ -771,7 +767,6 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | Edad | 65 años |
 | Distrito | Lima |
 | Ocupacion | Gerente de procesos |
-| Timing inicio | 4:18 minutos |
 | Duracion | 11:19 minutos |
 | URL | https://youtu.be/ELUn_X1SDxo?si=Av2cGm2uR-eTnTVn |
 | Screenshot| <img src="assets/img/chapter-ii/needfinding/Captura de pantalla 2026-09-17 141725.png">  |
@@ -783,7 +778,6 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | Edad | 21 años |
 | Distrito | Surco |
 | Ocupacion | Asistente de construcción y proyectos con experiencia en operaciones mineras |
-| Timing inicio | 6:00 minutos |
 | Duracion | 13:40 minutos|
 | URL | https://drive.google.com/file/d/1lfzvUGM0Sf1K5balZaaP8kYs97IqWC2X/view?usp=sharing |
 | Screenshot| <img src="assets/img/chapter-ii/needfinding/Captura de pantalla 2026-09-18 124843.png"> |
@@ -1758,10 +1752,9 @@ Asimismo, los wireframes ayudan a organizar las funcionalidades de acuerdo con l
 
 ## 4.5. Web Applications Prototyping.
 En esta sección se presenta el prototipo interactivo de la Web Application de Reliant, desarrollado a partir de los mock-ups y User Flow Diagrams definidos previamente. El prototipo permite simular la navegación entre las principales vistas de la aplicación y validar la secuencia de interacción que siguen los usuarios para realizar sus tareas principales. Las conexiones entre pantallas fueron definidas considerando los recorridos establecidos en los User Flows y el sistema de navegación propuesto para la aplicación. Se consideraron las principales funcionalidades de Reliant, como el registro y seguimiento de componentes recuperados, la consulta de órdenes de trabajo, la trazabilidad de los procesos de recubrimiento HVOF, el monitoreo de parámetros de operación, el diagnóstico de fallas y el análisis del desempeño de los componentes frente a su vida útil esperada (PCR). A continuación, se presenta una captura del prototipo en funcionamiento y el enlace al video de demostración, donde se muestran los principales flujos de navegación e interacción de la aplicación.
-# Web Application Prototype: 
-<img src="assets/img/chapter-ii/needfinding/ "> 
 
 # Video:  
+https://youtu.be/ImzFsoEMSIk
 
 
 
