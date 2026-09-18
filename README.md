@@ -51,6 +51,8 @@ Proyecto
 El URL del repositorio para el Project Report en la organizaci√≥n de github es el siguiente:
 [https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-report](https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-report)
 
+
+
 # Contenido
 - [Registro de Versiones del Informe](#registro-de-versiones-del-informe)
 - [Project Report Collaboration Insights](#project-report-collaboration-insights)
@@ -1559,8 +1561,18 @@ Las definiciones de proceso y recubrimiento se basan en el glosario de proyecci√
 ## 4.6. Domain-Driven Software Architecture.
 ### 4.6.1. Design-Level Event Storming.
 ### 4.6.2. Software Architecture Context Diagram.
+
+<img src="assets/img/chapter-iv/context-diagram/Context-Reliant___Context_Diagram.png">
+
 ### 4.6.3. Software Architecture Container Diagrams.
+
+<img src="assets/img/chapter-iv/cointainer-diagrams/Containers-Reliant___Container_Diagram.png">
+
 ### 4.6.4. Software Architecture Components Diagrams.
+
+Ver seccion: assets/img/chapter-iv/component-diagrams
+en repositorio.
+
 ## 4.7. Software Object-Oriented Design.
 ### 4.7.1. Class Diagrams.
 

@@ -1,0 +1,22 @@
+@startuml "Components-Traceability-Frontend"
+!includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+title Reliant - Traceability Component Diagram (Web Application)
+
+Container(api, "Web Services", "Spring Boot", "Exposes /api/v1/customers, /api/v1/components, /api/v1/recuperations")
+Container(shared, "Shared", "Angular", "Layout, navigation, auth interceptor, guards, i18n and unit formatting")
+
+Container_Boundary(bc, "Traceability Bounded Context") {
+    Component(presentation, "Presentation", "Angular Components", "CustomersPage, ComponentsPage, ComponentHistoryPage, RecuperationsPage, FieldReturnPage")
+    Component(application, "Application", "Facade, Store, Commands", "TraceabilityFacade, TraceabilityStore, CreateRecuperationCommand, RegisterFieldReturnCommand")
+    Component(domain, "Domain", "Client-side entities", "Customer, Component, Recuperation, ServiceLifeRecord")
+    Component(infrastructure, "Infrastructure", "Api services, Assemblers", "CustomersApi, ComponentsApi, RecuperationsApi, assemblers")
+}
+
+Rel(shared, presentation, "Routes to and wraps")
+Rel(presentation, application, "Dispatches commands and reads state from")
+Rel(application, domain, "Manages")
+Rel(application, infrastructure, "Calls through")
+Rel(infrastructure, domain, "Builds")
+Rel(infrastructure, api, "Calls /api/v1/customers on", "HTTPS / JSON, JWT")
+@enduml

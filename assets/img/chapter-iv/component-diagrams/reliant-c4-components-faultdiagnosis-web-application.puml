@@ -1,0 +1,22 @@
+@startuml "Components-FaultDiagnosis-Frontend"
+!includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+title Reliant - Fault Diagnosis Component Diagram (Web Application)
+
+Container(api, "Web Services", "Spring Boot", "Exposes /api/v1/fault-cases, /api/v1/diagnostic-rules")
+Container(shared, "Shared", "Angular", "Layout, navigation, auth interceptor, guards, i18n and unit formatting")
+
+Container_Boundary(bc, "Fault Diagnosis Bounded Context") {
+    Component(presentation, "Presentation", "Angular Components", "FaultCasesBoardPage, FaultCaseDetailPage, DiagnosticRulesPage")
+    Component(application, "Application", "Facade, Store, Commands", "FaultDiagnosisFacade, FaultCaseStore, ConfirmRootCauseCommand, CreateDiagnosticRuleCommand")
+    Component(domain, "Domain", "Client-side entities", "FaultCase, FaultSymptom, DiagnosticRule, FaultPattern")
+    Component(infrastructure, "Infrastructure", "Api services, Assemblers", "FaultCasesApi, DiagnosticRulesApi, assemblers")
+}
+
+Rel(shared, presentation, "Routes to and wraps")
+Rel(presentation, application, "Dispatches commands and reads state from")
+Rel(application, domain, "Manages")
+Rel(application, infrastructure, "Calls through")
+Rel(infrastructure, domain, "Builds")
+Rel(infrastructure, api, "Calls /api/v1/fault-cases on", "HTTPS / JSON, JWT")
+@enduml
