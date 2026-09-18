@@ -154,8 +154,8 @@ El curso contribuye al cumplimiento del Student Outcome ABET: ABET – EAC - Stu
 
 | Criterio específico                                                                             | Acciones realizadas | Conclusiones |
 |:-----------------------------------------------------------------------------------------------:|:-------------------:|:------------:|
-| Trabaja en equipo para proporcionar liderazgo en forma conjunta                                 |                     |              |
-| Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos. |                     |              |
+| Trabaja en equipo para proporcionar liderazgo en forma conjunta                                 |                     |Se concluye que el liderazgo compartido permitió aprovechar las fortalezas de cada integrante, facilitando la coordinación, la toma de decisiones y el avance conjunto hacia los objetivos del proyecto.|
+| Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos. |                     |Se concluye que establecer metas claras, distribuir responsabilidades y mantener una comunicación colaborativa permitió organizar el trabajo de manera efectiva y cumplir los objetivos planteados.|
 
 
 # Capítulo I: Introducción
@@ -761,7 +761,7 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | Ocupación | Estudiante de Ingeniería Industrial y asistente de construcción y proyectos con experiencia en operaciones mineras |
 | Timing inicio | 00:00 |
 | Duración | 13 minutos con 40 segundos |
-| URL | [Entrevista Segmento 2 - Asset Owner](https://drive.google.com/file/d/1lfzvUGM0Sf1K5balZaaP8kYs97IqWC2X/view?usp=sharing)) |
+| URL | [Entrevista Segmento 2 - Asset Owner](https://drive.google.com/file/d/1lfzvUGM0Sf1K5balZaaP8kYs97IqWC2X/view?usp=sharing) |
 | Screenshot | Pendiente de agregar |
 | Resumen | La entrevistada cuenta con experiencia como asistente de construcción y proyectos en operaciones mineras como Quellaveco, Las Bambas y Chinalco. Sus responsabilidades incluyeron brindar soporte a ingenieros y supervisores, realizar seguimiento de actividades, coordinar con distintas áreas y elaborar reportes desde campo. Señaló que las fallas de equipos afectan la programación, el personal y los recursos disponibles. Asimismo, explicó que el seguimiento se apoya principalmente en Excel, reportes, llamadas, WhatsApp y sistemas internos que no siempre son visibles para el personal de operación. Para evaluar proveedores se consideran la documentación presentada, el cumplimiento de requisitos, los plazos de entrega y los antecedentes del servicio. Finalmente, manifestó la necesidad de una plataforma centralizada que muestre el estado, ubicación, responsable, proveedor y fecha estimada de disponibilidad de cada componente. |
 | Segmento: AssetOwner | Entrevista #2 |
