@@ -1596,7 +1596,9 @@ Las acciones deben utilizar expresiones orientadas a la tarea, como “Registrar
 ### 4.2.3. SEO Tags and Meta Tags
 Las etiquetas SEO y los Meta Tags de Relient se plantean como recursos para describir el contenido de la Landing Page y facilitar su identificación por parte de los motores de búsqueda. Estos valores permiten comunicar el nombre del producto, su finalidad y los temas relacionados con la solución.
 Para InnovaCorp se proponen los siguientes contenidos:
+
 |## Tag | ## Valor|
+|:--:|:--:|
 |Title | InnovaCorp - Monitoreo inteligente de procesos industriales |
 | Description | InnovaCorp ofrece soluciones tecnológicas para monitorear procesos, anticipar fallas y mejorar la trazabilidad industrial|
 | Keywords | InnovaCorp, Relient, monitoreo industrial, trazabilidad, prevención de fallas |
