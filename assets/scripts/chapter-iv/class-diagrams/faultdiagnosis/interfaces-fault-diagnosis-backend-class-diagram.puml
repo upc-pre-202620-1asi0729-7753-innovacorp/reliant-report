@@ -1,0 +1,78 @@
+@startuml Reliant_FaultDiagnosis_Interfaces
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam nodesep 40
+skinparam ranksep 60
+hide empty members
+
+package "SharedKernel" #F5F5F5 {
+
+    package "shared.domain" {
+
+        abstract class AuditableAbstractAggregateRoot {
+            + registerEvent(event: Object): void
+            + clearDomainEvents(): void
+        }
+
+        abstract class IntegrationEvent {
+            - eventId: UUID
+            - occurredAt: Instant
+            - sourceContext: String
+            - organizationId: Long
+        }
+
+
+    }
+
+}
+
+package "FaultDiagnosis" #FFF3E0 {
+
+
+
+
+
+    package "faultdiagnosis.interfaces" {
+        class FaultCaseController <<REST>>
+        class DiagnosticRuleController <<REST>>
+        class FaultDiagnosisContextFacade <<Context Facade>> {
+            + fetchFaultCountBySession(sessionId: Long): Integer
+        }
+        class FaultCaseOpenedIntegrationEvent <<Integration Event>> {
+            - faultCaseId: Long
+            - hvofSystemId: Long
+            - faultType: String
+            - suspectSubsystemId: Long
+            - suspectPartId: Long
+            - severity: String
+        }
+        class RecurringFaultPatternIntegrationEvent <<Integration Event>> {
+            - hvofSystemId: Long
+            - suspectPartId: Long
+            - occurrences: Integer
+        }
+        FaultCaseController ..> FaultCaseCommandServiceImpl
+        FaultCaseController ..> FaultCaseQueryServiceImpl
+        DiagnosticRuleController ..> DiagnosticRuleRepository
+        FaultDiagnosisContextFacade ..> FaultCase
+        IntegrationEvent <|-- FaultCaseOpenedIntegrationEvent
+        IntegrationEvent <|-- RecurringFaultPatternIntegrationEvent
+        FaultCaseCommandServiceImpl ..> FaultCaseRepository
+        FaultCaseCommandServiceImpl ..> DiagnosticRuleRepository
+        FaultCaseCommandServiceImpl ..> FaultPatternRepository
+        DiagnosticRuleController ..> DiagnosticRuleRepository
+        FaultDiagnosisContextFacade ..> FaultCaseRepository
+    }
+}
+
+
+package "Notifications" #EEEEEE {
+    class "NotificationIntegrationEventHandler" as ntHandler <<Event Handler>>
+}
+
+
+FaultCaseOpenedIntegrationEvent ..> ntHandler : consumedBy
+RecurringFaultPatternIntegrationEvent ..> ntHandler : consumedBy
+
+@enduml

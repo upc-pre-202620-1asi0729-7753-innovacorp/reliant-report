@@ -1,0 +1,93 @@
+@startuml Reliant_Reporting_Application
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam nodesep 40
+skinparam ranksep 60
+hide empty members
+
+
+package "Reporting" #F1F8E9 {
+
+    package "reporting.application" {
+        class "ExternalProcessMonitoringService" as rpExtPm <<ACL>> {
+            + fetchOutOfRangeSummary(sessionIds: List<Long>): List<ParameterComplianceSummary>
+        }
+        class "ExternalTraceabilityService" as rpExtTrace <<ACL>> {
+            + fetchLinkedSessionIds(recuperationId: Long): List<Long>
+        }
+        class "ExternalFaultDiagnosisService" as rpExtFd <<ACL>> {
+            + fetchFaultCountBySession(sessionId: Long): Integer
+        }
+        class "ExternalIamService" as rpExtIam <<ACL>> {
+            + resolveUnitFor(userId: Long, parameter: String): Unit
+            + belongsToOrganization(userId: Long, organizationId: Long): boolean
+        }
+        class "ExternalEquipmentService" as rpExtEquip <<ACL>> {
+            + fetchAvailableVariables(systemId: Long): List<ReportVariable>
+        }
+        interface ReportRenderer <<Port>> {
+            + render(template: ReportTemplate, data: ReportDataSet, format: ReportFormatEnum): byte[]
+        }
+        interface ReportAssetStoragePort <<Port>> {
+            + store(content: byte[], contentType: String): String
+            + load(storageKey: String): byte[]
+        }
+        class ReportDataSet <<Value Object>> {
+            - series: Map<ReportVariable, List<DataPoint>>
+            - metrics: Map<String, BigDecimal>
+        }
+        class ReportQueryServiceImpl <<Application Service>> {
+            + handle(query: GetAccessibleTemplatesQuery): List<ReportTemplate>
+            + handle(query: GetQualityCertificateByRecuperationQuery): Optional<QualityCertificate>
+            + handle(query: GetPcrComplianceReportQuery): PcrComplianceReport
+        }
+        ReportQueryServiceImpl ..> ReportTemplateRepository
+        ReportQueryServiceImpl ..> QualityCertificateRepository
+        ReportQueryServiceImpl ..> PcrComplianceReportRepository
+        class QualityCertificateCommandServiceImpl <<Application Service>>
+        class ReportTemplateCommandServiceImpl <<Application Service>> {
+            + handle(command: CreateReportTemplateCommand): Optional<ReportTemplate>
+            + handle(command: UpdateTemplateSectionsCommand): Optional<ReportTemplate>
+            + handle(command: ShareReportTemplateCommand): Optional<ReportTemplate>
+            + handle(command: UploadTemplateLogoCommand): Optional<ReportTemplate>
+        }
+        class ReportGenerationServiceImpl <<Application Service>> {
+            + handle(command: GenerateReportCommand): Optional<GeneratedReport>
+            - collectData(template: ReportTemplate, subjectId: Long): ReportDataSet
+            - resolveUnit(widget: ReportWidget, userId: Long): Unit
+        }
+        class "ReportingIntegrationEventHandler" as rpHandler <<Event Handler>> {
+            + on(event: IntegrationEvent): void
+        }
+        rpHandler ..> ReportingEvent
+        QualityCertificateCommandServiceImpl ..> rpExtPm
+        QualityCertificateCommandServiceImpl ..> rpExtTrace
+        QualityCertificateCommandServiceImpl ..> rpExtFd
+        QualityCertificateCommandServiceImpl ..> QualityCertificate
+        ReportTemplateCommandServiceImpl ..> ReportTemplate
+        ReportTemplateCommandServiceImpl ..> ReportAssetStoragePort
+        ReportTemplateCommandServiceImpl ..> rpExtIam
+        ReportTemplateCommandServiceImpl ..> rpExtEquip
+        ReportGenerationServiceImpl ..> ReportTemplate
+        ReportGenerationServiceImpl ..> GeneratedReport
+        ReportGenerationServiceImpl ..> ReportDataSet
+        ReportGenerationServiceImpl ..> ReportRenderer
+        ReportGenerationServiceImpl ..> ReportAssetStoragePort
+        ReportGenerationServiceImpl ..> UnitConversionService
+        ReportGenerationServiceImpl ..> rpExtPm
+        ReportGenerationServiceImpl ..> rpExtTrace
+        ReportGenerationServiceImpl ..> rpExtFd
+        ReportGenerationServiceImpl ..> rpExtIam
+        rpExtIam ..> IamContextFacade : «ACL»
+        rpExtEquip ..> EquipmentContextFacade : «ACL»
+        rpExtPm ..> ProcessMonitoringContextFacade : «ACL»
+        rpExtTrace ..> TraceabilityContextFacade : «ACL»
+        rpExtFd ..> FaultDiagnosisContextFacade : «ACL»
+    }
+
+
+}
+
+
+@enduml

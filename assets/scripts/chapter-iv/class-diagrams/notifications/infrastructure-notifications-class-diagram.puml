@@ -1,0 +1,29 @@
+@startuml Reliant_Notifications_Infrastructure
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam nodesep 40
+skinparam ranksep 60
+hide empty members
+
+
+
+package "Notifications" #EDE7F6 {
+
+    package "notifications.infrastructure" {
+        class MailchimpNotificationDeliveryAdapter <<Adapter>>
+        class MailchimpNewsletterAdapter <<Adapter>>
+        NotificationDeliveryPort <|.. MailchimpNotificationDeliveryAdapter
+        NewsletterPort <|.. MailchimpNewsletterAdapter
+
+        interface JpaAlertRepository <<Spring Data>>
+        interface JpaNotificationPreferenceRepository <<Spring Data>>
+        interface JpaNewsletterSubscriptionRepository <<Spring Data>>
+        AlertRepository <|-- JpaAlertRepository
+        NotificationPreferenceRepository <|-- JpaNotificationPreferenceRepository
+        NewsletterSubscriptionRepository <|-- JpaNewsletterSubscriptionRepository
+    }
+
+}
+
+@enduml

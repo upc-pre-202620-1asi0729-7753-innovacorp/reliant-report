@@ -1,0 +1,22 @@
+@startuml "Components-Notifications-Frontend"
+!includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+title Reliant - Notifications Component Diagram (Web Application)
+
+Container(api, "Web Services", "Spring Boot", "Exposes /api/v1/alerts, /api/v1/notification-preferences")
+Container(shared, "Shared", "Angular", "Layout, navigation, auth interceptor, guards, i18n and unit formatting")
+
+Container_Boundary(bc, "Notifications Bounded Context") {
+    Component(presentation, "Presentation", "Angular Components", "AlertInboxPage, NotificationPreferencesPage, AlertBadge")
+    Component(application, "Application", "Facade, Store, Commands", "NotificationsFacade, AlertStore, AcknowledgeAlertCommand, UpdateNotificationPreferenceCommand")
+    Component(domain, "Domain", "Client-side entities", "Alert, NotificationPreference")
+    Component(infrastructure, "Infrastructure", "Api services, Assemblers", "AlertsApi, NotificationPreferencesApi, assemblers")
+}
+
+Rel(shared, presentation, "Routes to and wraps")
+Rel(presentation, application, "Dispatches commands and reads state from")
+Rel(application, domain, "Manages")
+Rel(application, infrastructure, "Calls through")
+Rel(infrastructure, domain, "Builds")
+Rel(infrastructure, api, "Calls /api/v1/alerts on", "HTTPS / JSON, JWT")
+@enduml

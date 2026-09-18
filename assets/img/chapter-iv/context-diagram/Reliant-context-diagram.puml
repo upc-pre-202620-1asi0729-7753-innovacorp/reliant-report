@@ -1,0 +1,29 @@
+@startuml "Context"
+!includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+title Reliant - Context Diagram
+
+Person(operator, "HVOF Operator", "Starts and completes spray sessions on the HVOF system and reacts to live alerts")
+Person(supervisor, "Operation / Maintenance Supervisor", "Registers recuperation orders, configures the HVOF system and its controllers, confirms fault root causes")
+Person(quality, "Quality Engineer", "Defines recipes and threshold bands, diagnoses parameter deviations, issues quality certificates")
+Person(reliability, "Reliability Engineer / Procurement Analyst", "Registers field returns, tracks PCR compliance and compares recuperation suppliers")
+Person(admin, "Organization Administrator", "Registers the organization, selects a subscription plan and assigns roles")
+Person(visitor, "Visitor", "Learns about Reliant on the landing page and subscribes to the newsletter")
+
+System(reliant, "Reliant", "Ingests HVOF process telemetry, links every spray session to its work order, client and component, diagnoses faults by subsystem and part, issues quality certificates and tracks field service life against PCR")
+
+System_Ext(plc, "HVOF Controller (Allen-Bradley CompactLogix)", "Governs the HVOF system and exposes process parameters, status flags and fault flags as tags")
+System_Ext(gateway, "Telemetry Gateway", "Reads controller tags over EtherNet/IP and pushes reading batches to Reliant; replaced by a simulator during demonstrations")
+System_Ext(mailchimp, "Mailchimp", "Delivers e-mail alerts and manages the newsletter audience")
+
+Rel(operator, reliant, "Manages spray sessions and views live readings using", "HTTPS")
+Rel(supervisor, reliant, "Configures HVOF systems, imports controller tags and confirms diagnoses using", "HTTPS")
+Rel(quality, reliant, "Defines recipes and issues quality certificates using", "HTTPS")
+Rel(reliability, reliant, "Registers field returns and reviews PCR compliance using", "HTTPS")
+Rel(admin, reliant, "Manages organization, subscription and users using", "HTTPS")
+Rel(visitor, reliant, "Visits the landing page and subscribes to the newsletter using", "HTTPS")
+
+Rel(gateway, plc, "Reads process, status and fault tags from", "EtherNet/IP")
+Rel(gateway, reliant, "Pushes telemetry batches to", "HTTPS / JSON")
+Rel(reliant, mailchimp, "Sends e-mail alerts and newsletter subscriptions to", "HTTPS")
+@enduml

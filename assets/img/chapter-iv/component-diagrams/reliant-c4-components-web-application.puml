@@ -1,0 +1,38 @@
+@startuml "Components-Web-Application"
+!includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+title Reliant - Web Application Component Diagram (Bounded Contexts)
+
+Container(api, "Web Services", "Spring Boot", "RESTful API of the platform")
+Person(user, "Platform User", "Operator, supervisor, quality engineer, reliability engineer or administrator")
+
+Container_Boundary(webapp, "Web Application") {
+    Component(iam, "IAM", "Angular", "Sign up, sign in, roles, unit and language preferences")
+    Component(billing, "Billing", "Angular", "Plan selection and subscription status")
+    Component(equipment, "Equipment", "Angular", "HVOF systems, subsystems, controllers, tag import and mapping confirmation, recipes, derived parameters")
+    Component(traceability, "Traceability", "Angular", "Customers, components, recuperation orders, field returns")
+    Component(monitoring, "Process Monitoring", "Angular", "Session start, live dashboard by parameter and band, session history")
+    Component(diagnosis, "Fault Diagnosis", "Angular", "Fault case board, rule catalog, root cause confirmation")
+    Component(notifications, "Notifications", "Angular", "Alert inbox and notification preferences")
+    Component(reporting, "Reporting", "Angular", "Quality certificates, PCR compliance, template editor and generated reports")
+    Component(shared, "Shared", "Angular", "Layout, navigation, auth interceptor, guards, i18n, unit formatting, Terms and Conditions")
+}
+
+Rel(user, shared, "Navigates through")
+Rel(shared, iam, "Routes to")
+Rel(shared, billing, "Routes to")
+Rel(shared, equipment, "Routes to")
+Rel(shared, traceability, "Routes to")
+Rel(shared, monitoring, "Routes to")
+Rel(shared, diagnosis, "Routes to")
+Rel(shared, notifications, "Routes to")
+Rel(shared, reporting, "Routes to")
+Rel(iam, api, "Calls /api/v1/authentication, /users", "HTTPS / JSON")
+Rel(billing, api, "Calls /api/v1/plans, /subscriptions", "HTTPS / JSON")
+Rel(equipment, api, "Calls /api/v1/hvof-systems, /recipes", "HTTPS / JSON")
+Rel(traceability, api, "Calls /api/v1/customers, /components, /recuperations", "HTTPS / JSON")
+Rel(monitoring, api, "Calls /api/v1/spray-sessions", "HTTPS / JSON")
+Rel(diagnosis, api, "Calls /api/v1/fault-cases, /diagnostic-rules", "HTTPS / JSON")
+Rel(notifications, api, "Calls /api/v1/alerts, /notification-preferences", "HTTPS / JSON")
+Rel(reporting, api, "Calls /api/v1/report-templates, /reports, /quality-certificates", "HTTPS / JSON")
+@enduml

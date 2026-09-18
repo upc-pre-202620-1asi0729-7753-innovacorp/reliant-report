@@ -1,0 +1,368 @@
+@startuml Reliant_ProcessMonitoring_Full
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam nodesep 40
+skinparam ranksep 60
+hide empty members
+
+package "SharedKernel" #F5F5F5 {
+
+    package "shared.domain" {
+        abstract class AuditableModel {
+            - id: Long
+            - createdAt: Instant
+            - updatedAt: Instant
+        }
+        abstract class AuditableAbstractAggregateRoot {
+            + registerEvent(event: Object): void
+            + clearDomainEvents(): void
+        }
+        AuditableModel <|-- AuditableAbstractAggregateRoot
+
+        abstract class IntegrationEvent {
+            - eventId: UUID
+            - occurredAt: Instant
+            - sourceContext: String
+            - organizationId: Long
+        }
+
+        class PlcTimestamp <<Value Object>> {
+            - epochMillis: long
+            - plcClockOffsetMillis: long
+            + toInstant(): Instant
+        }
+        class TimeWindow <<Value Object>> {
+            - start: Instant
+            - end: Instant
+            - zone: ZoneId
+            + duration(): Duration
+            + contains(instant: Instant): boolean
+        }
+
+        class Unit <<Value Object>> {
+            - symbol: String
+            - category: UnitCategoryEnum
+            - system: UnitSystemEnum
+            + validate(): void
+        }
+        enum UnitCategoryEnum {
+            PRESSURE
+            TEMPERATURE
+            FLOW
+            SPEED
+            LENGTH
+            MASS
+            TIME
+            RATIO
+            DIMENSIONLESS
+        }
+        enum UnitSystemEnum {
+            INTERNATIONAL_SYSTEM
+            IMPERIAL_SYSTEM
+        }
+        Unit --> UnitCategoryEnum
+        Unit --> UnitSystemEnum
+
+    }
+
+    package "shared.application" {
+        interface IntegrationEventPublisher <<Port>> {
+            + publish(event: IntegrationEvent): void
+        }
+        interface UnitConversionService <<Port>> {
+            + convert(value: BigDecimal, from: Unit, to: Unit): BigDecimal
+            + canonicalUnitFor(category: UnitCategoryEnum): Unit
+        }
+    }
+
+    package "shared.infrastructure" {
+        class SpringIntegrationEventPublisher <<Adapter>> {
+            - applicationEventPublisher: ApplicationEventPublisher
+            + publish(event: IntegrationEvent): void
+        }
+        class StandardUnitConversionService <<Adapter>> {
+            - conversionTable: Map<UnitPair, BigDecimal>
+            + convert(value: BigDecimal, from: Unit, to: Unit): BigDecimal
+            + canonicalUnitFor(category: UnitCategoryEnum): Unit
+        }
+        IntegrationEventPublisher <|.. SpringIntegrationEventPublisher
+        UnitConversionService <|.. StandardUnitConversionService
+    }
+
+}
+
+package "ProcessMonitoring" #E0F7FA {
+
+    package "processmonitoring.domain" {
+        class SpraySession <<Aggregate Root>> {
+            - hvofSystemId: Long
+            - recuperationId: Long
+            - operatorId: Long
+            - recipeNumber: Integer
+            - window: TimeWindow
+            - status: SessionStatusEnum
+            - sprayPasses: List<SprayPass>
+            - readings: List<ProcessReading>
+            + start(): void
+            + complete(): void
+            + abort(reason: String): void
+            + assignRecuperation(recuperationId: Long): void
+            + verifyRecipe(loadedRecipeNumber: Integer, applies: boolean): void
+            + recordReading(reading: ProcessReading, limits: Optional<ParameterLimitsSnapshot>): void
+            + onSprayActiveChanged(active: boolean, at: PlcTimestamp): void
+        }
+        class SprayPass <<Entity>> {
+            - passNumber: Integer
+            - startedAt: Instant
+            - endedAt: Instant
+            + duration(): Duration
+        }
+        class ProcessReading <<Entity>> {
+            - timestamp: PlcTimestamp
+            - tagPath: String
+            - parameter: String
+            - subsystemId: Long
+            - partId: Long
+            - value: BigDecimal
+            - unit: Unit
+            - band: String
+            - derived: boolean
+            - mappingPending: boolean
+            + evaluateAgainst(limits: ParameterLimitsSnapshot): void
+        }
+        class ParameterLimitsSnapshot <<Value Object>> {
+            - parameter: String
+            - lowerShutdown: BigDecimal
+            - lowerWarning: BigDecimal
+            - nominalMin: BigDecimal
+            - nominalMax: BigDecimal
+            - upperWarning: BigDecimal
+            - upperShutdown: BigDecimal
+            + bandFor(value: BigDecimal): String
+        }
+        class TelemetryBatch <<Value Object>> {
+            - sessionId: Long
+            - hvofSystemId: Long
+            - receivedAt: Instant
+            - readings: List<ProcessReading>
+        }
+        class ParameterOutOfRangeDetectedEvent <<Domain Event>> {
+            - sessionId: Long
+            - hvofSystemId: Long
+            - parameter: String
+            - value: BigDecimal
+            - band: String
+        }
+        class FaultFlagActivatedEvent <<Domain Event>> {
+            - sessionId: Long
+            - hvofSystemId: Long
+            - tagPath: String
+            - subsystemId: Long
+            - partId: Long
+            - snapshot: Map<String, BigDecimal>
+        }
+        class SprayingStartedEvent <<Domain Event>> {
+            - sessionId: Long
+            - passNumber: Integer
+        }
+        class SprayingStoppedEvent <<Domain Event>> {
+            - sessionId: Long
+            - passNumber: Integer
+        }
+        class UnassignedSessionOpenedEvent <<Domain Event>> {
+            - sessionId: Long
+            - hvofSystemId: Long
+        }
+        class RecipeMismatchDetectedEvent <<Domain Event>> {
+            - sessionId: Long
+            - loadedRecipeNumber: Integer
+            - componentType: String
+            - machineModel: String
+        }
+        enum SessionStatusEnum {
+            UNASSIGNED
+            STARTED
+            PAUSED
+            COMPLETED
+            ABORTED
+        }
+        SpraySession "1" *-- "0..*" SprayPass : dividedInto
+        SpraySession "1" *-- "0..*" ProcessReading : records
+        SpraySession "1" --> "1" TimeWindow : spans
+        SpraySession --> SessionStatusEnum
+        SpraySession ..> ParameterLimitsSnapshot : evaluatesWith
+        SpraySession ..> ParameterOutOfRangeDetectedEvent : registers
+        SpraySession ..> FaultFlagActivatedEvent : registers
+        SpraySession ..> SprayingStartedEvent : registers
+        SpraySession ..> SprayingStoppedEvent : registers
+        SpraySession ..> UnassignedSessionOpenedEvent : registers
+        SpraySession ..> RecipeMismatchDetectedEvent : registers
+        ProcessReading "1" --> "1" PlcTimestamp : at
+        ProcessReading "1" --> "1" Unit : measuredIn
+        TelemetryBatch "1" o-- "1..*" ProcessReading : carries
+
+        interface SpraySessionRepository <<Repository>> {
+            + findByHvofSystemIdAndStatus(systemId: Long, status: SessionStatusEnum): Optional<SpraySession>
+            + findByRecuperationId(recuperationId: Long): List<SpraySession>
+            + save(session: SpraySession): SpraySession
+        }
+    }
+
+    package "processmonitoring.application" {
+        interface ExpressionEvaluator <<Port>> {
+            + evaluate(expression: String, inputs: Map<String, BigDecimal>): BigDecimal
+        }
+        class "ExternalEquipmentService" as pmExtEquip <<ACL>> {
+            + isSystemActive(systemId: Long): boolean
+            + resolveTag(systemId: Long, tagPath: String): Optional<ResolvedTag>
+            + fetchSprayActiveTagPath(systemId: Long): Optional<String>
+            + fetchRecipeLimits(systemId: Long, recipeNumber: Integer): List<ParameterLimitsSnapshot>
+            + recipeAppliesTo(systemId: Long, recipeNumber: Integer, componentType: String, machineModel: String): boolean
+            + fetchDerivedParameters(systemId: Long): List<DerivedParameterSpec>
+        }
+        class "ExternalTraceabilityService" as pmExtTrace <<ACL>> {
+            + isRecuperationInProcess(recuperationId: Long): boolean
+            + fetchComponentSpec(recuperationId: Long): Optional<ComponentSpec>
+        }
+        class ComponentSpec <<Value Object>> {
+            - componentType: String
+            - machineModel: String
+        }
+        class "ExternalIamService" as pmExtIam <<ACL>> {
+            + existsOperator(userId: Long): boolean
+            + resolveUnitFor(userId: Long, parameter: String): Unit
+        }
+        class ResolvedTag <<Value Object>> {
+            - subsystemId: Long
+            - partId: Long
+            - parameter: String
+            - tagKind: String
+            - statusRole: String
+        }
+        class DerivedParameterSpec <<Value Object>> {
+            - parameter: String
+            - expression: String
+            - inputTagPaths: List<String>
+            - unit: Unit
+        }
+        class SpraySessionCommandServiceImpl <<Application Service>> {
+            + handle(command: StartSpraySessionCommand): Optional<SpraySession>
+            + handle(command: IngestTelemetryCommand): IngestionResult
+            + handle(command: AssignRecuperationCommand): Optional<SpraySession>
+            + handle(command: CompleteSpraySessionCommand): Optional<SpraySession>
+        }
+        class SpraySessionQueryServiceImpl <<Application Service>> {
+            + handle(query: GetLiveReadingsQuery, userId: Long): List<ReadingView>
+        }
+        SpraySessionCommandServiceImpl ..> pmExtEquip
+        SpraySessionCommandServiceImpl ..> pmExtTrace
+        SpraySessionCommandServiceImpl ..> pmExtIam
+        SpraySessionCommandServiceImpl ..> SpraySession
+        SpraySessionCommandServiceImpl ..> ExpressionEvaluator
+        SpraySessionCommandServiceImpl ..> IntegrationEventPublisher
+        SpraySessionQueryServiceImpl ..> pmExtIam
+        SpraySessionQueryServiceImpl ..> UnitConversionService
+        pmExtEquip ..> ResolvedTag
+        pmExtEquip ..> DerivedParameterSpec
+        pmExtTrace ..> ComponentSpec
+        pmExtEquip ..> EquipmentContextFacade : «ACL»
+        pmExtTrace ..> TraceabilityContextFacade : «ACL»
+        pmExtIam ..> IamContextFacade : «ACL»
+    }
+
+    package "processmonitoring.infrastructure" {
+        class SpelExpressionEvaluator <<Adapter>> {
+            + evaluate(expression: String, inputs: Map<String, BigDecimal>): BigDecimal
+        }
+        ExpressionEvaluator <|.. SpelExpressionEvaluator
+
+        interface JpaSpraySessionRepository <<Spring Data>>
+        SpraySessionRepository <|-- JpaSpraySessionRepository
+    }
+
+    package "processmonitoring.interfaces" {
+        class SpraySessionController <<REST>> {
+            + startSession(resource): ResponseEntity
+            + ingestReadings(sessionId, resource): ResponseEntity
+            + ingestUnassigned(systemId, resource): ResponseEntity
+            + assignRecuperation(sessionId, resource): ResponseEntity
+            + completeSession(sessionId): ResponseEntity
+            + getLiveReadings(sessionId): ResponseEntity
+        }
+        class ProcessMonitoringContextFacade <<Context Facade>> {
+            + fetchSessionSummary(sessionId: Long): SessionSummaryDto
+            + fetchOutOfRangeReadings(sessionId: Long): List<ReadingDto>
+        }
+        class ParameterOutOfRangeIntegrationEvent <<Integration Event>> {
+            - sessionId: Long
+            - hvofSystemId: Long
+            - operatorId: Long
+            - parameter: String
+            - band: String
+        }
+        class FaultFlagActivatedIntegrationEvent <<Integration Event>> {
+            - sessionId: Long
+            - hvofSystemId: Long
+            - tagPath: String
+            - subsystemId: Long
+            - partId: Long
+            - snapshot: Map<String, BigDecimal>
+        }
+        class SpraySessionCompletedIntegrationEvent <<Integration Event>> {
+            - sessionId: Long
+            - recuperationId: Long
+            - outOfRangeCount: Integer
+        }
+        class UnassignedSessionOpenedIntegrationEvent <<Integration Event>> {
+            - sessionId: Long
+            - hvofSystemId: Long
+        }
+        class RecipeMismatchIntegrationEvent <<Integration Event>> {
+            - sessionId: Long
+            - hvofSystemId: Long
+            - operatorId: Long
+            - loadedRecipeNumber: Integer
+            - expectedComponent: String
+        }
+        SpraySessionController ..> SpraySessionCommandServiceImpl
+        SpraySessionController ..> SpraySessionQueryServiceImpl
+        ProcessMonitoringContextFacade ..> SpraySession
+        IntegrationEvent <|-- ParameterOutOfRangeIntegrationEvent
+        IntegrationEvent <|-- FaultFlagActivatedIntegrationEvent
+        IntegrationEvent <|-- SpraySessionCompletedIntegrationEvent
+        IntegrationEvent <|-- UnassignedSessionOpenedIntegrationEvent
+        IntegrationEvent <|-- RecipeMismatchIntegrationEvent
+        SpraySessionCommandServiceImpl ..> SpraySessionRepository
+        SpraySessionQueryServiceImpl ..> SpraySessionRepository
+        ProcessMonitoringContextFacade ..> SpraySessionRepository
+    }
+}
+
+package "Equipment" #EEEEEE {
+    class EquipmentContextFacade <<Context Facade>>
+}
+package "FaultDiagnosis" #EEEEEE {
+    class "FaultDiagnosisIntegrationEventHandler" as fdHandler <<Event Handler>>
+}
+package "IAM" #EEEEEE {
+    class IamContextFacade <<Context Facade>>
+}
+package "Notifications" #EEEEEE {
+    class "NotificationIntegrationEventHandler" as ntHandler <<Event Handler>>
+}
+package "Traceability" #EEEEEE {
+    class TraceabilityContextFacade <<Context Facade>>
+    class "TraceabilityIntegrationEventHandler" as trHandler <<Event Handler>>
+}
+
+SpraySessionCompletedIntegrationEvent ..> trHandler : consumedBy
+FaultFlagActivatedIntegrationEvent ..> fdHandler : consumedBy
+ParameterOutOfRangeIntegrationEvent ..> ntHandler : consumedBy
+UnassignedSessionOpenedIntegrationEvent ..> ntHandler : consumedBy
+RecipeMismatchIntegrationEvent ..> ntHandler : consumedBy
+AuditableAbstractAggregateRoot <|-- SpraySession
+AuditableModel <|-- SprayPass
+AuditableModel <|-- ProcessReading
+
+@enduml

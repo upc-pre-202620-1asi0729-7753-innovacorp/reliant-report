@@ -1,0 +1,24 @@
+@startuml "Components-Notifications"
+!includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+title Reliant - Notifications Component Diagram (Web Services)
+
+Container(webapp, "Web Application", "Angular", "Consumes the REST endpoints of this bounded context")
+ContainerDb(db, "Database", "PostgreSQL 16", "Persistence of this bounded context")
+System_Ext(mailchimp, "Mailchimp", "E-mail delivery and newsletter audience")
+
+Container_Boundary(bc, "Notifications Bounded Context") {
+    Component(interfaces, "Interfaces", "REST Controllers, Resources, Assemblers, Context Facade, Integration Events", "AlertController, NewsletterController")
+    Component(application, "Application", "Command and Query Services, Event Handlers, ACL, Ports", "AlertCommandServiceImpl, AlertQueryServiceImpl, NotificationIntegrationEventHandler, ExternalIamService (ACL), NotificationDeliveryPort and NewsletterPort")
+    Component(domain, "Domain", "Aggregates, Entities, Value Objects, Commands, Queries, Domain Events, Repository contracts", "Alert, NotificationPreference, NewsletterSubscription aggregates; repositories")
+    Component(infrastructure, "Infrastructure", "Spring Data JPA, Adapters", "JpaAlertRepository, JpaNotificationPreferenceRepository, JpaNewsletterSubscriptionRepository, MailchimpNotificationDeliveryAdapter, MailchimpNewsletterAdapter")
+}
+
+Rel(webapp, interfaces, "Calls", "HTTPS / JSON")
+Rel(interfaces, application, "Delegates commands and queries to")
+Rel(application, domain, "Applies rules through aggregates and repository contracts of")
+Rel(infrastructure, domain, "Implements repositories and ports of")
+Rel(application, infrastructure, "Uses adapters through ports")
+Rel(infrastructure, db, "Reads from and writes to", "JDBC")
+Rel(infrastructure, mailchimp, "Sends e-mails and subscriptions to", "HTTPS")
+@enduml

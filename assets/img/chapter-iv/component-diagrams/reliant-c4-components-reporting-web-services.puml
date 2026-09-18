@@ -1,0 +1,22 @@
+@startuml "Components-Reporting"
+!includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+title Reliant - Reporting Component Diagram (Web Services)
+
+Container(webapp, "Web Application", "Angular", "Consumes the REST endpoints of this bounded context")
+ContainerDb(db, "Database", "PostgreSQL 16", "Persistence of this bounded context")
+
+Container_Boundary(bc, "Reporting Bounded Context") {
+    Component(interfaces, "Interfaces", "REST Controllers, Resources, Assemblers, Context Facade, Integration Events", "QualityCertificateController, PcrComplianceReportController, ReportTemplateController, GeneratedReportController")
+    Component(application, "Application", "Command and Query Services, Event Handlers, ACL, Ports", "QualityCertificateCommandServiceImpl, ReportTemplateCommandServiceImpl, ReportGenerationServiceImpl, ReportQueryServiceImpl, ReportingIntegrationEventHandler, external services (ACL), ReportRenderer and ReportAssetStoragePort")
+    Component(domain, "Domain", "Aggregates, Entities, Value Objects, Commands, Queries, Domain Events, Repository contracts", "QualityCertificate, PcrComplianceReport, ReportTemplate, GeneratedReport, ReportingEvent aggregates; ReportSection entity; ReportWidget, Branding, Layout value objects; repositories")
+    Component(infrastructure, "Infrastructure", "Spring Data JPA, Adapters", "JPA repositories, PdfReportRenderer, CsvReportRenderer, FileSystemAssetStorageAdapter")
+}
+
+Rel(webapp, interfaces, "Calls", "HTTPS / JSON")
+Rel(interfaces, application, "Delegates commands and queries to")
+Rel(application, domain, "Applies rules through aggregates and repository contracts of")
+Rel(infrastructure, domain, "Implements repositories and ports of")
+Rel(application, infrastructure, "Uses adapters through ports")
+Rel(infrastructure, db, "Reads from and writes to", "JDBC")
+@enduml

@@ -1,0 +1,84 @@
+@startuml Reliant_Traceability_Database
+skinparam linetype ortho
+skinparam packageStyle rectangle
+hide circle
+hide empty members
+
+package "Traceability" #FCE4EC {
+entity "customers" as customers {
+  * id : BIGINT <<PK>>
+  --
+  * supplier_organization_id : BIGINT 
+  linked_asset_owner_organization_id : BIGINT 
+  * legal_name : VARCHAR(150) 
+  * ruc : VARCHAR(11) 
+  mine_site : VARCHAR(120) 
+  * created_at : TIMESTAMPTZ 
+  * updated_at : TIMESTAMPTZ 
+  .. UNIQUE (supplier_organization_id, ruc) ..
+}
+entity "components" as components {
+  * id : BIGINT <<PK>>
+  --
+  * serial_number : VARCHAR(80) 
+  * part_number : VARCHAR(80) 
+  * component_type : VARCHAR(30) 
+  * machine_manufacturer : VARCHAR(20) 
+  * machine_model : VARCHAR(30) 
+  * customer_id : BIGINT <<FK>>
+  pcr_target_hours : NUMERIC(12,2) 
+  * status : VARCHAR(20) 
+  * created_at : TIMESTAMPTZ 
+  * updated_at : TIMESTAMPTZ 
+  .. UNIQUE (customer_id, serial_number) ..
+}
+entity "service_life_records" as service_life_records {
+  * id : BIGINT <<PK>>
+  --
+  * component_id : BIGINT <<FK>>
+  * recuperation_id : BIGINT <<FK>>
+  * hours_at_delivery : NUMERIC(12,2) 
+  hours_at_return : NUMERIC(12,2) 
+  * delivered_at : DATE 
+  returned_at : DATE 
+  return_reason : VARCHAR(255) 
+  met_pcr : BOOLEAN 
+  * created_at : TIMESTAMPTZ 
+  * updated_at : TIMESTAMPTZ 
+}
+entity "recuperations" as recuperations {
+  * id : BIGINT <<PK>>
+  --
+  * work_order_number : VARCHAR(30) <<UK>>
+  * manufacturing_order_number : VARCHAR(30) <<UK>>
+  * component_id : BIGINT <<FK>>
+  * customer_id : BIGINT <<FK>>
+  * supplier_organization_id : BIGINT 
+  segment : VARCHAR(60) 
+  operation : VARCHAR(60) 
+  weight_value : NUMERIC(12,3) 
+  weight_unit_symbol : VARCHAR(15) 
+  hourmeter_at_entry : NUMERIC(12,2) 
+  powder_supplier : VARCHAR(80) 
+  powder_lot_number : VARCHAR(60) 
+  powder_chemical_composition : VARCHAR(120) 
+  * status : VARCHAR(20) 
+  * received_at : DATE 
+  completed_at : DATE 
+  * created_at : TIMESTAMPTZ 
+  * updated_at : TIMESTAMPTZ 
+}
+entity "recuperation_linked_sessions" as recuperation_linked_sessions {
+  * recuperation_id : BIGINT <<PK>> <<FK>>
+  * session_id : BIGINT <<PK>>
+  --
+}
+components }o--|| customers : customer_id
+service_life_records }o--|| components : component_id
+service_life_records }o--|| recuperations : recuperation_id
+recuperations }o--|| components : component_id
+recuperations }o--|| customers : customer_id
+recuperation_linked_sessions }o--|| recuperations : recuperation_id
+}
+
+@enduml

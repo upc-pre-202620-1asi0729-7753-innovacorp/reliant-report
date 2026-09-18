@@ -1,0 +1,186 @@
+@startuml Reliant_IAM_Full
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam nodesep 40
+skinparam ranksep 60
+hide empty members
+
+
+
+package "IAM" #E8F0FE {
+
+    package "iam.domain" {
+        class Organization <<Aggregate Root>> {
+            - name: String
+            - ruc: Ruc
+            - organizationType: OrganizationTypeEnum
+            - status: OrganizationStatusEnum
+            - timeZone: ZoneId
+            + activate(): void
+            + suspend(): void
+        }
+        class User <<Aggregate Root>> {
+            - fullName: String
+            - email: EmailAddress
+            - passwordHash: String
+            - organizationId: Long
+            - roles: Set<Role>
+            + assignRole(role: Role): void
+        }
+        class UserPreference <<Aggregate Root>> {
+            - userId: Long
+            - defaultUnitSystem: UnitSystemEnum
+            - unitOverrides: List<UnitOverride>
+            - language: String
+            + overrideUnit(override: UnitOverride): void
+            + resolveUnit(category: UnitCategoryEnum, parameter: String): Unit
+        }
+        class UnitOverride <<Value Object>> {
+            - category: UnitCategoryEnum
+            - parameter: String
+            - unit: Unit
+        }
+        class Role <<Entity>> {
+            - name: RoleEnum
+        }
+        class EmailAddress <<Value Object>> {
+            - value: String
+            + validate(): void
+        }
+        enum OrganizationTypeEnum {
+            RECUPERATION_SUPPLIER
+            ASSET_OWNER
+        }
+        enum OrganizationStatusEnum {
+            ACTIVE
+            SUSPENDED
+        }
+        enum RoleEnum {
+            ROLE_ADMIN
+            ROLE_HVOF_OPERATOR
+            ROLE_OPERATION_SUPERVISOR
+            ROLE_MAINTENANCE_SUPERVISOR
+            ROLE_QUALITY_ENGINEER
+            ROLE_RELIABILITY_ENGINEER
+            ROLE_PROCUREMENT_ANALYST
+        }
+        class OrganizationRegisteredEvent <<Domain Event>> {
+            - organizationId: Long
+            - ruc: String
+        }
+        Organization "1" --> "1" Ruc : identifiedBy
+        Organization --> OrganizationTypeEnum
+        Organization --> OrganizationStatusEnum
+        Organization ..> OrganizationRegisteredEvent : registers
+        User "1" --> "1" EmailAddress : contactedAt
+        User "1" o-- "1..*" Role : holds
+        User "*" --> "1" Organization : belongsTo
+        UserPreference "1" --> "1" User : belongsTo
+        UserPreference "1" *-- "0..*" UnitOverride : overrides
+        UserPreference --> UnitSystemEnum
+        UnitOverride "1" --> "1" Unit : uses
+        Role --> RoleEnum
+
+        interface OrganizationRepository <<Repository>> {
+            + findByRuc(ruc: Ruc): Optional<Organization>
+            + save(organization: Organization): Organization
+        }
+        interface UserRepository <<Repository>> {
+            + findByEmail(email: EmailAddress): Optional<User>
+            + findByOrganizationIdAndRolesName(organizationId: Long, role: RoleEnum): List<User>
+            + save(user: User): User
+        }
+        interface UserPreferenceRepository <<Repository>> {
+            + findByUserId(userId: Long): Optional<UserPreference>
+            + save(preference: UserPreference): UserPreference
+        }
+    }
+
+    package "iam.application" {
+        interface HashingService <<Port>> {
+            + hash(raw: String): String
+            + matches(raw: String, hashed: String): boolean
+        }
+        interface TokenService <<Port>> {
+            + generateToken(username: String): String
+            + validateToken(token: String): boolean
+        }
+        class UserCommandServiceImpl <<Application Service>> {
+            + handle(command: SignUpCommand): Optional<User>
+            + handle(command: SignInCommand): Optional<Pair<User, String>>
+        }
+        class UserQueryServiceImpl <<Application Service>> {
+            + handle(query: GetUserByIdQuery): Optional<User>
+            + handle(query: GetUsersByOrganizationQuery): List<User>
+        }
+        UserQueryServiceImpl ..> UserRepository
+        UserPreferenceCommandServiceImpl ..> UserPreferenceRepository
+        class UserPreferenceCommandServiceImpl <<Application Service>> {
+            + handle(command: UpdateUnitPreferenceCommand): Optional<UserPreference>
+        }
+        UserCommandServiceImpl ..> HashingService
+        UserCommandServiceImpl ..> TokenService
+        UserCommandServiceImpl ..> User
+        UserPreferenceCommandServiceImpl ..> UserPreference
+    }
+
+    package "iam.infrastructure" {
+        class BCryptHashingService <<Adapter>>
+        class JwtTokenService <<Adapter>>
+        class JwtAuthenticationFilter <<Adapter>>
+        HashingService <|.. BCryptHashingService
+        TokenService <|.. JwtTokenService
+        JwtAuthenticationFilter ..> TokenService
+
+        interface JpaOrganizationRepository <<Spring Data>>
+        interface JpaUserRepository <<Spring Data>>
+        interface JpaUserPreferenceRepository <<Spring Data>>
+        OrganizationRepository <|-- JpaOrganizationRepository
+        UserRepository <|-- JpaUserRepository
+        UserPreferenceRepository <|-- JpaUserPreferenceRepository
+    }
+
+    package "iam.interfaces" {
+        class AuthenticationController <<REST>>
+        class UserPreferenceController <<REST>>
+        class IamContextFacade <<Context Facade>> {
+            + fetchOrganizationIdByRuc(ruc: String): Optional<Long>
+            + fetchOrganizationType(organizationId: Long): String
+            + fetchOrganizationTimeZone(organizationId: Long): ZoneId
+            + fetchUserIdsByRole(organizationId: Long, role: String): List<Long>
+            + fetchUserEmail(userId: Long): Optional<String>
+            + fetchUnitPreference(userId: Long, category: String, parameter: String): Unit
+        }
+        class OrganizationRegisteredIntegrationEvent <<Integration Event>> {
+            - organizationId: Long
+            - ruc: String
+            - organizationType: String
+        }
+        AuthenticationController ..> UserCommandServiceImpl
+        UserPreferenceController ..> UserQueryServiceImpl
+        UserPreferenceController ..> UserPreferenceCommandServiceImpl
+        IamContextFacade ..> Organization
+        IamContextFacade ..> User
+        IamContextFacade ..> UserPreference
+        IntegrationEvent <|-- OrganizationRegisteredIntegrationEvent
+        UserCommandServiceImpl ..> UserRepository
+        UserCommandServiceImpl ..> OrganizationRepository
+        UserPreferenceCommandServiceImpl ..> UserPreferenceRepository
+        IamContextFacade ..> OrganizationRepository
+        IamContextFacade ..> UserRepository
+        IamContextFacade ..> UserPreferenceRepository
+    }
+}
+
+package "Traceability" #EEEEEE {
+    class "TraceabilityIntegrationEventHandler" as trHandler <<Event Handler>>
+}
+
+OrganizationRegisteredIntegrationEvent ..> trHandler : consumedBy
+AuditableAbstractAggregateRoot <|-- Organization
+AuditableAbstractAggregateRoot <|-- User
+AuditableAbstractAggregateRoot <|-- UserPreference
+AuditableModel <|-- Role
+
+@enduml

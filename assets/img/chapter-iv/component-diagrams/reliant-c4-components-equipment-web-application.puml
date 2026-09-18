@@ -1,0 +1,22 @@
+@startuml "Components-Equipment-Frontend"
+!includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+title Reliant - Equipment Component Diagram (Web Application)
+
+Container(api, "Web Services", "Spring Boot", "Exposes /api/v1/hvof-systems, /api/v1/recipes")
+Container(shared, "Shared", "Angular", "Layout, navigation, auth interceptor, guards, i18n and unit formatting")
+
+Container_Boundary(bc, "Equipment Bounded Context") {
+    Component(presentation, "Presentation", "Angular Components", "HvofSystemsPage, HvofSystemDetailPage, TagImportPage, TagMappingReviewPage, RecipesPage, DerivedParametersPage")
+    Component(application, "Application", "Facade, Store, Commands", "EquipmentFacade, EquipmentStore, RegisterHvofSystemCommand, ImportTagsCommand, ConfirmTagMappingCommand, CreateRecipeCommand")
+    Component(domain, "Domain", "Client-side entities", "HvofSystem, Subsystem, Part, Controller, TagMapping, Recipe, ParameterLimits")
+    Component(infrastructure, "Infrastructure", "Api services, Assemblers", "HvofSystemsApi, RecipesApi, assemblers")
+}
+
+Rel(shared, presentation, "Routes to and wraps")
+Rel(presentation, application, "Dispatches commands and reads state from")
+Rel(application, domain, "Manages")
+Rel(application, infrastructure, "Calls through")
+Rel(infrastructure, domain, "Builds")
+Rel(infrastructure, api, "Calls /api/v1/hvof-systems on", "HTTPS / JSON, JWT")
+@enduml

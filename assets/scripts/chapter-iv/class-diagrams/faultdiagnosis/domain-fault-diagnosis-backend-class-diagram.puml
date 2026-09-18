@@ -1,0 +1,122 @@
+@startuml Reliant_FaultDiagnosis_Domain
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam nodesep 40
+skinparam ranksep 60
+hide empty members
+
+
+package "FaultDiagnosis" #FFF3E0 {
+
+    package "faultdiagnosis.domain" {
+        class FaultCase <<Aggregate Root>> {
+            - sessionId: Long
+            - hvofSystemId: Long
+            - faultType: FaultTypeEnum
+            - detectedAt: Instant
+            - sourceTagPath: String
+            - suspectSubsystemId: Long
+            - suspectPartId: Long
+            - probableCause: String
+            - rootCause: String
+            - correctiveAction: String
+            - confirmedByUserId: Long
+            - status: FaultCaseStatusEnum
+            - symptoms: List<FaultSymptom>
+            + applyRules(rules: List<DiagnosticRule>): void
+            + confirmRootCause(rootCause: String, action: String, userId: Long): void
+            + close(): void
+        }
+        class FaultSymptom <<Value Object>> {
+            - parameter: String
+            - observedValue: BigDecimal
+            - band: String
+            - observedAt: Instant
+        }
+        class DiagnosticRule <<Aggregate Root>> {
+            - faultType: FaultTypeEnum
+            - triggerParameter: String
+            - condition: RuleCondition
+            - probableCause: String
+            - suspectSubsystemType: String
+            - suspectPartType: String
+            - priority: Integer
+            - active: boolean
+            + matches(symptoms: List<FaultSymptom>): boolean
+        }
+        class RuleCondition <<Value Object>> {
+            - operator: ConditionOperatorEnum
+            - threshold: BigDecimal
+            - requiredBand: String
+            + evaluate(symptom: FaultSymptom): boolean
+        }
+        class FaultPattern <<Aggregate Root>> {
+            - hvofSystemId: Long
+            - suspectPartId: Long
+            - faultType: FaultTypeEnum
+            - occurrences: Integer
+            - window: TimeWindow
+            - recurrent: boolean
+            + registerOccurrence(threshold: Integer): void
+        }
+        class FaultCaseOpenedEvent <<Domain Event>>
+        class RecurringFaultPatternDetectedEvent <<Domain Event>>
+        enum FaultTypeEnum {
+            SPINDLE_LOW_SPEED_FAULT
+            SPINDLE_HIGH_SPEED_FAULT
+            SPINDLE_ROTATION_FAULT
+            X_AXIS_MOTION_FAULT
+            Z_AXIS_MOTION_FAULT
+            FEEDER_ZERO_FEEDRATE_ABORT
+            HOPPER_OVERPRESSURE_BLOCK
+            FLAME_OUT
+            DUST_HOUSE_OVERLOADED
+            GAS_DETECTED
+            RECIPE_NOT_VALID
+            RECIPE_NOT_FOUND
+            RECIPE_VERIFY_FAILED
+            TIMED_SHUTDOWN_FAULT
+            EMERGENCY_STOP
+        }
+        enum FaultCaseStatusEnum {
+            OPEN
+            DIAGNOSED
+            CONFIRMED
+            CLOSED
+        }
+        enum ConditionOperatorEnum {
+            GREATER_THAN
+            LESS_THAN
+            EQUALS
+            IN_BAND
+        }
+        FaultCase "1" *-- "1..*" FaultSymptom : describedBy
+        FaultCase --> FaultTypeEnum
+        FaultCase --> FaultCaseStatusEnum
+        FaultCase ..> DiagnosticRule : evaluatedBy
+        FaultCase ..> FaultCaseOpenedEvent : registers
+        DiagnosticRule "1" --> "1" RuleCondition : triggeredBy
+        DiagnosticRule --> FaultTypeEnum
+        RuleCondition --> ConditionOperatorEnum
+        FaultPattern --> FaultTypeEnum
+        FaultPattern "1" --> "1" TimeWindow : observedIn
+        FaultPattern ..> RecurringFaultPatternDetectedEvent : registers
+
+        interface FaultCaseRepository <<Repository>> {
+            + findBySessionIdAndFaultTypeAndStatusNot(sessionId: Long, type: FaultTypeEnum, status: FaultCaseStatusEnum): Optional<FaultCase>
+            + findByHvofSystemIdAndDetectedAtBetween(systemId: Long, from: Instant, to: Instant): List<FaultCase>
+            + save(faultCase: FaultCase): FaultCase
+        }
+        interface DiagnosticRuleRepository <<Repository>> {
+            + findByActiveTrueOrderByPriorityAsc(): List<DiagnosticRule>
+            + save(rule: DiagnosticRule): DiagnosticRule
+        }
+        interface FaultPatternRepository <<Repository>> {
+            + findByHvofSystemIdAndSuspectPartIdAndFaultType(systemId: Long, partId: Long, type: FaultTypeEnum): Optional<FaultPattern>
+            + save(pattern: FaultPattern): FaultPattern
+        }
+    }
+
+
+@enduml

@@ -1,0 +1,72 @@
+@startuml Reliant_ProcessMonitoring_Interfaces
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam nodesep 40
+skinparam ranksep 60
+hide empty members
+
+
+package "ProcessMonitoring" #E0F7FA {
+
+    package "processmonitoring.interfaces" {
+        class SpraySessionController <<REST>> {
+            + startSession(resource): ResponseEntity
+            + ingestReadings(sessionId, resource): ResponseEntity
+            + ingestUnassigned(systemId, resource): ResponseEntity
+            + assignRecuperation(sessionId, resource): ResponseEntity
+            + completeSession(sessionId): ResponseEntity
+            + getLiveReadings(sessionId): ResponseEntity
+        }
+        class ProcessMonitoringContextFacade <<Context Facade>> {
+            + fetchSessionSummary(sessionId: Long): SessionSummaryDto
+            + fetchOutOfRangeReadings(sessionId: Long): List<ReadingDto>
+        }
+        class ParameterOutOfRangeIntegrationEvent <<Integration Event>> {
+            - sessionId: Long
+            - hvofSystemId: Long
+            - operatorId: Long
+            - parameter: String
+            - band: String
+        }
+        class FaultFlagActivatedIntegrationEvent <<Integration Event>> {
+            - sessionId: Long
+            - hvofSystemId: Long
+            - tagPath: String
+            - subsystemId: Long
+            - partId: Long
+            - snapshot: Map<String, BigDecimal>
+        }
+        class SpraySessionCompletedIntegrationEvent <<Integration Event>> {
+            - sessionId: Long
+            - recuperationId: Long
+            - outOfRangeCount: Integer
+        }
+        class UnassignedSessionOpenedIntegrationEvent <<Integration Event>> {
+            - sessionId: Long
+            - hvofSystemId: Long
+        }
+        class RecipeMismatchIntegrationEvent <<Integration Event>> {
+            - sessionId: Long
+            - hvofSystemId: Long
+            - operatorId: Long
+            - loadedRecipeNumber: Integer
+            - expectedComponent: String
+        }
+        SpraySessionController ..> SpraySessionCommandServiceImpl
+        SpraySessionController ..> SpraySessionQueryServiceImpl
+        ProcessMonitoringContextFacade ..> SpraySession
+        IntegrationEvent <|-- ParameterOutOfRangeIntegrationEvent
+        IntegrationEvent <|-- FaultFlagActivatedIntegrationEvent
+        IntegrationEvent <|-- SpraySessionCompletedIntegrationEvent
+        IntegrationEvent <|-- UnassignedSessionOpenedIntegrationEvent
+        IntegrationEvent <|-- RecipeMismatchIntegrationEvent
+        SpraySessionCommandServiceImpl ..> SpraySessionRepository
+        SpraySessionQueryServiceImpl ..> SpraySessionRepository
+        ProcessMonitoringContextFacade ..> SpraySessionRepository
+    }
+}
+
+
+
+@enduml

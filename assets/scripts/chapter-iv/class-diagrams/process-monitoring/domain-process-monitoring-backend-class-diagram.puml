@@ -1,0 +1,132 @@
+@startuml Reliant_ProcessMonitoring_Domain
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam nodesep 40
+skinparam ranksep 60
+hide empty members
+
+
+package "ProcessMonitoring" #E0F7FA {
+
+    package "processmonitoring.domain" {
+        class SpraySession <<Aggregate Root>> {
+            - hvofSystemId: Long
+            - recuperationId: Long
+            - operatorId: Long
+            - recipeNumber: Integer
+            - window: TimeWindow
+            - status: SessionStatusEnum
+            - sprayPasses: List<SprayPass>
+            - readings: List<ProcessReading>
+            + start(): void
+            + complete(): void
+            + abort(reason: String): void
+            + assignRecuperation(recuperationId: Long): void
+            + verifyRecipe(loadedRecipeNumber: Integer, applies: boolean): void
+            + recordReading(reading: ProcessReading, limits: Optional<ParameterLimitsSnapshot>): void
+            + onSprayActiveChanged(active: boolean, at: PlcTimestamp): void
+        }
+        class SprayPass <<Entity>> {
+            - passNumber: Integer
+            - startedAt: Instant
+            - endedAt: Instant
+            + duration(): Duration
+        }
+        class ProcessReading <<Entity>> {
+            - timestamp: PlcTimestamp
+            - tagPath: String
+            - parameter: String
+            - subsystemId: Long
+            - partId: Long
+            - value: BigDecimal
+            - unit: Unit
+            - band: String
+            - derived: boolean
+            - mappingPending: boolean
+            + evaluateAgainst(limits: ParameterLimitsSnapshot): void
+        }
+        class ParameterLimitsSnapshot <<Value Object>> {
+            - parameter: String
+            - lowerShutdown: BigDecimal
+            - lowerWarning: BigDecimal
+            - nominalMin: BigDecimal
+            - nominalMax: BigDecimal
+            - upperWarning: BigDecimal
+            - upperShutdown: BigDecimal
+            + bandFor(value: BigDecimal): String
+        }
+        class TelemetryBatch <<Value Object>> {
+            - sessionId: Long
+            - hvofSystemId: Long
+            - receivedAt: Instant
+            - readings: List<ProcessReading>
+        }
+        class ParameterOutOfRangeDetectedEvent <<Domain Event>> {
+            - sessionId: Long
+            - hvofSystemId: Long
+            - parameter: String
+            - value: BigDecimal
+            - band: String
+        }
+        class FaultFlagActivatedEvent <<Domain Event>> {
+            - sessionId: Long
+            - hvofSystemId: Long
+            - tagPath: String
+            - subsystemId: Long
+            - partId: Long
+            - snapshot: Map<String, BigDecimal>
+        }
+        class SprayingStartedEvent <<Domain Event>> {
+            - sessionId: Long
+            - passNumber: Integer
+        }
+        class SprayingStoppedEvent <<Domain Event>> {
+            - sessionId: Long
+            - passNumber: Integer
+        }
+        class UnassignedSessionOpenedEvent <<Domain Event>> {
+            - sessionId: Long
+            - hvofSystemId: Long
+        }
+        class RecipeMismatchDetectedEvent <<Domain Event>> {
+            - sessionId: Long
+            - loadedRecipeNumber: Integer
+            - componentType: String
+            - machineModel: String
+        }
+        enum SessionStatusEnum {
+            UNASSIGNED
+            STARTED
+            PAUSED
+            COMPLETED
+            ABORTED
+        }
+        SpraySession "1" *-- "0..*" SprayPass : dividedInto
+        SpraySession "1" *-- "0..*" ProcessReading : records
+        SpraySession "1" --> "1" TimeWindow : spans
+        SpraySession --> SessionStatusEnum
+        SpraySession ..> ParameterLimitsSnapshot : evaluatesWith
+        SpraySession ..> ParameterOutOfRangeDetectedEvent : registers
+        SpraySession ..> FaultFlagActivatedEvent : registers
+        SpraySession ..> SprayingStartedEvent : registers
+        SpraySession ..> SprayingStoppedEvent : registers
+        SpraySession ..> UnassignedSessionOpenedEvent : registers
+        SpraySession ..> RecipeMismatchDetectedEvent : registers
+        ProcessReading "1" --> "1" PlcTimestamp : at
+        ProcessReading "1" --> "1" Unit : measuredIn
+        TelemetryBatch "1" o-- "1..*" ProcessReading : carries
+
+        interface SpraySessionRepository <<Repository>> {
+            + findByHvofSystemIdAndStatus(systemId: Long, status: SessionStatusEnum): Optional<SpraySession>
+            + findByRecuperationId(recuperationId: Long): List<SpraySession>
+            + save(session: SpraySession): SpraySession
+        }
+    }
+
+
+}
+
+
+
+@enduml

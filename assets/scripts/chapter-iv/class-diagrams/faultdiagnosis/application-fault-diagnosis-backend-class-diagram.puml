@@ -1,0 +1,141 @@
+@startuml Reliant_FaultDiagnosis_Application
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam nodesep 40
+skinparam ranksep 60
+hide empty members
+
+package "SharedKernel" #F5F5F5 {
+
+    package "shared.domain" {
+        abstract class AuditableModel {
+            - id: Long
+            - createdAt: Instant
+            - updatedAt: Instant
+        }
+        abstract class AuditableAbstractAggregateRoot {
+            + registerEvent(event: Object): void
+            + clearDomainEvents(): void
+        }
+        AuditableModel <|-- AuditableAbstractAggregateRoot
+
+        abstract class IntegrationEvent {
+            - eventId: UUID
+            - occurredAt: Instant
+            - sourceContext: String
+            - organizationId: Long
+        }
+
+        class TimeWindow <<Value Object>> {
+            - start: Instant
+            - end: Instant
+            - zone: ZoneId
+            + duration(): Duration
+            + contains(instant: Instant): boolean
+        }
+
+    }
+
+    package "shared.application" {
+        interface IntegrationEventPublisher <<Port>> {
+            + publish(event: IntegrationEvent): void
+        }
+    }
+
+    package "shared.infrastructure" {
+        class SpringIntegrationEventPublisher <<Adapter>> {
+            - applicationEventPublisher: ApplicationEventPublisher
+            + publish(event: IntegrationEvent): void
+        }
+        IntegrationEventPublisher <|.. SpringIntegrationEventPublisher
+    }
+
+}
+
+package "FaultDiagnosis" #FFF3E0 {
+
+
+    package "faultdiagnosis.application" {
+        class "ExternalEquipmentService" as fdExtEquip <<ACL>> {
+            + fetchSubsystemAndPart(systemId: Long, subsystemId: Long, partId: Long): Optional<SubsystemPart>
+            + fetchPartIdByType(systemId: Long, subsystemType: String, partType: String): Optional<Long>
+        }
+        class SubsystemPart <<Value Object>> {
+            - subsystemType: String
+            - subsystemAlias: String
+            - partType: String
+        }
+        class FaultCaseQueryServiceImpl <<Application Service>> {
+            + handle(query: GetFaultCasesQuery): List<FaultCase>
+            + handle(query: GetFaultCaseByIdQuery): Optional<FaultCase>
+        }
+        FaultCaseQueryServiceImpl ..> FaultCaseRepository
+        class FaultCaseCommandServiceImpl <<Application Service>>
+        class "FaultDiagnosisIntegrationEventHandler" as fdHandler <<Event Handler>> {
+            + on(event: FaultFlagActivatedIntegrationEvent): void
+        }
+        fdHandler ..> FaultCaseCommandServiceImpl
+        FaultCaseCommandServiceImpl ..> fdExtEquip
+        FaultCaseCommandServiceImpl ..> FaultCase
+        FaultCaseCommandServiceImpl ..> FaultPattern
+        FaultCaseCommandServiceImpl ..> IntegrationEventPublisher
+        fdExtEquip ..> SubsystemPart
+        fdExtEquip ..> EquipmentContextFacade : «ACL»
+    }
+
+    package "faultdiagnosis.infrastructure" {
+        interface JpaFaultCaseRepository <<Spring Data>>
+        interface JpaDiagnosticRuleRepository <<Spring Data>>
+        interface JpaFaultPatternRepository <<Spring Data>>
+        FaultCaseRepository <|-- JpaFaultCaseRepository
+        DiagnosticRuleRepository <|-- JpaDiagnosticRuleRepository
+        FaultPatternRepository <|-- JpaFaultPatternRepository
+    }
+
+    package "faultdiagnosis.interfaces" {
+        class FaultCaseController <<REST>>
+        class DiagnosticRuleController <<REST>>
+        class FaultDiagnosisContextFacade <<Context Facade>> {
+            + fetchFaultCountBySession(sessionId: Long): Integer
+        }
+        class FaultCaseOpenedIntegrationEvent <<Integration Event>> {
+            - faultCaseId: Long
+            - hvofSystemId: Long
+            - faultType: String
+            - suspectSubsystemId: Long
+            - suspectPartId: Long
+            - severity: String
+        }
+        class RecurringFaultPatternIntegrationEvent <<Integration Event>> {
+            - hvofSystemId: Long
+            - suspectPartId: Long
+            - occurrences: Integer
+        }
+        FaultCaseController ..> FaultCaseCommandServiceImpl
+        FaultCaseController ..> FaultCaseQueryServiceImpl
+        DiagnosticRuleController ..> DiagnosticRuleRepository
+        FaultDiagnosisContextFacade ..> FaultCase
+        IntegrationEvent <|-- FaultCaseOpenedIntegrationEvent
+        IntegrationEvent <|-- RecurringFaultPatternIntegrationEvent
+        FaultCaseCommandServiceImpl ..> FaultCaseRepository
+        FaultCaseCommandServiceImpl ..> DiagnosticRuleRepository
+        FaultCaseCommandServiceImpl ..> FaultPatternRepository
+        DiagnosticRuleController ..> DiagnosticRuleRepository
+        FaultDiagnosisContextFacade ..> FaultCaseRepository
+    }
+}
+
+
+package "ProcessMonitoring" #EEEEEE {
+    class FaultFlagActivatedIntegrationEvent <<Integration Event>>
+}
+
+FaultFlagActivatedIntegrationEvent ..> fdHandler : consumedBy
+FaultCaseOpenedIntegrationEvent ..> ntHandler : consumedBy
+RecurringFaultPatternIntegrationEvent ..> ntHandler : consumedBy
+AuditableAbstractAggregateRoot <|-- FaultCase
+AuditableAbstractAggregateRoot <|-- DiagnosticRule
+AuditableAbstractAggregateRoot <|-- FaultPattern
+
+@enduml

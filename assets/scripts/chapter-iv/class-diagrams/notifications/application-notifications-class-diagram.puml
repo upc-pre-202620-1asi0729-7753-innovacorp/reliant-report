@@ -1,0 +1,55 @@
+@startuml Reliant_Notifications_Application
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam nodesep 40
+skinparam ranksep 60
+hide empty members
+
+package "Notifications" #EDE7F6 {
+
+
+    package "notifications.application" {
+        class "ExternalIamService" as ntExtIam <<ACL>> {
+            + fetchUserIdsByRole(organizationId: Long, role: String): List<Long>
+            + fetchUserEmail(userId: Long): Optional<String>
+        }
+        interface NotificationDeliveryPort <<Port>> {
+            + deliver(alert: Alert, recipientEmail: String): void
+        }
+        interface NewsletterPort <<Port>> {
+            + subscribe(email: String): void
+        }
+        class AlertQueryServiceImpl <<Application Service>> {
+            + handle(query: GetAlertsByUserQuery): List<Alert>
+        }
+        AlertQueryServiceImpl ..> AlertRepository
+        class AlertCommandServiceImpl <<Application Service>>
+        class "NotificationIntegrationEventHandler" as ntHandler <<Event Handler>> {
+            + on(event: ParameterOutOfRangeIntegrationEvent): void
+            + on(event: FaultCaseOpenedIntegrationEvent): void
+            + on(event: RecurringFaultPatternIntegrationEvent): void
+            + on(event: PrematureFailureDetectedIntegrationEvent): void
+            + on(event: UnassignedSessionOpenedIntegrationEvent): void
+            + on(event: RecipeMismatchIntegrationEvent): void
+        }
+        ntHandler ..> AlertCommandServiceImpl
+        AlertCommandServiceImpl ..> ntExtIam
+        AlertCommandServiceImpl ..> NotificationDeliveryPort
+        AlertCommandServiceImpl ..> Alert
+        AlertCommandServiceImpl ..> NotificationPreference
+        ntExtIam ..> IamContextFacade : «ACL»
+    }
+
+
+ParameterOutOfRangeIntegrationEvent ..> ntHandler : consumedBy
+UnassignedSessionOpenedIntegrationEvent ..> ntHandler : consumedBy
+RecipeMismatchIntegrationEvent ..> ntHandler : consumedBy
+FaultCaseOpenedIntegrationEvent ..> ntHandler : consumedBy
+RecurringFaultPatternIntegrationEvent ..> ntHandler : consumedBy
+PrematureFailureDetectedIntegrationEvent ..> ntHandler : consumedBy
+AuditableAbstractAggregateRoot <|-- Alert
+AuditableAbstractAggregateRoot <|-- NotificationPreference
+AuditableAbstractAggregateRoot <|-- NewsletterSubscription
+
+@enduml

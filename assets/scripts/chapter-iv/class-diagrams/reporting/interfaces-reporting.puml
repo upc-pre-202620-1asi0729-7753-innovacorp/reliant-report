@@ -1,0 +1,64 @@
+@startuml Reliant_Reporting_Interfaces
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam nodesep 40
+skinparam ranksep 60
+hide empty members
+
+
+package "Reporting" #F1F8E9 {
+
+    package "reporting.interfaces" {
+        class QualityCertificateController <<REST>>
+        class PcrComplianceReportController <<REST>>
+        class ReportTemplateController <<REST>> {
+            + create(resource): ResponseEntity
+            + updateSections(templateId, resource): ResponseEntity
+            + uploadLogo(templateId, file): ResponseEntity
+            + share(templateId, resource): ResponseEntity
+            + listAccessible(): ResponseEntity
+        }
+        class GeneratedReportController <<REST>> {
+            + generate(resource): ResponseEntity
+            + download(reportId, format): ResponseEntity
+        }
+        QualityCertificateController ..> QualityCertificateCommandServiceImpl
+        QualityCertificateController ..> ReportQueryServiceImpl
+        ReportTemplateController ..> ReportQueryServiceImpl
+        PcrComplianceReportController ..> ReportQueryServiceImpl
+        ReportTemplateController ..> ReportTemplateCommandServiceImpl
+        GeneratedReportController ..> ReportGenerationServiceImpl
+        rpHandler ..> ReportingEventRepository
+        QualityCertificateCommandServiceImpl ..> QualityCertificateRepository
+        ReportTemplateCommandServiceImpl ..> ReportTemplateRepository
+        ReportGenerationServiceImpl ..> ReportTemplateRepository
+        ReportGenerationServiceImpl ..> GeneratedReportRepository
+    }
+}
+
+package "Equipment" #EEEEEE {
+    class EquipmentContextFacade <<Context Facade>>
+}
+package "FaultDiagnosis" #EEEEEE {
+    class FaultDiagnosisContextFacade <<Context Facade>>
+}
+package "IAM" #EEEEEE {
+    class IamContextFacade <<Context Facade>>
+}
+package "ProcessMonitoring" #EEEEEE {
+    class ProcessMonitoringContextFacade <<Context Facade>>
+}
+package "Traceability" #EEEEEE {
+    class TraceabilityContextFacade <<Context Facade>>
+}
+
+IntegrationEvent ..> rpHandler : allConsumedBy
+AuditableAbstractAggregateRoot <|-- ReportingEvent
+AuditableAbstractAggregateRoot <|-- QualityCertificate
+AuditableAbstractAggregateRoot <|-- PcrComplianceReport
+AuditableAbstractAggregateRoot <|-- ReportTemplate
+AuditableAbstractAggregateRoot <|-- GeneratedReport
+AuditableModel <|-- ReportSection
+
+@enduml
