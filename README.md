@@ -301,9 +301,9 @@ ED4 --> EF3
 %% Styles
 
 class PC central
-class CD1,CD2,CD3,CD4, CD5 causaDirecta
-class CR1,CR2,CR3,CR4,CR5,CR6,CR7,CR8,CR9,CR10, CR11, CR12, causaRaiz
-class ED1,ED2,ED3,ED4,ED5, ED6 efectoDirecto
+class CD1,CD2,CD3,CD4,CD5 causaDirecta
+class CR1,CR2,CR3,CR4,CR5,CR6,CR7,CR8,CR9,CR10,CR11,CR12, causaRaiz
+class ED1,ED2,ED3,ED4,ED5,ED6 efectoDirecto
 class EF1,EF2,EF3,EF4 efectoFinal
 ```
 
