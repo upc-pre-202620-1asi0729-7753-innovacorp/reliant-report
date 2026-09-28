@@ -472,7 +472,7 @@ A continuación se presenta el Lean UX Canvas (versión 2, Jeff Gothelf) elabora
 
 ## 1.3. Segmentos objetivo.
 
-Reliant se dirige a organizaciones que **operan** un proceso de recubrimiento térmico HVOF, no a quienes consumen sus resultados. Esta distinción es determinante: las empresas mineras son las que exigen la garantía de vida útil y las que sufren el costo de una falla prematura, pero no operan equipos HVOF ni serían las usuarias directas de la plataforma. Actúan como la fuente de presión contractual que motiva la adquisición del producto, no como segmento de usuario. En consecuencia, se han definido dos segmentos objetivo diferenciados por el **tipo de operación** que realizan y no por su tamaño, ya que es el tipo de operación—servicio a terceros frente a operación interna, el que genera necesidades y motivaciones de compra distintas.
+Reliant atiende a los dos lados de la relación de recuperación de componentes: a quien **ejecuta** el recubrimiento HVOF y a quien **recibe y opera** la pieza recuperada. La primera versión del análisis consideraba a la empresa minera únicamente como fuente de presión contractual sobre el proveedor; las entrevistas y el Big Picture Event Storming (sección 2.4) mostraron que la minera realiza tareas propias dentro del dominio que nadie más puede realizar: es la única que sabe cuántas horas trabajó la pieza en campo, la que registra su retorno y la que evalúa a sus proveedores. Por ello se definen dos segmentos diferenciados por el **rol que cumplen en la cadena de recuperación**, cada uno con su propio plan de suscripción: el **Recuperation Supplier**, que paga por sistema HVOF monitoreado (plan Operator), y el **Asset Owner**, que paga por volumen de componentes bajo seguimiento (plan Asset Owner). La relación entre ambos genera un efecto de red: cuantos más proveedores registran sus sesiones y certificados en la plataforma, más valor obtiene la minera de su vista consolidada, y cuantas más mineras exigen evidencia desde Reliant, más proveedores tienen incentivo para adoptarla.
 
 ### Contexto de mercado
 
@@ -484,32 +484,33 @@ El costo del problema que Reliant atiende también está documentado. El reporte
 
 ---
 
-### Segmento 1: Empresas de servicio especializado en recubrimiento HVOF
+### Segmento 1: Recuperation Supplier — Empresas de servicio especializado en recubrimiento HVOF
 
 **Descripción**
 
-Empresas que ofrecen recubrimiento térmico HVOF como servicio a terceros, operando una o más cabinas de rociado y atendiendo simultáneamente a varios clientes industriales, principalmente del sector minero. Su negocio depende de la capacidad de demostrar que el recubrimiento se ejecutó dentro de las especificaciones acordadas, ya que el cliente vincula la vida útil esperada de la pieza (PCR) a la calidad del proceso. En el mercado peruano este segmento es reducido y altamente especializado, lo que lo convierte en un nicho de alta concentración: pocos actores, contratos de alto valor y fuerte dependencia de la reputación técnica.
+Empresas que recuperan componentes de terceros mediante recubrimiento térmico HVOF, operando uno o más sistemas HVOF y atendiendo simultáneamente a varios clientes industriales, principalmente del sector minero. Su negocio depende de la capacidad de demostrar que el recubrimiento se ejecutó dentro de la especificación acordada, ya que el cliente vincula la vida útil esperada de la pieza (PCR) a la calidad del proceso. En el mercado peruano este segmento es reducido y altamente especializado: pocos actores, contratos de alto valor y fuerte dependencia de la reputación técnica.
 
 **Características demográficas y organizacionales**
 
 | Variable | Descripción |
 |---|---|
-| Tipo de organización | Empresa de servicios industriales / metalmecánica especializada |
-| Tamaño | Mediana empresa; entre 50 y 500 colaboradores |
+| Tipo de organización | Empresa de servicios industriales / metalmecánica especializada, o división de recuperación de componentes de un distribuidor de maquinaria pesada |
+| Tamaño | Mediana y gran empresa; entre 50 y 500 colaboradores en la unidad de recuperación |
 | Ubicación | Lima Metropolitana y Callao (zonas industriales), con presencia comercial en regiones mineras (Arequipa, Cajamarca, Áncash, Junín) |
 | Sector económico | Servicios de mantenimiento y recuperación de componentes industriales |
 | Clientes principales | Empresas mineras de gran y mediana minería, oil & gas, generación eléctrica |
 | Antigüedad | Organizaciones consolidadas, típicamente con más de 10 años de operación |
-| Nivel de digitalización | Medio; cuentan con ERP administrativo, pero los datos de proceso permanecen en registros locales o en papel |
+| Nivel de digitalización | Medio; cuentan con ERP administrativo, pero los datos de proceso permanecen en el controlador del sistema HVOF, en registros locales o en papel |
+| Plan de suscripción | **Operator**, por sistema HVOF monitoreado |
 
 **Perfil del usuario dentro de la organización**
 
 | Variable | Descripción |
 |---|---|
-| Rol principal | Ingeniero de Calidad / Jefe de Procesos |
-| Rol secundario | Supervisor de Mantenimiento, Operador de cabina de rociado |
+| Rol principal | Ingeniero de Calidad e Investigación (define recetas y PCR, emite certificados) |
+| Roles secundarios | Supervisor de operación (órdenes de recuperación, cierre y entrega), Supervisor de mantenimiento de máquina (sistema HVOF, subsistemas, tags, diagnóstico de fallas), Operador HVOF (sesiones de rociado, alertas) |
 | Edad | 28 a 50 años |
-| Formación | Ingeniería Mecánica, Metalúrgica, Industrial o de Materiales |
+| Formación | Ingeniería Mecánica, Metalúrgica, Industrial o de Materiales; personal técnico con formación en institutos tecnológicos |
 | Competencia en el dominio | Alta |
 | Competencia digital | Media; usuario habitual de hojas de cálculo y ERP, no de herramientas analíticas |
 | Dispositivo de preferencia | Computador de escritorio o laptop en oficina y taller; móvil para consulta de alertas |
@@ -517,60 +518,61 @@ Empresas que ofrecen recubrimiento térmico HVOF como servicio a terceros, opera
 
 **Motivación de compra**
 
-Este segmento adquiere Reliant porque **sin trazabilidad no puede sostener la garantía que sus clientes le exigen**. La presión es comercial antes que operativa: la incapacidad de entregar evidencia documentada del proceso compromete la renovación de contratos con clientes mineros que auditan a sus proveedores.
+Este segmento adquiere Reliant porque **sin trazabilidad no puede sostener la garantía que sus clientes le exigen** y porque **cada parada del sistema HVOF se diagnostica desde cero**. La presión es comercial y operativa a la vez: la incapacidad de entregar evidencia documentada del proceso compromete la renovación de contratos con clientes mineros que auditan a sus proveedores, y el diagnóstico dependiente de pocos especialistas prolonga cada parada.
 
 ---
 
-### Segmento 2: Plantas industriales con línea de recubrimiento in-house
+### Segmento 2: Asset Owner — Empresas mineras propietarias de los componentes recuperados
 
 **Descripción**
 
-Organizaciones cuyo negocio principal no es el recubrimiento, pero que operan una cabina de thermal spray dentro de sus instalaciones para recuperar sus propios componentes críticos. El recubrimiento es para ellos un proceso de soporte al mantenimiento, no un producto. Su preocupación central es la disponibilidad del equipo: una falla de la cabina durante una ventana de parada programada compromete todo el cronograma de mantenimiento de la planta. En el Perú este segmento es menos frecuente que el primero y se concentra en operaciones de gran escala; su presencia es considerablemente mayor en mercados como Chile, Brasil, Estados Unidos y Europa, lo que lo posiciona como vía natural de expansión regional.
+Empresas mineras que envían a recuperar componentes críticos de su flota (front rods, cylinder blocks, ejes, impulsores) a uno o más proveedores de recubrimiento y los reincorporan a la operación con una expectativa de vida útil formalizada en el PCR. Hoy reciben de cada proveedor la evidencia en su propio formato, registran el retorno de campo en hojas de cálculo y evalúan a los proveedores por percepción. Su interés en la plataforma no es operar el proceso HVOF, sino disponer de una **vista consolidada del desempeño de sus componentes recuperados, sin importar qué proveedor los trabajó**, y contrastar ese desempeño contra el PCR comprometido. En el Perú este segmento está formado por operaciones de gran y mediana minería como Cerro Verde, Chinalco o Las Bambas, que concentran el volumen de componentes recuperados del país.
 
 **Características demográficas y organizacionales**
 
 | Variable | Descripción |
 |---|---|
-| Tipo de organización | Planta industrial de gran escala con taller de mantenimiento propio |
-| Tamaño | Gran empresa; más de 500 colaboradores |
-| Ubicación | Regiones mineras e industriales del Perú (Áncash, Arequipa, Cajamarca, Moquegua, Ica) y mercados regionales de expansión |
-| Sector económico | Minería, oil & gas, generación eléctrica, cemento, siderurgia |
-| Cliente del proceso | Interno (áreas de operación y mantenimiento de la propia planta) |
-| Nivel de digitalización | Medio-alto; cuentan con CMMS o SAP PM para gestión de mantenimiento, sin integración con datos de proceso del equipo de spray |
+| Tipo de organización | Empresa minera de gran o mediana minería, con área de mantenimiento y confiabilidad propia |
+| Tamaño | Gran empresa; más de 1,000 colaboradores |
+| Ubicación | Regiones mineras del Perú (Arequipa, Junín, Apurímac, Áncash, Cajamarca, Moquegua) con oficinas corporativas en Lima |
+| Sector económico | Minería metálica |
+| Relación con el proceso | Cliente del servicio de recuperación; trabaja con dos o más proveedores en paralelo |
+| Nivel de digitalización | Alto; cuentan con SAP PM o CMMS para gestión de mantenimiento, sin integración con la evidencia de proceso que entrega el proveedor |
+| Plan de suscripción | **Asset Owner**, por volumen de componentes bajo seguimiento |
 
 **Perfil del usuario dentro de la organización**
 
 | Variable | Descripción |
 |---|---|
-| Rol principal | Jefe o Supervisor de Mantenimiento |
-| Rol secundario | Ingeniero de Confiabilidad, Técnico de mantenimiento, Planner |
+| Rol principal | Ingeniero de Confiabilidad / Planner de Mantenimiento (registra el retorno de campo, consulta certificados y cumplimiento de PCR) |
+| Roles secundarios | Analista de compras o contratos (evalúa y compara proveedores), Jefe de Mantenimiento |
 | Edad | 30 a 55 años |
-| Formación | Ingeniería Mecánica o Industrial; personal técnico con formación en institutos tecnológicos |
-| Competencia en el dominio del spray | Media; son especialistas en mantenimiento general, no en thermal spray específicamente |
-| Competencia digital | Media-alta; usuarios habituales de CMMS y sistemas de gestión de activos |
-| Dispositivo de preferencia | Computador de escritorio en oficina de mantenimiento; móvil o tablet en planta |
+| Formación | Ingeniería Mecánica, Industrial o de Minas; especialización en confiabilidad o gestión de activos |
+| Competencia en el dominio del spray | Baja a media; conocen el componente y su desempeño, no el proceso de recubrimiento |
+| Competencia digital | Alta; usuarios habituales de SAP PM, CMMS y herramientas de análisis |
+| Dispositivo de preferencia | Computador de escritorio en oficina de mantenimiento o corporativa; móvil o tablet en campo |
 | Idioma de trabajo | Español, con manejo de terminología técnica en inglés |
 
 **Motivación de compra**
 
-Este segmento adquiere Reliant porque **no puede permitirse que el equipo de recubrimiento falle durante una ventana crítica**. La presión es operativa: dado que sus técnicos no son especialistas en thermal spray, el diagnóstico asistido compensa la brecha de expertise y reduce la dependencia de asistencia técnica externa del fabricante del equipo.
+Este segmento adquiere Reliant porque **una falla prematura de un componente recuperado cuesta más que cualquier suscripción** y porque **ningún proveedor individual puede ofrecerle la comparación entre proveedores**. La presión es económica y contractual: necesita sustentar con datos la renovación o el cambio de un proveedor, saber si una falla prematura tuvo origen en el recubrimiento, y eliminar el cruce manual de evidencias en formatos distintos.
 
 ---
 
 ### Síntesis comparativa
 
-| Criterio | Segmento 1: Servicio especializado | Segmento 2: Línea in-house |
+| Criterio | Segmento 1: Recuperation Supplier | Segmento 2: Asset Owner |
 |---|---|---|
-| Naturaleza del proceso | Negocio principal | Proceso de soporte |
-| Quién decide la compra | Gerencia General / Gerencia Comercial | Jefatura de Planta / Gerencia de Mantenimiento |
-| Dolor principal | Pérdida de contratos por falta de evidencia de calidad | Parada no programada durante ventana crítica |
-| Usuario primario | Ingeniero de Calidad | Jefe de Mantenimiento |
-| Prioridad de features | Trazabilidad OF/WO, certificados de calidad, análisis PCR | Alertas en tiempo real, diagnóstico por componente, patrones recurrentes |
-| Presencia en Perú | Nicho concentrado, pocos actores | Reducida; mayor en mercados regionales |
-| Rol en la estrategia | Segmento de foco inicial | Segmento de expansión |
+| Rol en la cadena | Ejecuta la recuperación | Recibe y opera el componente recuperado |
+| Quién decide la compra | Gerencia General / Gerencia de Operaciones del proveedor | Gerencia de Mantenimiento / Confiabilidad de la minera |
+| Dolor principal | Pérdida de contratos por falta de evidencia de calidad; paradas del sistema HVOF diagnosticadas desde cero | Fallas prematuras sin explicación; evaluación de proveedores por percepción |
+| Usuario primario | Ingeniero de Calidad e Investigación | Ingeniero de Confiabilidad / Planner |
+| Prioridad de features | Recetas y bandas de umbral, trazabilidad OF/WO, diagnóstico por subsistema y parte, certificados de calidad | Vista consolidada multi-proveedor, retorno de campo contra PCR, cumplimiento de PCR por proveedor, consulta de certificados |
+| Plan y unidad de cobro | Operator, por sistema HVOF monitoreado | Asset Owner, por componentes bajo seguimiento |
+| Presencia en Perú | Nicho concentrado, pocos actores | Gran y mediana minería, alto volumen de componentes |
+| Rol en la estrategia | Segmento de entrada: genera los datos | Segmento de consolidación: genera la demanda de evidencia |
 
-Ambos segmentos comparten el núcleo funcional de la plataforma: ingesta de telemetría, detección de desviaciones y diagnóstico de fallas, pero difieren en el peso relativo que asignan a cada capacidad. Esta convergencia funcional con divergencia de prioridades permite a InnovaCorp sostener un único producto atendiendo a dos motivaciones de compra distintas, y justifica el enfoque inicial en el Segmento 1, cuyo dolor es más agudo y cuyo ciclo de venta es más corto en el mercado peruano.
-
+Ambos segmentos comparten la cadena de trazabilidad de la plataforma: la sesión de rociado que registra el proveedor es la misma que sustenta el certificado que consulta la minera, y el retorno de campo que registra la minera es el que permite al proveedor explicar una falla prematura. Esta dependencia mutua es la que sostiene el modelo de dos planes y justifica el orden de entrada al mercado: primero el Recuperation Supplier, cuyo dolor es más agudo y cuya adopción alimenta de datos la plataforma, y sobre esa base el Asset Owner, para quien el valor crece con cada proveedor incorporado.
 # Capítulo II: Requirements Elicitation & Analysis
 ## 2.1. Competidores.
 
