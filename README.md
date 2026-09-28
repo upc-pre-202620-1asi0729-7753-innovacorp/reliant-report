@@ -1661,6 +1661,185 @@ Los Criterios de Aceptación se redactan en formato Gherkin (Given-When-Then), e
 | TS23 | Generación y descarga de reportes | Como developer, deseo consumir los endpoints POST /api/v1/reports y GET /api/v1/reports/{reportId}, para generar un reporte a partir de una plantilla y descargarlo en el formato solicitado. | *Escenario 1:* **Given** un cuerpo con templateId accesible para el usuario, tipo de objeto y objectId (sesión, orden, sistema HVOF o periodo), **When** se envía una petición POST a /api/v1/reports, **Then** el servicio responde con estado 201, el recurso del reporte generado con fecha, plantilla y usuario, y el header Location con /api/v1/reports/{reportId}.<br><br>*Escenario 2:* **Given** un reportId existente, **When** se envía una petición GET a /api/v1/reports/{reportId}?format=pdf o ?format=csv, **Then** el servicio responde con estado 200 y el archivo en el formato solicitado con el header Content-Disposition.<br><br>*Escenario 3:* **Given** un templateId que no está compartido con el usuario o un objectId sin datos, **When** se envía la petición POST, **Then** el servicio responde con estado 403 o 422 respectivamente, indicando el motivo. | E12 |
 
 ## 3.2. Impact Mapping.
+
+
+El Impact Map de Reliant conecta los objetivos de negocio de InnovaCorp con los User Personas de la sección 2.3.1, los cambios de comportamiento que se espera provocar en ellos (impacts), los entregables del producto que provocan esos cambios (deliverables) y las User Stories de la sección 3.1 que los materializan. El artefacto se elaboró en UXPressia a partir de las fichas de User Persona creadas previamente en la misma herramienta; a continuación se presenta su contenido, una representación en Mermaid por cada Business Goal para su lectura dentro del informe y la captura del mapa completo.
+
+Los Business Goals cumplen los criterios SMART: son específicos, medibles, alcanzables con el alcance del producto, relevantes para el modelo de suscripción de dos segmentos (plan Operator y plan Asset Owner) y acotados en el tiempo. Los Actors corresponden a los tres User Personas: **Rosa Miranda**, Ingeniera de Calidad e Investigación de un Recuperation Supplier; **Jorge Salinas**, Supervisor de Mantenimiento de máquina del mismo segmento; y **Lucía Torres**, Ingeniera de Confiabilidad de una empresa minera (Asset Owner). Cuando el comportamiento esperado corresponde a un rol secundario del segmento (operador HVOF, supervisor de operación, analista de compras, visitante del Landing Page), se indica junto al persona que lo representa. Las métricas de los goals se derivan de los Business Outcome Assumptions y de los Hypothesis Statements de la sección 1.2.2.
+
+*[Insertar captura del Impact Map elaborado en UXPressia]*
+
+### Business Goal 1 — Adopción del segmento Recuperation Supplier
+
+> **Lograr que cinco empresas de servicio de recubrimiento HVOF en el Perú suscriban el plan Operator y registren al menos el 90 % de sus sesiones de rociado en Reliant dentro de los doce meses posteriores al lanzamiento.**
+
+| Actor | Impact | Deliverable | User Stories |
+|---|---|---|---|
+| Rosa Miranda (Ingeniera de Calidad) | Deja de reconstruir la historia de una pieza desde registros dispersos y consulta su trazabilidad completa en un solo lugar | Registro de componentes y órdenes de recuperación vinculadas a OF/WO, cliente, modelo y receta | Como operador HVOF, deseo registrar un componente recibido con su número de serie, part number, tipo, modelo de máquina, posición y cliente, para identificarlo durante todo el proceso y seleccionar la receta que le corresponde (US14). Como supervisor de operación, deseo registrar la orden de recuperación con su OF y WO, horómetro de ingreso, peso y lote de polvo, para trazar el trabajo realizado sobre el componente (US15). Como ingeniero de calidad, deseo consultar el historial completo de un componente por su número de serie, OF o WO, para responder ante un cuestionamiento del cliente (US17). |
+| Rosa Miranda (Ingeniera de Calidad) | Evalúa cada corrida contra la especificación de la pieza que se recubre, y no solo contra los límites de parada de la máquina | Recetas por sistema HVOF con valor nominal, bandas de umbral y componentes aplicables; clasificación automática de cada lectura por banda | Como ingeniero de calidad, deseo definir recetas de rociado por sistema HVOF con el valor nominal y las bandas de umbral de cada parámetro, indicando a qué tipos de componente, modelos de máquina y posiciones aplican, para que cada lectura se evalúe contra la especificación de la pieza que se recubre (US54). Como ingeniero de calidad, deseo que el sistema clasifique cada lectura según la banda de la receta vigente de la sesión, para detectar desviaciones que el controlador no alarma porque solo actúa en los límites de parada (US21). Como ingeniero de calidad, deseo definir parámetros derivados mediante una fórmula sobre los tags mapeados del controlador, para monitorear variables que el controlador no expone directamente (US55). |
+| Rosa Miranda, representando al operador HVOF y al supervisor de operación | Abre la sesión desde la plataforma y confía en que las lecturas y las pasadas quedan registradas sin intervención manual, incluso si olvidó abrirla | Sesión de rociado con ingesta automática de telemetría, detección de pasadas y sesiones no asignadas | Como operador HVOF, deseo iniciar una sesión de rociado seleccionando el sistema HVOF, la orden de recuperación y la receta aplicable al componente, para que las lecturas del proceso se asocien al componente correcto (US19). Como supervisor de operación, deseo que las lecturas del proceso lleguen automáticamente desde el cliente de telemetría conectado al controlador durante la sesión, para no depender de registros manuales (US20). Como operador HVOF, deseo que el sistema detecte automáticamente el inicio y fin de cada pasada de rociado y conserve en una sesión no asignada las lecturas que lleguen sin una sesión abierta, para no perder telemetría (US57). Como supervisor de operación, deseo que la plataforma reciba la telemetría desde un cliente externo conectado al controlador del sistema HVOF, para que el registro del proceso no dependa de intervención humana (US52). |
+| Rosa Miranda, representando al operador HVOF | Reacciona a una desviación o a una receta equivocada mientras la corrida está en curso, y no al revisar el registro al día siguiente | Lecturas en vivo por banda, alertas de desviación con severidad y verificación de receta | Como operador HVOF, deseo ver los valores actuales de los parámetros durante la sesión, para reaccionar ante una desviación mientras la corrida está en curso (US22). Como operador HVOF, deseo recibir una alerta en la plataforma cuando un parámetro salga de la banda nominal de la receta, con severidad distinta si alcanza la banda de advertencia o la de parada, para actuar mientras la corrida está en curso (US31). Como supervisor de operación, deseo que el sistema advierta cuando la receta cargada en el controlador no corresponde al componente de la orden en curso, para evitar recubrir una pieza con los parámetros de otra (US56). |
+| Rosa Miranda, representando al visitante del segmento | Reconoce en el Landing Page que la plataforma resuelve su problema de trazabilidad y solicita el registro | Landing Page con propuesta de valor, sección y call-to-action específicos para Recuperation Supplier | Como visitante, deseo conocer el problema que resuelve Reliant y sus beneficios desde la página principal, para decidir si la solución es relevante para mi organización (US44). Como visitante del segmento Recuperation Supplier, deseo acceder a la información específica para empresas que operan procesos HVOF, para identificar si la propuesta responde a mis necesidades (US45). Como visitante, deseo iniciar el registro desde el call-to-action de mi segmento, para llegar directamente a la vista de registro correspondiente en la Web Application (US47). |
+
+```mermaid
+flowchart LR
+    classDef goal fill:#1F3A5F,stroke:#0D1F33,color:#fff
+    classDef actor fill:#FFF176,stroke:#F9A825,color:#000
+    classDef impact fill:#B3E5FC,stroke:#0277BD,color:#000
+    classDef deliv fill:#C8E6C9,stroke:#2E7D32,color:#000
+
+    G1["BG1 · 5 Recuperation Suppliers<br/>en el plan Operator con 90 %<br/>de sesiones registradas · 12 meses"]:::goal
+    A1["Rosa Miranda<br/>Ingeniera de Calidad"]:::actor
+    A1b["Rosa Miranda<br/>(operador y supervisor de operación)"]:::actor
+    A1c["Rosa Miranda<br/>(visitante del segmento)"]:::actor
+
+    I1["Consulta la trazabilidad<br/>completa en un solo lugar"]:::impact
+    I2["Evalúa la corrida contra la<br/>especificación de la pieza"]:::impact
+    I3["Confía en que lecturas y pasadas<br/>quedan registradas sin intervención"]:::impact
+    I4["Reacciona a la desviación o receta<br/>equivocada durante la corrida"]:::impact
+    I5["Reconoce la propuesta<br/>y solicita el registro"]:::impact
+
+    D1["Componentes y órdenes OF/WO<br/>US14 · US15 · US17"]:::deliv
+    D2["Recetas, bandas de umbral y<br/>parámetros derivados<br/>US54 · US21 · US55"]:::deliv
+    D3["Sesión con ingesta automática,<br/>pasadas y sesiones no asignadas<br/>US19 · US20 · US57 · US52"]:::deliv
+    D4["Lecturas en vivo, alertas de<br/>desviación y verificación de receta<br/>US22 · US31 · US56"]:::deliv
+    D5["Landing Page con propuesta de valor<br/>y CTA Recuperation Supplier<br/>US44 · US45 · US47"]:::deliv
+
+    G1 --> A1 --> I1 --> D1
+    A1 --> I2 --> D2
+    G1 --> A1b --> I3 --> D3
+    A1b --> I4 --> D4
+    G1 --> A1c --> I5 --> D5
+```
+
+### Business Goal 2 — Evidencia de calidad aceptada por el cliente minero
+
+> **Lograr que el 80 % de las órdenes de recuperación entregadas por los Recuperation Suppliers activos cuenten con un certificado de calidad emitido desde Reliant, y que al menos el 70 % de los reportes que entregan a sus clientes se generen desde plantillas de la plataforma, dentro de los seis meses posteriores a su incorporación.**
+
+| Actor | Impact | Deliverable | User Stories |
+|---|---|---|---|
+| Rosa Miranda (Ingeniera de Calidad) | Emite la evidencia de calidad en minutos, a partir de la receta y las lecturas ya registradas, en lugar de armarla a mano | Emisión de certificado de calidad por orden de recuperación con cumplimiento por banda | Como ingeniero de calidad, deseo emitir el certificado de calidad de una orden de recuperación a partir de las sesiones registradas y la receta aplicada, para entregar al cliente evidencia documentada de que la pieza fue recubierta dentro de la especificación (US35). Como supervisor de operación, deseo cerrar la orden de recuperación y marcar el componente como entregado, para habilitar la emisión del certificado y el seguimiento en campo (US18). |
+| Rosa Miranda (Ingeniera de Calidad) | Responde a una auditoría del cliente con evidencia exportable en lugar de con registros en papel | Reporte de sesión y exportación de historial de sesiones y certificados por periodo | Como supervisor de operación, deseo generar el reporte de una sesión con el resumen de lecturas por banda, pasadas, desviaciones y fallas, para revisar el resultado de la corrida (US36). Como ingeniero de calidad, deseo exportar el historial de sesiones y certificados de un periodo en formato CSV o PDF, para presentarlo durante una auditoría del cliente (US37). |
+| Rosa Miranda (Ingeniera de Calidad) | Entrega al cliente reportes con la estructura, la identidad visual y las unidades que este exige, sin rehacerlos en una hoja de cálculo | Plantillas de reporte personalizables, compartibles y con generación en PDF/CSV | Como ingeniero de calidad, deseo crear una plantilla de reporte mediante un formulario, indicando el tipo de reporte, sus secciones, variables, tipo de vista y unidad, para que los reportes de mi organización tengan la estructura que exige el cliente (US59). Como ingeniero de calidad, deseo personalizar el logo, los colores, la tipografía y la orientación de página de una plantilla, para que el reporte refleje la identidad de mi organización (US60). Como ingeniero de calidad, deseo compartir una plantilla con toda mi organización o con usuarios específicos, para que otros generen reportes con la misma estructura sin duplicarla (US61). Como supervisor de operación, deseo generar un reporte a partir de una plantilla y descargarlo en PDF o CSV, para entregarlo al cliente o a la gerencia (US62). Como ingeniero de calidad, deseo marcar una plantilla como predeterminada para cada tipo de reporte, para que los reportes se generen con ella cuando no se indique otra (US63). |
+| Lucía Torres (Ingeniera de Confiabilidad) | Acepta el certificado de Reliant como respaldo formal del trabajo del proveedor y lo lee en las unidades de su operación | Consulta de certificados por el cliente, con cumplimiento por parámetro y sin exposición de valores crudos ni de la receta, en unidades preferidas | Como ingeniero de confiabilidad, deseo consultar el certificado de calidad de un componente entregado por mi proveedor, para verificar que fue recubierto dentro de tolerancia (US41). Como usuario de la plataforma, deseo configurar las unidades en que se me presentan los parámetros de proceso, para leer la información en las unidades a las que estoy acostumbrado sin alterar el dato almacenado (US58). |
+
+```mermaid
+flowchart LR
+    classDef goal fill:#1F3A5F,stroke:#0D1F33,color:#fff
+    classDef actor fill:#FFF176,stroke:#F9A825,color:#000
+    classDef impact fill:#B3E5FC,stroke:#0277BD,color:#000
+    classDef deliv fill:#C8E6C9,stroke:#2E7D32,color:#000
+
+    G2["BG2 · 80 % de órdenes con certificado<br/>y 70 % de reportes desde plantilla<br/>· 6 meses"]:::goal
+    A1["Rosa Miranda<br/>Ingeniera de Calidad"]:::actor
+    A3["Lucía Torres<br/>Ingeniera de Confiabilidad"]:::actor
+
+    I1["Emite la evidencia en minutos<br/>desde receta y lecturas registradas"]:::impact
+    I2["Responde auditorías con<br/>evidencia exportable"]:::impact
+    I3["Entrega reportes con la estructura<br/>e identidad que exige el cliente"]:::impact
+    I4["Acepta el certificado como respaldo<br/>y lo lee en sus unidades"]:::impact
+
+    D1["Certificado de calidad<br/>por orden<br/>US35 · US18"]:::deliv
+    D2["Reporte de sesión y<br/>exportación de evidencia<br/>US36 · US37"]:::deliv
+    D3["Plantillas de reporte<br/>personalizables<br/>US59 · US60 · US61 · US62 · US63"]:::deliv
+    D4["Consulta de certificados<br/>y unidades preferidas<br/>US41 · US58"]:::deliv
+
+    G2 --> A1 --> I1 --> D1
+    A1 --> I2 --> D2
+    A1 --> I3 --> D3
+    G2 --> A3 --> I4 --> D4
+```
+
+### Business Goal 3 — Reducción del tiempo de diagnóstico de fallas
+
+> **Reducir en al menos 40 % el tiempo promedio entre la detención de un sistema HVOF y la identificación de la causa probable de la falla, en los clientes del plan Operator, dentro de los nueve meses posteriores a su incorporación.**
+
+| Actor | Impact | Deliverable | User Stories |
+|---|---|---|---|
+| Jorge Salinas (Supervisor de Mantenimiento de máquina) | Describe su máquina en la plataforma tal como la conoce, subsistema por subsistema, para que cada tag y cada falla tengan un lugar al que apuntar | Registro del sistema HVOF con controladores, subsistemas con alias y partes; catálogo de tags del controlador con mapeo asistido | Como supervisor de mantenimiento de máquina, deseo registrar un sistema HVOF con su código, fabricante y modelo, y los controladores que lo gobiernan, para que las sesiones y fallas se asocien a un equipo identificado (US07). Como supervisor de mantenimiento de máquina, deseo registrar los subsistemas que componen un sistema HVOF con el alias que usa el controlador, para que las fallas se atribuyan al subsistema correcto (US08). Como supervisor de mantenimiento de máquina, deseo registrar las partes físicas de cada subsistema con su número de serie, fabricante y fecha de instalación, para que el diagnóstico pueda señalar una parte específica (US53). Como supervisor de mantenimiento de máquina, deseo importar el archivo de tags exportado del controlador al catálogo de tags, para que el sistema normalice los tipos de dato y proponga a qué subsistema, parámetro o rol corresponde cada tag (US10). Como supervisor de mantenimiento de máquina, deseo confirmar o corregir el mapeo propuesto para cada tag, para asegurar que las lecturas y fallas se atribuyan correctamente (US11). |
+| Jorge Salinas (Supervisor de Mantenimiento de máquina) | Recibe el caso de falla ya abierto con sus síntomas, en lugar de reconstruirlo desde los registros del controlador | Apertura automática de casos de falla a partir de indicadores de falla del controlador | Como supervisor de mantenimiento de máquina, deseo que el sistema abra un caso de falla cuando un tag clasificado como indicador de falla se active durante una sesión, para no depender de que el operador lo reporte (US25). |
+| Jorge Salinas (Supervisor de Mantenimiento de máquina) | Sabe qué subsistema y qué parte revisar antes de ir a la máquina | Diagnóstico asistido por reglas causa-efecto con identificación de subsistema y parte sospechosa | Como supervisor de mantenimiento de máquina, deseo que el sistema aplique el catálogo de reglas causa-efecto al caso de falla abierto, para obtener una causa probable y el subsistema o parte sospechosa (US26). Como ingeniero de calidad, deseo crear, editar y desactivar reglas causa-efecto indicando el tag o parámetro disparador, la condición, la causa probable y el subsistema o parte sospechosa, para adaptar el diagnóstico a cada sistema HVOF (US28). |
+| Jorge Salinas (Supervisor de Mantenimiento de máquina) | Registra la causa raíz confirmada para que el conocimiento no se pierda cuando cambie el personal | Confirmación de causa raíz y consulta de casos | Como supervisor de mantenimiento de máquina, deseo confirmar o corregir la causa raíz y registrar la acción correctiva de un caso de falla, para que el conocimiento quede documentado en el sistema (US27). Como supervisor de mantenimiento de máquina, deseo consultar los casos de falla filtrando por sistema HVOF, subsistema, parte, tipo y estado, para dar seguimiento a los pendientes (US30). |
+| Jorge Salinas (Supervisor de Mantenimiento de máquina) | Interviene una parte antes de que provoque una parada mayor y se entera aunque no esté frente a la plataforma | Detección de patrones recurrentes, alertas críticas y entrega por correo | Como supervisor de mantenimiento de máquina, deseo que el sistema identifique cuando una misma parte acumula fallas del mismo tipo dentro de un periodo, para anticipar un problema mayor (US29). Como supervisor de mantenimiento de máquina, deseo recibir una alerta cuando se abra un caso de falla crítica o se detecte un patrón recurrente, para intervenir oportunamente (US32). Como supervisor de mantenimiento de máquina, deseo recibir por correo electrónico las alertas críticas mediante el servicio externo Mailchimp, para enterarme sin estar frente a la plataforma (US51). Como supervisor de mantenimiento de máquina, deseo consultar la frecuencia de fallas por sistema HVOF, subsistema y parte en un periodo, para priorizar las intervenciones (US38). |
+
+```mermaid
+flowchart LR
+    classDef goal fill:#1F3A5F,stroke:#0D1F33,color:#fff
+    classDef actor fill:#FFF176,stroke:#F9A825,color:#000
+    classDef impact fill:#B3E5FC,stroke:#0277BD,color:#000
+    classDef deliv fill:#C8E6C9,stroke:#2E7D32,color:#000
+
+    G3["BG3 · −40 % tiempo de<br/>diagnóstico de fallas<br/>· 9 meses"]:::goal
+    A2["Jorge Salinas<br/>Supervisor de Mantenimiento<br/>de máquina"]:::actor
+
+    I1["Describe su máquina subsistema<br/>por subsistema en la plataforma"]:::impact
+    I2["Recibe el caso ya abierto<br/>con sus síntomas"]:::impact
+    I3["Sabe qué subsistema y parte<br/>revisar antes de ir a la máquina"]:::impact
+    I4["Registra la causa raíz para<br/>que el conocimiento no se pierda"]:::impact
+    I5["Interviene antes de una parada<br/>mayor, aun lejos de la plataforma"]:::impact
+
+    D1["Sistema HVOF, subsistemas, partes<br/>y catálogo de tags<br/>US07 · US08 · US53 · US10 · US11"]:::deliv
+    D2["Apertura automática<br/>de casos de falla<br/>US25"]:::deliv
+    D3["Diagnóstico por reglas<br/>causa-efecto<br/>US26 · US28"]:::deliv
+    D4["Confirmación de causa raíz<br/>y consulta de casos<br/>US27 · US30"]:::deliv
+    D5["Patrones recurrentes, alertas<br/>críticas y correo<br/>US29 · US32 · US51 · US38"]:::deliv
+
+    G3 --> A2
+    A2 --> I1 --> D1
+    A2 --> I2 --> D2
+    A2 --> I3 --> D3
+    A2 --> I4 --> D4
+    A2 --> I5 --> D5
+```
+
+### Business Goal 4 — Adopción del segmento Asset Owner
+
+> **Lograr que tres empresas mineras suscriban el plan Asset Owner y registren el retorno de campo de al menos el 60 % de sus componentes recuperados dentro de los dieciocho meses posteriores al lanzamiento.**
+
+| Actor | Impact | Deliverable | User Stories |
+|---|---|---|---|
+| Lucía Torres (Ingeniera de Confiabilidad) | Registra el retorno de cada componente en la plataforma en lugar de en una hoja de cálculo propia | Registro de retorno de campo con evaluación automática contra el PCR | Como ingeniero de confiabilidad, deseo registrar el retorno de un componente indicando el horómetro alcanzado y el motivo, para que el sistema evalúe si alcanzó su PCR (US40). Como ingeniero de calidad, deseo definir el PCR objetivo en horas por tipo y modelo de componente, para contar con el estándar contra el cual se evaluará el desempeño en campo (US16). |
+| Lucía Torres (Ingeniera de Confiabilidad) | Ve en una sola vista todos los componentes recuperados de la mina, sin importar qué proveedor los trabajó | Vista consolidada multi-proveedor de componentes recuperados y vinculación automática cliente–organización | Como analista de compras, deseo consultar en una sola vista todos los componentes recuperados de mi organización con su proveedor, estado y fecha de entrega, para eliminar el cruce manual de información (US39). Como supervisor de operación, deseo registrar los clientes de mi organización con su razón social, RUC y sede, para vincular cada componente a su propietario (US13). |
+| Lucía Torres, representando al analista de compras | Sustenta la renovación o el cambio de un proveedor con datos de cumplimiento de PCR en lugar de con percepción | Reporte de cumplimiento de PCR agrupado por proveedor, modelo y tipo | Como ingeniero de confiabilidad, deseo consultar la tasa de cumplimiento de PCR agrupada por proveedor, modelo de máquina y tipo de componente, para sustentar la renovación o cambio de contratos con datos (US42). |
+| Rosa Miranda (Ingeniera de Calidad) | Analiza la sesión de origen de cada falla prematura reportada por la mina, en lugar de enterarse por un reclamo sin datos | Correlación automática de falla prematura con la sesión de rociado original | Como ingeniero de calidad, deseo que al registrarse una falla prematura el sistema me presente la sesión de rociado original del componente, para determinar si el origen estuvo en el recubrimiento (US43). |
+| Lucía Torres, representando al visitante del segmento | Reconoce en el Landing Page el valor de la vista consolidada y solicita el registro con el plan Asset Owner | Landing Page con sección y call-to-action para Asset Owner; selección de plan por tipo de organización | Como visitante del segmento Asset Owner, deseo acceder a la información específica para empresas propietarias de activos, para identificar si la propuesta responde a mis necesidades (US46). Como administrador de organización, deseo seleccionar el plan correspondiente a mi tipo de organización, para activar las capacidades de la plataforma (US05). |
+
+```mermaid
+flowchart LR
+    classDef goal fill:#1F3A5F,stroke:#0D1F33,color:#fff
+    classDef actor fill:#FFF176,stroke:#F9A825,color:#000
+    classDef impact fill:#B3E5FC,stroke:#0277BD,color:#000
+    classDef deliv fill:#C8E6C9,stroke:#2E7D32,color:#000
+
+    G4["BG4 · 3 mineras en el plan Asset Owner<br/>y 60 % de retornos registrados<br/>· 18 meses"]:::goal
+    A3["Lucía Torres<br/>Ingeniera de Confiabilidad"]:::actor
+    A3b["Lucía Torres<br/>(analista de compras)"]:::actor
+    A1["Rosa Miranda<br/>Ingeniera de Calidad"]:::actor
+    A3c["Lucía Torres<br/>(visitante del segmento)"]:::actor
+
+    I1["Registra el retorno en la<br/>plataforma, no en Excel"]:::impact
+    I2["Ve todos sus componentes<br/>sin importar el proveedor"]:::impact
+    I3["Decide contratos con datos<br/>de cumplimiento PCR"]:::impact
+    I4["Analiza la sesión de origen<br/>de cada falla prematura"]:::impact
+    I5["Reconoce el valor y se registra<br/>con el plan Asset Owner"]:::impact
+
+    D1["Retorno de campo con<br/>evaluación contra PCR<br/>US40 · US16"]:::deliv
+    D2["Vista consolidada multi-proveedor<br/>y vinculación cliente–organización<br/>US39 · US13"]:::deliv
+    D3["Reporte de cumplimiento<br/>PCR por proveedor<br/>US42"]:::deliv
+    D4["Correlación falla prematura<br/>con sesión de origen<br/>US43"]:::deliv
+    D5["Landing Page con CTA Asset Owner<br/>y selección de plan<br/>US46 · US05"]:::deliv
+
+    G4 --> A3 --> I1 --> D1
+    A3 --> I2 --> D2
+    G4 --> A3b --> I3 --> D3
+    G4 --> A1 --> I4 --> D4
+    G4 --> A3c --> I5 --> D5
+```
+
+### Síntesis
+
+Los cuatro Business Goals se refuerzan entre sí. BG1 y BG4 miden la adopción de cada segmento pagante; BG2 y BG3 miden el valor que cada segmento obtiene una vez adoptada la plataforma y son, a la vez, los mecanismos que sostienen la renovación de las suscripciones. El mapa hace visible además la dependencia entre segmentos: los deliverables de BG4 (vista consolidada, cumplimiento de PCR, correlación de fallas prematuras) solo producen impacto cuando los Recuperation Suppliers ya registran sesiones y emiten certificados (BG1 y BG2), lo que explica el orden del Product Backlog de la sección 3.3. Las historias no referenciadas en los mapas (autenticación, roles, vigencia de suscripción, cambio de estado del sistema HVOF, cierre de sesión e historial de sesiones, preferencias y atención de alertas, cambio de idioma, newsletter, términos y condiciones, editor drag & drop y las Technical Stories) son habilitadoras de los deliverables anteriores y no provocan por sí mismas un cambio de comportamiento en los actores.
+
 ## 3.3. Product Backlog
 
 # Capítulo IV: Product Design
