@@ -741,7 +741,7 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | Ocupacion | Ingeniero de Proyectos |
 | Duracion | 16:13 minutos |
 | URL | https://drive.google.com/file/d/1Kz4-cB8Z7LLDR8P2sAM7_8ShWzVvMpjP/view?usp=sharing |
-| Screenshot| <img src="assets/img/chapter-ii/needfinding/Captura de pantalla 2026-09-17 131808.png"> |
+| Screenshot| <img src="assets/img/chapter-ii/needfinding/cristian-rimac-interview-photo.png"> |
 | Resumen | Cristian Rimac, de 29 años, es ingeniero de proyectos y vive en San Miguel. Durante la entrevista, explicó que los componentes recibidos de los clientes se identifican principalmente mediante el número de orden de trabajo. Sin embargo, mencionó que en ocasiones resulta complicado localizar las piezas dentro del taller, por lo que deben buscarlas o consultar con otros trabajadores. Asimismo, indicó que los parámetros del proceso de recuperación pueden quedar registrados, pero no existe un control completo y organizado de la información. Esto dificulta realizar un seguimiento adecuado de las piezas recuperadas y consultar los datos de procesos anteriores. La entrevista permitió identificar problemas relacionados con la trazabilidad de los componentes y la gestión de la información durante el proceso de recuperación.
 
 | Segmento: RecuperationSupplier | Entrevista #2 |
@@ -752,7 +752,7 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | Ocupacion | Especialista en investigación de desarrollo |
 | Duracion | 8:50 minutos |
 | URL | https://drive.google.com/file/d/1C9NDE2k5fsSGtt2NXbIFq6dNA72oELuV/view?usp=sharing |
-| Screenshot| <img src="<img src="assets/img/chapter-ii/needfinding/Captura de pantalla 2026-09-18 063515.png"> |
+| Screenshot| <img src="assets/img/chapter-ii/needfinding/Captura de pantalla 2026-09-18 063515.png"> |
 | Resumen | Durante la entrevista, Aron Ramires, de 30 años, explicó que el proceso de recuperación inicia con la recepción e identificación de las piezas del cliente, utilizando órdenes de trabajo y registros internos. Durante el rociado se almacenan datos como los parámetros de la máquina, materiales utilizados y tiempo de trabajo, aunque la búsqueda de registros antiguos puede resultar complicada. Asimismo, mencionó que los clientes solicitan certificados, informes y evidencias de calidad. Cuando se presentan reclamos, es necesario revisar la información del proceso, lo que puede generar demoras. También señaló que existen compromisos relacionados con la duración de las piezas recuperadas (PCR) y que algunas fallas de las máquinas se repiten, pero no siempre están registradas de manera organizada. Finalmente, explicó que cuando una pieza falla en el cliente, se requiere revisar los registros para determinar si el problema está relacionado con el recubrimiento, evidenciando dificultades en la trazabilidad y el análisis de fallas.
 
 | Segmento: RecuperationSupplier | Entrevista #3 |
@@ -806,70 +806,170 @@ ed%2Eview%2E001f7777%2D3095%2D43ae%2Dbdb0%2D89ae880547ea |
 ### 2.2.3. Análisis de entrevistas.
 
 ## 2.3. Needfinding.
+
+A partir del análisis de las entrevistas de la sección 2.2 se construyeron tres User Personas. El segmento Recuperation Supplier está representado por dos personas, porque en el proveedor coexisten dos usuarios primarios con objetivos distintos y que rara vez coinciden en la misma persona: quien responde por la calidad del recubrimiento ante el cliente y quien responde por la disponibilidad del sistema HVOF. El segmento Asset Owner está representado por una persona de la empresa minera. Los roles secundarios de cada segmento (operador HVOF, supervisor de operación, analista de compras) se reflejan en las tareas que estas tres personas comparten o delegan.
+
 ### 2.3.1. User Personas.
 
-#### Ficha de User Persona 1 — Segmento 1: Empresas de servicio especializado en recubrimiento HVOF (RecuperationSupplier)
+Las fichas se elaboraron en UXPressia con la información recolectada en el Bloque A de las entrevistas (perfil demográfico, dispositivos, canales, marcas e influencias) y con los objetivos y frustraciones expresados en los Bloques B y C.
+
+#### Ficha de User Persona 1 — Segmento Recuperation Supplier: Rosa Miranda Alegria, Ingeniera de Calidad e Investigación
 
 ![Rosa Miranda Alegria](./assets/img/chapter-ii/needfinding/User_Persona-Rosa_Miranda_Alegria.png)
 
----
+| Campo | Contenido de la ficha |
+|---|---|
+| Nombre / edad | Rosa Miranda Alegria, 36 años |
+| Cargo / empresa | Ingeniera de Calidad e Investigación en un proveedor de recuperación de componentes mediante HVOF (Lima – Callao) |
+| Formación | Ingeniería de Materiales; 9 años en procesos de recubrimiento |
+| Cita | "Cuando el cliente pregunta con qué parámetros se roció su pieza, la respuesta no puede tardar tres días." |
+| Objetivos | Demostrar con datos que cada lote fue recubierto dentro de la especificación; definir y controlar las recetas por tipo de componente; explicar el origen de una falla prematura en campo |
+| Frustraciones | Registros dispersos entre PLC, papel y memoria del personal; desviaciones que el PLC no alarma porque solo actúa en los límites de parada; reportes rehechos en Excel para cada cliente |
+| Motivaciones | Renovación de contratos con clientes mineros; reputación técnica del taller |
+| Tecnología | Laptop en oficina y taller, Excel avanzado, ERP administrativo; móvil para alertas; Chrome |
+| Canales | Correo corporativo, WhatsApp con supervisores, reuniones semanales de calidad |
+| Marcas e influencias | Oerlikon Metco, Praxair, ASM Thermal Spray Society, normas ISO 9001 y AS9100 |
 
-#### Ficha de User Persona 2 — Segmento 2: Plantas industriales con línea de recubrimiento in-house
+#### Ficha de User Persona 2 — Segmento Recuperation Supplier: Jorge Salinas Paredes, Supervisor de Mantenimiento de máquina
 
 ![Jorge Salinas Paredes](./assets/img/chapter-ii/needfinding/User_Persona-Jorge_Salinas_Paredes.png)
 
+| Campo | Contenido de la ficha |
+|---|---|
+| Nombre / edad | Jorge Salinas Paredes, 44 años |
+| Cargo / empresa | Supervisor de Mantenimiento de máquina del mismo proveedor de recuperación; responsable de la disponibilidad de los sistemas HVOF |
+| Formación | Técnico electromecánico (instituto tecnológico); 15 años en mantenimiento industrial, 6 en sistemas de proyección térmica |
+| Cita | "El PLC me dice que hubo una falla, no me dice qué parte revisar." |
+| Objetivos | Reducir el tiempo entre la parada del sistema HVOF y la identificación de la causa; saber qué subsistema y qué parte intervenir antes de ir a la máquina; anticipar fallas recurrentes |
+| Frustraciones | Códigos de falla del PLC sin correlación con la parte responsable; diagnóstico dependiente de dos técnicos senior; bitácora en papel que nadie consulta |
+| Motivaciones | Cumplir la ventana de producción comprometida; que el conocimiento del equipo no se vaya con las personas |
+| Tecnología | PC de escritorio en taller, RSLogix / Studio 5000 para revisar el PLC, hojas de cálculo básicas; móvil para alertas; Edge |
+| Canales | Radio y WhatsApp en planta, correo para reportes, contacto directo con el fabricante del equipo |
+| Marcas e influencias | Allen-Bradley (Rockwell), Siemens, Oerlikon Metco, foros de mantenimiento industrial |
+
+#### Ficha de User Persona 3 — Segmento Asset Owner: Lucía Torres Quispe, Ingeniera de Confiabilidad
+
+![Lucía Torres Quispe](./assets/img/chapter-ii/needfinding/User_Persona-Lucia_Torres_Quispe.png)
+
+| Campo | Contenido de la ficha |
+|---|---|
+| Nombre / edad | Lucía Torres Quispe, 39 años |
+| Cargo / empresa | Ingeniera de Confiabilidad en una operación de gran minería del sur del país; régimen 14×7 |
+| Formación | Ingeniería Mecánica, especialización en gestión de activos y confiabilidad (CMRP) |
+| Cita | "Tengo tres proveedores de recuperación y tres formatos distintos de evidencia; comparar quién dura más es un trabajo de fin de semana." |
+| Objetivos | Saber si cada componente recuperado alcanzó su PCR; comparar proveedores con datos de cumplimiento y no por percepción; determinar si una falla prematura se originó en el recubrimiento |
+| Frustraciones | Retornos de campo registrados en hojas de cálculo sin vínculo con la pieza; certificados en PDF que llegan por correo y se pierden; reclamos al proveedor sin datos que los sustenten |
+| Motivaciones | Disponibilidad de la flota; sustentar contratos de recuperación ante compras y gerencia |
+| Tecnología | Laptop corporativa con SAP PM y Power BI; tablet en campo; Chrome |
+| Canales | Correo corporativo, Teams, reuniones mensuales con proveedores y área de compras |
+| Marcas e influencias | Caterpillar, Komatsu, SMRP, Ferreyros, publicaciones de confiabilidad y mantenimiento centrado en confiabilidad (RCM) |
+
 ### 2.3.2. User Task Matrix.
 
-| Tarea | Rosa — Frecuencia | Rosa — Importancia | Jorge — Frecuencia | Jorge — Importancia |
-|---|---|---|---|---|
-| Ejecutar y supervisar una sesión de recubrimiento en la cabina | Baja | Media | Baja | Media |
-| Verificar que los parámetros de proceso se mantengan dentro de especificación | Alta | Alta | Media | Alta |
-| Registrar a qué pieza, cliente y orden corresponde cada sesión ejecutada | Alta | Alta | Baja | Media |
-| Sustentar ante el cliente que un lote fue recubierto dentro de tolerancias | Alta | Alta | N/A | N/A |
-| Determinar la causa de una parada o falla del equipo | Baja | Media | Alta | Alta |
-| Decidir qué componente de la máquina requiere mantenimiento o repuesto | Baja | Media | Alta | Alta |
-| Anticipar fallas recurrentes del equipo | Media | Media | Alta | Alta |
-| Verificar el desempeño de una pieza recubierta cuando retorna de campo | Alta | Alta | Media | Media |
-| Reportar métricas de calidad o de disponibilidad a la gerencia | Media | Alta | Media | Alta |
-| Transferir el conocimiento del proceso entre operadores y técnicos | Media | Media | Media | Alta |
+La matriz consolida las tareas que realizan los User Personas para cumplir sus objetivos, con independencia de la existencia de Reliant. Se califica la frecuencia y la importancia de cada tarea para cada persona.
 
-**Tareas con mayor frecuencia e importancia.** Para Rosa, las tareas de mayor peso son sustentar ante el cliente que un lote fue recubierto dentro de tolerancias y registrar la correspondencia entre sesión, pieza, cliente y orden: ambas son diarias y determinan directamente la continuidad del contrato con el cliente minero. Para Jorge, las tareas de mayor peso son determinar la causa de una parada y decidir qué componente atender, dado que de ellas depende la disponibilidad del equipo y el cumplimiento de la ventana de mantenimiento.
+| Tarea | Rosa — Frec. | Rosa — Imp. | Jorge — Frec. | Jorge — Imp. | Lucía — Frec. | Lucía — Imp. |
+|---|---|---|---|---|---|---|
+| Definir los parámetros y tolerancias (receta) con que debe recubrirse cada tipo de componente | Media | Alta | Baja | Media | N/A | N/A |
+| Verificar que los parámetros de proceso se mantengan dentro de especificación durante la corrida | Alta | Alta | Media | Alta | N/A | N/A |
+| Registrar a qué pieza, cliente y orden corresponde cada sesión ejecutada | Alta | Alta | Baja | Media | N/A | N/A |
+| Sustentar ante el cliente que un lote fue recubierto dentro de tolerancias | Alta | Alta | N/A | N/A | N/A | N/A |
+| Determinar la causa de una parada o falla del sistema HVOF | Baja | Media | Alta | Alta | N/A | N/A |
+| Decidir qué subsistema o parte de la máquina requiere intervención o repuesto | Baja | Media | Alta | Alta | N/A | N/A |
+| Anticipar fallas recurrentes del sistema HVOF | Media | Media | Alta | Alta | N/A | N/A |
+| Registrar el retorno de campo de un componente y las horas que trabajó | Baja | Media | N/A | N/A | Alta | Alta |
+| Verificar si un componente recuperado alcanzó su PCR | Media | Alta | N/A | N/A | Alta | Alta |
+| Revisar la evidencia de calidad entregada por el proveedor | N/A | N/A | N/A | N/A | Media | Alta |
+| Comparar el desempeño de los proveedores de recuperación | N/A | N/A | N/A | N/A | Media | Alta |
+| Explicar el origen de una falla prematura en campo | Media | Alta | Baja | Media | Alta | Alta |
+| Reportar métricas de calidad, disponibilidad o confiabilidad a la gerencia | Media | Alta | Media | Alta | Alta | Alta |
+| Transferir el conocimiento del proceso o del equipo entre personas | Media | Media | Media | Alta | Baja | Media |
 
-**Coincidencias.** Ambos roles comparten como tarea de alta importancia verificar que los parámetros de proceso se mantengan dentro de especificación y reportar métricas a la gerencia, lo que confirma que la trazabilidad del proceso es una necesidad transversal a los dos segmentos, aunque motivada por razones distintas (evidencia comercial en un caso, disponibilidad operativa en el otro).
+**Tareas con mayor frecuencia e importancia.** Para Rosa, sustentar ante el cliente que un lote fue recubierto dentro de tolerancias y registrar la correspondencia entre sesión, pieza, cliente y orden: ambas son diarias y determinan la continuidad del contrato. Para Jorge, determinar la causa de una parada y decidir qué subsistema o parte atender, porque de ellas depende la disponibilidad del sistema HVOF. Para Lucía, registrar el retorno de campo y verificar el cumplimiento del PCR, que alimentan directamente la evaluación de proveedores y el reporte a gerencia.
 
-**Diferencias.** Rosa realiza con alta frecuencia tareas orientadas a documentar y sustentar el proceso ante un tercero externo (el cliente minero), mientras que Jorge realiza con alta frecuencia tareas orientadas a diagnosticar y decidir sobre el propio equipo, sin que un cliente externo participe en esa decisión. Esta diferencia es consistente con la distinción establecida en la sección 1.3 entre el recubrimiento como negocio principal (Segmento 1) y como proceso de soporte al mantenimiento (Segmento 2).
+**Coincidencias.** Las tres personas comparten como tarea de alta importancia explicar el origen de una falla prematura y reportar métricas a la gerencia. Rosa y Lucía coinciden además en verificar el cumplimiento del PCR: la misma pieza es evaluada por quien la recubrió y por quien la opera, pero hoy con información que no se cruza. Esta coincidencia es la que sostiene el modelo de dos segmentos sobre una única cadena de trazabilidad.
 
+**Diferencias.** Rosa y Jorge actúan sobre el proceso y el equipo dentro del taller; Lucía actúa sobre el componente una vez que vuelve a operar en mina y nunca sobre el sistema HVOF. Dentro del proveedor, Rosa documenta y sustenta ante un tercero, mientras que Jorge diagnostica y decide sobre el propio equipo. Estas diferencias determinan que las tres personas necesiten vistas distintas de la misma información: la receta y el certificado para Rosa, el subsistema y la parte sospechosa para Jorge, y el cumplimiento de PCR por proveedor para Lucía.
 
 ### 2.3.3. User Journey Mapping.
 
+Los Journey Maps describen la experiencia actual (as-is) de cada persona en la tarea de mayor peso identificada en la matriz, sin considerar la existencia de Reliant. Se elaboraron en UXPressia; se presenta su contenido y la captura correspondiente.
+
 #### Journey Map 1 — Rosa Miranda: sustentar ante el cliente minero que un lote fue recubierto dentro de tolerancias
+
+![Journey Map Rosa Miranda](./assets/img/chapter-ii/needfinding/Journey_Map-Rosa_Miranda_Alegria.png)
 
 | Fase | Acciones | Pensamientos | Emociones | Puntos de dolor |
 |---|---|---|---|---|
 | Solicitud del cliente | Recibe el pedido de sustento y ubica la OF/WO | "Espero que esta vez el registro esté completo" | Neutral, con algo de incertidumbre | No sabe de antemano si el dato existe o está completo |
-| Búsqueda de evidencia | Revisa archivos del PLC y bitácoras en papel, consulta al supervisor | "¿Dónde quedó el registro de esa fecha exacta?" | Tensión creciente | Información dispersa entre PLC, papel y memoria del personal |
-| Reconstrucción manual | Arma el reporte cruzando fuentes manualmente | "Esto me toma horas que no tengo" | Frustración | Alto esfuerzo manual y riesgo de error humano al cruzar datos |
+| Búsqueda de evidencia | Revisa archivos del PLC y bitácoras en papel, consulta al supervisor de operación | "¿Dónde quedó el registro de esa fecha exacta y con qué receta se corrió?" | Tensión creciente | Información dispersa entre PLC, papel y memoria del personal; la receta usada no quedó registrada |
+| Reconstrucción manual | Arma el reporte cruzando fuentes y lo adapta al formato que exige el cliente | "Esto me toma horas que no tengo, y cada cliente pide un formato distinto" | Frustración | Alto esfuerzo manual, riesgo de error al cruzar datos, reporte rehecho en Excel |
 | Entrega | Envía el reporte, a veces fuera de plazo | "Espero que esto no afecte la renovación del contrato" | Ansiedad | Retraso percibido por el cliente como falta de control de proceso |
 
-#### Journey Map 2 — Jorge Salinas: diagnosticar una parada no programada del equipo HVOF
+#### Journey Map 2 — Jorge Salinas: diagnosticar una parada no programada del sistema HVOF
+
+![Journey Map Jorge Salinas](./assets/img/chapter-ii/needfinding/Journey_Map-Jorge_Salinas_Paredes.png)
 
 | Fase | Acciones | Pensamientos | Emociones | Puntos de dolor |
 |---|---|---|---|---|
-| Detección | El operador reporta la parada; Jorge revisa el código de falla | "¿Es la misma falla del mes pasado?" | Alerta, preocupación | El código de falla del PLC no indica el componente responsable |
-| Diagnóstico | Revisa bitácora en papel, llama al técnico senior, escala al fabricante | "Ojalá el técnico que sabe de esto esté disponible" | Impaciencia | El diagnóstico depende del conocimiento tácito de pocas personas |
-| Intervención | Interviene el componente señalado y verifica la operación | "Vamos a ver si esto realmente era el problema" | Incertidumbre | Sin correlación automática, la intervención es prueba y error |
-| Registro y aprendizaje | Documenta la solución de forma informal | "Espero acordarme la próxima vez que pase esto" | Resignación | El aprendizaje no queda registrado ni es consultable por otros |
+| Detección | El operador reporta la parada; Jorge revisa el código de falla en el HMI | "¿Es la misma falla del mes pasado?" | Alerta, preocupación | El código de falla del PLC no indica el subsistema ni la parte responsable |
+| Diagnóstico | Revisa la bitácora en papel, llama al técnico senior, escala al fabricante | "Ojalá el técnico que sabe de esto esté disponible" | Impaciencia | El diagnóstico depende del conocimiento tácito de pocas personas |
+| Intervención | Interviene la parte señalada y verifica la operación | "Vamos a ver si esto realmente era el problema" | Incertidumbre | Sin correlación automática entre falla y parte, la intervención es prueba y error |
+| Registro y aprendizaje | Documenta la solución de forma informal | "Espero acordarme la próxima vez que pase esto" | Resignación | El aprendizaje no queda registrado ni es consultable; la recurrencia no se detecta |
+
+#### Journey Map 3 — Lucía Torres: evaluar un componente recuperado que falló antes de su PCR
+
+![Journey Map Lucía Torres](./assets/img/chapter-ii/needfinding/Journey_Map-Lucia_Torres_Quispe.png)
+
+| Fase | Acciones | Pensamientos | Emociones | Puntos de dolor |
+|---|---|---|---|---|
+| Falla en campo | Mantenimiento retira el componente antes de lo previsto; Lucía recibe el aviso y el horómetro | "Este front rod debía durar 6,000 horas y no llegó a 3,500" | Preocupación | El dato de retorno llega por correo o radio y se anota en una hoja de cálculo personal |
+| Búsqueda de evidencia | Busca el certificado del proveedor entre correos y carpetas compartidas; identifica cuál de los tres proveedores lo recuperó | "¿Quién trabajó esta pieza y con qué evidencia me la entregó?" | Impaciencia | Evidencia en formatos distintos por proveedor, sin vínculo con el número de serie de la pieza |
+| Reclamo al proveedor | Envía el reclamo con el horómetro alcanzado; el proveedor responde días después | "Me van a decir que fue la operación, y no tengo cómo demostrar lo contrario" | Frustración | Ninguna de las partes puede determinar si el origen estuvo en el recubrimiento o en la operación |
+| Evaluación de proveedores | Prepara la comparación de proveedores para compras y gerencia cruzando hojas de cálculo | "Esto lo hago cada trimestre y siempre salen números distintos" | Resignación | La decisión contractual se sustenta en percepción; el cruce manual consume días y no es reproducible |
 
 ### 2.3.4. Empathy Mapping.
 
-#### Empathy Map — Rosa Miranda (Segmento 1)
+Los Empathy Maps sintetizan lo que cada persona dice, piensa, hace y siente en relación con el problema, a partir de las citas y observaciones recogidas en las entrevistas. Se elaboraron en UXPressia; se presenta la captura y el contenido de cada cuadrante.
 
-![Rosa Miranda Alegria](./assets/img/chapter-ii/neefinding/Empathy_Map-Rosa_Miranda_Alegria.png)
+#### Empathy Map — Rosa Miranda (Recuperation Supplier)
 
-#### Empathy Map — Jorge Salinas (Segmento 2)
+![Empathy Map Rosa Miranda](./assets/img/chapter-ii/needfinding/Empathy_Map-Rosa_Miranda_Alegria.png)
 
-![Jorge Salinas Paredes](./assets/img/chapter-ii/neefinding/Empathy_Map-Jorge_Salinas_Paredes.png)
+| Cuadrante | Contenido |
+|---|---|
+| Dice | "El cliente me pide evidencia y yo tengo que armarla a mano." · "El PLC no alarma hasta que ya es tarde." |
+| Piensa | Que cada reclamo sin respuesta rápida pone en riesgo el contrato; que la receta correcta depende de que el operador la cargue bien |
+| Hace | Cruza archivos del PLC con bitácoras en papel; define parámetros por tipo de pieza en hojas de cálculo; rehace reportes por cliente |
+| Siente | Presión comercial, frustración por el tiempo perdido, inseguridad al firmar un certificado sin todos los datos |
+| Dolores | Trazabilidad reconstruida a mano; desviaciones de calidad no detectadas; formatos de reporte distintos por cliente |
+| Ganancias | Evidencia generada desde el dato de proceso; alerta cuando la lectura sale de la banda de calidad; reportes con la estructura que exige cada cliente |
 
+#### Empathy Map — Jorge Salinas (Recuperation Supplier)
+
+![Empathy Map Jorge Salinas](./assets/img/chapter-ii/needfinding/Empathy_Map-Jorge_Salinas_Paredes.png)
+
+| Cuadrante | Contenido |
+|---|---|
+| Dice | "El código de falla no me dice qué revisar." · "Si el técnico que sabe está de vacaciones, la máquina espera." |
+| Piensa | Que la misma falla ya ocurrió antes pero nadie lo anotó; que el fabricante cobra por diagnósticos que él podría hacer con la información correcta |
+| Hace | Revisa el HMI y el PLC, llama al técnico senior, prueba y error sobre la máquina, anota la solución en un cuaderno |
+| Siente | Impaciencia por la ventana de producción, resignación ante la falta de registro, orgullo cuando resuelve sin ayuda externa |
+| Dolores | Diagnóstico dependiente de pocas personas; sin correlación falla–parte; recurrencias invisibles |
+| Ganancias | Caso de falla abierto con síntomas y parte sospechosa; conocimiento registrado y consultable; aviso antes de una parada mayor |
+
+#### Empathy Map — Lucía Torres (Asset Owner)
+
+![Empathy Map Lucía Torres](./assets/img/chapter-ii/needfinding/Empathy_Map-Lucia_Torres_Quispe.png)
+
+| Cuadrante | Contenido |
+|---|---|
+| Dice | "Tengo tres proveedores y tres formatos de evidencia." · "Cuando reclamo, me dicen que fue la operación." |
+| Piensa | Que está renovando contratos por costumbre y no por desempeño; que una falla prematura mal atribuida se repetirá |
+| Hace | Registra retornos en una hoja de cálculo; busca certificados en el correo; cruza datos cada trimestre para compras |
+| Siente | Frustración por el trabajo manual, desconfianza hacia la evidencia del proveedor, presión de gerencia por sustentar decisiones |
+| Dolores | Retorno de campo sin vínculo con la pieza; evidencia dispersa; evaluación de proveedores por percepción |
+| Ganancias | Vista consolidada de sus componentes sin importar el proveedor; cumplimiento de PCR calculado automáticamente; comparación de proveedores con datos |
 
 ## 2.4. Big Picture Event Storming.
 
