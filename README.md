@@ -28,8 +28,7 @@ Proyecto
 | u20241b962 | Navarro Aldoradin, Carolina Celeste  |
 | u20241f577 | Rivera Aguilar, Scarlet Josefina     |
 | u202317807 | Fernandez Seer, Mario Alonso         |
-| U202421137 | Bardales Rodríguez, Benjamín Elías   |
-| U202410376 | Yopla Romero, Jonathan Alberto       |
+
 
 **Periodo 202620**  
 
