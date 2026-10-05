@@ -3233,16 +3233,16 @@ El Sprint 2 tuvo como objetivo construir la primera versión de la Frontend Web 
 | Sprint # | Sprint 2 |
 |---|---|
 | **Sprint Planning Background** | |
-| Date | <!-- TODO: fecha del Sprint Planning 2 --> |
-| Time | <!-- TODO: hora del Sprint Planning 2 --> |
-| Location | <!-- TODO: lugar o plataforma (p. ej. Microsoft Teams) --> |
+| Date | 2026-09-28 |
+| Time | 08:00 PM – 09:30 PM (GMT-5) |
+| Location | Reunión virtual en Microsoft Teams |
 | Prepared By | Navarro Aldoradin, Carolina Celeste |
 | Attendees (to planning meeting) | Navarro Aldoradin, Carolina Celeste / Rivera Aguilar, Scarlet Josefina / Fernandez Seer, Mario Alonso |
-| Sprint 1 Review Summary | En el Sprint 1 se publicó la primera versión del Landing Page (`v0.1.0`, repositorio `reliant-website`), con las secciones de propuesta de valor, información por segmento y Términos y Condiciones. Quedaron pendientes el cambio de idioma (US48), que se completó en el Sprint 2, y la suscripción al newsletter (US49 y TS18), que requiere los Web Services. <!-- TODO: completar con los comentarios recibidos en la revisión del Sprint 1 --> |
-| Sprint 1 Retrospective Summary | <!-- TODO: resumen de la retrospectiva del Sprint 1 --> |
+| Sprint 1 Review Summary | En el Sprint 1 se publicó la primera versión del Landing Page (`v0.1.0`, repositorio `reliant-website`), con las secciones de propuesta de valor, información por segmento y Términos y Condiciones. Quedaron pendientes el cambio de idioma (US48), que se completó en el Sprint 2, y la suscripción al newsletter (US49 y TS18), que requiere los Web Services. En la revisión se validó que los call-to-action de cada segmento dirigen a la vista de registro y se acordó que el Landing Page debía estar disponible en inglés y español. |
+| Sprint 1 Retrospective Summary | Lo que funcionó: la investigación con usuarios, el Big Picture Event Storming y el diseño se integraron en el informe con Git Flow, y se cumplió la entrega de AV1. Lo que se debe mejorar: varios cambios se hicieron directamente en `main` desde la interfaz de GitHub, la reorganización de `assets/` rompió rutas de imágenes y el trabajo del Landing Page dependió de integrantes que luego se retiraron. Acuerdos: integrar todo cambio mediante ramas `feature/*` hacia `develop`, asignar un líder por aspecto en la matriz LACX y revisar las rutas de imágenes antes de cada release. |
 | **Sprint Goal & User Stories** | |
 | Sprint 2 Goal | Our focus is on letting a recuperation supplier register its equipment, recipes and recuperations, and run and monitor a spray session end to end. We believe it delivers process control and traceability to recuperation suppliers and visibility to asset owners. This will be confirmed when a supervisor completes a spray session in the deployed web application and an asset owner can review it. |
-| Sprint 2 Velocity | 69 <!-- TODO: confirmar la velocity acordada por el equipo --> |
+| Sprint 2 Velocity | 69 |
 | Sum of Story Points | 69 (21 User Stories de la Web Application, según los Story Points de la sección 3.3) |
 
 #### 5.2.2.2. Aspect Leaders and Collaborators.
