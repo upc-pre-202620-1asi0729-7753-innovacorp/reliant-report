@@ -866,8 +866,7 @@ Las fichas se elaboraron en UXPressia con la información recolectada en el Bloq
 
 #### Ficha de User Persona 3 — Segmento Asset Owner: Lucía Torres Quispe, Ingeniera de Confiabilidad
 
-![Lucía Torres Quispe](./assets/img/chapter-ii/needfinding/User_Persona-Lucia_Torres_Quispe.png)
-<!-- TODO: imagen User_Persona-Lucia_Torres_Quispe.png no está en assets/; subirla a assets/img/2.chapter-ii/2.3.needfinding/ y actualizar la ruta -->
+![Lucía Torres Quispe](./assets/img/2.chapter-ii/2.3.needfinding/User_Persona-Lucia_Torres_Quispe.png)
 
 | Campo | Contenido de la ficha |
 |---|---|
@@ -915,8 +914,7 @@ Los Journey Maps describen la experiencia actual (as-is) de cada persona en la t
 
 #### Journey Map 1 — Rosa Miranda: sustentar ante el cliente minero que un lote fue recubierto dentro de tolerancias
 
-![Journey Map Rosa Miranda](./assets/img/chapter-ii/needfinding/Journey_Map-Rosa_Miranda_Alegria.png)
-<!-- TODO: imagen Journey_Map-Rosa_Miranda_Alegria.png no está en assets/; subirla a assets/img/2.chapter-ii/2.3.needfinding/ y actualizar la ruta -->
+![Journey Map Rosa Miranda](./assets/img/2.chapter-ii/2.3.needfinding/Journey_Map-Rosa_Miranda_Alegria.png)
 
 | Fase | Acciones | Pensamientos | Emociones | Puntos de dolor |
 |---|---|---|---|---|
@@ -927,8 +925,7 @@ Los Journey Maps describen la experiencia actual (as-is) de cada persona en la t
 
 #### Journey Map 2 — Jorge Salinas: diagnosticar una parada no programada del sistema HVOF
 
-![Journey Map Jorge Salinas](./assets/img/chapter-ii/needfinding/Journey_Map-Jorge_Salinas_Paredes.png)
-<!-- TODO: imagen Journey_Map-Jorge_Salinas_Paredes.png no está en assets/; subirla a assets/img/2.chapter-ii/2.3.needfinding/ y actualizar la ruta -->
+![Journey Map Jorge Salinas](./assets/img/2.chapter-ii/2.3.needfinding/Journey_Map-Jorge_Salinas_Paredes.png)
 
 | Fase | Acciones | Pensamientos | Emociones | Puntos de dolor |
 |---|---|---|---|---|
@@ -939,8 +936,7 @@ Los Journey Maps describen la experiencia actual (as-is) de cada persona en la t
 
 #### Journey Map 3 — Lucía Torres: evaluar un componente recuperado que falló antes de su PCR
 
-![Journey Map Lucía Torres](./assets/img/chapter-ii/needfinding/Journey_Map-Lucia_Torres_Quispe.png)
-<!-- TODO: imagen Journey_Map-Lucia_Torres_Quispe.png no está en assets/; subirla a assets/img/2.chapter-ii/2.3.needfinding/ y actualizar la ruta -->
+![Journey Map Lucía Torres](./assets/img/2.chapter-ii/2.3.needfinding/Journey_Map-Lucia_Torres_Quispe.png)
 
 | Fase | Acciones | Pensamientos | Emociones | Puntos de dolor |
 |---|---|---|---|---|
@@ -981,8 +977,7 @@ Los Empathy Maps sintetizan lo que cada persona dice, piensa, hace y siente en r
 
 #### Empathy Map — Lucía Torres (Asset Owner)
 
-![Empathy Map Lucía Torres](./assets/img/chapter-ii/needfinding/Empathy_Map-Lucia_Torres_Quispe.png)
-<!-- TODO: imagen Empathy_Map-Lucia_Torres_Quispe.png no está en assets/; subirla a assets/img/2.chapter-ii/2.3.needfinding/ y actualizar la ruta -->
+![Empathy Map Lucía Torres](./assets/img/2.chapter-ii/2.3.needfinding/Empathy_Map-Lucia_Torres_Quispe.png)
 
 | Cuadrante | Contenido |
 |---|---|
