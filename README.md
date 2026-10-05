@@ -42,7 +42,7 @@ Proyecto
 | Versión | Fecha | Autor | Descripción de modificación |
 |---------|-------|-------|-----------------------------|
 | 1.0.1 | 2026-09-18 | Equipo InnovaCorp | Entrega AV1: capítulos I a IV (Startup Profile, Solution Profile, Requirements Elicitation & Analysis, Requirements Specification y Product Design) y sección 5.1 Software Configuration Management. |
-| 2.0.0 | 2026-10-02 | Rivera Aguilar, Scarlet Josefina | Retiro de los integrantes Bardales Rodríguez, Benjamín Elías y Yopla Romero, Jonathan Alberto de los perfiles de integrantes; corrección de la fila duplicada y de los datos de Fernandez Seer, Mario Alonso. |
+| 2.0.0 | 2026-10-02 | Rivera Aguilar, Scarlet Josefina | Retiro de los dos integrantes que dejaron el equipo de los perfiles de integrantes; corrección de la fila duplicada y de los datos de Fernandez Seer, Mario Alonso. |
 | 2.0.0 | 2026-10-05 | Navarro Aldoradin, Carolina Celeste | Retiro de los integrantes que dejaron el equipo de la carátula y del Student Outcome; acciones del TB1 en el Student Outcome; corrección de las rutas de imágenes tras la reorganización de `assets/`. |
 | 2.0.0 | 2026-10-05 | Navarro Aldoradin, Carolina Celeste | Capítulo III: User Stories US65 (navegación), US66 (cambio de idioma de la aplicación) y US67 (gestión de la sesión), Epic E13, Escenario 3 de US22 y Product Backlog priorizado con Story Points. |
 | 2.0.0 | 2026-10-05 | Navarro Aldoradin, Carolina Celeste | Capítulo IV: tipo de gráfico de los elementos de reporte (`viewType` / `view_type`) en 4.7.1 y 4.8.1. |
