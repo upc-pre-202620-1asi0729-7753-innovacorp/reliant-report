@@ -2319,6 +2319,9 @@ Debido a la complejidad del sistema, a la cantidad de Bounded Contexts definidos
 <img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/traceability/Reliant_Traceability_Infrastructure.png">
 
 #### Reporting
+
+En el bounded context Reporting, el tipo de gráfico de cada elemento de una plantilla se modela con el atributo `viewType` del Value Object `ReportWidget`, cuyo enum `ViewTypeEnum` incluye los gráficos de línea (`LINE_CHART`), de barras (`BAR_CHART`) y de indicador (`GAUGE`), además de las vistas tabulares y de resumen (`TABLE`, `KPI_CARD`, `MIN_MAX_AVG`, `BAND_TIMELINE`).
+
 <img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/reporting/Reliant_Reporting_Domain.png">
 <img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/reporting/Reliant_Reporting_Application.png">
 <img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/reporting/Reliant_Reporting_Interfaces.png">
@@ -2363,6 +2366,8 @@ El modelo relacional se despliega sobre PostgreSQL y refleja de forma directa el
 <img src="assets/img/4.chapter-iv/4.8.database-design/4.8.1.database-diagrams/Reliant_ProcessMonitoring_Database.png">
 
 <img src="assets/img/4.chapter-iv/4.8.database-design/4.8.1.database-diagrams/Reliant_Reporting_Database.png">
+
+En la tabla `report_widgets`, la columna `view_type` almacena el tipo de gráfico de cada elemento de la plantilla (`LINE_CHART`, `BAR_CHART`, `GAUGE`, `TABLE`, `KPI_CARD`, `MIN_MAX_AVG` o `BAND_TIMELINE`), como valor del enum `ViewTypeEnum` persistido en texto.
 
 <img src="assets/img/4.chapter-iv/4.8.database-design/4.8.1.database-diagrams/Reliant_Traceability_Database.png">
 
