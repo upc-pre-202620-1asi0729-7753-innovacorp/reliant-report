@@ -11,7 +11,8 @@ System_Ext(mailchimp, "Mailchimp", "Delivers e-mail alerts and manages the newsl
 
 System_Boundary(reliant, "Reliant") {
     Container(landing, "Landing Page", "HTML5, CSS3, JavaScript, GitHub Pages", "Presents the value proposition to both segments in English and Spanish, links to Terms and Conditions and redirects each segment to its registration view")
-    Container(webapp, "Web Application", "Angular, Angular Material, Netlify", "Single Page Application where users configure HVOF systems, run spray sessions, diagnose faults, issue certificates, register field returns and build report templates")
+    Container(webapp, "Web Application", "Node.js, PM2, Azure App Service", "Serves the compiled Single Page Application to the user's browser and redirects every route to it")
+    Container(spa, "Single Page Application", "Angular, Angular Material, ngx-translate", "Lets users configure HVOF systems and recipes, register recuperations, run and monitor spray sessions, diagnose faults, issue certificates, register field returns and build report templates, in English or Spanish, all in the browser")
     Container(api, "Web Services", "Java, Spring Boot, Spring Data JPA, Render", "RESTful API organized in eight bounded contexts (IAM, Billing, Equipment, Traceability, Process Monitoring, Fault Diagnosis, Notifications, Reporting) that applies the domain rules, publishes integration events and exposes OpenAPI documentation")
     ContainerDb(db, "Database", "PostgreSQL 16", "Stores organizations, HVOF systems, recipes, tag catalogs, components, recuperations, spray sessions, readings, fault cases, alerts, certificates and report templates")
 }
@@ -19,8 +20,10 @@ System_Boundary(reliant, "Reliant") {
 Rel(visitor, landing, "Visits", "HTTPS")
 Rel(landing, webapp, "Redirects segment call-to-actions to the registration view of", "HTTPS")
 Rel(landing, api, "Subscribes visitors to the newsletter through", "HTTPS / JSON")
-Rel(user, webapp, "Uses", "HTTPS")
-Rel(webapp, api, "Makes API calls to", "HTTPS / JSON, JWT")
+Rel(user, webapp, "Visits Reliant using", "HTTPS")
+Rel(webapp, spa, "Delivers to the user's web browser")
+Rel(user, spa, "Interacts with")
+Rel(spa, api, "Reads and writes organizations, equipment, recuperations, sessions and reports using", "HTTPS / JSON, JWT")
 Rel(api, db, "Reads from and writes to", "JDBC")
 Rel(gateway, plc, "Reads process, status and fault tags from", "EtherNet/IP")
 Rel(gateway, api, "Pushes telemetry batches to", "HTTPS / JSON, JWT")
