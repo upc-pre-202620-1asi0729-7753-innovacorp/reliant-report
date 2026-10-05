@@ -2661,15 +2661,53 @@ ENTRYPOINT ["java", "-jar", "app.jar"]
 
 El script `telemetry_simulator.py` se ejecuta localmente durante las demostraciones y envía lotes de lecturas por `POST /api/v1/spray-sessions/{sessionId}/readings` a la URL del API desplegado, autenticándose con las credenciales de la organización. No se despliega en la nube: representa al gateway que en producción se conecta al PLC.
 ## 5.2. Landing Page, Services & Applications Implementation.
-### 5.2.X. Sprint n
-#### 5.2.X.1. Sprint Planning n.
-#### 5.2.X.2. Aspect Leaders and Collaborators.
-#### 5.2.X.3. Sprint Backlog n.
-#### 5.2.X.4. Development Evidence for Sprint Review.
-#### 5.2.X.5. Execution Evidence for Sprint Review.
-#### 5.2.X.6. Services Documentation Evidence for Sprint Review.
-#### 5.2.X.7. Software Deployment Evidence for Sprint Review.
-#### 5.2.X.8. Team Collaboration Insights during Sprint.
+### 5.2.1. Sprint 1
+
+<!-- TODO: documentar el Sprint 1 (Landing Page v0.1.0, publicada el 2026-09-13 en reliant-website) -->
+
+### 5.2.2. Sprint 2
+
+#### 5.2.2.1. Sprint Planning 2.
+
+El Sprint 2 tuvo como objetivo construir la primera versión de la Frontend Web Application de Reliant sobre los bounded contexts que sostienen el flujo principal del segmento Recuperation Supplier: IAM, Billing, Equipment, Traceability y Process Monitoring. Al no existir aún los Web Services, la aplicación consume un fake API en json-server cuyos datos reproducen un caso real de recuperación con un sistema HVOF, una receta con bandas de umbral y sesiones de rociado con sus lecturas de proceso. Además, el equipo continuó el trabajo sobre el Landing Page en los aspectos de diseño e internacionalización. Según el historial de commits de `reliant-webapp`, el desarrollo se realizó entre el 29 de setiembre y el 4 de octubre de 2026, y cerró con el release 1.0.1 desplegado en Azure App Service.
+
+| Sprint # | Sprint 2 |
+|---|---|
+| **Sprint Planning Background** | |
+| Date | <!-- TODO: fecha del Sprint Planning 2 --> |
+| Time | <!-- TODO: hora del Sprint Planning 2 --> |
+| Location | <!-- TODO: lugar o plataforma (p. ej. Microsoft Teams) --> |
+| Prepared By | Navarro Aldoradin, Carolina Celeste |
+| Attendees (to planning meeting) | Navarro Aldoradin, Carolina Celeste / Rivera Aguilar, Scarlet Josefina / Fernandez Seer, Mario Alonso |
+| Sprint 1 Review Summary | En el Sprint 1 se publicó la primera versión del Landing Page (`v0.1.0`, repositorio `reliant-website`), con las secciones de propuesta de valor, información por segmento y Términos y Condiciones. <!-- TODO: completar con los comentarios recibidos en la revisión del Sprint 1 --> |
+| Sprint 1 Retrospective Summary | <!-- TODO: resumen de la retrospectiva del Sprint 1 --> |
+| **Sprint Goal & User Stories** | |
+| Sprint 2 Goal | Our focus is on letting a recuperation supplier register its equipment, recipes and recuperations, and run and monitor a spray session end to end. We believe it delivers process control and traceability to recuperation suppliers and visibility to asset owners. This will be confirmed when a supervisor completes a spray session in the deployed web application and an asset owner can review it. |
+| Sprint 2 Velocity | 75 <!-- TODO: confirmar la velocity acordada por el equipo --> |
+| Sum of Story Points | 75 (22 User Stories, según los Story Points de la sección 3.3) |
+
+#### 5.2.2.2. Aspect Leaders and Collaborators.
+
+La siguiente matriz LACX (Leadership-and-Collaboration Matrix) identifica, para cada aspecto trabajado en el Sprint 2, al integrante que lo lideró (L) y a quienes colaboraron (C). Los seis primeros aspectos corresponden a la Frontend Web Application, organizada por bounded context; los dos últimos corresponden al Landing Page.
+
+| Team Member (Last Name, First Name) | GitHub Username | Shared & Navigation Leader (L) / Collaborator (C) | IAM Leader (L) / Collaborator (C) | Equipment Leader (L) / Collaborator (C) | Traceability Leader (L) / Collaborator (C) | Process Monitoring Leader (L) / Collaborator (C) | Billing Leader (L) / Collaborator (C) | Landing Page Design Leader (L) / Collaborator (C) | Landing Page i18n Leader (L) / Collaborator (C) |
+|---|---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| Navarro Aldoradin, Carolina Celeste | genixmvp | L | L | L | L | L | L | C | C |
+| Rivera Aguilar, Scarlet Josefina | scarletriveraaguilar-spec | – | – | – | – | – | – | L | C |
+| Fernandez Seer, Mario Alonso | MrBaru | – | – | – | – | – | – | C | L |
+
+#### 5.2.2.3. Sprint Backlog 2.
+
+#### 5.2.2.4. Development Evidence for Sprint Review.
+
+#### 5.2.2.5. Execution Evidence for Sprint Review.
+
+#### 5.2.2.6. Services Documentation Evidence for Sprint Review.
+
+#### 5.2.2.7. Software Deployment Evidence for Sprint Review.
+
+#### 5.2.2.8. Team Collaboration Insights during Sprint.
+
 ## 5.3. Validation Interviews.
 ### 5.3.1. Diseño de Entrevistas.
 ### 5.3.2. Registro de Entrevistas.
