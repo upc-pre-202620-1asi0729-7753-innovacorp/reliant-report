@@ -1,0 +1,36 @@
+@startuml "Components-Bounded Contexts"
+!includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+title Reliant - Component Diagram (Single Page Application Bounded Contexts)
+
+Container(web, "Web Application", "Node.js, PM2, Azure App Service", "Serves the compiled Single Page Application to the user's browser")
+System_Ext(platformapi, "Reliant Platform API", "Stores organizations, users, plans, equipment, recuperations and spray sessions; a json-server fake API in Sprint 2, replaced by the Spring Boot Web Services")
+
+Container_Boundary(spa, "Single Page Application") {
+    Component(iam, "IAM", "Angular", "Registers organizations, signs users in and out, manages user roles, and protects routes with iamGuard, supplierGuard and roleGuard")
+    Component(billing, "Billing", "Angular", "Lists the Operator and Asset Owner plans, selects the plan of the organization type and shows the subscription status")
+    Component(equipment, "Equipment", "Angular", "Manages HVOF systems, controllers, subsystems, parts and recipes with threshold bands and applicable components")
+    Component(traceability, "Traceability", "Angular", "Manages customers, recovered components and recuperation orders with their work and manufacturing orders")
+    Component(processmonitoring, "Process Monitoring", "Angular", "Starts spray sessions, polls and classifies process readings by band, completes or aborts sessions and browses the session history")
+    Component(shared, "Shared", "Angular", "BaseEntity, BaseAssembler, BaseResponse, BaseApiEndpoint, BaseApi, ErrorHandlingEnabledBaseType, BaseForm, and cross-cutting presentation: Layout, LanguageSwitcher, FooterContent, Home, About, PageNotFound")
+}
+
+Rel(web, spa, "Serves")
+Rel(iam, shared, "Extends BaseApi, BaseApiEndpoint, ErrorHandlingEnabledBaseType and BaseForm from, and implements BaseAssembler and BaseEntity from")
+Rel(billing, shared, "Extends BaseApiEndpoint and BaseApi from, and implements BaseAssembler and BaseEntity from")
+Rel(equipment, shared, "Extends BaseApiEndpoint, BaseApi and BaseForm from, and implements BaseAssembler and BaseEntity from")
+Rel(traceability, shared, "Extends BaseApiEndpoint, BaseApi and BaseForm from, and implements BaseAssembler and BaseEntity from")
+Rel(processmonitoring, shared, "Extends BaseApiEndpoint, BaseApi and BaseForm from, and implements BaseAssembler and BaseEntity from")
+Rel(shared, iam, "Renders AuthenticationSection and filters the toolbar options with the session of")
+Rel(iam, billing, "Protects the routes of, with iamGuard and roleGuard, and provides the signed-in organization to")
+Rel(iam, equipment, "Protects the routes of, with supplierGuard and roleGuard, provides the signed-in organization to, and reloads the store of")
+Rel(iam, traceability, "Protects the routes of, with supplierGuard, provides the signed-in organization to, and reloads the store of")
+Rel(iam, processmonitoring, "Protects the routes of, with supplierGuard and roleGuard, and provides the signed-in operator to")
+Rel(processmonitoring, equipment, "Reads the HVOF systems and active recipes, and classifies readings with the Recipe bands of")
+Rel(processmonitoring, traceability, "Reads the open recuperation orders of")
+Rel(iam, platformapi, "Signs organizations up and users in, and reads and updates users and roles using [HTTP/JSON]")
+Rel(billing, platformapi, "Reads plans and reads and writes subscriptions using [HTTP/JSON]")
+Rel(equipment, platformapi, "Reads and writes HVOF systems, controllers, subsystems, parts and recipes using [HTTP/JSON]")
+Rel(traceability, platformapi, "Reads and writes customers, components and recuperations using [HTTP/JSON]")
+Rel(processmonitoring, platformapi, "Reads and writes spray sessions and process readings using [HTTP/JSON]")
+@enduml
