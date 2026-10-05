@@ -41,8 +41,8 @@ Proyecto
 
 # Registro de Versiones del Informe
 | Versión | Fecha | Autor | Descripción de modificación |
-|---------|-------|-------|-----------------------------|
-|         |       |       |                             |
+|   AV1  | 03/10/2026 | InnovaCorp  |-----------------------------|
+|   TB1  | 03/10/2026 | InnovaCorp  |                             |
 
 
 # Project Report Collaboration Insights
@@ -175,8 +175,8 @@ Ser la plataforma de referencia en Latinoamérica para el monitoreo y la trazabi
 | Foto de participante                                                    | Nombres y apellidos                | Código de estudiante  | Descripción de carrera                                            | Principales conocimiento técnicos y habilidades                                                                                                                                           |
 |:------------------------------------------------------------------------|------------------------------------|-----------------------|-------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | <img src="assets/img/chapter-i/startup-profile/carolina-navarro.jpeg">  | Carolina Celeste Navarro Aldoradin | u20241b962            | Ingeniería de Software, Universidad Peruana de Ciencias Aplicadas | Cuento con conocimiento del lenguaje Java, C#, C++, Javascript, Python y Ladder. Asimismo, cuento con experiencia en proyectos de integración, monitoreo e IoT en entornos industriales.  |
-| <img src="assets/img/chapter-i/startup-profile/Captura de pantalla 2026-09-14 104228.png"> | Scarlet Josefina Rivera Aguilar    | u20241f577            | Ingeniería de Software, Universidad Peruana de Ciencias Aplicadas | Durante mi formación en Ingeniería de Software, actualmente en quinto ciclo, he desarrollado conocimientos en distintos lenguajes de programación, organización y planificación de proyectos. Asimismo, he participado en proyectos académicos relacionados con el desarrollo de aplicaciones web, diseño de interfaces y elaboración de prototipos. |
-| <img width="640" height="641" alt="image" src="https://github.com/user-attachments/assets/841e55fc-64c0-4acc-9e4f-a4f0530d995a" /> | Mario Alonso Fernández Seer | u202317807 | Ingeniería de Software, Universidad Peruana de Ciencias Aplicadas | Cuento con conocimientos en C++, Python, JavaScript, desarrollo web y diseño de bases de datos. Asimismo, poseo habilidades para el análisis de requerimientos, la documentación de proyectos y la investigación de usuarios. En Reliant participé en el levantamiento y análisis de información del segmento Asset Owner. |
+| <img src="assets/img/chapter-i/startup-profile/scarlet-rivera.png"> | Scarlet Josefina Rivera Aguilar    | u20241f577            | Ingeniería de Software, Universidad Peruana de Ciencias Aplicadas | Durante mi formación en Ingeniería de Software, actualmente en quinto ciclo, he desarrollado conocimientos en distintos lenguajes de programación, organización y planificación de proyectos. Asimismo, he participado en proyectos académicos relacionados con el desarrollo de aplicaciones web, diseño de interfaces y elaboración de prototipos. |
+| <img src="assets/img/chapter-i/startup-profile/mario-fernandez.png"> | Mario Alonso Fernández Seer | u202317807 | Ingeniería de Software, Universidad Peruana de Ciencias Aplicadas | Cuento con conocimientos en C++, Python, JavaScript, desarrollo web y diseño de bases de datos. Asimismo, poseo habilidades para el análisis de requerimientos, la documentación de proyectos y la investigación de usuarios. En Reliant participé en el levantamiento y análisis de información del segmento Asset Owner. |
 
 
 ## 1.2. Solution Profile
@@ -464,9 +464,101 @@ Se formula un hypothesis statement por cada feature assumption enunciado en la s
 **With** customizable report templates that can be shared within the organization.
 
 ### 1.2.2.4. Lean UX Canvas.
-
 A continuación se presenta el Lean UX Canvas (versión 2, Jeff Gothelf) elaborado por el equipo, el cual consolida en un solo artefacto el problema de negocio, los resultados esperados, los usuarios, las soluciones propuestas y las hipótesis derivadas de las secciones anteriores. Los cuadros 7 y 8 establecen la prioridad de aprendizaje del equipo para el primer ciclo de validación.
+## 1. Business Problem
+   Las organizaciones que operan procesos de recubrimiento térmico HVOF generan información relevante durante cada sesión de rociado mediante el PLC del equipo. Sin embargo, estos datos permanecen frecuentemente en registros locales, archivos aislados o formatos manuales que no se encuentran vinculados con la orden de fabricación (OF), la orden de trabajo (WO), el componente, la receta utilizada ni su desempeño posterior en campo.
+   Esta situación limita la trazabilidad del proceso, dificulta demostrar que un componente fue recubierto dentro de las condiciones establecidas y obliga a reconstruir manualmente la información cuando ocurre una falla o un reclamo. Asimismo, el diagnóstico de fallas depende en gran medida del conocimiento tácito de técnicos experimentados y de la revisión manual de registros del controlador.
+   En consecuencia, el problema de negocio identificado es que las organizaciones que operan procesos HVOF no logran transformar los datos generados durante el proceso en trazabilidad verificable, diagnóstico oportuno y conocimiento reutilizable que contribuya a mejorar futuras operaciones.
 
+## 2. Business Outcomes
+   Los resultados de negocio que se esperan alcanzar mediante Reliant son los siguientes:
+- Incrementar el porcentaje de órdenes de trabajo cuyo proceso puede ser reconstruido completamente desde la recepción del componente hasta las condiciones reales de su sesión de rociado.
+- Lograr que al menos el 80 % de las órdenes de trabajo entregadas cuenten con evidencia de calidad generada desde la plataforma.
+- Reducir al menos en 40 % el tiempo requerido para determinar la causa probable de una parada del sistema HVOF.
+- Lograr que al menos el 60 % de los componentes retornados tengan su vida útil registrada y comparada con su Planned Component Replacement (PCR).
+- Incrementar la cantidad de sesiones de rociado registradas por sistema HVOF como indicador de adopción sostenida.
+- Reducir la dependencia del conocimiento tácito mediante el registro estructurado de fallas, causas y acciones correctivas.
+- Favorecer la continuidad del uso de la plataforma mediante la renovación de suscripciones y el uso recurrente de reportes y certificados.
+
+## 3. Users
+   Reliant está dirigido principalmente a organizaciones que operan procesos de recubrimiento térmico HVOF.
+   Segmento principal: empresas de servicio especializado en recubrimiento HVOF.
+   Son organizaciones que realizan procesos de recuperación de componentes para terceros y necesitan demostrar que el recubrimiento fue ejecutado dentro de las condiciones acordadas con sus clientes.
+   Sus principales usuarios son:
+- Ingeniero de Calidad o Jefe de Procesos.
+- Supervisor de Mantenimiento.
+- Supervisor de Operaciones.
+- Operador HVOF.
+- Técnico de mantenimiento.
+  Segmento secundario: plantas industriales con línea de recubrimiento HVOF in-house.
+  Son organizaciones que utilizan equipos HVOF como parte de sus procesos internos de mantenimiento y cuya principal necesidad es asegurar la disponibilidad y confiabilidad del equipo.
+  Sus principales usuarios son:
+- Jefe o Supervisor de Mantenimiento.
+- Ingeniero de Confiabilidad.
+- Técnico de mantenimiento.
+- Planner de mantenimiento.
+  En ambos segmentos, los usuarios poseen un alto conocimiento del entorno industrial, pero presentan una competencia digital media, por lo que requieren una plataforma de baja complejidad de uso y con una curva de aprendizaje reducida.
+
+## 4. User Outcomes and Benefits
+   Los principales resultados y beneficios esperados por los usuarios son los siguientes:
+   Ingeniero de Calidad: disponer de evidencia verificable de que un componente fue recubierto dentro de las condiciones establecidas, sin tener que reconstruir la información desde registros dispersos.
+   Supervisor de Mantenimiento: reducir el tiempo necesario para identificar el subsistema o parte del sistema HVOF posiblemente responsable de una falla.
+   Operador HVOF: recibir alertas mientras la sesión se encuentra en ejecución cuando un parámetro se desvía de la banda definida por la receta.
+   Ingeniero de Confiabilidad: relacionar el desempeño real del componente en campo con su historial de recuperación y con el PCR establecido.
+   Organización: conservar el conocimiento generado durante cada falla, evitando que dependa exclusivamente de la experiencia de determinados especialistas.
+
+## 5. Solutions
+   A partir de los problemas y necesidades identificados, se proponen las siguientes soluciones:
+- Captura automática de la telemetría generada por los controladores del sistema HVOF mediante una API REST.
+- Vinculación de cada sesión de rociado con la OF, WO, cliente, componente, modelo, sistema HVOF y receta utilizada.
+- Definición de recetas con valores nominales y bandas de advertencia y parada.
+- Clasificación automática de las lecturas según las bandas establecidas en la receta.
+- Generación de alertas en tiempo real ante desviaciones de parámetros o fallas críticas.
+- Diagnóstico asistido mediante reglas causa-efecto para identificar el subsistema o parte posiblemente responsable.
+- Detección de patrones recurrentes de falla.
+- Generación de certificados de calidad y reportes de sesiones.
+- Registro de la vida útil alcanzada por los componentes y comparación contra su PCR.
+- Consulta de históricos de sesiones, fallas y desempeño de componentes.
+- Creación de plantillas de reportes personalizables según las necesidades de cada organización.
+
+## 6. Hypotheses
+   Las principales hipótesis que sustentan la propuesta de Reliant son las siguientes:
+   H1. Trazabilidad del proceso
+   Creemos que aumentará el porcentaje de órdenes completamente trazables si los Ingenieros de Calidad pueden reconstruir el historial de cada componente mediante la vinculación de la sesión de rociado con su OF, WO, cliente y modelo.
+   H2. Control de desviaciones
+   Creemos que disminuirán los componentes recubiertos fuera de las condiciones esperadas si los operadores reciben alertas cuando las lecturas abandonan las bandas definidas por la receta durante la sesión.
+   H3. Diagnóstico de fallas
+   Creemos que el tiempo requerido para determinar la causa probable de una parada se reducirá al menos en 40 % si los Supervisores de Mantenimiento reciben una sugerencia del subsistema o parte posiblemente involucrada mediante reglas causa-efecto.
+   H4. Evidencia de calidad
+   Creemos que al menos el 80 % de las órdenes entregadas podrán contar con evidencia de calidad generada por la plataforma si los datos del proceso se almacenan y relacionan automáticamente con la orden correspondiente.
+   H5. Seguimiento contra PCR
+   Creemos que al menos el 60 % de los componentes retornados podrán registrar su vida útil y contrastarla con su PCR si el historial del componente se encuentra centralizado en la plataforma.
+   H6. Gestión del conocimiento
+   Creemos que se reducirá la dependencia del conocimiento tácito si las fallas, causas confirmadas y acciones correctivas permanecen registradas y disponibles para futuros casos similares.
+
+## 7. What Is the Most Important Thing We Need to Learn First?
+   La principal incertidumbre que el equipo debe validar es si la falta de trazabilidad, la dificultad para reconstruir información histórica y la dependencia del conocimiento de especialistas representan problemas suficientemente relevantes para justificar la adopción de Reliant dentro del flujo de trabajo de las organizaciones que operan HVOF.
+   Durante el primer ciclo de validación se debe comprobar principalmente:
+- Si los usuarios necesitan recuperar información de sesiones anteriores ante reclamos, auditorías o fallas.
+- Si la búsqueda y reconstrucción manual de esta información representa actualmente un esfuerzo significativo.
+- Si el diagnóstico de fallas depende de pocos especialistas y de la revisión manual de registros.
+- Si los usuarios consideran útil recibir alertas durante la ejecución de la sesión.
+- Si la vinculación entre telemetría, OF, WO y componente genera un valor suficiente frente al proceso actual.
+- Si la integración con los controladores existentes puede realizarse sin modificar directamente el PLC.
+
+## 8. What Is the Least Amount of Work We Need to Do to Learn the Next Most Important Thing?
+   Para validar las hipótesis de mayor riesgo no es necesario desarrollar todas las funcionalidades de Reliant. El equipo puede implementar inicialmente un MVP que permita:
+- Registrar un componente y una orden de trabajo.
+- Asociar una sesión de rociado con su OF y WO.
+- Recibir datos históricos, reales o simulados del controlador.
+- Visualizar los principales parámetros del proceso.
+- Comparar las lecturas con las bandas definidas en una receta.
+- Generar una alerta básica ante una desviación.
+- Consultar el historial de una sesión vinculada al componente.
+- Simular un caso de falla e indicar el subsistema o parte posiblemente responsable.
+- Generar una evidencia básica del proceso registrado.
+  Este MVP deberá ser presentado a representantes de los segmentos definidos con el propósito de observar si pueden comprender el flujo, encontrar la información requerida y determinar si la solución aporta valor frente al proceso actual.
+  Los resultados obtenidos permitirán validar o rechazar las principales hipótesis antes de continuar con funcionalidades de mayor complejidad como análisis históricos avanzados, detección de patrones recurrentes, seguimiento detallado del PCR y personalización completa de reportes.
 ## 1.3. Segmentos objetivo.
 
 Reliant se dirige a organizaciones que **operan** un proceso de recubrimiento térmico HVOF, no a quienes consumen sus resultados. Esta distinción es determinante: las empresas mineras son las que exigen la garantía de vida útil y las que sufren el costo de una falla prematura, pero no operan equipos HVOF ni serían las usuarias directas de la plataforma. Actúan como la fuente de presión contractual que motiva la adquisición del producto, no como segmento de usuario. En consecuencia, se han definido dos segmentos objetivo diferenciados por el **tipo de operación** que realizan y no por su tamaño, ya que es el tipo de operación—servicio a terceros frente a operación interna, el que genera necesidades y motivaciones de compra distintas.
@@ -734,10 +826,11 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | Edad | 29 años |
 | Distrito | San Miguel |
 | Ocupacion | Ingeniero de Proyectos |
+| Timing inicio | 00:00 minutos |
 | Duracion | 16:13 minutos |
 | URL | https://drive.google.com/file/d/1Kz4-cB8Z7LLDR8P2sAM7_8ShWzVvMpjP/view?usp=sharing |
-| Screenshot| <img src="assets/img/chapter-ii/needfinding/Captura de pantalla 2026-09-17 131808.png"> |
-| Resumen | Cristian Rimac, de 29 años, es ingeniero de proyectos y vive en San Miguel. Durante la entrevista, explicó que los componentes recibidos de los clientes se identifican principalmente mediante el número de orden de trabajo. Sin embargo, mencionó que en ocasiones resulta complicado localizar las piezas dentro del taller, por lo que deben buscarlas o consultar con otros trabajadores. Asimismo, indicó que los parámetros del proceso de recuperación pueden quedar registrados, pero no existe un control completo y organizado de la información. Esto dificulta realizar un seguimiento adecuado de las piezas recuperadas y consultar los datos de procesos anteriores. La entrevista permitió identificar problemas relacionados con la trazabilidad de los componentes y la gestión de la información durante el proceso de recuperación.
+| Screenshot| <img src="assets/img/chapter-ii/needfinding/carolina_entrevista1_segmento1.png"> |
+
 
 | Segmento: RecuperationSupplier | Entrevista #2 |
 |:--:|:--:|
@@ -745,47 +838,46 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | Edad | 30 años |
 | Distrito | Surquillo |
 | Ocupacion | Especialista en investigación de desarrollo |
+| Timing inicio | 00:00 minutos |
 | Duracion | 8:50 minutos |
 | URL | https://drive.google.com/file/d/1C9NDE2k5fsSGtt2NXbIFq6dNA72oELuV/view?usp=sharing |
-| Screenshot| <img src="<img src="assets/img/chapter-ii/needfinding/Captura de pantalla 2026-09-18 063515.png"> |
-| Resumen | Durante la entrevista, Aron Ramires, de 30 años, explicó que el proceso de recuperación inicia con la recepción e identificación de las piezas del cliente, utilizando órdenes de trabajo y registros internos. Durante el rociado se almacenan datos como los parámetros de la máquina, materiales utilizados y tiempo de trabajo, aunque la búsqueda de registros antiguos puede resultar complicada. Asimismo, mencionó que los clientes solicitan certificados, informes y evidencias de calidad. Cuando se presentan reclamos, es necesario revisar la información del proceso, lo que puede generar demoras. También señaló que existen compromisos relacionados con la duración de las piezas recuperadas (PCR) y que algunas fallas de las máquinas se repiten, pero no siempre están registradas de manera organizada. Finalmente, explicó que cuando una pieza falla en el cliente, se requiere revisar los registros para determinar si el problema está relacionado con el recubrimiento, evidenciando dificultades en la trazabilidad y el análisis de fallas.
+| Screenshot| <img src="<img src="assets/img/chapter-ii/needfinding/carolina_entrevista2_segmento1.png"> |
+
 
 | Segmento: RecuperationSupplier | Entrevista #3 |
 |:--:|:--:|
 | Nombres y Apellidos | Belisa Paredes|
 | Edad | 46 años |
 | Distrito | Surquillo |
-| Ocupacion | supervisora |
+| Ocupacion | Supervisora |
+| Timing inicio | 00:00 minutos|
 | Duracion | 11:35 minutos |
 | URL | https://upcedupe-my.sharepoint.com/personal/u202410376_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu202410376%5Fupc%5Fedu%5Fpe%2FDocuments%2FDesarrolloAplicacionesOpenSource%2Emp4&nav=
-eyJyZWZlcnJhbEluZm8iOnsi
-cmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopi
-ed%2Eview%2E001f7777%2D3095%2D43ae%2Dbdb0%2D89ae880547ea |
-| Screenshot| <img src="assets/img/chapter-ii/needfinding/fran.png">  |
-| Resumen | La entrevista busca conocer el proceso de recuperación de piezas, desde su recepción hasta la entrega al cliente, identificando cómo se registran las corridas de rociado, qué evidencias solicitan los clientes y cómo se gestionan los problemas de calidad. También se pretende comprender las fallas de las máquinas, la repetición de errores y el seguimiento de la vida útil de las piezas recuperadas, con el fin de identificar dificultades en la trazabilidad, el diagnóstico y el análisis de fallas.
+| Screenshot| <img src="assets/img/chapter-ii/needfinding/francisco_entrevista_segmento1.png">  |
 
 
 | Segmento: AssetOwner | Entrevista #1 |
 |---|---|
-| Nombres y Apellidos | Valeria Aranguri |
-| Edad | 21 años |
-| Distrito | Surco |
-| Ocupación | Estudiante de Ingeniería Industrial y asistente de construcción y proyectos con experiencia en operaciones mineras |
-| Timing inicio | 00:00 |
-| Duración | 13 minutos con 40 segundos |
-| URL | [Entrevista Segmento 2 - Asset Owner](https://drive.google.com/file/d/1lfzvUGM0Sf1K5balZaaP8kYs97IqWC2X/view?usp=sharing) |
-| Screenshot | Pendiente de agregar |
-| Resumen | La entrevistada cuenta con experiencia como asistente de construcción y proyectos en operaciones mineras como Quellaveco, Las Bambas y Chinalco. Sus responsabilidades incluyeron brindar soporte a ingenieros y supervisores, realizar seguimiento de actividades, coordinar con distintas áreas y elaborar reportes desde campo. Señaló que las fallas de equipos afectan la programación, el personal y los recursos disponibles. Asimismo, explicó que el seguimiento se apoya principalmente en Excel, reportes, llamadas, WhatsApp y sistemas internos que no siempre son visibles para el personal de operación. Para evaluar proveedores se consideran la documentación presentada, el cumplimiento de requisitos, los plazos de entrega y los antecedentes del servicio. Finalmente, manifestó la necesidad de una plataforma centralizada que muestre el estado, ubicación, responsable, proveedor y fecha estimada de disponibilidad de cada componente. |
+| Nombres y Apellidos | Rivaldo Muñoz |
+| Edad | 25 años |
+| Distrito | Lima |
+| Ocupación | Supervisor de equipos y componentes |
+| Timing inicio | 00:00 minutos |
+| Duración | 08:22 minutos |
+| URL | https://drive.google.com/file/d/1cCIuMAmfq9RqDE42EzkCLZKO2DNnXMVh/view?usp=sharing |
+| Screenshot | <img src="assets/img/chapter-ii/needfinding/scarlet_entrevista_segmento2.png"> |
+
 | Segmento: AssetOwner | Entrevista #2 |
 |:--:|:--:|
 | Nombres y Apellidos | Wilson Bardales |
 | Edad | 65 años |
 | Distrito | Lima |
 | Ocupacion | Gerente de procesos |
+| Timing inicio | 00:00 minutos|
 | Duracion | 11:19 minutos |
 | URL | https://youtu.be/ELUn_X1SDxo?si=Av2cGm2uR-eTnTVn |
-| Screenshot| <img src="assets/img/chapter-ii/needfinding/Captura de pantalla 2026-09-17 141725.png">  |
-| Resumen | Wilson Bardales, de 65 años, es gerente de procesos y vive en Lima. Durante la entrevista, explicó que la empresa trabaja en el área de mantenimiento preventivo y utiliza proveedores como Epiroc y Desmozambic, principalmente para las perforadoras de producción. Asimismo, relató un caso en el que una bomba de una perforadora nueva presentaba fallas frecuentes. En conjunto con el proveedor, identificaron problemas relacionados con la calidad del agua utilizada en el sistema de enfriamiento y una baja eficiencia del componente. Como parte de la solución, se recomendó cambiar el motor y realizar correcciones en algunas piezas.La entrevista permitió identificar la importancia de mejorar el seguimiento de la vida útil de los componentes, analizar las causas de fallas prematuras y trabajar con los proveedores para mejorar el desempeño de los equipos.
+| Screenshot| <img src="assets/img/chapter-ii/needfinding/benjamin_entrevista_segmento2.png">  |
+
 
 | Segmento: AssetOwner | Entrevista #3 |
 |:--:|:--:|
@@ -793,10 +885,10 @@ ed%2Eview%2E001f7777%2D3095%2D43ae%2Dbdb0%2D89ae880547ea |
 | Edad | 21 años |
 | Distrito | Surco |
 | Ocupacion | Asistente de construcción y proyectos con experiencia en operaciones mineras |
+| Timing inicio | 00:00 minutos |
 | Duracion | 13:40 minutos|
 | URL | https://drive.google.com/file/d/1lfzvUGM0Sf1K5balZaaP8kYs97IqWC2X/view?usp=sharing |
-| Screenshot| <img src="assets/img/chapter-ii/needfinding/Captura de pantalla 2026-09-18 124843.png"> |
-| Resumen | La entrevistada cuenta con experiencia como asistente de construcción y proyectos en operaciones mineras como Quellaveco, Las Bambas y Chinalco. Sus responsabilidades incluyeron brindar soporte a ingenieros y supervisores, realizar seguimiento de actividades, coordinar con distintas áreas y elaborar reportes desde campo. Señaló que las fallas de equipos afectan la programación, el personal y los recursos disponibles. Asimismo, explicó que el seguimiento se apoya principalmente en Excel, reportes, llamadas, WhatsApp y sistemas internos que no siempre son visibles para el personal de operación. Para evaluar proveedores se consideran la documentación presentada, el cumplimiento de requisitos, los plazos de entrega y los antecedentes del servicio. Finalmente, manifestó la necesidad de una plataforma centralizada que muestre el estado, ubicación, responsable, proveedor y fecha estimada de disponibilidad de cada componente.
+| Screenshot| <img src="assets/img/chapter-ii/needfinding/mario_entrevista_segmento2.png"> |
 
 ### 2.2.3. Análisis de entrevistas.
 
@@ -1663,35 +1755,32 @@ Los wireframes de la Landing Page de Relient muestran la distribución prelimina
 La elaboración de los wireframes facilita la identificación de posibles problemas de distribución y permite realizar ajustes antes de desarrollar la interfaz definitiva. También ayuda a comprobar que los elementos principales, como el logotipo, los enlaces de navegación y los botones de acción, se encuentren ubicados de acuerdo con la estructura propuesta.
 
 ## Desktop Web Browser
-<img src="assets/img/chapter-ii/needfinding/webW1.png "> 
-<img src="assets/img/chapter-ii/needfinding/webW2.png "> 
-<img src="assets/img/chapter-ii/needfinding/webW3.png "> 
-<img src="assets/img/chapter-ii/needfinding/webW4.png "> 
-<img src="assets/img/chapter-ii/needfinding/webW5.png "> 
+<img src="assets/img/chapter-ii/needfinding/landing-wireframe1.png "> 
+<img src="assets/img/chapter-ii/needfinding/landing-wireframe2.png ">
+<img src="assets/img/chapter-ii/needfinding/landing-wireframe3.png ">
+<img src="assets/img/chapter-ii/needfinding/landing-wireframe4.png ">
 
 ## Mobile Web Browser
-<img src="assets/img/chapter-ii/needfinding/movilW1.png "> 
-<img src="assets/img/chapter-ii/needfinding/movilW2.png "> 
-<img src="assets/img/chapter-ii/needfinding/movilW3.png "> 
-<img src="assets/img/chapter-ii/needfinding/movilW4.png "> 
-<img src="assets/img/chapter-ii/needfinding/movilW5.png "> 
+<img src="assets/img/chapter-ii/needfinding/mobile-wireframe1.png "> 
+<img src="assets/img/chapter-ii/needfinding/mobile-wireframe2.png "> 
+<img src="assets/img/chapter-ii/needfinding/mobile-wireframe3.png "> 
+<img src="assets/img/chapter-ii/needfinding/mobile-wireframe4.png "> 
 
 
 ### 4.3.2. Landing Page Mock-up.
 
 ## Desktop Web Browser
-<img src="assets/img/chapter-ii/needfinding/mockups web1.png "> 
-<img src="assets/img/chapter-ii/needfinding/mockups web2.png "> 
-<img src="assets/img/chapter-ii/needfinding/mockups web3.png "> 
-<img src="assets/img/chapter-ii/needfinding/mockups web4.png "> 
-<img src="assets/img/chapter-ii/needfinding/mockups web5.png "> 
+<img src="assets/img/chapter-ii/needfinding/landing-mockup1.png "> 
+<img src="assets/img/chapter-ii/needfinding/landing-mockup2.png "> 
+<img src="assets/img/chapter-ii/needfinding/landing-mockup3.png "> 
+<img src="assets/img/chapter-ii/needfinding/landing-mockup4.png "> 
 
 ## Mobile Web Browser
-<img src="assets/img/chapter-ii/needfinding/mockups app1.png "> 
-<img src="assets/img/chapter-ii/needfinding/mockups app2.png "> 
-<img src="assets/img/chapter-ii/needfinding/mockups app3.png "> 
-<img src="assets/img/chapter-ii/needfinding/mockups app4.png "> 
-<img src="assets/img/chapter-ii/needfinding/mockups app5.png "> 
+<img src="assets/img/chapter-ii/needfinding/mobile-mockup1.png "> 
+<img src="assets/img/chapter-ii/needfinding/mobile-mockup2.png "> 
+<img src="assets/img/chapter-ii/needfinding/mobile-mockup3.png "> 
+<img src="assets/img/chapter-ii/needfinding/mobile-mockup4.png "> 
+
 
 
 ## 4.4. Web Applications UX/UI Design.
@@ -1703,27 +1792,28 @@ Para lograrlo, se elaborarán wireframes, wireflows, mock-ups y user flow diagra
 Los wireframes de la Web Application de Relient presentan una representación inicial de la estructura y distribución de las pantallas principales de la plataforma. Estos esquemas permiten definir la ubicación de los elementos de navegación, botones, formularios, tarjetas, tablas y secciones informativas antes de incorporar el diseño visual final.
 Asimismo, los wireframes ayudan a organizar las funcionalidades de acuerdo con las necesidades de los usuarios y los User Stories definidos, facilitando la revisión de la experiencia de navegación y la identificación de posibles mejoras en la interfaz.
 
-<img src="assets/img/chapter-ii/needfinding/w1.png"> 
-<img src="assets/img/chapter-ii/needfinding/w2.png"> 
-<img src="assets/img/chapter-ii/needfinding/w3.png "> 
-<img src="assets/img/chapter-ii/needfinding/w4.png"> 
-<img src="assets/img/chapter-ii/needfinding/w5.png "> 
-<img src="assets/img/chapter-ii/needfinding/w6.png "> 
-<img src="assets/img/chapter-ii/needfinding/w7.png"> 
-<img src="assets/img/chapter-ii/needfinding/w8.png "> 
-<img src="assets/img/chapter-ii/needfinding/w9.png "> 
-<img src="assets/img/chapter-ii/needfinding/w10.png"> 
-<img src="assets/img/chapter-ii/needfinding/w11.png"> 
-<img src="assets/img/chapter-ii/needfinding/w12.png "> 
-<img src="assets/img/chapter-ii/needfinding/w13.png "> 
-<img src="assets/img/chapter-ii/needfinding/w14.png"> 
-<img src="assets/img/chapter-ii/needfinding/w15.png"> 
-<img src="assets/img/chapter-ii/needfinding/w16.png "> 
-<img src="assets/img/chapter-ii/needfinding/w17.png"> 
-<img src="assets/img/chapter-ii/needfinding/w18.png "> 
-<img src="assets/img/chapter-ii/needfinding/w19.png "> 
-<img src="assets/img/chapter-ii/needfinding/w20.png"> 
-<img src="assets/img/chapter-ii/needfinding/w21.png "> 
+<img src="assets/img/chapter-ii/needfinding/wireframe1.png"> 
+<img src="assets/img/chapter-ii/needfinding/wireframe2.png"> 
+<img src="assets/img/chapter-ii/needfinding/wireframe3.png"> 
+<img src="assets/img/chapter-ii/needfinding/wireframe4.png"> 
+<img src="assets/img/chapter-ii/needfinding/wireframe5.png"> 
+<img src="assets/img/chapter-ii/needfinding/wireframe6.png"> 
+<img src="assets/img/chapter-ii/needfinding/wireframe7.png"> 
+<img src="assets/img/chapter-ii/needfinding/wireframe8.png"> 
+<img src="assets/img/chapter-ii/needfinding/wireframe9.png"> 
+<img src="assets/img/chapter-ii/needfinding/wireframe10.png"> 
+<img src="assets/img/chapter-ii/needfinding/wireframe11.png"> 
+<img src="assets/img/chapter-ii/needfinding/wireframe12.png"> 
+<img src="assets/img/chapter-ii/needfinding/wireframe13.png"> 
+<img src="assets/img/chapter-ii/needfinding/wireframe14.png"> 
+<img src="assets/img/chapter-ii/needfinding/wireframe15.png"> 
+<img src="assets/img/chapter-ii/needfinding/wireframe16.png"> 
+<img src="assets/img/chapter-ii/needfinding/wireframe17.png"> 
+<img src="assets/img/chapter-ii/needfinding/wireframe18.png"> 
+<img src="assets/img/chapter-ii/needfinding/wireframe19.png"> 
+<img src="assets/img/chapter-ii/needfinding/wireframe20.png"> 
+<img src="assets/img/chapter-ii/needfinding/wireframe21.png"> 
+
 
 
 
@@ -1735,31 +1825,32 @@ Asimismo, los wireframes ayudan a organizar las funcionalidades de acuerdo con l
 
 
 ### 4.4.3. Web Applications Mock-ups.
-<img src="assets/img/chapter-ii/needfinding/MW1.png "> 
-<img src="assets/img/chapter-ii/needfinding/MW2.png"> 
-<img src="assets/img/chapter-ii/needfinding/MW3.png "> 
-<img src="assets/img/chapter-ii/needfinding/MW4.png "> 
-<img src="assets/img/chapter-ii/needfinding/MW5.png "> 
-<img src="assets/img/chapter-ii/needfinding/MW6.png "> 
-<img src="assets/img/chapter-ii/needfinding/MW7.png "> 
-<img src="assets/img/chapter-ii/needfinding/MW8.png "> 
-<img src="assets/img/chapter-ii/needfinding/MW9.png "> 
-<img src="assets/img/chapter-ii/needfinding/MW10.png "> 
-<img src="assets/img/chapter-ii/needfinding/MW11.png"> 
-<img src="assets/img/chapter-ii/needfinding/MW12.png "> 
-<img src="assets/img/chapter-ii/needfinding/MW13.png "> 
-<img src="assets/img/chapter-ii/needfinding/MW14.png "> 
-<img src="assets/img/chapter-ii/needfinding/MW15.png "> 
-<img src="assets/img/chapter-ii/needfinding/MW16.png "> 
-<img src="assets/img/chapter-ii/needfinding/MW17.png "> 
-<img src="assets/img/chapter-ii/needfinding/MW18.png"> 
-<img src="assets/img/chapter-ii/needfinding/MW19.png "> 
-<img src="assets/img/chapter-ii/needfinding/MW20.png "> 
-<img src="assets/img/chapter-ii/needfinding/MW21.png"> 
+<img src="assets/img/chapter-ii/needfinding/mockup1.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockup2.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockup3.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockup4.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockup5.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockup6.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockup7.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockup8.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockup9.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockup10.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockup11.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockup12.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockup13.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockup14.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockup15.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockup16.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockup17.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockup18.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockup19.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockup20.png "> 
+<img src="assets/img/chapter-ii/needfinding/mockup21.png "> 
+
 
 
 ### 4.4.4. Web Applications User Flow Diagrams.
-<img src="assets/img/chapter-ii/needfinding/user flow.png"> 
+<img src="assets/img/chapter-ii/needfinding/userflow.png"> 
 
 
 
