@@ -2683,8 +2683,8 @@ El Sprint 2 tuvo como objetivo construir la primera versión de la Frontend Web 
 | Sprint 1 Retrospective Summary | <!-- TODO: resumen de la retrospectiva del Sprint 1 --> |
 | **Sprint Goal & User Stories** | |
 | Sprint 2 Goal | Our focus is on letting a recuperation supplier register its equipment, recipes and recuperations, and run and monitor a spray session end to end. We believe it delivers process control and traceability to recuperation suppliers and visibility to asset owners. This will be confirmed when a supervisor completes a spray session in the deployed web application and an asset owner can review it. |
-| Sprint 2 Velocity | 75 <!-- TODO: confirmar la velocity acordada por el equipo --> |
-| Sum of Story Points | 75 (22 User Stories, según los Story Points de la sección 3.3) |
+| Sprint 2 Velocity | 73 <!-- TODO: confirmar la velocity acordada por el equipo --> |
+| Sum of Story Points | 73 (21 User Stories de la Web Application, según los Story Points de la sección 3.3) |
 
 #### 5.2.2.2. Aspect Leaders and Collaborators.
 
@@ -2697,6 +2697,92 @@ La siguiente matriz LACX (Leadership-and-Collaboration Matrix) identifica, para 
 | Fernandez Seer, Mario Alonso | MrBaru | – | – | – | – | – | – | C | L |
 
 #### 5.2.2.3. Sprint Backlog 2.
+
+El Sprint Backlog 2 descompone las User Stories del Sprint 2 en tareas de implementación. Las tareas de la Frontend Web Application siguen la estructura por bounded context y por capa con la que se construyó cada feature en su rama `feature/*`: entidad del dominio, contrato de respuesta, assembler y endpoint en infraestructura, store en la capa de aplicación, vistas y rutas en presentación, y traducciones en inglés y español. Las 72 tareas de la Web Application, con 171 horas estimadas, quedaron en estado Done al cierre del Sprint. Las tareas del Landing Page corresponden a los aspectos de diseño e internacionalización de la matriz LACX.
+
+El tablero del Sprint 2 se gestiona en Trello con las listas To-do, In Progress, To Review y Done: [https://trello.com/b/ccOu9yk5/reliant-sprint-2](https://trello.com/b/ccOu9yk5/reliant-sprint-2). El archivo [`docs/trello-sprint-2.csv`](docs/trello-sprint-2.csv) contiene las mismas tareas en formato tabular.
+
+<!-- TODO: hacer público el tablero de Trello y agregar la captura en assets/img/5.chapter-v/5.2.2.3-trello-sprint-2.png -->
+
+| Sprint # | Sprint 2 | | | | | | |
+|---|---|---|---|---|---|---|---|
+| **User Story Id** | **User Story Title** | **Work-Item / Task Id** | **Title** | **Description** | **Estimation (Hours)** | **Assigned To** | **Status (To-do / In-Process / To-Review / Done)** |
+| US65 | Navegación por la aplicación | T01 | Set up the Angular project | Create the Angular project and add Angular Material, ngx-translate and json-server, with the environment files and endpoint paths. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
+| US65 | Navegación por la aplicación | T02 | Prepare the fake API data | Load db.json with the Fesa recuperation case, the /api/v1 routes and the fake API launcher script. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US65 | Navegación por la aplicación | T03 | Customize the Material theme | Apply the Azure/Blue Material theme and the shared spacing class. | 1 | Navarro Aldoradin, Carolina Celeste | Done |
+| US65 | Navegación por la aplicación | T04 | Add Home, About and PageNotFound views | Create the shared views, including the way back home from an unknown route. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
+| US65 | Navegación por la aplicación | T05 | Add bounded context list views and routes | Create the list views for traceability, equipment and process monitoring and register their lazy-loaded routes with page titles. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US65 | Navegación por la aplicación | T06 | Add the Layout component | Build the toolbar with the navigation options and show the Layout in the App shell; update the App test with the router. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
+| US66 | Cambio de idioma de la aplicación | T07 | Add English and Spanish translations | Create en.json and es.json with the shared keys. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
+| US66 | Cambio de idioma de la aplicación | T08 | Provide TranslateService | Register the supported languages, Spanish as default and English as fallback. | 1 | Navarro Aldoradin, Carolina Celeste | Done |
+| US66 | Cambio de idioma de la aplicación | T09 | Add LanguageSwitcher and FooterContent | Create both components and wire them into the Layout. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
+| US66 | Cambio de idioma de la aplicación | T10 | Translate the existing views | Translate Home, About, PageNotFound and the bounded context list views; update the App test. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
+| US13 | Registro de cliente | T11 | Add the shared base classes | Create BaseEntity, BaseResponse, BaseAssembler, ErrorHandlingEnabledBaseType, BaseApiEndpoint, BaseApi and BaseForm. | 4 | Navarro Aldoradin, Carolina Celeste | Done |
+| US13 | Registro de cliente | T12 | Add the Customer entity and infrastructure | Create the Customer entity, the customers response, CustomerAssembler, CustomersApiEndpoint and TraceabilityApi. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US13 | Registro de cliente | T13 | Add TraceabilityStore for customers | Keep the customers state with signals and expose create, update and delete. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
+| US13 | Registro de cliente | T14 | Add customer translations | Add the English and Spanish keys for customers. | 1 | Navarro Aldoradin, Carolina Celeste | Done |
+| US13 | Registro de cliente | T15 | Add CustomerList and CustomerForm views | List customers with edit and delete actions and add the form with create and edit modes and its routes. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US14 | Registro de componente recibido | T16 | Add the RecoveredComponent entity and infrastructure | Create the entity, the components response, ComponentAssembler and ComponentsApiEndpoint, and add them to TraceabilityApi. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US14 | Registro de componente recibido | T17 | Add components to TraceabilityStore | Keep the components state and its operations. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
+| US14 | Registro de componente recibido | T18 | Add component translations | Add the English and Spanish keys for components. | 1 | Navarro Aldoradin, Carolina Celeste | Done |
+| US14 | Registro de componente recibido | T19 | Add ComponentList and ComponentForm views | List components and add the form with create and edit modes and its routes. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US15 | Registro de orden de recuperación | T20 | Add the Recuperation entity and infrastructure | Create the entity, the recuperations response, RecuperationAssembler and RecuperationsApiEndpoint, and add them to TraceabilityApi. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US15 | Registro de orden de recuperación | T21 | Add recuperations to TraceabilityStore | Keep the recuperation orders state and its operations. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
+| US15 | Registro de orden de recuperación | T22 | Add recuperation translations | Add the English and Spanish keys for recuperation orders. | 1 | Navarro Aldoradin, Carolina Celeste | Done |
+| US15 | Registro de orden de recuperación | T23 | Add RecuperationList and RecuperationForm views | List recuperation orders with OF and WO and add the form with create and edit modes and its routes. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US07 | Registro de sistema HVOF y sus controladores | T24 | Add the HvofSystem and Controller entities | Create both entities. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
+| US07 | Registro de sistema HVOF y sus controladores | T25 | Add HVOF system and controller infrastructure | Create the responses, assemblers, endpoints and EquipmentApi. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US07 | Registro de sistema HVOF y sus controladores | T26 | Add EquipmentStore for systems and controllers | Keep the HVOF systems and controllers state. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
+| US07 | Registro de sistema HVOF y sus controladores | T27 | Add HVOF system and controller translations | Add the English and Spanish keys. | 1 | Navarro Aldoradin, Carolina Celeste | Done |
+| US07 | Registro de sistema HVOF y sus controladores | T28 | Add HvofSystemList, HvofSystemForm and ControllerForm views | List systems with their status and add the system form and the controller form. | 4 | Navarro Aldoradin, Carolina Celeste | Done |
+| US07 | Registro de sistema HVOF y sus controladores | T29 | Add HvofSystemDetail with the controllers tab | Show the system detail with its controllers and register the routes. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
+| US08 · US53 | Registro de subsistemas del sistema HVOF · Registro de partes de un subsistema | T30 | Add the HvofSubsystem and HvofPart entities and infrastructure | Create the entities, responses, assemblers and endpoints and add them to EquipmentApi. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US08 · US53 | Registro de subsistemas del sistema HVOF · Registro de partes de un subsistema | T31 | Add subsystems and parts to EquipmentStore | Keep the subsystems and parts state. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
+| US08 · US53 | Registro de subsistemas del sistema HVOF · Registro de partes de un subsistema | T32 | Add subsystem and part translations | Add the English and Spanish keys. | 1 | Navarro Aldoradin, Carolina Celeste | Done |
+| US08 · US53 | Registro de subsistemas del sistema HVOF · Registro de partes de un subsistema | T33 | Add HvofSubsystemForm and HvofPartForm views | Create both forms and their routes. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US08 · US53 | Registro de subsistemas del sistema HVOF · Registro de partes de un subsistema | T34 | Add the subsystems tab to HvofSystemDetail | Show the subsystems and their parts in the system detail. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
+| US54 | Definición de recetas con bandas de umbral y componentes aplicables | T35 | Add the Recipe entity and infrastructure | Create the entity with parameter bands and applicabilities, its response, assembler, endpoint and API methods. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US54 | Definición de recetas con bandas de umbral y componentes aplicables | T36 | Add recipes to EquipmentStore and translations | Keep the recipes state and add the English and Spanish keys. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
+| US54 | Definición de recetas con bandas de umbral y componentes aplicables | T37 | Add the threshold order validator | Validate that shutdown, warning and nominal limits are ordered. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
+| US54 | Definición de recetas con bandas de umbral y componentes aplicables | T38 | Add the RecipeForm view | Edit applicabilities and parameter bands, with its routes. | 4 | Navarro Aldoradin, Carolina Celeste | Done |
+| US54 | Definición de recetas con bandas de umbral y componentes aplicables | T39 | Add the recipes tab to HvofSystemDetail | Show the recipes of the system. | 1 | Navarro Aldoradin, Carolina Celeste | Done |
+| US19 | Inicio de sesión de rociado | T40 | Add the SpraySession entity and infrastructure | Create the entity, the response, assembler, endpoint and ProcessMonitoringApi. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US19 | Inicio de sesión de rociado | T41 | Add ProcessMonitoringStore for sessions | Keep the spray sessions state. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
+| US19 | Inicio de sesión de rociado | T42 | Add spray session translations | Add the English and Spanish keys. | 1 | Navarro Aldoradin, Carolina Celeste | Done |
+| US19 | Inicio de sesión de rociado | T43 | Add SpraySessionList and SpraySessionStart views | List sessions and start a session selecting the HVOF system, the recuperation order and the recipe, with its routes. | 4 | Navarro Aldoradin, Carolina Celeste | Done |
+| US22 · US21 | Visualización de lecturas en vivo · Clasificación de lecturas por banda de umbral | T44 | Add the ProcessReading entity and band classifier | Classify each reading as nominal, out of nominal, warning or shutdown against the recipe. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US22 · US21 | Visualización de lecturas en vivo · Clasificación de lecturas por banda de umbral | T45 | Add process readings infrastructure | Create the response, assembler, endpoint and API methods. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
+| US22 · US21 | Visualización de lecturas en vivo · Clasificación de lecturas por banda de umbral | T46 | Add readings polling and band counts to the store | Refresh the readings periodically and count them by band. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US22 · US21 | Visualización de lecturas en vivo · Clasificación de lecturas por banda de umbral | T47 | Add ParameterCard and SpraySessionDetail | Show the live parameter cards, the band summary and the last update, with the session detail route and translations. | 4 | Navarro Aldoradin, Carolina Celeste | Done |
+| US23 | Finalización o aborto de sesión | T48 | Add completeSession and abortSession to the store | Close the session as completed or aborted with its end time. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
+| US23 | Finalización o aborto de sesión | T49 | Add the AbortSessionDialog component | Ask for the abort reason before closing the session. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
+| US23 | Finalización o aborto de sesión | T50 | Add complete and abort actions to SpraySessionDetail | Add the actions and the finish session translations. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
+| US23 | Finalización o aborto de sesión | T51 | Test the session flow against db.json | Run the start, monitor and finish flow on the fake API data. | 1 | Navarro Aldoradin, Carolina Celeste | Done |
+| US24 | Historial de sesiones por sistema HVOF | T52 | Add the per-session deviation count | Count the readings outside the nominal band for each session. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
+| US24 | Historial de sesiones por sistema HVOF | T53 | Add filters to SpraySessionList | Filter sessions by HVOF system, recuperation order and date range and show the deviation count. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US01 | Registro de organización | T54 | Add the Organization, User and Role entities | Create the IAM entities and the SignUpCommand. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
+| US01 | Registro de organización | T55 | Add the sign-up port with real and fake adapters | Create the request, response, assembler, SignUpApiEndpoint and FakeSignUpApiEndpoint, and provide the port in IamApi. | 4 | Navarro Aldoradin, Carolina Celeste | Done |
+| US01 | Registro de organización | T56 | Add IamStore for sign-up and IAM translations | Keep the sign-up state and add the English and Spanish keys. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
+| US01 | Registro de organización | T57 | Add the SignUpForm view and IAM routes | Register the organization with its type and administrator. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US02 · US67 | Inicio de sesión · Gestión de la sesión del usuario | T58 | Add the sign-in port with real and fake adapters | Create the SignInCommand, request, response, assembler, SignInApiEndpoint and FakeSignInApiEndpoint. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US02 · US67 | Inicio de sesión · Gestión de la sesión del usuario | T59 | Add session state, signIn and signOut to IamStore | Persist the session and token and clear them on sign-out. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US02 · US67 | Inicio de sesión · Gestión de la sesión del usuario | T60 | Add the SignInForm view and protect the routes | Add the sign-in route, the guards and the iamInterceptor. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US02 · US67 | Inicio de sesión · Gestión de la sesión del usuario | T61 | Add the AuthenticationSection component | Show the user menu with the sign-out option and filter the toolbar by session and organization type. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
+| US02 · US67 | Inicio de sesión · Gestión de la sesión del usuario | T62 | Filter data by organization | Inject IamStore in the other stores, filter by organization id and fix the circular dependency. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US03 · US04 | Asignación de roles · Restricción de acceso por rol | T63 | Add users and roles to IamApi and IamStore | Add the endpoints, state and translations; add the operations supervisor and procurement analyst roles to the fake API. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US03 · US04 | Asignación de roles · Restricción de acceso por rol | T64 | Add UserList and UserRoleForm views | List the organization users and edit their roles. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US03 · US04 | Asignación de roles · Restricción de acceso por rol | T65 | Add role guards | Guard the user routes and restrict equipment and session actions by role. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
+| US05 · US06 | Selección de plan · Consulta y vigencia de suscripción | T66 | Add the Plan and Subscription entities and BillingApi | Create the entities, responses, assemblers and endpoints. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US05 · US06 | Selección de plan · Consulta y vigencia de suscripción | T67 | Add BillingStore and billing translations | Keep plans and subscription state and add the English and Spanish keys. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
+| US05 · US06 | Selección de plan · Consulta y vigencia de suscripción | T68 | Add PlanSelection and SubscriptionDetail views | Select the plan for the organization type and show the subscription status, with routes and toolbar option. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| — | Release y despliegue (1.0.0 · 1.0.1) | T69 | Release 1.0.0 | Close the release branch, update CHANGELOG and tag 1.0.0. | 1 | Navarro Aldoradin, Carolina Celeste | Done |
+| — | Release y despliegue (1.0.0 · 1.0.1) | T70 | Create and deploy the mock API project | Create reliant-platform-mock and deploy it to Azure App Service with GitHub Actions. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| — | Release y despliegue (1.0.0 · 1.0.1) | T71 | Point production at the deployed mock API | Update the production environment and keep the fake IAM adapters; release 1.0.1. | 1 | Navarro Aldoradin, Carolina Celeste | Done |
+| — | Release y despliegue (1.0.0 · 1.0.1) | T72 | Deploy the web application to Azure App Service | Create the Web App, connect GitHub Actions and set the pm2 startup command. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US44 · US45 · US46 | Propuesta de valor e información por segmento (Landing Page) | T73 | Design the Landing Page wireframes | Update the desktop and mobile wireframes of the Landing Page. | 3 | Rivera Aguilar, Scarlet Josefina | To-do <!-- TODO: actualizar el estado; no hay commits de Sprint 2 en reliant-website --> |
+| US44 · US45 · US46 | Propuesta de valor e información por segmento (Landing Page) | T74 | Design the Landing Page mock-ups | Update the desktop and mobile mock-ups following the style guidelines. | 4 | Rivera Aguilar, Scarlet Josefina | To-do <!-- TODO: actualizar el estado; no hay commits de Sprint 2 en reliant-website --> |
+| US48 | Cambio de idioma (Landing Page) | T75 | Externalize the Landing Page texts | Move the Landing Page texts to English and Spanish resources. | 3 | Fernandez Seer, Mario Alonso | To-do <!-- TODO: actualizar el estado; no hay commits de Sprint 2 en reliant-website --> |
+| US48 | Cambio de idioma (Landing Page) | T76 | Add the Landing Page language switcher | Switch the content between English and Spanish. | 2 | Fernandez Seer, Mario Alonso | To-do <!-- TODO: actualizar el estado; no hay commits de Sprint 2 en reliant-website --> |
 
 #### 5.2.2.4. Development Evidence for Sprint Review.
 
