@@ -788,16 +788,16 @@ ed%2Eview%2E001f7777%2D3095%2D43ae%2Dbdb0%2D89ae880547ea |
 
 
 | Segmento: AssetOwner | Entrevista #1 |
-|---|---|
-| Nombres y Apellidos | Valeria Aranguri |
-| Edad | 21 años |
-| Distrito | Surco |
-| Ocupación | Estudiante de Ingeniería Industrial y asistente de construcción y proyectos con experiencia en operaciones mineras |
-| Timing inicio | 00:00 |
-| Duración | 13 minutos con 40 segundos |
-| URL | [Entrevista Segmento 2 - Asset Owner](https://drive.google.com/file/d/1lfzvUGM0Sf1K5balZaaP8kYs97IqWC2X/view?usp=sharing) |
-| Screenshot | Pendiente de agregar |
-| Resumen | La entrevistada cuenta con experiencia como asistente de construcción y proyectos en operaciones mineras como Quellaveco, Las Bambas y Chinalco. Sus responsabilidades incluyeron brindar soporte a ingenieros y supervisores, realizar seguimiento de actividades, coordinar con distintas áreas y elaborar reportes desde campo. Señaló que las fallas de equipos afectan la programación, el personal y los recursos disponibles. Asimismo, explicó que el seguimiento se apoya principalmente en Excel, reportes, llamadas, WhatsApp y sistemas internos que no siempre son visibles para el personal de operación. Para evaluar proveedores se consideran la documentación presentada, el cumplimiento de requisitos, los plazos de entrega y los antecedentes del servicio. Finalmente, manifestó la necesidad de una plataforma centralizada que muestre el estado, ubicación, responsable, proveedor y fecha estimada de disponibilidad de cada componente. |
+|:--:|:--:|
+| Nombres y Apellidos | Jhuol <!-- TODO: apellidos de la entrevista a Jhuol --> |
+| Edad | <!-- TODO: edad de la entrevista a Jhuol --> |
+| Distrito | <!-- TODO: distrito de la entrevista a Jhuol --> |
+| Ocupacion | <!-- TODO: ocupación de la entrevista a Jhuol --> |
+| Duracion | <!-- TODO: duración de la entrevista a Jhuol --> |
+| URL | <!-- TODO: URL del video de la entrevista a Jhuol --> |
+| Screenshot| <img src="assets/img/2.chapter-ii/2.2.interviews/2.2.2.interviews-record/jhuol-interview-photo.png"> |
+| Resumen | <!-- TODO: resumen de la entrevista a Jhuol --> |
+
 | Segmento: AssetOwner | Entrevista #2 |
 |:--:|:--:|
 | Nombres y Apellidos | Wilson Bardales |
@@ -821,6 +821,48 @@ ed%2Eview%2E001f7777%2D3095%2D43ae%2Dbdb0%2D89ae880547ea |
 | Resumen | La entrevistada cuenta con experiencia como asistente de construcción y proyectos en operaciones mineras como Quellaveco, Las Bambas y Chinalco. Sus responsabilidades incluyeron brindar soporte a ingenieros y supervisores, realizar seguimiento de actividades, coordinar con distintas áreas y elaborar reportes desde campo. Señaló que las fallas de equipos afectan la programación, el personal y los recursos disponibles. Asimismo, explicó que el seguimiento se apoya principalmente en Excel, reportes, llamadas, WhatsApp y sistemas internos que no siempre son visibles para el personal de operación. Para evaluar proveedores se consideran la documentación presentada, el cumplimiento de requisitos, los plazos de entrega y los antecedentes del servicio. Finalmente, manifestó la necesidad de una plataforma centralizada que muestre el estado, ubicación, responsable, proveedor y fecha estimada de disponibilidad de cada componente.
 
 ### 2.2.3. Análisis de entrevistas.
+
+El análisis se realizó agrupando lo que relataron los entrevistados de cada segmento según las etapas del proceso de recuperación: recepción e identificación del componente, registro de la corrida de rociado, evidencia de calidad entregada al cliente, fallas del equipo y desempeño del componente en campo. Para cada etapa se identificaron los hallazgos que se repiten entre entrevistas y se contrastaron con los assumptions del Lean UX Process (sección 1.2.2.2).
+
+**Segmento 1: Recuperation Supplier**
+
+| Etapa | Hallazgos | Entrevistas que lo mencionan |
+|---|---|---|
+| Recepción e identificación | Los componentes se identifican por el número de orden de trabajo y registros internos; ubicar una pieza dentro del taller exige buscarla o consultar a otros trabajadores. | Cristian Rimac, Aron Ramirez |
+| Registro de la corrida | Los parámetros de la máquina, los materiales y el tiempo de trabajo se registran, pero sin un control completo ni organizado, y la búsqueda de registros antiguos es complicada. | Cristian Rimac, Aron Ramirez |
+| Evidencia para el cliente | Los clientes solicitan certificados, informes y evidencias de calidad; ante un reclamo hay que revisar la información del proceso, lo que genera demoras. | Aron Ramirez |
+| Fallas del equipo | Algunas fallas de las máquinas se repiten, pero no siempre quedan registradas de forma organizada. | Aron Ramirez |
+| Desempeño en campo | Existen compromisos de duración de las piezas recuperadas (PCR); cuando una pieza falla en el cliente, se revisan los registros para determinar si el origen está en el recubrimiento. | Aron Ramirez |
+
+**Segmento 2: Asset Owner**
+
+| Etapa | Hallazgos | Entrevistas que lo mencionan |
+|---|---|---|
+| Impacto de las fallas | Las fallas de los equipos afectan la programación, el personal y los recursos disponibles de la operación. | Valeria Aranguri |
+| Seguimiento de componentes | El seguimiento se apoya en Excel, reportes, llamadas, WhatsApp y sistemas internos que no siempre son visibles para el personal de operación. | Valeria Aranguri |
+| Evaluación de proveedores | Se evalúa a los proveedores por la documentación presentada, el cumplimiento de requisitos, los plazos de entrega y los antecedentes del servicio. | Valeria Aranguri |
+| Fallas prematuras | Ante fallas frecuentes de un componente, la causa se identifica en conjunto con el proveedor; se reconoce la necesidad de seguir la vida útil de los componentes y analizar las causas de fallas prematuras. | Wilson Bardales |
+| Necesidad expresada | Una plataforma centralizada que muestre el estado, la ubicación, el responsable, el proveedor y la fecha estimada de disponibilidad de cada componente. | Valeria Aranguri |
+
+<!-- TODO: incorporar los hallazgos de la entrevista a Jhuol cuando se registre su resumen -->
+
+**Contraste con los assumptions**
+
+| Assumption (sección 1.2.2.2) | Resultado de las entrevistas |
+|---|---|
+| Los parámetros de proceso se pierden o no son consultables (Feature Assumption 1) | Confirmado: ambos entrevistados del Recuperation Supplier describen registros incompletos y difíciles de consultar. |
+| Vincular cada sesión con su OF, WO y componente permite reconstruir la historia de la pieza (Feature Assumption 2) | Confirmado: la orden de trabajo es hoy el único identificador y no basta para ubicar piezas ni corridas anteriores. |
+| La presión por trazabilidad proviene del cliente minero (Business Assumption 2) | Confirmado: los clientes exigen certificados y evidencias, y los reclamos obligan a revisar el proceso. |
+| Las fallas recurrentes no se detectan ni se atribuyen a una parte (Feature Assumption 6) | Confirmado parcialmente: se reconoce la recurrencia, pero no su atribución a un subsistema o parte. |
+| El registro de vida útil contra el PCR permite evaluar el desempeño real (Feature Assumption 8) | Confirmado: los compromisos de PCR existen y la causa de una falla prematura se investiga de forma manual en ambos segmentos. |
+| La minera necesita una vista consolidada de sus componentes, sin importar el proveedor (Feature Assumption 10) | Confirmado: la necesidad de una plataforma centralizada con estado, proveedor y disponibilidad se expresó de forma explícita. |
+
+**Conclusiones del análisis**
+
+1. La trazabilidad del proceso de recuperación depende hoy del número de orden de trabajo y de registros dispersos, lo que justifica priorizar en el Product Backlog el registro de componentes, órdenes de recuperación y sesiones de rociado vinculadas (Epics E03, E04 y E05).
+2. La evidencia de calidad es una exigencia comercial del cliente minero; la demora en reunirla ante un reclamo confirma el valor del certificado de calidad y del reporte de sesión (Epic E08).
+3. Ambos segmentos investigan las fallas prematuras de forma manual y en conjunto, lo que respalda el registro del retorno de campo contra el PCR y la correlación con la sesión de origen (Epic E09).
+4. El Asset Owner sigue sus componentes en herramientas que no comparte con sus proveedores, lo que confirma el valor de la vista consolidada multi-proveedor como propuesta diferenciada para el segundo segmento.
 
 ## 2.3. Needfinding.
 
