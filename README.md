@@ -2653,8 +2653,85 @@ flowchart LR
 
 ### 4.6.4. Software Architecture Components Diagrams.
 
-Ver seccion: assets/img/chapter-iv/component-diagrams
-en repositorio.
+Los diagramas de componentes descomponen los contenedores de la sección 4.6.3 en sus componentes principales. El primero muestra la Single Page Application tal como se implementó en el Sprint 2, organizada por bounded context; los siguientes muestran el diseño de la Web Application y de los Web Services para los ocho bounded contexts del dominio.
+
+#### Single Page Application (Sprint 2)
+
+La Single Page Application organiza su código en cinco bounded contexts y un contexto Shared. Cada bounded context extiende las clases base de Shared para sus entidades, assemblers, endpoints y formularios; IAM protege las rutas de los demás contextos con sus guards, agrega el token de sesión a todas las peticiones con `iamInterceptor` y entrega la organización del usuario autenticado a los stores; y Process Monitoring consulta los sistemas HVOF y las recetas de Equipment y las órdenes de recuperación de Traceability para iniciar y evaluar cada sesión de rociado.
+
+<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/Components-Reliant___SPA_Bounded_Contexts.png" alt="Component diagram of the Single Page Application">
+
+#### Web Application
+
+<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-web-application.png" alt="Web Application component diagram">
+
+**IAM**
+
+<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-iam-web-application.png" alt="IAM web application component diagram">
+
+**Billing**
+
+<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-billing-web-application.png" alt="Billing web application component diagram">
+
+**Equipment**
+
+<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-equipment-web-application.png" alt="Equipment web application component diagram">
+
+**Traceability**
+
+<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-traceability-web-application.png" alt="Traceability web application component diagram">
+
+**Process Monitoring**
+
+<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-processmonitoring-web-application.png" alt="Process Monitoring web application component diagram">
+
+**Fault Diagnosis**
+
+<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-faultdiagnosis-web-application.png" alt="Fault Diagnosis web application component diagram">
+
+**Notifications**
+
+<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-notifications-web-application.png" alt="Notifications web application component diagram">
+
+**Reporting**
+
+<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-reporting-web-application.png" alt="Reporting web application component diagram">
+
+#### Web Services
+
+<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-web-services.png" alt="Web Services component diagram">
+
+**IAM**
+
+<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-iam-web-services.png" alt="IAM web services component diagram">
+
+**Billing**
+
+<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-billing-web-services.png" alt="Billing web services component diagram">
+
+**Equipment**
+
+<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-equipment-web-services.png" alt="Equipment web services component diagram">
+
+**Traceability**
+
+<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-traceability-web-services.png" alt="Traceability web services component diagram">
+
+**Process Monitoring**
+
+<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-processmonitoring-web-services.png" alt="Process Monitoring web services component diagram">
+
+**Fault Diagnosis**
+
+<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-faultdiagnosis-web-services.png" alt="Fault Diagnosis web services component diagram">
+
+**Notifications**
+
+<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-notifications-web-services.png" alt="Notifications web services component diagram">
+
+**Reporting**
+
+<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-reporting-web-services.png" alt="Reporting web services component diagram">
 
 ## 4.7. Software Object-Oriented Design.
 ### 4.7.1. Class Diagrams.
