@@ -2958,7 +2958,120 @@ El script `telemetry_simulator.py` se ejecuta localmente durante las demostracio
 ## 5.2. Landing Page, Services & Applications Implementation.
 ### 5.2.1. Sprint 1
 
-<!-- TODO: documentar el Sprint 1 (Landing Page v0.1.0, publicada el 2026-09-13 en reliant-website) -->
+#### 5.2.1.1. Sprint Planning 1.
+
+El Sprint 1 tuvo como propósito presentar Reliant a sus dos segmentos objetivo mediante un Landing Page estático, mientras el equipo completaba los capítulos de investigación, especificación y diseño del informe para la entrega AV1. El Landing Page se publicó como release `v0.1.0` en el repositorio `reliant-website` el 13 de setiembre de 2026, y el informe se publicó como release `1.0.1` el 18 de setiembre de 2026.
+
+| Sprint # | Sprint 1 |
+|---|---|
+| **Sprint Planning Background** | |
+| Date | <!-- TODO: fecha del Sprint Planning 1 --> |
+| Time | <!-- TODO: hora del Sprint Planning 1 --> |
+| Location | <!-- TODO: lugar o plataforma --> |
+| Prepared By | <!-- TODO: responsable del Sprint Planning 1 --> |
+| Attendees (to planning meeting) | Navarro Aldoradin, Carolina Celeste / Rivera Aguilar, Scarlet Josefina / Fernandez Seer, Mario Alonso |
+| Sprint 0 Review Summary | No aplica: el Sprint 1 es el primer sprint del proyecto. |
+| Sprint 0 Retrospective Summary | No aplica: el Sprint 1 es el primer sprint del proyecto. |
+| **Sprint Goal & User Stories** | |
+| Sprint 1 Goal | Our focus is on presenting Reliant to recuperation suppliers and asset owners through a landing page. We believe it delivers a clear value proposition and a segmented entry point to the platform for both segments. This will be confirmed when visitors of each segment reach the information for their profile and the registration call-to-action. |
+| Sprint 1 Velocity | 19 <!-- TODO: confirmar la velocity acordada por el equipo --> |
+| Sum of Story Points | 19 (US44–US50 y TS18, según el Product Backlog en Trello) |
+
+#### 5.2.1.2. Aspect Leaders and Collaborators.
+
+| Team Member (Last Name, First Name) | GitHub Username | Landing Page UX/UI Design Leader (L) / Collaborator (C) | Landing Page Development Leader (L) / Collaborator (C) | Project Report Leader (L) / Collaborator (C) |
+|---|---|:-:|:-:|:-:|
+| Navarro Aldoradin, Carolina Celeste | genixmvp | – | – | L |
+| Rivera Aguilar, Scarlet Josefina | scarletriveraaguilar-spec | L | – | C |
+| Fernandez Seer, Mario Alonso | MrBaru | C | – | C |
+
+El desarrollo del Landing Page del Sprint 1 estuvo a cargo de integrantes que luego se retiraron del equipo, por lo que ningún integrante actual figura como líder o colaborador de ese aspecto.
+
+#### 5.2.1.3. Sprint Backlog 1.
+
+El Sprint Backlog 1 corresponde a la lista "Sprint 1" del Product Backlog en Trello ([https://trello.com/b/aDFKmtGp/reliant-product-backlog](https://trello.com/b/aDFKmtGp/reliant-product-backlog)). Las tareas se derivan del contenido del release `v0.1.0` registrado en el `CHANGELOG.md` del repositorio.
+
+| User Story Id | User Story Title | Task | Status |
+|---|---|---|---|
+| US44 | Conocer la propuesta de valor | Maquetar el hero, la propuesta de valor y la sección "How it works" | Done |
+| US45 | Información para Recuperation Supplier | Maquetar la tarjeta del segmento Recuperation Supplier | Done |
+| US46 | Información para Asset Owner | Maquetar la tarjeta del segmento Asset Owner | Done |
+| US47 | Registro desde call-to-action segmentado | Implementar la navegación móvil y los call-to-action con el segmento como parámetro | Done |
+| US50 | Acceso a Términos y Condiciones | Publicar las páginas de Términos y Condiciones y de Política de Privacidad | Done |
+| US44 · US45 · US46 | Estilos responsive | Aplicar estilos mobile-first con variables CSS | Done |
+| US48 | Cambio de idioma | Internacionalizar el Landing Page en inglés y español | Trasladada al Sprint 2 (Done) |
+| US49 · TS18 | Suscripción al newsletter | Formulario de newsletter conectado a Mailchimp | To-do: requiere los Web Services |
+
+#### 5.2.1.4. Development Evidence for Sprint Review.
+
+**Landing Page — `reliant-website`**
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|---|---|---|---|---|---|
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-website | feature/landing-page-initial-version | 4a05639 | chore: initialize Reliant landing page repository |  | 2026-09-13 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-website | feature/landing-page-initial-version | ccec211 | docs(landing): add changelog for v0.1.0 |  | 2026-09-13 |
+
+**Informe — `reliant-report`** (commits de integración en `develop` hasta el release `1.0.1`)
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|---|---|---|---|---|---|
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | develop | 547e685 | chore: initial commit. |  | 2026-08-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | develop | 01777e8 | docs: add report cover page |  | 2026-08-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | develop | 9ce0127 | Merge branch 'feature/document-structure' into develop |  | 2026-09-01 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | develop | 5474b15 | Merge branch 'feature/chapteri/add-startup-description' into develop |  | 2026-09-01 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | develop | 89d3b8b | Merge branch 'feature/chapteri/Carolina_team_member_profile' into develop |  | 2026-09-01 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | develop | f129d9a | Merge branch 'feature/chapter-i/solution-profile' into develop |  | 2026-09-01 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | develop | d1a11c5 | Merge branch 'feature/student-outcome' into develop |  | 2026-09-10 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | develop | e31dbf8 | Merge branch 'feature/chapter-i/lean-ux-process' into develop |  | 2026-09-10 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | develop | bf6314c | Merge branch 'feature/chapter-ii/requirements-elicitation' into develop |  | 2026-09-10 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | develop | 32c8a3b | Merge branch 'feature/chapter-i/update-background-problem-statement' into develop |  | 2026-09-13 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | develop | 3443217 | Merge branch 'feature/chapter-i/lean-ux-process' into develop |  | 2026-09-13 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | develop | 8df4689 | Update README with new student entry | Added new entry for Scarlet Josefina in the table. | 2026-09-14 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | develop | bffefe1 | Update team member profiles in README | Added team member profile for Scarlet Josefina Rivera Aguilar. | 2026-09-14 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | develop | ec85a3a | Add files via upload |  | 2026-09-14 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | develop | 7124cd8 | Update README.md |  | 2026-09-14 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | develop | 2d3c212 | Merge pull request #1 from upc-pre-202620-1asi0729-7753-innovacorp/feature/chapter-i/big-picture-event-storming | Feature/chapter i/big picture event storming | 2026-09-14 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | develop | 9ac9f88 | Merge branch 'feature/team-members-basic-info' into develop |  | 2026-09-15 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | develop | 6d4f383 | Merge branch 'feature/cover-new-format' into develop |  | 2026-09-15 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | develop | f072e00 | add member profile and Asset Owner interview |  | 2026-09-17 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | develop | d842adc | Merge pull request #2 from upc-pre-202620-1asi0729-7753-innovacorp/feature/chapter-iv/class-diagram | Feature/chapter iv/class diagram | 2026-09-18 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | develop | 8ba7d65 | Merge pull request #3 from upc-pre-202620-1asi0729-7753-innovacorp/feature/startup-profile-yopla | Feature/startup profile yopla | 2026-09-18 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | develop | c01fa84 | Merge pull request #4 from upc-pre-202620-1asi0729-7753-innovacorp/feature/chapter-iv/class-diagram | Feature/chapter iv/class diagram | 2026-09-18 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | develop | 3ea6490 | Merge branch 'feature/chapter-iv/database-diagram' into develop |  | 2026-09-18 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | develop | f575766 | Merge pull request #5 from upc-pre-202620-1asi0729-7753-innovacorp/feature/startup-profile-yopla | Feature/startup profile yopla | 2026-09-18 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | develop | cd55b01 | dding student outcomes |  | 2026-09-18 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | develop | fd39773 | git push origin developMerge branch 'develop' of https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-report into develop |  | 2026-09-18 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | develop | 32cf70d | Merge pull request #7 from upc-pre-202620-1asi0729-7753-innovacorp/feature/chapter-i/big-picture-event-storming | Feature/chapter i/big picture event storming | 2026-09-18 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | develop | c97adc2 | Merge pull request #8 from upc-pre-202620-1asi0729-7753-innovacorp/feature/chapter-iv/domain-driven-software-architecture | feat(chapter-iv): add c4 diagrams. | 2026-09-18 |
+
+#### 5.2.1.5. Execution Evidence for Sprint Review.
+
+Al cierre del Sprint 1 el Landing Page presenta la propuesta de valor de Reliant, la información específica de cada segmento con su call-to-action de registro, los pasos de uso de la plataforma y los enlaces a Términos y Condiciones y Política de Privacidad, con un diseño responsive. Las capturas corresponden al release `v0.1.0`.
+
+| User Story | Evidencia | Descripción |
+|---|---|---|
+| US44 · US47 | <img src="assets/img/5.chapter-v/5.2.1.5-landing-hero.png" width="480"> | Sección principal con la propuesta de valor y los call-to-action para cada segmento. |
+| US44 | <img src="assets/img/5.chapter-v/5.2.1.5-landing-value-proposition.png" width="480"> | Beneficios de Reliant ("Why teams choose Reliant"). |
+| US45 · US46 · US47 | <img src="assets/img/5.chapter-v/5.2.1.5-landing-segments.png" width="480"> | Información específica para Recuperation Supplier y Asset Owner, con un call-to-action por segmento. |
+| US44 · US47 | <img src="assets/img/5.chapter-v/5.2.1.5-landing-how-it-works.png" width="480"> | Pasos de uso de la plataforma y llamado final al registro. |
+| US50 | <img src="assets/img/5.chapter-v/5.2.1.5-landing-terms.png" width="480"> | Términos y Condiciones enlazados desde el pie de página. |
+| US44 | <img src="assets/img/5.chapter-v/5.2.1.5-landing-mobile.png" width="480"> | Vista móvil del Landing Page (diseño mobile-first). |
+
+#### 5.2.1.6. Services Documentation Evidence for Sprint Review.
+
+En el Sprint 1 no se desarrollaron ni consumieron Web Services: el Landing Page es un sitio estático en HTML5, CSS3 y JavaScript, y sus call-to-action dirigen a la URL de registro de la Web Application.
+
+#### 5.2.1.7. Software Deployment Evidence for Sprint Review.
+
+El Landing Page se versionó con Git Flow: la rama `feature/landing-page-initial-version` se integró en `develop`, se preparó el release en `release/0.1.0` y se publicó en `main` con la etiqueta `v0.1.0`. Al ser un sitio estático, no requiere proceso de construcción.
+
+<!-- TODO: URL pública del Landing Page y capturas de su despliegue -->
+
+#### 5.2.1.8. Team Collaboration Insights during Sprint.
+
+Durante el Sprint 1 la colaboración de los integrantes actuales se concentró en el informe: hasta el release `1.0.1` del 18 de setiembre de 2026, el repositorio `reliant-report` registra 115 commits de genixmvp, 57 de scarletriveraaguilar-spec y 1 de MrBaru, sin contar merges. Los commits del Landing Page de ese sprint corresponden a integrantes que se retiraron del equipo.
+
+<!-- TODO: captura de Insights → Contributors de reliant-report con el rango de fechas del Sprint 1 -->
 
 ### 5.2.2. Sprint 2
 
@@ -2974,7 +3087,7 @@ El Sprint 2 tuvo como objetivo construir la primera versión de la Frontend Web 
 | Location | <!-- TODO: lugar o plataforma (p. ej. Microsoft Teams) --> |
 | Prepared By | Navarro Aldoradin, Carolina Celeste |
 | Attendees (to planning meeting) | Navarro Aldoradin, Carolina Celeste / Rivera Aguilar, Scarlet Josefina / Fernandez Seer, Mario Alonso |
-| Sprint 1 Review Summary | En el Sprint 1 se publicó la primera versión del Landing Page (`v0.1.0`, repositorio `reliant-website`), con las secciones de propuesta de valor, información por segmento y Términos y Condiciones. <!-- TODO: completar con los comentarios recibidos en la revisión del Sprint 1 --> |
+| Sprint 1 Review Summary | En el Sprint 1 se publicó la primera versión del Landing Page (`v0.1.0`, repositorio `reliant-website`), con las secciones de propuesta de valor, información por segmento y Términos y Condiciones. Quedaron pendientes el cambio de idioma (US48), que se completó en el Sprint 2, y la suscripción al newsletter (US49 y TS18), que requiere los Web Services. <!-- TODO: completar con los comentarios recibidos en la revisión del Sprint 1 --> |
 | Sprint 1 Retrospective Summary | <!-- TODO: resumen de la retrospectiva del Sprint 1 --> |
 | **Sprint Goal & User Stories** | |
 | Sprint 2 Goal | Our focus is on letting a recuperation supplier register its equipment, recipes and recuperations, and run and monitor a spray session end to end. We believe it delivers process control and traceability to recuperation suppliers and visibility to asset owners. This will be confirmed when a supervisor completes a spray session in the deployed web application and an asset owner can review it. |
