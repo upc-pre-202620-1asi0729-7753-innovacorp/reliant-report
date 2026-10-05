@@ -1068,6 +1068,7 @@ flowchart TB
             a6["RoleAssigned"]:::evento
             a7["PlcTagFileImported"]:::evento
             a8["AlertAcknowledged"]:::evento
+            a1 ~~~ a2 ~~~ a3 ~~~ a4 ~~~ a5 ~~~ a6 ~~~ a7 ~~~ a8
         end
         subgraph R2 [" "]
             direction LR
@@ -1079,6 +1080,7 @@ flowchart TB
             b6["SubscriptionActivated"]:::evento
             b7["HopperOverpressureBlocked"]:::evento
             b8["PcrComplianceReportGenerated"]:::evento
+            b1 ~~~ b2 ~~~ b3 ~~~ b4 ~~~ b5 ~~~ b6 ~~~ b7 ~~~ b8
         end
         subgraph R3[" "]
             direction LR
@@ -1090,6 +1092,7 @@ flowchart TB
             c6["CriticalFaultAlertRaised"]:::evento
             c7["ServiceLifeRecorded"]:::evento
             c8["SpraySessionCompleted"]:::evento
+            c1 ~~~ c2 ~~~ c3 ~~~ c4 ~~~ c5 ~~~ c6 ~~~ c7 ~~~ c8
         end
         subgraph R4[" "]
             direction LR
@@ -1101,6 +1104,7 @@ flowchart TB
             d6["OutOfRangeAlertRaised"]:::evento
             d7["RecuperationClosed"]:::evento
             d8["DiagnosticRulesApplied"]:::evento
+            d1 ~~~ d2 ~~~ d3 ~~~ d4 ~~~ d5 ~~~ d6 ~~~ d7 ~~~ d8
         end
         subgraph R5[" "]
             direction LR
@@ -1113,6 +1117,7 @@ flowchart TB
             e7["ProbableCauseSuggested"]:::evento
             e8["UserAuthenticated"]:::evento
             e9["HvofPartRegistered"]:::evento
+            e1 ~~~ e2 ~~~ e3 ~~~ e4 ~~~ e5 ~~~ e6 ~~~ e7 ~~~ e8 ~~~ e9
         end
         subgraph R6[" "]
             direction LR
@@ -1124,6 +1129,7 @@ flowchart TB
             f6["AlertDelivered"]:::evento
             f7["TelemetryStreamInterrupted"]:::evento
             f8["DustHouseOverloaded"]:::evento
+            f1 ~~~ f2 ~~~ f3 ~~~ f4 ~~~ f5 ~~~ f6 ~~~ f7 ~~~ f8
         end
         subgraph R7[" "]
             direction LR
@@ -1135,6 +1141,7 @@ flowchart TB
             g6["AlertEscalated"]:::evento
             g7["VisitorSubscribedToNewsletter"]:::evento
             g8["ManualDiagnosisRequired"]:::evento
+            g1 ~~~ g2 ~~~ g3 ~~~ g4 ~~~ g5 ~~~ g6 ~~~ g7 ~~~ g8
         end
         subgraph R8[" "]
             direction LR
@@ -1146,6 +1153,7 @@ flowchart TB
             h6["FlameTemperatureOutOfRange"]:::evento
             h7["HourmeterAtDeliveryRecorded"]:::evento
             h8["ComponentMarkedInProcess"]:::evento
+            h1 ~~~ h2 ~~~ h3 ~~~ h4 ~~~ h5 ~~~ h6 ~~~ h7 ~~~ h8
         end
         subgraph R9[" "]
             direction LR
@@ -1157,6 +1165,7 @@ flowchart TB
             i6["SprayingStopped"]:::evento
             i7["UnassignedSessionOpened"]:::evento
             i8["RecipeMismatchDetected"]:::evento
+            i1 ~~~ i2 ~~~ i3 ~~~ i4 ~~~ i5 ~~~ i6 ~~~ i7 ~~~ i8
         end
         subgraph R10[" "]
             direction LR
@@ -1166,6 +1175,7 @@ flowchart TB
             j4["ReportTemplateShared"]:::evento
             j5["ReportGeneratedFromTemplate"]:::evento
             j6["RecipeNotFoundFaulted"]:::evento
+            j1 ~~~ j2 ~~~ j3 ~~~ j4 ~~~ j5 ~~~ j6
         end
         R1 ~~~ R2 ~~~ R3 ~~~ R4 ~~~ R5 ~~~ R6 ~~~ R7 ~~~ R8 ~~~ R9 ~~~ R10
     end
