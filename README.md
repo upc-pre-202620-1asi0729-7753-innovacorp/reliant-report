@@ -3031,6 +3031,131 @@ Video de navegación del producto (Sprint 2): <!-- TODO: URL de Microsoft Stream
 
 #### 5.2.2.6. Services Documentation Evidence for Sprint Review.
 
+En el Sprint 2 el equipo no desarrolló Web Services propios: el RESTful API en Spring Boot se construirá en el Sprint 3. Para que la Frontend Web Application trabaje contra un API real desde el primer día, se publicó un fake API con json-server 0.17.4 en el repositorio `reliant-platform-mock`, desplegado en Azure App Service. El fake API expone cada colección de `db.json` como recurso REST bajo el prefijo `/api/v1`, con soporte para los verbos GET, POST, PUT, PATCH y DELETE, filtros por cualquier atributo (`?organizationId=1`) y ordenamiento (`_sort`, `_order`). Además expone `GET /api/v1/health` para verificar el servicio.
+
+URL base: `https://reliant-mockapi-ajh4eqgkf7hxg2fx.eastus-01.azurewebsites.net/api/v1`
+
+El archivo `db.json` contiene 34 colecciones que reproducen un caso de recuperación de un proveedor de recubrimiento HVOF y su cliente minero: el sistema HVOF-01 con su controlador CompactLogix, subsistemas, partes y mapeo de tags; la receta 12 (WC-10Co-4Cr sobre vástago hidráulico) con nueve parámetros; tres órdenes de recuperación; sesiones de rociado de setiembre de 2026 terminadas como abortada, completada e interrumpida, con sus pasadas de rociado y lecturas de proceso; y usuarios con los roles de administrador, ingeniero de calidad, supervisor de mantenimiento, operador HVOF e ingeniero de confiabilidad. Las colecciones de Fault Diagnosis, Notifications y Reporting ya están cargadas, pero la Web Application del Sprint 2 aún no las consume.
+
+La tabla siguiente lista los endpoints que consume la Web Application, agrupados por bounded context. Los nombres de colección conservan el formato camelCase de json-server; en los Web Services se publicarán en kebab-case según la convención de 5.1.3 (por ejemplo, `/api/v1/hvof-systems`).
+
+| Bounded Context | Verbo HTTP | Endpoint (`/api/v1` + ruta) | Uso en la Web Application | Parámetros de consulta |
+|---|---|---|---|---|
+| IAM | POST | `/organizations` | Registro de la organización (adapter `FakeSignUpApiEndpoint`) | — |
+| IAM | POST | `/users` | Registro del administrador de la organización recién creada (adapter `FakeSignUpApiEndpoint`) | — |
+| IAM | GET | `/users` | Inicio de sesión (adapter `FakeSignInApiEndpoint`) y lista de usuarios de la organización | `email`, `password` · `organizationId` |
+| IAM | GET | `/organizations/{id}` | Tipo de la organización del usuario que inicia sesión | — |
+| IAM | PATCH | `/users/{id}` | Asignación de roles a un usuario (`roleIds`) | — |
+| IAM | GET | `/roles` | Catálogo de roles | — |
+| Billing | GET | `/plans` | Planes disponibles (Operator y Asset Owner) | — |
+| Billing | GET | `/subscriptions` | Suscripción de la organización | `organizationId` |
+| Billing | POST | `/subscriptions` | Selección de plan | — |
+| Traceability | GET | `/customers` | Clientes del Recuperation Supplier | `supplierOrganizationId` |
+| Traceability | GET · POST · PUT · DELETE | `/customers · /customers/{id}` | Consulta, registro, edición y eliminación de clientes | — |
+| Traceability | GET · POST · PUT | `/components · /components/{id}` | Consulta, registro y edición de componentes | — |
+| Traceability | GET · POST · PUT | `/recuperations · /recuperations/{id}` | Consulta, registro y edición de órdenes de recuperación | `supplierOrganizationId` |
+| Equipment | GET · POST · PUT | `/hvofSystems · /hvofSystems/{id}` | Consulta, registro y edición de sistemas HVOF | `organizationId` |
+| Equipment | GET · POST · PUT | `/controllers · /controllers/{id}` | Controladores de un sistema HVOF | `hvofSystemId` |
+| Equipment | GET · POST · PUT | `/hvofSubsystems · /hvofSubsystems/{id}` | Subsistemas de un sistema HVOF | — |
+| Equipment | GET · POST · DELETE | `/hvofParts · /hvofParts/{id}` | Partes de un subsistema | — |
+| Equipment | GET · POST · PUT | `/recipes · /recipes/{id}` | Recetas con componentes aplicables y bandas de umbral | — |
+| Process Monitoring | GET · POST | `/spraySessions · /spraySessions/{id}` | Historial, detalle e inicio de sesiones de rociado | — |
+| Process Monitoring | PATCH | `/spraySessions/{id}` | Completar o abortar una sesión (`status`, `endedAt`, `abortReason`) | — |
+| Process Monitoring | GET | `/processReadings` | Lecturas de una sesión, ordenadas en el tiempo, y conteo de desviaciones | `spraySessionId`, `_sort=epochMillis`, `_order=asc` · `band` |
+| Process Monitoring | POST | `/processReadings` | Lectura simulada (solo en el entorno de desarrollo) | — |
+
+**Ejemplo 1 — Consulta de los clientes de un Recuperation Supplier**
+
+```http
+GET /api/v1/customers?supplierOrganizationId=1
+```
+
+Respuesta `200 OK` (primer elemento):
+
+```json
+[
+  {
+    "id": 1,
+    "supplierOrganizationId": 1,
+    "linkedAssetOwnerOrganizationId": 2,
+    "legalName": "Sociedad Minera Cerro Verde S.A.A.",
+    "ruc": "20170072465",
+    "mineSite": "Cerro Verde - Arequipa"
+  }
+]
+```
+
+**Ejemplo 2 — Inicio de una sesión de rociado**
+
+```http
+POST /api/v1/spraySessions
+Content-Type: application/json
+```
+
+```json
+{
+  "hvofSystemId": 1,
+  "recuperationId": 3,
+  "operatorId": 4,
+  "recipeNumber": 12,
+  "startedAt": "2026-10-02T23:49:41.144Z",
+  "endedAt": null,
+  "timeZone": "America/Lima",
+  "status": "active",
+  "abortReason": null
+}
+```
+
+Respuesta `201 Created`: el mismo recurso con el identificador asignado (`"id": 5`).
+
+**Ejemplo 3 — Lecturas de proceso de una sesión**
+
+```http
+GET /api/v1/processReadings?spraySessionId=1&_sort=epochMillis&_order=asc
+```
+
+Respuesta `200 OK` (primer elemento):
+
+```json
+[
+  {
+    "id": 1,
+    "spraySessionId": 1,
+    "epochMillis": 1788918823000,
+    "plcClockOffsetMillis": 0,
+    "tagPath": "FuelGas.Flow.Actual",
+    "parameter": "fuel_gas_flow",
+    "subsystemId": 1,
+    "partId": 1,
+    "value": 14.1,
+    "unitSymbol": "SCFH",
+    "unitCategory": "flow",
+    "band": "shutdown",
+    "derived": false,
+    "mappingPending": false
+  }
+]
+```
+
+**Ejemplo 4 — Aborto de una sesión de rociado**
+
+```http
+PATCH /api/v1/spraySessions/{id}
+Content-Type: application/json
+```
+
+```json
+{
+  "status": "aborted",
+  "endedAt": "<fecha y hora de cierre>",
+  "abortReason": "<motivo seleccionado>"
+}
+```
+
+Respuesta `200 OK`: la sesión con los atributos actualizados.
+
+La documentación OpenAPI con Swagger UI (springdoc) se publicará en el Sprint 3, junto con los Web Services en Spring Boot que reemplazarán al fake API. En ese momento la Web Application cambiará `useFakeIam` a `false` para usar los endpoints `POST /api/v1/authentication/sign-up` y `POST /api/v1/authentication/sign-in` descritos en las Technical Stories TS01 y TS02.
+
 #### 5.2.2.7. Software Deployment Evidence for Sprint Review.
 
 #### 5.2.2.8. Team Collaboration Insights during Sprint.
