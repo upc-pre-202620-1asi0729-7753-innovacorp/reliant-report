@@ -1,5 +1,5 @@
 <div align="center">
- <img src="assets/img/logoUPC.png">
+ <img src="assets/img/logo-upc.png">
 
 Universidad Peruana de Ciencias Aplicadas  
 Carrera de Ingeniería de Software  
@@ -28,13 +28,11 @@ Proyecto
 | u20241b962 | Navarro Aldoradin, Carolina Celeste  |
 | u20241f577 | Rivera Aguilar, Scarlet Josefina     |
 | u202317807 | Fernandez Seer, Mario Alonso         |
-| U202421137 | Bardales Rodríguez, Benjamín Elías   |
-| U202410376 | Yopla Romero, Jonathan Alberto       |
 
 **Periodo 202620**  
 
 
-**Setiembre, 2026**
+**Octubre, 2026**
 
 </div>
 
@@ -175,11 +173,9 @@ Ser la plataforma de referencia en Latinoamérica para el monitoreo y la trazabi
 ### 1.1.2. Perfiles de integrantes del equipo
 | Foto de participante                                                    | Nombres y apellidos                | Código de estudiante  | Descripción de carrera                                            | Principales conocimiento técnicos y habilidades                                                                                                                                           |
 |:------------------------------------------------------------------------|------------------------------------|-----------------------|-------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| <img src="assets/img/chapter-i/startup-profile/carolina-navarro.jpeg">  | Carolina Celeste Navarro Aldoradin | u20241b962            | Ingeniería de Software, Universidad Peruana de Ciencias Aplicadas | Cuento con conocimiento del lenguaje Java, C#, C++, Javascript, Python y Ladder. Asimismo, cuento con experiencia en proyectos de integración, monitoreo e IoT en entornos industriales.  |
-| <img src="assets/img/chapter-i/startup-profile/Captura de pantalla 2026-09-14 104228.png"> | Scarlet Josefina Rivera Aguilar    | u20241f577            | Ingeniería de Software, Universidad Peruana de Ciencias Aplicadas | Durante mi formación en Ingeniería de Software, actualmente en quinto ciclo, he desarrollado conocimientos en distintos lenguajes de programación, organización y planificación de proyectos. Asimismo, he participado en proyectos académicos relacionados con el desarrollo de aplicaciones web, diseño de interfaces y elaboración de prototipos. |
-|  <img src="assets/img/chapter-i/startup-profile/Captura de pantalla 2026-09-14 104228.png">| Scarlet josefina Rivera Aguilar    | u20241f577            | Ingeniería de Software, Universidad Peruana de Ciencias Aplicadas | Durante mi formación en Ingeniería de Software, actualmente en quinto ciclo, he desarrollado conocimientos en distintos lenguajes de programación, organización y planificación de proyectos. Asimismo, he participado en proyectos académicos relacionados con el desarrollo de aplicaciones web, diseño de interfaces y elaboración de prototipos.  |
+| <img src="assets/img/1.chapter-i/1.1.startup-profile/1.1.2.team-members-profiles/carolina-navarro.jpeg">  | Carolina Celeste Navarro Aldoradin | u20241b962            | Ingeniería de Software, Universidad Peruana de Ciencias Aplicadas | Cuento con conocimiento del lenguaje Java, C#, C++, Javascript, Python y Ladder. Asimismo, cuento con experiencia en proyectos de integración, monitoreo e IoT en entornos industriales.  |
+| <img src="assets/img/1.chapter-i/1.1.startup-profile/1.1.2.team-members-profiles/scarlet-rivera.png"> | Scarlet Josefina Rivera Aguilar    | u20241f577            | Ingeniería de Software, Universidad Peruana de Ciencias Aplicadas | Durante mi formación en Ingeniería de Software, actualmente en quinto ciclo, he desarrollado conocimientos en distintos lenguajes de programación, organización y planificación de proyectos. Asimismo, he participado en proyectos académicos relacionados con el desarrollo de aplicaciones web, diseño de interfaces y elaboración de prototipos. |
 | <img width="640" height="641" alt="image" src="https://github.com/user-attachments/assets/841e55fc-64c0-4acc-9e4f-a4f0530d995a" /> | Mario Alonso Fernández Seer | U202317807 | Ingeniería de Software, Universidad Peruana de Ciencias Aplicadas | Cuento con conocimientos en C++, Python, JavaScript, desarrollo web y diseño de bases de datos. Asimismo, poseo habilidades para el análisis de requerimientos, la documentación de proyectos y la investigación de usuarios. En Reliant participé en el levantamiento y análisis de información del segmento Asset Owner. |
-| <img src="assets/img/chapter-i/startup-profile/yopla_imagen.png">  | Jonathan Alberto Yopla Romero | u202410376            | Ingeniería de Software, Universidad Peruana de Ciencias Aplicadas | Cuento con experiencia programando en diversos lenguajes como C++, Javascript y utilizo herramientas para el desarrollo web. Además, domino el inglés a nivel conversacional.  |
 
 
 ## 1.2. Solution Profile
@@ -741,7 +737,7 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | Ocupacion | Ingeniero de Proyectos |
 | Duracion | 16:13 minutos |
 | URL | https://drive.google.com/file/d/1Kz4-cB8Z7LLDR8P2sAM7_8ShWzVvMpjP/view?usp=sharing |
-| Screenshot| <img src="assets/img/chapter-ii/needfinding/cristian-rimac-interview-photo.png"> |
+| Screenshot| <img src="assets/img/2.chapter-ii/2.2.interviews/2.2.2.interviews-record/segment-1-recuperation-supplier/cristian-rimac-interview-photo.png"> |
 | Resumen | Cristian Rimac, de 29 años, es ingeniero de proyectos y vive en San Miguel. Durante la entrevista, explicó que los componentes recibidos de los clientes se identifican principalmente mediante el número de orden de trabajo. Sin embargo, mencionó que en ocasiones resulta complicado localizar las piezas dentro del taller, por lo que deben buscarlas o consultar con otros trabajadores. Asimismo, indicó que los parámetros del proceso de recuperación pueden quedar registrados, pero no existe un control completo y organizado de la información. Esto dificulta realizar un seguimiento adecuado de las piezas recuperadas y consultar los datos de procesos anteriores. La entrevista permitió identificar problemas relacionados con la trazabilidad de los componentes y la gestión de la información durante el proceso de recuperación.
 
 | Segmento: RecuperationSupplier | Entrevista #2 |
@@ -752,7 +748,7 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | Ocupacion | Especialista en investigación de desarrollo |
 | Duracion | 8:50 minutos |
 | URL | https://drive.google.com/file/d/1C9NDE2k5fsSGtt2NXbIFq6dNA72oELuV/view?usp=sharing |
-| Screenshot| <img src="assets/img/chapter-ii/needfinding/Captura de pantalla 2026-09-18 063515.png"> |
+| Screenshot| <img src="assets/img/2.chapter-ii/2.2.interviews/2.2.2.interviews-record/segment-1-recuperation-supplier/aron-ramirez-interview-photo.png"> |
 | Resumen | Durante la entrevista, Aron Ramires, de 30 años, explicó que el proceso de recuperación inicia con la recepción e identificación de las piezas del cliente, utilizando órdenes de trabajo y registros internos. Durante el rociado se almacenan datos como los parámetros de la máquina, materiales utilizados y tiempo de trabajo, aunque la búsqueda de registros antiguos puede resultar complicada. Asimismo, mencionó que los clientes solicitan certificados, informes y evidencias de calidad. Cuando se presentan reclamos, es necesario revisar la información del proceso, lo que puede generar demoras. También señaló que existen compromisos relacionados con la duración de las piezas recuperadas (PCR) y que algunas fallas de las máquinas se repiten, pero no siempre están registradas de manera organizada. Finalmente, explicó que cuando una pieza falla en el cliente, se requiere revisar los registros para determinar si el problema está relacionado con el recubrimiento, evidenciando dificultades en la trazabilidad y el análisis de fallas.
 
 | Segmento: RecuperationSupplier | Entrevista #3 |
@@ -766,7 +762,7 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 eyJyZWZlcnJhbEluZm8iOnsi
 cmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopi
 ed%2Eview%2E001f7777%2D3095%2D43ae%2Dbdb0%2D89ae880547ea |
-| Screenshot| <img src="assets/img/chapter-ii/needfinding/fran.png">  |
+| Screenshot| <img src="assets/img/2.chapter-ii/2.2.interviews/2.2.2.interviews-record/belisa-paredes-interview-photo.png">  |
 | Resumen | La entrevista busca conocer el proceso de recuperación de piezas, desde su recepción hasta la entrega al cliente, identificando cómo se registran las corridas de rociado, qué evidencias solicitan los clientes y cómo se gestionan los problemas de calidad. También se pretende comprender las fallas de las máquinas, la repetición de errores y el seguimiento de la vida útil de las piezas recuperadas, con el fin de identificar dificultades en la trazabilidad, el diagnóstico y el análisis de fallas.
 
 
@@ -789,7 +785,7 @@ ed%2Eview%2E001f7777%2D3095%2D43ae%2Dbdb0%2D89ae880547ea |
 | Ocupacion | Gerente de procesos |
 | Duracion | 11:19 minutos |
 | URL | https://youtu.be/ELUn_X1SDxo?si=Av2cGm2uR-eTnTVn |
-| Screenshot| <img src="assets/img/chapter-ii/needfinding/Captura de pantalla 2026-09-17 141725.png">  |
+| Screenshot| <img src="assets/img/2.chapter-ii/2.2.interviews/2.2.2.interviews-record/segment-2-asset-owner/wilson-bardales-interview-photo.png">  |
 | Resumen | Wilson Bardales, de 65 años, es gerente de procesos y vive en Lima. Durante la entrevista, explicó que la empresa trabaja en el área de mantenimiento preventivo y utiliza proveedores como Epiroc y Desmozambic, principalmente para las perforadoras de producción. Asimismo, relató un caso en el que una bomba de una perforadora nueva presentaba fallas frecuentes. En conjunto con el proveedor, identificaron problemas relacionados con la calidad del agua utilizada en el sistema de enfriamiento y una baja eficiencia del componente. Como parte de la solución, se recomendó cambiar el motor y realizar correcciones en algunas piezas.La entrevista permitió identificar la importancia de mejorar el seguimiento de la vida útil de los componentes, analizar las causas de fallas prematuras y trabajar con los proveedores para mejorar el desempeño de los equipos.
 
 | Segmento: AssetOwner | Entrevista #3 |
@@ -800,7 +796,7 @@ ed%2Eview%2E001f7777%2D3095%2D43ae%2Dbdb0%2D89ae880547ea |
 | Ocupacion | Asistente de construcción y proyectos con experiencia en operaciones mineras |
 | Duracion | 13:40 minutos|
 | URL | https://drive.google.com/file/d/1lfzvUGM0Sf1K5balZaaP8kYs97IqWC2X/view?usp=sharing |
-| Screenshot| <img src="assets/img/chapter-ii/needfinding/Captura de pantalla 2026-09-18 124843.png"> |
+| Screenshot| <img src="assets/img/2.chapter-ii/2.2.interviews/2.2.2.interviews-record/segment-2-asset-owner/valeria-aranguri-interview-photo.png"> |
 | Resumen | La entrevistada cuenta con experiencia como asistente de construcción y proyectos en operaciones mineras como Quellaveco, Las Bambas y Chinalco. Sus responsabilidades incluyeron brindar soporte a ingenieros y supervisores, realizar seguimiento de actividades, coordinar con distintas áreas y elaborar reportes desde campo. Señaló que las fallas de equipos afectan la programación, el personal y los recursos disponibles. Asimismo, explicó que el seguimiento se apoya principalmente en Excel, reportes, llamadas, WhatsApp y sistemas internos que no siempre son visibles para el personal de operación. Para evaluar proveedores se consideran la documentación presentada, el cumplimiento de requisitos, los plazos de entrega y los antecedentes del servicio. Finalmente, manifestó la necesidad de una plataforma centralizada que muestre el estado, ubicación, responsable, proveedor y fecha estimada de disponibilidad de cada componente.
 
 ### 2.2.3. Análisis de entrevistas.
@@ -815,7 +811,7 @@ Las fichas se elaboraron en UXPressia con la información recolectada en el Bloq
 
 #### Ficha de User Persona 1 — Segmento Recuperation Supplier: Rosa Miranda Alegria, Ingeniera de Calidad e Investigación
 
-![Rosa Miranda Alegria](./assets/img/chapter-ii/needfinding/User_Persona-Rosa_Miranda_Alegria.png)
+![Rosa Miranda Alegria](assets/img/2.chapter-ii/2.3.needfinding/User_Persona-Rosa_Miranda_Alegria.png)
 
 | Campo | Contenido de la ficha |
 |---|---|
@@ -832,7 +828,7 @@ Las fichas se elaboraron en UXPressia con la información recolectada en el Bloq
 
 #### Ficha de User Persona 2 — Segmento Recuperation Supplier: Jorge Salinas Paredes, Supervisor de Mantenimiento de máquina
 
-![Jorge Salinas Paredes](./assets/img/chapter-ii/needfinding/User_Persona-Jorge_Salinas_Paredes.png)
+![Jorge Salinas Paredes](assets/img/2.chapter-ii/2.3.needfinding/User_Persona-Jorge_Salinas_Paredes.png)
 
 | Campo | Contenido de la ficha |
 |---|---|
@@ -850,6 +846,7 @@ Las fichas se elaboraron en UXPressia con la información recolectada en el Bloq
 #### Ficha de User Persona 3 — Segmento Asset Owner: Lucía Torres Quispe, Ingeniera de Confiabilidad
 
 ![Lucía Torres Quispe](./assets/img/chapter-ii/needfinding/User_Persona-Lucia_Torres_Quispe.png)
+<!-- TODO: imagen User_Persona-Lucia_Torres_Quispe.png no está en assets/; subirla a assets/img/2.chapter-ii/2.3.needfinding/ y actualizar la ruta -->
 
 | Campo | Contenido de la ficha |
 |---|---|
@@ -898,6 +895,7 @@ Los Journey Maps describen la experiencia actual (as-is) de cada persona en la t
 #### Journey Map 1 — Rosa Miranda: sustentar ante el cliente minero que un lote fue recubierto dentro de tolerancias
 
 ![Journey Map Rosa Miranda](./assets/img/chapter-ii/needfinding/Journey_Map-Rosa_Miranda_Alegria.png)
+<!-- TODO: imagen Journey_Map-Rosa_Miranda_Alegria.png no está en assets/; subirla a assets/img/2.chapter-ii/2.3.needfinding/ y actualizar la ruta -->
 
 | Fase | Acciones | Pensamientos | Emociones | Puntos de dolor |
 |---|---|---|---|---|
@@ -909,6 +907,7 @@ Los Journey Maps describen la experiencia actual (as-is) de cada persona en la t
 #### Journey Map 2 — Jorge Salinas: diagnosticar una parada no programada del sistema HVOF
 
 ![Journey Map Jorge Salinas](./assets/img/chapter-ii/needfinding/Journey_Map-Jorge_Salinas_Paredes.png)
+<!-- TODO: imagen Journey_Map-Jorge_Salinas_Paredes.png no está en assets/; subirla a assets/img/2.chapter-ii/2.3.needfinding/ y actualizar la ruta -->
 
 | Fase | Acciones | Pensamientos | Emociones | Puntos de dolor |
 |---|---|---|---|---|
@@ -920,6 +919,7 @@ Los Journey Maps describen la experiencia actual (as-is) de cada persona en la t
 #### Journey Map 3 — Lucía Torres: evaluar un componente recuperado que falló antes de su PCR
 
 ![Journey Map Lucía Torres](./assets/img/chapter-ii/needfinding/Journey_Map-Lucia_Torres_Quispe.png)
+<!-- TODO: imagen Journey_Map-Lucia_Torres_Quispe.png no está en assets/; subirla a assets/img/2.chapter-ii/2.3.needfinding/ y actualizar la ruta -->
 
 | Fase | Acciones | Pensamientos | Emociones | Puntos de dolor |
 |---|---|---|---|---|
@@ -934,7 +934,7 @@ Los Empathy Maps sintetizan lo que cada persona dice, piensa, hace y siente en r
 
 #### Empathy Map — Rosa Miranda (Recuperation Supplier)
 
-![Empathy Map Rosa Miranda](./assets/img/chapter-ii/needfinding/Empathy_Map-Rosa_Miranda_Alegria.png)
+![Empathy Map Rosa Miranda](assets/img/2.chapter-ii/2.3.needfinding/Empathy_Map-Rosa_Miranda_Alegria.png)
 
 | Cuadrante | Contenido |
 |---|---|
@@ -947,7 +947,7 @@ Los Empathy Maps sintetizan lo que cada persona dice, piensa, hace y siente en r
 
 #### Empathy Map — Jorge Salinas (Recuperation Supplier)
 
-![Empathy Map Jorge Salinas](./assets/img/chapter-ii/needfinding/Empathy_Map-Jorge_Salinas_Paredes.png)
+![Empathy Map Jorge Salinas](assets/img/2.chapter-ii/2.3.needfinding/Empathy_Map-Jorge_Salinas_Paredes.png)
 
 | Cuadrante | Contenido |
 |---|---|
@@ -961,6 +961,7 @@ Los Empathy Maps sintetizan lo que cada persona dice, piensa, hace y siente en r
 #### Empathy Map — Lucía Torres (Asset Owner)
 
 ![Empathy Map Lucía Torres](./assets/img/chapter-ii/needfinding/Empathy_Map-Lucia_Torres_Quispe.png)
+<!-- TODO: imagen Empathy_Map-Lucia_Torres_Quispe.png no está en assets/; subirla a assets/img/2.chapter-ii/2.3.needfinding/ y actualizar la ruta -->
 
 | Cuadrante | Contenido |
 |---|---|
@@ -1959,12 +1960,12 @@ La identidad visual de Relent está orientada a representar innovación, control
 La propuesta visual de Relient utiliza principalmente las tipografías Balsamiq Sans, Goblin One y Kaushan Script. La tipografía Balsamiq Sans se utiliza para textos generales, etiquetas y componentes informativos. Goblin One se emplea en títulos y elementos destacados, mientras que Kaushan Script se utiliza en elementos
 decorativos o distintivos de la identidad visual. La combinación de estas tipografías permite establecer una jerarquía visual entre los diferentes elementos de la interfaz y mantener una presentación coherente en la Landing Page y la Web Application.
 
-<img src="assets/img/chapter-ii/needfinding/tipoletra.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/tipoletra.png"> 
 
 ## Colors
 La paleta de colores de Relient está conformada por El marrón oscuro se utiliza en textos y elementos principales, mientras que el crema claro y el blanco permiten construir fondos y espacios visuales. El naranja se emplea para destacar botones, acciones principales y elementos relevantes de la interfaz.
 
-<img src="assets/img/chapter-ii/needfinding/colors.png "> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/colors.png"> 
 
 ## Spacing
 El sistema de espaciado de Relient busca mantener una distribución ordenada de los contenidos y evitar la saturación visual. Para ello, se utilizan separaciones consistentes entre títulos, textos, botones, formularios, tablas y componentes de navegación.La configuración del espaciado 
@@ -2059,35 +2060,35 @@ Los wireframes de la Landing Page de Relient muestran la distribución prelimina
 La elaboración de los wireframes facilita la identificación de posibles problemas de distribución y permite realizar ajustes antes de desarrollar la interfaz definitiva. También ayuda a comprobar que los elementos principales, como el logotipo, los enlaces de navegación y los botones de acción, se encuentren ubicados de acuerdo con la estructura propuesta.
 
 ## Desktop Web Browser
-<img src="assets/img/chapter-ii/needfinding/webW1.png "> 
-<img src="assets/img/chapter-ii/needfinding/webW2.png "> 
-<img src="assets/img/chapter-ii/needfinding/webW3.png "> 
-<img src="assets/img/chapter-ii/needfinding/webW4.png "> 
-<img src="assets/img/chapter-ii/needfinding/webW5.png "> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/webW1.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/webW2.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/webW3.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/webW4.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/webW5.png"> 
 
 ## Mobile Web Browser
-<img src="assets/img/chapter-ii/needfinding/movilW1.png "> 
-<img src="assets/img/chapter-ii/needfinding/movilW2.png "> 
-<img src="assets/img/chapter-ii/needfinding/movilW3.png "> 
-<img src="assets/img/chapter-ii/needfinding/movilW4.png "> 
-<img src="assets/img/chapter-ii/needfinding/movilW5.png "> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/movilW1.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/movilW2.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/movilW3.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/movilW4.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/movilW5.png"> 
 
 
 ### 4.3.2. Landing Page Mock-up.
 
 ## Desktop Web Browser
-<img src="assets/img/chapter-ii/needfinding/mockups web1.png "> 
-<img src="assets/img/chapter-ii/needfinding/mockups web2.png "> 
-<img src="assets/img/chapter-ii/needfinding/mockups web3.png "> 
-<img src="assets/img/chapter-ii/needfinding/mockups web4.png "> 
-<img src="assets/img/chapter-ii/needfinding/mockups web5.png "> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/mockups web1.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/mockups web2.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/mockups web3.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/mockups web4.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/mockups web5.png"> 
 
 ## Mobile Web Browser
-<img src="assets/img/chapter-ii/needfinding/mockups app1.png "> 
-<img src="assets/img/chapter-ii/needfinding/mockups app2.png "> 
-<img src="assets/img/chapter-ii/needfinding/mockups app3.png "> 
-<img src="assets/img/chapter-ii/needfinding/mockups app4.png "> 
-<img src="assets/img/chapter-ii/needfinding/mockups app5.png "> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/mockups app1.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/mockups app2.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/mockups app3.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/mockups app4.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/mockups app5.png"> 
 
 
 ## 4.4. Web Applications UX/UI Design.
@@ -2099,63 +2100,63 @@ Para lograrlo, se elaborarán wireframes, wireflows, mock-ups y user flow diagra
 Los wireframes de la Web Application de Relient presentan una representación inicial de la estructura y distribución de las pantallas principales de la plataforma. Estos esquemas permiten definir la ubicación de los elementos de navegación, botones, formularios, tarjetas, tablas y secciones informativas antes de incorporar el diseño visual final.
 Asimismo, los wireframes ayudan a organizar las funcionalidades de acuerdo con las necesidades de los usuarios y los User Stories definidos, facilitando la revisión de la experiencia de navegación y la identificación de posibles mejoras en la interfaz.
 
-<img src="assets/img/chapter-ii/needfinding/w1.png"> 
-<img src="assets/img/chapter-ii/needfinding/w2.png"> 
-<img src="assets/img/chapter-ii/needfinding/w3.png "> 
-<img src="assets/img/chapter-ii/needfinding/w4.png"> 
-<img src="assets/img/chapter-ii/needfinding/w5.png "> 
-<img src="assets/img/chapter-ii/needfinding/w6.png "> 
-<img src="assets/img/chapter-ii/needfinding/w7.png"> 
-<img src="assets/img/chapter-ii/needfinding/w8.png "> 
-<img src="assets/img/chapter-ii/needfinding/w9.png "> 
-<img src="assets/img/chapter-ii/needfinding/w10.png"> 
-<img src="assets/img/chapter-ii/needfinding/w11.png"> 
-<img src="assets/img/chapter-ii/needfinding/w12.png "> 
-<img src="assets/img/chapter-ii/needfinding/w13.png "> 
-<img src="assets/img/chapter-ii/needfinding/w14.png"> 
-<img src="assets/img/chapter-ii/needfinding/w15.png"> 
-<img src="assets/img/chapter-ii/needfinding/w16.png "> 
-<img src="assets/img/chapter-ii/needfinding/w17.png"> 
-<img src="assets/img/chapter-ii/needfinding/w18.png "> 
-<img src="assets/img/chapter-ii/needfinding/w19.png "> 
-<img src="assets/img/chapter-ii/needfinding/w20.png"> 
-<img src="assets/img/chapter-ii/needfinding/w21.png "> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/w1.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/w2.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/w3.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/w4.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/w5.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/w6.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/w7.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/w8.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/w9.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/w10.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/w11.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/w12.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/w13.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/w14.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/w15.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/w16.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/w17.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/w18.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/w19.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/w20.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/w21.png"> 
 
 
 
 
 
 ### 4.4.2. Web Applications Wireflow Diagrams.
-<img src="assets/img/chapter-ii/needfinding/wireflow.png "> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/wireflow.png"> 
 
 
 
 ### 4.4.3. Web Applications Mock-ups.
-<img src="assets/img/chapter-ii/needfinding/MW1.png "> 
-<img src="assets/img/chapter-ii/needfinding/MW2.png"> 
-<img src="assets/img/chapter-ii/needfinding/MW3.png "> 
-<img src="assets/img/chapter-ii/needfinding/MW4.png "> 
-<img src="assets/img/chapter-ii/needfinding/MW5.png "> 
-<img src="assets/img/chapter-ii/needfinding/MW6.png "> 
-<img src="assets/img/chapter-ii/needfinding/MW7.png "> 
-<img src="assets/img/chapter-ii/needfinding/MW8.png "> 
-<img src="assets/img/chapter-ii/needfinding/MW9.png "> 
-<img src="assets/img/chapter-ii/needfinding/MW10.png "> 
-<img src="assets/img/chapter-ii/needfinding/MW11.png"> 
-<img src="assets/img/chapter-ii/needfinding/MW12.png "> 
-<img src="assets/img/chapter-ii/needfinding/MW13.png "> 
-<img src="assets/img/chapter-ii/needfinding/MW14.png "> 
-<img src="assets/img/chapter-ii/needfinding/MW15.png "> 
-<img src="assets/img/chapter-ii/needfinding/MW16.png "> 
-<img src="assets/img/chapter-ii/needfinding/MW17.png "> 
-<img src="assets/img/chapter-ii/needfinding/MW18.png"> 
-<img src="assets/img/chapter-ii/needfinding/MW19.png "> 
-<img src="assets/img/chapter-ii/needfinding/MW20.png "> 
-<img src="assets/img/chapter-ii/needfinding/MW21.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/MW1.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/MW2.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/MW3.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/MW4.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/MW5.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/MW6.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/MW7.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/MW8.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/MW9.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/MW10.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/MW11.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/MW12.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/MW13.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/MW14.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/MW15.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/MW16.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/MW17.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/MW18.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/MW19.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/MW20.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/MW21.png"> 
 
 
 ### 4.4.4. Web Applications User Flow Diagrams.
-<img src="assets/img/chapter-ii/needfinding/user flow.png"> 
+<img src="assets/img/2.chapter-ii/2.3.needfinding/user flow.png"> 
 
 
 
@@ -2173,11 +2174,11 @@ https://youtu.be/ImzFsoEMSIk
 ### 4.6.1. Design-Level Event Storming.
 ### 4.6.2. Software Architecture Context Diagram.
 
-<img src="assets/img/chapter-iv/context-diagram/Context-Reliant___Context_Diagram.png">
+<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.2.software-architecture-context-diagram/Context-Reliant___Context_Diagram.png">
 
 ### 4.6.3. Software Architecture Container Diagrams.
 
-<img src="assets/img/chapter-iv/cointainer-diagrams/Containers-Reliant___Container_Diagram.png">
+<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.3.software-architecture-container-diagrams/Containers-Reliant___Container_Diagram.png">
 
 ### 4.6.4. Software Architecture Components Diagrams.
 
@@ -2192,58 +2193,58 @@ Debido a la complejidad del sistema, a la cantidad de Bounded Contexts definidos
 
 #### Equipment
 
-<img src="assets/img/chapter-iv/class-diagrams/equipment/Reliant_Equipment_Domain.png">
-<img src="assets/img/chapter-iv/class-diagrams/equipment/Reliant_Equipment_Application.png">
-<img src="assets/img/chapter-iv/class-diagrams/equipment/Reliant_Equipment_Interfaces.png">
-<img src="assets/img/chapter-iv/class-diagrams/equipment/Reliant_Equipment_Infrastructure.png">
+<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/equipment/Reliant_Equipment_Domain.png">
+<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/equipment/Reliant_Equipment_Application.png">
+<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/equipment/Reliant_Equipment_Interfaces.png">
+<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/equipment/Reliant_Equipment_Infrastructure.png">
 
 #### FaultDiagnosis
-<img src="assets/img/chapter-iv/class-diagrams/fault-diagnosis/Reliant_FaultDiagnosis_Domain.png">
-<img src="assets/img/chapter-iv/class-diagrams/fault-diagnosis/Reliant_FaultDiagnosis_Application.png">
-<img src="assets/img/chapter-iv/class-diagrams/fault-diagnosis/Reliant_FaultDiagnosis_Interfaces.png">
-<img src="assets/img/chapter-iv/class-diagrams/fault-diagnosis/Reliant_FaultDiagnosis_Infrastructure.png">
+<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/fault-diagnosis/Reliant_FaultDiagnosis_Domain.png">
+<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/fault-diagnosis/Reliant_FaultDiagnosis_Application.png">
+<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/fault-diagnosis/Reliant_FaultDiagnosis_Interfaces.png">
+<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/fault-diagnosis/Reliant_FaultDiagnosis_Infrastructure.png">
 
 #### ProcessMonitoring
-<img src="assets/img/chapter-iv/class-diagrams/process-monitoring/Reliant_ProcessMonitoring_Domain.png">
-<img src="assets/img/chapter-iv/class-diagrams/process-monitoring/Reliant_ProcessMonitoring_Application.png">
-<img src="assets/img/chapter-iv/class-diagrams/process-monitoring/Reliant_ProcessMonitoring_Interfaces.png">
-<img src="assets/img/chapter-iv/class-diagrams/process-monitoring/Reliant_ProcessMonitoring_Infrastructure.png">
+<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/process-monitoring/Reliant_ProcessMonitoring_Domain.png">
+<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/process-monitoring/Reliant_ProcessMonitoring_Application.png">
+<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/process-monitoring/Reliant_ProcessMonitoring_Interfaces.png">
+<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/process-monitoring/Reliant_ProcessMonitoring_Infrastructure.png">
 
 #### Traceability
-<img src="assets/img/chapter-iv/class-diagrams/traceability/Reliant_Traceability_Domain.png">
-<img src="assets/img/chapter-iv/class-diagrams/traceability/Reliant_Traceability_Application.png">
-<img src="assets/img/chapter-iv/class-diagrams/traceability/Reliant_Traceability_Interfaces.png">
-<img src="assets/img/chapter-iv/class-diagrams/traceability/Reliant_Traceability_Infrastructure.png">
+<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/traceability/Reliant_Traceability_Domain.png">
+<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/traceability/Reliant_Traceability_Application.png">
+<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/traceability/Reliant_Traceability_Interfaces.png">
+<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/traceability/Reliant_Traceability_Infrastructure.png">
 
 #### Reporting
-<img src="assets/img/chapter-iv/class-diagrams/reporting/Reliant_Reporting_Domain.png">
-<img src="assets/img/chapter-iv/class-diagrams/reporting/Reliant_Reporting_Application.png">
-<img src="assets/img/chapter-iv/class-diagrams/reporting/Reliant_Reporting_Interfaces.png">
-<img src="assets/img/chapter-iv/class-diagrams/reporting/Reliant_Reporting_Infrastructure.png">
+<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/reporting/Reliant_Reporting_Domain.png">
+<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/reporting/Reliant_Reporting_Application.png">
+<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/reporting/Reliant_Reporting_Interfaces.png">
+<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/reporting/Reliant_Reporting_Infrastructure.png">
 
 #### Notifications
-<img src="assets/img/chapter-iv/class-diagrams/notifications/Reliant_Notifications_Domain.png">
-<img src="assets/img/chapter-iv/class-diagrams/notifications/Reliant_Notifications_Application.png">
-<img src="assets/img/chapter-iv/class-diagrams/notifications/Reliant_Notifications_Interfaces.png">
-<img src="assets/img/chapter-iv/class-diagrams/notifications/Reliant_Notifications_Infrastructure.png">
+<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/notifications/Reliant_Notifications_Domain.png">
+<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/notifications/Reliant_Notifications_Application.png">
+<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/notifications/Reliant_Notifications_Interfaces.png">
+<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/notifications/Reliant_Notifications_Infrastructure.png">
 
 #### Billing
-<img src="assets/img/chapter-iv/class-diagrams/billing/Reliant_Billing_Domain.png">
-<img src="assets/img/chapter-iv/class-diagrams/billing/Reliant_Billing_Application.png">
-<img src="assets/img/chapter-iv/class-diagrams/billing/Reliant_Billing_Interfaces.png">
-<img src="assets/img/chapter-iv/class-diagrams/billing/Reliant_Billing_Infrastructure.png">
+<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/billing/Reliant_Billing_Domain.png">
+<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/billing/Reliant_Billing_Application.png">
+<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/billing/Reliant_Billing_Interfaces.png">
+<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/billing/Reliant_Billing_Infrastructure.png">
 
 #### IAM
-<img src="assets/img/chapter-iv/class-diagrams/iam/Reliant_IAM_Domain.png">
-<img src="assets/img/chapter-iv/class-diagrams/iam/Reliant_IAM_Application.png">
-<img src="assets/img/chapter-iv/class-diagrams/iam/Reliant_IAM_Interfaces.png">
-<img src="assets/img/chapter-iv/class-diagrams/iam/Reliant_IAM_Infrastructure.png">
+<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/iam/Reliant_IAM_Domain.png">
+<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/iam/Reliant_IAM_Application.png">
+<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/iam/Reliant_IAM_Interfaces.png">
+<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/iam/Reliant_IAM_Infrastructure.png">
 
 #### Shared
-<img src="assets/img/chapter-iv/class-diagrams/shared-kernel/Reliant_SharedKernel_Domain.png">
-<img src="assets/img/chapter-iv/class-diagrams/shared-kernel/Reliant_SharedKernel_Application.png">
-<img src="assets/img/chapter-iv/class-diagrams/shared-kernel/Reliant_SharedKernel_Interfaces.png">
-<img src="assets/img/chapter-iv/class-diagrams/shared-kernel/Reliant_SharedKernel_Infrastructure.png">
+<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/shared-kernel/Reliant_SharedKernel_Domain.png">
+<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/shared-kernel/Reliant_SharedKernel_Application.png">
+<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/shared-kernel/Reliant_SharedKernel_Interfaces.png">
+<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/shared-kernel/Reliant_SharedKernel_Infrastructure.png">
 
 
 
@@ -2253,21 +2254,21 @@ Debido a la complejidad del sistema, a la cantidad de Bounded Contexts definidos
 El modelo relacional se despliega sobre PostgreSQL y refleja de forma directa el diagrama de clases de 4.7.1, con tablas puente derivadas de las relaciones muchos-a-muchos implícitas en el dominio.
 
 
-<img src="assets/img/chapter-iv/database-diagrams/Reliant_Equipment_Database.png">
+<img src="assets/img/4.chapter-iv/4.8.database-design/4.8.1.database-diagrams/Reliant_Equipment_Database.png">
 
-<img src="assets/img/chapter-iv/database-diagrams/Reliant_FaultDiagnosis_Database.png">
+<img src="assets/img/4.chapter-iv/4.8.database-design/4.8.1.database-diagrams/Reliant_FaultDiagnosis_Database.png">
 
-<img src="assets/img/chapter-iv/database-diagrams/Reliant_ProcessMonitoring_Database.png">
+<img src="assets/img/4.chapter-iv/4.8.database-design/4.8.1.database-diagrams/Reliant_ProcessMonitoring_Database.png">
 
-<img src="assets/img/chapter-iv/database-diagrams/Reliant_Reporting_Database.png">
+<img src="assets/img/4.chapter-iv/4.8.database-design/4.8.1.database-diagrams/Reliant_Reporting_Database.png">
 
-<img src="assets/img/chapter-iv/database-diagrams/Reliant_Traceability_Database.png">
+<img src="assets/img/4.chapter-iv/4.8.database-design/4.8.1.database-diagrams/Reliant_Traceability_Database.png">
 
-<img src="assets/img/chapter-iv/database-diagrams/Reliant_Notifications_Database.png">
+<img src="assets/img/4.chapter-iv/4.8.database-design/4.8.1.database-diagrams/Reliant_Notifications_Database.png">
 
-<img src="assets/img/chapter-iv/database-diagrams/Reliant_IAM_Database.png">
+<img src="assets/img/4.chapter-iv/4.8.database-design/4.8.1.database-diagrams/Reliant_IAM_Database.png">
 
-<img src="assets/img/chapter-iv/database-diagrams/Reliant_Billing_Database.png">
+<img src="assets/img/4.chapter-iv/4.8.database-design/4.8.1.database-diagrams/Reliant_Billing_Database.png">
 
 # Capítulo V: Product Implementation, Validation & Deployment
 ## 5.1. Software Configuration Management.
