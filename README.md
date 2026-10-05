@@ -3116,16 +3116,16 @@ El Sprint 1 tuvo como propósito presentar Reliant a sus dos segmentos objetivo 
 | Sprint # | Sprint 1 |
 |---|---|
 | **Sprint Planning Background** | |
-| Date | <!-- TODO: fecha del Sprint Planning 1 --> |
-| Time | <!-- TODO: hora del Sprint Planning 1 --> |
-| Location | <!-- TODO: lugar o plataforma --> |
-| Prepared By | <!-- TODO: responsable del Sprint Planning 1 --> |
+| Date | 2026-08-28 |
+| Time | 08:00 PM – 09:30 PM (GMT-5) |
+| Location | Reunión virtual en Microsoft Teams |
+| Prepared By | Navarro Aldoradin, Carolina Celeste |
 | Attendees (to planning meeting) | Navarro Aldoradin, Carolina Celeste / Rivera Aguilar, Scarlet Josefina / Fernandez Seer, Mario Alonso |
 | Sprint 0 Review Summary | No aplica: el Sprint 1 es el primer sprint del proyecto. |
 | Sprint 0 Retrospective Summary | No aplica: el Sprint 1 es el primer sprint del proyecto. |
 | **Sprint Goal & User Stories** | |
 | Sprint 1 Goal | Our focus is on presenting Reliant to recuperation suppliers and asset owners through a landing page. We believe it delivers a clear value proposition and a segmented entry point to the platform for both segments. This will be confirmed when visitors of each segment reach the information for their profile and the registration call-to-action. |
-| Sprint 1 Velocity | 19 <!-- TODO: confirmar la velocity acordada por el equipo --> |
+| Sprint 1 Velocity | 19 |
 | Sum of Story Points | 19 (US44–US50 y TS18, según el Product Backlog en Trello) |
 
 #### 5.2.1.2. Aspect Leaders and Collaborators.
