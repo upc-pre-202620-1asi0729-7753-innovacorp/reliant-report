@@ -1800,7 +1800,7 @@ El Impact Map de Reliant conecta los objetivos de negocio de InnovaCorp con los 
 
 Los Business Goals cumplen los criterios SMART: son específicos, medibles, alcanzables con el alcance del producto, relevantes para el modelo de suscripción de dos segmentos (plan Operator y plan Asset Owner) y acotados en el tiempo. Los Actors corresponden a los tres User Personas: **Rosa Miranda**, Ingeniera de Calidad e Investigación de un Recuperation Supplier; **Jorge Salinas**, Supervisor de Mantenimiento de máquina del mismo segmento; y **Lucía Torres**, Ingeniera de Confiabilidad de una empresa minera (Asset Owner). Cuando el comportamiento esperado corresponde a un rol secundario del segmento (operador HVOF, supervisor de operación, analista de compras, visitante del Landing Page), se indica junto al persona que lo representa. Las métricas de los goals se derivan de los Business Outcome Assumptions y de los Hypothesis Statements de la sección 1.2.2.
 
-*[Insertar captura del Impact Map elaborado en UXPressia]*
+<img src="assets/img/3.chapter-iii/3.2.impact-mapping/Impact_Map-Reliant.png" alt="Impact Map de Reliant">
 
 ### Business Goal 1 — Adopción del segmento Recuperation Supplier
 
