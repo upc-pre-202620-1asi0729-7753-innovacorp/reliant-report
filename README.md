@@ -2996,6 +2996,39 @@ El repositorio `reliant-website` no registra commits durante el Sprint 2; su úl
 
 #### 5.2.2.5. Execution Evidence for Sprint Review.
 
+Al cierre del Sprint 2, la Frontend Web Application de Reliant permite a un Recuperation Supplier registrar su organización e iniciar sesión, gestionar sus clientes, componentes y órdenes de recuperación, registrar su sistema HVOF con controladores, subsistemas, partes y recetas con bandas de umbral, y ejecutar una sesión de rociado de extremo a extremo: iniciarla, seguir sus lecturas clasificadas por banda, completarla o abortarla y consultarla luego en el historial. El administrador de la organización gestiona además los roles de sus usuarios y su plan de suscripción, y toda la interfaz está disponible en español e inglés.
+
+Las capturas siguientes se tomaron ejecutando la versión 1.0.1 en el entorno local de desarrollo (`ng serve` contra el fake API en json-server con los mismos datos de `db.json`), con el usuario administrador de la organización de prueba. En el entorno local la vista de una sesión activa muestra además el botón "Simular lectura", que solo existe en desarrollo para generar lecturas sin el gateway del PLC. La sección 5.2.2.7 muestra la misma aplicación desplegada en Azure App Service.
+
+URL de la aplicación desplegada: https://reliant-web-application-hsa3asb7axaph6hf.chilecentral-01.azurewebsites.net
+
+Video de navegación del producto (Sprint 2): <!-- TODO: URL de Microsoft Stream del video upc-pre-202620-1asi0729-7753-innovacorp-productnavigation-sprint-2 -->
+
+| Feature · User Story | Evidencia | Descripción |
+|---|---|---|
+| F13 register-a-new-organization · US01 | <img src="assets/img/5.chapter-v/5.2.2.5-sign-up.png" width="480"> | Registro de una nueva organización: el administrador indica el tipo de organización (Recuperation Supplier o Asset Owner) y sus datos de acceso. |
+| F14 sign-in-and-manage-the-session · US02 | <img src="assets/img/5.chapter-v/5.2.2.5-sign-in.png" width="480"> | Inicio de sesión con correo y contraseña. En el Sprint 2 la autenticación se resuelve con los adapters fake contra las colecciones `/users` y `/organizations` del fake API. |
+| F1 navigate-the-application · F14 · US65 · US67 | <img src="assets/img/5.chapter-v/5.2.2.5-user-menu.png" width="480"> | Vista de inicio después de iniciar sesión: la barra de navegación muestra solo las opciones de un Recuperation Supplier con rol administrador, y el menú de la cuenta presenta el correo, el tipo de organización y la opción de salir. |
+| F3 manage-customers · US13 | <img src="assets/img/5.chapter-v/5.2.2.5-customers.png" width="480"> | Clientes de la organización con sus acciones de edición y eliminación. |
+| F4 manage-components · US14 | <img src="assets/img/5.chapter-v/5.2.2.5-components.png" width="480"> | Componentes recibidos con su número de serie, part number, tipo, modelo de máquina, cliente y PCR objetivo. |
+| F5 manage-recuperations · US15 | <img src="assets/img/5.chapter-v/5.2.2.5-recuperations.png" width="480"> | Órdenes de recuperación con su WO y OF, componente, cliente y estado. |
+| F6 manage-hvof-systems · US07 | <img src="assets/img/5.chapter-v/5.2.2.5-hvof-systems-es.png" width="480"> | Sistemas HVOF de la organización (HVOF-01, Oerlikon Metco MultiCoat / Diamond Jet 2700). |
+| F6 manage-hvof-systems · US07 | <img src="assets/img/5.chapter-v/5.2.2.5-hvof-system-detail.png" width="480"> | Detalle del sistema HVOF con la pestaña de controladores. |
+| F7 manage-hvof-subsystems · US08 · US53 | <img src="assets/img/5.chapter-v/5.2.2.5-hvof-subsystems.png" width="480"> | Subsistemas del sistema HVOF y sus partes. |
+| F8 manage-recipes · US54 | <img src="assets/img/5.chapter-v/5.2.2.5-recipes.png" width="480"> | Recetas del sistema HVOF: receta 12, WC-10Co-4Cr sobre vástago hidráulico, con nueve parámetros. |
+| F8 manage-recipes · US54 | <img src="assets/img/5.chapter-v/5.2.2.5-recipe-form.png" width="480"> | Edición de la receta con sus componentes aplicables y las bandas de umbral de cada parámetro (parada, advertencia, nominal y setpoint). |
+| F9 start-spray-session · US19 | <img src="assets/img/5.chapter-v/5.2.2.5-spray-session-start.png" width="480"> | Inicio de una sesión de rociado: se elige el sistema HVOF, la orden de recuperación y una receta activa del sistema. |
+| F10 monitor-live-readings · US21 · US22 | <img src="assets/img/5.chapter-v/5.2.2.5-spray-session-readings.png" width="480"> | Lecturas de la sesión 3: último valor de cada parámetro con su banda respecto a la receta, conteo de lecturas por banda y hora de la última actualización. |
+| F10 monitor-live-readings · F11 finish-spray-session · US22 · US23 | <img src="assets/img/5.chapter-v/5.2.2.5-spray-session-active.png" width="480"> | Sesión activa: la vista se actualiza periódicamente y ofrece las acciones de completar y abortar la sesión. |
+| F11 finish-spray-session · US23 | <img src="assets/img/5.chapter-v/5.2.2.5-abort-session-dialog.png" width="480"> | Diálogo para abortar una sesión indicando el motivo. |
+| F12 browse-session-history · US24 | <img src="assets/img/5.chapter-v/5.2.2.5-spray-session-history.png" width="480"> | Historial de sesiones con filtros por sistema HVOF, orden y rango de fechas, estado de cada sesión y número de desviaciones. |
+| F15 manage-user-roles · US03 | <img src="assets/img/5.chapter-v/5.2.2.5-users.png" width="480"> | Usuarios de la organización con sus roles. |
+| F15 manage-user-roles · US03 · US04 | <img src="assets/img/5.chapter-v/5.2.2.5-user-roles.png" width="480"> | Asignación de roles a un usuario de la organización. |
+| F16 select-subscription-plan · US05 | <img src="assets/img/5.chapter-v/5.2.2.5-plans.png" width="480"> | Selección de plan: solo se habilita el plan que corresponde al tipo de organización. |
+| F16 select-subscription-plan · US06 | <img src="assets/img/5.chapter-v/5.2.2.5-subscription.png" width="480"> | Estado y vigencia de la suscripción de la organización. |
+| F2 switch-application-language · US66 | <img src="assets/img/5.chapter-v/5.2.2.5-hvof-systems-en.png" width="480"> | La misma vista de sistemas HVOF después de cambiar el idioma a inglés con el selector EN / ES. |
+| F1 navigate-the-application · US65 | <img src="assets/img/5.chapter-v/5.2.2.5-page-not-found.png" width="480"> | Vista de recurso no encontrado con la opción de volver al inicio. |
+
 #### 5.2.2.6. Services Documentation Evidence for Sprint Review.
 
 #### 5.2.2.7. Software Deployment Evidence for Sprint Review.
