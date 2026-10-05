@@ -2883,6 +2883,7 @@ A continuación se especifican los productos de software que utilizan los miembr
 
 | Producto | Propósito en el proyecto | Ruta |
 |---|---|---|
+| GitHub Pages | Despliegue del Landing Page desde la rama `main` del repositorio `reliant-website` | https://pages.github.com |
 | Microsoft Azure App Service (Linux) | Despliegue de la Frontend Web Application y del fake API como Web Apps independientes | https://azure.microsoft.com/products/app-service |
 | PM2 | Servidor de archivos estáticos en modo SPA para la Web Application dentro de App Service | https://pm2.keymetrics.io |
 | GitHub Actions | Integración y despliegue continuo: build, pruebas y publicación en Azure en cada push a `main` | https://github.com/features/actions |
@@ -3023,13 +3024,24 @@ Se sigue PEP 8: `snake_case` para funciones y variables, `PascalCase` para clase
 
 ### 5.1.4. Software Deployment Configuration.
 
-En el Sprint 2 la Frontend Web Application y su fake API se despliegan en **Microsoft Azure App Service** sobre Linux, cada una como un Web App independiente dentro del grupo de recursos `reliant-rg`. Cada Web App se conecta a su repositorio de GitHub desde el **Deployment Center**, que genera un workflow de **GitHub Actions** en la rama `main`: cada push a `main` construye el proyecto y lo publica en Azure. Se descartó **Azure Static Web Apps** porque la política de regiones de la suscripción de estudiante rechazó la creación del recurso (`RequestDisallowedByAzure`); por esa razón el archivo `public/staticwebapp.config.json` que se agregó en la versión 1.0.1 de la Web Application quedó sin uso.
+El Landing Page se publica en **GitHub Pages** directamente desde la rama `main` de su repositorio. En el Sprint 2 la Frontend Web Application y su fake API se despliegan en **Microsoft Azure App Service** sobre Linux, cada una como un Web App independiente dentro del grupo de recursos `reliant-rg`. Cada Web App se conecta a su repositorio de GitHub desde el **Deployment Center**, que genera un workflow de **GitHub Actions** en la rama `main`: cada push a `main` construye el proyecto y lo publica en Azure. Se descartó **Azure Static Web Apps** porque la política de regiones de la suscripción de estudiante rechazó la creación del recurso (`RequestDisallowedByAzure`); por esa razón el archivo `public/staticwebapp.config.json` que se agregó en la versión 1.0.1 de la Web Application quedó sin uso.
 
 | Recurso de Azure | Producto | Repositorio | Workflow de GitHub Actions | URL pública |
 |---|---|---|---|---|
 | Web App `reliant-mockapi` | Fake API (json-server) | [`reliant-platform-mock`](https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform-mock) | `.github/workflows/main_reliant-mockapi.yml` | https://reliant-mockapi-ajh4eqgkf7hxg2fx.eastus-01.azurewebsites.net/api/v1 |
 | Web App `reliant-web-application` | Frontend Web Application (Angular) | [`reliant-webapp`](https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp) | `.github/workflows/main_reliant-web-application.yml` | https://reliant-web-application-hsa3asb7axaph6hf.chilecentral-01.azurewebsites.net |
-| Landing Page | Sitio web estático | [`reliant-website`](https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-website) | <!-- TODO: el repositorio reliant-website no contiene workflow de GitHub Actions --> — | <!-- TODO: URL pública del Landing Page --> |
+| GitHub Pages `reliant-website` | Landing Page (sitio estático) | [`reliant-website`](https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-website) | No requiere: GitHub Pages publica cada push a `main` | https://upc-pre-202620-1asi0729-7753-innovacorp.github.io/reliant-website/ |
+
+**Landing Page → GitHub Pages**
+
+| Paso | Descripción |
+|---|---|
+| 1 | El repositorio `reliant-website` contiene el sitio estático en la raíz (`index.html`, `assets/`, `legal/`), sin proceso de construcción |
+| 2 | En Settings → Pages se selecciona **Deploy from a branch**, la rama `main` y la carpeta `/ (root)` |
+| 3 | Cada merge a `main` (por ejemplo, el cierre de un release con Git Flow) publica automáticamente el sitio en https://upc-pre-202620-1asi0729-7753-innovacorp.github.io/reliant-website/ |
+| 4 | Los call-to-action de cada segmento dirigen a la vista de registro de la Web Application con el segmento como parámetro (`?segment=recuperation-supplier`, `?segment=asset-owner`) |
+
+<!-- TODO: los call-to-action del Landing Page aún apuntan a https://app.reliant.example.com/onboarding; actualizarlos a la URL de la Web Application desplegada -->
 
 **Fake API → Azure App Service (`reliant-mockapi`)**
 
@@ -3216,7 +3228,9 @@ En el Sprint 1 no se desarrollaron ni consumieron Web Services: el Landing Page 
 
 El Landing Page se versionó con Git Flow: la rama `feature/landing-page-initial-version` se integró en `develop`, se preparó el release en `release/0.1.0` y se publicó en `main` con la etiqueta `v0.1.0`. Al ser un sitio estático, no requiere proceso de construcción.
 
-<!-- TODO: URL pública del Landing Page y capturas de su despliegue -->
+El sitio se publica en GitHub Pages desde la rama `main`, con la configuración descrita en la sección 5.1.4, y está disponible en https://upc-pre-202620-1asi0729-7753-innovacorp.github.io/reliant-website/. La captura muestra la versión desplegada actualmente, que incluye el selector de idioma incorporado en el Sprint 2.
+
+<img src="assets/img/5.chapter-v/5.2.1.7-landing-deployed.png" alt="Landing Page desplegado en GitHub Pages" width="720">
 
 #### 5.2.1.8. Team Collaboration Insights during Sprint.
 
@@ -3732,7 +3746,7 @@ En el Sprint 2 se desplegaron en Microsoft Azure App Service el fake API y la Fr
 |---|---|
 | Fake API (`reliant-platform-mock`) | https://reliant-mockapi-ajh4eqgkf7hxg2fx.eastus-01.azurewebsites.net/api/v1 |
 | Frontend Web Application (`reliant-webapp`, versión 1.0.1) | https://reliant-web-application-hsa3asb7axaph6hf.chilecentral-01.azurewebsites.net |
-| Landing Page (`reliant-website`) | <!-- TODO: URL pública del Landing Page --> |
+| Landing Page (`reliant-website`) | https://upc-pre-202620-1asi0729-7753-innovacorp.github.io/reliant-website/ |
 
 **Paso 1. Separar el fake API en su propio repositorio.** Durante el desarrollo, el fake API vivía dentro de `reliant-webapp` (carpeta `server/`, ejecutada con `json-server --watch db.json --routes routes.json`). Para desplegarlo como servicio independiente se creó el repositorio `reliant-platform-mock` (commit `71e588f`, "chore: add the mock API as its own deployable project."), con las clases `MockApiServer` y `MockApiServerConfig`, el punto de entrada `server.js` y el script `npm start`.
 
@@ -3970,6 +3984,21 @@ El video About-the-Team presenta al equipo de InnovaCorp, su forma de trabajo y 
 - typicode. (s.f.). *json-server*. https://github.com/typicode/json-server
 
 # Anexos
+
+## Anexo: Links importantes
+
+| Recurso | URL |
+|---|---|
+| Organización de GitHub | https://github.com/upc-pre-202620-1asi0729-7753-innovacorp |
+| Repositorio del informe (`reliant-report`) | https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-report |
+| Repositorio del Landing Page (`reliant-website`) | https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-website |
+| Repositorio de la Frontend Web Application (`reliant-webapp`) | https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp |
+| Repositorio del fake API (`reliant-platform-mock`) | https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform-mock |
+| Landing Page desplegado | https://upc-pre-202620-1asi0729-7753-innovacorp.github.io/reliant-website/ |
+| Frontend Web Application desplegada | https://reliant-web-application-hsa3asb7axaph6hf.chilecentral-01.azurewebsites.net |
+| Fake API desplegado | https://reliant-mockapi-ajh4eqgkf7hxg2fx.eastus-01.azurewebsites.net/api/v1 |
+| Product Backlog en Trello | https://trello.com/b/aDFKmtGp/reliant-product-backlog |
+| Sprint Backlog 2 en Trello | https://trello.com/b/ccOu9yk5/reliant-sprint-2 |
 
 ## Anexo: Videos de Exposiciones
 
