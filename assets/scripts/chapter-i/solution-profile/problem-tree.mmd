@@ -1,6 +1,3 @@
----
-title: Arbol de Problemas - Reliant (InnovaCorp)
----
 flowchart BT
 
     classDef efectoFinal fill:#C62828,stroke:#8E0000,stroke-width:2px,color:#FFFFFF
@@ -16,25 +13,29 @@ flowchart BT
     CR3["El registro de la sesion de rociado<br/>se lleva de forma manual o en papel"]
 
     CR4["No hay catalogo formal de reglas<br/>causa-efecto para las fallas"]
-    CR5["La falla no se correlaciona<br/>con el componente de maquina responsable"]
+    CR5["La falla no se correlaciona<br/>con el subsistema o parte del sistema HVOF responsable"]
     CR6["El diagnostico exige revision manual<br/>de logs crudos del PLC"]
 
     CR7["El PCR comprometido no se registra<br/>de forma digital ni consultable"]
     CR8["El retorno de la pieza desde mina<br/>no se vincula a su sesion de rociado"]
 
-    CR9["Los umbrales nominales por equipo<br/>no estan parametrizados en el sistema"]
-    CR10["La desviacion depende de que el operador<br/>la advierta en el tablero de la maquina"]
+    CR9["Las recetas del controlador definen umbrales<br/>de seguridad, pero no la banda de calidad<br/>que exige el cliente"]
+    CR10["El PLC solo alarma al cruzar el umbral de parada;<br/>una desviacion dentro de ese margen<br/>pasa inadvertida"]
+    CR11["Cada proveedor entrega su evidencia<br/>en su propio formato"]
+    CR12["El retorno de campo se registra en hojas<br/>de calculo, sin vinculo con la pieza"]
 
     CD1["<b>C1.</b> Perdida de trazabilidad<br/>del proceso de rociado"]
     CD2["<b>C2.</b> Diagnostico de fallas dependiente<br/>del conocimiento tacito de pocas personas"]
     CD3["<b>C3.</b> Imposibilidad de analisis retrospectivo<br/>del desempeno en campo contra el PCR"]
     CD4["<b>C4.</b> Deteccion tardia de desviaciones<br/>durante la operacion"]
+    CD5["<b>C5.</b> Sin vista consolidada del desempeno<br/>de componentes por proveedor"]
 
     ED1["<b>E1.</b> Imposible emitir evidencia documentada<br/>de calidad al cliente minero"]
     ED2["<b>E2.</b> Tiempo de diagnostico prolongado<br/>ante cada parada del equipo"]
     ED3["<b>E3.</b> Fallas recurrentes no detectadas<br/>ni atribuidas a un componente"]
     ED4["<b>E4.</b> Piezas recubiertas fuera de tolerancia<br/>sin que se advierta a tiempo"]
     ED5["<b>E5.</b> No se puede determinar el origen<br/>de una falla prematura en campo"]
+    ED6["<b>E6.</b> Decisiones de contrato con proveedores<br/>basadas en percepcion, no en datos"]
 
     EF1["<b>EF1.</b> Paradas no planificadas<br/>y sobrecosto operativo"]
     EF2["<b>EF2.</b> Componentes que fallan<br/>antes de alcanzar su PCR"]
@@ -55,10 +56,18 @@ flowchart BT
     CR9 --> CD4
     CR10 --> CD4
 
+    CR11 --> CD5
+    CR12 --> CD5
+
+    PC --> ED6
+    ED6 --> EF3
+    ED6 --> EF4
+
     CD1 --> PC
     CD2 --> PC
     CD3 --> PC
     CD4 --> PC
+    CD5 --> PC
 
 %% Main problem
 
@@ -80,7 +89,7 @@ flowchart BT
 %% Styles
 
     class PC central
-    class CD1,CD2,CD3,CD4 causaDirecta
-    class CR1,CR2,CR3,CR4,CR5,CR6,CR7,CR8,CR9,CR10 causaRaiz
-    class ED1,ED2,ED3,ED4,ED5 efectoDirecto
-    class EF1,EF2,EF3,EF4 efectoFinal
+    class CD1,CD2,CD3,CD4,CD5 causaDirecta
+class CR1,CR2,CR3,CR4,CR5,CR6,CR7,CR8,CR9,CR10,CR11,CR12 causaRaiz
+class ED1,ED2,ED3,ED4,ED5,ED6 efectoDirecto
+class EF1,EF2,EF3,EF4 efectoFinal
