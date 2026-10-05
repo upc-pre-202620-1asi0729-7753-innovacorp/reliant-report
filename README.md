@@ -49,6 +49,9 @@ Proyecto
 | 2.0.0 | 2026-10-05 | Navarro Aldoradin, Carolina Celeste | Sección 5.1: repositorios reales de la organización, herramientas del Sprint 2 y 5.1.4 Software Deployment Configuration actualizado a Azure App Service con GitHub Actions. |
 | 2.0.0 | 2026-10-05 | Navarro Aldoradin, Carolina Celeste | Sección 5.2.2 Sprint 2 completa: Sprint Planning, LACX, Sprint Backlog, Development, Execution, Services Documentation y Software Deployment Evidence, y Team Collaboration Insights. |
 | 2.0.0 | 2026-10-05 | Navarro Aldoradin, Carolina Celeste | Conclusiones y recomendaciones del Sprint 2, referencias bibliográficas de las tecnologías usadas y Anexo de Videos de Exposiciones. |
+| 2.0.0 | 2026-10-05 | Navarro Aldoradin, Carolina Celeste | Capítulo I: Lean UX Canvas. Capítulo II: registro de la entrevista a Jhuol, análisis de entrevistas, fichas faltantes de User Persona, Journey Maps y Empathy Map, y tablero OPEN del Big Picture en filas. Capítulo III: Impact Map consolidado y Story Points alineados con el Product Backlog en Trello. |
+| 2.0.0 | 2026-10-05 | Navarro Aldoradin, Carolina Celeste | Capítulo IV: Design-Level Event Storming (Candidate Context Discovery, Domain Message Flows y Bounded Context Canvases). |
+| 2.0.0 | 2026-10-05 | Navarro Aldoradin, Carolina Celeste | Capítulo V: Sprint 1 (Landing Page v0.1.0), evidencia de la internacionalización del Landing Page en el Sprint 2, diseño de las entrevistas de validación y secciones de videos. |
 
 <!-- TODO: confirmar el número de versión del release de TB1 (2.0.0) al crear el release con Git Flow -->
 
@@ -133,6 +136,9 @@ Para la entrega TB1, el informe se actualizó siguiendo el mismo flujo de Git Fl
   - [4.5. Web Applications Prototyping.](#45-web-applications-prototyping)
   - [4.6. Domain-Driven Software Architecture.](#46-domain-driven-software-architecture)
     - [4.6.1. Design-Level Event Storming.](#461-design-level-event-storming)
+      - [4.6.1.1. Candidate Context Discovery.](#4611-candidate-context-discovery)
+      - [4.6.1.2. Domain Message Flows Modeling.](#4612-domain-message-flows-modeling)
+      - [4.6.1.3. Bounded Context Canvases.](#4613-bounded-context-canvases)
     - [4.6.2. Software Architecture Context Diagram.](#462-software-architecture-context-diagram)
     - [4.6.3. Software Architecture Container Diagrams.](#463-software-architecture-container-diagrams)
     - [4.6.4. Software Architecture Components Diagrams.](#464-software-architecture-components-diagrams)
@@ -148,6 +154,14 @@ Para la entrega TB1, el informe se actualizó siguiendo el mismo flujo de Git Fl
     - [5.1.4. Software Deployment Configuration.](#514-software-deployment-configuration)
   - [5.2. Landing Page, Services & Applications Implementation.](#52-landing-page-services--applications-implementation)
     - [5.2.1. Sprint 1](#521-sprint-1)
+      - [5.2.1.1. Sprint Planning 1.](#5211-sprint-planning-1)
+      - [5.2.1.2. Aspect Leaders and Collaborators.](#5212-aspect-leaders-and-collaborators)
+      - [5.2.1.3. Sprint Backlog 1.](#5213-sprint-backlog-1)
+      - [5.2.1.4. Development Evidence for Sprint Review.](#5214-development-evidence-for-sprint-review)
+      - [5.2.1.5. Execution Evidence for Sprint Review.](#5215-execution-evidence-for-sprint-review)
+      - [5.2.1.6. Services Documentation Evidence for Sprint Review.](#5216-services-documentation-evidence-for-sprint-review)
+      - [5.2.1.7. Software Deployment Evidence for Sprint Review.](#5217-software-deployment-evidence-for-sprint-review)
+      - [5.2.1.8. Team Collaboration Insights during Sprint.](#5218-team-collaboration-insights-during-sprint)
     - [5.2.2. Sprint 2](#522-sprint-2)
       - [5.2.2.1. Sprint Planning 2.](#5221-sprint-planning-2)
       - [5.2.2.2. Aspect Leaders and Collaborators.](#5222-aspect-leaders-and-collaborators)
