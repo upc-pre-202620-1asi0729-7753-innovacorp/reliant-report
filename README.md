@@ -3656,10 +3656,113 @@ La concentración del desarrollo de la Web Application en una sola integrante es
 <!-- TODO: capturas de Insights → Network o Commits de reliant-webapp para mostrar las ramas feature/* del Sprint 2 -->
 
 ## 5.3. Validation Interviews.
+
+Las entrevistas de validación verifican, con usuarios de los dos segmentos objetivo, que las funcionalidades implementadas en la Web Application resuelven las tareas que motivaron las User Stories del sprint, y recogen observaciones de usabilidad para el siguiente sprint.
+
 ### 5.3.1. Diseño de Entrevistas.
+
+**Objetivo.** Validar que un Recuperation Supplier puede registrar su equipamiento, recetas y órdenes de recuperación y ejecutar y revisar una sesión de rociado de extremo a extremo en la Web Application desplegada, y recoger la percepción de un Asset Owner sobre la información que necesita revisar de esas sesiones.
+
+**Participantes.** Tres entrevistados por segmento, con el mismo perfil de las entrevistas de needfinding (sección 2.2.1): ingenieros de calidad, supervisores de operación o de mantenimiento y operadores de recubrimiento HVOF para el segmento Recuperation Supplier, e ingenieros de confiabilidad o analistas de compras de una empresa minera para el segmento Asset Owner.
+
+**Modalidad.** Sesiones remotas por Microsoft Teams de 20 a 25 minutos, grabadas con consentimiento del entrevistado. El entrevistado comparte pantalla y usa la Web Application desplegada (https://reliant-web-application-hsa3asb7axaph6hf.chilecentral-01.azurewebsites.net) con una cuenta de prueba de su segmento, mientras un integrante modera y otro registra observaciones.
+
+**Estructura.**
+
+| Bloque | Duración | Contenido |
+|---|---|---|
+| Introducción | 3 min | Presentación del equipo, propósito de la sesión y consentimiento de grabación |
+| Perfil | 2 min | Rol, empresa, experiencia y herramientas que usa hoy |
+| Tareas guiadas | 12 a 15 min | El entrevistado resuelve los escenarios de su segmento pensando en voz alta |
+| Valoración | 3 min | Calificación de cada escenario en una escala de 1 a 5 (facilidad y utilidad) |
+| Cierre | 2 min | Lo que más y lo que menos valoró, y qué agregaría |
+
+**Escenarios por segmento.**
+
+| Segmento | Escenario | User Stories validadas | Pregunta de seguimiento |
+|---|---|---|---|
+| Recuperation Supplier | Iniciar sesión, cambiar el idioma y recorrer el menú de la aplicación | US02, US65, US66, US67 | ¿Encontró cada sección donde esperaba? |
+| Recuperation Supplier | Registrar un cliente, un componente y su orden de recuperación con OF y WO | US13, US14, US15 | ¿Faltó algún dato que hoy registra en su proceso? |
+| Recuperation Supplier | Revisar el sistema HVOF, sus subsistemas y partes, y editar una receta con sus bandas de umbral | US07, US08, US53, US54 | ¿Las bandas reflejan cómo define hoy las tolerancias de una receta? |
+| Recuperation Supplier | Iniciar una sesión de rociado, seguir sus lecturas por banda y completarla o abortarla | US19, US21, US22, US23 | ¿La vista le permitiría reaccionar a tiempo ante una desviación? |
+| Recuperation Supplier | Buscar una sesión anterior en el historial por sistema, orden y fechas | US24 | ¿Esta información le ayudaría a responder un reclamo del cliente? |
+| Recuperation Supplier | Revisar los usuarios y roles, el plan y la suscripción de la organización | US03, US04, US05, US06 | ¿Los roles corresponden a cómo se organiza su equipo? |
+| Asset Owner | Registrar la organización e iniciar sesión | US01, US02 | ¿El registro fue claro para su tipo de organización? |
+| Asset Owner | Revisar con el moderador el historial de sesiones y las lecturas de un componente recuperado | US22, US24 | ¿Qué información adicional necesitaría para evaluar a su proveedor? |
+
+**Métricas.** Tasa de escenarios completados sin ayuda, tiempo por escenario, calificación promedio de facilidad y utilidad (1 a 5) y observaciones de usabilidad clasificadas según las heurísticas de Nielsen.
+
 ### 5.3.2. Registro de Entrevistas.
+
+| Segmento: Recuperation Supplier | Entrevista de validación #1 |
+|:--:|:--:|
+| Nombres y Apellidos | <!-- TODO --> |
+| Edad | <!-- TODO --> |
+| Distrito | <!-- TODO --> |
+| Ocupación | <!-- TODO --> |
+| Duración | <!-- TODO --> |
+| URL | <!-- TODO: URL de Microsoft Stream --> |
+| Screenshot | <!-- TODO: captura de la entrevista --> |
+| Resumen | <!-- TODO: aspectos más valorados, menos valorados y comentarios sobre la experiencia --> |
+
+| Segmento: Recuperation Supplier | Entrevista de validación #2 |
+|:--:|:--:|
+| Nombres y Apellidos | <!-- TODO --> |
+| Edad | <!-- TODO --> |
+| Distrito | <!-- TODO --> |
+| Ocupación | <!-- TODO --> |
+| Duración | <!-- TODO --> |
+| URL | <!-- TODO: URL de Microsoft Stream --> |
+| Screenshot | <!-- TODO: captura de la entrevista --> |
+| Resumen | <!-- TODO: aspectos más valorados, menos valorados y comentarios sobre la experiencia --> |
+
+| Segmento: Asset Owner | Entrevista de validación #1 |
+|:--:|:--:|
+| Nombres y Apellidos | <!-- TODO --> |
+| Edad | <!-- TODO --> |
+| Distrito | <!-- TODO --> |
+| Ocupación | <!-- TODO --> |
+| Duración | <!-- TODO --> |
+| URL | <!-- TODO: URL de Microsoft Stream --> |
+| Screenshot | <!-- TODO: captura de la entrevista --> |
+| Resumen | <!-- TODO: aspectos más valorados, menos valorados y comentarios sobre la experiencia --> |
+
+| Segmento: Asset Owner | Entrevista de validación #2 |
+|:--:|:--:|
+| Nombres y Apellidos | <!-- TODO --> |
+| Edad | <!-- TODO --> |
+| Distrito | <!-- TODO --> |
+| Ocupación | <!-- TODO --> |
+| Duración | <!-- TODO --> |
+| URL | <!-- TODO: URL de Microsoft Stream --> |
+| Screenshot | <!-- TODO: captura de la entrevista --> |
+| Resumen | <!-- TODO: aspectos más valorados, menos valorados y comentarios sobre la experiencia --> |
+
 ### 5.3.3. Evaluaciones según heurísticas.
+
+La evaluación heurística de la Web Application se realiza con las diez heurísticas de usabilidad de Nielsen sobre las tareas de la sección 5.3.1. Cada problema encontrado se registra con su escala de severidad (0: no es un problema; 1: cosmético; 2: menor; 3: mayor; 4: catastrófico).
+
+| Carrera | Ingeniería de Software |
+|---|---|
+| Curso | Desarrollo de Aplicaciones Open Source |
+| Auditor | <!-- TODO: equipo auditor --> |
+| Cliente(s) | InnovaCorp |
+| Site o App a evaluar | Reliant — https://reliant-web-application-hsa3asb7axaph6hf.chilecentral-01.azurewebsites.net |
+| Tareas a evaluar | Registro e inicio de sesión; gestión de clientes, componentes y órdenes de recuperación; gestión de sistemas HVOF y recetas; inicio, monitoreo y cierre de una sesión de rociado; historial de sesiones; usuarios, roles y suscripción; cambio de idioma |
+| Escala de severidad | 0 a 4 |
+
+| # | Problema | Escala de severidad | Heurística violada |
+|---|---|---|---|
+| 1 | <!-- TODO: problema encontrado por el auditor --> | <!-- TODO --> | <!-- TODO --> |
+
+<!-- TODO: completar la evaluación heurística con los resultados del equipo auditor -->
+
 ## 5.4. Video About-the-Product.
+
+El video About-the-Product presenta Reliant desde la perspectiva de sus usuarios: el problema de trazabilidad del proceso de recubrimiento HVOF, la propuesta de valor para los segmentos Recuperation Supplier y Asset Owner, y un recorrido por el Landing Page y la Web Application desplegada.
+
+<!-- TODO: URL de Microsoft Stream del video About-the-Product y captura de portada -->
+
 # Conclusiones
 ## Conclusiones y recomendaciones.
 
@@ -3676,6 +3779,10 @@ La concentración del desarrollo de la Web Application en una sola integrante es
 2. Completar en el Sprint 3 las historias que el Sprint 2 dejó fuera, como el cambio de estado de un sistema HVOF (US12), y las historias del segmento Asset Owner, de modo que el Sprint Goal pueda verificarse también desde la cuenta de un Asset Owner.
 3. Reemplazar los adapters fake de IAM por la autenticación de los Web Services antes de exponer datos reales, ya que el fake API publica sus colecciones, incluidos los usuarios de prueba, sin control de acceso.
 ## Video About-the-Team.
+
+El video About-the-Team presenta al equipo de InnovaCorp, su forma de trabajo y el avance de cada sprint, con la participación de los tres integrantes.
+
+<!-- TODO: URL de Microsoft Stream del video About-the-Team y captura de portada -->
 
 # Bibliografía
 
