@@ -852,7 +852,7 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | Ocupacion | Supervisora |
 | Timing inicio | 00:00 minutos|
 | Duracion | 11:35 minutos |
-| URL | https://upcedupe-my.sharepoint.com/personal/u202410376_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu202410376%5Fupc%5Fedu%5Fpe%2FDocuments%2FDesarrolloAplicacionesOpenSource%2Emp4&nav=
+| URL | https://drive.google.com/file/d/1iK5NpsuRMqKPBtPWMHb0UEtmaMijRJmm/view?usp=sharing |
 | Screenshot| <img src="assets/img/chapter-ii/needfinding/francisco_entrevista_segmento1.png">  |
 
 
@@ -1660,7 +1660,7 @@ decorativos o distintivos de la identidad visual. La combinación de estas tipog
 ## Colors
 La paleta de colores de Relient está conformada por El marrón oscuro se utiliza en textos y elementos principales, mientras que el crema claro y el blanco permiten construir fondos y espacios visuales. El naranja se emplea para destacar botones, acciones principales y elementos relevantes de la interfaz.
 
-<img src="assets/img/chapter-ii/needfinding/colors.png "> 
+<img src="assets/img/chapter-ii/needfinding/colors.png">  
 
 ## Spacing
 El sistema de espaciado de Relient busca mantener una distribución ordenada de los contenidos y evitar la saturación visual. Para ello, se utilizan separaciones consistentes entre títulos, textos, botones, formularios, tablas y componentes de navegación.La configuración del espaciado 
@@ -1860,7 +1860,7 @@ Asimismo, los wireframes ayudan a organizar las funcionalidades de acuerdo con l
 En esta sección se presenta el prototipo interactivo de la Web Application de Reliant, desarrollado a partir de los mock-ups y User Flow Diagrams definidos previamente. El prototipo permite simular la navegación entre las principales vistas de la aplicación y validar la secuencia de interacción que siguen los usuarios para realizar sus tareas principales. Las conexiones entre pantallas fueron definidas considerando los recorridos establecidos en los User Flows y el sistema de navegación propuesto para la aplicación. Se consideraron las principales funcionalidades de Reliant, como el registro y seguimiento de componentes recuperados, la consulta de órdenes de trabajo, la trazabilidad de los procesos de recubrimiento HVOF, el monitoreo de parámetros de operación, el diagnóstico de fallas y el análisis del desempeño de los componentes frente a su vida útil esperada (PCR). A continuación, se presenta una captura del prototipo en funcionamiento y el enlace al video de demostración, donde se muestran los principales flujos de navegación e interacción de la aplicación.
 
 # Video:  
-https://youtu.be/ImzFsoEMSIk
+https://drive.google.com/file/d/1zf1c5jWL4qMQMxFodapUbAed3S3XQiYO/view?usp=sharing 
 
 
 
@@ -2264,3 +2264,5 @@ El script `telemetry_simulator.py` se ejecuta localmente durante las demostracio
 - Springer Nature. (2025). Outlook of Industry 4.0 integrated technologies in thermal spray processes and applications. *Journal of Thermal Spray Technology*. https://doi.org/10.1007/s11666-025-02096-z
 
 # Anexos
+<img src="assets/img/chapter-ii/needfinding/evidencia1.jpeg ">
+<img src="assets/img/chapter-ii/needfinding/evidencia2.jpeg ">
