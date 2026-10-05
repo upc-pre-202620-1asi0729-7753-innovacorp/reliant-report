@@ -1,0 +1,20 @@
+flowchart TD
+    classDef start fill:#2E3138,stroke:#2E3138,color:#FFFFFF
+    classDef view fill:#E4F6F1,stroke:#16936F,color:#0B3B2E
+    classDef action fill:#FFFFFF,stroke:#5B6170,color:#222222
+    classDef decision fill:#FFF3D6,stroke:#E0A100,color:#3A2A00
+    classDef error fill:#F9DCD8,stroke:#C0392B,color:#7A1F14
+    classDef done fill:#83D8C0,stroke:#0F6E5C,color:#0B3B2E
+    S([Supervisor de operación]):::start --> A{{¿El cliente ya está registrado?}}:::decision
+    A -->|no| B["/traceability/customers/new: razón social, RUC, sede"]:::view --> A2["/traceability/customers"]:::view
+    A -->|sí| C{{¿El componente ya está registrado?}}:::decision
+    A2 --> C
+    C -->|no| D["/traceability/components/new: serie, part number, tipo, modelo, cliente, PCR"]:::view --> D2["/traceability/components"]:::view
+    C -->|sí| E["/traceability/recuperations/new"]:::view
+    D2 --> E
+    E --> F[Selecciona el componente: el cliente se completa automáticamente]:::action
+    F --> G[Ingresa WO, OF, operación, peso, horómetro, polvo y fecha de recepción]:::action
+    G --> H{{¿Formulario válido?}}:::decision
+    H -->|no| HE[Campos obligatorios marcados]:::error --> G
+    H -->|sí| I["/traceability/recuperations"]:::view --> J[Orden de recuperación registrada]:::done
+    I --> K[Editar orden]:::action --> L["/recuperations/:id/edit"]:::view --> I

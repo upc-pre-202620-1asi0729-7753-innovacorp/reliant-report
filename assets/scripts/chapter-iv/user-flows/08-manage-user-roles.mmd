@@ -1,0 +1,13 @@
+flowchart TD
+    classDef start fill:#2E3138,stroke:#2E3138,color:#FFFFFF
+    classDef view fill:#E4F6F1,stroke:#16936F,color:#0B3B2E
+    classDef action fill:#FFFFFF,stroke:#5B6170,color:#222222
+    classDef decision fill:#FFF3D6,stroke:#E0A100,color:#3A2A00
+    classDef error fill:#F9DCD8,stroke:#C0392B,color:#7A1F14
+    classDef done fill:#83D8C0,stroke:#0F6E5C,color:#0B3B2E
+    S([Administrador de organización]):::start --> A{{¿Tiene rol administrador?}}:::decision
+    A -->|no| AE[La opción Usuarios no aparece y la ruta redirige al inicio]:::error
+    A -->|sí| B["/iam/users"]:::view --> C[Elige un usuario de su organización]:::action
+    C --> D["/iam/users/:id/roles"]:::view --> E[Marca o desmarca roles: calidad, mantenimiento, operador, operación, compras]:::action
+    E --> F[Guardar]:::action --> B
+    B --> G[Cada usuario accede solo a las funciones de sus roles]:::done

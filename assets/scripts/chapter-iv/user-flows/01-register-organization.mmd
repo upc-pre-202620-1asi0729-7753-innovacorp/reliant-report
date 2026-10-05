@@ -1,0 +1,21 @@
+flowchart TD
+    classDef start fill:#2E3138,stroke:#2E3138,color:#FFFFFF
+    classDef view fill:#E4F6F1,stroke:#16936F,color:#0B3B2E
+    classDef action fill:#FFFFFF,stroke:#5B6170,color:#222222
+    classDef decision fill:#FFF3D6,stroke:#E0A100,color:#3A2A00
+    classDef error fill:#F9DCD8,stroke:#C0392B,color:#7A1F14
+    classDef done fill:#83D8C0,stroke:#0F6E5C,color:#0B3B2E
+    S([Administrador de organización]):::start --> A["/iam/sign-up"]:::view
+    A --> B[Ingresa organización, RUC, tipo de organización, nombre, correo y contraseña]:::action
+    B --> C{{¿Formulario válido?}}:::decision
+    C -->|no| E1[Errores en los campos: RUC de 11 dígitos, correo, contraseña]:::error --> B
+    C -->|sí| D[Registrar]:::action --> F{{¿Registro aceptado por el API?}}:::decision
+    F -->|no| E2[Mensaje de error del registro]:::error --> B
+    F -->|sí| G["/iam/sign-in"]:::view --> H[Inicia sesión con la cuenta creada]:::action
+    H --> I["/home"]:::view --> J[Menú Suscripción]:::action --> K["/billing/subscription"]:::view
+    K --> L{{¿Tiene suscripción activa?}}:::decision
+    L -->|sí| M[Ve plan, vigencia y días restantes]:::done
+    L -->|no o desea cambiar| N[Elegir plan]:::action --> O["/billing/plans"]:::view
+    O --> P{{¿El plan corresponde al tipo de organización?}}:::decision
+    P -->|no| E3[Plan deshabilitado: no disponible para tu tipo de organización]:::error --> O
+    P -->|sí| Q[Seleccionar plan]:::action --> K
