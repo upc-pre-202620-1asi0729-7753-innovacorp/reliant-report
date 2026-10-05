@@ -41,13 +41,26 @@ Proyecto
 # Registro de Versiones del Informe
 | Versión | Fecha | Autor | Descripción de modificación |
 |---------|-------|-------|-----------------------------|
-|         |       |       |                             |
+| 1.0.1 | 2026-09-18 | Equipo InnovaCorp | Entrega AV1: capítulos I a IV (Startup Profile, Solution Profile, Requirements Elicitation & Analysis, Requirements Specification y Product Design) y sección 5.1 Software Configuration Management. |
+| 2.0.0 | 2026-10-02 | Rivera Aguilar, Scarlet Josefina | Retiro de los integrantes Bardales Rodríguez, Benjamín Elías y Yopla Romero, Jonathan Alberto de los perfiles de integrantes; corrección de la fila duplicada y de los datos de Fernandez Seer, Mario Alonso. |
+| 2.0.0 | 2026-10-05 | Navarro Aldoradin, Carolina Celeste | Retiro de los integrantes que dejaron el equipo de la carátula y del Student Outcome; acciones del TB1 en el Student Outcome; corrección de las rutas de imágenes tras la reorganización de `assets/`. |
+| 2.0.0 | 2026-10-05 | Navarro Aldoradin, Carolina Celeste | Capítulo III: User Stories US65 (navegación), US66 (cambio de idioma de la aplicación) y US67 (gestión de la sesión), Epic E13, Escenario 3 de US22 y Product Backlog priorizado con Story Points. |
+| 2.0.0 | 2026-10-05 | Navarro Aldoradin, Carolina Celeste | Capítulo IV: tipo de gráfico de los elementos de reporte (`viewType` / `view_type`) en 4.7.1 y 4.8.1. |
+| 2.0.0 | 2026-10-05 | Navarro Aldoradin, Carolina Celeste | Sección 5.1: repositorios reales de la organización, herramientas del Sprint 2 y 5.1.4 Software Deployment Configuration actualizado a Azure App Service con GitHub Actions. |
+| 2.0.0 | 2026-10-05 | Navarro Aldoradin, Carolina Celeste | Sección 5.2.2 Sprint 2 completa: Sprint Planning, LACX, Sprint Backlog, Development, Execution, Services Documentation y Software Deployment Evidence, y Team Collaboration Insights. |
+| 2.0.0 | 2026-10-05 | Navarro Aldoradin, Carolina Celeste | Conclusiones y recomendaciones del Sprint 2, referencias bibliográficas de las tecnologías usadas y Anexo de Videos de Exposiciones. |
+
+<!-- TODO: confirmar el número de versión del release de TB1 (2.0.0) al crear el release con Git Flow -->
 
 
 # Project Report Collaboration Insights
 
 El URL del repositorio para el Project Report en la organización de github es el siguiente:
 [https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-report](https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-report)
+
+Para la entrega TB1, el informe se actualizó siguiendo el mismo flujo de Git Flow que los demás repositorios del equipo: cada sección se trabajó en una rama `feature/tb1-*` creada desde `develop`, con commits en formato Conventional Commits, y se integró en `develop` mediante merge. Las secciones de TB1 comprenden las correcciones de los capítulos I a V, la especificación de las historias del Sprint 2 y la documentación completa del Sprint 2 en la sección 5.2.2. Las contribuciones de cada integrante al repositorio pueden revisarse en Insights → Contributors.
+
+<!-- TODO: captura de Insights → Contributors de reliant-report (assets/img/5.chapter-v/report-contributors.png) -->
 
 
 
