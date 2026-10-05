@@ -2786,6 +2786,214 @@ El tablero del Sprint 2 se gestiona en Trello con las listas To-do, In Progress,
 
 #### 5.2.2.4. Development Evidence for Sprint Review.
 
+En esta sección se presentan los commits realizados durante el Sprint 2 en los repositorios de la organización. La Frontend Web Application se construyó en el repositorio `reliant-webapp` con una rama `feature/*` por cada una de las 16 features del Sprint, integradas en `develop` y publicadas en `main` mediante los releases `1.0.0` y `1.0.1`. El fake API se separó en su propio repositorio, `reliant-platform-mock`, para desplegarlo como servicio independiente. Los mensajes siguen Conventional Commits; los dos commits titulados "Add or update the Azure App Service build and deployment workflow config" fueron generados por el Deployment Center de Azure al conectar cada repositorio con GitHub Actions.
+
+**Frontend Web Application — `reliant-webapp`**
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|---|---|---|---|---|---|
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | e65cfed | chore: initial commit. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 516c590 | chore: update project metadata. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | f8da5d1 | chore: add angular material dependency. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 96e9076 | chore: add ngx-translate dependency. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 10e919a | chore: add environment files. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | b590473 | chore: add json-server dependency. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 210c083 | chore: update environment files with endpoints. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 834fbcb | chore: add fake API data. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 7c1a8ed | chore: add reliant logo. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | a301ad4 | chore: update fake API data. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | ef5a81c | chore: add fake API routes. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 4ae3ac1 | chore: add fake API launcher script. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/navigate-the-application | 1a802f1 | style: customize the Material theme. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/navigate-the-application | 58fb93a | style: add the shared spacing class. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/navigate-the-application | 2f8141b | feat(shared): add Home view. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/navigate-the-application | 43fc4a0 | feat(shared): add About view. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/navigate-the-application | 87f1767 | feat(traceability): add CustomerList, ComponentList and RecuperationList views. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/navigate-the-application | 98928d2 | feat(equipment): add HvofSystemList view. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/navigate-the-application | c99018a | feat(process-monitoring): add SpraySessionList view. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/navigate-the-application | 42a5468 | feat(shared): add PageNotFound view with the way back home. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/navigate-the-application | b9e2aab | feat: add traceability, equipment and process-monitoring routes. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/navigate-the-application | e221f81 | feat(shared): add application routes. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/navigate-the-application | 0834151 | feat(shared): add Layout component. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/navigate-the-application | 6065d5d | feat(app): show Layout in the App shell. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/navigate-the-application | 4af5040 | test(app): provide the router in the App test. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/switch-application-language | e66dd03 | feat(shared): add English translations. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/switch-application-language | 707c953 | feat(shared): add Spanish translations. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/switch-application-language | af4889f | feat(app): provide TranslateService and register the supported languages. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/switch-application-language | 77114a7 | feat(shared): add LanguageSwitcher component. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/switch-application-language | 5cf51f4 | feat(shared): add FooterContent component. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/switch-application-language | fc6d059 | feat(shared): wire LanguageSwitcher and FooterContent into Layout. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/switch-application-language | a05f7a1 | feat(shared): translate Home, About and PageNotFound views. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/switch-application-language | 37e0be6 | feat: translate the bounded-context list views. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/switch-application-language | 5b4c68a | test(app): provide TranslateService in the App test. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/switch-application-language | aca7ee6 | test(app): provide TranslateService in the App test. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-customers | 7e999af | feat(shared): add BaseEntity interface. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-customers | c83f028 | feat(traceability): add Customer entity. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-customers | b4fd2fd | feat(shared): add BaseResponse and BaseResource. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-customers | 129a769 | feat(traceability): add customers API contract. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-customers | 3cc6020 | feat(shared): add BaseAssembler interface. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-customers | 351d7bb | feat(traceability): add CustomerAssembler. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-customers | 208dfad | feat(shared): add ErrorHandlingEnabledBaseType. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-customers | e6f815e | feat(shared): add BaseApiEndpoint. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-customers | a736236 | feat(traceability): add CustomersApiEndpoint. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-customers | 699ee5f | feat(shared): add BaseApi. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-customers | fef8e68 | feat(traceability): add TraceabilityApi and provide HttpClient. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-customers | bd86ba4 | feat(traceability): add customer translations in English. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-customers | 1cba4f8 | feat(traceability): add customer translations in Spanish. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-customers | 0316d0f | feat(traceability): add TraceabilityStore, customers only. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-customers | 2572edc | feat(shared): add BaseForm. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-customers | 7911cad | feat(traceability): fill in the CustomerList view with edit and delete actions. |  | 2026-09-29 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-customers | b721033 | feat(traceability): add CustomerForm view with create and edit modes. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-customers | 1a08bd9 | feat(traceability): add the create and edit customer routes. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-components | cccc695 | feat(traceability): add RecoveredComponent entity. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-components | a916606 | feat(traceability): add components API contract. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-components | 0894bb2 | feat(traceability): add ComponentAssembler. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-components | c9904d2 | feat(traceability): add ComponentsApiEndpoint. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-components | 4d22e8f | feat(traceability): add components to TraceabilityApi. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-components | fb0fb67 | feat(traceability): add component translations in English. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-components | dcf7d93 | feat(traceability): add component translations in Spanish. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-components | dee7cfc | feat(traceability): add components to TraceabilityStore. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-components | 5569505 | feat(traceability): full in the ComponentList view. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-components | 61e7959 | feat(traceability): add ComponentForm view with create and edit modes. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-components | 4d75eab | feat(traceability): add the create and edit component routes. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-components | c97f1d8 | feat(traceability): add the create and edit component routes. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-recuperations | 68284e7 | feat(traceability): add Recuperation entity. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-recuperations | 4740c08 | feat(traceability): add recuperations API contract. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-recuperations | 036b2b3 | feat(traceability): add RecuperationAssembler. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-recuperations | 41fdba4 | feat(traceability): add RecuperationsApiEndpoint. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-recuperations | 9a28f3a | feat(traceability): add recuperations to TraceabilityApi. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-recuperations | a391d64 | feat(traceability): add recuperation translations in English. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-recuperations | 1e7c614 | feat(traceability): add recuperation translations in Spanish. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-recuperations | 24c30e9 | feat(traceability): add recuperations to TraceabilityStore. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-recuperations | 8563ba3 | feat(traceability): fill in the RecuperationList view. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-recuperations | 3b1914b | feat(traceability): add RecuperationForm view with create and edit modes. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-recuperations | c66401c | feat(traceability): add the create and edit recuperation routes. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-hvof-systems | b97f777 | feat(equipment): add HvofSystem entity. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-hvof-systems | d22e8e1 | feat(equipment): add Controller entity. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-hvof-systems | 7299aa4 | feat(equipment): add hvof systems and controllers API contracts. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-hvof-systems | 3b56f45 | feat(equipment): add HvofSystemAssembler and ControllerAssembler. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-hvof-systems | 7b8c5f8 | feat(equipment): add HvofSystemsApiEndpoint and ControllersApiEndpoint. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-hvof-systems | faef005 | feat(equipment): add EquipmentApi. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-hvof-systems | f813662 | feat(equipment): add HVOF system and controller translations in English. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-hvof-systems | 20d65d7 | feat(equipment): add HVOF system and controller translations in Spanish. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-hvof-systems | 2f2aa67 | feat(equipment): add EquipmentStore, systems and controllers. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-hvof-systems | 30e90b9 | feat(equipment): fill in the HvofSystemList view. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-hvof-systems | ea0be7a | feat(equipment): add HvofSystemForm view with create and edit modes. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-hvof-systems | a6c04b0 | feat(equipment): add ControllerForm view. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-hvof-systems | f443178 | feat(equipment): add HvofSystemDetail view with the controllers tab. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-hvof-systems | 81c8632 | feat(equipment): add HVOF system and controller routes. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-hvof-subsystems | 8030450 | feat(equipment): add HvofSubsystem and HvofPart entities. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-hvof-subsystems | dc9d992 | feat(equipment): add subsystem and part contracts, assemblers and endpoints. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-hvof-subsystems | 4fe3e40 | feat(equipment): add subsystems and parts to EquipmentApi. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-hvof-subsystems | e2ac6e2 | feat(equipment): add subsystem and part translations. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-hvof-subsystems | 8cd941a | feat(equipment): add subsystems and parts to EquipmentStore. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-hvof-subsystems | 61ec034 | feat(equipment): add HvofSubsystemForm view. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-hvof-subsystems | 057fe7a | feat(equipment): add HvofPartForm view. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-hvof-subsystems | 3907ee0 | feat(equipment): add the subsystems tab to HvofSystemDetail. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-hvof-subsystems | 8cb2045 | feat(equipment): add subsystem and part routes. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-recipes | 00c3cb6 | feat(equipment): add Recipe entity. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-recipes | 87822fb | feat(equipment): add recipes contract, assembler, endpoint and API methods. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-recipes | ca5c10e | feat(equipment): add recipe translations. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-recipes | f6a801a | feat(equipment): add recipes to EquipmentStore. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-recipes | 58b245a | feat(equipment): add threshold order validator. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-recipes | 8df17a6 | feat(equipment): add RecipeForm view with applicabilities and parameter bands. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-recipes | b8ef137 | feat(equipment): add the recipes tab to HvofSystemDetail. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-recipes | acd58f3 | feat(equipment): add recipe routes. |  | 2026-09-30 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/start-spray-session | 5dbe789 | feat(process-monitoring): add SpraySession entity. |  | 2026-10-01 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/start-spray-session | 83d7ffa | feat(process-monitoring): add spray sessions contract, assembler and endpoint. |  | 2026-10-01 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/start-spray-session | 8f0777e | feat(process-monitoring): add ProcessMonitoringApi, sessions only. |  | 2026-10-01 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/start-spray-session | 9519793 | feat(process-monitoring): add spray session translations. |  | 2026-10-01 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/start-spray-session | 4ff39c3 | feat(process-monitoring): add ProcessMonitoringStore, sessions only. |  | 2026-10-01 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/start-spray-session | 22570df | feat(process-monitoring): fill in the SpraySessionList view. |  | 2026-10-01 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/start-spray-session | 0f71889 | feat(process-monitoring): add SpraySessionStart view. |  | 2026-10-01 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/start-spray-session | 61e294e | feat(process-monitoring): add spray session routes. |  | 2026-10-01 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/start-spray-session | dcc40e8 | feat(process-monitoring): add spray session routes. |  | 2026-10-01 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/monitor-live-readings | 9ef2f78 | feat(process-monitoring): add ProcessReading entity and band classifier. |  | 2026-10-01 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/monitor-live-readings | a59bfc5 | feat(process-monitoring): add process readings contract, assembler, endpoint and API methods. |  | 2026-10-01 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/monitor-live-readings | dcaa8c4 | feat(process-monitoring): add session detail translations. |  | 2026-10-01 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/monitor-live-readings | 7f07f3c | feat(process-monitoring): add readings, polling and band counts to ProcessMonitoringStore. |  | 2026-10-01 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/monitor-live-readings | 3d554d7 | feat(process-monitoring): add ParameterCard component. |  | 2026-10-02 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/monitor-live-readings | 4f8195b | feat(process-monitoring): add SpraySessionDetail view with live parameter cards. |  | 2026-10-02 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/monitor-live-readings | b3b072f | feat(process-monitoring): add the session detail route. |  | 2026-10-02 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/finish-spray-session | 2c3b6fc | feat(process-monitoring): add finish session translations. |  | 2026-10-02 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/finish-spray-session | e81ed06 | feat(process-monitoring): add completeSession and abortSession to ProcessMonitoringStore. |  | 2026-10-02 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/finish-spray-session | 029b312 | feat(process-monitoring): add AbortSessionDialog component. |  | 2026-10-02 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/finish-spray-session | 6928be6 | feat(process-monitoring): add complete and abort actions to SpraySessionDetail. |  | 2026-10-02 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/finish-spray-session | 351d8eb | chore: run changes and try db.json for spray sessions. |  | 2026-10-02 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/browse-session-history | 073c388 | feat(process-monitoring): add per-session deviation count. |  | 2026-10-02 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/browse-session-history | 049bf13 | feat(process-monitoring): add filters and deviation count to SpraySessionList. |  | 2026-10-02 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/browse-session-history | 51cd208 | fix: fix mat input module import. |  | 2026-10-02 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/register-a-new-organization | a28fde6 | feat(iam): add Organization, User and Role entities. |  | 2026-10-02 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/register-a-new-organization | 10d0abe | feat(iam): add SignUpCommand. |  | 2026-10-02 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/register-a-new-organization | db87e15 | feat(iam): add sign-up request, response and assembler. |  | 2026-10-02 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/register-a-new-organization | bcf51e1 | feat(iam): add sign up port with real and fake adapters. |  | 2026-10-02 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/register-a-new-organization | 7381a21 | feat(iam): add IamApi and provide the sign-up port. |  | 2026-10-02 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/register-a-new-organization | 5b212ab | feat(iam): add IAM translations. |  | 2026-10-02 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/register-a-new-organization | 11fa018 | feat(iam): add IamStore, sign-up only. |  | 2026-10-02 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/register-a-new-organization | 36841d1 | feat(iam): add SignUpForm view. |  | 2026-10-02 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/register-a-new-organization | a23d578 | feat(iam): add IAM routes and mount them in the application. |  | 2026-10-02 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/sign-in-and-manage-the-session | 82b9b04 | feat(iam): add SignInCommand. |  | 2026-10-02 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/sign-in-and-manage-the-session | 699f003 | feat(iam): add sign-in request, response, assembler and port. |  | 2026-10-02 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/sign-in-and-manage-the-session | 29e789b | feat(iam): add SignInApiEndpoint and FakeSignInApiEndpoint. |  | 2026-10-02 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/sign-in-and-manage-the-session | 935e83b | feat(iam): add sign-in to IamApi and provide the sign-in port. |  | 2026-10-02 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/sign-in-and-manage-the-session | 27e62fa | feat(iam): add session state, signIn and signOut to IamStore. |  | 2026-10-02 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/sign-in-and-manage-the-session | d0eda9f | feat(iam): add SignInForm view and route. |  | 2026-10-02 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/sign-in-and-manage-the-session | 7d6b4fa | feat(iam): protect the application routes. |  | 2026-10-02 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/sign-in-and-manage-the-session | 382d978 | feat(iam): add and register the iamInterceptor. |  | 2026-10-02 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/sign-in-and-manage-the-session | 0dd3078 | feat(iam): add AuthenticationSection component. |  | 2026-10-02 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/sign-in-and-manage-the-session | 4c71ee3 | feat(shared): filter the toolbar options by session and organization type. |  | 2026-10-02 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/sign-in-and-manage-the-session | 196e641 | feat(iam): inject iam store in stores and filter by organization id. |  | 2026-10-04 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/sign-in-and-manage-the-session | 515710c | refactor: take organization and operator from IamStore. |  | 2026-10-04 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/sign-in-and-manage-the-session | ce666f2 | test(app): provide HttpClient and the IAM ports in the App test. |  | 2026-10-04 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/sign-in-and-manage-the-session | 5be78dd | fix(iam): fix circular dependecy in iam store. |  | 2026-10-04 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-user-roles | 81df0fc | chore: add operations supervisor and procurement analyst roles to the fake API. |  | 2026-10-04 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-user-roles | c60b98d | feat(iam): add users and roles endpoints to IamApi. |  | 2026-10-04 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-user-roles | 6b376dc | feat(iam): add user and role translations. |  | 2026-10-04 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-user-roles | ec648ce | feat(iam): add users and roles to IamStore. |  | 2026-10-04 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-user-roles | 58e690f | feat(iam): add UserList and UserRoleForm views. |  | 2026-10-04 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/manage-user-roles | 6d02b3b | feat(iam): add user routes guarded by role and role-based access to equipment and sessions. |  | 2026-10-04 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/select-subscription-plan | bbdfd3a | feat(billing): add Plan and Subscription entities. |  | 2026-10-04 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/select-subscription-plan | 78d69d3 | feat(billing): add plans and subscriptions infrastructure and BillingApi. |  | 2026-10-04 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/select-subscription-plan | 2414b07 | feat(billing): add billing translations. |  | 2026-10-04 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/select-subscription-plan | 648e1e7 | feat(billing): add BillingStore. |  | 2026-10-04 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/select-subscription-plan | ba35ec0 | feat(billing): add PlanSelection and SubscriptionDetail views. |  | 2026-10-04 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | feature/select-subscription-plan | 10f69f8 | feat(billing): add billing routes and the subscription toolbar option. |  | 2026-10-04 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | release/1.0.0 | d87b56b | chore(release): 1.0.0. |  | 2026-10-04 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | release/1.0.1 | 1abc987 | feat(environment): point production at the deployed mock API and keep fake IAM adapters. |  | 2026-10-04 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | release/1.0.1 | a5b244f | chore: add Azure Static Web Apps SPA fallback rule. |  | 2026-10-04 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | release/1.0.1 | b72dafd | chore(release): 1.0.1. |  | 2026-10-04 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | main | b7b1539 | Add or update the Azure App Service build and deployment workflow config |  | 2026-10-04 |
+
+**Fake API — `reliant-platform-mock`**
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|---|---|---|---|---|---|
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform-mock | main | 71e588f | chore: add the mock API as its  own deployable project. |  | 2026-10-04 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform-mock | main | 0c2f6cb | Add or update the Azure App Service build and deployment workflow config |  | 2026-10-04 |
+
+**Landing Page — `reliant-website`**
+
+El repositorio `reliant-website` no registra commits durante el Sprint 2; su último commit corresponde a la versión `v0.1.0` del 13 de setiembre de 2026 (Sprint 1).
+<!-- TODO: agregar los commits de Landing Page Design y Landing Page i18n del Sprint 2 cuando se suban a reliant-website -->
+
+**Informe — `reliant-report`**
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|---|---|---|---|---|---|
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | main | ab75064 | Fix duplicate participant entry in README | Removed duplicate entry for Scarlet Josefina Rivera Aguilar. | 2026-10-02 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | main | d2cb360 | Remove Yopla's profile from README | Removed Jonathan Alberto Yopla Romero's profile from the README. | 2026-10-02 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | main | 8a95d2d | Fix participant details for Mario Alonso Fernández |  | 2026-10-02 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | main | 153954d | Update README to remove student entries | Removed two student entries from the list. | 2026-10-02 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | develop | 9c4d280 | chore: add evidence images of basic forms and lists. |  | 2026-10-04 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | feature/tb1-cover | ec5492c | docs(cover): remove withdrawn members from cover and team profiles and fix asset paths. |  | 2026-10-05 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | feature/tb1-student-outcome | f0b5b6e | docs(student-outcome): remove withdrawn members and add tb1 actions. |  | 2026-10-05 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | feature/tb1-user-stories | 1cbddfc | docs(requirements): add us65 to us67, us22 scenario 3 and the product backlog. |  | 2026-10-05 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | feature/tb1-class-diagrams | 569d437 | docs(design): document the report widget chart type in class and database diagrams. |  | 2026-10-05 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | feature/tb1-deployment-configuration | 5263457 | docs(deployment): describe the azure app service deployment configuration. |  | 2026-10-05 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | feature/tb1-sprint-planning | e2762f3 | docs(sprint-2): add sprint planning 2 and aspect leaders and collaborators. |  | 2026-10-05 |
+| upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | feature/tb1-sprint-backlog | 685bdd4 | docs(sprint-2): add sprint backlog 2 and the trello board tasks. |  | 2026-10-05 |
+<!-- TODO: completar con los commits de las secciones 5.2.2.4 a 5.2.2.8 y del cierre de TB1 -->
+
 #### 5.2.2.5. Execution Evidence for Sprint Review.
 
 #### 5.2.2.6. Services Documentation Evidence for Sprint Review.
