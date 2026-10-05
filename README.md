@@ -3244,11 +3244,28 @@ La concentración del desarrollo de la Web Application en una sola integrante es
 ## 5.4. Video About-the-Product.
 # Conclusiones
 ## Conclusiones y recomendaciones.
+
+**Conclusiones del Sprint 2 (TB1)**
+
+1. La primera versión de la Frontend Web Application cubre el flujo principal del segmento Recuperation Supplier: registrar la organización y su equipamiento, definir recetas con bandas de umbral, registrar órdenes de recuperación y ejecutar una sesión de rociado de extremo a extremo, con sus lecturas clasificadas por banda. Con ello se pone a prueba, con datos de un caso real, la hipótesis de que vincular cada sesión con su orden y su receta permite reconstruir la historia de un componente (Hypothesis Statements 02 y 03).
+2. Organizar el código por bounded context y por capas (dominio, infraestructura, aplicación y presentación), con un puerto y adapters intercambiables para IAM, permite reemplazar el fake API por los Web Services del Sprint 3 cambiando solo la configuración de entorno y los adapters, sin modificar las vistas.
+3. Publicar un fake API desplegado desde el inicio permitió validar la integración y el despliegue continuo antes de contar con el backend, y adelantó problemas de infraestructura propios del entorno de nube de la suscripción de estudiante, como las restricciones de regiones y de tipos de recurso.
+4. El trabajo de la Web Application se concentró en una sola integrante y el Landing Page no registró avances en su repositorio durante el Sprint, lo que constituye el principal riesgo para los siguientes entregables.
+
+**Recomendaciones**
+
+1. Repartir los bounded contexts de los Web Services entre los tres integrantes desde el Sprint Planning 3, con una rama `feature/*` por historia, para equilibrar la carga y dejar evidencia de la contribución de cada uno.
+2. Completar en el Sprint 3 las historias que el Sprint 2 dejó fuera, como el cambio de estado de un sistema HVOF (US12), y las historias del segmento Asset Owner, de modo que el Sprint Goal pueda verificarse también desde la cuenta de un Asset Owner.
+3. Reemplazar los adapters fake de IAM por la autenticación de los Web Services antes de exponer datos reales, ya que el fake API publica sus colecciones, incluidos los usuarios de prueba, sin control de acceso.
 ## Video About-the-Team.
 
 # Bibliografía
 
+- Angular. (s.f.). *Angular documentation*. https://angular.dev
+
 - Automation World. (2025). *How to solve the hidden risks of paper manufacturing on the factory floor*. https://www.automationworld.com/control/article/55378030/how-to-solve-the-hidden-risks-of-paper-manufacturing-on-the-factory-floor
+
+- Driessen, V. (2010). *A successful Git branching model*. https://nvie.com/posts/a-successful-git-branching-model/
 
 - Innovapptive. (2024, 26 de febrero). *Overcoming equipment maintenance challenges in mining industry*. https://www.innovapptive.com/blog/overcoming-equipment-maintenance-challenges-in-mining-industry
 
@@ -3258,12 +3275,29 @@ La concentración del desarrollo de la Web Application en una sola integrante es
 
 - Mauer, G. (2022). Process diagnostics and control in thermal spray. *Journal of Thermal Spray Technology*, 31(4), 818–828.
 
+- Microsoft. (s.f.). *Azure App Service documentation*. https://learn.microsoft.com/azure/app-service/
+
+- Microsoft. (s.f.). *Deploy to App Service using GitHub Actions*. https://learn.microsoft.com/azure/app-service/deploy-github-actions
+
 - Ministerio de Energía y Minas. (2026). *Boletín Estadístico Minero: Balance anual 2025*. [Citado en Revista Tecnología Minera]. https://tecnologiaminera.com/noticia/minem-peru-alcanza-us-62848-millones-en-exportaciones-en-2025-1774388279
 
+- ngx-translate. (s.f.). *ngx-translate: The internationalization (i18n) library for Angular*. https://github.com/ngx-translate/core
+
 - Oerlikon Metco. (2025). *Thermal spray process parameters*. https://www.oerlikon.com/metco/en/solutions-technologies/what-is-thermal-spray/thermal-spray-process-parameters/
+
+- Preston-Werner, T. (s.f.). *Semantic Versioning 2.0.0*. https://semver.org
 
 - Siemens. (2022). *The true cost of downtime 2022*. https://assets.new.siemens.com/siemens/assets/api/uuid:3d606495-dbe0-43e4-80b1-d04e27ada920/dics-b10153-00-7600truecostofdowntime2022-144.pdf
 
 - Springer Nature. (2025). Outlook of Industry 4.0 integrated technologies in thermal spray processes and applications. *Journal of Thermal Spray Technology*. https://doi.org/10.1007/s11666-025-02096-z
 
+- typicode. (s.f.). *json-server*. https://github.com/typicode/json-server
+
 # Anexos
+
+## Anexo: Videos de Exposiciones
+
+| Entrega | Video | URL |
+|---|---|---|
+| TB1 | Exposición de TB1 – Stage Review (Sprint 2) | <!-- TODO: URL de Microsoft Stream de la exposición de TB1 --> |
+| TB1 | Navegación del producto, Sprint 2 (`upc-pre-202620-1asi0729-7753-innovacorp-productnavigation-sprint-2`) | <!-- TODO: URL de Microsoft Stream --> |
