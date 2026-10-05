@@ -2346,6 +2346,229 @@ https://youtu.be/ImzFsoEMSIk
 
 ## 4.6. Domain-Driven Software Architecture.
 ### 4.6.1. Design-Level Event Storming.
+
+El Design-Level Event Storming parte del tablero ordenado del Big Picture Event Storming (sección 2.4), tal como se acordó en su cierre: sobre cada grupo de eventos se identifican los Commands que los provocan, el Aggregate que decide, las Policies que reaccionan a otros eventos y los Read Models que consumen los usuarios. El resultado define los bounded contexts que se modelan en las secciones 4.6.2 a 4.8.
+
+#### 4.6.1.1. Candidate Context Discovery.
+
+Para descubrir los bounded contexts candidatos el equipo aplicó la técnica *look-for-pivotal-events* sobre el tablero del Big Picture. Los eventos pivote marcan un cambio de responsabilidad en el negocio: *OrganizationRegistered* separa la configuración de la organización de su operación; *SubscriptionActivated* separa la facturación del uso de la plataforma; *HvofSystemRegistered* y *RecipeApproved* cierran la configuración del equipamiento; *RecuperationCreated* abre la trazabilidad de la pieza; *SpraySessionStarted* y *SpraySessionCompleted* delimitan el monitoreo del proceso; *FaultCaseOpened* inicia el diagnóstico; *OutOfRangeAlertRaised* inicia la notificación; y *QualityCertificateIssued* y *PcrComplianceReportGenerated* producen la evidencia y los reportes. Los eventos agrupados entre pivotes, junto con el lenguaje que usa cada actor, dieron lugar a ocho bounded contexts y un Shared Kernel transversal:
+
+| Bounded Context | Responsabilidad | Eventos pivote | Épicas |
+|---|---|---|---|
+| IAM | Organizaciones, usuarios, roles y preferencias | OrganizationRegistered, UserAuthenticated | E01 |
+| Billing | Planes y suscripciones | PlanSelected, SubscriptionActivated | E02 |
+| Equipment | Sistemas HVOF, controladores, tags y recetas | HvofSystemRegistered, RecipeApproved | E03 |
+| Traceability | Clientes, componentes, órdenes de recuperación y PCR | RecuperationCreated, RecuperationClosed, ServiceLifeRecorded | E04, E09 |
+| Process Monitoring | Sesiones de rociado, lecturas y bandas | SpraySessionStarted, ParameterOutOfRangeDetected, SpraySessionCompleted | E05 |
+| Fault Diagnosis | Casos de falla, reglas y patrones | FaultCaseOpened, RootCauseConfirmed | E06 |
+| Notifications | Alertas, preferencias y newsletter | OutOfRangeAlertRaised, AlertDelivered | E07, E11 |
+| Reporting | Certificados, plantillas y reportes | QualityCertificateIssued, PcrComplianceReportGenerated | E08, E09 |
+
+#### 4.6.1.2. Domain Message Flows Modeling.
+
+El flujo principal del dominio es la recuperación de un componente desde su recepción hasta la evidencia de calidad. El siguiente diagrama muestra los mensajes que intercambian los bounded contexts en ese escenario: los comandos llegan desde los usuarios o el cliente de telemetría, y los bounded contexts se comunican mediante eventos de integración y consultas a través de sus Context Facades.
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor Op as Operador HVOF
+    participant TR as Traceability
+    participant PM as Process Monitoring
+    participant EQ as Equipment
+    participant FD as Fault Diagnosis
+    participant NT as Notifications
+    participant RP as Reporting
+    actor QE as Ingeniera de calidad
+    Op->>TR: RegisterComponent / CreateRecuperation
+    Op->>PM: StartSpraySession(sistema, orden, receta)
+    PM->>EQ: recipeAppliesTo / fetchRecipeLimits
+    PM->>TR: fetchComponentSpec(orden)
+    Note over PM: IngestTelemetry desde el cliente del PLC
+    PM-->>NT: ParameterOutOfRangeDetected
+    NT-->>Op: OutOfRangeAlertRaised
+    PM-->>FD: FaultFlagActivated
+    FD->>EQ: fetchSubsystemAndPart
+    FD-->>NT: FaultCaseOpened
+    Op->>PM: CompleteSpraySession
+    PM-->>TR: SpraySessionCompleted
+    QE->>TR: CloseRecuperation
+    QE->>RP: IssueQualityCertificate
+    RP->>TR: fetchLinkedSessionIds
+    RP->>PM: fetchOutOfRangeSummary
+    RP-->>QE: QualityCertificateIssued
+```
+
+#### 4.6.1.3. Bounded Context Canvases.
+
+Cada canvas resume, por bounded context, los comandos que recibe, el Aggregate que los procesa, los eventos que emite, las Policies que reaccionan a eventos de otros contextos y los Read Models que alimenta. La leyenda de colores sigue la del Big Picture Event Storming:
+
+| Elemento | Color |
+|---|---|
+| Actor | Amarillo claro |
+| Command | Azul |
+| Aggregate | Amarillo |
+| Domain Event | Naranja |
+| Policy | Lila |
+| Read Model | Verde |
+| Sistema externo u otro bounded context | Rosado |
+
+**IAM**: Identidad, registro de organizaciones, autenticación, roles y preferencias de unidades.
+
+```mermaid
+flowchart LR
+    classDef actor fill:#FFF9C4,stroke:#F9A825,color:#000
+    classDef command fill:#90CAF9,stroke:#1565C0,color:#000
+    classDef aggregate fill:#FFF176,stroke:#F9A825,color:#000
+    classDef evento fill:#FFA726,stroke:#E65100,color:#000
+    classDef policy fill:#CE93D8,stroke:#6A1B9A,color:#000
+    classDef readmodel fill:#A5D6A7,stroke:#2E7D32,color:#000
+    classDef external fill:#F48FB1,stroke:#AD1457,color:#000
+    A1(["Administrador de organización"]):::actor --> C1["SignUp"]:::command --> G1["Organization / User"]:::aggregate --> E1["OrganizationRegistered"]:::evento
+    A2(["Usuario registrado"]):::actor --> C2["SignIn"]:::command --> G1 --> E2["UserAuthenticated"]:::evento
+    A1 --> C3["AssignRole"]:::command --> G1 --> E3["RoleAssigned"]:::evento
+    A2 --> C4["UpdateUnitPreference"]:::command --> G2["UserPreference"]:::aggregate --> E4["UnitPreferenceUpdated"]:::evento
+    E1 --> P1{{"Cuando se registra una organización, vincular los clientes con el mismo RUC"}}:::policy
+    E2 --> R1[/"Sesión y roles del usuario"/]:::readmodel
+```
+
+**Billing**: Planes Operator y Asset Owner, selección de plan y vigencia de la suscripción.
+
+```mermaid
+flowchart LR
+    classDef actor fill:#FFF9C4,stroke:#F9A825,color:#000
+    classDef command fill:#90CAF9,stroke:#1565C0,color:#000
+    classDef aggregate fill:#FFF176,stroke:#F9A825,color:#000
+    classDef evento fill:#FFA726,stroke:#E65100,color:#000
+    classDef policy fill:#CE93D8,stroke:#6A1B9A,color:#000
+    classDef readmodel fill:#A5D6A7,stroke:#2E7D32,color:#000
+    classDef external fill:#F48FB1,stroke:#AD1457,color:#000
+    A1(["Administrador de organización"]):::actor --> C1["SelectPlan"]:::command --> G1["Subscription"]:::aggregate --> E1["PlanSelected"]:::evento --> E2["SubscriptionActivated"]:::evento
+    X1["Reloj del sistema"]:::external --> C2["ExpireSubscription"]:::command --> G1 --> E3["SubscriptionExpired"]:::evento
+    E2 --> P1{{"Al registrar un sistema HVOF, verificar el cupo del plan Operator"}}:::policy
+    G1 --> R1[/"Estado y vigencia de la suscripción"/]:::readmodel
+```
+
+**Equipment**: Sistemas HVOF, subsistemas, partes, controladores, catálogo de tags, recetas y parámetros derivados.
+
+```mermaid
+flowchart LR
+    classDef actor fill:#FFF9C4,stroke:#F9A825,color:#000
+    classDef command fill:#90CAF9,stroke:#1565C0,color:#000
+    classDef aggregate fill:#FFF176,stroke:#F9A825,color:#000
+    classDef evento fill:#FFA726,stroke:#E65100,color:#000
+    classDef policy fill:#CE93D8,stroke:#6A1B9A,color:#000
+    classDef readmodel fill:#A5D6A7,stroke:#2E7D32,color:#000
+    classDef external fill:#F48FB1,stroke:#AD1457,color:#000
+    A1(["Supervisor de mantenimiento de máquina"]):::actor --> C1["RegisterHvofSystem"]:::command --> G1["HVOFSystem"]:::aggregate --> E1["HvofSystemRegistered"]:::evento
+    A1 --> C2["RegisterSubsystem / RegisterPart"]:::command --> G1 --> E2["HvofSubsystemRegistered / HvofPartRegistered"]:::evento
+    A1 --> C3["ImportControllerTags"]:::command --> G2["ControllerTagCatalog"]:::aggregate --> E3["PlcTagFileImported"]:::evento --> P1{{"Proponer el mapeo de cada tag con las TagMappingRule"}}:::policy --> E4["TagMappingProposed"]:::evento
+    A1 --> C4["ConfirmTagMapping"]:::command --> G1 --> E5["TagMappingConfirmed"]:::evento
+    A2(["Ingeniera de calidad"]):::actor --> C5["CreateRecipe"]:::command --> G3["Recipe"]:::aggregate --> E6["RecipeDefined / RecipeApplicabilityDefined"]:::evento
+    A2 --> C6["ApproveRecipe"]:::command --> G3 --> E7["RecipeApproved"]:::evento
+    A2 --> C7["DefineDerivedParameter"]:::command --> G1 --> E8["DerivedParameterDefined"]:::evento
+    G3 --> R1[/"Límites de la receta por parámetro"/]:::readmodel
+```
+
+**Traceability**: Clientes, componentes, órdenes de recuperación con OF y WO, PCR objetivo y retorno de campo.
+
+```mermaid
+flowchart LR
+    classDef actor fill:#FFF9C4,stroke:#F9A825,color:#000
+    classDef command fill:#90CAF9,stroke:#1565C0,color:#000
+    classDef aggregate fill:#FFF176,stroke:#F9A825,color:#000
+    classDef evento fill:#FFA726,stroke:#E65100,color:#000
+    classDef policy fill:#CE93D8,stroke:#6A1B9A,color:#000
+    classDef readmodel fill:#A5D6A7,stroke:#2E7D32,color:#000
+    classDef external fill:#F48FB1,stroke:#AD1457,color:#000
+    A1(["Supervisor de operación"]):::actor --> C1["RegisterCustomer"]:::command --> G1["Customer"]:::aggregate --> E1["CustomerRegistered"]:::evento
+    A2(["Operador HVOF"]):::actor --> C2["RegisterComponent"]:::command --> G2["Component"]:::aggregate --> E2["ComponentReceived"]:::evento
+    A1 --> C3["CreateRecuperation"]:::command --> G3["Recuperation"]:::aggregate --> E3["RecuperationCreated"]:::evento
+    X1["SpraySessionCompleted (Process Monitoring)"]:::external --> P1{{"Vincular la sesión a la orden y marcar el componente en proceso"}}:::policy --> E4["ComponentMarkedInProcess"]:::evento
+    A1 --> C4["CloseRecuperation"]:::command --> G3 --> E5["RecuperationClosed"]:::evento --> E6["ComponentDelivered"]:::evento
+    A3(["Ingeniera de confiabilidad"]):::actor --> C5["RecordFieldReturn"]:::command --> G2 --> E7["ServiceLifeRecorded"]:::evento --> P2{{"Si las horas no alcanzan el PCR, detectar falla prematura"}}:::policy --> E8["PrematureFailureDetected"]:::evento
+    G2 --> R1[/"Historial del componente"/]:::readmodel
+```
+
+**Process Monitoring**: Sesiones de rociado, ingesta de telemetría, pasadas, clasificación por banda y verificación de receta.
+
+```mermaid
+flowchart LR
+    classDef actor fill:#FFF9C4,stroke:#F9A825,color:#000
+    classDef command fill:#90CAF9,stroke:#1565C0,color:#000
+    classDef aggregate fill:#FFF176,stroke:#F9A825,color:#000
+    classDef evento fill:#FFA726,stroke:#E65100,color:#000
+    classDef policy fill:#CE93D8,stroke:#6A1B9A,color:#000
+    classDef readmodel fill:#A5D6A7,stroke:#2E7D32,color:#000
+    classDef external fill:#F48FB1,stroke:#AD1457,color:#000
+    A1(["Operador HVOF"]):::actor --> C1["StartSpraySession"]:::command --> G1["SpraySession"]:::aggregate --> E1["SpraySessionStarted"]:::evento --> P1{{"Verificar que la receta aplique al componente de la orden"}}:::policy
+    P1 --> E2["RecipeVerified"]:::evento
+    P1 --> E3["RecipeMismatchDetected"]:::evento
+    X1["Cliente de telemetría del PLC"]:::external --> C2["IngestTelemetry"]:::command --> G1 --> E4["ProcessReadingRecorded"]:::evento --> P2{{"Clasificar cada lectura según las bandas de la receta"}}:::policy --> E5["ParameterOutOfRangeDetected"]:::evento
+    G1 --> E6["SprayingStarted / SprayingStopped"]:::evento
+    G1 --> E7["FaultFlagActivated"]:::evento
+    X1 --> P3{{"Si no hay sesión abierta, abrir una sesión no asignada"}}:::policy --> E8["UnassignedSessionOpened"]:::evento
+    A1 --> C3["CompleteSpraySession / AbortSpraySession"]:::command --> G1 --> E9["SpraySessionCompleted / SpraySessionAborted"]:::evento
+    G1 --> R1[/"Lecturas en vivo por banda"/]:::readmodel
+```
+
+**Fault Diagnosis**: Casos de falla, reglas causa-efecto, causa raíz y patrones recurrentes.
+
+```mermaid
+flowchart LR
+    classDef actor fill:#FFF9C4,stroke:#F9A825,color:#000
+    classDef command fill:#90CAF9,stroke:#1565C0,color:#000
+    classDef aggregate fill:#FFF176,stroke:#F9A825,color:#000
+    classDef evento fill:#FFA726,stroke:#E65100,color:#000
+    classDef policy fill:#CE93D8,stroke:#6A1B9A,color:#000
+    classDef readmodel fill:#A5D6A7,stroke:#2E7D32,color:#000
+    classDef external fill:#F48FB1,stroke:#AD1457,color:#000
+    X1["FaultFlagActivated (Process Monitoring)"]:::external --> P1{{"Abrir un caso de falla por cada indicador activado"}}:::policy --> C1["OpenFaultCase"]:::command --> G1["FaultCase"]:::aggregate --> E1["FaultCaseOpened"]:::evento
+    E1 --> P2{{"Aplicar el catálogo de reglas causa-efecto"}}:::policy --> G2["DiagnosticRule"]:::aggregate --> E2["ProbableCauseSuggested / SuspectPartIdentified"]:::evento
+    A1(["Supervisor de mantenimiento de máquina"]):::actor --> C2["ConfirmRootCause"]:::command --> G1 --> E3["RootCauseConfirmed"]:::evento --> E4["FaultCaseClosed"]:::evento
+    E3 --> P3{{"Si la misma parte acumula fallas del mismo tipo, detectar patrón"}}:::policy --> G3["FaultPattern"]:::aggregate --> E5["RecurringFaultPatternDetected"]:::evento
+    A2(["Ingeniera de calidad"]):::actor --> C3["CreateDiagnosticRule"]:::command --> G2 --> E6["DiagnosticRuleCreated"]:::evento
+    G1 --> R1[/"Casos de falla por sistema, subsistema y parte"/]:::readmodel
+```
+
+**Notifications**: Alertas en la plataforma y por correo, preferencias de notificación y newsletter.
+
+```mermaid
+flowchart LR
+    classDef actor fill:#FFF9C4,stroke:#F9A825,color:#000
+    classDef command fill:#90CAF9,stroke:#1565C0,color:#000
+    classDef aggregate fill:#FFF176,stroke:#F9A825,color:#000
+    classDef evento fill:#FFA726,stroke:#E65100,color:#000
+    classDef policy fill:#CE93D8,stroke:#6A1B9A,color:#000
+    classDef readmodel fill:#A5D6A7,stroke:#2E7D32,color:#000
+    classDef external fill:#F48FB1,stroke:#AD1457,color:#000
+    X1["ParameterOutOfRangeDetected / RecipeMismatchDetected / UnassignedSessionOpened"]:::external --> P1{{"Alertar al operador según la severidad de la banda"}}:::policy --> C1["RaiseAlert"]:::command --> G1["Alert"]:::aggregate --> E1["OutOfRangeAlertRaised"]:::evento
+    X2["FaultCaseOpened / RecurringFaultPatternDetected / PrematureFailureDetected"]:::external --> P2{{"Alertar al supervisor de mantenimiento y a calidad"}}:::policy --> C1
+    G1 --> E2["CriticalFaultAlertRaised"]:::evento --> P3{{"Si la preferencia incluye correo, entregar por Mailchimp"}}:::policy --> X3["Mailchimp"]:::external --> E3["AlertDelivered"]:::evento
+    A1(["Usuario de la plataforma"]):::actor --> C2["AcknowledgeAlert"]:::command --> G1 --> E4["AlertAcknowledged"]:::evento
+    A1 --> C3["UpdateNotificationPreference"]:::command --> G2["NotificationPreference"]:::aggregate --> E5["NotificationPreferenceUpdated"]:::evento
+    A2(["Visitante"]):::actor --> C4["SubscribeToNewsletter"]:::command --> G3["NewsletterSubscription"]:::aggregate --> E6["VisitorSubscribedToNewsletter"]:::evento
+```
+
+**Reporting**: Certificados de calidad, reportes de sesión, plantillas de reporte y cumplimiento de PCR.
+
+```mermaid
+flowchart LR
+    classDef actor fill:#FFF9C4,stroke:#F9A825,color:#000
+    classDef command fill:#90CAF9,stroke:#1565C0,color:#000
+    classDef aggregate fill:#FFF176,stroke:#F9A825,color:#000
+    classDef evento fill:#FFA726,stroke:#E65100,color:#000
+    classDef policy fill:#CE93D8,stroke:#6A1B9A,color:#000
+    classDef readmodel fill:#A5D6A7,stroke:#2E7D32,color:#000
+    classDef external fill:#F48FB1,stroke:#AD1457,color:#000
+    X1["RecuperationClosed (Traceability)"]:::external --> P1{{"Habilitar la emisión del certificado de la orden"}}:::policy
+    A1(["Ingeniera de calidad"]):::actor --> C1["IssueQualityCertificate"]:::command --> G1["QualityCertificate"]:::aggregate --> E1["QualityCertificateIssued"]:::evento
+    P1 --> C1
+    A1 --> C2["CreateReportTemplate / ShareReportTemplate"]:::command --> G2["ReportTemplate"]:::aggregate --> E2["ReportTemplateCreated / ReportTemplateShared"]:::evento
+    A2(["Supervisor de operación"]):::actor --> C3["GenerateReport"]:::command --> G3["GeneratedReport"]:::aggregate --> E3["ReportGeneratedFromTemplate / SessionReportGenerated"]:::evento
+    A3(["Ingeniera de confiabilidad"]):::actor --> C4["GeneratePcrComplianceReport"]:::command --> G4["PcrComplianceReport"]:::aggregate --> E4["PcrComplianceReportGenerated"]:::evento
+    G4 --> R1[/"Cumplimiento de PCR por proveedor, modelo y tipo"/]:::readmodel
+```
+
 ### 4.6.2. Software Architecture Context Diagram.
 
 <img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.2.software-architecture-context-diagram/Context-Reliant___Context_Diagram.png">
