@@ -3158,6 +3158,65 @@ La documentación OpenAPI con Swagger UI (springdoc) se publicará en el Sprint 
 
 #### 5.2.2.7. Software Deployment Evidence for Sprint Review.
 
+En el Sprint 2 se desplegaron en Microsoft Azure App Service el fake API y la Frontend Web Application, ambos con despliegue continuo desde GitHub Actions. La configuración resultante se describe en la sección 5.1.4; a continuación se narran los pasos tal como se ejecutaron el 4 de octubre de 2026, incluidos los problemas encontrados y cómo se resolvieron.
+
+| Producto | URL pública |
+|---|---|
+| Fake API (`reliant-platform-mock`) | https://reliant-mockapi-ajh4eqgkf7hxg2fx.eastus-01.azurewebsites.net/api/v1 |
+| Frontend Web Application (`reliant-webapp`, versión 1.0.1) | https://reliant-web-application-hsa3asb7axaph6hf.chilecentral-01.azurewebsites.net |
+| Landing Page (`reliant-website`) | <!-- TODO: URL pública del Landing Page --> |
+
+**Paso 1. Separar el fake API en su propio repositorio.** Durante el desarrollo, el fake API vivía dentro de `reliant-webapp` (carpeta `server/`, ejecutada con `json-server --watch db.json --routes routes.json`). Para desplegarlo como servicio independiente se creó el repositorio `reliant-platform-mock` (commit `71e588f`, "chore: add the mock API as its own deployable project."), con las clases `MockApiServer` y `MockApiServerConfig`, el punto de entrada `server.js` y el script `npm start`.
+
+**Paso 2. Crear el Web App del fake API.** En Azure Portal se creó el Web App `reliant-mockapi` (Linux, Node 24 LTS) en el grupo de recursos `reliant-rg`. El primer intento falló porque la suscripción de estudiante solo permite crear recursos en un conjunto de regiones, por lo que se eligió una región permitida. Se usó el plan Basic B1, porque el plan gratuito F1 no permitía habilitar el despliegue continuo con GitHub Actions.
+
+<!-- TODO: captura del error de región al crear el Web App (assets/img/5.chapter-v/5.2.2.7-region-error.png) -->
+<!-- TODO: captura de la configuración del Web App reliant-mockapi en Azure Portal (assets/img/5.chapter-v/5.2.2.7-mockapi-web-app.png) -->
+
+**Paso 3. Conectar GitHub Actions al fake API.** Desde Deployment Center se conectó el repositorio `reliant-platform-mock` y la rama `main`. Azure agregó el workflow `main_reliant-mockapi.yml` (commit `0c2f6cb`) y su primera ejecución, "Build and deploy Node.js app to Azure Web App - reliant-mockapi #1", terminó correctamente en 1 min 44 s.
+
+<img src="assets/img/5.chapter-v/5.2.2.7-github-actions-mock.png" alt="GitHub Actions del fake API" width="720">
+
+El fake API desplegado responde con las colecciones de `db.json`; por ejemplo, `GET /api/v1/components`:
+
+<img src="assets/img/5.chapter-v/5.2.2.7-mock-api-components.png" alt="Colección components del fake API desplegado" width="720">
+
+**Paso 4. Preparar el release de la Web Application.** Se cerró el release `1.0.0` con Git Flow y, en el release `1.0.1`, se apuntó el entorno de producción al fake API desplegado manteniendo los adapters fake de IAM (commit `1abc987`). Las ramas `main` y `develop` y la etiqueta `1.0.0` quedaron publicadas en GitHub:
+
+<img src="assets/img/5.chapter-v/5.2.2.7-webapp-branches.png" alt="Ramas principales de reliant-webapp" width="720">
+
+<img src="assets/img/5.chapter-v/5.2.2.7-webapp-tags.png" alt="Etiqueta 1.0.0 de reliant-webapp" width="720">
+
+**Paso 5. Intento con Azure Static Web Apps.** Como la Web Application es una SPA estática, primero se intentó publicarla con Azure Static Web Apps; para ello el release `1.0.1` incluyó el archivo `public/staticwebapp.config.json` con la regla de fallback a `index.html` (commit `a5b244f`). La creación del recurso fue rechazada por la política de la suscripción de estudiante (`RequestDisallowedByAzure`), por lo que se optó por un segundo Web App de App Service y el archivo quedó sin uso.
+
+<!-- TODO: captura del error RequestDisallowedByAzure al crear el Static Web App (assets/img/5.chapter-v/5.2.2.7-static-web-apps-error.png) -->
+
+**Paso 6. Crear el Web App de la Frontend Web Application y conectar GitHub Actions.** Se creó el Web App `reliant-web-application` (Linux, Node 24 LTS) en `reliant-rg` y se conectó desde Deployment Center al repositorio `reliant-webapp`, rama `main`. Azure agregó el workflow `main_reliant-web-application.yml` (commit `b7b1539`), que construye la aplicación con `npm run build` y publica el resultado; su primera ejecución terminó correctamente.
+
+<img src="assets/img/5.chapter-v/5.2.2.7-github-actions-webapp.png" alt="GitHub Actions de la Web Application" width="720">
+
+**Paso 7. Configurar el Startup Command.** Con el despliegue terminado, el sitio respondía `503 Service Unavailable`: App Service no tenía un proceso que sirviera los archivos estáticos generados por Angular.
+
+<img src="assets/img/5.chapter-v/5.2.2.7-webapp-503.png" alt="Respuesta 503 antes de configurar el Startup Command" width="720">
+
+Se configuró en Configuration → General settings el Startup Command siguiente, para que PM2 sirva el build como Single Page Application y redirija cualquier ruta a `index.html`:
+
+```bash
+pm2 serve /home/site/wwwroot/dist/reliant-webapp/browser --no-daemon --spa
+```
+
+<!-- TODO: captura del Startup Command en Azure Portal (assets/img/5.chapter-v/5.2.2.7-startup-command.png) -->
+
+**Paso 8. Verificar la aplicación desplegada.** Tras reiniciar el Web App, la aplicación respondió en su URL pública, incluida la carga directa de la ruta `/equipment/hvof-systems`, en inglés y en español:
+
+<img src="assets/img/5.chapter-v/5.2.2.7-webapp-deployed-en.png" alt="Web Application desplegada en inglés" width="720">
+
+<img src="assets/img/5.chapter-v/5.2.2.7-webapp-deployed-es.png" alt="Web Application desplegada en español" width="720">
+
+Las herramientas de desarrollo del navegador muestran que la aplicación desplegada consume las colecciones del fake API en Azure (`hvofSystems`, `controllers`, `hvofSubsystems`, `hvofParts`, `recipes`):
+
+<img src="assets/img/5.chapter-v/5.2.2.7-webapp-requests-to-mock-api.png" alt="Solicitudes de la Web Application al fake API desplegado" width="720">
+
 #### 5.2.2.8. Team Collaboration Insights during Sprint.
 
 ## 5.3. Validation Interviews.
