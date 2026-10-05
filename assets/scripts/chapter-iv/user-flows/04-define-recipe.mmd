@@ -1,0 +1,22 @@
+flowchart TD
+    classDef start fill:#2E3138,stroke:#2E3138,color:#FFFFFF
+    classDef view fill:#E4F6F1,stroke:#16936F,color:#0B3B2E
+    classDef action fill:#FFFFFF,stroke:#5B6170,color:#222222
+    classDef decision fill:#FFF3D6,stroke:#E0A100,color:#3A2A00
+    classDef error fill:#F9DCD8,stroke:#C0392B,color:#7A1F14
+    classDef done fill:#83D8C0,stroke:#0F6E5C,color:#0B3B2E
+    S([Ingeniera de calidad]):::start --> A["/hvof-systems/:id"]:::view --> B[Pestaña Recetas]:::action
+    B --> C{{¿Nueva receta o edición?}}:::decision
+    C -->|nueva| D["/recipes/new"]:::view
+    C -->|editar| D2["/recipes/:recipeId/edit"]:::view
+    D --> E[Número, nombre y especificación del polvo]:::action
+    D2 --> E
+    E --> F[Agregar componentes aplicables: tipo, modelo de máquina, posición]:::action
+    F --> G[Agregar parámetros: unidad, categoría y bandas de parada, advertencia, nominal y setpoint]:::action
+    G --> H{{¿Al menos un parámetro?}}:::decision
+    H -->|no| HE[Agrega al menos un parámetro]:::error --> G
+    H -->|sí| I{{¿LSD < LAW < mín ≤ setpoint ≤ máx < HAW < HSD?}}:::decision
+    I -->|no| IE[Los umbrales deben cumplir el orden de las bandas]:::error --> G
+    I -->|sí| J[Guardar]:::action --> K[Receta en estado DRAFT]:::action --> A
+    A --> L{{¿Publicar la receta?}}:::decision
+    L -->|sí| M[Publicar]:::action --> N[Receta ACTIVE, disponible para iniciar sesiones]:::done

@@ -1,0 +1,20 @@
+flowchart TD
+    classDef start fill:#2E3138,stroke:#2E3138,color:#FFFFFF
+    classDef view fill:#E4F6F1,stroke:#16936F,color:#0B3B2E
+    classDef action fill:#FFFFFF,stroke:#5B6170,color:#222222
+    classDef decision fill:#FFF3D6,stroke:#E0A100,color:#3A2A00
+    classDef error fill:#F9DCD8,stroke:#C0392B,color:#7A1F14
+    classDef done fill:#83D8C0,stroke:#0F6E5C,color:#0B3B2E
+    S([Supervisor de mantenimiento de máquina]):::start --> A["/equipment/hvof-systems"]:::view
+    A --> B{{¿El sistema ya existe?}}:::decision
+    B -->|no| C[Nuevo sistema HVOF]:::action --> D["/hvof-systems/new: código, fabricante, modelo, serie, combustible"]:::view
+    D --> D1{{¿Formulario válido?}}:::decision
+    D1 -->|no| DE[Campos obligatorios marcados]:::error --> D
+    D1 -->|sí| A
+    B -->|sí| E[Ver detalle]:::action --> F["/hvof-systems/:id"]:::view
+    F --> G[Pestaña Controladores]:::action --> G1["/controllers/new · controllers/:id/edit: PLC, modelo, IP, puerto"]:::view --> F
+    F --> H[Pestaña Subsistemas]:::action --> H1["/subsystems/new · subsystems/:id/edit: tipo y alias del controlador"]:::view --> F
+    H --> I[Agregar parte al subsistema]:::action --> I1["/subsystems/:id/parts/new: serie, fabricante, instalación"]:::view --> F
+    H --> J[Eliminar parte]:::action --> F
+    F --> K[Editar sistema]:::action --> K1["/hvof-systems/:id/edit"]:::view --> A
+    F --> L[Sistema con controladores, subsistemas y partes registrados]:::done

@@ -1,0 +1,25 @@
+flowchart TD
+    classDef start fill:#2E3138,stroke:#2E3138,color:#FFFFFF
+    classDef view fill:#E4F6F1,stroke:#16936F,color:#0B3B2E
+    classDef action fill:#FFFFFF,stroke:#5B6170,color:#222222
+    classDef decision fill:#FFF3D6,stroke:#E0A100,color:#3A2A00
+    classDef error fill:#F9DCD8,stroke:#C0392B,color:#7A1F14
+    classDef done fill:#83D8C0,stroke:#0F6E5C,color:#0B3B2E
+    S([Operador HVOF]):::start --> A["/process-monitoring/spray-sessions"]:::view --> B[Iniciar sesión de rociado]:::action
+    B --> C["/spray-sessions/new"]:::view --> D[Selecciona sistema HVOF activo]:::action
+    D --> E[Selecciona orden en estado recibida, en proceso o retrabajo]:::action
+    E --> F{{¿El sistema tiene recetas activas?}}:::decision
+    F -->|no| FE[Lista de recetas vacía: solo recetas activas del sistema]:::error --> D
+    F -->|sí| G[Selecciona la receta]:::action --> H[Iniciar sesión]:::action
+    H --> I["/spray-sessions/:id · EN VIVO"]:::view
+    I --> J[Lecturas cada 5 s: último valor por parámetro, banda y hora de actualización]:::action
+    J --> K{{¿Parámetro fuera de la banda nominal?}}:::decision
+    K -->|sí| KE[Tarjeta marcada en advertencia o parada y conteo por banda]:::error --> J
+    K -->|no| L{{¿Termina la corrida?}}:::decision
+    L -->|no| J
+    L -->|completar| M[Completar]:::action --> N[Sesión completada con hora de fin]:::done
+    L -->|abortar| O["Diálogo Abortar sesión: motivo obligatorio y notas"]:::view
+    O -->|seguir corriendo| J
+    O -->|confirmar| P[Sesión abortada con su motivo]:::done
+    N --> A
+    P --> A

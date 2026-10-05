@@ -2344,11 +2344,71 @@ Asimismo, los wireframes ayudan a organizar las funcionalidades de acuerdo con l
 
 
 ### 4.4.4. Web Applications User Flow Diagrams.
-<img src="assets/img/2.chapter-ii/2.3.needfinding/user flow.png"> 
 
+Los User Flow Diagrams muestran, para cada objetivo de usuario, el recorrido completo por la Web Application: las vistas por las que pasa con su ruta, las acciones que realiza, las decisiones del sistema y los caminos alternos cuando una validación falla o el usuario no tiene permiso. Los flujos corresponden a la Web Application implementada en el Sprint 2 y cubren los cinco bounded contexts de la versión 1.0.1.
 
+| Elemento | Representa |
+|---|---|
+| Óvalo oscuro | Usuario que inicia el flujo |
+| Rectángulo verde claro | Vista de la aplicación con su ruta |
+| Rectángulo blanco | Acción del usuario o del sistema |
+| Hexágono amarillo | Decisión o validación |
+| Rectángulo rojo | Camino alterno: error, validación fallida o acceso denegado |
+| Rectángulo verde | Objetivo cumplido |
 
+#### User Flow 00. Mapa de navegación
 
+**Usuario:** Visitante y usuarios de ambos segmentos. Muestra cómo se llega a cada área de la aplicación según el estado de la sesión, el tipo de organización y el rol: el Recuperation Supplier ve Trazabilidad, Equipamiento y Sesiones de rociado; el Asset Owner solo Inicio y Acerca de; y las opciones Usuarios y Suscripción aparecen únicamente para el administrador.
+
+<img src="assets/img/4.chapter-iv/4.4.web-applications-ux-ui-design/4.4.4.user-flow-diagrams/00-navigation-map.png" alt="User flow: Mapa de navegación">
+
+#### User Flow 01. Registrar la organización y elegir el plan
+
+**Usuario:** Administrador de organización. El administrador registra su organización y su cuenta, inicia sesión y revisa su suscripción; en la selección de plan solo puede elegir el plan que corresponde a su tipo de organización.
+
+<img src="assets/img/4.chapter-iv/4.4.web-applications-ux-ui-design/4.4.4.user-flow-diagrams/01-register-organization.png" alt="User flow: Registrar la organización y elegir el plan">
+
+#### User Flow 02. Iniciar sesión, navegar y cerrar sesión
+
+**Usuario:** Cualquier usuario registrado. Cubre el inicio de sesión con credenciales inválidas, la sesión que se conserva al recargar, el cambio de idioma, la redirección cuando una ruta exige un rol que el usuario no tiene y el cierre de sesión.
+
+<img src="assets/img/4.chapter-iv/4.4.web-applications-ux-ui-design/4.4.4.user-flow-diagrams/02-sign-in-and-session.png" alt="User flow: Iniciar sesión, navegar y cerrar sesión">
+
+#### User Flow 03. Configurar un sistema HVOF
+
+**Usuario:** Supervisor de mantenimiento de máquina. El supervisor registra el sistema HVOF y, desde su detalle, sus controladores, subsistemas y partes, que luego permiten atribuir las lecturas y fallas a un componente físico de la máquina.
+
+<img src="assets/img/4.chapter-iv/4.4.web-applications-ux-ui-design/4.4.4.user-flow-diagrams/03-configure-hvof-system.png" alt="User flow: Configurar un sistema HVOF">
+
+#### User Flow 04. Definir y publicar una receta
+
+**Usuario:** Ingeniera de calidad. La ingeniera define la receta con sus componentes aplicables y las bandas de umbral de cada parámetro; el formulario exige al menos un parámetro y el orden correcto de los umbrales, guarda la receta como borrador y la publica para que pueda usarse en una sesión.
+
+<img src="assets/img/4.chapter-iv/4.4.web-applications-ux-ui-design/4.4.4.user-flow-diagrams/04-define-recipe.png" alt="User flow: Definir y publicar una receta">
+
+#### User Flow 05. Registrar la recepción de un componente
+
+**Usuario:** Supervisor de operación. El supervisor registra, si aún no existen, el cliente y el componente, y luego la orden de recuperación con su WO y OF; el cliente se completa a partir del componente seleccionado.
+
+<img src="assets/img/4.chapter-iv/4.4.web-applications-ux-ui-design/4.4.4.user-flow-diagrams/05-register-recuperation.png" alt="User flow: Registrar la recepción de un componente">
+
+#### User Flow 06. Ejecutar una sesión de rociado
+
+**Usuario:** Operador HVOF. El operador inicia la sesión eligiendo un sistema activo, una orden abierta y una receta activa del sistema, sigue las lecturas que se actualizan cada cinco segundos con su banda, y completa la sesión o la aborta indicando el motivo.
+
+<img src="assets/img/4.chapter-iv/4.4.web-applications-ux-ui-design/4.4.4.user-flow-diagrams/06-run-spray-session.png" alt="User flow: Ejecutar una sesión de rociado">
+
+#### User Flow 07. Consultar el historial de sesiones
+
+**Usuario:** Supervisor de operación. El supervisor filtra las sesiones por sistema, orden y fechas, revisa su estado y número de desviaciones, y abre el detalle de una sesión pasada o activa.
+
+<img src="assets/img/4.chapter-iv/4.4.web-applications-ux-ui-design/4.4.4.user-flow-diagrams/07-browse-session-history.png" alt="User flow: Consultar el historial de sesiones">
+
+#### User Flow 08. Gestionar los roles de los usuarios
+
+**Usuario:** Administrador de organización. El administrador asigna los roles de cada usuario de su organización, que determinan las opciones y acciones disponibles en la aplicación.
+
+<img src="assets/img/4.chapter-iv/4.4.web-applications-ux-ui-design/4.4.4.user-flow-diagrams/08-manage-user-roles.png" alt="User flow: Gestionar los roles de los usuarios">
 
 ## 4.5. Web Applications Prototyping.
 En esta sección se presenta el prototipo interactivo de la Web Application de Reliant, desarrollado a partir de los mock-ups y User Flow Diagrams definidos previamente. El prototipo permite simular la navegación entre las principales vistas de la aplicación y validar la secuencia de interacción que siguen los usuarios para realizar sus tareas principales. Las conexiones entre pantallas fueron definidas considerando los recorridos establecidos en los User Flows y el sistema de navegación propuesto para la aplicación. Se consideraron las principales funcionalidades de Reliant, como el registro y seguimiento de componentes recuperados, la consulta de órdenes de trabajo, la trazabilidad de los procesos de recubrimiento HVOF, el monitoreo de parámetros de operación, el diagnóstico de fallas y el análisis del desempeño de los componentes frente a su vida útil esperada (PCR). A continuación, se presenta una captura del prototipo en funcionamiento y el enlace al video de demostración, donde se muestran los principales flujos de navegación e interacción de la aplicación.
