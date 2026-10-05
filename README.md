@@ -2421,8 +2421,11 @@ A continuación se especifican los productos de software que utilizan los miembr
 | Spring Boot 3.x + Spring Data JPA | Framework del RESTful API, persistencia y seguridad | https://spring.io/projects/spring-boot |
 | Apache Maven | Gestión de dependencias y construcción del backend | https://maven.apache.org |
 | IntelliJ IDEA Community | IDE para el desarrollo del backend | https://www.jetbrains.com/idea |
-| Node.js 20 LTS + npm | Runtime y gestor de paquetes del frontend | https://nodejs.org |
-| Angular CLI 18 | Framework de la Frontend Web Application | https://angular.dev |
+| Node.js 24 LTS + npm | Runtime y gestor de paquetes de la Web Application y del fake API | https://nodejs.org |
+| Angular CLI 22 | Framework de la Frontend Web Application (componentes standalone y signals) | https://angular.dev |
+| ngx-translate | Internacionalización de la Web Application (inglés y español) | https://github.com/ngx-translate/core |
+| json-server 0.17.4 | Fake API REST que sirve los datos de prueba de la Web Application durante el Sprint 2 | https://github.com/typicode/json-server |
+| WebStorm | IDE para la Web Application y el fake API, con soporte para Git Flow | https://www.jetbrains.com/webstorm |
 | Angular Material | Biblioteca de componentes UI basada en Material Design | https://material.angular.io |
 | Visual Studio Code | Editor para el Landing Page (HTML5, CSS3, JavaScript) y la Web Application | https://code.visualstudio.com |
 | PostgreSQL 16 | Base de datos relacional de los Web Services | https://www.postgresql.org |
@@ -2434,10 +2437,10 @@ A continuación se especifican los productos de software que utilizan los miembr
 
 | Producto | Propósito en el proyecto | Ruta |
 |---|---|---|
-| GitHub Pages | Despliegue del Landing Page | https://pages.github.com |
-| Netlify | Despliegue de la Frontend Web Application | https://www.netlify.com |
-| Render | Despliegue de los Web Services (contenedor Docker) y de PostgreSQL gestionado | https://render.com |
-| GitHub Actions | Integración continua: build y pruebas en cada pull request | https://github.com/features/actions |
+| Microsoft Azure App Service (Linux) | Despliegue de la Frontend Web Application y del fake API como Web Apps independientes | https://azure.microsoft.com/products/app-service |
+| PM2 | Servidor de archivos estáticos en modo SPA para la Web Application dentro de App Service | https://pm2.keymetrics.io |
+| GitHub Actions | Integración y despliegue continuo: build, pruebas y publicación en Azure en cada push a `main` | https://github.com/features/actions |
+| Render | Despliegue previsto de los Web Services (contenedor Docker) y de PostgreSQL gestionado | https://render.com |
 
 **Software Documentation**
 
@@ -2451,14 +2454,15 @@ A continuación se especifican los productos de software que utilizan los miembr
 
 ### 5.1.2. Source Code Management.
 
-El equipo utiliza GitHub como plataforma de control de versiones bajo una organización pública. Cada producto tiene su propio repositorio:
+El equipo utiliza GitHub como plataforma de control de versiones bajo la organización [upc-pre-202620-1asi0729-7753-innovacorp](https://github.com/upc-pre-202620-1asi0729-7753-innovacorp). Cada producto tiene su propio repositorio:
 
 | Repositorio | Contenido | URL |
 |---|---|---|
-| `reliant-report` | Informe del proyecto en Markdown (README.md principal y archivos por capítulo) | https://github.com/[organizacion]/reliant-report |
-| `reliant-landing-page` | Sitio web estático (Landing Page) en HTML5, CSS3 y JavaScript | https://github.com/[organizacion]/reliant-landing-page |
-| `reliant-webapp` | Frontend Web Application en Angular | https://github.com/[organizacion]/reliant-webapp |
-| `reliant-platform` | RESTful API en Spring Boot, con pruebas unitarias y de integración | https://github.com/[organizacion]/reliant-platform |
+| `reliant-report` | Informe del proyecto en Markdown (README.md principal y archivos por capítulo) | https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-report |
+| `reliant-website` | Sitio web estático (Landing Page) en HTML5, CSS3 y JavaScript | https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-website |
+| `reliant-webapp` | Frontend Web Application en Angular | https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp |
+| `reliant-platform-mock` | Fake API en json-server que expone los datos de prueba bajo `/api/v1` mientras no existen los Web Services | https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform-mock |
+| `reliant-platform` | RESTful API en Spring Boot, con pruebas unitarias y de integración (se crea en el Sprint 3) | — |
 
 **GitFlow como workflow de control de versiones**
 
@@ -2484,7 +2488,7 @@ Los releases siguen Semantic Versioning 2.0.0 con el formato `vMAJOR.MINOR.PATCH
 | MINOR | Se agrega funcionalidad compatible (una nueva User Story implementada) |
 | PATCH | Se corrige un error sin cambiar funcionalidad |
 
-Versiones previstas por entrega: `v0.1.0` (AV1, Landing Page), `v0.2.0` (TB1, primera Web Application), `v0.3.0` (AV2, Web Services), `v1.0.0` (TB2, release final).
+Versiones publicadas a la fecha: `v0.1.0` del Landing Page (AV1) y `1.0.0` y `1.0.1` de la Frontend Web Application (TB1, Sprint 2). En la Web Application, la rama de release y la etiqueta usan el número de versión sin prefijo (`release/1.0.1`, etiqueta `1.0.1`), que coincide con el campo `version` de `package.json`.
 
 **Conventional Commits para los mensajes**
 
@@ -2573,26 +2577,45 @@ Se sigue PEP 8: `snake_case` para funciones y variables, `PascalCase` para clase
 
 ### 5.1.4. Software Deployment Configuration.
 
-Cada producto se despliega de forma independiente a partir de su repositorio. La configuración se describe a continuación.
+En el Sprint 2 la Frontend Web Application y su fake API se despliegan en **Microsoft Azure App Service** sobre Linux, cada una como un Web App independiente dentro del grupo de recursos `reliant-rg`. Cada Web App se conecta a su repositorio de GitHub desde el **Deployment Center**, que genera un workflow de **GitHub Actions** en la rama `main`: cada push a `main` construye el proyecto y lo publica en Azure. Se descartó **Azure Static Web Apps** porque la política de regiones de la suscripción de estudiante rechazó la creación del recurso (`RequestDisallowedByAzure`); por esa razón el archivo `public/staticwebapp.config.json` que se agregó en la versión 1.0.1 de la Web Application quedó sin uso.
 
-**Landing Page → GitHub Pages**
+| Recurso de Azure | Producto | Repositorio | Workflow de GitHub Actions | URL pública |
+|---|---|---|---|---|
+| Web App `reliant-mockapi` | Fake API (json-server) | [`reliant-platform-mock`](https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform-mock) | `.github/workflows/main_reliant-mockapi.yml` | https://reliant-mockapi-ajh4eqgkf7hxg2fx.eastus-01.azurewebsites.net/api/v1 |
+| Web App `reliant-web-application` | Frontend Web Application (Angular) | [`reliant-webapp`](https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp) | `.github/workflows/main_reliant-web-application.yml` | https://reliant-web-application-hsa3asb7axaph6hf.chilecentral-01.azurewebsites.net |
+| Landing Page | Sitio web estático | [`reliant-website`](https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-website) | <!-- TODO: el repositorio reliant-website no contiene workflow de GitHub Actions --> — | <!-- TODO: URL pública del Landing Page --> |
 
-| Paso | Descripción |
-|---|---|
-| 1 | En el repositorio `reliant-landing-page`, el sitio estático vive en la raíz (`index.html`, `css/`, `js/`, `assets/`, `i18n/`) |
-| 2 | En Settings → Pages se selecciona la rama `main` y la carpeta `/ (root)` como origen |
-| 3 | Cada merge a `main` publica automáticamente en `https://[organizacion].github.io/reliant-landing-page/` |
-| 4 | Los call-to-action apuntan a la URL pública de la Web Application con el segmento como parámetro (`?segment=recuperation-supplier`) |
-
-**Frontend Web Application → Netlify**
+**Fake API → Azure App Service (`reliant-mockapi`)**
 
 | Paso | Descripción |
 |---|---|
-| 1 | Se conecta el repositorio `reliant-webapp` a Netlify con despliegue automático desde `main` |
-| 2 | Build command: `npm ci && npx ng build --configuration production` |
-| 3 | Publish directory: `dist/reliant-webapp/browser` |
-| 4 | Se agrega `public/_redirects` con `/* /index.html 200` para que el enrutamiento de Angular funcione al recargar |
-| 5 | La URL del API se define por entorno en `src/environments/environment.prod.ts` (`apiBaseUrl`) |
+| 1 | El repositorio `reliant-platform-mock` contiene el fake API como proyecto Node.js independiente. La clase `MockApiServer` crea el servidor de json-server 0.17.4, expone `GET /api/v1/health` y reescribe `/api/v1/*` hacia las colecciones de `db.json`; la clase `MockApiServerConfig` toma el puerto de la variable `PORT` que inyecta App Service y la ruta del archivo de datos de `JSON_SERVER_DB_PATH` |
+| 2 | `package.json` define `"start": "node server.js"` y `"engines": { "node": ">=24" }`, por lo que App Service inicia el servidor con `npm start` sin Startup Command adicional |
+| 3 | En Azure Portal se crea el Web App `reliant-mockapi`: publicación **Code**, runtime **Node 24 LTS**, sistema operativo **Linux**, grupo de recursos `reliant-rg`, región **East US** <!-- TODO: confirmar la región; el dominio asignado es eastus-01 -->, plan **Basic B1** (el plan gratuito F1 no habilita el despliegue continuo desde GitHub Actions) |
+| 4 | En Deployment Center se elige GitHub como origen, la organización del equipo, el repositorio `reliant-platform-mock` y la rama `main`. Azure agrega el workflow `main_reliant-mockapi.yml` al repositorio y ejecuta el primer despliegue |
+| 5 | Se verifica el servicio en `https://reliant-mockapi-ajh4eqgkf7hxg2fx.eastus-01.azurewebsites.net/api/v1/health` y en las colecciones, por ejemplo `/api/v1/components` |
+
+**Frontend Web Application → Azure App Service (`reliant-web-application`)**
+
+| Paso | Descripción |
+|---|---|
+| 1 | En `src/environments/environment.ts` (configuración de producción) se define `platformProviderApiBaseUrl` con la URL del fake API desplegado y se mantiene `useFakeIam: true`, de modo que el registro y el inicio de sesión usan los adapters `FakeSignUpApiEndpoint` y `FakeSignInApiEndpoint` contra las colecciones `/users` y `/organizations`. Los adapters reales (`SignUpApiEndpoint`, `SignInApiEndpoint`) quedan listos para los Web Services en Spring Boot |
+| 2 | Se publica el release `1.0.1` con Git Flow; `main` queda con la versión desplegable y las etiquetas `1.0.0` y `1.0.1` |
+| 3 | En Azure Portal se crea el Web App `reliant-web-application`: publicación **Code**, runtime **Node 24 LTS**, sistema operativo **Linux**, grupo de recursos `reliant-rg`, región **Chile Central** <!-- TODO: confirmar la región; el dominio asignado es chilecentral-01 --> |
+| 4 | En Deployment Center se conecta el repositorio `reliant-webapp` y la rama `main`. El workflow generado, `main_reliant-web-application.yml`, instala dependencias, ejecuta `npm run build` (que produce `dist/reliant-webapp/browser`) y publica el resultado con `azure/webapps-deploy` |
+| 5 | En Configuration → General settings se define el Startup Command, para que PM2 sirva el build de Angular como Single Page Application y redirija cualquier ruta a `index.html`: |
+
+```bash
+pm2 serve /home/site/wwwroot/dist/reliant-webapp/browser --no-daemon --spa
+```
+
+| Paso | Descripción |
+|---|---|
+| 6 | Se verifica la aplicación en `https://reliant-web-application-hsa3asb7axaph6hf.chilecentral-01.azurewebsites.net`, incluida la recarga directa de una ruta interna como `/equipment/hvof-systems` |
+
+**Configuración prevista para los Web Services (Sprint 3)**
+
+La configuración siguiente describe cómo se desplegará el RESTful API en Spring Boot cuando reemplace al fake API; en ese momento la Web Application cambiará `useFakeIam` a `false` y `platformProviderApiBaseUrl` a la URL de los Web Services.
 
 **Web Services → Render (contenedor Docker)**
 
@@ -2632,7 +2655,7 @@ ENTRYPOINT ["java", "-jar", "app.jar"]
 |---|---|
 | `application.properties` | Configuración base: zona horaria `America/Lima`, `SnakeCasePhysicalNamingStrategy`, springdoc |
 | `application-dev.properties` | Base de datos local en Docker, CORS a `http://localhost:4200`, logging detallado |
-| `application-prod.properties` | Variables de entorno de Render, CORS al dominio de Netlify, logging mínimo |
+| `application-prod.properties` | Variables de entorno de Render, CORS al dominio de la Web Application en Azure App Service, logging mínimo |
 
 **Simulador de telemetría (gateway)**
 
