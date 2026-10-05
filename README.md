@@ -2040,7 +2040,9 @@ La estimación se expresa en Story Points sobre la escala de Fibonacci (1, 2, 3,
 
 El Product Backlog se gestiona en Trello, con una lista por Sprint y una etiqueta por Epic: [https://trello.com/b/aDFKmtGp/reliant-product-backlog](https://trello.com/b/aDFKmtGp/reliant-product-backlog). Cada tarjeta indica sus Story Points entre paréntesis.
 
-<!-- TODO: hacer público el tablero Reliant - Product Backlog y agregar su captura -->
+<img src="assets/img/3.chapter-iii/3.3.product-backlog/3.3-trello-product-backlog.png" alt="Product Backlog de Reliant en Trello: Epics, Product Backlog, Sprint 1 y Sprint 2">
+
+<img src="assets/img/3.chapter-iii/3.3.product-backlog/3.3-trello-product-backlog-sprints.png" alt="Listas de Sprint del Product Backlog de Reliant en Trello">
 
 | # Orden | User Story Id | Título | Descripción | Story Points (1 / 2 / 3 / 5 / 8) |
 |---|---|---|---|---|
@@ -3050,7 +3052,7 @@ El Landing Page se publica en **GitHub Pages** directamente desde la rama `main`
 |---|---|
 | 1 | El repositorio `reliant-platform-mock` contiene el fake API como proyecto Node.js independiente. La clase `MockApiServer` crea el servidor de json-server 0.17.4, expone `GET /api/v1/health` y reescribe `/api/v1/*` hacia las colecciones de `db.json`; la clase `MockApiServerConfig` toma el puerto de la variable `PORT` que inyecta App Service y la ruta del archivo de datos de `JSON_SERVER_DB_PATH` |
 | 2 | `package.json` define `"start": "node server.js"` y `"engines": { "node": ">=24" }`, por lo que App Service inicia el servidor con `npm start` sin Startup Command adicional |
-| 3 | En Azure Portal se crea el Web App `reliant-mockapi`: publicación **Code**, runtime **Node 24 LTS**, sistema operativo **Linux**, grupo de recursos `reliant-rg`, región **East US** <!-- TODO: confirmar la región; el dominio asignado es eastus-01 -->, plan **Basic B1** (el plan gratuito F1 no habilita el despliegue continuo desde GitHub Actions) |
+| 3 | En Azure Portal se crea el Web App `reliant-mockapi`: publicación **Code**, runtime **Node 24 LTS**, sistema operativo **Linux**, grupo de recursos `reliant-rg`, región **East US**, plan **Basic B1** (el plan gratuito F1 no habilita el despliegue continuo desde GitHub Actions) |
 | 4 | En Deployment Center se elige GitHub como origen, la organización del equipo, el repositorio `reliant-platform-mock` y la rama `main`. Azure agrega el workflow `main_reliant-mockapi.yml` al repositorio y ejecuta el primer despliegue |
 | 5 | Se verifica el servicio en `https://reliant-mockapi-ajh4eqgkf7hxg2fx.eastus-01.azurewebsites.net/api/v1/health` y en las colecciones, por ejemplo `/api/v1/components` |
 
@@ -3060,7 +3062,7 @@ El Landing Page se publica en **GitHub Pages** directamente desde la rama `main`
 |---|---|
 | 1 | En `src/environments/environment.ts` (configuración de producción) se define `platformProviderApiBaseUrl` con la URL del fake API desplegado y se mantiene `useFakeIam: true`, de modo que el registro y el inicio de sesión usan los adapters `FakeSignUpApiEndpoint` y `FakeSignInApiEndpoint` contra las colecciones `/users` y `/organizations`. Los adapters reales (`SignUpApiEndpoint`, `SignInApiEndpoint`) quedan listos para los Web Services en Spring Boot |
 | 2 | Se publica el release `1.0.1` con Git Flow; `main` queda con la versión desplegable y las etiquetas `1.0.0` y `1.0.1` |
-| 3 | En Azure Portal se crea el Web App `reliant-web-application`: publicación **Code**, runtime **Node 24 LTS**, sistema operativo **Linux**, grupo de recursos `reliant-rg`, región **Chile Central** <!-- TODO: confirmar la región; el dominio asignado es chilecentral-01 --> |
+| 3 | En Azure Portal se crea el Web App `reliant-web-application`: publicación **Code**, runtime **Node 24 LTS**, sistema operativo **Linux**, grupo de recursos `reliant-rg`, región **Chile Central** |
 | 4 | En Deployment Center se conecta el repositorio `reliant-webapp` y la rama `main`. El workflow generado, `main_reliant-web-application.yml`, instala dependencias, ejecuta `npm run build` (que produce `dist/reliant-webapp/browser`) y publica el resultado con `azure/webapps-deploy` |
 | 5 | En Configuration → General settings se define el Startup Command, para que PM2 sirva el build de Angular como Single Page Application y redirija cualquier ruta a `index.html`: |
 
@@ -3276,7 +3278,7 @@ El Sprint Backlog 2 descompone las User Stories del Sprint 2 en tareas de implem
 
 El tablero del Sprint 2 se gestiona en Trello con las listas To-do, In Progress, To Review y Done: [https://trello.com/b/ccOu9yk5/reliant-sprint-2](https://trello.com/b/ccOu9yk5/reliant-sprint-2). El archivo [`docs/trello-sprint-2.csv`](docs/trello-sprint-2.csv) contiene las mismas tareas en formato tabular.
 
-<!-- TODO: hacer público el tablero de Trello y agregar la captura en assets/img/5.chapter-v/5.2.2.3-trello-sprint-2.png -->
+<img src="assets/img/5.chapter-v/5.2.2.3-trello-sprint-2.png" alt="Sprint Backlog 2 de Reliant en Trello">
 
 | Sprint # | Sprint 2 | | | | | | |
 |---|---|---|---|---|---|---|---|
