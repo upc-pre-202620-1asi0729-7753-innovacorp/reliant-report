@@ -3219,6 +3219,25 @@ Las herramientas de desarrollo del navegador muestran que la aplicación despleg
 
 #### 5.2.2.8. Team Collaboration Insights during Sprint.
 
+Durante el Sprint 2 el trabajo se distribuyó según la matriz LACX de la sección 5.2.2.2. Navarro Aldoradin, Carolina Celeste lideró los seis aspectos de la Frontend Web Application y desarrolló la totalidad del repositorio `reliant-webapp`: los 171 commits sin merge de las 16 ramas `feature/*` y de los releases `1.0.0` y `1.0.1`. También creó y desplegó el repositorio `reliant-platform-mock`. Rivera Aguilar, Scarlet Josefina lideró el aspecto Landing Page Design y Fernandez Seer, Mario Alonso lideró el aspecto Landing Page i18n; a la fecha de este informe, el repositorio `reliant-website` no registra commits de ese trabajo durante el Sprint 2. En el repositorio del informe, además de las secciones del Sprint 2, Rivera Aguilar, Scarlet Josefina registró el 2 de octubre de 2026 las correcciones de los perfiles de integrantes en la rama `main`.
+
+La tabla resume las contribuciones registradas por GitHub en cada repositorio de la organización (Insights → Contributors, contribuciones acumuladas a la fecha de redacción):
+
+| Repositorio | Contribuidor (usuario de GitHub) | Commits |
+|---|---|---|
+| `reliant-webapp` | genixmvp | 192 |
+| `reliant-platform-mock` | genixmvp | 2 |
+| `reliant-report` | genixmvp | 137 |
+| `reliant-report` | scarletriveraaguilar-spec | 60 |
+| `reliant-report` | MrBaru | 1 |
+| `reliant-report` | JonathanYoplaRomero (integrante retirado) | 8 |
+| `reliant-website` | Benja72312 (integrante retirado) | 2 |
+
+La concentración del desarrollo de la Web Application en una sola integrante es el principal riesgo de colaboración identificado en este Sprint. Para el Sprint 3 se recomienda distribuir los bounded contexts de los Web Services entre los tres integrantes y mantener el flujo de Git Flow con una rama `feature/*` por historia, de modo que la contribución de cada integrante quede registrada en los repositorios.
+
+<!-- TODO: capturas de Insights → Contributors de reliant-webapp, reliant-platform-mock, reliant-website y reliant-report (assets/img/5.chapter-v/5.2.2.8-<repositorio>-contributors.png) -->
+<!-- TODO: capturas de Insights → Network o Commits de reliant-webapp para mostrar las ramas feature/* del Sprint 2 -->
+
 ## 5.3. Validation Interviews.
 ### 5.3.1. Diseño de Entrevistas.
 ### 5.3.2. Registro de Entrevistas.
