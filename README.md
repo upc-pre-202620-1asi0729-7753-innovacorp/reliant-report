@@ -52,8 +52,9 @@ Proyecto
 | 2.0.0 | 2026-10-05 | Navarro Aldoradin, Carolina Celeste | Capítulo I: Lean UX Canvas. Capítulo II: registro de la entrevista a Jhuol, análisis de entrevistas, fichas faltantes de User Persona, Journey Maps y Empathy Map, y tablero OPEN del Big Picture en filas. Capítulo III: Impact Map consolidado y Story Points alineados con el Product Backlog en Trello. |
 | 2.0.0 | 2026-10-05 | Navarro Aldoradin, Carolina Celeste | Capítulo IV: Design-Level Event Storming (Candidate Context Discovery, Domain Message Flows y Bounded Context Canvases). |
 | 2.0.0 | 2026-10-05 | Navarro Aldoradin, Carolina Celeste | Capítulo V: Sprint 1 (Landing Page v0.1.0), evidencia de la internacionalización del Landing Page en el Sprint 2, diseño de las entrevistas de validación y secciones de videos. |
-
-<!-- TODO: confirmar el número de versión del release de TB1 (2.0.0) al crear el release con Git Flow -->
+| 2.0.0 | 2026-10-05 | Navarro Aldoradin, Carolina Celeste | Capítulo IV: User Flow Diagrams de la Web Application rehechos por objetivo de usuario, Single Page Application en el diagrama de contenedores y diagramas de componentes renderizados, incluido el de los bounded contexts de la Single Page Application. |
+| 2.0.0 | 2026-10-05 | Navarro Aldoradin, Carolina Celeste | Capítulos III y V: capturas del Product Backlog y del Sprint Backlog 2 en Trello, detalles de los Sprint Planning 1 y 2, URL del Landing Page desplegado en GitHub Pages y Anexo de links importantes. |
+| 2.0.0 | 2026-10-05 | Navarro Aldoradin, Carolina Celeste | Organización de `assets/`: códigos de diagramas en `assets/scripts` e imágenes en `assets/img`. |
 
 
 # Project Report Collaboration Insights
