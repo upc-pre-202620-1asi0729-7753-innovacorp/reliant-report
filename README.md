@@ -532,8 +532,10 @@ Las principales hipótesis que sustentan la propuesta de Reliant son las siguien
 - H6. Gestión del conocimiento. Creemos que se reducirá la dependencia del conocimiento tácito si las fallas, causas confirmadas y acciones correctivas permanecen registradas y disponibles para futuros casos similares.
 
 ## 7. What Is the Most Important Thing We Need to Learn First?
-   La principal incertidumbre que el equipo debe validar es si la falta de trazabilidad, la dificultad para reconstruir información histórica y la dependencia del conocimiento de especialistas representan problemas suficientemente relevantes para justificar la adopción de Reliant dentro del flujo de trabajo de las organizaciones que operan HVOF.
-   Durante el primer ciclo de validación se debe comprobar principalmente:
+La principal incertidumbre que el equipo debe validar es si la falta de trazabilidad, la dificultad para reconstruir información histórica y la dependencia del conocimiento de especialistas representan problemas suficientemente relevantes para justificar la adopción de Reliant dentro del flujo de trabajo de las organizaciones que operan HVOF.
+
+Durante el primer ciclo de validación se debe comprobar principalmente:
+
 - Si los usuarios necesitan recuperar información de sesiones anteriores ante reclamos, auditorías o fallas.
 - Si la búsqueda y reconstrucción manual de esta información representa actualmente un esfuerzo significativo.
 - Si el diagnóstico de fallas depende de pocos especialistas y de la revisión manual de registros.
