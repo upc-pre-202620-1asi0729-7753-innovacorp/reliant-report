@@ -465,21 +465,22 @@ Se formula un hypothesis statement por cada feature assumption enunciado en la s
 
 ### 1.2.2.4. Lean UX Canvas.
 A continuación, se presenta el Lean UX Canvas (versión 2 de Jeff Gothelf) elaborado por el equipo. Este artefacto consolida el problema de negocio, los resultados esperados, los usuarios, los beneficios, las soluciones propuestas y las hipótesis del proyecto Reliant. Asimismo, los apartados 7 y 8 establecen las prioridades de aprendizaje y el trabajo mínimo necesario para validar los supuestos durante el primer ciclo de experimentación.
+
 ## 1. Business Problem
 Las organizaciones que operan procesos de recubrimiento térmico HVOF generan información relevante durante cada sesión de rociado mediante el PLC del equipo. Sin embargo, estos datos permanecen frecuentemente en registros locales, archivos aislados o formatos manuales que no se encuentran vinculados con la orden de fabricación (OF), la orden de trabajo (WO), el componente, la receta utilizada ni su desempeño posterior en campo.
 Esta situación limita la trazabilidad del proceso, dificulta demostrar que un componente fue recubierto dentro de las condiciones establecidas y obliga a reconstruir manualmente la información cuando ocurre una falla o un reclamo. Asimismo, el diagnóstico de fallas depende en gran medida del conocimiento tácito de técnicos experimentados y de la revisión manual de registros del controlador.
 En consecuencia, el problema de negocio identificado es que las organizaciones que operan procesos HVOF no logran transformar los datos generados durante el proceso en trazabilidad verificable, diagnóstico oportuno y conocimiento reutilizable que contribuya a mejorar futuras operaciones.
   
 ## 2. Business Outcomes
-   Los resultados de negocio que se esperan alcanzar mediante Reliant son los siguientes:
-- Incrementar el porcentaje de órdenes de trabajo cuyo proceso puede ser reconstruido completamente desde la recepción del componente hasta las condiciones reales de su sesión de rociado.
+Los resultados de negocio que se esperan alcanzar mediante Reliant son los siguientes:
+
+- Incrementar el porcentaje de órdenes de trabajo cuyo proceso puede reconstruirse completamente desde la recepción del componente hasta las condiciones reales de su sesión de rociado.
 - Lograr que al menos el 80 % de las órdenes de trabajo entregadas cuenten con evidencia de calidad generada desde la plataforma.
-- Reducir al menos en 40 % el tiempo requerido para determinar la causa probable de una parada del sistema HVOF.
+- Reducir al menos en un 40 % el tiempo requerido para determinar la causa probable de una parada del sistema HVOF.
 - Lograr que al menos el 60 % de los componentes retornados tengan su vida útil registrada y comparada con su Planned Component Replacement (PCR).
 - Incrementar la cantidad de sesiones de rociado registradas por sistema HVOF como indicador de adopción sostenida.
 - Reducir la dependencia del conocimiento tácito mediante el registro estructurado de fallas, causas y acciones correctivas.
 - Favorecer la continuidad del uso de la plataforma mediante la renovación de suscripciones y el uso recurrente de reportes y certificados.
-
 ## 3. Users
    Reliant está dirigido principalmente a organizaciones que operan procesos de recubrimiento térmico HVOF.
    Segmento principal: empresas de servicio especializado en recubrimiento HVOF.
