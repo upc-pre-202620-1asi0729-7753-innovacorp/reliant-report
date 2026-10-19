@@ -507,19 +507,20 @@ Los principales resultados y beneficios esperados por los usuarios son los sigui
 - Ingeniero de Confiabilidad: relacionar el desempeño real del componente en campo con su historial de recuperación y con el PCR establecido.
 - Organización: conservar el conocimiento generado durante cada falla, evitando que dependa exclusivamente de la experiencia de determinados especialistas.
 ## 5. Solutions
-   A partir de los problemas y necesidades identificados, se proponen las siguientes soluciones:
-- Captura automática de la telemetría generada por los controladores del sistema HVOF mediante una API REST.
-- Vinculación de cada sesión de rociado con la OF, WO, cliente, componente, modelo, sistema HVOF y receta utilizada.
-- Definición de recetas con valores nominales y bandas de advertencia y parada.
-- Clasificación automática de las lecturas según las bandas establecidas en la receta.
-- Generación de alertas en tiempo real ante desviaciones de parámetros o fallas críticas.
-- Diagnóstico asistido mediante reglas causa-efecto para identificar el subsistema o parte posiblemente responsable.
-- Detección de patrones recurrentes de falla.
-- Generación de certificados de calidad y reportes de sesiones.
-- Registro de la vida útil alcanzada por los componentes y comparación contra su PCR.
-- Consulta de históricos de sesiones, fallas y desempeño de componentes.
-- Creación de plantillas de reportes personalizables según las necesidades de cada organización.
+A partir de los problemas y necesidades identificados, se proponen las siguientes soluciones:
 
+- Capturar automáticamente la telemetría generada por los controladores del sistema HVOF mediante una API REST.
+- Vincular cada sesión de rociado con la OF, WO, cliente, componente, modelo, sistema HVOF y receta utilizada.
+- Definir recetas con valores nominales y bandas de advertencia y parada.
+- Clasificar automáticamente las lecturas según las bandas establecidas en la receta.
+- Generar alertas en tiempo real ante desviaciones de parámetros o fallas críticas.
+- Proporcionar diagnóstico asistido mediante reglas causa-efecto para identificar el subsistema o la parte posiblemente responsable.
+- Detectar patrones recurrentes de falla.
+- Generar certificados de calidad y reportes de sesiones.
+- Registrar la vida útil alcanzada por los componentes y compararla con su PCR.
+- Consultar históricos de sesiones, fallas y desempeño de componentes.
+- Crear plantillas de reportes personalizables según las necesidades de cada organización.
+ 
 ## 6. Hypotheses
    Las principales hipótesis que sustentan la propuesta de Reliant son las siguientes:
    H1. Trazabilidad del proceso
