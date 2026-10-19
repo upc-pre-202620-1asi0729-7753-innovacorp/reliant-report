@@ -544,7 +544,8 @@ Durante el primer ciclo de validación se debe comprobar principalmente:
 - Si la integración con los controladores existentes puede realizarse sin modificar directamente el PLC.
 
 ## 8. What Is the Least Amount of Work We Need to Do to Learn the Next Most Important Thing?
-   Para validar las hipótesis de mayor riesgo no es necesario desarrollar todas las funcionalidades de Reliant. El equipo puede implementar inicialmente un MVP que permita:
+Para validar las hipótesis de mayor riesgo no es necesario desarrollar todas las funcionalidades de Reliant. El equipo puede implementar inicialmente un MVP que permita:
+
 - Registrar un componente y una orden de trabajo.
 - Asociar una sesión de rociado con su OF y WO.
 - Recibir datos históricos, reales o simulados del controlador.
@@ -554,8 +555,11 @@ Durante el primer ciclo de validación se debe comprobar principalmente:
 - Consultar el historial de una sesión vinculada al componente.
 - Simular un caso de falla e indicar el subsistema o parte posiblemente responsable.
 - Generar una evidencia básica del proceso registrado.
-  Este MVP deberá ser presentado a representantes de los segmentos definidos con el propósito de observar si pueden comprender el flujo, encontrar la información requerida y determinar si la solución aporta valor frente al proceso actual.
-  Los resultados obtenidos permitirán validar o rechazar las principales hipótesis antes de continuar con funcionalidades de mayor complejidad como análisis históricos avanzados, detección de patrones recurrentes, seguimiento detallado del PCR y personalización completa de reportes.
+
+Este MVP deberá ser presentado a representantes de los segmentos definidos con el propósito de observar si pueden comprender el flujo, encontrar la información requerida y determinar si la solución aporta valor frente al proceso actual.
+
+
+Los resultados obtenidos permitirán validar o rechazar las principales hipótesis antes de continuar con funcionalidades de mayor complejidad, como análisis históricos avanzados, detección de patrones recurrentes, seguimiento detallado del PCR y personalización completa de reportes.
 ## 1.3. Segmentos objetivo.
 
 Reliant se dirige a organizaciones que **operan** un proceso de recubrimiento térmico HVOF, no a quienes consumen sus resultados. Esta distinción es determinante: las empresas mineras son las que exigen la garantía de vida útil y las que sufren el costo de una falla prematura, pero no operan equipos HVOF ni serían las usuarias directas de la plataforma. Actúan como la fuente de presión contractual que motiva la adquisición del producto, no como segmento de usuario. En consecuencia, se han definido dos segmentos objetivo diferenciados por el **tipo de operación** que realizan y no por su tamaño, ya que es el tipo de operación—servicio a terceros frente a operación interna, el que genera necesidades y motivaciones de compra distintas.
