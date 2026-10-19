@@ -522,19 +522,14 @@ A partir de los problemas y necesidades identificados, se proponen las siguiente
 - Crear plantillas de reportes personalizables según las necesidades de cada organización.
  
 ## 6. Hypotheses
-   Las principales hipótesis que sustentan la propuesta de Reliant son las siguientes:
-   H1. Trazabilidad del proceso
-   Creemos que aumentará el porcentaje de órdenes completamente trazables si los Ingenieros de Calidad pueden reconstruir el historial de cada componente mediante la vinculación de la sesión de rociado con su OF, WO, cliente y modelo.
-   H2. Control de desviaciones
-   Creemos que disminuirán los componentes recubiertos fuera de las condiciones esperadas si los operadores reciben alertas cuando las lecturas abandonan las bandas definidas por la receta durante la sesión.
-   H3. Diagnóstico de fallas
-   Creemos que el tiempo requerido para determinar la causa probable de una parada se reducirá al menos en 40 % si los Supervisores de Mantenimiento reciben una sugerencia del subsistema o parte posiblemente involucrada mediante reglas causa-efecto.
-   H4. Evidencia de calidad
-   Creemos que al menos el 80 % de las órdenes entregadas podrán contar con evidencia de calidad generada por la plataforma si los datos del proceso se almacenan y relacionan automáticamente con la orden correspondiente.
-   H5. Seguimiento contra PCR
-   Creemos que al menos el 60 % de los componentes retornados podrán registrar su vida útil y contrastarla con su PCR si el historial del componente se encuentra centralizado en la plataforma.
-   H6. Gestión del conocimiento
-   Creemos que se reducirá la dependencia del conocimiento tácito si las fallas, causas confirmadas y acciones correctivas permanecen registradas y disponibles para futuros casos similares.
+Las principales hipótesis que sustentan la propuesta de Reliant son las siguientes:
+
+- H1. Trazabilidad del proceso. Creemos que aumentará el porcentaje de órdenes completamente trazables si los Ingenieros de Calidad pueden reconstruir el historial de cada componente mediante la vinculación de la sesión de rociado con su OF, WO, cliente y modelo.
+- H2. Control de desviaciones. Creemos que disminuirán los componentes recubiertos fuera de las condiciones esperadas si los operadores reciben alertas cuando las lecturas abandonan las bandas definidas por la receta durante la sesión.
+- H3. Diagnóstico de fallas. Creemos que el tiempo requerido para determinar la causa probable de una parada se reducirá al menos en un 40 % si los Supervisores de Mantenimiento reciben una sugerencia del subsistema o parte posiblemente involucrada mediante reglas causa-efecto.
+- H4. Evidencia de calidad. Creemos que al menos el 80 % de las órdenes entregadas podrán contar con evidencia de calidad generada por la plataforma si los datos del proceso se almacenan y relacionan automáticamente con la orden correspondiente.
+- H5. Seguimiento contra PCR. Creemos que al menos el 60 % de los componentes retornados podrán registrar su vida útil y contrastarla con su PCR si el historial del componente se encuentra centralizado en la plataforma.
+- H6. Gestión del conocimiento. Creemos que se reducirá la dependencia del conocimiento tácito si las fallas, causas confirmadas y acciones correctivas permanecen registradas y disponibles para futuros casos similares.
 
 ## 7. What Is the Most Important Thing We Need to Learn First?
    La principal incertidumbre que el equipo debe validar es si la falta de trazabilidad, la dificultad para reconstruir información histórica y la dependencia del conocimiento de especialistas representan problemas suficientemente relevantes para justificar la adopción de Reliant dentro del flujo de trabajo de las organizaciones que operan HVOF.
