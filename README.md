@@ -499,13 +499,13 @@ Jefe o Supervisor de Mantenimiento.
 
 En ambos segmentos, los usuarios poseen un alto conocimiento del entorno industrial, pero presentan una competencia digital media. Por ello, requieren una plataforma de baja complejidad de uso y con una curva de aprendizaje reducida.
 ## 4. User Outcomes and Benefits
-   Los principales resultados y beneficios esperados por los usuarios son los siguientes:
-   Ingeniero de Calidad: disponer de evidencia verificable de que un componente fue recubierto dentro de las condiciones establecidas, sin tener que reconstruir la información desde registros dispersos.
-   Supervisor de Mantenimiento: reducir el tiempo necesario para identificar el subsistema o parte del sistema HVOF posiblemente responsable de una falla.
-   Operador HVOF: recibir alertas mientras la sesión se encuentra en ejecución cuando un parámetro se desvía de la banda definida por la receta.
-   Ingeniero de Confiabilidad: relacionar el desempeño real del componente en campo con su historial de recuperación y con el PCR establecido.
-   Organización: conservar el conocimiento generado durante cada falla, evitando que dependa exclusivamente de la experiencia de determinados especialistas.
+Los principales resultados y beneficios esperados por los usuarios son los siguientes:
 
+- Ingeniero de Calidad: disponer de evidencia verificable de que un componente fue recubierto dentro de las condiciones establecidas, sin tener que reconstruir la información desde registros dispersos.
+- Supervisor de Mantenimiento: reducir el tiempo necesario para identificar el subsistema o la parte del sistema HVOF posiblemente responsable de una falla.
+- Operador HVOF: recibir alertas durante la ejecución de una sesión cuando un parámetro se desvía de la banda definida por la receta.
+- Ingeniero de Confiabilidad: relacionar el desempeño real del componente en campo con su historial de recuperación y con el PCR establecido.
+- Organización: conservar el conocimiento generado durante cada falla, evitando que dependa exclusivamente de la experiencia de determinados especialistas.
 ## 5. Solutions
    A partir de los problemas y necesidades identificados, se proponen las siguientes soluciones:
 - Captura automática de la telemetría generada por los controladores del sistema HVOF mediante una API REST.
