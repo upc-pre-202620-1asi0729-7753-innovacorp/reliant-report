@@ -482,24 +482,22 @@ Los resultados de negocio que se esperan alcanzar mediante Reliant son los sigui
 - Reducir la dependencia del conocimiento tácito mediante el registro estructurado de fallas, causas y acciones correctivas.
 - Favorecer la continuidad del uso de la plataforma mediante la renovación de suscripciones y el uso recurrente de reportes y certificados.
 ## 3. Users
-   Reliant está dirigido principalmente a organizaciones que operan procesos de recubrimiento térmico HVOF.
-   Segmento principal: empresas de servicio especializado en recubrimiento HVOF.
-   Son organizaciones que realizan procesos de recuperación de componentes para terceros y necesitan demostrar que el recubrimiento fue ejecutado dentro de las condiciones acordadas con sus clientes.
-   Sus principales usuarios son:
+Reliant está dirigido principalmente a organizaciones que operan procesos de recubrimiento térmico HVOF.
+Segmento principal: empresas de servicio especializado en recubrimiento HVOF
+Son organizaciones que realizan procesos de recuperación de componentes para terceros y necesitan demostrar que el recubrimiento fue ejecutado dentro de las condiciones acordadas con sus clientes. Sus principales usuarios son:
 - Ingeniero de Calidad o Jefe de Procesos.
 - Supervisor de Mantenimiento.
 - Supervisor de Operaciones.
 - Operador HVOF.
 - Técnico de mantenimiento.
-  Segmento secundario: plantas industriales con línea de recubrimiento HVOF in-house.
-  Son organizaciones que utilizan equipos HVOF como parte de sus procesos internos de mantenimiento y cuya principal necesidad es asegurar la disponibilidad y confiabilidad del equipo.
-  Sus principales usuarios son:
-- Jefe o Supervisor de Mantenimiento.
+Segmento secundario: plantas industriales con línea de recubrimiento HVOF in-house
+Son organizaciones que utilizan equipos HVOF como parte de sus procesos internos de mantenimiento y cuya principal necesidad es asegurar la disponibilidad y confiabilidad del equipo. Sus principales usuarios son:
+Jefe o Supervisor de Mantenimiento.
 - Ingeniero de Confiabilidad.
 - Técnico de mantenimiento.
 - Planner de mantenimiento.
-  En ambos segmentos, los usuarios poseen un alto conocimiento del entorno industrial, pero presentan una competencia digital media, por lo que requieren una plataforma de baja complejidad de uso y con una curva de aprendizaje reducida.
 
+En ambos segmentos, los usuarios poseen un alto conocimiento del entorno industrial, pero presentan una competencia digital media. Por ello, requieren una plataforma de baja complejidad de uso y con una curva de aprendizaje reducida.
 ## 4. User Outcomes and Benefits
    Los principales resultados y beneficios esperados por los usuarios son los siguientes:
    Ingeniero de Calidad: disponer de evidencia verificable de que un componente fue recubierto dentro de las condiciones establecidas, sin tener que reconstruir la información desde registros dispersos.
