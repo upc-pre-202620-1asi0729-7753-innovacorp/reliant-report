@@ -839,8 +839,8 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | Edad | 30 años |
 | Distrito | Surquillo |
 | Ocupacion | Especialista en investigación de desarrollo |
-| Timing inicio | 00:00 minutos |
-| Duracion | 8:50 minutos |
+| Timing inicio | 16:13 minutos |
+| Duracion | 8:49 minutos |
 | URL | https://drive.google.com/file/d/1C9NDE2k5fsSGtt2NXbIFq6dNA72oELuV/view?usp=sharing |
 | Screenshot| <img src="<img src="assets/img/chapter-ii/needfinding/carolina_entrevista2_segmento1.png"> |
 
@@ -851,8 +851,8 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | Edad | 46 años |
 | Distrito | Surquillo |
 | Ocupacion | Supervisora |
-| Timing inicio | 00:00 minutos|
-| Duracion | 11:35 minutos |
+| Timing inicio | 25:02 minutos|
+| Duracion | 16:59 minutos |
 | URL | https://drive.google.com/file/d/1iK5NpsuRMqKPBtPWMHb0UEtmaMijRJmm/view?usp=sharing |
 | Screenshot| <img src="assets/img/chapter-ii/needfinding/francisco_entrevista_segmento1.png">  |
 
@@ -863,7 +863,7 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | Edad | 25 años |
 | Distrito | Lima |
 | Ocupación | Supervisor de equipos y componentes |
-| Timing inicio | 00:00 minutos |
+| Timing inicio | 42:02 minutos |
 | Duración | 08:22 minutos |
 | URL | https://drive.google.com/file/d/1cCIuMAmfq9RqDE42EzkCLZKO2DNnXMVh/view?usp=sharing |
 | Screenshot | <img src="assets/img/chapter-ii/needfinding/scarlet_entrevista_segmento2.png"> |
@@ -874,8 +874,8 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | Edad | 65 años |
 | Distrito | Lima |
 | Ocupacion | Gerente de procesos |
-| Timing inicio | 00:00 minutos|
-| Duracion | 11:19 minutos |
+| Timing inicio | 50:23 minutos|
+| Duracion | 9:05 minutos |
 | URL | https://youtu.be/ELUn_X1SDxo?si=Av2cGm2uR-eTnTVn |
 | Screenshot| <img src="assets/img/chapter-ii/needfinding/benjamin_entrevista_segmento2.png">  |
 
@@ -886,7 +886,7 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | Edad | 21 años |
 | Distrito | Surco |
 | Ocupacion | Asistente de construcción y proyectos con experiencia en operaciones mineras |
-| Timing inicio | 00:00 minutos |
+| Timing inicio | 59:29 minutos |
 | Duracion | 13:40 minutos|
 | URL | https://drive.google.com/file/d/1lfzvUGM0Sf1K5balZaaP8kYs97IqWC2X/view?usp=sharing |
 | Screenshot| <img src="assets/img/chapter-ii/needfinding/mario_entrevista_segmento2.png"> |
