@@ -747,7 +747,8 @@ Perfiles entrevistados: operador HVOF, supervisor de operación, supervisor de m
 | B1.7 | ¿Hay fallas que se repiten? | ¿Cómo lo saben? ¿Está anotado en algún lado? | Validar H-06: detección de patrones recurrentes |
 | B1.8 | Cuando una pieza suya falla en el cliente, ¿cómo se enteran? | ¿Pueden saber si fue el recubrimiento? ¿Qué les faltaría? | Validar H-08: análisis retrospectivo contra PCR |
 
-**Bloque B2 — Segmento Asset Owner (15 minutos)**
+
+### Bloque B2 — Segmento Asset Owner (15 minutos)
 
 Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, supervisor de mantenimiento, analista de contratos y compras.
 
