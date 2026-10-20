@@ -670,8 +670,8 @@ A partir del análisis anterior, InnovaCorp establece cinco estrategias con sus 
 
 Ante la falta de trayectoria de la startup, la táctica consiste en apoyarse en evidencia técnica verificable, casos reales de diagnóstico, en lugar de en referencias comerciales inexistentes. Ante la sensibilidad de las empresas respecto de sus parámetros de proceso, se incorporarán desde el inicio términos y condiciones explícitos sobre titularidad y confidencialidad de los datos, expuestos en el footer del Landing Page y de la aplicación, y una regla de visibilidad por la cual el propietario del activo accede al certificado y al cumplimiento por banda, nunca a los valores crudos de telemetría del proveedor. Ante la resistencia cultural al registro digital, el diseño priorizará una curva de aprendizaje mínima, la detección automática de pasadas de rociado desde los tags de estado para reducir la intervención del operador, y flujos con menos pasos que el registro manual actual.
 
-## 2.2. Entrevistas.
 
+## 2.2. Entrevistas
 Esta sección presenta el proceso de investigación primaria realizado con representantes de los dos segmentos objetivo definidos en la sección 1.3: Recuperation Supplier y Asset Owner. Las entrevistas constituyen la fuente de información a partir de la cual se construyen los User Personas, el User Task Matrix, los User Journey Maps y los Empathy Maps del proceso de Needfinding (sección 2.3), y permiten contrastar los assumptions e hypothesis statements formulados en el Lean UX Process (sección 1.2.2) con el comportamiento real de los segmentos.
 
 ### 2.2.1. Diseño de entrevistas.
