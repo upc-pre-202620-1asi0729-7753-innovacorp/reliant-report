@@ -714,7 +714,8 @@ De acuerdo con lo requerido para la elaboración de User Personas, cada entrevis
 
 La guía se organiza en tres bloques. El Bloque A es común a ambos segmentos y recolecta el perfil del entrevistado. El Bloque B contiene las preguntas específicas de cada segmento sobre su proceso actual y sus problemas. El Bloque C cierra la entrevista abriendo la conversación hacia necesidades no cubiertas y toma de decisiones.
 
-**Bloque A — Perfil del entrevistado (ambos segmentos, 5 minutos)**
+
+### Bloque A — Perfil del entrevistado (ambos segmentos, 5 minutos)
 
 | # | Dato requerido | Pregunta principal | Pregunta complementaria |
 |---|---|---|---|
