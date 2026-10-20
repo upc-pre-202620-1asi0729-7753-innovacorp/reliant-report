@@ -731,7 +731,8 @@ La guía se organiza en tres bloques. El Bloque A es común a ambos segmentos y 
 | A10 | Marcas e influencias | ¿Cómo se mantiene actualizado? | ¿Qué marcas o referentes del sector respeta? |
 | A11 | Objetivos, frustraciones | ¿Qué le gusta más de su trabajo? | ¿Qué le frustra? |
 
-**Bloque B1 — Segmento Recuperation Supplier (15 minutos)**
+
+### Bloque B1 — Segmento Recuperation Supplier (15 minutos)
 
 Perfiles entrevistados: operador HVOF, supervisor de operación, supervisor de mantenimiento de máquina, ingeniero de investigación y calidad.
 
