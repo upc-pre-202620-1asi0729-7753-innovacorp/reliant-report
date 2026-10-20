@@ -693,7 +693,8 @@ El diseño de las entrevistas persigue dos propósitos simultáneos. El primero 
 | Consentimiento informado | Al inicio de cada sesión se informa al entrevistado sobre la grabación en video y su uso académico, y se solicita su consentimiento explícito. |
 | Duración | Entre 20 y 25 minutos por entrevista, editadas posteriormente a segmentos de 3 a 5 minutos para el video consolidado de evidencia. |
 
-#### Información a recolectar para la construcción de arquetipos
+
+### Información a recolectar para la construcción de arquetipos
 
 De acuerdo con lo requerido para la elaboración de User Personas, cada entrevista recolecta la siguiente información, común a ambos segmentos:
 
