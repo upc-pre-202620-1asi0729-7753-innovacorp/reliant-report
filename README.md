@@ -763,7 +763,8 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | B2.7 | Si quisiera comparar qué proveedor entrega piezas que duran más, ¿cómo lo haría hoy? | ¿Lo ha intentado? ¿Cuánto le tomó? | Sustentar el valor de la vista consolidada (plan Asset Owner) |
 | B2.8 | ¿Auditan a sus proveedores? | ¿Qué revisan? ¿Qué les piden que demuestren? | Identificar los requisitos de evidencia que se trasladan al proveedor |
 
-**Bloque C — Cierre (ambos segmentos, 3 minutos)**
+
+### Bloque C — Cierre (ambos segmentos, 3 minutos)
 
 | # | Pregunta principal | Pregunta complementaria | Propósito |
 |---|---|---|---|
