@@ -676,8 +676,8 @@ Esta sección presenta el proceso de investigación primaria realizado con repre
 
 ### 2.2.1. Diseño de entrevistas.
 
-#### Objetivos del diseño
 
+### Objetivos del diseño
 El diseño de las entrevistas persigue dos propósitos simultáneos. El primero es recolectar la información objetiva y subjetiva necesaria para construir arquetipos verosímiles de cada segmento: características demográficas, personalidad, habilidades, marcas e influencias, dispositivos y canales digitales de preferencia, objetivos, frustraciones y trayectoria profesional. El segundo es comprender el estado actual del proceso de recuperación de componentes desde la perspectiva de cada segmento, sin condicionar las respuestas con la solución propuesta, a fin de validar o refutar las hipótesis de mayor riesgo identificadas en el Lean UX Canvas.
 
 #### Buenas prácticas aplicadas
