@@ -866,15 +866,16 @@ Los hallazgos se organizaron por segmento para identificar necesidades operativa
 | Fallas del equipo | El análisis considera la necesidad de organizar la información de las fallas y facilitar la consulta de antecedentes para investigar problemas recurrentes. | Aron Ramirez, según el resumen disponible |
 | Desempeño en campo | El seguimiento de los componentes recuperados requiere relacionar la información del proceso con los antecedentes de las piezas y las incidencias reportadas después de su entrega. | Aron Ramirez, según el resumen disponible |
 
+
 **Segmento 2: Asset Owner**
 
 | Etapa | Hallazgos | Entrevistas que lo mencionan |
 |---|---|---|
-| Impacto de las fallas | Las fallas de los equipos afectan la programación, el personal y los recursos disponibles de la operación. | Valeria Aranguri |
-| Seguimiento de componentes | El seguimiento se apoya en Excel, reportes, llamadas, WhatsApp y sistemas internos que no siempre son visibles para el personal de operación. | Valeria Aranguri |
-| Evaluación de proveedores | Se evalúa a los proveedores por la documentación presentada, el cumplimiento de requisitos, los plazos de entrega y los antecedentes del servicio. | Valeria Aranguri |
-| Fallas prematuras | Ante fallas frecuentes de un componente, la causa se identifica en conjunto con el proveedor; se reconoce la necesidad de seguir la vida útil de los componentes y analizar las causas de fallas prematuras. | Wilson Bardales |
-| Necesidad expresada | Una plataforma centralizada que muestre el estado, la ubicación, el responsable, el proveedor y la fecha estimada de disponibilidad de cada componente. | Valeria Aranguri |
+| Impacto de las fallas | Las fallas de los equipos y componentes son relevantes para la operación y para la planificación del mantenimiento. | Valeria Aranguri, según el resumen disponible |
+| Seguimiento de componentes | El seguimiento de los componentes y la disponibilidad de información técnica son aspectos importantes para gestionar los activos y coordinar el mantenimiento. | Wilson Bardales, Valeria Aranguri |
+| Evaluación de proveedores | La evaluación de los proveedores y la disponibilidad de antecedentes del servicio son relevantes para apoyar las decisiones de gestión de activos. | Wilson Bardales, Valeria Aranguri, según la información disponible |
+| Fallas prematuras | La investigación de fallas y el seguimiento del desempeño de los componentes recuperados son relevantes para comprender su comportamiento durante la operación. | Wilson Bardales, según el resumen disponible |
+| Necesidades de información | Se identificó la importancia de contar con información organizada y accesible para facilitar el seguimiento de componentes, la gestión de activos y la toma de decisiones. | Wilson Bardales, Valeria Aranguri |
 
 <!-- TODO: incorporar los hallazgos de la entrevista a Jhuol cuando se registre su resumen -->
 
