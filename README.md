@@ -855,15 +855,16 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 El análisis se realizó agrupando la información disponible de las entrevistas de los dos segmentos objetivo de InnovaCorp según las etapas del proceso de recuperación de componentes industriales. Se consideraron la recepción e identificación de las piezas, el registro de los procesos de recuperación, la documentación de calidad, la gestión de fallas y el seguimiento del desempeño de los componentes.
 Los hallazgos se organizaron por segmento para identificar necesidades operativas, dificultades y oportunidades de mejora. Asimismo, se contrastaron con los assumptions del Lean UX Process (sección 1.2.2.2), diferenciando los aspectos respaldados por la información disponible de aquellos que requieren una validación adicional.
 
+
 **Segmento 1: Recuperation Supplier**
 
 | Etapa | Hallazgos | Entrevistas que lo mencionan |
 |---|---|---|
-| Recepción e identificación | Los componentes se identifican por el número de orden de trabajo y registros internos; ubicar una pieza dentro del taller exige buscarla o consultar a otros trabajadores. | Cristian Rimac, Aron Ramirez |
-| Registro de la corrida | Los parámetros de la máquina, los materiales y el tiempo de trabajo se registran, pero sin un control completo ni organizado, y la búsqueda de registros antiguos es complicada. | Cristian Rimac, Aron Ramirez |
-| Evidencia para el cliente | Los clientes solicitan certificados, informes y evidencias de calidad; ante un reclamo hay que revisar la información del proceso, lo que genera demoras. | Aron Ramirez |
-| Fallas del equipo | Algunas fallas de las máquinas se repiten, pero no siempre quedan registradas de forma organizada. | Aron Ramirez |
-| Desempeño en campo | Existen compromisos de duración de las piezas recuperadas (PCR); cuando una pieza falla en el cliente, se revisan los registros para determinar si el origen está en el recubrimiento. | Aron Ramirez |
+| Recepción e identificación | La identificación y localización de los componentes forman parte del proceso operativo. La información disponible señala dificultades relacionadas con la trazabilidad de las piezas y la consulta de registros. | Cristian Rimac, Aron Ramirez |
+| Registro de la corrida | Se identifican dificultades en la organización de los registros del proceso de recuperación y en la consulta de información histórica. | Cristian Rimac, Aron Ramirez |
+| Evidencia para el cliente | La documentación y la evidencia de calidad son relevantes para respaldar los trabajos de recuperación y atender consultas o reclamos del cliente. | Aron Ramirez, según el resumen disponible |
+| Fallas del equipo | El análisis considera la necesidad de organizar la información de las fallas y facilitar la consulta de antecedentes para investigar problemas recurrentes. | Aron Ramirez, según el resumen disponible |
+| Desempeño en campo | El seguimiento de los componentes recuperados requiere relacionar la información del proceso con los antecedentes de las piezas y las incidencias reportadas después de su entrega. | Aron Ramirez, según el resumen disponible |
 
 **Segmento 2: Asset Owner**
 
