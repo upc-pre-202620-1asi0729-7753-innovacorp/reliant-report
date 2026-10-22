@@ -849,9 +849,11 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | URL | https://acortar.link/WwyN4w |
 | Screenshot | <img src="assets/img/chapter-ii/needfinding/mario_entrevista_segmento2.png"> |
 
-### 2.2.3. Análisis de entrevistas.
 
-El análisis se realizó agrupando lo que relataron los entrevistados de cada segmento según las etapas del proceso de recuperación: recepción e identificación del componente, registro de la corrida de rociado, evidencia de calidad entregada al cliente, fallas del equipo y desempeño del componente en campo. Para cada etapa se identificaron los hallazgos que se repiten entre entrevistas y se contrastaron con los assumptions del Lean UX Process (sección 1.2.2.2).
+### 2.2.3. Análisis de entrevistas
+
+El análisis se realizó agrupando la información disponible de las entrevistas de los dos segmentos objetivo de InnovaCorp según las etapas del proceso de recuperación de componentes industriales. Se consideraron la recepción e identificación de las piezas, el registro de los procesos de recuperación, la documentación de calidad, la gestión de fallas y el seguimiento del desempeño de los componentes.
+Los hallazgos se organizaron por segmento para identificar necesidades operativas, dificultades y oportunidades de mejora. Asimismo, se contrastaron con los assumptions del Lean UX Process (sección 1.2.2.2), diferenciando los aspectos respaldados por la información disponible de aquellos que requieren una validación adicional.
 
 **Segmento 1: Recuperation Supplier**
 
