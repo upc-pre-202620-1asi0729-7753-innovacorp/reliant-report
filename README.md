@@ -891,12 +891,16 @@ Los hallazgos se organizaron por segmento para identificar necesidades operativa
 | El registro de vida útil contra el PCR permite evaluar el desempeño real (Feature Assumption 8). | Relevante para investigar: el seguimiento del desempeño de los componentes y el análisis de fallas prematuras aparecen como temas de interés. La evidencia disponible no permite confirmar completamente el supuesto. |
 | La minera necesita una vista consolidada de sus componentes, sin importar el proveedor (Feature Assumption 10). | Respaldado como necesidad general de información organizada: se identifica la importancia del seguimiento de componentes y de los antecedentes para tomar decisiones. La necesidad de una vista consolidada multi-proveedor debe validarse con las entrevistas completas. |
 
+
 **Conclusiones del análisis**
 
-1. La trazabilidad del proceso de recuperación depende hoy del número de orden de trabajo y de registros dispersos, lo que justifica priorizar en el Product Backlog el registro de componentes, órdenes de recuperación y sesiones de rociado vinculadas (Epics E03, E04 y E05).
-2. La evidencia de calidad es una exigencia comercial del cliente minero; la demora en reunirla ante un reclamo confirma el valor del certificado de calidad y del reporte de sesión (Epic E08).
-3. Ambos segmentos investigan las fallas prematuras de forma manual y en conjunto, lo que respalda el registro del retorno de campo contra el PCR y la correlación con la sesión de origen (Epic E09).
-4. El Asset Owner sigue sus componentes en herramientas que no comparte con sus proveedores, lo que confirma el valor de la vista consolidada multi-proveedor como propuesta diferenciada para el segundo segmento.
+1. La trazabilidad y la organización de la información son aspectos relevantes para el proceso de recuperación de componentes. Por ello, resulta pertinente evaluar en el Product Backlog el registro vinculado de componentes, órdenes de recuperación y sesiones de rociado (Epics E03, E04 y E05), contrastando su prioridad con la evidencia completa de las entrevistas.
+
+2. La documentación de calidad y la disponibilidad de antecedentes son importantes para respaldar los trabajos realizados y facilitar la atención de consultas o reclamos. Esto justifica evaluar las funcionalidades relacionadas con los certificados de calidad y los reportes de sesión (Epic E08).
+
+3. El seguimiento de los componentes y el análisis de las fallas prematuras representan oportunidades de mejora para ambos segmentos. Conviene evaluar el registro del retorno de campo, su relación con el PCR y la consulta de los antecedentes del proceso de recuperación (Epic E09).
+
+4. El segmento Asset Owner necesita información organizada para realizar el seguimiento de los componentes, gestionar los activos y tomar decisiones. Por ello, una vista consolidada de la información de los componentes y sus proveedores constituye una propuesta que debe validarse con los usuarios del segmento.
 
 ## 2.3. Needfinding.
 
