@@ -879,16 +879,17 @@ Los hallazgos se organizaron por segmento para identificar necesidades operativa
 
 <!-- TODO: incorporar los hallazgos de la entrevista a Jhuol cuando se registre su resumen -->
 
+
 **Contraste con los assumptions**
 
-| Assumption (sección 1.2.2.2) | Resultado de las entrevistas |
+| Assumption (sección 1.2.2.2) | Resultado del análisis |
 |---|---|
-| Los parámetros de proceso se pierden o no son consultables (Feature Assumption 1) | Confirmado: ambos entrevistados del Recuperation Supplier describen registros incompletos y difíciles de consultar. |
-| Vincular cada sesión con su OF, WO y componente permite reconstruir la historia de la pieza (Feature Assumption 2) | Confirmado: la orden de trabajo es hoy el único identificador y no basta para ubicar piezas ni corridas anteriores. |
-| La presión por trazabilidad proviene del cliente minero (Business Assumption 2) | Confirmado: los clientes exigen certificados y evidencias, y los reclamos obligan a revisar el proceso. |
-| Las fallas recurrentes no se detectan ni se atribuyen a una parte (Feature Assumption 6) | Confirmado parcialmente: se reconoce la recurrencia, pero no su atribución a un subsistema o parte. |
-| El registro de vida útil contra el PCR permite evaluar el desempeño real (Feature Assumption 8) | Confirmado: los compromisos de PCR existen y la causa de una falla prematura se investiga de forma manual en ambos segmentos. |
-| La minera necesita una vista consolidada de sus componentes, sin importar el proveedor (Feature Assumption 10) | Confirmado: la necesidad de una plataforma centralizada con estado, proveedor y disponibilidad se expresó de forma explícita. |
+| Los parámetros de proceso se pierden o no son consultables (Feature Assumption 1). | Parcialmente respaldado: los resúmenes disponibles mencionan dificultades para organizar y consultar registros históricos. Se requiere revisar las entrevistas completas para determinar el alcance del problema. |
+| Vincular cada sesión con su OF, WO y componente permite reconstruir la historia de la pieza (Feature Assumption 2). | Pendiente de validación completa: las dificultades de trazabilidad justifican evaluar la relación entre componentes, órdenes de trabajo y registros de recuperación, pero la información disponible no demuestra por sí sola que esta relación resuelva todos los problemas. |
+| La presión por trazabilidad proviene del cliente minero (Business Assumption 2). | Respaldado parcialmente: la documentación y la evidencia de calidad aparecen como necesidades relevantes para el segmento Recuperation Supplier. Se necesita revisar los testimonios completos para precisar las exigencias de los clientes. |
+| Las fallas recurrentes no se detectan ni se atribuyen a una parte (Feature Assumption 6). | Pendiente de validación: se requiere evidencia específica sobre la frecuencia de las fallas, su registro y los procedimientos utilizados para identificar sus causas. |
+| El registro de vida útil contra el PCR permite evaluar el desempeño real (Feature Assumption 8). | Relevante para investigar: el seguimiento del desempeño de los componentes y el análisis de fallas prematuras aparecen como temas de interés. La evidencia disponible no permite confirmar completamente el supuesto. |
+| La minera necesita una vista consolidada de sus componentes, sin importar el proveedor (Feature Assumption 10). | Respaldado como necesidad general de información organizada: se identifica la importancia del seguimiento de componentes y de los antecedentes para tomar decisiones. La necesidad de una vista consolidada multi-proveedor debe validarse con las entrevistas completas. |
 
 **Conclusiones del análisis**
 
