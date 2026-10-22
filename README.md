@@ -812,16 +812,18 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | Screenshot | <img src="assets/img/chapter-ii/needfinding/francisco_entrevista_segmento1.png"> |
 
 
+
 | Segmento: AssetOwner | Entrevista #1 |
 |:--:|:--:|
-| Nombres y Apellidos | Jhuol <!-- TODO: apellidos de la entrevista a Jhuol --> |
-| Edad | <!-- TODO: edad de la entrevista a Jhuol --> |
-| Distrito | <!-- TODO: distrito de la entrevista a Jhuol --> |
-| Ocupacion | <!-- TODO: ocupación de la entrevista a Jhuol --> |
-| Duracion | <!-- TODO: duración de la entrevista a Jhuol --> |
-| URL | <!-- TODO: URL del video de la entrevista a Jhuol --> |
-| Screenshot| <img src="assets/img/2.chapter-ii/2.2.interviews/2.2.2.interviews-record/jhuol-interview-photo.png"> |
-| Resumen | <!-- TODO: resumen de la entrevista a Jhuol --> |
+| Nombres y Apellidos | Rivaldo Muñoz |
+| Edad | 25 años |
+| Distrito | Lima |
+| Ocupación | Supervisor de equipos y componentes |
+| Timing inicio | 42:02 minutos |
+| Duración | 08:22 minutos |
+| URL | https://acortar.link/WwyN4w |
+| Screenshot | <img src="assets/img/chapter-ii/needfinding/scarlet_entrevista_segmento2.png"> |
+
 
 | Segmento: AssetOwner | Entrevista #2 |
 |:--:|:--:|
