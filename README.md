@@ -825,16 +825,17 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | Screenshot | <img src="assets/img/chapter-ii/needfinding/scarlet_entrevista_segmento2.png"> |
 
 
+
 | Segmento: AssetOwner | Entrevista #2 |
 |:--:|:--:|
 | Nombres y Apellidos | Wilson Bardales |
 | Edad | 65 años |
 | Distrito | Lima |
 | Ocupacion | Gerente de procesos |
-| Duracion | 11:19 minutos |
-| URL | https://youtu.be/ELUn_X1SDxo?si=Av2cGm2uR-eTnTVn |
-| Screenshot| <img src="assets/img/2.chapter-ii/2.2.interviews/2.2.2.interviews-record/segment-2-asset-owner/wilson-bardales-interview-photo.png">  |
-| Resumen | Wilson Bardales, de 65 años, es gerente de procesos y vive en Lima. Durante la entrevista, explicó que la empresa trabaja en el área de mantenimiento preventivo y utiliza proveedores como Epiroc y Desmozambic, principalmente para las perforadoras de producción. Asimismo, relató un caso en el que una bomba de una perforadora nueva presentaba fallas frecuentes. En conjunto con el proveedor, identificaron problemas relacionados con la calidad del agua utilizada en el sistema de enfriamiento y una baja eficiencia del componente. Como parte de la solución, se recomendó cambiar el motor y realizar correcciones en algunas piezas.La entrevista permitió identificar la importancia de mejorar el seguimiento de la vida útil de los componentes, analizar las causas de fallas prematuras y trabajar con los proveedores para mejorar el desempeño de los equipos.
+| Timing inicio | 50:23 minutos |
+| Duracion | 9:05 minutos |
+| URL | https://acortar.link/WwyN4w |
+| Screenshot | <img src="assets/img/chapter-ii/needfinding/benjamin_entrevista_segmento2.png"> |
 
 | Segmento: AssetOwner | Entrevista #3 |
 |:--:|:--:|
