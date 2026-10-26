@@ -2179,6 +2179,9 @@ El sistema de espaciado de Relient establece criterios para distribuir los eleme
 **Tone of Voice:**
 El tono de comunicación de Relient es profesional, claro, directo y orientado a la eficiencia operativa. Debido a que la plataforma está enfocada en la gestión y el monitoreo de procesos industriales y mineros, los mensajes deben transmitir confianza, control y confiabilidad. Para ello, se prioriza el uso de expresiones comprensibles y precisas, evitando términos excesivamente técnicos cuando no sean necesarios. Asimismo, las etiquetas, alertas y notificaciones deben informar de manera clara sobre las acciones disponibles y los estados de los registros, equipos y componentes, facilitando la interpretación de la información y la toma de decisiones.
 
+### 4.1.2. Web Style Guidelines
+El diseño web de Relient se basa en la claridad, la organización y la eficiencia en la gestión de procesos y recursos de los sectores industrial y minero. Las interfaces de la Landing Page y la Web Application se estructuran en secciones y módulos que facilitan la navegación, la consulta de información y el acceso a las funcionalidades disponibles. La Landing Page presenta las principales características de la plataforma e incorpora opciones de ingreso y registro, mientras que la Web Application organiza las funciones de gestión mediante una barra superior y un menú lateral que permite acceder a los módulos de Usuarios, Equipos, Componentes, Señales, Alertas, Reportes e Inventario.
+
 ## 4.6. Domain-Driven Software Architecture.
 ### 4.6.1. Design-Level Event Storming.
 
