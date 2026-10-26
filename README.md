@@ -2209,7 +2209,7 @@ La arquitectura de información de Relient permite organizar y estructurar los c
 ### 4.2.1. Organization System
 El sistema de organización de Relient está diseñado para estructurar visualmente los contenidos y facilitar el acceso a las diferentes funcionalidades de la plataforma mediante una organización jerárquica y temática.
 En la Landing Page, el contenido se distribuye desde la presentación inicial de InnovaCorp y la propuesta de valor de Relient hacia las secciones informativas About Us, How does it work?, FAQs y Contact. Esta estructura permite que los usuarios conozcan la solución, comprendan su funcionamiento y encuentren información adicional de manera ordenada.
-
+En la Web Application, la información se organiza en módulos correspondientes a las principales funciones de gestión y monitoreo: Usuarios, Equipos, Componentes, Señales, Alertas, Reportes e Inventario. Cada módulo agrupa los registros y las operaciones relacionadas con su finalidad, facilitando la consulta y administración de la información.
 
 
 
