@@ -2395,8 +2395,7 @@ Las primeras pantallas permiten examinar la distribución de los elementos de ac
 <img src="assets/img/chapter-ii/needfinding/mockup2.png">
 <img src="assets/img/chapter-ii/needfinding/mockup3.png">
 <img src="assets/img/chapter-ii/needfinding/mockup4.png">
-
-
+<img src="assets/img/chapter-ii/needfinding/mockup5.png">
 
 
 
