@@ -2386,6 +2386,10 @@ El último detalle complementa la visualización del diagrama y permite examinar
 Los mockups de la Web Application de Relient presentan las pantallas con los estilos visuales aplicados, incorporando la paleta cromática, las tipografías, los botones, los formularios y los demás componentes definidos en las General Style Guidelines. Estas representaciones permiten evaluar la jerarquía visual, la distribución de los contenidos y la consistencia de las interfaces antes de su implementación.
 Las pantallas se presentan en el mismo orden que los wireframes para facilitar la comparación entre la estructura preliminar y la propuesta visual. Esta correspondencia permite observar cómo se aplican los lineamientos de diseño a las diferentes vistas de la plataforma.
 
+**Desktop Web Browser**
+
+**Pantallas iniciales y acceso a la plataforma**
+Las primeras pantallas permiten examinar la distribución de los elementos de acceso y los componentes iniciales de la interfaz. En esta etapa se considera la ubicación de los campos de entrada, las etiquetas y los botones, procurando que los elementos necesarios para interactuar con la plataforma sean reconocibles y mantengan una disposición ordenada.
 
 
 
