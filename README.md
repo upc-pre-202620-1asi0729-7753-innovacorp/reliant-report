@@ -2403,9 +2403,8 @@ Estas pantallas permiten observar la organización de la información y los comp
 <img src="assets/img/chapter-ii/needfinding/mockup6.png">
 <img src="assets/img/chapter-ii/needfinding/mockup7.png">
 <img src="assets/img/chapter-ii/needfinding/mockup8.png">
-
-
-
+<img src="assets/img/chapter-ii/needfinding/mockup9.png">
+<img src="assets/img/chapter-ii/needfinding/mockup10.png">
 
 
 
