@@ -2249,6 +2249,9 @@ Las etiquetas propuestas para la Landing Page y la Web Application se presentan 
 Los valores presentados constituyen una propuesta inicial que debe verificarse durante la implementación. El atributo Charset define la codificación de caracteres, mientras que Viewport permite adaptar la visualización a las dimensiones del dispositivo. El atributo Title establece el título de la página y Description proporciona una síntesis de su contenido. Por su parte, Keywords reúne términos relacionados con la solución y Author identifica al responsable del contenido.
 El atributo CSS Link representa la referencia a la hoja de estilos utilizada en la interfaz y debe ajustarse a la ruta real del archivo dentro del proyecto. Estos metadatos se incorporan en el elemento head del documento HTML. En la Landing Page, se prioriza la presentación de la propuesta de valor de Relient, mientras que en la Web Application se describen las principales funciones de gestión y monitoreo.
 
+### 4.2.4. Searching Systems
+El sistema de búsqueda de Relient está orientado a facilitar la localización de información de acuerdo con las necesidades de cada interfaz.
+En la Landing Page, no se considera necesaria una barra de búsqueda principal, debido a que el contenido se distribuye en secciones informativas accesibles mediante la navegación superior. Los usuarios pueden dirigirse a About Us, How does it work?, FAQs y Contact para encontrar información sobre el producto y su funcionamiento.
 
 
 
