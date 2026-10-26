@@ -2422,7 +2422,8 @@ Las últimas pantallas muestran la continuidad de los criterios visuales en las 
 <img src="assets/img/chapter-ii/needfinding/mockup17.png">
 <img src="assets/img/chapter-ii/needfinding/mockup18.png">
 <img src="assets/img/chapter-ii/needfinding/mockup19.png">
-
+<img src="assets/img/chapter-ii/needfinding/mockup20.png">
+<img src="assets/img/chapter-ii/needfinding/mockup21.png">
 
 
 
