@@ -2315,7 +2315,7 @@ Para facilitar su análisis, las pantallas se presentan en el orden establecido 
 Las primeras pantallas permiten examinar la distribución de los elementos de acceso y los componentes iniciales de la interfaz. En esta etapa se considera la ubicación de los campos de entrada, las etiquetas y los botones, procurando que los elementos necesarios para interactuar con la plataforma sean reconocibles y mantengan una disposición ordenada.
 
 <img src="assets/img/chapter-ii/needfinding/wireframe1.png">
-
+<img src="assets/img/chapter-ii/needfinding/wireframe2.png">
 
 
 
