@@ -2246,6 +2246,7 @@ Las etiquetas propuestas para la Landing Page y la Web Application se presentan 
 | Web Application | Barra superior | Agrupa elementos generales de navegación y acceso a la plataforma. |
 | Web Application | Pie de página | Complementa la navegación con información institucional y enlaces adicionales. |
 
+Los valores presentados constituyen una propuesta inicial que debe verificarse durante la implementación. El atributo Charset define la codificación de caracteres, mientras que Viewport permite adaptar la visualización a las dimensiones del dispositivo. El atributo Title establece el título de la página y Description proporciona una síntesis de su contenido. Por su parte, Keywords reúne términos relacionados con la solución y Author identifica al responsable del contenido.
 
 
 
