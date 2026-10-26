@@ -2218,7 +2218,8 @@ En la Landing Page, las etiquetas principales incluyen Home, About Us, How does 
 En la Web Application, las etiquetas corresponden a los módulos Usuarios, Equipos, Componentes, Señales, Alertas, Reportes e Inventario. Cada denominación identifica el tipo de información que puede consultarse o administrarse en la sección correspondiente.
 Las acciones disponibles utilizan etiquetas orientadas a las tareas, como Registrar, Guardar, Editar, Consultar, Filtrar y Generar reporte, según las funcionalidades definidas para cada módulo. La utilización consistente de estas denominaciones permite reducir ambigüedades, facilitar la comprensión de las opciones y mantener una experiencia de navegación uniforme.
 
-
+### 4.2.3. SEO Tags and Meta Tags
+Las etiquetas SEO y los metadatos de Relient permiten describir el contenido de las páginas web e identificar su propósito mediante información incorporada en el código HTML. Estos elementos contribuyen a comunicar la identidad de InnovaCorp, la finalidad de Relient y su relación con la gestión y el monitoreo de procesos industriales. Para ello, se definen los atributos correspondientes a la codificación, la visualización en dispositivos, el título, la descripción, las palabras clave y la autoría de cada interfaz.
 
 
 
