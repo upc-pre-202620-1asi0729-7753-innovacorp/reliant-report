@@ -2259,7 +2259,7 @@ Los criterios de búsqueda pueden incluir nombres, códigos, categorías, estado
 El sistema de navegación de Relient permite desplazarse entre las diferentes secciones de la Landing Page y los módulos de la Web Application mediante una estructura clara y consistente.
 En la Landing Page, la barra de navegación se ubica en la parte superior e incluye los accesos Home, About Us, How does it work?, FAQs y Contact. Estos enlaces permiten acceder a las secciones informativas correspondientes. Además, las opciones Login, Sign Up y Empezar ya facilitan el acceso a los puntos de interacción definidos en los mockups. El pie de página complementa la navegación mediante información institucional y enlaces relacionados con el contenido del sitio.
 En la Web Application, la navegación se organiza mediante una barra superior y un menú lateral que permite acceder a los módulos Usuarios, Equipos, Componentes, Señales, Alertas, Reportes e Inventario. Esta distribución facilita el acceso a las funcionalidades de gestión y monitoreo, manteniendo una estructura reconocible entre las diferentes vistas.
-
+Asimismo, la navegación debe permitir que los usuarios identifiquen la sección en la que se encuentran y comprendan las acciones disponibles en cada módulo. En las pantallas de menor tamaño, los elementos de navegación deben reorganizarse para conservar su legibilidad y facilitar la interacción. De esta manera, Relient busca ofrecer recorridos claros y consistentes, desde la consulta inicial de información hasta la gestión de los registros dentro de la plataforma.
 
 
 
