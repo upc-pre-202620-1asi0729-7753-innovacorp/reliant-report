@@ -2206,6 +2206,33 @@ El diseño web de Relient considera criterios de accesibilidad orientados a faci
 ## 4.2. Information Architecture
 La arquitectura de información de Relient permite organizar y estructurar los contenidos de la plataforma para facilitar la identificación de las funcionalidades y el acceso a la información requerida. Debido a que la solución está orientada a la gestión y el monitoreo de procesos, equipos, componentes y recursos de los sectores industrial y minero, resulta fundamental establecer una distribución clara de los módulos y las acciones disponibles. La Landing Page presenta la propuesta de valor y las principales características del producto, mientras que la Web Application permite consultar y administrar información operativa mediante módulos específicos. Esta organización facilita la navegación y contribuye a una experiencia de usuario coherente durante la interacción con las diferentes interfaces de la plataforma.
 
+### 4.2.1. Organization System
+El sistema de organización de Relient está diseñado para estructurar visualmente los contenidos y facilitar el acceso a las diferentes funcionalidades de la plataforma mediante una organización jerárquica y temática.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
