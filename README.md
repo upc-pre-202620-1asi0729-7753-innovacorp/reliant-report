@@ -2377,6 +2377,8 @@ El cuarto detalle muestra otra parte de las conexiones definidas en el wireflow.
 
 <img src="assets/img/chapter-ii/needfinding/wireflow4.png">
 
+**Detalle 5: Pantallas finales del recorrido**
+El último detalle complementa la visualización del diagrama y permite examinar la parte final de las conexiones representadas. En conjunto con las ampliaciones anteriores, facilita la revisión integral de la navegación planteada para Relient.
 
 
 
