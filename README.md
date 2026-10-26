@@ -2459,7 +2459,7 @@ Para desarrollar los prototipos de la interfaz de usuario de Relient para Deskto
 1. Simplicidad y usabilidad: Se busca que la navegación sea clara y consistente, facilitando el acceso a las principales funcionalidades de Relient, como la gestión de usuarios, equipos HVOF, componentes recuperados, órdenes de trabajo, sesiones de recubrimiento, monitoreo de parámetros, diagnóstico de fallas y consulta de reportes.
 2. Diseño adaptable: La propuesta considera la visualización de la interfaz en diferentes tamaños de pantalla, tanto en Desktop como en Mobile Web Browser, procurando mantener la legibilidad de la información y facilitar la interacción según el dispositivo utilizado.
 3. Enfoque en la información clave: Las interfaces priorizan los datos relevantes para las tareas de los usuarios, como el estado de los componentes, los parámetros de operación, el historial de sesiones y las alertas, facilitando el seguimiento de los procesos de recuperación.
-
+4. Navegación e interacción coherentes: Las conexiones entre las pantallas se definieron tomando como referencia los User Flow Diagrams y el sistema de navegación de Relient, permitiendo representar los recorridos principales entre las funcionalidades de la aplicación.
 
 
 
