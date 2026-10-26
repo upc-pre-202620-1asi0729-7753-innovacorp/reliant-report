@@ -2197,6 +2197,8 @@ Los formularios de Relient están diseñados para facilitar el registro y la act
 - **Tarjetas y componentes de información:**
 Las tarjetas se utilizan para presentar indicadores, estados de equipos, alertas y otros datos relevantes de manera organizada. Cada componente mantiene una estructura visual consistente que facilita la identificación y comparación de la información. Esta organización permite distribuir los registros y los indicadores en secciones diferenciadas, favoreciendo la consulta de datos y el seguimiento de la información operativa.
 
+- **Diseño adaptable:**
+Las interfaces web de Relient consideran la adaptación de sus componentes a diferentes tamaños de pantalla. En equipos de escritorio, la Web Application utiliza una estructura que combina una barra superior, un menú lateral y áreas de contenido destinadas a la gestión de registros e indicadores. En pantallas de menor tamaño, la distribución de los elementos debe ajustarse para conservar la legibilidad, evitar desbordamientos horizontales y facilitar la interacción con los botones, formularios y componentes de información.
 
 ## 4.6. Domain-Driven Software Architecture.
 ### 4.6.1. Design-Level Event Storming.
