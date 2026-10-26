@@ -670,17 +670,18 @@ A partir del análisis anterior, InnovaCorp establece cinco estrategias con sus 
 
 Ante la falta de trayectoria de la startup, la táctica consiste en apoyarse en evidencia técnica verificable, casos reales de diagnóstico, en lugar de en referencias comerciales inexistentes. Ante la sensibilidad de las empresas respecto de sus parámetros de proceso, se incorporarán desde el inicio términos y condiciones explícitos sobre titularidad y confidencialidad de los datos, expuestos en el footer del Landing Page y de la aplicación, y una regla de visibilidad por la cual el propietario del activo accede al certificado y al cumplimiento por banda, nunca a los valores crudos de telemetría del proveedor. Ante la resistencia cultural al registro digital, el diseño priorizará una curva de aprendizaje mínima, la detección automática de pasadas de rociado desde los tags de estado para reducir la intervención del operador, y flujos con menos pasos que el registro manual actual.
 
-## 2.2. Entrevistas.
 
+## 2.2. Entrevistas
 Esta sección presenta el proceso de investigación primaria realizado con representantes de los dos segmentos objetivo definidos en la sección 1.3: Recuperation Supplier y Asset Owner. Las entrevistas constituyen la fuente de información a partir de la cual se construyen los User Personas, el User Task Matrix, los User Journey Maps y los Empathy Maps del proceso de Needfinding (sección 2.3), y permiten contrastar los assumptions e hypothesis statements formulados en el Lean UX Process (sección 1.2.2) con el comportamiento real de los segmentos.
 
 ### 2.2.1. Diseño de entrevistas.
 
-#### Objetivos del diseño
 
+### Objetivos del diseño
 El diseño de las entrevistas persigue dos propósitos simultáneos. El primero es recolectar la información objetiva y subjetiva necesaria para construir arquetipos verosímiles de cada segmento: características demográficas, personalidad, habilidades, marcas e influencias, dispositivos y canales digitales de preferencia, objetivos, frustraciones y trayectoria profesional. El segundo es comprender el estado actual del proceso de recuperación de componentes desde la perspectiva de cada segmento, sin condicionar las respuestas con la solución propuesta, a fin de validar o refutar las hipótesis de mayor riesgo identificadas en el Lean UX Canvas.
 
-#### Buenas prácticas aplicadas
+
+### Buenas prácticas aplicadas
 
 | Práctica | Aplicación en el diseño |
 |---|---|
@@ -692,7 +693,8 @@ El diseño de las entrevistas persigue dos propósitos simultáneos. El primero 
 | Consentimiento informado | Al inicio de cada sesión se informa al entrevistado sobre la grabación en video y su uso académico, y se solicita su consentimiento explícito. |
 | Duración | Entre 20 y 25 minutos por entrevista, editadas posteriormente a segmentos de 3 a 5 minutos para el video consolidado de evidencia. |
 
-#### Información a recolectar para la construcción de arquetipos
+
+### Información a recolectar para la construcción de arquetipos
 
 De acuerdo con lo requerido para la elaboración de User Personas, cada entrevista recolecta la siguiente información, común a ambos segmentos:
 
@@ -707,11 +709,13 @@ De acuerdo con lo requerido para la elaboración de User Personas, cada entrevis
 | Marcas e influencias | Fuentes de actualización profesional | Marcas, proveedores o referentes del sector que considera confiables |
 | Objetivos y frustraciones | Aspectos más satisfactorios del trabajo | Aspectos más frustrantes del trabajo |
 
-#### Estructura de la entrevista
+
+### Estructura de la entrevista
 
 La guía se organiza en tres bloques. El Bloque A es común a ambos segmentos y recolecta el perfil del entrevistado. El Bloque B contiene las preguntas específicas de cada segmento sobre su proceso actual y sus problemas. El Bloque C cierra la entrevista abriendo la conversación hacia necesidades no cubiertas y toma de decisiones.
 
-**Bloque A — Perfil del entrevistado (ambos segmentos, 5 minutos)**
+
+### Bloque A — Perfil del entrevistado (ambos segmentos, 5 minutos)
 
 | # | Dato requerido | Pregunta principal | Pregunta complementaria |
 |---|---|---|---|
@@ -727,7 +731,8 @@ La guía se organiza en tres bloques. El Bloque A es común a ambos segmentos y 
 | A10 | Marcas e influencias | ¿Cómo se mantiene actualizado? | ¿Qué marcas o referentes del sector respeta? |
 | A11 | Objetivos, frustraciones | ¿Qué le gusta más de su trabajo? | ¿Qué le frustra? |
 
-**Bloque B1 — Segmento Recuperation Supplier (15 minutos)**
+
+### Bloque B1 — Segmento Recuperation Supplier (15 minutos)
 
 Perfiles entrevistados: operador HVOF, supervisor de operación, supervisor de mantenimiento de máquina, ingeniero de investigación y calidad.
 
@@ -742,7 +747,8 @@ Perfiles entrevistados: operador HVOF, supervisor de operación, supervisor de m
 | B1.7 | ¿Hay fallas que se repiten? | ¿Cómo lo saben? ¿Está anotado en algún lado? | Validar H-06: detección de patrones recurrentes |
 | B1.8 | Cuando una pieza suya falla en el cliente, ¿cómo se enteran? | ¿Pueden saber si fue el recubrimiento? ¿Qué les faltaría? | Validar H-08: análisis retrospectivo contra PCR |
 
-**Bloque B2 — Segmento Asset Owner (15 minutos)**
+
+### Bloque B2 — Segmento Asset Owner (15 minutos)
 
 Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, supervisor de mantenimiento, analista de contratos y compras.
 
@@ -757,7 +763,8 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | B2.7 | Si quisiera comparar qué proveedor entrega piezas que duran más, ¿cómo lo haría hoy? | ¿Lo ha intentado? ¿Cuánto le tomó? | Sustentar el valor de la vista consolidada (plan Asset Owner) |
 | B2.8 | ¿Auditan a sus proveedores? | ¿Qué revisan? ¿Qué les piden que demuestren? | Identificar los requisitos de evidencia que se trasladan al proveedor |
 
-**Bloque C — Cierre (ambos segmentos, 3 minutos)**
+
+### Bloque C — Cierre (ambos segmentos, 3 minutos)
 
 | # | Pregunta principal | Pregunta complementaria | Propósito |
 |---|---|---|---|
@@ -768,16 +775,18 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 
 ### 2.2.2. Registro de entrevistas.
 
+
 | Segmento: RecuperationSupplier | Entrevista #1 |
 |:--:|:--:|
 | Nombres y Apellidos | Cristian Rimac |
 | Edad | 29 años |
 | Distrito | San Miguel |
 | Ocupacion | Ingeniero de Proyectos |
+| Timing inicio | 00:00 minutos |
 | Duracion | 16:13 minutos |
-| URL | https://drive.google.com/file/d/1Kz4-cB8Z7LLDR8P2sAM7_8ShWzVvMpjP/view?usp=sharing |
-| Screenshot| <img src="assets/img/2.chapter-ii/2.2.interviews/2.2.2.interviews-record/segment-1-recuperation-supplier/cristian-rimac-interview-photo.png"> |
-| Resumen | Cristian Rimac, de 29 años, es ingeniero de proyectos y vive en San Miguel. Durante la entrevista, explicó que los componentes recibidos de los clientes se identifican principalmente mediante el número de orden de trabajo. Sin embargo, mencionó que en ocasiones resulta complicado localizar las piezas dentro del taller, por lo que deben buscarlas o consultar con otros trabajadores. Asimismo, indicó que los parámetros del proceso de recuperación pueden quedar registrados, pero no existe un control completo y organizado de la información. Esto dificulta realizar un seguimiento adecuado de las piezas recuperadas y consultar los datos de procesos anteriores. La entrevista permitió identificar problemas relacionados con la trazabilidad de los componentes y la gestión de la información durante el proceso de recuperación.
+| URL | https://acortar.link/WwyN4w |
+| Screenshot | <img src="assets/img/chapter-ii/needfinding/carolina_entrevista1_segmento1.png"> |
+
 
 | Segmento: RecuperationSupplier | Entrevista #2 |
 |:--:|:--:|
@@ -785,36 +794,37 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | Edad | 30 años |
 | Distrito | Surquillo |
 | Ocupacion | Especialista en investigación de desarrollo |
-| Duracion | 8:50 minutos |
-| URL | https://drive.google.com/file/d/1C9NDE2k5fsSGtt2NXbIFq6dNA72oELuV/view?usp=sharing |
-| Screenshot| <img src="assets/img/2.chapter-ii/2.2.interviews/2.2.2.interviews-record/segment-1-recuperation-supplier/aron-ramirez-interview-photo.png"> |
-| Resumen | Durante la entrevista, Aron Ramires, de 30 años, explicó que el proceso de recuperación inicia con la recepción e identificación de las piezas del cliente, utilizando órdenes de trabajo y registros internos. Durante el rociado se almacenan datos como los parámetros de la máquina, materiales utilizados y tiempo de trabajo, aunque la búsqueda de registros antiguos puede resultar complicada. Asimismo, mencionó que los clientes solicitan certificados, informes y evidencias de calidad. Cuando se presentan reclamos, es necesario revisar la información del proceso, lo que puede generar demoras. También señaló que existen compromisos relacionados con la duración de las piezas recuperadas (PCR) y que algunas fallas de las máquinas se repiten, pero no siempre están registradas de manera organizada. Finalmente, explicó que cuando una pieza falla en el cliente, se requiere revisar los registros para determinar si el problema está relacionado con el recubrimiento, evidenciando dificultades en la trazabilidad y el análisis de fallas.
+| Timing inicio | 16:13 minutos |
+| Duracion | 8:49 minutos |
+| URL | https://acortar.link/WwyN4w |
+| Screenshot | <img src="assets/img/chapter-ii/needfinding/carolina_entrevista2_segmento1.png"> |
+
 
 | Segmento: RecuperationSupplier | Entrevista #3 |
 |:--:|:--:|
-| Nombres y Apellidos | Belisa Paredes|
+| Nombres y Apellidos | Belisa Paredes |
 | Edad | 46 años |
 | Distrito | Surquillo |
-| Ocupacion | supervisora |
-| Duracion | 11:35 minutos |
-| URL | https://upcedupe-my.sharepoint.com/personal/u202410376_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu202410376%5Fupc%5Fedu%5Fpe%2FDocuments%2FDesarrolloAplicacionesOpenSource%2Emp4&nav=
-eyJyZWZlcnJhbEluZm8iOnsi
-cmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopi
-ed%2Eview%2E001f7777%2D3095%2D43ae%2Dbdb0%2D89ae880547ea |
-| Screenshot| <img src="assets/img/2.chapter-ii/2.2.interviews/2.2.2.interviews-record/belisa-paredes-interview-photo.png">  |
-| Resumen | La entrevista busca conocer el proceso de recuperación de piezas, desde su recepción hasta la entrega al cliente, identificando cómo se registran las corridas de rociado, qué evidencias solicitan los clientes y cómo se gestionan los problemas de calidad. También se pretende comprender las fallas de las máquinas, la repetición de errores y el seguimiento de la vida útil de las piezas recuperadas, con el fin de identificar dificultades en la trazabilidad, el diagnóstico y el análisis de fallas.
+| Ocupacion | Supervisora |
+| Timing inicio | 25:02 minutos |
+| Duracion | 16:59 minutos |
+| URL | https://acortar.link/WwyN4w |
+| Screenshot | <img src="assets/img/chapter-ii/needfinding/francisco_entrevista_segmento1.png"> |
+
 
 
 | Segmento: AssetOwner | Entrevista #1 |
 |:--:|:--:|
-| Nombres y Apellidos | Jhuol <!-- TODO: apellidos de la entrevista a Jhuol --> |
-| Edad | <!-- TODO: edad de la entrevista a Jhuol --> |
-| Distrito | <!-- TODO: distrito de la entrevista a Jhuol --> |
-| Ocupacion | <!-- TODO: ocupación de la entrevista a Jhuol --> |
-| Duracion | <!-- TODO: duración de la entrevista a Jhuol --> |
-| URL | <!-- TODO: URL del video de la entrevista a Jhuol --> |
-| Screenshot| <img src="assets/img/2.chapter-ii/2.2.interviews/2.2.2.interviews-record/jhuol-interview-photo.png"> |
-| Resumen | <!-- TODO: resumen de la entrevista a Jhuol --> |
+| Nombres y Apellidos | Rivaldo Muñoz |
+| Edad | 25 años |
+| Distrito | Lima |
+| Ocupación | Supervisor de equipos y componentes |
+| Timing inicio | 42:02 minutos |
+| Duración | 08:22 minutos |
+| URL | https://acortar.link/WwyN4w |
+| Screenshot | <img src="assets/img/chapter-ii/needfinding/scarlet_entrevista_segmento2.png"> |
+
+
 
 | Segmento: AssetOwner | Entrevista #2 |
 |:--:|:--:|
@@ -822,10 +832,11 @@ ed%2Eview%2E001f7777%2D3095%2D43ae%2Dbdb0%2D89ae880547ea |
 | Edad | 65 años |
 | Distrito | Lima |
 | Ocupacion | Gerente de procesos |
-| Duracion | 11:19 minutos |
-| URL | https://youtu.be/ELUn_X1SDxo?si=Av2cGm2uR-eTnTVn |
-| Screenshot| <img src="assets/img/2.chapter-ii/2.2.interviews/2.2.2.interviews-record/segment-2-asset-owner/wilson-bardales-interview-photo.png">  |
-| Resumen | Wilson Bardales, de 65 años, es gerente de procesos y vive en Lima. Durante la entrevista, explicó que la empresa trabaja en el área de mantenimiento preventivo y utiliza proveedores como Epiroc y Desmozambic, principalmente para las perforadoras de producción. Asimismo, relató un caso en el que una bomba de una perforadora nueva presentaba fallas frecuentes. En conjunto con el proveedor, identificaron problemas relacionados con la calidad del agua utilizada en el sistema de enfriamiento y una baja eficiencia del componente. Como parte de la solución, se recomendó cambiar el motor y realizar correcciones en algunas piezas.La entrevista permitió identificar la importancia de mejorar el seguimiento de la vida útil de los componentes, analizar las causas de fallas prematuras y trabajar con los proveedores para mejorar el desempeño de los equipos.
+| Timing inicio | 50:23 minutos |
+| Duracion | 9:05 minutos |
+| URL | https://acortar.link/WwyN4w |
+| Screenshot | <img src="assets/img/chapter-ii/needfinding/benjamin_entrevista_segmento2.png"> |
+
 
 | Segmento: AssetOwner | Entrevista #3 |
 |:--:|:--:|
@@ -833,54 +844,63 @@ ed%2Eview%2E001f7777%2D3095%2D43ae%2Dbdb0%2D89ae880547ea |
 | Edad | 21 años |
 | Distrito | Surco |
 | Ocupacion | Asistente de construcción y proyectos con experiencia en operaciones mineras |
-| Duracion | 13:40 minutos|
-| URL | https://drive.google.com/file/d/1lfzvUGM0Sf1K5balZaaP8kYs97IqWC2X/view?usp=sharing |
-| Screenshot| <img src="assets/img/2.chapter-ii/2.2.interviews/2.2.2.interviews-record/segment-2-asset-owner/valeria-aranguri-interview-photo.png"> |
-| Resumen | La entrevistada cuenta con experiencia como asistente de construcción y proyectos en operaciones mineras como Quellaveco, Las Bambas y Chinalco. Sus responsabilidades incluyeron brindar soporte a ingenieros y supervisores, realizar seguimiento de actividades, coordinar con distintas áreas y elaborar reportes desde campo. Señaló que las fallas de equipos afectan la programación, el personal y los recursos disponibles. Asimismo, explicó que el seguimiento se apoya principalmente en Excel, reportes, llamadas, WhatsApp y sistemas internos que no siempre son visibles para el personal de operación. Para evaluar proveedores se consideran la documentación presentada, el cumplimiento de requisitos, los plazos de entrega y los antecedentes del servicio. Finalmente, manifestó la necesidad de una plataforma centralizada que muestre el estado, ubicación, responsable, proveedor y fecha estimada de disponibilidad de cada componente.
+| Timing inicio | 59:29 minutos |
+| Duracion | 13:40 minutos |
+| URL | https://acortar.link/WwyN4w |
+| Screenshot | <img src="assets/img/chapter-ii/needfinding/mario_entrevista_segmento2.png"> |
 
-### 2.2.3. Análisis de entrevistas.
 
-El análisis se realizó agrupando lo que relataron los entrevistados de cada segmento según las etapas del proceso de recuperación: recepción e identificación del componente, registro de la corrida de rociado, evidencia de calidad entregada al cliente, fallas del equipo y desempeño del componente en campo. Para cada etapa se identificaron los hallazgos que se repiten entre entrevistas y se contrastaron con los assumptions del Lean UX Process (sección 1.2.2.2).
+### 2.2.3. Análisis de entrevistas
+
+El análisis se realizó agrupando la información disponible de las entrevistas de los dos segmentos objetivo de InnovaCorp según las etapas del proceso de recuperación de componentes industriales. Se consideraron la recepción e identificación de las piezas, el registro de los procesos de recuperación, la documentación de calidad, la gestión de fallas y el seguimiento del desempeño de los componentes.
+Los hallazgos se organizaron por segmento para identificar necesidades operativas, dificultades y oportunidades de mejora. Asimismo, se contrastaron con los assumptions del Lean UX Process (sección 1.2.2.2), diferenciando los aspectos respaldados por la información disponible de aquellos que requieren una validación adicional.
+
 
 **Segmento 1: Recuperation Supplier**
 
 | Etapa | Hallazgos | Entrevistas que lo mencionan |
 |---|---|---|
-| Recepción e identificación | Los componentes se identifican por el número de orden de trabajo y registros internos; ubicar una pieza dentro del taller exige buscarla o consultar a otros trabajadores. | Cristian Rimac, Aron Ramirez |
-| Registro de la corrida | Los parámetros de la máquina, los materiales y el tiempo de trabajo se registran, pero sin un control completo ni organizado, y la búsqueda de registros antiguos es complicada. | Cristian Rimac, Aron Ramirez |
-| Evidencia para el cliente | Los clientes solicitan certificados, informes y evidencias de calidad; ante un reclamo hay que revisar la información del proceso, lo que genera demoras. | Aron Ramirez |
-| Fallas del equipo | Algunas fallas de las máquinas se repiten, pero no siempre quedan registradas de forma organizada. | Aron Ramirez |
-| Desempeño en campo | Existen compromisos de duración de las piezas recuperadas (PCR); cuando una pieza falla en el cliente, se revisan los registros para determinar si el origen está en el recubrimiento. | Aron Ramirez |
+| Recepción e identificación | La identificación y localización de los componentes forman parte del proceso operativo. La información disponible señala dificultades relacionadas con la trazabilidad de las piezas y la consulta de registros. | Cristian Rimac, Aron Ramirez |
+| Registro de la corrida | Se identifican dificultades en la organización de los registros del proceso de recuperación y en la consulta de información histórica. | Cristian Rimac, Aron Ramirez |
+| Evidencia para el cliente | La documentación y la evidencia de calidad son relevantes para respaldar los trabajos de recuperación y atender consultas o reclamos del cliente. | Aron Ramirez, según el resumen disponible |
+| Fallas del equipo | El análisis considera la necesidad de organizar la información de las fallas y facilitar la consulta de antecedentes para investigar problemas recurrentes. | Aron Ramirez, según el resumen disponible |
+| Desempeño en campo | El seguimiento de los componentes recuperados requiere relacionar la información del proceso con los antecedentes de las piezas y las incidencias reportadas después de su entrega. | Aron Ramirez, según el resumen disponible |
+
 
 **Segmento 2: Asset Owner**
 
 | Etapa | Hallazgos | Entrevistas que lo mencionan |
 |---|---|---|
-| Impacto de las fallas | Las fallas de los equipos afectan la programación, el personal y los recursos disponibles de la operación. | Valeria Aranguri |
-| Seguimiento de componentes | El seguimiento se apoya en Excel, reportes, llamadas, WhatsApp y sistemas internos que no siempre son visibles para el personal de operación. | Valeria Aranguri |
-| Evaluación de proveedores | Se evalúa a los proveedores por la documentación presentada, el cumplimiento de requisitos, los plazos de entrega y los antecedentes del servicio. | Valeria Aranguri |
-| Fallas prematuras | Ante fallas frecuentes de un componente, la causa se identifica en conjunto con el proveedor; se reconoce la necesidad de seguir la vida útil de los componentes y analizar las causas de fallas prematuras. | Wilson Bardales |
-| Necesidad expresada | Una plataforma centralizada que muestre el estado, la ubicación, el responsable, el proveedor y la fecha estimada de disponibilidad de cada componente. | Valeria Aranguri |
+| Impacto de las fallas | Las fallas de los equipos y componentes son relevantes para la operación y para la planificación del mantenimiento. | Valeria Aranguri, según el resumen disponible |
+| Seguimiento de componentes | El seguimiento de los componentes y la disponibilidad de información técnica son aspectos importantes para gestionar los activos y coordinar el mantenimiento. | Wilson Bardales, Valeria Aranguri |
+| Evaluación de proveedores | La evaluación de los proveedores y la disponibilidad de antecedentes del servicio son relevantes para apoyar las decisiones de gestión de activos. | Wilson Bardales, Valeria Aranguri, según la información disponible |
+| Fallas prematuras | La investigación de fallas y el seguimiento del desempeño de los componentes recuperados son relevantes para comprender su comportamiento durante la operación. | Wilson Bardales, según el resumen disponible |
+| Necesidades de información | Se identificó la importancia de contar con información organizada y accesible para facilitar el seguimiento de componentes, la gestión de activos y la toma de decisiones. | Wilson Bardales, Valeria Aranguri |
 
 <!-- TODO: incorporar los hallazgos de la entrevista a Jhuol cuando se registre su resumen -->
 
+
 **Contraste con los assumptions**
 
-| Assumption (sección 1.2.2.2) | Resultado de las entrevistas |
+| Assumption (sección 1.2.2.2) | Resultado del análisis |
 |---|---|
-| Los parámetros de proceso se pierden o no son consultables (Feature Assumption 1) | Confirmado: ambos entrevistados del Recuperation Supplier describen registros incompletos y difíciles de consultar. |
-| Vincular cada sesión con su OF, WO y componente permite reconstruir la historia de la pieza (Feature Assumption 2) | Confirmado: la orden de trabajo es hoy el único identificador y no basta para ubicar piezas ni corridas anteriores. |
-| La presión por trazabilidad proviene del cliente minero (Business Assumption 2) | Confirmado: los clientes exigen certificados y evidencias, y los reclamos obligan a revisar el proceso. |
-| Las fallas recurrentes no se detectan ni se atribuyen a una parte (Feature Assumption 6) | Confirmado parcialmente: se reconoce la recurrencia, pero no su atribución a un subsistema o parte. |
-| El registro de vida útil contra el PCR permite evaluar el desempeño real (Feature Assumption 8) | Confirmado: los compromisos de PCR existen y la causa de una falla prematura se investiga de forma manual en ambos segmentos. |
-| La minera necesita una vista consolidada de sus componentes, sin importar el proveedor (Feature Assumption 10) | Confirmado: la necesidad de una plataforma centralizada con estado, proveedor y disponibilidad se expresó de forma explícita. |
+| Los parámetros de proceso se pierden o no son consultables (Feature Assumption 1). | Parcialmente respaldado: los resúmenes disponibles mencionan dificultades para organizar y consultar registros históricos. Se requiere revisar las entrevistas completas para determinar el alcance del problema. |
+| Vincular cada sesión con su OF, WO y componente permite reconstruir la historia de la pieza (Feature Assumption 2). | Pendiente de validación completa: las dificultades de trazabilidad justifican evaluar la relación entre componentes, órdenes de trabajo y registros de recuperación, pero la información disponible no demuestra por sí sola que esta relación resuelva todos los problemas. |
+| La presión por trazabilidad proviene del cliente minero (Business Assumption 2). | Respaldado parcialmente: la documentación y la evidencia de calidad aparecen como necesidades relevantes para el segmento Recuperation Supplier. Se necesita revisar los testimonios completos para precisar las exigencias de los clientes. |
+| Las fallas recurrentes no se detectan ni se atribuyen a una parte (Feature Assumption 6). | Pendiente de validación: se requiere evidencia específica sobre la frecuencia de las fallas, su registro y los procedimientos utilizados para identificar sus causas. |
+| El registro de vida útil contra el PCR permite evaluar el desempeño real (Feature Assumption 8). | Relevante para investigar: el seguimiento del desempeño de los componentes y el análisis de fallas prematuras aparecen como temas de interés. La evidencia disponible no permite confirmar completamente el supuesto. |
+| La minera necesita una vista consolidada de sus componentes, sin importar el proveedor (Feature Assumption 10). | Respaldado como necesidad general de información organizada: se identifica la importancia del seguimiento de componentes y de los antecedentes para tomar decisiones. La necesidad de una vista consolidada multi-proveedor debe validarse con las entrevistas completas. |
+
 
 **Conclusiones del análisis**
 
-1. La trazabilidad del proceso de recuperación depende hoy del número de orden de trabajo y de registros dispersos, lo que justifica priorizar en el Product Backlog el registro de componentes, órdenes de recuperación y sesiones de rociado vinculadas (Epics E03, E04 y E05).
-2. La evidencia de calidad es una exigencia comercial del cliente minero; la demora en reunirla ante un reclamo confirma el valor del certificado de calidad y del reporte de sesión (Epic E08).
-3. Ambos segmentos investigan las fallas prematuras de forma manual y en conjunto, lo que respalda el registro del retorno de campo contra el PCR y la correlación con la sesión de origen (Epic E09).
-4. El Asset Owner sigue sus componentes en herramientas que no comparte con sus proveedores, lo que confirma el valor de la vista consolidada multi-proveedor como propuesta diferenciada para el segundo segmento.
+1. La trazabilidad y la organización de la información son aspectos relevantes para el proceso de recuperación de componentes. Por ello, resulta pertinente evaluar en el Product Backlog el registro vinculado de componentes, órdenes de recuperación y sesiones de rociado (Epics E03, E04 y E05), contrastando su prioridad con la evidencia completa de las entrevistas.
+
+2. La documentación de calidad y la disponibilidad de antecedentes son importantes para respaldar los trabajos realizados y facilitar la atención de consultas o reclamos. Esto justifica evaluar las funcionalidades relacionadas con los certificados de calidad y los reportes de sesión (Epic E08).
+
+3. El seguimiento de los componentes y el análisis de las fallas prematuras representan oportunidades de mejora para ambos segmentos. Conviene evaluar el registro del retorno de campo, su relación con el PCR y la consulta de los antecedentes del proceso de recuperación (Epic E09).
+
+4. El segmento Asset Owner necesita información organizada para realizar el seguimiento de los componentes, gestionar los activos y tomar decisiones. Por ello, una vista consolidada de la información de los componentes y sus proveedores constituye una propuesta que debe validarse con los usuarios del segmento.
 
 ## 2.3. Needfinding.
 
@@ -2138,287 +2158,367 @@ El Product Backlog se gestiona en Trello, con una lista por Sprint y una etiquet
 | 89 | TS18 | Suscripción al newsletter vía Mailchimp | Como developer, deseo consumir el endpoint POST /api/v1/newsletter/subscriptions, para registrar un correo en la audiencia de Mailchimp desde el Landing Page. | 3 |
 
 # Capítulo IV: Product Design
+Este capítulo abarca los aspectos relacionados con el diseño de la solución, incluyendo el estilo visual, los diagramas C4, los diagramas de clases y los modelos de bases de datos.
+
 ## 4.1. Style Guidelines.
-Durante el desarrollo de Relient, resulta importante establecer lineamientos visuales que permitan mantener una identidad coherente en las diferentes interfaces del producto. Las inconsistencias en los colores, tipografías, componentes y estilos de interacción pueden afectar la comprensión y experiencia de los usuarios.
-Por ello, se establecen las Style Guidelines para definir los recursos visuales de la Landing Page y la Web Application de Relient. Estas pautas consideran las necesidades de los usuarios relacionados con la gestión y monitoreo de procesos, equipos, componentes y recursos del sector industrial y minero. Asimismo, se busca
-mantener una interfaz clara, organizada y funcional, que facilite la consulta de información, el seguimiento de alertas y la gestión de los diferentes módulos de la plataforma.
+Durante el desarrollo de Relient, es fundamental establecer lineamientos visuales que garanticen la coherencia y uniformidad de las interfaces del producto. La falta de consistencia en el uso de colores, tipografías, componentes y estilos de interacción puede dificultar la comprensión de la información y afectar la experiencia de los usuarios. En este contexto, las Style Guidelines definen los criterios visuales y funcionales que orientan el diseño de la Landing Page y la Web Application de Relient. Estas directrices se adaptan a las necesidades de los usuarios involucrados en la gestión y el monitoreo de procesos, equipos, componentes y recursos de los sectores industrial y minero. Asimismo, buscan garantizar una interfaz clara, organizada y consistente, que facilite la navegación, la consulta de información, el seguimiento de alertas y la gestión eficiente de los distintos módulos de la plataforma.
 
-### 4.1.1. General Style Guidelines.
-Para esta sección, se han definido los estilos de tipografía, colores y espaciado que se aplicarán en las interfaces web de Relient. Estos elementos buscan mantener una identidad visual consistente y facilitar la interacción de los usuarios con la plataforma.
-## Branding
-La identidad visual de Relent está orientada a representar innovación, control y eficiencia dentro del sector industrial y minero. El diseño utiliza una estructura ordenada y minimalista, permitiendo que la información operativa sea clara y fácil de interpretar.
+### 4.1.1. General Style Guidelines
+Las General Style Guidelines establecen las normas visuales que orientan el diseño de las interfaces de Relient. Estas directrices definen los criterios de identidad visual, tipografía, colores, espaciado y tono de comunicación, con el propósito de mantener la consistencia entre la Landing Page y la Web Application, facilitar la comprensión de la información y garantizar una experiencia de usuario clara y organizada.
 
-## Typography
-La propuesta visual de Relient utiliza principalmente las tipografías Balsamiq Sans, Goblin One y Kaushan Script. La tipografía Balsamiq Sans se utiliza para textos generales, etiquetas y componentes informativos. Goblin One se emplea en títulos y elementos destacados, mientras que Kaushan Script se utiliza en elementos
-decorativos o distintivos de la identidad visual. La combinación de estas tipografías permite establecer una jerarquía visual entre los diferentes elementos de la interfaz y mantener una presentación coherente en la Landing Page y la Web Application.
+**Branding**
 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/tipoletra.png"> 
+**Brand Overview:**
+Relient es una plataforma digital orientada a la gestión y el monitoreo de procesos, equipos, componentes y recursos de los sectores industrial y minero. Su propuesta busca facilitar el acceso a la información operativa, el seguimiento de alertas y la gestión de los distintos módulos de la plataforma mediante interfaces claras y organizadas. La identidad visual se fundamenta en los conceptos de innovación, control y eficiencia, priorizando una presentación ordenada de los datos y una interacción intuitiva que permita a los usuarios realizar sus actividades de manera eficiente.
 
-## Colors
-La paleta de colores de Relient está conformada por El marrón oscuro se utiliza en textos y elementos principales, mientras que el crema claro y el blanco permiten construir fondos y espacios visuales. El naranja se emplea para destacar botones, acciones principales y elementos relevantes de la interfaz.
+- **Misión:** Facilitar la gestión y el monitoreo de procesos, equipos, componentes y recursos industriales y mineros mediante una plataforma digital que permita consultar información, realizar seguimiento de alertas y gestionar las operaciones de manera clara y eficiente.
+- **Visión:** Consolidarse como una plataforma de referencia para la gestión y el monitoreo de recursos en los sectores industrial y minero, promoviendo la eficiencia operativa mediante una experiencia digital organizada, confiable y accesible.
 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/colors.png"> 
+<img src="assets/img/chapter-ii/needfinding/logo_grupo.png">
 
-## Spacing
-El sistema de espaciado de Relient busca mantener una distribución ordenada de los contenidos y evitar la saturación visual. Para ello, se utilizan separaciones consistentes entre títulos, textos, botones, formularios, tablas y componentes de navegación.La configuración del espaciado 
-se establece mediante las herramientas de diseño utilizadas en Figma, considerando la distribución de los elementos y la legibilidad de la información en las diferentes vistas de la plataforma.
+**Brand Name:**
+El nombre Relient representa la identidad de una solución digital orientada a la gestión y el monitoreo de procesos en los sectores industrial y minero. Su identidad busca transmitir confianza, control y eficiencia, atributos fundamentales para una plataforma que facilita la consulta de información operativa y el seguimiento de equipos, componentes y recursos. Estos conceptos se reflejan en una propuesta visual organizada y funcional, diseñada para mantener una presentación coherente en las diferentes interfaces del producto.
 
-## Tone of Voice
-El tono de comunicación de Relient se caracteriza por ser profesional, claro, directo y orientado a la eficiencia operativa. Debido a que la plataforma está relacionada con el monitoreo y la gestión de procesos industriales, la comunicación busca transmitir control, prevención y confiabilidad. Los mensajes deben utilizar
-términos comprensibles y evitar expresiones excesivamente técnicas cuando no sean necesarias. Asimismo, las etiquetas y notificaciones deben orientar al usuario sobre las acciones que puede realizar y los estados de los registros o equipos.
+<img src="assets/img/chapter-ii/needfinding/logo_producto.png">
 
-### 4.1.2. Web Style Guidelines.
-Las Web Style Guidelines de Relient establecen los criterios visuales y de interacción para las interfaces web del producto. Estas reglas buscan asegurar la consistencia entre la Landing Page y la Web Application, facilitando la navegación y el uso de las funcionalidades disponibles.
+**Colores:**
+La selección de colores constituye un elemento fundamental para establecer la identidad visual de Relient y facilitar la identificación de los componentes de la interfaz. La paleta cromática utiliza el marrón oscuro en textos y elementos principales, mientras que el crema claro y el blanco se emplean en fondos y espacios visuales para mantener una presentación limpia y equilibrada. Asimismo, el naranja se utiliza para destacar botones, acciones principales y elementos relevantes, permitiendo establecer una jerarquía visual que facilite la identificación de las opciones disponibles y la interacción con los diferentes módulos de la plataforma.
 
- ## Navigation Bar
- La barra de navegación de la Landing Page se ubica en la parte superior de la interfaz y permite acceder a las principales secciones informativas del producto. También incorpora las opciones de ingreso y registro de usuarios.
-En la Web Application, la navegación se organiza mediante una barra superior y un menú lateral que permite acceder a los módulos de Usuarios, Equipos, Componentes, Señales, Alertas, Reportes e Inventario.
+<img src="assets/img/chapter-ii/needfinding/colors.png">
+<img src="assets/img/chapter-ii/needfinding/colors1.png">
+<img src="assets/img/chapter-ii/needfinding/colors2.png">
 
-## Buttons
-Los botones utilizan una jerarquía visual que permite diferenciar las acciones principales de las secundarias. El color naranja #E2942E se emplea para destacar las acciones más importantes, como ingresar, registrar información, guardar cambios o iniciar una operación.
-Los botones también consideran estados visuales como hover y focus, con el objetivo de proporcionar retroalimentación al usuario durante la interacción.
+**Tipografía:**
+La tipografía cumple un papel importante en la legibilidad de los contenidos y en la jerarquización de la información presentada en las interfaces de Relient. Para el proyecto, se han seleccionado las fuentes Balsamiq Sans, Goblin One y Kaushan Script, cada una con una función específica dentro de la identidad visual. Balsamiq Sans se utiliza en textos generales, etiquetas y componentes informativos, favoreciendo la lectura del contenido. Goblin One se emplea en títulos y elementos destacados, mientras que Kaushan Script se reserva para elementos decorativos o distintivos de la identidad visual. Esta combinación permite diferenciar los niveles de información y mantener una presentación coherente tanto en la Landing Page como en la Web Application.
 
-## Cards
-Las tarjetas se utilizan para presentar información de manera organizada e independiente. En la Web Application de Relient pueden emplearse para mostrar indicadores, estados de equipos, alertas, componentes y otros datos relacionados con la operación.
-El uso de tarjetas permite separar visualmente la información y facilitar su lectura, especialmente cuando se presentan diferentes registros o indicadores dentro de una misma vista.
+<img src="assets/img/chapter-ii/needfinding/tipoletra.png">
 
-## Forms
-Los formularios de Relient utilizan una estructura organizada y etiquetas visibles asociadas a cada campo de entrada. Los campos deben contar con espacios adecuados, bordes definidos y estados de focus que permitan identificar el elemento activo.
-Los formularios se utilizan en procesos como el registro de usuarios, equipos, componentes, señales e información de inventario. Se busca que los campos sean comprensibles y que los mensajes de validación orienten al usuario cuando se produzca un error.
+**Spacing:**
+El sistema de espaciado de Relient establece criterios para distribuir los elementos de la interfaz de manera ordenada y evitar la saturación visual. Se consideran separaciones consistentes entre títulos, textos, botones, formularios, tablas y componentes de navegación, con el objetivo de mejorar la legibilidad y facilitar la identificación de la información. La configuración de estos espacios se realiza mediante las herramientas de diseño de Figma, teniendo en cuenta la disposición de los componentes y las necesidades de las diferentes vistas de la plataforma.
 
-## Interaction States
-Los principales componentes interactivos consideran estados visuales de hover, focus, seleccionado y deshabilitado. Estos estados permiten comunicar qué elementos pueden ser seleccionados o activados.
-En Relient, estos criterios también pueden utilizarse para representar estados relacionados con los equipos, las señales y las alertas, facilitando la identificación de información que requiere atención o seguimiento.
+**Tone of Voice:**
+El tono de comunicación de Relient es profesional, claro, directo y orientado a la eficiencia operativa. Debido a que la plataforma está enfocada en la gestión y el monitoreo de procesos industriales y mineros, los mensajes deben transmitir confianza, control y confiabilidad. Para ello, se prioriza el uso de expresiones comprensibles y precisas, evitando términos excesivamente técnicos cuando no sean necesarios. Asimismo, las etiquetas, alertas y notificaciones deben informar de manera clara sobre las acciones disponibles y los estados de los registros, equipos y componentes, facilitando la interpretación de la información y la toma de decisiones.
 
-## Responsive Web Design
-La interfaz de Relient considera un enfoque responsive para adaptar la presentación de los contenidos a diferentes tamaños de pantalla. En la versión de escritorio se utiliza una estructura con menú lateral, tablas y componentes de gestión.
-En dispositivos de menor tamaño, los elementos deben reorganizarse para conservar la legibilidad, evitar desbordamientos horizontales y facilitar la interacción con los botones, formularios y registros de la plataforma.
+### 4.1.2. Web Style Guidelines
+El diseño web de Relient se basa en la claridad, la organización y la eficiencia en la gestión de procesos y recursos de los sectores industrial y minero. Las interfaces de la Landing Page y la Web Application se estructuran en secciones y módulos que facilitan la navegación, la consulta de información y el acceso a las funcionalidades disponibles. La Landing Page presenta las principales características de la plataforma e incorpora opciones de ingreso y registro, mientras que la Web Application organiza las funciones de gestión mediante una barra superior y un menú lateral que permite acceder a los módulos de Usuarios, Equipos, Componentes, Señales, Alertas, Reportes e Inventario.
 
-## Accessibility
-La experiencia web de Relient considera prácticas básicas de accesibilidad, como el uso de etiquetas visibles en los formularios, contraste entre colores, estados de focus y nombres comprensibles para los botones y elementos de navegación.
-Asimismo, la información debe organizarse mediante una jerarquía visual clara, permitiendo que los usuarios identifiquen las funciones y comprendan los mensajes presentados por la plataforma.
+- **Imágenes:**
+En el diseño web de Relient, las imágenes y los recursos gráficos se utilizan de manera estratégica para reforzar la identidad visual del producto y facilitar la comprensión de sus funcionalidades. En la Landing Page, estos elementos permiten presentar la propuesta de valor de la plataforma y contextualizar su aplicación en los sectores industrial y minero. En la Web Application, se prioriza la presentación de información operativa mediante indicadores, estados y elementos visuales relacionados con los equipos, componentes y alertas. Se busca evitar el uso excesivo de imágenes decorativas que puedan distraer al usuario de las tareas principales, manteniendo una interfaz organizada y funcional.
 
-## 4.2. Information Architecture.
-La arquitectura de información de Relient define la manera en que se distribuyen, relacionan y presentan los contenidos de la plataforma. Su propósito es ayudar a los usuarios a identificar las funcionalidades disponibles y encontrar la información requerida sin realizar pasos innecesarios.
-La propuesta contempla la Landing Page y la Web Application de InnovaCorp. Ambas interfaces deben mantener criterios similares en la organización de los contenidos, las etiquetas y los recorridos de navegación. De esta manera, el usuario puede reconocer la identidad y la estructura del producto desde la primera interacción hasta el uso de sus funcionalidades internas.
+- **Botones:**
+Los botones de Relient siguen los criterios establecidos en las General Style Guidelines, utilizando una jerarquía visual que permite distinguir las acciones principales de las secundarias. El color naranja (#E2942E) se emplea para destacar acciones relevantes, como ingresar a la plataforma, registrar información, guardar cambios o iniciar una operación. Asimismo, los botones presentan estados visuales de interacción, como hover y focus, que proporcionan retroalimentación al usuario. Su ubicación y diseño buscan facilitar la identificación de las acciones disponibles y mantener una interacción coherente en los diferentes módulos de la plataforma.
 
-### 4.2.1. Organization Systems.
-Relient utiliza una organización basada principalmente en una estructura jerárquica y temática. La organización jerárquica permite mostrar primero la información más importante y posteriormente dirigir al usuario hacia contenidos específicos. La organización temática agrupa las funcionalidades según el tipo de tarea o información que gestionan.
-En la Landing Page, el contenido se distribuye desde la presentación inicial de InnovaCorp y la propuesta de valor de Relient hacia las secciones informativas que explican el funcionamiento de la solución. También se consideran los accesos a About Us, How does it work?, FAQs y Contact, de acuerdo con la estructura de los mockups.
-En la Web Application, la información se divide en módulos relacionados con las actividades principales de la plataforma. Estos módulos incluyen Usuarios, Equipos, Componentes, Señales, Alertas, Reportes e Inventario. Cada sección reúne los registros y acciones correspondientes a su finalidad, permitiendo que el usuario pueda consultar y administrar la información de manera más ordenada.
-La organización de los módulos también puede incorporar una secuencia de pasos cuando se necesita registrar, actualizar o revisar un elemento. Por ejemplo, una operación puede comenzar con el ingreso de datos, continuar con la validación de la información y finalizar con la confirmación del registro.
+- **Pantallas Emergentes:**
+Las pantallas emergentes de Relient se utilizan para presentar mensajes de confirmación, advertencias e información relevante durante la interacción con la plataforma. Estos elementos permiten confirmar acciones importantes, especialmente aquellas relacionadas con la modificación o eliminación de registros de usuarios, equipos, componentes e información de inventario. Su contenido debe ser claro y directo, indicando la acción que se realizará y sus posibles consecuencias cuando corresponda. De esta manera, se busca reducir errores durante la gestión de la información y proporcionar al usuario mayor claridad antes de completar operaciones relevantes.
 
-### 4.2.2. Labeling Systems.
-El sistema de etiquetado de Relient busca utilizar nombres breves, reconocibles y relacionados directamente con las funciones de la plataforma. Las etiquetas deben permitir que el usuario anticipe el contenido de una sección antes de ingresar a ella.
-En la Landing Page se utilizan nombres como Home, About Us, How does it work?, FAQs y Contact. Estas denominaciones ayudan a separar la información institucional, la explicación del producto y los canales de comunicación.
-En la Web Application, las etiquetas principales corresponden a los módulos de Usuarios, Equipos, Componentes, Señales, Alertas, Reportes e Inventario. Cada nombre se relaciona con el tipo de información que el usuario puede consultar o administrar dentro de la plataforma.
-Las acciones deben utilizar expresiones orientadas a la tarea, como “Registrar”, “Guardar”, “Editar”, “Consultar”, “Filtrar” o “Generar reporte”, siempre que correspondan con la funcionalidad implementada. Se evitarán términos excesivamente técnicos, abreviaturas poco claras o denominaciones diferentes para una misma acción.
+- **Formularios:**
+Los formularios de Relient están diseñados para facilitar el registro y la actualización de información dentro de los distintos módulos de la Web Application. Cada campo cuenta con etiquetas visibles, una distribución ordenada y espacios adecuados que favorecen la lectura y la identificación de los datos requeridos. Asimismo, los mensajes de validación permiten informar al usuario cuando existen campos incompletos o datos incorrectos, orientándolo para corregir los errores antes de continuar con el proceso.
+
+- **Tarjetas y componentes de información:**
+Las tarjetas se utilizan para presentar indicadores, estados de equipos, alertas y otros datos relevantes de manera organizada. Cada componente mantiene una estructura visual consistente que facilita la identificación y comparación de la información. Esta organización permite distribuir los registros y los indicadores en secciones diferenciadas, favoreciendo la consulta de datos y el seguimiento de la información operativa.
+
+- **Diseño adaptable:**
+Las interfaces web de Relient consideran la adaptación de sus componentes a diferentes tamaños de pantalla. En equipos de escritorio, la Web Application utiliza una estructura que combina una barra superior, un menú lateral y áreas de contenido destinadas a la gestión de registros e indicadores. En pantallas de menor tamaño, la distribución de los elementos debe ajustarse para conservar la legibilidad, evitar desbordamientos horizontales y facilitar la interacción con los botones, formularios y componentes de información.
+
+- **Accesibilidad:**
+El diseño web de Relient considera criterios de accesibilidad orientados a facilitar la comprensión y el uso de la plataforma. Para ello, se prioriza el contraste entre el texto y el fondo, el uso de etiquetas descriptivas en los formularios, los nombres comprensibles en los botones y una jerarquía visual clara. Asimismo, los estados de interacción deben permitir identificar los elementos activos y las opciones disponibles, contribuyendo a una experiencia de uso más clara y consistente.
+
+## 4.2. Information Architecture
+La arquitectura de información de Relient permite organizar y estructurar los contenidos de la plataforma para facilitar la identificación de las funcionalidades y el acceso a la información requerida. Debido a que la solución está orientada a la gestión y el monitoreo de procesos, equipos, componentes y recursos de los sectores industrial y minero, resulta fundamental establecer una distribución clara de los módulos y las acciones disponibles. La Landing Page presenta la propuesta de valor y las principales características del producto, mientras que la Web Application permite consultar y administrar información operativa mediante módulos específicos. Esta organización facilita la navegación y contribuye a una experiencia de usuario coherente durante la interacción con las diferentes interfaces de la plataforma.
+
+### 4.2.1. Organization System
+El sistema de organización de Relient está diseñado para estructurar visualmente los contenidos y facilitar el acceso a las diferentes funcionalidades de la plataforma mediante una organización jerárquica y temática.
+En la Landing Page, el contenido se distribuye desde la presentación inicial de InnovaCorp y la propuesta de valor de Relient hacia las secciones informativas About Us, How does it work?, FAQs y Contact. Esta estructura permite que los usuarios conozcan la solución, comprendan su funcionamiento y encuentren información adicional de manera ordenada.
+En la Web Application, la información se organiza en módulos correspondientes a las principales funciones de gestión y monitoreo: Usuarios, Equipos, Componentes, Señales, Alertas, Reportes e Inventario. Cada módulo agrupa los registros y las operaciones relacionadas con su finalidad, facilitando la consulta y administración de la información.
+Asimismo, las vistas de gestión presentan los elementos de acuerdo con su importancia y función, priorizando los datos relevantes y las acciones disponibles. En los procesos de registro y actualización, la información se organiza mediante campos y acciones claramente identificados, permitiendo ingresar datos, validar la información y confirmar las operaciones correspondientes. Esta estructura busca mantener una presentación ordenada y facilitar el seguimiento de las actividades realizadas en la plataforma.
+
+### 4.2.2. Labeling System
+El sistema de etiquetado de Relient establece denominaciones claras y consistentes para identificar las secciones, los módulos y las acciones disponibles en la plataforma. Los nombres utilizados deben permitir que los usuarios comprendan la finalidad de cada elemento antes de interactuar con él.
+En la Landing Page, las etiquetas principales incluyen Home, About Us, How does it work?, FAQs y Contact. Estas denominaciones permiten distinguir las secciones informativas y facilitan el acceso a la información relacionada con la propuesta de valor y el funcionamiento de Relient. Asimismo, las opciones Login, Sign Up y Empezar ya permiten identificar los accesos relacionados con la interacción inicial con la plataforma.
+En la Web Application, las etiquetas corresponden a los módulos Usuarios, Equipos, Componentes, Señales, Alertas, Reportes e Inventario. Cada denominación identifica el tipo de información que puede consultarse o administrarse en la sección correspondiente.
+Las acciones disponibles utilizan etiquetas orientadas a las tareas, como Registrar, Guardar, Editar, Consultar, Filtrar y Generar reporte, según las funcionalidades definidas para cada módulo. La utilización consistente de estas denominaciones permite reducir ambigüedades, facilitar la comprensión de las opciones y mantener una experiencia de navegación uniforme.
 
 ### 4.2.3. SEO Tags and Meta Tags
-Las etiquetas SEO y los Meta Tags de Relient se plantean como recursos para describir el contenido de la Landing Page y facilitar su identificación por parte de los motores de búsqueda. Estos valores permiten comunicar el nombre del producto, su finalidad y los temas relacionados con la solución.
-Para InnovaCorp se proponen los siguientes contenidos:
+Las etiquetas SEO y los metadatos de Relient permiten describir el contenido de las páginas web e identificar su propósito mediante información incorporada en el código HTML. Estos elementos contribuyen a comunicar la identidad de InnovaCorp, la finalidad de Relient y su relación con la gestión y el monitoreo de procesos industriales. Para ello, se definen los atributos correspondientes a la codificación, la visualización en dispositivos, el título, la descripción, las palabras clave y la autoría de cada interfaz.
+Las etiquetas propuestas para la Landing Page y la Web Application se presentan en los siguientes cuadros.
 
-|## Tag | ## Valor|
-|:--:|:--:|
-|Title | InnovaCorp - Monitoreo inteligente de procesos industriales |
-| Description | InnovaCorp ofrece soluciones tecnológicas para monitorear procesos, anticipar fallas y mejorar la trazabilidad industrial|
-| Keywords | InnovaCorp, Relient, monitoreo industrial, trazabilidad, prevención de fallas |
-| Author | InnovaCorp 
+| Módulo | Criterios de búsqueda | Funcionalidad |
+|---|---|---|
+| Usuarios | Nombre, código y estado | Permite localizar y consultar usuarios registrados. |
+| Equipos | Nombre, código y categoría | Facilita encontrar equipos registrados en la plataforma. |
+| Componentes | Nombre, código y estado | Permite identificar componentes y consultar sus datos. |
+| Señales | Nombre, categoría y fecha | Facilita localizar señales registradas y consultar su información. |
+| Alertas | Tipo, estado y fecha | Permite identificar alertas y revisar su situación actual. |
+| Reportes | Nombre, categoría y fecha | Facilita localizar reportes generados en la plataforma. |
+| Inventario | Nombre, código y categoría | Permite encontrar elementos registrados en el inventario. |
 
-Los valores anteriores representan una propuesta inicial y deben validarse durante la implementación del sitio web. El atributo Title identifica el nombre principal de la página, mientras que la Description presenta una síntesis del servicio ofrecido. Las Keywords reúnen términos relacionados con la actividad de InnovaCorp y el propósito de Relient.
-Estas etiquetas se incorporan dentro del elemento <head> del documento HTML. En el caso de la Web Application, los títulos y descripciones pueden ajustarse de acuerdo con la vista o funcionalidad que se esté mostrando.
+| Interfaz | Elemento de navegación | Destino o función |
+|---|---|---|
+| Landing Page | Home | Permite regresar a la sección de inicio. |
+| Landing Page | About Us | Presenta información sobre InnovaCorp. |
+| Landing Page | How does it work? | Explica el funcionamiento de Relient. |
+| Landing Page | FAQs | Presenta respuestas a preguntas frecuentes. |
+| Landing Page | Contact | Facilita el acceso a la información de contacto. |
+| Landing Page | Login | Permite acceder a la plataforma. |
+| Landing Page | Sign Up | Dirige al registro de nuevos usuarios. |
+| Landing Page | Empezar ya | Facilita el acceso al inicio de la experiencia del producto. |
+| Web Application | Menú lateral | Permite acceder a los módulos Usuarios, Equipos, Componentes, Señales, Alertas, Reportes e Inventario. |
+| Web Application | Barra superior | Agrupa elementos generales de navegación y acceso a la plataforma. |
+| Web Application | Pie de página | Complementa la navegación con información institucional y enlaces adicionales. |
 
-### 4.2.4. Searching Systems.
-El sistema de búsqueda de Relient se define según la cantidad y el tipo de información que debe consultar el usuario en cada interfaz.
-En la Landing Page no se considera necesaria una barra de búsqueda principal, debido a que sus contenidos se encuentran distribuidos en secciones específicas y pueden localizarse mediante la navegación superior. El usuario puede dirigirse a las secciones informativas utilizando los enlaces disponibles.
-En la Web Application, la búsqueda adquiere mayor importancia porque se gestionan registros relacionados con usuarios, equipos, componentes, señales, alertas, reportes e inventarios. Por este motivo, se pueden incorporar campos de búsqueda y filtros que faciliten la localización de información.
-Los criterios de filtrado pueden variar según el módulo. Por ejemplo, se pueden considerar nombres, códigos, categorías, estados o fechas, siempre que estos datos formen parte de la información gestionada por la plataforma. Los resultados deben mostrarse de forma ordenada para que el usuario pueda reconocer los registros y acceder a sus detalles.
-Los filtros deben ser comprensibles y permitir que el usuario modifique o elimine los criterios seleccionados. De esta manera, se evita que la búsqueda se convierta en un proceso complicado o que se presenten demasiadas opciones al mismo tiempo.
+Los valores presentados constituyen una propuesta inicial que debe verificarse durante la implementación. El atributo Charset define la codificación de caracteres, mientras que Viewport permite adaptar la visualización a las dimensiones del dispositivo. El atributo Title establece el título de la página y Description proporciona una síntesis de su contenido. Por su parte, Keywords reúne términos relacionados con la solución y Author identifica al responsable del contenido.
+El atributo CSS Link representa la referencia a la hoja de estilos utilizada en la interfaz y debe ajustarse a la ruta real del archivo dentro del proyecto. Estos metadatos se incorporan en el elemento head del documento HTML. En la Landing Page, se prioriza la presentación de la propuesta de valor de Relient, mientras que en la Web Application se describen las principales funciones de gestión y monitoreo.
 
-### 4.2.5. Navigation Systems.
-El sistema de navegación de Relient tiene como objetivo facilitar el desplazamiento entre las distintas secciones de la experiencia digital. Para ello, se establecen rutas claras que permitan al usuario comprender dónde se encuentra y qué acciones puede realizar.
-En la Landing Page, la navegación principal se presenta en la parte superior e incluye los accesos a Home, About Us, How does it work?, FAQs y Contact. Estos enlaces permiten desplazarse hacia las secciones correspondientes de la página. Además, se consideran acciones como “Empezar ya”, Login y Sign Up, las cuales dirigen al usuario hacia los puntos de interacción definidos en los mockups.
-En la Web Application, la navegación se organiza alrededor de los módulos principales de Relient. Los accesos a Usuarios, Equipos, Componentes, Señales, Alertas, Reportes e Inventario deben mantenerse visibles y ordenados para facilitar el acceso a las funciones de gestión y monitoreo.
-El footer de la Landing Page complementa la navegación mediante información adicional de la marca y accesos relacionados con las secciones disponibles. Su contenido debe mantener una estructura sencilla y consistente con el resto de la interfaz.
-En pantallas pequeñas, los elementos de navegación deben reorganizarse para conservar su visibilidad y permitir una interacción adecuada. Dentro de la Web Application, los recorridos deben mantener una relación clara entre los módulos, los registros y las acciones disponibles, evitando que el usuario pierda el contexto de la tarea que está realizando.
+### 4.2.4. Searching Systems
+El sistema de búsqueda de Relient está orientado a facilitar la localización de información de acuerdo con las necesidades de cada interfaz.
+En la Landing Page, no se considera necesaria una barra de búsqueda principal, debido a que el contenido se distribuye en secciones informativas accesibles mediante la navegación superior. Los usuarios pueden dirigirse a About Us, How does it work?, FAQs y Contact para encontrar información sobre el producto y su funcionamiento.
+En la Web Application, la búsqueda adquiere mayor relevancia debido a la cantidad de registros relacionados con usuarios, equipos, componentes, señales, alertas, reportes e inventario. Por ello, se consideran campos de búsqueda y filtros que permitan localizar información específica según las características de cada módulo.
+Los criterios de búsqueda pueden incluir nombres, códigos, categorías, estados y fechas, siempre que estos atributos correspondan a los registros gestionados. Los resultados deben presentarse de manera organizada para facilitar la identificación de los elementos y el acceso a sus detalles. Asimismo, los filtros deben contar con etiquetas comprensibles y permitir modificar o restablecer los criterios seleccionados, facilitando la consulta de información sin generar complejidad innecesaria.
 
-## 4.3. Landing Page UI Design.
-El diseño de la interfaz de la Landing Page de Relient representa visualmente la propuesta de InnovaCorp y permite presentar el propósito de la solución de manera ordenada. Su estructura se desarrolla a partir de los criterios definidos en las Style Guidelines y en la arquitectura de información.
-La interfaz busca comunicar el valor de Relient, explicar de manera sencilla su finalidad y facilitar el acceso a las principales acciones de navegación. Para ello, se utilizan recursos como la jerarquía tipográfica, la paleta de colores, los espacios entre secciones y los componentes interactivos.
-El diseño considera una presentación adaptable a diferentes tamaños de pantalla, manteniendo una relación visual entre los elementos de la marca y las funcionalidades que posteriormente se encuentran disponibles en la Web Application.
+### 4.2.5. Navigation Systems
+El sistema de navegación de Relient permite desplazarse entre las diferentes secciones de la Landing Page y los módulos de la Web Application mediante una estructura clara y consistente.
+En la Landing Page, la barra de navegación se ubica en la parte superior e incluye los accesos Home, About Us, How does it work?, FAQs y Contact. Estos enlaces permiten acceder a las secciones informativas correspondientes. Además, las opciones Login, Sign Up y Empezar ya facilitan el acceso a los puntos de interacción definidos en los mockups. El pie de página complementa la navegación mediante información institucional y enlaces relacionados con el contenido del sitio.
+En la Web Application, la navegación se organiza mediante una barra superior y un menú lateral que permite acceder a los módulos Usuarios, Equipos, Componentes, Señales, Alertas, Reportes e Inventario. Esta distribución facilita el acceso a las funcionalidades de gestión y monitoreo, manteniendo una estructura reconocible entre las diferentes vistas.
+Asimismo, la navegación debe permitir que los usuarios identifiquen la sección en la que se encuentran y comprendan las acciones disponibles en cada módulo. En las pantallas de menor tamaño, los elementos de navegación deben reorganizarse para conservar su legibilidad y facilitar la interacción. De esta manera, Relient busca ofrecer recorridos claros y consistentes, desde la consulta inicial de información hasta la gestión de los registros dentro de la plataforma.
 
-### 4.3.1. Landing Page Wireframe.
-Los wireframes de la Landing Page de Relient muestran la distribución preliminar de los elementos que conforman la interfaz antes de aplicar todos los estilos visuales. Estos esquemas permiten revisar la ubicación de los contenidos, la organización de la navegación y la jerarquía de las secciones principales.
-La elaboración de los wireframes facilita la identificación de posibles problemas de distribución y permite realizar ajustes antes de desarrollar la interfaz definitiva. También ayuda a comprobar que los elementos principales, como el logotipo, los enlaces de navegación y los botones de acción, se encuentren ubicados de acuerdo con la estructura propuesta.
+## 4.3. Landing Page UI Design
+El diseño de la interfaz de la Landing Page de Relient representa visualmente la propuesta de valor de InnovaCorp y comunica las principales características de la solución orientada a la gestión y el monitoreo de procesos industriales. Su desarrollo considera los lineamientos visuales y la arquitectura de información definidos previamente, con el propósito de mantener una presentación coherente, facilitar la comprensión de los contenidos y permitir el acceso a las principales secciones del producto.
+La propuesta contempla las interfaces para escritorio y dispositivos móviles, organizando la información en cuatro secciones principales: Inicio, Servicios, Planes y Quiénes somos. Esta estructura permite presentar la propuesta de valor, describir las funcionalidades de Relient, comunicar las alternativas disponibles y dar a conocer la identidad de InnovaCorp mediante una distribución clara y consistente.
 
-## Desktop Web Browser
-<img src="assets/img/2.chapter-ii/2.3.needfinding/webW1.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/webW2.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/webW3.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/webW4.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/webW5.png"> 
+### 4.3.1. Landing Page Wireframe
+Los wireframes de la Landing Page de Relient permiten definir la estructura y distribución de los elementos que conforman la interfaz antes de establecer su diseño visual definitivo. Mediante estas representaciones se identifican la ubicación del logotipo, los elementos de navegación, los bloques de contenido, las imágenes y los botones de acción. Su elaboración permite revisar la organización de las secciones y establecer una base estructural para el desarrollo de los mockups.
 
-## Mobile Web Browser
-<img src="assets/img/2.chapter-ii/2.3.needfinding/movilW1.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/movilW2.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/movilW3.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/movilW4.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/movilW5.png"> 
+**Desktop Web Browser**
+Los wireframes para escritorio presentan una distribución horizontal que permite organizar los elementos de navegación en la parte superior y distribuir los contenidos en secciones diferenciadas. La estructura contempla las vistas de Inicio, Servicios, Planes y Quiénes somos, manteniendo una secuencia que facilita el recorrido por la información. Asimismo, se considera la ubicación de los elementos principales y del pie de página para conservar una organización uniforme a lo largo de la Landing Page.
+
+<img src="assets/img/chapter-ii/needfinding/landing-wireframe1.png">
+<img src="assets/img/chapter-ii/needfinding/landing-wireframe2.png">
+<img src="assets/img/chapter-ii/needfinding/landing-wireframe3.png">
+<img src="assets/img/chapter-ii/needfinding/landing-wireframe4.png">
+
+**Mobile Web Browser**
+Los wireframes para dispositivos móviles adaptan la estructura de la Landing Page a las dimensiones reducidas de la pantalla, reorganizando los contenidos en una disposición vertical. La navegación se concentra en la parte superior, mientras que los bloques informativos, las imágenes y las acciones se distribuyen de manera secuencial. Esta organización permite conservar la relación entre las secciones de escritorio y móvil, priorizando la legibilidad y el acceso a los contenidos sin sobrecargar el espacio disponible.
+
+<img src="assets/img/chapter-ii/needfinding/mobile-wireframe1.png">
+<img src="assets/img/chapter-ii/needfinding/mobile-wireframe2.png">
+<img src="assets/img/chapter-ii/needfinding/mobile-wireframe3.png">
+<img src="assets/img/chapter-ii/needfinding/mobile-wireframe4.png">
+
+### 4.3.2. Landing Page Mock-up
+Los mockups de la Landing Page de Relient presentan la propuesta visual de las interfaces mediante la aplicación de las tipografías, los colores, las imágenes y los componentes definidos en las General Style Guidelines. Estas representaciones permiten evaluar la jerarquía visual, la distribución de los contenidos y la consistencia de los elementos de navegación antes de la implementación de la interfaz.
+
+<img src="assets/img/chapter-ii/needfinding/landing-mockup1.png">
+<img src="assets/img/chapter-ii/needfinding/landing-mockup2.png">
+<img src="assets/img/chapter-ii/needfinding/landing-mockup3.png">
+<img src="assets/img/chapter-ii/needfinding/landing-mockup4.png">
+
+**Mobile Web Browser**
+Los mockups para dispositivos móviles mantienen la identidad visual de Relient y adaptan la presentación de los contenidos a una estructura vertical. La parte superior incorpora el logotipo y un menú desplegable que permite acceder a las diferentes secciones. En la pantalla de Inicio se presenta el mensaje principal, una descripción breve de la propuesta de valor, un botón de acción y una imagen representativa del monitoreo industrial.
+La sección Servicios distribuye las funcionalidades en bloques informativos y complementa la descripción con una imagen relacionada con los procesos industriales. En la sección Planes, las alternativas se presentan mediante tarjetas verticales que facilitan la consulta de sus características y precios. Finalmente, la pantalla Quiénes somos incorpora una imagen principal y tarjetas diferenciadas para presentar la misión, la visión y los valores de InnovaCorp. El pie de página conserva la información institucional y los enlaces complementarios, adaptándose al espacio disponible en dispositivos móviles.
+
+<img src="assets/img/chapter-ii/needfinding/mobile-mockup1.png">
+<img src="assets/img/chapter-ii/needfinding/mobile-mockup2.png">
+<img src="assets/img/chapter-ii/needfinding/mobile-mockup3.png">
+<img src="assets/img/chapter-ii/needfinding/mobile-mockup4.png">
+
+## 4.4. Web Applications UX/UI Design
+El diseño UX/UI de la Web Application de Relient, desarrollada por InnovaCorp, se basa en los resultados obtenidos durante el proceso de investigación de usuarios, los User Stories definidos en el Product Backlog y los lineamientos visuales establecidos previamente. Su propósito es representar la estructura de las interfaces y facilitar la comprensión de las funcionalidades relacionadas con la gestión y el monitoreo de procesos industriales.
+La propuesta contempla la organización de las pantallas, los componentes de interacción y los recorridos que permiten acceder a las diferentes funcionalidades de la plataforma. Para ello, se utilizan wireframes, wireflow diagrams, mockups y user flow diagrams, que permiten analizar la distribución de los elementos y la secuencia de las acciones. Estos recursos consideran los módulos de Usuarios, Equipos, Componentes, Señales, Alertas, Reportes e Inventario, manteniendo una estructura visual coherente con la identidad de Relient.
+
+### 4.4.1. Web Applications Wireframes
+Los wireframes de la Web Application de Relient presentan la estructura preliminar de las pantallas de la plataforma antes de incorporar los estilos visuales definitivos. Estas representaciones permiten identificar la ubicación de los elementos de navegación, los formularios, los botones, las tablas y las áreas de contenido, facilitando la revisión de la organización de las interfaces.
+Para facilitar su análisis, las pantallas se presentan en el orden establecido en el diseño original y se agrupan de acuerdo con su secuencia. Esta organización permite observar la evolución de la estructura desde las pantallas iniciales hasta las vistas relacionadas con la gestión de información y las operaciones de la plataforma.
+
+**Desktop Web Browser**
+
+**Pantallas iniciales y acceso a la plataforma**
+Las primeras pantallas permiten examinar la distribución de los elementos de acceso y los componentes iniciales de la interfaz. En esta etapa se considera la ubicación de los campos de entrada, las etiquetas y los botones, procurando que los elementos necesarios para interactuar con la plataforma sean reconocibles y mantengan una disposición ordenada.
+
+<img src="assets/img/chapter-ii/needfinding/wireframe1.png">
+<img src="assets/img/chapter-ii/needfinding/wireframe2.png">
+<img src="assets/img/chapter-ii/needfinding/wireframe3.png">
+<img src="assets/img/chapter-ii/needfinding/wireframe4.png">
+<img src="assets/img/chapter-ii/needfinding/wireframe5.png">
+
+**Pantallas de consulta y gestión de información**
+Las siguientes pantallas permiten observar la distribución de los contenidos y los componentes destinados a la consulta y gestión de información. La organización de los campos, las áreas de contenido y los controles busca facilitar la identificación de los datos y las acciones disponibles en cada vista.
+
+<img src="assets/img/chapter-ii/needfinding/wireframe6.png">
+<img src="assets/img/chapter-ii/needfinding/wireframe7.png">
+<img src="assets/img/chapter-ii/needfinding/wireframe8.png">
+<img src="assets/img/chapter-ii/needfinding/wireframe9.png">
+<img src="assets/img/chapter-ii/needfinding/wireframe10.png">
+
+**Pantallas de registro y operaciones**
+En este grupo se presentan las estructuras correspondientes a las pantallas siguientes del diseño. Los wireframes permiten revisar la ubicación de los campos, las etiquetas y los botones asociados con las operaciones, manteniendo una distribución uniforme entre los diferentes elementos de la interfaz.
+
+<img src="assets/img/chapter-ii/needfinding/wireframe11.png">
+<img src="assets/img/chapter-ii/needfinding/wireframe12.png">
+<img src="assets/img/chapter-ii/needfinding/wireframe13.png">
+<img src="assets/img/chapter-ii/needfinding/wireframe14.png">
+<img src="assets/img/chapter-ii/needfinding/wireframe15.png">
+
+**Pantallas complementarias de la plataforma**
+Las últimas pantallas completan la representación estructural de la Web Application. Su revisión permite observar la disposición de los componentes restantes y comprobar la consistencia de la estructura visual a lo largo de las distintas vistas de Relient.
+
+<img src="assets/img/chapter-ii/needfinding/wireframe16.png">
+<img src="assets/img/chapter-ii/needfinding/wireframe17.png">
+<img src="assets/img/chapter-ii/needfinding/wireframe18.png">
+<img src="assets/img/chapter-ii/needfinding/wireframe19.png">
+<img src="assets/img/chapter-ii/needfinding/wireframe20.png">
+<img src="assets/img/chapter-ii/needfinding/wireframe21.png">
+
+### 4.4.2. Web Applications Wireflow Diagrams
+Los wireflow diagrams de Relient representan la conexión entre las pantallas de la Web Application y las transiciones que permiten al usuario desplazarse entre ellas. Estos diagramas combinan la estructura de los wireframes con las conexiones que indican la secuencia de navegación, facilitando la comprensión de cómo se relacionan las diferentes interfaces durante la interacción con la plataforma.
+La representación se basa en los wireframes definidos para Relient y conserva la distribución de las pantallas y las conexiones establecidas en el diseño original. Para facilitar su lectura, se presenta primero el diagrama completo y, posteriormente, sus ampliaciones, que permiten examinar con mayor detalle las relaciones entre las interfaces.
+
+**Diagrama general del recorrido**
+La siguiente imagen presenta el wireflow completo de Relient, mostrando la distribución de las pantallas y las conexiones entre ellas. Esta vista permite comprender la estructura general de los recorridos de navegación definidos para la Web Application.
+
+<img src="assets/img/chapter-ii/needfinding/wireflow.png">
+
+**Detalle 1: Pantallas iniciales y acceso**
+Este primer detalle permite observar las pantallas iniciales del recorrido y las conexiones establecidas entre las interfaces correspondientes. Su propósito es facilitar la revisión de la secuencia de navegación representada en esta parte del diagrama.
+
+<img src="assets/img/chapter-ii/needfinding/wireflow1.png">
+
+**Detalle 2: Transiciones entre interfaces**
+Este segundo detalle amplía otra sección del wireflow para facilitar la identificación de las pantallas conectadas y la dirección de las transiciones. Permite examinar cómo continúa el recorrido representado en el diseño original.
+
+<img src="assets/img/chapter-ii/needfinding/wireflow2.png">
+
+**Detalle 3: Continuidad de la navegación**
+El tercer detalle permite revisar las conexiones entre las pantallas que forman parte de la siguiente sección del recorrido. Esta ampliación facilita la lectura de las relaciones entre las interfaces sin perder de vista la secuencia establecida en el diagrama general.
+
+<img src="assets/img/chapter-ii/needfinding/wireflow3.png">
+
+**Detalle 4: Conexiones entre pantallas**
+El cuarto detalle muestra otra parte de las conexiones definidas en el wireflow. Su revisión permite identificar la continuidad de los recorridos y la relación entre las diferentes estructuras de interfaz representadas.
+
+<img src="assets/img/chapter-ii/needfinding/wireflow4.png">
+
+**Detalle 5: Pantallas finales del recorrido**
+El último detalle complementa la visualización del diagrama y permite examinar la parte final de las conexiones representadas. En conjunto con las ampliaciones anteriores, facilita la revisión integral de la navegación planteada para Relient.
+
+<img src="assets/img/chapter-ii/needfinding/wireflow5.png">
+
+### 4.4.3. Web Applications Mock-ups
+Los mockups de la Web Application de Relient presentan las pantallas con los estilos visuales aplicados, incorporando la paleta cromática, las tipografías, los botones, los formularios y los demás componentes definidos en las General Style Guidelines. Estas representaciones permiten evaluar la jerarquía visual, la distribución de los contenidos y la consistencia de las interfaces antes de su implementación.
+Las pantallas se presentan en el mismo orden que los wireframes para facilitar la comparación entre la estructura preliminar y la propuesta visual. Esta correspondencia permite observar cómo se aplican los lineamientos de diseño a las diferentes vistas de la plataforma.
+
+**Desktop Web Browser**
+
+**Pantallas iniciales y acceso a la plataforma**
+Las primeras pantallas permiten examinar la distribución de los elementos de acceso y los componentes iniciales de la interfaz. En esta etapa se considera la ubicación de los campos de entrada, las etiquetas y los botones, procurando que los elementos necesarios para interactuar con la plataforma sean reconocibles y mantengan una disposición ordenada.
+
+<img src="assets/img/chapter-ii/needfinding/mockup1.png">
+<img src="assets/img/chapter-ii/needfinding/mockup2.png">
+<img src="assets/img/chapter-ii/needfinding/mockup3.png">
+<img src="assets/img/chapter-ii/needfinding/mockup4.png">
+<img src="assets/img/chapter-ii/needfinding/mockup5.png">
+
+**Pantallas de consulta y gestión de información**
+Estas pantallas permiten observar la organización de la información y los componentes destinados a facilitar la consulta y gestión de los datos dentro de la plataforma.
+
+<img src="assets/img/chapter-ii/needfinding/mockup6.png">
+<img src="assets/img/chapter-ii/needfinding/mockup7.png">
+<img src="assets/img/chapter-ii/needfinding/mockup8.png">
+<img src="assets/img/chapter-ii/needfinding/mockup9.png">
+<img src="assets/img/chapter-ii/needfinding/mockup10.png">
+
+**Pantallas de registro y operaciones**
+Estas pantallas muestran la disposición de los formularios y componentes utilizados para registrar información y realizar operaciones dentro de la plataforma. La distribución de los elementos busca facilitar la identificación de las acciones disponibles y mantener una estructura visual coherente.
+
+<img src="assets/img/chapter-ii/needfinding/mockup11.png">
+<img src="assets/img/chapter-ii/needfinding/mockup12.png">
+<img src="assets/img/chapter-ii/needfinding/mockup13.png">
+<img src="assets/img/chapter-ii/needfinding/mockup14.png">
+<img src="assets/img/chapter-ii/needfinding/mockup15.png">
+
+**Pantallas complementarias de la plataforma**
+Las últimas pantallas muestran la continuidad de los criterios visuales en las vistas restantes de Relient. La aplicación uniforme de los colores, la tipografía y los componentes permite mantener una identidad visual consistente en las distintas interfaces de gestión y consulta.
+
+<img src="assets/img/chapter-ii/needfinding/mockup16.png">
+<img src="assets/img/chapter-ii/needfinding/mockup17.png">
+<img src="assets/img/chapter-ii/needfinding/mockup18.png">
+<img src="assets/img/chapter-ii/needfinding/mockup19.png">
+<img src="assets/img/chapter-ii/needfinding/mockup20.png">
+<img src="assets/img/chapter-ii/needfinding/mockup21.png">
+
+### 4.4.4. Web Applications User Flow Diagrams
+Los User Flow Diagrams de Relient representan los recorridos que sigue el usuario para interactuar con las funcionalidades de la Web Application. Los diagramas se han organizado por procesos para facilitar la comprensión de las relaciones entre las pantallas y las acciones involucradas en cada recorrido. Para su elaboración, se consideran los mockups de la plataforma, manteniendo correspondencia con los módulos y las operaciones representadas en el diseño UX/UI.
+
+**Acceso a la plataforma y navegación inicial**
+Este recorrido presenta las pantallas relacionadas con el acceso a la plataforma, la navegación inicial y la suscripción, de acuerdo con la secuencia representada en los diseños.
+
+<img src="assets/img/chapter-ii/needfinding/userflow1.png">
+
+**Gestión y configuración de equipos HVOF**
+Este diagrama representa el recorrido relacionado con los equipos HVOF y las pantallas destinadas a su configuración y gestión.
+
+<img src="assets/img/chapter-ii/needfinding/userflow2.png">
+
+**Gestión de componentes y órdenes PCR**
+Este recorrido muestra las relaciones entre las pantallas vinculadas con la gestión de componentes y las órdenes PCR, siguiendo la organización establecida en los mockups.
+
+<img src="assets/img/chapter-ii/needfinding/userflow3.png">
+
+**Sesiones, monitoreo, fallas y alertas**
+Este diagrama presenta el recorrido asociado con las sesiones, el monitoreo y la consulta de información relacionada con fallas y alertas.
+
+<img src="assets/img/chapter-ii/needfinding/userflow4.png">
+
+**Reportes y cierre de procesos**
+Este último recorrido representa las pantallas relacionadas con los reportes y las etapas finales contempladas en el flujo de la plataforma.
+
+<img src="assets/img/chapter-ii/needfinding/userflow5.png">
+
+### 4.5. Web Applications Prototyping
+Para desarrollar los prototipos de la interfaz de usuario de Relient para Desktop y Mobile Web Browser, se consideraron criterios de interacción orientados a facilitar la navegación, organizar la información y permitir que los usuarios realicen sus tareas de manera clara y eficiente. Las decisiones de diseño se relacionan con la arquitectura de información y el sistema de navegación definidos previamente, considerando los siguientes principios:
+
+1. Simplicidad y usabilidad: Se busca que la navegación sea clara y consistente, facilitando el acceso a las principales funcionalidades de Relient, como la gestión de usuarios, equipos HVOF, componentes recuperados, órdenes de trabajo, sesiones de recubrimiento, monitoreo de parámetros, diagnóstico de fallas y consulta de reportes.
+2. Diseño adaptable: La propuesta considera la visualización de la interfaz en diferentes tamaños de pantalla, tanto en Desktop como en Mobile Web Browser, procurando mantener la legibilidad de la información y facilitar la interacción según el dispositivo utilizado.
+3. Enfoque en la información clave: Las interfaces priorizan los datos relevantes para las tareas de los usuarios, como el estado de los componentes, los parámetros de operación, el historial de sesiones y las alertas, facilitando el seguimiento de los procesos de recuperación.
+4. Navegación e interacción coherentes: Las conexiones entre las pantallas se definieron tomando como referencia los User Flow Diagrams y el sistema de navegación de Relient, permitiendo representar los recorridos principales entre las funcionalidades de la aplicación.
+
+A continuación, se presenta una captura del prototipo interactivo de Relient en modo de presentación de Figma, correspondiente a la interfaz de gestión de usuarios de la organización.
+
+<img src="assets/img/chapter-ii/needfinding/prototipo-relient.png">
+
+**Enlace al prototipo interactivo:**
+
+[Visualizar el prototipo de Relient en Figma](https://www.figma.com/proto/eJgrioPA9K4FTQD0pXAUI1/Mockup-Innovacor?node-id=205-460&t=SXgGHtrz1Kx1MBpN-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=205%3A301&show-proto-sidebar=1)
+
+**Video de demostración:**
+
+[Ver el video de demostración de Relient](https://drive.google.com/file/d/1zf1c5jWL4qMQMxFodapUbAed3S3XQiYO/view?usp=sharing)
 
 
-### 4.3.2. Landing Page Mock-up.
-
-## Desktop Web Browser
-<img src="assets/img/2.chapter-ii/2.3.needfinding/mockups web1.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/mockups web2.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/mockups web3.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/mockups web4.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/mockups web5.png"> 
-
-## Mobile Web Browser
-<img src="assets/img/2.chapter-ii/2.3.needfinding/mockups app1.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/mockups app2.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/mockups app3.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/mockups app4.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/mockups app5.png"> 
-
-
-## 4.4. Web Applications UX/UI Design.
-El diseño UX/UI de la Web Application de Relient, desarrollada por InnovaCorp, se plantea a partir de los resultados obtenidos durante el proceso de UX Research, los User Stories establecidos en el Product Backlog y los lineamientos visuales definidos previamente.
-El propósito de esta sección es representar la organización, navegación e interacción de las funcionalidades principales de la plataforma, facilitando que los usuarios puedan realizar sus actividades de manera comprensible, ordenada y eficiente.
-Para lograrlo, se elaborarán wireframes, wireflows, mock-ups y user flow diagrams que permitan visualizar la distribución de los componentes de la interfaz y los distintos recorridos que los usuarios pueden seguir dentro de la Web Application. Estos recursos estarán orientados a las funciones de gestión de usuarios, equipos, componentes, señales, alertas, reportes e inventario.
-
-### 4.4.1. Web Applications Wireframes.
-Los wireframes de la Web Application de Relient presentan una representación inicial de la estructura y distribución de las pantallas principales de la plataforma. Estos esquemas permiten definir la ubicación de los elementos de navegación, botones, formularios, tarjetas, tablas y secciones informativas antes de incorporar el diseño visual final.
-Asimismo, los wireframes ayudan a organizar las funcionalidades de acuerdo con las necesidades de los usuarios y los User Stories definidos, facilitando la revisión de la experiencia de navegación y la identificación de posibles mejoras en la interfaz.
-
-<img src="assets/img/2.chapter-ii/2.3.needfinding/w1.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/w2.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/w3.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/w4.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/w5.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/w6.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/w7.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/w8.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/w9.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/w10.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/w11.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/w12.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/w13.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/w14.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/w15.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/w16.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/w17.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/w18.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/w19.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/w20.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/w21.png"> 
 
 
 
 
 
-### 4.4.2. Web Applications Wireflow Diagrams.
-<img src="assets/img/2.chapter-ii/2.3.needfinding/wireflow.png"> 
 
 
 
-### 4.4.3. Web Applications Mock-ups.
-<img src="assets/img/2.chapter-ii/2.3.needfinding/MW1.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/MW2.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/MW3.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/MW4.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/MW5.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/MW6.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/MW7.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/MW8.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/MW9.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/MW10.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/MW11.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/MW12.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/MW13.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/MW14.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/MW15.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/MW16.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/MW17.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/MW18.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/MW19.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/MW20.png"> 
-<img src="assets/img/2.chapter-ii/2.3.needfinding/MW21.png"> 
 
 
-### 4.4.4. Web Applications User Flow Diagrams.
 
-Los User Flow Diagrams muestran, para cada objetivo de usuario, el recorrido completo por la Web Application: las vistas por las que pasa con su ruta, las acciones que realiza, las decisiones del sistema y los caminos alternos cuando una validación falla o el usuario no tiene permiso. Los flujos corresponden a la Web Application implementada en el Sprint 2 y cubren los cinco bounded contexts de la versión 1.0.1.
 
-| Elemento | Representa |
-|---|---|
-| Óvalo oscuro | Usuario que inicia el flujo |
-| Rectángulo verde claro | Vista de la aplicación con su ruta |
-| Rectángulo blanco | Acción del usuario o del sistema |
-| Hexágono amarillo | Decisión o validación |
-| Rectángulo rojo | Camino alterno: error, validación fallida o acceso denegado |
-| Rectángulo verde | Objetivo cumplido |
 
-#### User Flow 00. Mapa de navegación
 
-**Usuario:** Visitante y usuarios de ambos segmentos. Muestra cómo se llega a cada área de la aplicación según el estado de la sesión, el tipo de organización y el rol: el Recuperation Supplier ve Trazabilidad, Equipamiento y Sesiones de rociado; el Asset Owner solo Inicio y Acerca de; y las opciones Usuarios y Suscripción aparecen únicamente para el administrador.
 
-<img src="assets/img/4.chapter-iv/4.4.web-applications-ux-ui-design/4.4.4.user-flow-diagrams/00-navigation-map.png" alt="User flow: Mapa de navegación">
 
-#### User Flow 01. Registrar la organización y elegir el plan
 
-**Usuario:** Administrador de organización. El administrador registra su organización y su cuenta, inicia sesión y revisa su suscripción; en la selección de plan solo puede elegir el plan que corresponde a su tipo de organización.
 
-<img src="assets/img/4.chapter-iv/4.4.web-applications-ux-ui-design/4.4.4.user-flow-diagrams/01-register-organization.png" alt="User flow: Registrar la organización y elegir el plan">
 
-#### User Flow 02. Iniciar sesión, navegar y cerrar sesión
 
-**Usuario:** Cualquier usuario registrado. Cubre el inicio de sesión con credenciales inválidas, la sesión que se conserva al recargar, el cambio de idioma, la redirección cuando una ruta exige un rol que el usuario no tiene y el cierre de sesión.
 
-<img src="assets/img/4.chapter-iv/4.4.web-applications-ux-ui-design/4.4.4.user-flow-diagrams/02-sign-in-and-session.png" alt="User flow: Iniciar sesión, navegar y cerrar sesión">
 
-#### User Flow 03. Configurar un sistema HVOF
 
-**Usuario:** Supervisor de mantenimiento de máquina. El supervisor registra el sistema HVOF y, desde su detalle, sus controladores, subsistemas y partes, que luego permiten atribuir las lecturas y fallas a un componente físico de la máquina.
 
-<img src="assets/img/4.chapter-iv/4.4.web-applications-ux-ui-design/4.4.4.user-flow-diagrams/03-configure-hvof-system.png" alt="User flow: Configurar un sistema HVOF">
 
-#### User Flow 04. Definir y publicar una receta
-
-**Usuario:** Ingeniera de calidad. La ingeniera define la receta con sus componentes aplicables y las bandas de umbral de cada parámetro; el formulario exige al menos un parámetro y el orden correcto de los umbrales, guarda la receta como borrador y la publica para que pueda usarse en una sesión.
-
-<img src="assets/img/4.chapter-iv/4.4.web-applications-ux-ui-design/4.4.4.user-flow-diagrams/04-define-recipe.png" alt="User flow: Definir y publicar una receta">
-
-#### User Flow 05. Registrar la recepción de un componente
-
-**Usuario:** Supervisor de operación. El supervisor registra, si aún no existen, el cliente y el componente, y luego la orden de recuperación con su WO y OF; el cliente se completa a partir del componente seleccionado.
-
-<img src="assets/img/4.chapter-iv/4.4.web-applications-ux-ui-design/4.4.4.user-flow-diagrams/05-register-recuperation.png" alt="User flow: Registrar la recepción de un componente">
-
-#### User Flow 06. Ejecutar una sesión de rociado
-
-**Usuario:** Operador HVOF. El operador inicia la sesión eligiendo un sistema activo, una orden abierta y una receta activa del sistema, sigue las lecturas que se actualizan cada cinco segundos con su banda, y completa la sesión o la aborta indicando el motivo.
-
-<img src="assets/img/4.chapter-iv/4.4.web-applications-ux-ui-design/4.4.4.user-flow-diagrams/06-run-spray-session.png" alt="User flow: Ejecutar una sesión de rociado">
-
-#### User Flow 07. Consultar el historial de sesiones
-
-**Usuario:** Supervisor de operación. El supervisor filtra las sesiones por sistema, orden y fechas, revisa su estado y número de desviaciones, y abre el detalle de una sesión pasada o activa.
-
-<img src="assets/img/4.chapter-iv/4.4.web-applications-ux-ui-design/4.4.4.user-flow-diagrams/07-browse-session-history.png" alt="User flow: Consultar el historial de sesiones">
-
-#### User Flow 08. Gestionar los roles de los usuarios
-
-**Usuario:** Administrador de organización. El administrador asigna los roles de cada usuario de su organización, que determinan las opciones y acciones disponibles en la aplicación.
-
-<img src="assets/img/4.chapter-iv/4.4.web-applications-ux-ui-design/4.4.4.user-flow-diagrams/08-manage-user-roles.png" alt="User flow: Gestionar los roles de los usuarios">
-
-## 4.5. Web Applications Prototyping.
-En esta sección se presenta el prototipo interactivo de la Web Application de Reliant, desarrollado a partir de los mock-ups y User Flow Diagrams definidos previamente. El prototipo permite simular la navegación entre las principales vistas de la aplicación y validar la secuencia de interacción que siguen los usuarios para realizar sus tareas principales. Las conexiones entre pantallas fueron definidas considerando los recorridos establecidos en los User Flows y el sistema de navegación propuesto para la aplicación. Se consideraron las principales funcionalidades de Reliant, como el registro y seguimiento de componentes recuperados, la consulta de órdenes de trabajo, la trazabilidad de los procesos de recubrimiento HVOF, el monitoreo de parámetros de operación, el diagnóstico de fallas y el análisis del desempeño de los componentes frente a su vida útil esperada (PCR). A continuación, se presenta una captura del prototipo en funcionamiento y el enlace al video de demostración, donde se muestran los principales flujos de navegación e interacción de la aplicación.
-
-# Video:  
-https://youtu.be/ImzFsoEMSIk
 
 
 
