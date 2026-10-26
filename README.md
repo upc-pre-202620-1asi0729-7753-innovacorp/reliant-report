@@ -2456,7 +2456,7 @@ Este último recorrido representa las pantallas relacionadas con los reportes y 
 ### 4.5. Web Applications Prototyping
 Para desarrollar los prototipos de la interfaz de usuario de Relient para Desktop y Mobile Web Browser, se consideraron criterios de interacción orientados a facilitar la navegación, organizar la información y permitir que los usuarios realicen sus tareas de manera clara y eficiente. Las decisiones de diseño se relacionan con la arquitectura de información y el sistema de navegación definidos previamente, considerando los siguientes principios:
 
-
+1. Simplicidad y usabilidad: Se busca que la navegación sea clara y consistente, facilitando el acceso a las principales funcionalidades de Relient, como la gestión de usuarios, equipos HVOF, componentes recuperados, órdenes de trabajo, sesiones de recubrimiento, monitoreo de parámetros, diagnóstico de fallas y consulta de reportes.
 
 
 
