@@ -2188,6 +2188,8 @@ En el diseño web de Relient, las imágenes y los recursos gráficos se utilizan
 - **Botones:**
 Los botones de Relient siguen los criterios establecidos en las General Style Guidelines, utilizando una jerarquía visual que permite distinguir las acciones principales de las secundarias. El color naranja (#E2942E) se emplea para destacar acciones relevantes, como ingresar a la plataforma, registrar información, guardar cambios o iniciar una operación. Asimismo, los botones presentan estados visuales de interacción, como hover y focus, que proporcionan retroalimentación al usuario. Su ubicación y diseño buscan facilitar la identificación de las acciones disponibles y mantener una interacción coherente en los diferentes módulos de la plataforma.
 
+- **Pantallas Emergentes:**
+Las pantallas emergentes de Relient se utilizan para presentar mensajes de confirmación, advertencias e información relevante durante la interacción con la plataforma. Estos elementos permiten confirmar acciones importantes, especialmente aquellas relacionadas con la modificación o eliminación de registros de usuarios, equipos, componentes e información de inventario. Su contenido debe ser claro y directo, indicando la acción que se realizará y sus posibles consecuencias cuando corresponda. De esta manera, se busca reducir errores durante la gestión de la información y proporcionar al usuario mayor claridad antes de completar operaciones relevantes.
 
 
 
