@@ -2222,7 +2222,15 @@ Las acciones disponibles utilizan etiquetas orientadas a las tareas, como Regist
 Las etiquetas SEO y los metadatos de Relient permiten describir el contenido de las páginas web e identificar su propósito mediante información incorporada en el código HTML. Estos elementos contribuyen a comunicar la identidad de InnovaCorp, la finalidad de Relient y su relación con la gestión y el monitoreo de procesos industriales. Para ello, se definen los atributos correspondientes a la codificación, la visualización en dispositivos, el título, la descripción, las palabras clave y la autoría de cada interfaz.
 Las etiquetas propuestas para la Landing Page y la Web Application se presentan en los siguientes cuadros.
 
-
+| Módulo | Criterios de búsqueda | Funcionalidad |
+|---|---|---|
+| Usuarios | Nombre, código y estado | Permite localizar y consultar usuarios registrados. |
+| Equipos | Nombre, código y categoría | Facilita encontrar equipos registrados en la plataforma. |
+| Componentes | Nombre, código y estado | Permite identificar componentes y consultar sus datos. |
+| Señales | Nombre, categoría y fecha | Facilita localizar señales registradas y consultar su información. |
+| Alertas | Tipo, estado y fecha | Permite identificar alertas y revisar su situación actual. |
+| Reportes | Nombre, categoría y fecha | Facilita localizar reportes generados en la plataforma. |
+| Inventario | Nombre, código y categoría | Permite encontrar elementos registrados en el inventario. |
 
 
 
