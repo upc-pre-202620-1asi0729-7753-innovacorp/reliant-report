@@ -2465,7 +2465,9 @@ A continuación, se presenta una captura del prototipo interactivo de Relient en
 
 <img src="assets/img/chapter-ii/needfinding/prototipo-relient.png">
 
+**Enlace al prototipo interactivo:**
 
+[Visualizar el prototipo de Relient en Figma](https://www.figma.com/proto/eJgrioPA9K4FTQD0pXAUI1/Mockup-Innovacor?node-id=205-460&t=SXgGHtrz1Kx1MBpN-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=205%3A301&show-proto-sidebar=1)
 
 
 
