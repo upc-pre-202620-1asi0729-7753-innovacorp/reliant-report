@@ -2418,6 +2418,8 @@ Estas pantallas muestran la disposición de los formularios y componentes utiliz
 **Pantallas complementarias de la plataforma**
 Las últimas pantallas muestran la continuidad de los criterios visuales en las vistas restantes de Relient. La aplicación uniforme de los colores, la tipografía y los componentes permite mantener una identidad visual consistente en las distintas interfaces de gestión y consulta.
 
+<img src="assets/img/chapter-ii/needfinding/mockup16.png">
+<img src="assets/img/chapter-ii/needfinding/mockup17.png">
 
 
 
