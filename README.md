@@ -2143,6 +2143,9 @@ Este capítulo abarca los aspectos relacionados con el diseño de la solución, 
 ## 4.1. Style Guidelines.
 Durante el desarrollo de Relient, es fundamental establecer lineamientos visuales que garanticen la coherencia y uniformidad de las interfaces del producto. La falta de consistencia en el uso de colores, tipografías, componentes y estilos de interacción puede dificultar la comprensión de la información y afectar la experiencia de los usuarios. En este contexto, las Style Guidelines definen los criterios visuales y funcionales que orientan el diseño de la Landing Page y la Web Application de Relient. Estas directrices se adaptan a las necesidades de los usuarios involucrados en la gestión y el monitoreo de procesos, equipos, componentes y recursos de los sectores industrial y minero. Asimismo, buscan garantizar una interfaz clara, organizada y consistente, que facilite la navegación, la consulta de información, el seguimiento de alertas y la gestión eficiente de los distintos módulos de la plataforma.
 
+### 4.1.1. General Style Guidelines
+Las General Style Guidelines establecen las normas visuales que orientan el diseño de las interfaces de Relient. Estas directrices definen los criterios de identidad visual, tipografía, colores, espaciado y tono de comunicación, con el propósito de mantener la consistencia entre la Landing Page y la Web Application, facilitar la comprensión de la información y garantizar una experiencia de usuario clara y organizada.
+
 ## 4.6. Domain-Driven Software Architecture.
 ### 4.6.1. Design-Level Event Storming.
 
