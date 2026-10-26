@@ -2446,7 +2446,7 @@ Este recorrido muestra las relaciones entre las pantallas vinculadas con la gest
 **Sesiones, monitoreo, fallas y alertas**
 Este diagrama presenta el recorrido asociado con las sesiones, el monitoreo y la consulta de información relacionada con fallas y alertas.
 
-
+<img src="assets/img/chapter-ii/needfinding/userflow4.png">
 
 
 
