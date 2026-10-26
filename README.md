@@ -2409,6 +2409,8 @@ Estas pantallas permiten observar la organización de la información y los comp
 **Pantallas de registro y operaciones**
 Estas pantallas muestran la disposición de los formularios y componentes utilizados para registrar información y realizar operaciones dentro de la plataforma. La distribución de los elementos busca facilitar la identificación de las acciones disponibles y mantener una estructura visual coherente.
 
+<img src="assets/img/chapter-ii/needfinding/mockup11.png">
+<img src="assets/img/chapter-ii/needfinding/mockup12.png">
 
 
 
