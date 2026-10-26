@@ -2140,6 +2140,9 @@ El Product Backlog se gestiona en Trello, con una lista por Sprint y una etiquet
 # Capítulo IV: Product Design
 Este capítulo abarca los aspectos relacionados con el diseño de la solución, incluyendo el estilo visual, los diagramas C4, los diagramas de clases y los modelos de bases de datos.
 
+## 4.1. Style Guidelines.
+Durante el desarrollo de Relient, es fundamental establecer lineamientos visuales que garanticen la coherencia y uniformidad de las interfaces del producto. La falta de consistencia en el uso de colores, tipografías, componentes y estilos de interacción puede dificultar la comprensión de la información y afectar la experiencia de los usuarios. En este contexto, las Style Guidelines definen los criterios visuales y funcionales que orientan el diseño de la Landing Page y la Web Application de Relient. Estas directrices se adaptan a las necesidades de los usuarios involucrados en la gestión y el monitoreo de procesos, equipos, componentes y recursos de los sectores industrial y minero. Asimismo, buscan garantizar una interfaz clara, organizada y consistente, que facilite la navegación, la consulta de información, el seguimiento de alertas y la gestión eficiente de los distintos módulos de la plataforma.
+
 ## 4.6. Domain-Driven Software Architecture.
 ### 4.6.1. Design-Level Event Storming.
 
