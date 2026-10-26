@@ -2166,6 +2166,8 @@ La selección de colores constituye un elemento fundamental para establecer la i
 
 <img src="assets/img/chapter-ii/needfinding/colors.png">
 <img src="assets/img/chapter-ii/needfinding/colors1.png">
+<img src="assets/img/chapter-ii/needfinding/colors2.png">
+
 ## 4.6. Domain-Driven Software Architecture.
 ### 4.6.1. Design-Level Event Storming.
 
