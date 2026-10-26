@@ -2268,6 +2268,8 @@ La propuesta contempla las interfaces para escritorio y dispositivos móviles, o
 ### 4.3.1. Landing Page Wireframe
 Los wireframes de la Landing Page de Relient permiten definir la estructura y distribución de los elementos que conforman la interfaz antes de establecer su diseño visual definitivo. Mediante estas representaciones se identifican la ubicación del logotipo, los elementos de navegación, los bloques de contenido, las imágenes y los botones de acción. Su elaboración permite revisar la organización de las secciones y establecer una base estructural para el desarrollo de los mockups.
 
+**Desktop Web Browser**
+Los wireframes para escritorio presentan una distribución horizontal que permite organizar los elementos de navegación en la parte superior y distribuir los contenidos en secciones diferenciadas. La estructura contempla las vistas de Inicio, Servicios, Planes y Quiénes somos, manteniendo una secuencia que facilita el recorrido por la información. Asimismo, se considera la ubicación de los elementos principales y del pie de página para conservar una organización uniforme a lo largo de la Landing Page.
 
 
 
