@@ -2415,7 +2415,8 @@ Estas pantallas muestran la disposición de los formularios y componentes utiliz
 <img src="assets/img/chapter-ii/needfinding/mockup14.png">
 <img src="assets/img/chapter-ii/needfinding/mockup15.png">
 
-
+**Pantallas complementarias de la plataforma**
+Las últimas pantallas muestran la continuidad de los criterios visuales en las vistas restantes de Relient. La aplicación uniforme de los colores, la tipografía y los componentes permite mantener una identidad visual consistente en las distintas interfaces de gestión y consulta.
 
 
 
