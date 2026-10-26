@@ -2360,6 +2360,7 @@ La siguiente imagen presenta el wireflow completo de Relient, mostrando la distr
 **Detalle 1: Pantallas iniciales y acceso**
 Este primer detalle permite observar las pantallas iniciales del recorrido y las conexiones establecidas entre las interfaces correspondientes. Su propósito es facilitar la revisión de la secuencia de navegación representada en esta parte del diagrama.
 
+<img src="assets/img/chapter-ii/needfinding/wireflow1.png">
 
 
 
