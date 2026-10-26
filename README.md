@@ -2176,6 +2176,9 @@ La tipografía cumple un papel importante en la legibilidad de los contenidos y 
 **Spacing:**
 El sistema de espaciado de Relient establece criterios para distribuir los elementos de la interfaz de manera ordenada y evitar la saturación visual. Se consideran separaciones consistentes entre títulos, textos, botones, formularios, tablas y componentes de navegación, con el objetivo de mejorar la legibilidad y facilitar la identificación de la información. La configuración de estos espacios se realiza mediante las herramientas de diseño de Figma, teniendo en cuenta la disposición de los componentes y las necesidades de las diferentes vistas de la plataforma.
 
+**Tone of Voice:**
+El tono de comunicación de Relient es profesional, claro, directo y orientado a la eficiencia operativa. Debido a que la plataforma está enfocada en la gestión y el monitoreo de procesos industriales y mineros, los mensajes deben transmitir confianza, control y confiabilidad. Para ello, se prioriza el uso de expresiones comprensibles y precisas, evitando términos excesivamente técnicos cuando no sean necesarios. Asimismo, las etiquetas, alertas y notificaciones deben informar de manera clara sobre las acciones disponibles y los estados de los registros, equipos y componentes, facilitando la interpretación de la información y la toma de decisiones.
+
 ## 4.6. Domain-Driven Software Architecture.
 ### 4.6.1. Design-Level Event Storming.
 
