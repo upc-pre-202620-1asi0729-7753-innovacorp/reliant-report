@@ -2152,6 +2152,7 @@ Las General Style Guidelines establecen las normas visuales que orientan el dise
 Relient es una plataforma digital orientada a la gestión y el monitoreo de procesos, equipos, componentes y recursos de los sectores industrial y minero. Su propuesta busca facilitar el acceso a la información operativa, el seguimiento de alertas y la gestión de los distintos módulos de la plataforma mediante interfaces claras y organizadas. La identidad visual se fundamenta en los conceptos de innovación, control y eficiencia, priorizando una presentación ordenada de los datos y una interacción intuitiva que permita a los usuarios realizar sus actividades de manera eficiente.
 
 - **Misión:** Facilitar la gestión y el monitoreo de procesos, equipos, componentes y recursos industriales y mineros mediante una plataforma digital que permita consultar información, realizar seguimiento de alertas y gestionar las operaciones de manera clara y eficiente.
+- **Visión:** Consolidarse como una plataforma de referencia para la gestión y el monitoreo de recursos en los sectores industrial y minero, promoviendo la eficiencia operativa mediante una experiencia digital organizada, confiable y accesible.
 
 ## 4.6. Domain-Driven Software Architecture.
 ### 4.6.1. Design-Level Event Storming.
