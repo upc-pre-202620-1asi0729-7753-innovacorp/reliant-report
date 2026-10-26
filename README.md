@@ -2367,7 +2367,8 @@ Este segundo detalle amplía otra sección del wireflow para facilitar la identi
 
 <img src="assets/img/chapter-ii/needfinding/wireflow2.png">
 
-
+**Detalle 3: Continuidad de la navegación**
+El tercer detalle permite revisar las conexiones entre las pantallas que forman parte de la siguiente sección del recorrido. Esta ampliación facilita la lectura de las relaciones entre las interfaces sin perder de vista la secuencia establecida en el diagrama general.
 
 
 
