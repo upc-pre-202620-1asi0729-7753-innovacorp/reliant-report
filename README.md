@@ -2333,7 +2333,7 @@ Las siguientes pantallas permiten observar la distribución de los contenidos y 
 En este grupo se presentan las estructuras correspondientes a las pantallas siguientes del diseño. Los wireframes permiten revisar la ubicación de los campos, las etiquetas y los botones asociados con las operaciones, manteniendo una distribución uniforme entre los diferentes elementos de la interfaz.
 
 <img src="assets/img/chapter-ii/needfinding/wireframe11.png">
-
+<img src="assets/img/chapter-ii/needfinding/wireframe12.png">
 
 
 
