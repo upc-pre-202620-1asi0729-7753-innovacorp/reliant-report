@@ -2272,8 +2272,7 @@ Los wireframes de la Landing Page de Relient permiten definir la estructura y di
 Los wireframes para escritorio presentan una distribución horizontal que permite organizar los elementos de navegación en la parte superior y distribuir los contenidos en secciones diferenciadas. La estructura contempla las vistas de Inicio, Servicios, Planes y Quiénes somos, manteniendo una secuencia que facilita el recorrido por la información. Asimismo, se considera la ubicación de los elementos principales y del pie de página para conservar una organización uniforme a lo largo de la Landing Page.
 
 <img src="assets/img/chapter-ii/needfinding/landing-wireframe1.png">
-
-
+<img src="assets/img/chapter-ii/needfinding/landing-wireframe2.png">
 
 
 
