@@ -2461,7 +2461,9 @@ Para desarrollar los prototipos de la interfaz de usuario de Relient para Deskto
 3. Enfoque en la información clave: Las interfaces priorizan los datos relevantes para las tareas de los usuarios, como el estado de los componentes, los parámetros de operación, el historial de sesiones y las alertas, facilitando el seguimiento de los procesos de recuperación.
 4. Navegación e interacción coherentes: Las conexiones entre las pantallas se definieron tomando como referencia los User Flow Diagrams y el sistema de navegación de Relient, permitiendo representar los recorridos principales entre las funcionalidades de la aplicación.
 
+A continuación, se presenta una captura del prototipo interactivo de Relient en modo de presentación de Figma, correspondiente a la interfaz de gestión de usuarios de la organización.
 
+<img src="assets/img/chapter-ii/needfinding/prototipo-relient.png">
 
 
 
