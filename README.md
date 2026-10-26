@@ -2438,7 +2438,8 @@ Este diagrama representa el recorrido relacionado con los equipos HVOF y las pan
 
 <img src="assets/img/chapter-ii/needfinding/userflow2.png">
 
-
+**Gestión de componentes y órdenes PCR**
+Este recorrido muestra las relaciones entre las pantallas vinculadas con la gestión de componentes y las órdenes PCR, siguiendo la organización establecida en los mockups.
 
 
 
