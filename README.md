@@ -2365,6 +2365,7 @@ Este primer detalle permite observar las pantallas iniciales del recorrido y las
 **Detalle 2: Transiciones entre interfaces**
 Este segundo detalle amplía otra sección del wireflow para facilitar la identificación de las pantallas conectadas y la dirección de las transiciones. Permite examinar cómo continúa el recorrido representado en el diseño original.
 
+<img src="assets/img/chapter-ii/needfinding/wireflow2.png">
 
 
 
