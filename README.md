@@ -2255,7 +2255,8 @@ En la Landing Page, no se considera necesaria una barra de búsqueda principal, 
 En la Web Application, la búsqueda adquiere mayor relevancia debido a la cantidad de registros relacionados con usuarios, equipos, componentes, señales, alertas, reportes e inventario. Por ello, se consideran campos de búsqueda y filtros que permitan localizar información específica según las características de cada módulo.
 Los criterios de búsqueda pueden incluir nombres, códigos, categorías, estados y fechas, siempre que estos atributos correspondan a los registros gestionados. Los resultados deben presentarse de manera organizada para facilitar la identificación de los elementos y el acceso a sus detalles. Asimismo, los filtros deben contar con etiquetas comprensibles y permitir modificar o restablecer los criterios seleccionados, facilitando la consulta de información sin generar complejidad innecesaria.
 
-
+### 4.2.5. Navigation Systems
+El sistema de navegación de Relient permite desplazarse entre las diferentes secciones de la Landing Page y los módulos de la Web Application mediante una estructura clara y consistente.
 
 
 
