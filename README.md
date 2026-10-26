@@ -2411,7 +2411,9 @@ Estas pantallas muestran la disposición de los formularios y componentes utiliz
 
 <img src="assets/img/chapter-ii/needfinding/mockup11.png">
 <img src="assets/img/chapter-ii/needfinding/mockup12.png">
-
+<img src="assets/img/chapter-ii/needfinding/mockup13.png">
+<img src="assets/img/chapter-ii/needfinding/mockup14.png">
+<img src="assets/img/chapter-ii/needfinding/mockup15.png">
 
 
 
