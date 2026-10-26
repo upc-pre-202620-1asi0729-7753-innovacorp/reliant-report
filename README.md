@@ -2191,7 +2191,8 @@ Los botones de Relient siguen los criterios establecidos en las General Style Gu
 - **Pantallas Emergentes:**
 Las pantallas emergentes de Relient se utilizan para presentar mensajes de confirmación, advertencias e información relevante durante la interacción con la plataforma. Estos elementos permiten confirmar acciones importantes, especialmente aquellas relacionadas con la modificación o eliminación de registros de usuarios, equipos, componentes e información de inventario. Su contenido debe ser claro y directo, indicando la acción que se realizará y sus posibles consecuencias cuando corresponda. De esta manera, se busca reducir errores durante la gestión de la información y proporcionar al usuario mayor claridad antes de completar operaciones relevantes.
 
-
+- **Formularios:**
+Los formularios de Relient están diseñados para facilitar el registro y la actualización de información dentro de los distintos módulos de la Web Application. Cada campo cuenta con etiquetas visibles, una distribución ordenada y espacios adecuados que favorecen la lectura y la identificación de los datos requeridos. Asimismo, los mensajes de validación permiten informar al usuario cuando existen campos incompletos o datos incorrectos, orientándolo para corregir los errores antes de continuar con el proceso.
 
 ## 4.6. Domain-Driven Software Architecture.
 ### 4.6.1. Design-Level Event Storming.
