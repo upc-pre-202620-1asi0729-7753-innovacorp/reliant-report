@@ -2165,6 +2165,7 @@ El nombre Relient representa la identidad de una solución digital orientada a l
 La selección de colores constituye un elemento fundamental para establecer la identidad visual de Relient y facilitar la identificación de los componentes de la interfaz. La paleta cromática utiliza el marrón oscuro en textos y elementos principales, mientras que el crema claro y el blanco se emplean en fondos y espacios visuales para mantener una presentación limpia y equilibrada. Asimismo, el naranja se utiliza para destacar botones, acciones principales y elementos relevantes, permitiendo establecer una jerarquía visual que facilite la identificación de las opciones disponibles y la interacción con los diferentes módulos de la plataforma.
 
 <img src="assets/img/chapter-ii/needfinding/colors.png">
+<img src="assets/img/chapter-ii/needfinding/colors1.png">
 ## 4.6. Domain-Driven Software Architecture.
 ### 4.6.1. Design-Level Event Storming.
 
