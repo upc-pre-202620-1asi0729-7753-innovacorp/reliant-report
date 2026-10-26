@@ -2182,6 +2182,14 @@ El tono de comunicación de Relient es profesional, claro, directo y orientado a
 ### 4.1.2. Web Style Guidelines
 El diseño web de Relient se basa en la claridad, la organización y la eficiencia en la gestión de procesos y recursos de los sectores industrial y minero. Las interfaces de la Landing Page y la Web Application se estructuran en secciones y módulos que facilitan la navegación, la consulta de información y el acceso a las funcionalidades disponibles. La Landing Page presenta las principales características de la plataforma e incorpora opciones de ingreso y registro, mientras que la Web Application organiza las funciones de gestión mediante una barra superior y un menú lateral que permite acceder a los módulos de Usuarios, Equipos, Componentes, Señales, Alertas, Reportes e Inventario.
 
+- **Imágenes:**
+En el diseño web de Relient, las imágenes y los recursos gráficos se utilizan de manera estratégica para reforzar la identidad visual del producto y facilitar la comprensión de sus funcionalidades. En la Landing Page, estos elementos permiten presentar la propuesta de valor de la plataforma y contextualizar su aplicación en los sectores industrial y minero. En la Web Application, se prioriza la presentación de información operativa mediante indicadores, estados y elementos visuales relacionados con los equipos, componentes y alertas. Se busca evitar el uso excesivo de imágenes decorativas que puedan distraer al usuario de las tareas principales, manteniendo una interfaz organizada y funcional.
+
+
+
+
+
+
 ## 4.6. Domain-Driven Software Architecture.
 ### 4.6.1. Design-Level Event Storming.
 
