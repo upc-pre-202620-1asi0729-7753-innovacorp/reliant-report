@@ -2274,7 +2274,7 @@ Los wireframes para escritorio presentan una distribución horizontal que permit
 <img src="assets/img/chapter-ii/needfinding/landing-wireframe1.png">
 <img src="assets/img/chapter-ii/needfinding/landing-wireframe2.png">
 <img src="assets/img/chapter-ii/needfinding/landing-wireframe3.png">
-
+<img src="assets/img/chapter-ii/needfinding/landing-wireframe4.png">
 
 
 
