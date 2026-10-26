@@ -2344,7 +2344,7 @@ Las últimas pantallas completan la representación estructural de la Web Applic
 <img src="assets/img/chapter-ii/needfinding/wireframe16.png">
 <img src="assets/img/chapter-ii/needfinding/wireframe17.png">
 <img src="assets/img/chapter-ii/needfinding/wireframe18.png">
-
+<img src="assets/img/chapter-ii/needfinding/wireframe19.png">
 
 
 
