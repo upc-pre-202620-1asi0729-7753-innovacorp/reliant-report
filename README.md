@@ -2173,6 +2173,9 @@ La tipografía cumple un papel importante en la legibilidad de los contenidos y 
 
 <img src="assets/img/chapter-ii/needfinding/tipoletra.png">
 
+**Spacing:**
+El sistema de espaciado de Relient establece criterios para distribuir los elementos de la interfaz de manera ordenada y evitar la saturación visual. Se consideran separaciones consistentes entre títulos, textos, botones, formularios, tablas y componentes de navegación, con el objetivo de mejorar la legibilidad y facilitar la identificación de la información. La configuración de estos espacios se realiza mediante las herramientas de diseño de Figma, teniendo en cuenta la disposición de los componentes y las necesidades de las diferentes vistas de la plataforma.
+
 ## 4.6. Domain-Driven Software Architecture.
 ### 4.6.1. Design-Level Event Storming.
 
