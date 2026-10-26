@@ -2425,7 +2425,8 @@ Las últimas pantallas muestran la continuidad de los criterios visuales en las 
 <img src="assets/img/chapter-ii/needfinding/mockup20.png">
 <img src="assets/img/chapter-ii/needfinding/mockup21.png">
 
-
+### 4.4.4. Web Applications User Flow Diagrams
+Los User Flow Diagrams de Relient representan los recorridos que sigue el usuario para interactuar con las funcionalidades de la Web Application. Los diagramas se han organizado por procesos para facilitar la comprensión de las relaciones entre las pantallas y las acciones involucradas en cada recorrido. Para su elaboración, se consideran los mockups de la plataforma, manteniendo correspondencia con los módulos y las operaciones representadas en el diseño UX/UI.
 
 
 
