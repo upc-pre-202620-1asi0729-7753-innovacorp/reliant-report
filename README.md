@@ -2448,7 +2448,8 @@ Este diagrama presenta el recorrido asociado con las sesiones, el monitoreo y la
 
 <img src="assets/img/chapter-ii/needfinding/userflow4.png">
 
-
+**Reportes y cierre de procesos**
+Este último recorrido representa las pantallas relacionadas con los reportes y las etapas finales contempladas en el flujo de la plataforma.
 
 
 
