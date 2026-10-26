@@ -2257,7 +2257,7 @@ Los criterios de búsqueda pueden incluir nombres, códigos, categorías, estado
 
 ### 4.2.5. Navigation Systems
 El sistema de navegación de Relient permite desplazarse entre las diferentes secciones de la Landing Page y los módulos de la Web Application mediante una estructura clara y consistente.
-
+En la Landing Page, la barra de navegación se ubica en la parte superior e incluye los accesos Home, About Us, How does it work?, FAQs y Contact. Estos enlaces permiten acceder a las secciones informativas correspondientes. Además, las opciones Login, Sign Up y Empezar ya facilitan el acceso a los puntos de interacción definidos en los mockups. El pie de página complementa la navegación mediante información institucional y enlaces relacionados con el contenido del sitio.
 
 
 
