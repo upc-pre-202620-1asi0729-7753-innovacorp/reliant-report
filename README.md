@@ -2232,6 +2232,19 @@ Las etiquetas propuestas para la Landing Page y la Web Application se presentan 
 | Reportes | Nombre, categoría y fecha | Facilita localizar reportes generados en la plataforma. |
 | Inventario | Nombre, código y categoría | Permite encontrar elementos registrados en el inventario. |
 
+| Interfaz | Elemento de navegación | Destino o función |
+|---|---|---|
+| Landing Page | Home | Permite regresar a la sección de inicio. |
+| Landing Page | About Us | Presenta información sobre InnovaCorp. |
+| Landing Page | How does it work? | Explica el funcionamiento de Relient. |
+| Landing Page | FAQs | Presenta respuestas a preguntas frecuentes. |
+| Landing Page | Contact | Facilita el acceso a la información de contacto. |
+| Landing Page | Login | Permite acceder a la plataforma. |
+| Landing Page | Sign Up | Dirige al registro de nuevos usuarios. |
+| Landing Page | Empezar ya | Facilita el acceso al inicio de la experiencia del producto. |
+| Web Application | Menú lateral | Permite acceder a los módulos Usuarios, Equipos, Componentes, Señales, Alertas, Reportes e Inventario. |
+| Web Application | Barra superior | Agrupa elementos generales de navegación y acceso a la plataforma. |
+| Web Application | Pie de página | Complementa la navegación con información institucional y enlaces adicionales. |
 
 
 
