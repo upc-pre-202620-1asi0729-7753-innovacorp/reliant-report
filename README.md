@@ -2279,8 +2279,7 @@ Los wireframes para escritorio presentan una distribución horizontal que permit
 **Mobile Web Browser**
 Los wireframes para dispositivos móviles adaptan la estructura de la Landing Page a las dimensiones reducidas de la pantalla, reorganizando los contenidos en una disposición vertical. La navegación se concentra en la parte superior, mientras que los bloques informativos, las imágenes y las acciones se distribuyen de manera secuencial. Esta organización permite conservar la relación entre las secciones de escritorio y móvil, priorizando la legibilidad y el acceso a los contenidos sin sobrecargar el espacio disponible.
 
-
-
+<img src="assets/img/chapter-ii/needfinding/mobile-wireframe1.png">
 
 
 
