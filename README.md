@@ -2309,7 +2309,10 @@ La propuesta contempla la organización de las pantallas, los componentes de int
 Los wireframes de la Web Application de Relient presentan la estructura preliminar de las pantallas de la plataforma antes de incorporar los estilos visuales definitivos. Estas representaciones permiten identificar la ubicación de los elementos de navegación, los formularios, los botones, las tablas y las áreas de contenido, facilitando la revisión de la organización de las interfaces.
 Para facilitar su análisis, las pantallas se presentan en el orden establecido en el diseño original y se agrupan de acuerdo con su secuencia. Esta organización permite observar la evolución de la estructura desde las pantallas iniciales hasta las vistas relacionadas con la gestión de información y las operaciones de la plataforma.
 
+**Desktop Web Browser**
 
+**Pantallas iniciales y acceso a la plataforma**
+Las primeras pantallas permiten examinar la distribución de los elementos de acceso y los componentes iniciales de la interfaz. En esta etapa se considera la ubicación de los campos de entrada, las etiquetas y los botones, procurando que los elementos necesarios para interactuar con la plataforma sean reconocibles y mantengan una disposición ordenada.
 
 
 
