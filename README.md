@@ -878,7 +878,7 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 | Timing inicio | 00:00 minutos |
 | Duracion | 16:13 minutos |
 | URL | https://acortar.link/WwyN4w |
-| Screenshot | <img src="assets/img/chapter-ii/needfinding/carolina_entrevista1_segmento1.png"> |
+| Screenshot |  <br/><img src="assets/img/chapter-ii/needfinding/carolina_entrevista1_segmento1.png"> |
 
 
 | Segmento: RecuperationSupplier | Entrevista #2 |
