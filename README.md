@@ -2355,7 +2355,7 @@ La representación se basa en los wireframes definidos para Relient y conserva l
 **Diagrama general del recorrido**
 La siguiente imagen presenta el wireflow completo de Relient, mostrando la distribución de las pantallas y las conexiones entre ellas. Esta vista permite comprender la estructura general de los recorridos de navegación definidos para la Web Application.
 
-
+<img src="assets/img/chapter-ii/needfinding/wireflow.png">
 
 
 
