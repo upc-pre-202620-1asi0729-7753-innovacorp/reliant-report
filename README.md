@@ -2171,6 +2171,8 @@ La selección de colores constituye un elemento fundamental para establecer la i
 **Tipografía:**
 La tipografía cumple un papel importante en la legibilidad de los contenidos y en la jerarquización de la información presentada en las interfaces de Relient. Para el proyecto, se han seleccionado las fuentes Balsamiq Sans, Goblin One y Kaushan Script, cada una con una función específica dentro de la identidad visual. Balsamiq Sans se utiliza en textos generales, etiquetas y componentes informativos, favoreciendo la lectura del contenido. Goblin One se emplea en títulos y elementos destacados, mientras que Kaushan Script se reserva para elementos decorativos o distintivos de la identidad visual. Esta combinación permite diferenciar los niveles de información y mantener una presentación coherente tanto en la Landing Page como en la Web Application.
 
+<img src="assets/img/chapter-ii/needfinding/tipoletra.png">
+
 ## 4.6. Domain-Driven Software Architecture.
 ### 4.6.1. Design-Level Event Storming.
 
