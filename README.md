@@ -2185,7 +2185,8 @@ El diseño web de Relient se basa en la claridad, la organización y la eficienc
 - **Imágenes:**
 En el diseño web de Relient, las imágenes y los recursos gráficos se utilizan de manera estratégica para reforzar la identidad visual del producto y facilitar la comprensión de sus funcionalidades. En la Landing Page, estos elementos permiten presentar la propuesta de valor de la plataforma y contextualizar su aplicación en los sectores industrial y minero. En la Web Application, se prioriza la presentación de información operativa mediante indicadores, estados y elementos visuales relacionados con los equipos, componentes y alertas. Se busca evitar el uso excesivo de imágenes decorativas que puedan distraer al usuario de las tareas principales, manteniendo una interfaz organizada y funcional.
 
-
+- **Botones:**
+Los botones de Relient siguen los criterios establecidos en las General Style Guidelines, utilizando una jerarquía visual que permite distinguir las acciones principales de las secundarias. El color naranja (#E2942E) se emplea para destacar acciones relevantes, como ingresar a la plataforma, registrar información, guardar cambios o iniciar una operación. Asimismo, los botones presentan estados visuales de interacción, como hover y focus, que proporcionan retroalimentación al usuario. Su ubicación y diseño buscan facilitar la identificación de las acciones disponibles y mantener una interacción coherente en los diferentes módulos de la plataforma.
 
 
 
