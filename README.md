@@ -2325,8 +2325,7 @@ Las siguientes pantallas permiten observar la distribución de los contenidos y 
 
 <img src="assets/img/chapter-ii/needfinding/wireframe6.png">
 <img src="assets/img/chapter-ii/needfinding/wireframe7.png">
-
-
+<img src="assets/img/chapter-ii/needfinding/wireframe8.png">
 
 
 
