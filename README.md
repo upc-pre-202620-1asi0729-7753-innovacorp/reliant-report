@@ -2252,8 +2252,7 @@ El atributo CSS Link representa la referencia a la hoja de estilos utilizada en 
 ### 4.2.4. Searching Systems
 El sistema de búsqueda de Relient está orientado a facilitar la localización de información de acuerdo con las necesidades de cada interfaz.
 En la Landing Page, no se considera necesaria una barra de búsqueda principal, debido a que el contenido se distribuye en secciones informativas accesibles mediante la navegación superior. Los usuarios pueden dirigirse a About Us, How does it work?, FAQs y Contact para encontrar información sobre el producto y su funcionamiento.
-
-
+En la Web Application, la búsqueda adquiere mayor relevancia debido a la cantidad de registros relacionados con usuarios, equipos, componentes, señales, alertas, reportes e inventario. Por ello, se consideran campos de búsqueda y filtros que permitan localizar información específica según las características de cada módulo.
 
 
 
