@@ -2200,6 +2200,14 @@ Las tarjetas se utilizan para presentar indicadores, estados de equipos, alertas
 - **Diseño adaptable:**
 Las interfaces web de Relient consideran la adaptación de sus componentes a diferentes tamaños de pantalla. En equipos de escritorio, la Web Application utiliza una estructura que combina una barra superior, un menú lateral y áreas de contenido destinadas a la gestión de registros e indicadores. En pantallas de menor tamaño, la distribución de los elementos debe ajustarse para conservar la legibilidad, evitar desbordamientos horizontales y facilitar la interacción con los botones, formularios y componentes de información.
 
+- **Accesibilidad:**
+El diseño web de Relient considera criterios de accesibilidad orientados a facilitar la comprensión y el uso de la plataforma. Para ello, se prioriza el contraste entre el texto y el fondo, el uso de etiquetas descriptivas en los formularios, los nombres comprensibles en los botones y una jerarquía visual clara. Asimismo, los estados de interacción deben permitir identificar los elementos activos y las opciones disponibles, contribuyendo a una experiencia de uso más clara y consistente.
+
+
+
+
+
+
 ## 4.6. Domain-Driven Software Architecture.
 ### 4.6.1. Design-Level Event Storming.
 
