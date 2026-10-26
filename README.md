@@ -2284,7 +2284,8 @@ Los wireframes para dispositivos móviles adaptan la estructura de la Landing Pa
 <img src="assets/img/chapter-ii/needfinding/mobile-wireframe3.png">
 <img src="assets/img/chapter-ii/needfinding/mobile-wireframe4.png">
 
-
+### 4.3.2. Landing Page Mock-up
+Los mockups de la Landing Page de Relient presentan la propuesta visual de las interfaces mediante la aplicación de las tipografías, los colores, las imágenes y los componentes definidos en las General Style Guidelines. Estas representaciones permiten evaluar la jerarquía visual, la distribución de los contenidos y la consistencia de los elementos de navegación antes de la implementación de la interfaz.
 
 
 
