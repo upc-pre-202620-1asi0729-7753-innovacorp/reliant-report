@@ -2203,7 +2203,8 @@ Las interfaces web de Relient consideran la adaptación de sus componentes a dif
 - **Accesibilidad:**
 El diseño web de Relient considera criterios de accesibilidad orientados a facilitar la comprensión y el uso de la plataforma. Para ello, se prioriza el contraste entre el texto y el fondo, el uso de etiquetas descriptivas en los formularios, los nombres comprensibles en los botones y una jerarquía visual clara. Asimismo, los estados de interacción deben permitir identificar los elementos activos y las opciones disponibles, contribuyendo a una experiencia de uso más clara y consistente.
 
-
+## 4.2. Information Architecture
+La arquitectura de información de Relient permite organizar y estructurar los contenidos de la plataforma para facilitar la identificación de las funcionalidades y el acceso a la información requerida. Debido a que la solución está orientada a la gestión y el monitoreo de procesos, equipos, componentes y recursos de los sectores industrial y minero, resulta fundamental establecer una distribución clara de los módulos y las acciones disponibles. La Landing Page presenta la propuesta de valor y las principales características del producto, mientras que la Web Application permite consultar y administrar información operativa mediante módulos específicos. Esta organización facilita la navegación y contribuye a una experiencia de usuario coherente durante la interacción con las diferentes interfaces de la plataforma.
 
 
 
