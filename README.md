@@ -2323,7 +2323,7 @@ Las primeras pantallas permiten examinar la distribución de los elementos de ac
 **Pantallas de consulta y gestión de información**
 Las siguientes pantallas permiten observar la distribución de los contenidos y los componentes destinados a la consulta y gestión de información. La organización de los campos, las áreas de contenido y los controles busca facilitar la identificación de los datos y las acciones disponibles en cada vista.
 
-
+<img src="assets/img/chapter-ii/needfinding/wireframe6.png">
 
 
 
