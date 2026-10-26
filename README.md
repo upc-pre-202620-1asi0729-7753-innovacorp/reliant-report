@@ -2146,6 +2146,11 @@ Durante el desarrollo de Relient, es fundamental establecer lineamientos visuale
 ### 4.1.1. General Style Guidelines
 Las General Style Guidelines establecen las normas visuales que orientan el diseño de las interfaces de Relient. Estas directrices definen los criterios de identidad visual, tipografía, colores, espaciado y tono de comunicación, con el propósito de mantener la consistencia entre la Landing Page y la Web Application, facilitar la comprensión de la información y garantizar una experiencia de usuario clara y organizada.
 
+**Branding**
+
+**Brand Overview:**
+Relient es una plataforma digital orientada a la gestión y el monitoreo de procesos, equipos, componentes y recursos de los sectores industrial y minero. Su propuesta busca facilitar el acceso a la información operativa, el seguimiento de alertas y la gestión de los distintos módulos de la plataforma mediante interfaces claras y organizadas. La identidad visual se fundamenta en los conceptos de innovación, control y eficiencia, priorizando una presentación ordenada de los datos y una interacción intuitiva que permita a los usuarios realizar sus actividades de manera eficiente.
+
 ## 4.6. Domain-Driven Software Architecture.
 ### 4.6.1. Design-Level Event Storming.
 
