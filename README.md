@@ -2316,7 +2316,7 @@ Las primeras pantallas permiten examinar la distribución de los elementos de ac
 
 <img src="assets/img/chapter-ii/needfinding/wireframe1.png">
 <img src="assets/img/chapter-ii/needfinding/wireframe2.png">
-
+<img src="assets/img/chapter-ii/needfinding/wireframe3.png">
 
 
 
