@@ -2382,6 +2382,9 @@ El último detalle complementa la visualización del diagrama y permite examinar
 
 <img src="assets/img/chapter-ii/needfinding/wireflow5.png">
 
+### 4.4.3. Web Applications Mock-ups
+Los mockups de la Web Application de Relient presentan las pantallas con los estilos visuales aplicados, incorporando la paleta cromática, las tipografías, los botones, los formularios y los demás componentes definidos en las General Style Guidelines. Estas representaciones permiten evaluar la jerarquía visual, la distribución de los contenidos y la consistencia de las interfaces antes de su implementación.
+Las pantallas se presentan en el mismo orden que los wireframes para facilitar la comparación entre la estructura preliminar y la propuesta visual. Esta correspondencia permite observar cómo se aplican los lineamientos de diseño a las diferentes vistas de la plataforma.
 
 
 
