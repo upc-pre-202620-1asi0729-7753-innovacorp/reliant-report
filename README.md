@@ -2453,8 +2453,8 @@ Este último recorrido representa las pantallas relacionadas con los reportes y 
 
 <img src="assets/img/chapter-ii/needfinding/userflow5.png">
 
-
-
+### 4.5. Web Applications Prototyping
+Para desarrollar los prototipos de la interfaz de usuario de Relient para Desktop y Mobile Web Browser, se consideraron criterios de interacción orientados a facilitar la navegación, organizar la información y permitir que los usuarios realicen sus tareas de manera clara y eficiente. Las decisiones de diseño se relacionan con la arquitectura de información y el sistema de navegación definidos previamente, considerando los siguientes principios:
 
 
 
