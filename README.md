@@ -2154,6 +2154,8 @@ Relient es una plataforma digital orientada a la gestión y el monitoreo de proc
 - **Misión:** Facilitar la gestión y el monitoreo de procesos, equipos, componentes y recursos industriales y mineros mediante una plataforma digital que permita consultar información, realizar seguimiento de alertas y gestionar las operaciones de manera clara y eficiente.
 - **Visión:** Consolidarse como una plataforma de referencia para la gestión y el monitoreo de recursos en los sectores industrial y minero, promoviendo la eficiencia operativa mediante una experiencia digital organizada, confiable y accesible.
 
+<img src="assets/img/chapter-ii/needfinding/logo_grupo.png">
+
 ## 4.6. Domain-Driven Software Architecture.
 ### 4.6.1. Design-Level Event Storming.
 
