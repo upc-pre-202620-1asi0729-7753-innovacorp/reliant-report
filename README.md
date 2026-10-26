@@ -2265,7 +2265,8 @@ Asimismo, la navegación debe permitir que los usuarios identifiquen la sección
 El diseño de la interfaz de la Landing Page de Relient representa visualmente la propuesta de valor de InnovaCorp y comunica las principales características de la solución orientada a la gestión y el monitoreo de procesos industriales. Su desarrollo considera los lineamientos visuales y la arquitectura de información definidos previamente, con el propósito de mantener una presentación coherente, facilitar la comprensión de los contenidos y permitir el acceso a las principales secciones del producto.
 La propuesta contempla las interfaces para escritorio y dispositivos móviles, organizando la información en cuatro secciones principales: Inicio, Servicios, Planes y Quiénes somos. Esta estructura permite presentar la propuesta de valor, describir las funcionalidades de Relient, comunicar las alternativas disponibles y dar a conocer la identidad de InnovaCorp mediante una distribución clara y consistente.
 
-
+### 4.3.1. Landing Page Wireframe
+Los wireframes de la Landing Page de Relient permiten definir la estructura y distribución de los elementos que conforman la interfaz antes de establecer su diseño visual definitivo. Mediante estas representaciones se identifican la ubicación del logotipo, los elementos de navegación, los bloques de contenido, las imágenes y los botones de acción. Su elaboración permite revisar la organización de las secciones y establecer una base estructural para el desarrollo de los mockups.
 
 
 
