@@ -2289,7 +2289,7 @@ Los mockups de la Landing Page de Relient presentan la propuesta visual de las i
 
 <img src="assets/img/chapter-ii/needfinding/landing-mockup1.png">
 <img src="assets/img/chapter-ii/needfinding/landing-mockup2.png">
-
+<img src="assets/img/chapter-ii/needfinding/landing-mockup3.png">
 
 
 
