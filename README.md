@@ -2375,7 +2375,7 @@ El tercer detalle permite revisar las conexiones entre las pantallas que forman 
 **Detalle 4: Conexiones entre pantallas**
 El cuarto detalle muestra otra parte de las conexiones definidas en el wireflow. Su revisión permite identificar la continuidad de los recorridos y la relación entre las diferentes estructuras de interfaz representadas.
 
-
+<img src="assets/img/chapter-ii/needfinding/wireflow4.png">
 
 
 
