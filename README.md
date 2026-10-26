@@ -2194,6 +2194,10 @@ Las pantallas emergentes de Relient se utilizan para presentar mensajes de confi
 - **Formularios:**
 Los formularios de Relient están diseñados para facilitar el registro y la actualización de información dentro de los distintos módulos de la Web Application. Cada campo cuenta con etiquetas visibles, una distribución ordenada y espacios adecuados que favorecen la lectura y la identificación de los datos requeridos. Asimismo, los mensajes de validación permiten informar al usuario cuando existen campos incompletos o datos incorrectos, orientándolo para corregir los errores antes de continuar con el proceso.
 
+- **Tarjetas y componentes de información:**
+Las tarjetas se utilizan para presentar indicadores, estados de equipos, alertas y otros datos relevantes de manera organizada. Cada componente mantiene una estructura visual consistente que facilita la identificación y comparación de la información. Esta organización permite distribuir los registros y los indicadores en secciones diferenciadas, favoreciendo la consulta de datos y el seguimiento de la información operativa.
+
+
 ## 4.6. Domain-Driven Software Architecture.
 ### 4.6.1. Design-Level Event Storming.
 
