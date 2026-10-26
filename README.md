@@ -2297,6 +2297,28 @@ Los mockups para dispositivos móviles mantienen la identidad visual de Relient 
 La sección Servicios distribuye las funcionalidades en bloques informativos y complementa la descripción con una imagen relacionada con los procesos industriales. En la sección Planes, las alternativas se presentan mediante tarjetas verticales que facilitan la consulta de sus características y precios. Finalmente, la pantalla Quiénes somos incorpora una imagen principal y tarjetas diferenciadas para presentar la misión, la visión y los valores de InnovaCorp. El pie de página conserva la información institucional y los enlaces complementarios, adaptándose al espacio disponible en dispositivos móviles.
 
 <img src="assets/img/chapter-ii/needfinding/mobile-mockup1.png">
+<img src="assets/img/chapter-ii/needfinding/mobile-mockup2.png">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
