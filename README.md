@@ -2335,7 +2335,7 @@ En este grupo se presentan las estructuras correspondientes a las pantallas sigu
 <img src="assets/img/chapter-ii/needfinding/wireframe11.png">
 <img src="assets/img/chapter-ii/needfinding/wireframe12.png">
 <img src="assets/img/chapter-ii/needfinding/wireframe13.png">
-
+<img src="assets/img/chapter-ii/needfinding/wireframe14.png">
 
 
 
