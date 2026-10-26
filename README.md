@@ -2431,6 +2431,7 @@ Los User Flow Diagrams de Relient representan los recorridos que sigue el usuari
 **Acceso a la plataforma y navegación inicial**
 Este recorrido presenta las pantallas relacionadas con el acceso a la plataforma, la navegación inicial y la suscripción, de acuerdo con la secuencia representada en los diseños.
 
+<img src="assets/img/chapter-ii/needfinding/userflow1.png">
 
 
 
