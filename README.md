@@ -2305,7 +2305,9 @@ La sección Servicios distribuye las funcionalidades en bloques informativos y c
 El diseño UX/UI de la Web Application de Relient, desarrollada por InnovaCorp, se basa en los resultados obtenidos durante el proceso de investigación de usuarios, los User Stories definidos en el Product Backlog y los lineamientos visuales establecidos previamente. Su propósito es representar la estructura de las interfaces y facilitar la comprensión de las funcionalidades relacionadas con la gestión y el monitoreo de procesos industriales.
 La propuesta contempla la organización de las pantallas, los componentes de interacción y los recorridos que permiten acceder a las diferentes funcionalidades de la plataforma. Para ello, se utilizan wireframes, wireflow diagrams, mockups y user flow diagrams, que permiten analizar la distribución de los elementos y la secuencia de las acciones. Estos recursos consideran los módulos de Usuarios, Equipos, Componentes, Señales, Alertas, Reportes e Inventario, manteniendo una estructura visual coherente con la identidad de Relient.
 
-
+### 4.4.1. Web Applications Wireframes
+Los wireframes de la Web Application de Relient presentan la estructura preliminar de las pantallas de la plataforma antes de incorporar los estilos visuales definitivos. Estas representaciones permiten identificar la ubicación de los elementos de navegación, los formularios, los botones, las tablas y las áreas de contenido, facilitando la revisión de la organización de las interfaces.
+Para facilitar su análisis, las pantallas se presentan en el orden establecido en el diseño original y se agrupan de acuerdo con su secuencia. Esta organización permite observar la evolución de la estructura desde las pantallas iniciales hasta las vistas relacionadas con la gestión de información y las operaciones de la plataforma.
 
 
 
