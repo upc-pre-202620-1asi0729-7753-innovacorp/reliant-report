@@ -2348,7 +2348,9 @@ Las últimas pantallas completan la representación estructural de la Web Applic
 <img src="assets/img/chapter-ii/needfinding/wireframe20.png">
 <img src="assets/img/chapter-ii/needfinding/wireframe21.png">
 
-
+### 4.4.2. Web Applications Wireflow Diagrams
+Los wireflow diagrams de Relient representan la conexión entre las pantallas de la Web Application y las transiciones que permiten al usuario desplazarse entre ellas. Estos diagramas combinan la estructura de los wireframes con las conexiones que indican la secuencia de navegación, facilitando la comprensión de cómo se relacionan las diferentes interfaces durante la interacción con la plataforma.
+La representación se basa en los wireframes definidos para Relient y conserva la distribución de las pantallas y las conexiones establecidas en el diseño original. Para facilitar su lectura, se presenta primero el diagrama completo y, posteriormente, sus ampliaciones, que permiten examinar con mayor detalle las relaciones entre las interfaces.
 
 
 
