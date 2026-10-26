@@ -2214,7 +2214,7 @@ Asimismo, las vistas de gestión presentan los elementos de acuerdo con su impor
 
 ### 4.2.2. Labeling System
 El sistema de etiquetado de Relient establece denominaciones claras y consistentes para identificar las secciones, los módulos y las acciones disponibles en la plataforma. Los nombres utilizados deben permitir que los usuarios comprendan la finalidad de cada elemento antes de interactuar con él.
-
+En la Landing Page, las etiquetas principales incluyen Home, About Us, How does it work?, FAQs y Contact. Estas denominaciones permiten distinguir las secciones informativas y facilitan el acceso a la información relacionada con la propuesta de valor y el funcionamiento de Relient. Asimismo, las opciones Login, Sign Up y Empezar ya permiten identificar los accesos relacionados con la interacción inicial con la plataforma.
 
 
 
