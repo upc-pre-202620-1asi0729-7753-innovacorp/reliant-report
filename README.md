@@ -2301,7 +2301,9 @@ La sección Servicios distribuye las funcionalidades en bloques informativos y c
 <img src="assets/img/chapter-ii/needfinding/mobile-mockup3.png">
 <img src="assets/img/chapter-ii/needfinding/mobile-mockup4.png">
 
-
+## 4.4. Web Applications UX/UI Design
+El diseño UX/UI de la Web Application de Relient, desarrollada por InnovaCorp, se basa en los resultados obtenidos durante el proceso de investigación de usuarios, los User Stories definidos en el Product Backlog y los lineamientos visuales establecidos previamente. Su propósito es representar la estructura de las interfaces y facilitar la comprensión de las funcionalidades relacionadas con la gestión y el monitoreo de procesos industriales.
+La propuesta contempla la organización de las pantallas, los componentes de interacción y los recorridos que permiten acceder a las diferentes funcionalidades de la plataforma. Para ello, se utilizan wireframes, wireflow diagrams, mockups y user flow diagrams, que permiten analizar la distribución de los elementos y la secuencia de las acciones. Estos recursos consideran los módulos de Usuarios, Equipos, Componentes, Señales, Alertas, Reportes e Inventario, manteniendo una estructura visual coherente con la identidad de Relient.
 
 
 
