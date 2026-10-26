@@ -2341,8 +2341,7 @@ En este grupo se presentan las estructuras correspondientes a las pantallas sigu
 **Pantallas complementarias de la plataforma**
 Las últimas pantallas completan la representación estructural de la Web Application. Su revisión permite observar la disposición de los componentes restantes y comprobar la consistencia de la estructura visual a lo largo de las distintas vistas de Relient.
 
-
-
+<img src="assets/img/chapter-ii/needfinding/wireframe16.png">
 
 
 
