@@ -2261,6 +2261,45 @@ En la Landing Page, la barra de navegación se ubica en la parte superior e incl
 En la Web Application, la navegación se organiza mediante una barra superior y un menú lateral que permite acceder a los módulos Usuarios, Equipos, Componentes, Señales, Alertas, Reportes e Inventario. Esta distribución facilita el acceso a las funcionalidades de gestión y monitoreo, manteniendo una estructura reconocible entre las diferentes vistas.
 Asimismo, la navegación debe permitir que los usuarios identifiquen la sección en la que se encuentran y comprendan las acciones disponibles en cada módulo. En las pantallas de menor tamaño, los elementos de navegación deben reorganizarse para conservar su legibilidad y facilitar la interacción. De esta manera, Relient busca ofrecer recorridos claros y consistentes, desde la consulta inicial de información hasta la gestión de los registros dentro de la plataforma.
 
+## 4.3. Landing Page UI Design
+El diseño de la interfaz de la Landing Page de Relient representa visualmente la propuesta de valor de InnovaCorp y comunica las principales características de la solución orientada a la gestión y el monitoreo de procesos industriales. Su desarrollo considera los lineamientos visuales y la arquitectura de información definidos previamente, con el propósito de mantener una presentación coherente, facilitar la comprensión de los contenidos y permitir el acceso a las principales secciones del producto.
+La propuesta contempla las interfaces para escritorio y dispositivos móviles, organizando la información en cuatro secciones principales: Inicio, Servicios, Planes y Quiénes somos. Esta estructura permite presentar la propuesta de valor, describir las funcionalidades de Relient, comunicar las alternativas disponibles y dar a conocer la identidad de InnovaCorp mediante una distribución clara y consistente.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## 4.6. Domain-Driven Software Architecture.
