@@ -2159,6 +2159,8 @@ Relient es una plataforma digital orientada a la gestión y el monitoreo de proc
 **Brand Name:**
 El nombre Relient representa la identidad de una solución digital orientada a la gestión y el monitoreo de procesos en los sectores industrial y minero. Su identidad busca transmitir confianza, control y eficiencia, atributos fundamentales para una plataforma que facilita la consulta de información operativa y el seguimiento de equipos, componentes y recursos. Estos conceptos se reflejan en una propuesta visual organizada y funcional, diseñada para mantener una presentación coherente en las diferentes interfaces del producto.
 
+<img src="assets/img/chapter-ii/needfinding/logo_producto.png">
+
 ## 4.6. Domain-Driven Software Architecture.
 ### 4.6.1. Design-Level Event Storming.
 
