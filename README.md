@@ -2281,7 +2281,7 @@ Los wireframes para dispositivos móviles adaptan la estructura de la Landing Pa
 
 <img src="assets/img/chapter-ii/needfinding/mobile-wireframe1.png">
 <img src="assets/img/chapter-ii/needfinding/mobile-wireframe2.png">
-
+<img src="assets/img/chapter-ii/needfinding/mobile-wireframe3.png">
 
 
 
