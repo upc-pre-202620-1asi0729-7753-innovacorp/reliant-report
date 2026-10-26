@@ -2433,7 +2433,8 @@ Este recorrido presenta las pantallas relacionadas con el acceso a la plataforma
 
 <img src="assets/img/chapter-ii/needfinding/userflow1.png">
 
-
+**Gestión y configuración de equipos HVOF**
+Este diagrama representa el recorrido relacionado con los equipos HVOF y las pantallas destinadas a su configuración y gestión.
 
 
 
