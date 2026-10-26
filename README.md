@@ -2298,7 +2298,7 @@ La sección Servicios distribuye las funcionalidades en bloques informativos y c
 
 <img src="assets/img/chapter-ii/needfinding/mobile-mockup1.png">
 <img src="assets/img/chapter-ii/needfinding/mobile-mockup2.png">
-
+<img src="assets/img/chapter-ii/needfinding/mobile-mockup3.png">
 
 
 
