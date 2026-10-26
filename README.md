@@ -2400,7 +2400,7 @@ Las primeras pantallas permiten examinar la distribución de los elementos de ac
 **Pantallas de consulta y gestión de información**
 Estas pantallas permiten observar la organización de la información y los componentes destinados a facilitar la consulta y gestión de los datos dentro de la plataforma.
 
-
+<img src="assets/img/chapter-ii/needfinding/mockup6.png">
 
 
 
