@@ -2329,7 +2329,8 @@ Las siguientes pantallas permiten observar la distribución de los contenidos y 
 <img src="assets/img/chapter-ii/needfinding/wireframe9.png">
 <img src="assets/img/chapter-ii/needfinding/wireframe10.png">
 
-
+**Pantallas de registro y operaciones**
+En este grupo se presentan las estructuras correspondientes a las pantallas siguientes del diseño. Los wireframes permiten revisar la ubicación de los campos, las etiquetas y los botones asociados con las operaciones, manteniendo una distribución uniforme entre los diferentes elementos de la interfaz.
 
 
 
