@@ -4164,241 +4164,241 @@ En esta sección se presentan los commits realizados durante el Sprint 3 en los 
 
 **Web Services — `reliant-platform`**
 
-| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+| Repositorio | Rama | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
 |---|---|---|---|---|---|
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 377bc2f | chore: initial commit. |  | 2026-10-28 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 99c400a | docs: add license. |  | 2026-10-28 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 18ba37e | docs: add readme and license. |  | 2026-10-28 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 0233be0 | feat(equipment): add hvof system code, fuel type and status value objects. |  | 2026-10-28 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 6212848 | feat(equipment): add register hvof system command. |  | 2026-10-28 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | e966445 | feat(equipment): add hvof system aggregate. |  | 2026-10-28 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | a214406 | feat(equipment): add hvof system command failure and repository. |  | 2026-10-28 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | eff88f8 | feat(equipment): implement register hvof system with duplicate handling. |  | 2026-10-28 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | b8b5a3d | feat(equipment): add register hvof system request and hvof system response resources. |  | 2026-10-28 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 4ddeece | feat(equipment): add hvof system command, resource and response entity assemblers. |  | 2026-10-28 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 69bf140 | feat(equipment): add hvof systems controller with register endpoint and localized messages. |  | 2026-10-28 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | f7b1500 | feat(equipment): add accept language header to open api configuration. |  | 2026-10-28 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 7838d0b | feat(equipment): add hvof system queries. |  | 2026-10-28 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | bbbdf3c | feat(equipment): add hvof system query service. |  | 2026-10-28 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 0a6acb1 | feat(equipment): add get hvof system by id and list by organization endpoints. |  | 2026-10-28 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | e3fb09e | fix(equipment): fix duplicated constructor in hvof systems controller. |  | 2026-10-28 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 81ca5b8 | build: pin dependency versions, add maven wrapper and comment out security starter. |  | 2026-11-04 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | a1a4982 | chore: align spring profiles with environment-driven configuration. |  | 2026-11-04 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 8942684 | refactor(shared): remove catch-up style base classes superseded by the hexagonal kernel. |  | 2026-11-04 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 1bbfb0f | feat(shared): add snake case pluralized table naming strategy. |  | 2026-11-04 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | a3c64f6 | feat(shared): add auditable abstract persistence entity. |  | 2026-11-04 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 99f0718 | feat(shared): add abstract domain aggregate root. |  | 2026-11-04 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 53b5b2f | feat(shared): add domain event publisher. |  | 2026-11-04 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 01fb196 | feat(shared): add application error. |  | 2026-11-04 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 5a503e2 | feat(shared): add result. |  | 2026-11-04 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 038b0b0 | feat(equipment): add recipe aggregate, recipe parameter entity, bands/unit/status value objects, events, commands, queries and repository port. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | dbcb25a | feat(equipment): add hvof system id persistence converter. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 0a57b85 | feat(equipment): add parameter bands persistence embeddable. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | c03280f | feat(equipment): add recipe applicability persistence embeddable. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 173fe69 | feat(equipment): add recipe parameter persistence entity. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | a248cc6 | feat(equipment): add recipe persistence entity. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 49623d3 | feat(equipment): add recipe persistence assembler. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 76ede02 | feat(equipment): add recipe persistence repository. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 45b8f01 | feat(equipment): add recipe repository implementation. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | ff4787f | feat(equipment): add recipe command service. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 990558e | feat(equipment): add recipe query service. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | c7dff00 | fix(equipment): align recipe command service with application result. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | bce97d1 | feat(equipment): add recipe command service implementation. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | ada740a | fix(equipment): add active recipe query to recipe query service. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 35b11a5 | feat(equipment): add recipe query service implementation. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | c768d1f | feat(equipment): add recipe parameter resource. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | af34360 | feat(equipment): add recipe applicability resource. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | f75d54e | feat(equipment): add create recipe resource. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 643a3ce | feat(equipment): add recipe response resource. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | f406595 | feat(equipment): add create recipe command assembler. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | e5e3f4b | feat(equipment): add recipe resource assembler. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 8b13572 | feat(equipment): add recipes controller. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 411da80 | feat(equipment): add recipe message keys. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 845ed2e | fix(equipment): correct recipe persistence compilation. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | a91517b | feat(equipment): add hvof subsystem and controller domain model. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | b3cae02 | feat(equipment): add network endpoint persistence embeddable. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | ac4f1cd | feat(equipment): add hvof subsystem persistence entity. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 1f8f529 | feat(equipment): add controller persistence entity. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 07eaee1 | refactor(equipment): map subsystems and controllers in the hvof system persistence entity and assembler. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | c345bac | feat(equipment): add subsystem and controller registration to hvof system command service. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 3916b27 | feat(equipment): add subsystem and controller queries to hvof system query service. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | bbf8e40 | fix(equipment): remove utf-8 bom from persistence files |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 2393060 | feat(equipment): add subsystem resources and assemblers. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 8fefa8e | feat(equipment): add controller resources and assemblers. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 684a0bd | feat(equipment): add subsystem and controller message keys. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 5256fc4 | feat(equipment): add subsystem and controller sub-resource endpoints to hvof systems controller. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 620e7ad | feat(equipment): add recipe published event listener |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | f9e4db2 | test(f4): add subsystem and controller domain tests |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 5a6d7f7 | feat(shared): add message resource. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 0de6358 | feat(shared): add problem detail from application error assembler. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | a805d40 | feat(shared): add error message keys. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | b4da216 | feat(shared): add jakarta validation message keys. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 7faaa0b | feat(shared): add response entity assembler. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 3004bbd | feat(shared): add global exception handler. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | b1c79c3 | feat(shared): add openapi configuration. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | a6149c2 | feat(shared): add locale configuration. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | e7ef48a | feat(shared): add virtual threads configuration. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 4eeae44 | feat(shared): add organization id value object. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | f1df785 | feat(shared): add organization id persistence converter. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | e66c8e3 | feat(shared): add cors web configuration. |  | 2026-11-05 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | a340042 | refactor(equipment): remove jpa-annotated aggregate and catch-up style assemblers. |  | 2026-11-06 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 762ee1b | feat(equipment): add hvof system aggregate, its code/fuel/status value objects, registered event, command, queries and repository port. |  | 2026-11-06 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 6455810 | feat(equipment): add hvof system code persistence converter. |  | 2026-11-06 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 05cbdc4 | feat(equipment): add hvof system persistence entity. |  | 2026-11-06 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | d5cf989 | feat(equipment): add hvof system persistence assembler. |  | 2026-11-06 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 80c068a | feat(equipment): add hvof system persistence repository. |  | 2026-11-06 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 17b4dc1 | feat(equipment): add hvof system repository implementation. |  | 2026-11-06 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | ee9c57d | feat(equipment): add hvof system command service. |  | 2026-11-06 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 948e569 | feat(equipment): add hvof system command service implementation. |  | 2026-11-06 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 41dea87 | feat(equipment): add hvof system query service. |  | 2026-11-06 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 0fb7b0f | feat(equipment): add hvof system query service implementation. |  | 2026-11-06 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 5d59ae8 | feat(equipment): add register hvof system resource. |  | 2026-11-06 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | f30e4a2 | feat(equipment): add hvof system resource. |  | 2026-11-06 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 4e11ee2 | feat(equipment): add register hvof system command from resource assembler. |  | 2026-11-06 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | ca526ee | feat(equipment): add hvof system resource from entity assembler. |  | 2026-11-06 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 91e8034 | feat(equipment): add hvof systems controller. |  | 2026-11-06 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 2f6e9f0 | Complete HVOF subsystems and controllers integration |  | 2026-11-06 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | e769426 | chore(equipment): keep the datasource in the dev profile and drop the review notes. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 7832aa2 | build: add spring security crypto dependency. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | ff90eb7 | feat(iam): add organization, user and role domain model with sign-up and seed roles commands. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | f64fa7a | feat(iam): add role and user command services with bcrypt hashing and role seeding on startup. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | a987090 | feat(iam): add organization, user and role persistence entities, assemblers and repositories. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | a1233c9 | feat(iam): add users controller with sign-up and localized message keys. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 42d6df6 | feat(iam): add role queries and query service. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 9c598f5 | feat(iam): add roles controller. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | b68529c | build: add commons lang3 dependency. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | f081887 | feat(iam): add jwt token service. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | d72419c | feat(iam): add sign in command handling and organization query service. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | ab615fb | feat(iam): add tokens controller with the authenticated user resource. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | ca26d67 | feat(iam): add user queries and assign roles command. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | ffc2aa2 | feat(iam): add user query service and assign roles command handling. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 944db86 | feat(iam): add list, get by id and assign roles endpoints to users controller. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | a5b25f7 | build: enable spring security starter. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 9ec6241 | feat(shared): enable bearer auth security scheme in openapi configuration. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 2776b0c | feat(iam): add bcrypt hashing and bearer token contracts for spring security. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | a0556ca | feat(iam): add spring security user details, bearer authorization filter and web security configuration. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 1d15fc2 | feat(iam): require bearer token on protected endpoints, admin role on user management and add the authenticated user endpoint. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | d6ae2f9 | feat(shared): add the current user provider as the iam anti-corruption layer. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | d13c6bd | feat(shared): map access denied to a 403 problem detail. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 29fc87f | feat(traceability): add customer aggregate, value objects, commands, queries and repository contract. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 6b6710f | feat(traceability): add recovered component aggregate, value objects, commands, queries and repository contract. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | af398d4 | feat(traceability): add customer persistence entity, converters, assembler and repository implementation. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 05a1dc1 | feat(traceability): add recovered component persistence entity, assembler and repository implementation. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 9adcd59 | feat(traceability): add customer command and query services. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | d19a65c | feat(traceability): add recovered component command and query services. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | d29aa8e | feat(traceability): add customers controller with resources, assemblers and message keys. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | ae91ba6 | feat(traceability): add components controller with resources, assemblers and message keys. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 6b98f46 | feat(traceability): add recuperation aggregate with status transitions, linked sessions, commands, queries and events. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | adfcb8f | feat(traceability): add recuperation persistence entity, converters, assembler and repository implementation. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 7cd8170 | feat(traceability): add recuperation command and query services. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 18e0bf5 | feat(traceability): add traceability context facade. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 2dd6c3a | feat(traceability): add recuperations controller with resources, assemblers and message keys. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 8af77a7 | feat(equipment): add equipment context facade with recipe band snapshots. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | ee39937 | feat(process-monitoring): add spray session aggregate with frozen recipe bands, readings, passes, commands, queries and events. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 057f691 | feat(process-monitoring): add spray session, pass and reading persistence entities, converters, assemblers and repositories. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | cfc0433 | feat(process-monitoring): add external equipment and traceability services and the out of band reading event handler. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | dde699d | feat(process-monitoring): add spray session command and query services. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | fea9813 | feat(process-monitoring): add spray sessions controller with reading and pass resources, assemblers and message keys. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 8447d1d | feat(fault-diagnosis): add fault rule aggregate, value objects, commands, queries and repository contract. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | f61bcc8 | feat(fault-diagnosis): add fault rule persistence entity, assembler and repository implementation. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | f15a22d | feat(fault-diagnosis): add fault rule command and query services with the default rules. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | f2723a4 | feat(fault-diagnosis): add fault rules controller with resources, assemblers and message keys. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | c190a47 | feat(fault-diagnosis): add fault case aggregate with acknowledge and resolve transitions, commands, queries and events. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 0a3b143 | feat(fault-diagnosis): add fault case persistence entity, converters, assembler and repository implementation. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 9393f51 | feat(fault-diagnosis): add fault case services with rule matching, cooldown and the out of band reading event handler. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 042d548 | feat(fault-diagnosis): add fault cases controller with resources, assembler and message keys. |  | 2026-11-11 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 1c21ac6 | feat(reporting): add report template and generated report domain model |  | 2026-11-12 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 896afb2 | feat(reporting): add JPA persistence for report templates and generated reports |  | 2026-11-12 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 27e8634 | feat(reporting): add report template and generated report services with default templates |  | 2026-11-12 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | ed08f36 | feat(reporting): expose report templates and generated reports endpoints |  | 2026-11-12 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 62ad123 | chore(release): 1.0.0 with production profile for Azure and updated documentation |  | 2026-11-13 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform | develop | 188fced | docs: add the Azure App Service deployment guide |  | 2026-11-13 |
+| reliant-platform | develop | 377bc2f | chore: initial commit. |  | 2026-10-28 |
+| reliant-platform | develop | 99c400a | docs: add license. |  | 2026-10-28 |
+| reliant-platform | develop | 18ba37e | docs: add readme and license. |  | 2026-10-28 |
+| reliant-platform | develop | 0233be0 | feat(equipment): add hvof system code, fuel type and status value objects. |  | 2026-10-28 |
+| reliant-platform | develop | 6212848 | feat(equipment): add register hvof system command. |  | 2026-10-28 |
+| reliant-platform | develop | e966445 | feat(equipment): add hvof system aggregate. |  | 2026-10-28 |
+| reliant-platform | develop | a214406 | feat(equipment): add hvof system command failure and repository. |  | 2026-10-28 |
+| reliant-platform | develop | eff88f8 | feat(equipment): implement register hvof system with duplicate handling. |  | 2026-10-28 |
+| reliant-platform | develop | b8b5a3d | feat(equipment): add register hvof system request and hvof system response resources. |  | 2026-10-28 |
+| reliant-platform | develop | 4ddeece | feat(equipment): add hvof system command, resource and response entity assemblers. |  | 2026-10-28 |
+| reliant-platform | develop | 69bf140 | feat(equipment): add hvof systems controller with register endpoint and localized messages. |  | 2026-10-28 |
+| reliant-platform | develop | f7b1500 | feat(equipment): add accept language header to open api configuration. |  | 2026-10-28 |
+| reliant-platform | develop | 7838d0b | feat(equipment): add hvof system queries. |  | 2026-10-28 |
+| reliant-platform | develop | bbbdf3c | feat(equipment): add hvof system query service. |  | 2026-10-28 |
+| reliant-platform | develop | 0a6acb1 | feat(equipment): add get hvof system by id and list by organization endpoints. |  | 2026-10-28 |
+| reliant-platform | develop | e3fb09e | fix(equipment): fix duplicated constructor in hvof systems controller. |  | 2026-10-28 |
+| reliant-platform | develop | 81ca5b8 | build: pin dependency versions, add maven wrapper and comment out security starter. |  | 2026-11-04 |
+| reliant-platform | develop | a1a4982 | chore: align spring profiles with environment-driven configuration. |  | 2026-11-04 |
+| reliant-platform | develop | 8942684 | refactor(shared): remove catch-up style base classes superseded by the hexagonal kernel. |  | 2026-11-04 |
+| reliant-platform | develop | 1bbfb0f | feat(shared): add snake case pluralized table naming strategy. |  | 2026-11-04 |
+| reliant-platform | develop | a3c64f6 | feat(shared): add auditable abstract persistence entity. |  | 2026-11-04 |
+| reliant-platform | develop | 99f0718 | feat(shared): add abstract domain aggregate root. |  | 2026-11-04 |
+| reliant-platform | develop | 53b5b2f | feat(shared): add domain event publisher. |  | 2026-11-04 |
+| reliant-platform | develop | 01fb196 | feat(shared): add application error. |  | 2026-11-04 |
+| reliant-platform | develop | 5a503e2 | feat(shared): add result. |  | 2026-11-04 |
+| reliant-platform | develop | 038b0b0 | feat(equipment): add recipe aggregate, recipe parameter entity, bands/unit/status value objects, events, commands, queries and repository port. |  | 2026-11-05 |
+| reliant-platform | develop | dbcb25a | feat(equipment): add hvof system id persistence converter. |  | 2026-11-05 |
+| reliant-platform | develop | 0a57b85 | feat(equipment): add parameter bands persistence embeddable. |  | 2026-11-05 |
+| reliant-platform | develop | c03280f | feat(equipment): add recipe applicability persistence embeddable. |  | 2026-11-05 |
+| reliant-platform | develop | 173fe69 | feat(equipment): add recipe parameter persistence entity. |  | 2026-11-05 |
+| reliant-platform | develop | a248cc6 | feat(equipment): add recipe persistence entity. |  | 2026-11-05 |
+| reliant-platform | develop | 49623d3 | feat(equipment): add recipe persistence assembler. |  | 2026-11-05 |
+| reliant-platform | develop | 76ede02 | feat(equipment): add recipe persistence repository. |  | 2026-11-05 |
+| reliant-platform | develop | 45b8f01 | feat(equipment): add recipe repository implementation. |  | 2026-11-05 |
+| reliant-platform | develop | ff4787f | feat(equipment): add recipe command service. |  | 2026-11-05 |
+| reliant-platform | develop | 990558e | feat(equipment): add recipe query service. |  | 2026-11-05 |
+| reliant-platform | develop | c7dff00 | fix(equipment): align recipe command service with application result. |  | 2026-11-05 |
+| reliant-platform | develop | bce97d1 | feat(equipment): add recipe command service implementation. |  | 2026-11-05 |
+| reliant-platform | develop | ada740a | fix(equipment): add active recipe query to recipe query service. |  | 2026-11-05 |
+| reliant-platform | develop | 35b11a5 | feat(equipment): add recipe query service implementation. |  | 2026-11-05 |
+| reliant-platform | develop | c768d1f | feat(equipment): add recipe parameter resource. |  | 2026-11-05 |
+| reliant-platform | develop | af34360 | feat(equipment): add recipe applicability resource. |  | 2026-11-05 |
+| reliant-platform | develop | f75d54e | feat(equipment): add create recipe resource. |  | 2026-11-05 |
+| reliant-platform | develop | 643a3ce | feat(equipment): add recipe response resource. |  | 2026-11-05 |
+| reliant-platform | develop | f406595 | feat(equipment): add create recipe command assembler. |  | 2026-11-05 |
+| reliant-platform | develop | e5e3f4b | feat(equipment): add recipe resource assembler. |  | 2026-11-05 |
+| reliant-platform | develop | 8b13572 | feat(equipment): add recipes controller. |  | 2026-11-05 |
+| reliant-platform | develop | 411da80 | feat(equipment): add recipe message keys. |  | 2026-11-05 |
+| reliant-platform | develop | 845ed2e | fix(equipment): correct recipe persistence compilation. |  | 2026-11-05 |
+| reliant-platform | develop | a91517b | feat(equipment): add hvof subsystem and controller domain model. |  | 2026-11-05 |
+| reliant-platform | develop | b3cae02 | feat(equipment): add network endpoint persistence embeddable. |  | 2026-11-05 |
+| reliant-platform | develop | ac4f1cd | feat(equipment): add hvof subsystem persistence entity. |  | 2026-11-05 |
+| reliant-platform | develop | 1f8f529 | feat(equipment): add controller persistence entity. |  | 2026-11-05 |
+| reliant-platform | develop | 07eaee1 | refactor(equipment): map subsystems and controllers in the hvof system persistence entity and assembler. |  | 2026-11-05 |
+| reliant-platform | develop | c345bac | feat(equipment): add subsystem and controller registration to hvof system command service. |  | 2026-11-05 |
+| reliant-platform | develop | 3916b27 | feat(equipment): add subsystem and controller queries to hvof system query service. |  | 2026-11-05 |
+| reliant-platform | develop | bbf8e40 | fix(equipment): remove utf-8 bom from persistence files |  | 2026-11-05 |
+| reliant-platform | develop | 2393060 | feat(equipment): add subsystem resources and assemblers. |  | 2026-11-05 |
+| reliant-platform | develop | 8fefa8e | feat(equipment): add controller resources and assemblers. |  | 2026-11-05 |
+| reliant-platform | develop | 684a0bd | feat(equipment): add subsystem and controller message keys. |  | 2026-11-05 |
+| reliant-platform | develop | 5256fc4 | feat(equipment): add subsystem and controller sub-resource endpoints to hvof systems controller. |  | 2026-11-05 |
+| reliant-platform | develop | 620e7ad | feat(equipment): add recipe published event listener |  | 2026-11-05 |
+| reliant-platform | develop | f9e4db2 | test(f4): add subsystem and controller domain tests |  | 2026-11-05 |
+| reliant-platform | develop | 5a6d7f7 | feat(shared): add message resource. |  | 2026-11-05 |
+| reliant-platform | develop | 0de6358 | feat(shared): add problem detail from application error assembler. |  | 2026-11-05 |
+| reliant-platform | develop | a805d40 | feat(shared): add error message keys. |  | 2026-11-05 |
+| reliant-platform | develop | b4da216 | feat(shared): add jakarta validation message keys. |  | 2026-11-05 |
+| reliant-platform | develop | 7faaa0b | feat(shared): add response entity assembler. |  | 2026-11-05 |
+| reliant-platform | develop | 3004bbd | feat(shared): add global exception handler. |  | 2026-11-05 |
+| reliant-platform | develop | b1c79c3 | feat(shared): add openapi configuration. |  | 2026-11-05 |
+| reliant-platform | develop | a6149c2 | feat(shared): add locale configuration. |  | 2026-11-05 |
+| reliant-platform | develop | e7ef48a | feat(shared): add virtual threads configuration. |  | 2026-11-05 |
+| reliant-platform | develop | 4eeae44 | feat(shared): add organization id value object. |  | 2026-11-05 |
+| reliant-platform | develop | f1df785 | feat(shared): add organization id persistence converter. |  | 2026-11-05 |
+| reliant-platform | develop | e66c8e3 | feat(shared): add cors web configuration. |  | 2026-11-05 |
+| reliant-platform | develop | a340042 | refactor(equipment): remove jpa-annotated aggregate and catch-up style assemblers. |  | 2026-11-06 |
+| reliant-platform | develop | 762ee1b | feat(equipment): add hvof system aggregate, its code/fuel/status value objects, registered event, command, queries and repository port. |  | 2026-11-06 |
+| reliant-platform | develop | 6455810 | feat(equipment): add hvof system code persistence converter. |  | 2026-11-06 |
+| reliant-platform | develop | 05cbdc4 | feat(equipment): add hvof system persistence entity. |  | 2026-11-06 |
+| reliant-platform | develop | d5cf989 | feat(equipment): add hvof system persistence assembler. |  | 2026-11-06 |
+| reliant-platform | develop | 80c068a | feat(equipment): add hvof system persistence repository. |  | 2026-11-06 |
+| reliant-platform | develop | 17b4dc1 | feat(equipment): add hvof system repository implementation. |  | 2026-11-06 |
+| reliant-platform | develop | ee9c57d | feat(equipment): add hvof system command service. |  | 2026-11-06 |
+| reliant-platform | develop | 948e569 | feat(equipment): add hvof system command service implementation. |  | 2026-11-06 |
+| reliant-platform | develop | 41dea87 | feat(equipment): add hvof system query service. |  | 2026-11-06 |
+| reliant-platform | develop | 0fb7b0f | feat(equipment): add hvof system query service implementation. |  | 2026-11-06 |
+| reliant-platform | develop | 5d59ae8 | feat(equipment): add register hvof system resource. |  | 2026-11-06 |
+| reliant-platform | develop | f30e4a2 | feat(equipment): add hvof system resource. |  | 2026-11-06 |
+| reliant-platform | develop | 4e11ee2 | feat(equipment): add register hvof system command from resource assembler. |  | 2026-11-06 |
+| reliant-platform | develop | ca526ee | feat(equipment): add hvof system resource from entity assembler. |  | 2026-11-06 |
+| reliant-platform | develop | 91e8034 | feat(equipment): add hvof systems controller. |  | 2026-11-06 |
+| reliant-platform | develop | 2f6e9f0 | Complete HVOF subsystems and controllers integration |  | 2026-11-06 |
+| reliant-platform | develop | e769426 | chore(equipment): keep the datasource in the dev profile and drop the review notes. |  | 2026-11-11 |
+| reliant-platform | develop | 7832aa2 | build: add spring security crypto dependency. |  | 2026-11-11 |
+| reliant-platform | develop | ff90eb7 | feat(iam): add organization, user and role domain model with sign-up and seed roles commands. |  | 2026-11-11 |
+| reliant-platform | develop | f64fa7a | feat(iam): add role and user command services with bcrypt hashing and role seeding on startup. |  | 2026-11-11 |
+| reliant-platform | develop | a987090 | feat(iam): add organization, user and role persistence entities, assemblers and repositories. |  | 2026-11-11 |
+| reliant-platform | develop | a1233c9 | feat(iam): add users controller with sign-up and localized message keys. |  | 2026-11-11 |
+| reliant-platform | develop | 42d6df6 | feat(iam): add role queries and query service. |  | 2026-11-11 |
+| reliant-platform | develop | 9c598f5 | feat(iam): add roles controller. |  | 2026-11-11 |
+| reliant-platform | develop | b68529c | build: add commons lang3 dependency. |  | 2026-11-11 |
+| reliant-platform | develop | f081887 | feat(iam): add jwt token service. |  | 2026-11-11 |
+| reliant-platform | develop | d72419c | feat(iam): add sign in command handling and organization query service. |  | 2026-11-11 |
+| reliant-platform | develop | ab615fb | feat(iam): add tokens controller with the authenticated user resource. |  | 2026-11-11 |
+| reliant-platform | develop | ca26d67 | feat(iam): add user queries and assign roles command. |  | 2026-11-11 |
+| reliant-platform | develop | ffc2aa2 | feat(iam): add user query service and assign roles command handling. |  | 2026-11-11 |
+| reliant-platform | develop | 944db86 | feat(iam): add list, get by id and assign roles endpoints to users controller. |  | 2026-11-11 |
+| reliant-platform | develop | a5b25f7 | build: enable spring security starter. |  | 2026-11-11 |
+| reliant-platform | develop | 9ec6241 | feat(shared): enable bearer auth security scheme in openapi configuration. |  | 2026-11-11 |
+| reliant-platform | develop | 2776b0c | feat(iam): add bcrypt hashing and bearer token contracts for spring security. |  | 2026-11-11 |
+| reliant-platform | develop | a0556ca | feat(iam): add spring security user details, bearer authorization filter and web security configuration. |  | 2026-11-11 |
+| reliant-platform | develop | 1d15fc2 | feat(iam): require bearer token on protected endpoints, admin role on user management and add the authenticated user endpoint. |  | 2026-11-11 |
+| reliant-platform | develop | d6ae2f9 | feat(shared): add the current user provider as the iam anti-corruption layer. |  | 2026-11-11 |
+| reliant-platform | develop | d13c6bd | feat(shared): map access denied to a 403 problem detail. |  | 2026-11-11 |
+| reliant-platform | develop | 29fc87f | feat(traceability): add customer aggregate, value objects, commands, queries and repository contract. |  | 2026-11-11 |
+| reliant-platform | develop | 6b6710f | feat(traceability): add recovered component aggregate, value objects, commands, queries and repository contract. |  | 2026-11-11 |
+| reliant-platform | develop | af398d4 | feat(traceability): add customer persistence entity, converters, assembler and repository implementation. |  | 2026-11-11 |
+| reliant-platform | develop | 05a1dc1 | feat(traceability): add recovered component persistence entity, assembler and repository implementation. |  | 2026-11-11 |
+| reliant-platform | develop | 9adcd59 | feat(traceability): add customer command and query services. |  | 2026-11-11 |
+| reliant-platform | develop | d19a65c | feat(traceability): add recovered component command and query services. |  | 2026-11-11 |
+| reliant-platform | develop | d29aa8e | feat(traceability): add customers controller with resources, assemblers and message keys. |  | 2026-11-11 |
+| reliant-platform | develop | ae91ba6 | feat(traceability): add components controller with resources, assemblers and message keys. |  | 2026-11-11 |
+| reliant-platform | develop | 6b98f46 | feat(traceability): add recuperation aggregate with status transitions, linked sessions, commands, queries and events. |  | 2026-11-11 |
+| reliant-platform | develop | adfcb8f | feat(traceability): add recuperation persistence entity, converters, assembler and repository implementation. |  | 2026-11-11 |
+| reliant-platform | develop | 7cd8170 | feat(traceability): add recuperation command and query services. |  | 2026-11-11 |
+| reliant-platform | develop | 18e0bf5 | feat(traceability): add traceability context facade. |  | 2026-11-11 |
+| reliant-platform | develop | 2dd6c3a | feat(traceability): add recuperations controller with resources, assemblers and message keys. |  | 2026-11-11 |
+| reliant-platform | develop | 8af77a7 | feat(equipment): add equipment context facade with recipe band snapshots. |  | 2026-11-11 |
+| reliant-platform | develop | ee39937 | feat(process-monitoring): add spray session aggregate with frozen recipe bands, readings, passes, commands, queries and events. |  | 2026-11-11 |
+| reliant-platform | develop | 057f691 | feat(process-monitoring): add spray session, pass and reading persistence entities, converters, assemblers and repositories. |  | 2026-11-11 |
+| reliant-platform | develop | cfc0433 | feat(process-monitoring): add external equipment and traceability services and the out of band reading event handler. |  | 2026-11-11 |
+| reliant-platform | develop | dde699d | feat(process-monitoring): add spray session command and query services. |  | 2026-11-11 |
+| reliant-platform | develop | fea9813 | feat(process-monitoring): add spray sessions controller with reading and pass resources, assemblers and message keys. |  | 2026-11-11 |
+| reliant-platform | develop | 8447d1d | feat(fault-diagnosis): add fault rule aggregate, value objects, commands, queries and repository contract. |  | 2026-11-11 |
+| reliant-platform | develop | f61bcc8 | feat(fault-diagnosis): add fault rule persistence entity, assembler and repository implementation. |  | 2026-11-11 |
+| reliant-platform | develop | f15a22d | feat(fault-diagnosis): add fault rule command and query services with the default rules. |  | 2026-11-11 |
+| reliant-platform | develop | f2723a4 | feat(fault-diagnosis): add fault rules controller with resources, assemblers and message keys. |  | 2026-11-11 |
+| reliant-platform | develop | c190a47 | feat(fault-diagnosis): add fault case aggregate with acknowledge and resolve transitions, commands, queries and events. |  | 2026-11-11 |
+| reliant-platform | develop | 0a3b143 | feat(fault-diagnosis): add fault case persistence entity, converters, assembler and repository implementation. |  | 2026-11-11 |
+| reliant-platform | develop | 9393f51 | feat(fault-diagnosis): add fault case services with rule matching, cooldown and the out of band reading event handler. |  | 2026-11-11 |
+| reliant-platform | develop | 042d548 | feat(fault-diagnosis): add fault cases controller with resources, assembler and message keys. |  | 2026-11-11 |
+| reliant-platform | develop | 1c21ac6 | feat(reporting): add report template and generated report domain model |  | 2026-11-12 |
+| reliant-platform | develop | 896afb2 | feat(reporting): add JPA persistence for report templates and generated reports |  | 2026-11-12 |
+| reliant-platform | develop | 27e8634 | feat(reporting): add report template and generated report services with default templates |  | 2026-11-12 |
+| reliant-platform | develop | ed08f36 | feat(reporting): expose report templates and generated reports endpoints |  | 2026-11-12 |
+| reliant-platform | develop | 62ad123 | chore(release): 1.0.0 with production profile for Azure and updated documentation |  | 2026-11-13 |
+| reliant-platform | develop | 188fced | docs: add the Azure App Service deployment guide |  | 2026-11-13 |
 
 **Frontend Web Application — `reliant-webapp`**
 
-| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+| Repositorio | Rama | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
 |---|---|---|---|---|---|
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | e361e79 | feat(theme): configure the reliant material theme |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | d23d25f | style(theme): add reliant global styles |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | b84c4dc | style(theme): load poppins and set reliant page title |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 37341fd | feat(theme): generate reliant color palettes |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | b13bbd4 | feat(layout): add segment-aware side navigation |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 9a5ceed | feat(layout): add responsive side navigation template |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 8f7ab9d | style(layout): add responsive reliant sidebar |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 767e208 | feat(i18n): persist selected language |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 505ea6c | feat(i18n): default to English and restore saved language |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 8618a37 | feat(i18n): add English side navigation translations |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 543062a | feat(i18n): add Spanish side navigation translations |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 48e3481 | chore: install chart.js and ng2-charts |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 25b790d | chore(charts): configure chart.js providers |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | c8400b2 | feat(charts): add shared Reliant chart theme |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 1846469 | feat(charts): create parameter trend chart component |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | ee65f8b | feat(charts): create parameter trend chart component |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 9f677cb | feat(charts): add trend chart template and legend |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 6687626 | style(charts): style trend chart and status legend |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 86fa521 | feat(process-monitoring): integrate parameter trend chart |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | f3933fe | feat(process-monitoring): connect trend chart to session detail |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | e68f3f6 | feat(process-monitoring): translate parameter trend labels |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 281fbd3 | feat(dashboard): define customizable chart widgets |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 5c60161 | feat(dashboard): configure user preferences endpoint |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | ede6fb5 | feat(dashboard): seed default dashboard chart preferences |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 58b996f | feat(dashboard): define default dashboard widgets |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 2e9bdcb | fix(process-monitoring): select latest readings by timestamp |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | be2345d | fix(process-monitoring): recover polling after transient request failures |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 61f5cdc | fix(process-monitoring): expose session completion actions in production |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | cb80578 | feat(dashboard): add user preferences API |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 825825d | feat(dashboard): add user preferences entity |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | b0ad628 | feat(dashboard): define user preferences response |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | b96ad8d | feat(dashboard): add user preferences assembler |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | d572e8b | feat(dashboard): add user preferences API endpoint |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 5c3d42a | feat(dashboard): add user preferences API |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 8ea2694 | feat(dashboard): add dashboard preferences store |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 60c075d | feat(dashboard): add reusable chart widget |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | ec64f64 | feat(dashboard): add chart widget template |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 032dd35 | feat(dashboard): add chart widget styles |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | c2bd895 | feat(dashboard): add monitoring summary statistics |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 6a21ea8 | feat(dashboard): connect home view to dashboard stores |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 89307e1 | feat(dashboard): style recent sessions table |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 4b98194 | feat(dashboard): add dashboard translations |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | f20e8a5 | feat(dashboard): add Spanish dashboard translations |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | a298953 | fix(dashboard): finalize dashboard view and chart styles |  | 2026-10-29 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 7822062 | feat(process-monitoring): add session report table template |  | 2026-11-04 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 1297acf | feat(process-monitoring): load readings for the session report |  | 2026-11-04 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 6d5ddb2 | feat(i18n): localize the session report in English and Spanish |  | 2026-11-04 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 23f81d5 | feat(process-monitoring): register the session report route |  | 2026-11-04 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 07837ac | feat(process-monitoring): add navigation to session reports |  | 2026-11-04 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 34291fb | feat(process-monitoring): show the report action in the session list |  | 2026-11-04 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 8fe998f | feat(process-monitoring): add CSV export for session readings |  | 2026-11-04 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | dd641ab | feat(process-monitoring): connect CSV export to the session report |  | 2026-11-04 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 741ec39 | feat(i18n): localize the CSV download action |  | 2026-11-04 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 1370ddd | feat(process-monitoring): show the CSV download button |  | 2026-11-04 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 615ba13 | chore: connect frontend to local backend |  | 2026-11-06 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 076fadc | feat(shared): point environments to the Reliant platform and surface problem details |  | 2026-11-12 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 968480f | feat(iam): authenticate against platform tokens and assign roles through the users endpoint |  | 2026-11-12 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 9a862da | feat(equipment): load subsystems, controllers and recipes per HVOF system and publish recipes |  | 2026-11-12 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 4446436 | feat(traceability): load components per customer and complete recuperations |  | 2026-11-12 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 63a57f3 | feat(process-monitoring): ingest readings, complete and abort sessions through the platform |  | 2026-11-12 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | a18daf8 | refactor(shared): keep dashboard preferences locally, hide billing and translate the new session actions |  | 2026-11-12 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | cd68ab4 | feat(fault-diagnosis): add fault case and fault rule model with platform endpoints |  | 2026-11-13 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 397968e | feat(fault-diagnosis): add fault diagnosis store |  | 2026-11-13 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | f73761a | feat(fault-diagnosis): add fault case list and detail with acknowledgement, resolution and rule management |  | 2026-11-13 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | bc0f6ee | feat(shared): add demo plant definition and idempotent quick start provisioning |  | 2026-11-13 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 6b56c90 | feat(shared): add quick start view with plant checklist and one-click demo |  | 2026-11-13 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 8905dc3 | feat(shared): rebuild the operations dashboard with live KPIs, recent sessions and fault charts |  | 2026-11-13 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | c164962 | feat(reporting): add report template and generated report model with platform endpoints |  | 2026-11-13 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | dcc9102 | feat(reporting): add reporting store, report data resolution and PDF rendering with jsPDF |  | 2026-11-13 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 5223371 | feat(reporting): add template builder with live preview, generated report list and generate dialog |  | 2026-11-13 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 5061113 | feat(process-monitoring): generate PDF reports from the session detail |  | 2026-11-13 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | cc9fb38 | feat(process-monitoring): add session analysis with statistics, normalized deviations, fault cases and exports |  | 2026-11-13 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | bff565e | fix(shared): keep the footer below the page content instead of overlapping it |  | 2026-11-13 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp | develop | 3bd99d9 | chore(release): 2.0.0 |  | 2026-11-13 |
+| reliant-webapp | develop | e361e79 | feat(theme): configure the reliant material theme |  | 2026-10-29 |
+| reliant-webapp | develop | d23d25f | style(theme): add reliant global styles |  | 2026-10-29 |
+| reliant-webapp | develop | b84c4dc | style(theme): load poppins and set reliant page title |  | 2026-10-29 |
+| reliant-webapp | develop | 37341fd | feat(theme): generate reliant color palettes |  | 2026-10-29 |
+| reliant-webapp | develop | b13bbd4 | feat(layout): add segment-aware side navigation |  | 2026-10-29 |
+| reliant-webapp | develop | 9a5ceed | feat(layout): add responsive side navigation template |  | 2026-10-29 |
+| reliant-webapp | develop | 8f7ab9d | style(layout): add responsive reliant sidebar |  | 2026-10-29 |
+| reliant-webapp | develop | 767e208 | feat(i18n): persist selected language |  | 2026-10-29 |
+| reliant-webapp | develop | 505ea6c | feat(i18n): default to English and restore saved language |  | 2026-10-29 |
+| reliant-webapp | develop | 8618a37 | feat(i18n): add English side navigation translations |  | 2026-10-29 |
+| reliant-webapp | develop | 543062a | feat(i18n): add Spanish side navigation translations |  | 2026-10-29 |
+| reliant-webapp | develop | 48e3481 | chore: install chart.js and ng2-charts |  | 2026-10-29 |
+| reliant-webapp | develop | 25b790d | chore(charts): configure chart.js providers |  | 2026-10-29 |
+| reliant-webapp | develop | c8400b2 | feat(charts): add shared Reliant chart theme |  | 2026-10-29 |
+| reliant-webapp | develop | 1846469 | feat(charts): create parameter trend chart component |  | 2026-10-29 |
+| reliant-webapp | develop | ee65f8b | feat(charts): create parameter trend chart component |  | 2026-10-29 |
+| reliant-webapp | develop | 9f677cb | feat(charts): add trend chart template and legend |  | 2026-10-29 |
+| reliant-webapp | develop | 6687626 | style(charts): style trend chart and status legend |  | 2026-10-29 |
+| reliant-webapp | develop | 86fa521 | feat(process-monitoring): integrate parameter trend chart |  | 2026-10-29 |
+| reliant-webapp | develop | f3933fe | feat(process-monitoring): connect trend chart to session detail |  | 2026-10-29 |
+| reliant-webapp | develop | e68f3f6 | feat(process-monitoring): translate parameter trend labels |  | 2026-10-29 |
+| reliant-webapp | develop | 281fbd3 | feat(dashboard): define customizable chart widgets |  | 2026-10-29 |
+| reliant-webapp | develop | 5c60161 | feat(dashboard): configure user preferences endpoint |  | 2026-10-29 |
+| reliant-webapp | develop | ede6fb5 | feat(dashboard): seed default dashboard chart preferences |  | 2026-10-29 |
+| reliant-webapp | develop | 58b996f | feat(dashboard): define default dashboard widgets |  | 2026-10-29 |
+| reliant-webapp | develop | 2e9bdcb | fix(process-monitoring): select latest readings by timestamp |  | 2026-10-29 |
+| reliant-webapp | develop | be2345d | fix(process-monitoring): recover polling after transient request failures |  | 2026-10-29 |
+| reliant-webapp | develop | 61f5cdc | fix(process-monitoring): expose session completion actions in production |  | 2026-10-29 |
+| reliant-webapp | develop | cb80578 | feat(dashboard): add user preferences API |  | 2026-10-29 |
+| reliant-webapp | develop | 825825d | feat(dashboard): add user preferences entity |  | 2026-10-29 |
+| reliant-webapp | develop | b0ad628 | feat(dashboard): define user preferences response |  | 2026-10-29 |
+| reliant-webapp | develop | b96ad8d | feat(dashboard): add user preferences assembler |  | 2026-10-29 |
+| reliant-webapp | develop | d572e8b | feat(dashboard): add user preferences API endpoint |  | 2026-10-29 |
+| reliant-webapp | develop | 5c3d42a | feat(dashboard): add user preferences API |  | 2026-10-29 |
+| reliant-webapp | develop | 8ea2694 | feat(dashboard): add dashboard preferences store |  | 2026-10-29 |
+| reliant-webapp | develop | 60c075d | feat(dashboard): add reusable chart widget |  | 2026-10-29 |
+| reliant-webapp | develop | ec64f64 | feat(dashboard): add chart widget template |  | 2026-10-29 |
+| reliant-webapp | develop | 032dd35 | feat(dashboard): add chart widget styles |  | 2026-10-29 |
+| reliant-webapp | develop | c2bd895 | feat(dashboard): add monitoring summary statistics |  | 2026-10-29 |
+| reliant-webapp | develop | 6a21ea8 | feat(dashboard): connect home view to dashboard stores |  | 2026-10-29 |
+| reliant-webapp | develop | 89307e1 | feat(dashboard): style recent sessions table |  | 2026-10-29 |
+| reliant-webapp | develop | 4b98194 | feat(dashboard): add dashboard translations |  | 2026-10-29 |
+| reliant-webapp | develop | f20e8a5 | feat(dashboard): add Spanish dashboard translations |  | 2026-10-29 |
+| reliant-webapp | develop | a298953 | fix(dashboard): finalize dashboard view and chart styles |  | 2026-10-29 |
+| reliant-webapp | develop | 7822062 | feat(process-monitoring): add session report table template |  | 2026-11-04 |
+| reliant-webapp | develop | 1297acf | feat(process-monitoring): load readings for the session report |  | 2026-11-04 |
+| reliant-webapp | develop | 6d5ddb2 | feat(i18n): localize the session report in English and Spanish |  | 2026-11-04 |
+| reliant-webapp | develop | 23f81d5 | feat(process-monitoring): register the session report route |  | 2026-11-04 |
+| reliant-webapp | develop | 07837ac | feat(process-monitoring): add navigation to session reports |  | 2026-11-04 |
+| reliant-webapp | develop | 34291fb | feat(process-monitoring): show the report action in the session list |  | 2026-11-04 |
+| reliant-webapp | develop | 8fe998f | feat(process-monitoring): add CSV export for session readings |  | 2026-11-04 |
+| reliant-webapp | develop | dd641ab | feat(process-monitoring): connect CSV export to the session report |  | 2026-11-04 |
+| reliant-webapp | develop | 741ec39 | feat(i18n): localize the CSV download action |  | 2026-11-04 |
+| reliant-webapp | develop | 1370ddd | feat(process-monitoring): show the CSV download button |  | 2026-11-04 |
+| reliant-webapp | develop | 615ba13 | chore: connect frontend to local backend |  | 2026-11-06 |
+| reliant-webapp | develop | 076fadc | feat(shared): point environments to the Reliant platform and surface problem details |  | 2026-11-12 |
+| reliant-webapp | develop | 968480f | feat(iam): authenticate against platform tokens and assign roles through the users endpoint |  | 2026-11-12 |
+| reliant-webapp | develop | 9a862da | feat(equipment): load subsystems, controllers and recipes per HVOF system and publish recipes |  | 2026-11-12 |
+| reliant-webapp | develop | 4446436 | feat(traceability): load components per customer and complete recuperations |  | 2026-11-12 |
+| reliant-webapp | develop | 63a57f3 | feat(process-monitoring): ingest readings, complete and abort sessions through the platform |  | 2026-11-12 |
+| reliant-webapp | develop | a18daf8 | refactor(shared): keep dashboard preferences locally, hide billing and translate the new session actions |  | 2026-11-12 |
+| reliant-webapp | develop | cd68ab4 | feat(fault-diagnosis): add fault case and fault rule model with platform endpoints |  | 2026-11-13 |
+| reliant-webapp | develop | 397968e | feat(fault-diagnosis): add fault diagnosis store |  | 2026-11-13 |
+| reliant-webapp | develop | f73761a | feat(fault-diagnosis): add fault case list and detail with acknowledgement, resolution and rule management |  | 2026-11-13 |
+| reliant-webapp | develop | bc0f6ee | feat(shared): add demo plant definition and idempotent quick start provisioning |  | 2026-11-13 |
+| reliant-webapp | develop | 6b56c90 | feat(shared): add quick start view with plant checklist and one-click demo |  | 2026-11-13 |
+| reliant-webapp | develop | 8905dc3 | feat(shared): rebuild the operations dashboard with live KPIs, recent sessions and fault charts |  | 2026-11-13 |
+| reliant-webapp | develop | c164962 | feat(reporting): add report template and generated report model with platform endpoints |  | 2026-11-13 |
+| reliant-webapp | develop | dcc9102 | feat(reporting): add reporting store, report data resolution and PDF rendering with jsPDF |  | 2026-11-13 |
+| reliant-webapp | develop | 5223371 | feat(reporting): add template builder with live preview, generated report list and generate dialog |  | 2026-11-13 |
+| reliant-webapp | develop | 5061113 | feat(process-monitoring): generate PDF reports from the session detail |  | 2026-11-13 |
+| reliant-webapp | develop | cc9fb38 | feat(process-monitoring): add session analysis with statistics, normalized deviations, fault cases and exports |  | 2026-11-13 |
+| reliant-webapp | develop | bff565e | fix(shared): keep the footer below the page content instead of overlapping it |  | 2026-11-13 |
+| reliant-webapp | develop | 3bd99d9 | chore(release): 2.0.0 |  | 2026-11-13 |
 
 **Landing Page — `reliant-website`**
 
-| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+| Repositorio | Rama | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
 |---|---|---|---|---|---|
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-website | develop | 60a2430 | feat(landing): redesign landing page with InnovaCorp visual identity | - Poppins typography, navy/orange palette, logo, hero photo and icon cards - Services, Plans, About us (product/team videos) and Contact sections - CTAs open th | 2026-11-13 |
-| upc-pre-202620-1asi0729-7753-innovacorp/reliant-website | develop | 9d8d403 | chore(release): prepare release 2.1.0 |  | 2026-11-13 |
+| reliant-website | develop | 60a2430 | feat(landing): redesign landing page with InnovaCorp visual identity | - Poppins typography, navy/orange palette, logo, hero photo and icon cards - Services, Plans, About us (product/team videos) and Contact sections - CTAs open th | 2026-11-13 |
+| reliant-website | develop | 9d8d403 | chore(release): prepare release 2.1.0 |  | 2026-11-13 |
 
 #### 5.2.3.5. Execution Evidence for Sprint Review.
 
