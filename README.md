@@ -4497,6 +4497,7 @@ En el Sprint 3 se desplegaron en Microsoft Azure los Web Services (Web App `reli
 
 | Evidencia | Descripción |
 |---|---|
+| <img src="assets/img/5.chapter-v/5.2.3.7-platform-web-app-overview.png" width="720"> | Web App `reliant-platform` en Azure App Service (Java 21 SE, Linux, West US 3) con el último despliegue exitoso desde GitHub Actions. |
 | <img src="assets/img/5.chapter-v/5.2.3.7-azure-resources.png" width="720"> | Grupo de recursos `rg-reliant` con el servidor MySQL y los Web Apps. |
 | <img src="assets/img/5.chapter-v/5.2.3.7-platform-env-vars.png" width="720"> | Variables de entorno del Web App `reliant-platform`. |
 | <img src="assets/img/5.chapter-v/5.2.3.7-github-actions-platform.png" width="720"> | Workflow `main_reliant-platform.yml` en verde. |
