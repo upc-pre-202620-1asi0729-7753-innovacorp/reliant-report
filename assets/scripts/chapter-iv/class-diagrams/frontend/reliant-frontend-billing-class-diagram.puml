@@ -1,0 +1,135 @@
+@startuml "Reliant_Frontend_Billing"
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam packageStyle rectangle
+skinparam defaultFontName Inter
+hide empty members
+title Reliant - Frontend Billing Class Diagram
+left to right direction
+
+package "Domain" {
+  class Plan {
+    id: number
+    name: string
+    planType: PlanType
+    monthlyPriceAmount: number
+    monthlyPriceCurrency: string
+    maxMonitoredSystems: number
+    maxTrackedComponents: number
+  }
+  enum PlanType {
+    OPERATOR
+    ASSET_OWNER
+  }
+  class Subscription {
+    id: number
+    organizationId: number
+    planId: number
+    startDate: string
+    endDate: string
+    status: SubscriptionStatus
+    daysToExpiry: number
+  }
+  enum SubscriptionStatus {
+    ACTIVE
+    EXPIRED
+    CANCELLED
+  }
+}
+
+package "Application" {
+  class BillingStore {
+    api: BillingApi
+    iam: IamStore
+    plansSignal: signal<Plan[]>
+    subscriptionsSignal: signal<Subscription[]>
+    subscription: computed
+    currentPlan: computed
+    errorSignal: signal<string | null>
+    allowedPlanType: computed
+    load(): void
+    canSelect(plan): boolean
+  }
+}
+
+package "Infrastructure" {
+  class BillingApi {
+    getPlans(): Observable<Plan[]>
+    getSubscriptionsByOrganizationId(organizationId): Observable<Subscription[]>
+    createSubscription(subscription): Observable<Subscription>
+  }
+  class PlansApiEndpoint {
+  }
+  interface PlansResponse {
+    plans: PlanResource[]
+  }
+  interface PlanResource {
+    id: number
+    name: string
+    planType: PlanType
+    monthlyPriceAmount: number
+    monthlyPriceCurrency: string
+    maxMonitoredSystems: number
+    maxTrackedComponents: number
+  }
+  class SubscriptionsApiEndpoint {
+  }
+  interface SubscriptionsResponse {
+    subscriptions: SubscriptionResource[]
+  }
+  interface SubscriptionResource {
+    id: number
+    organizationId: number
+    planId: number
+    startDate: string
+    endDate: string
+    status: SubscriptionStatus
+  }
+}
+
+package "Presentation" {
+  class PlanSelection {
+    store: BillingStore
+    router: Router
+    ngOnInit(): void
+    select(plan): void
+  }
+  class SubscriptionDetail {
+    store: BillingStore
+    router: Router
+    ngOnInit(): void
+    choosePlan(): void
+  }
+}
+
+package "Shared (external)" #EEEEEE {
+  class BaseApi <<shared>>
+  class BaseApiEndpoint <<shared>>
+  class BaseEntity <<shared>>
+  class BaseResource <<shared>>
+  class BaseResponse <<shared>>
+  class OnInit <<shared>>
+}
+BaseApi <|-- BillingApi
+BaseApiEndpoint <|-- PlansApiEndpoint
+BaseApiEndpoint <|-- SubscriptionsApiEndpoint
+BaseEntity <|.. Plan
+BaseEntity <|.. Subscription
+BaseResource <|.. PlanResource
+BaseResource <|.. SubscriptionResource
+BaseResponse <|.. PlansResponse
+BaseResponse <|.. SubscriptionsResponse
+BillingStore --> BillingApi
+BillingStore --> Plan
+BillingStore --> Subscription
+OnInit <|.. PlanSelection
+OnInit <|.. SubscriptionDetail
+Plan --> PlanType
+PlanResource --> PlanType
+PlanSelection --> BillingStore
+PlansResponse --> PlanResource
+Subscription --> SubscriptionStatus
+SubscriptionDetail --> BillingStore
+SubscriptionResource --> SubscriptionStatus
+SubscriptionsResponse --> SubscriptionResource
+@enduml

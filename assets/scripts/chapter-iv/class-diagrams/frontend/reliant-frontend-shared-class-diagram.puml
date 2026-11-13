@@ -1,0 +1,175 @@
+@startuml "Reliant_Frontend_Shared"
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam packageStyle rectangle
+skinparam defaultFontName Inter
+hide empty members
+title Reliant - Frontend Shared Class Diagram
+left to right direction
+
+package "Domain" {
+  interface BaseEntity {
+    id: number
+  }
+  interface DashboardWidget {
+    code: DashboardWidgetCode
+    chartType: ChartType
+  }
+  enum ChartType {
+    line
+    bar
+    doughnut
+  }
+  enum DashboardWidgetCode {
+    deviationsByParameter
+    sessionsByStatus
+  }
+  enum QuickStartStep {
+    hvof-system
+    subsystems
+    controller
+    recipe
+    customer
+    component
+    recuperation
+    session
+  }
+}
+
+package "Application" {
+  class DashboardStore {
+    widgetsSignal: signal<DashboardWidget[]>
+    errorSignal: signal<string | null>
+    chartTypes: computed
+    chartTypeOf(code): ChartType
+    setChartType(code, chartType): void
+  }
+  class QuickStartService {
+    equipmentApi: EquipmentApi
+    traceabilityApi: TraceabilityApi
+    monitoringApi: ProcessMonitoringApi
+    equipment: EquipmentStore
+    traceability: TraceabilityStore
+    monitoring: ProcessMonitoringStore
+    iam: IamStore
+    runningSignal: signal
+    errorSignal: signal<string | null>
+    sessionIdSignal: signal<number | null>
+    reset(): void
+    run(): void
+    setStep(step, state): void
+    ensureSystem(organizationId): void
+    ensureSubsystems(system): void
+    ensureController(system): void
+    ensureRecipe(system): void
+    ensureCustomer(organizationId): void
+    ensureComponent(customer): void
+    ensureRecuperation(organizationId, customer, component): void
+    startSession(system, recipe, recuperation): void
+  }
+  enum StepState {
+    pending
+    running
+    done
+    reused
+    failed
+  }
+}
+
+package "Infrastructure" {
+  abstract class BaseApi {
+    http: HttpClient
+  }
+  interface BaseAssembler {
+  }
+  interface BaseResponse {
+  }
+  interface BaseResource {
+    id: number
+  }
+  abstract class ErrorHandlingEnabledBaseType {
+    handleError(operation): void
+    describe(error, operation): string
+  }
+}
+
+package "Presentation" {
+  class BaseForm {
+    isInvalidControl(form, controlName): boolean
+    errorMessageForControl(controlName, errorKey): string
+    errorMessagesForControl(form, controlName): string
+  }
+  class ChartWidget {
+    chartType: input<ChartType>
+    seriesLabel: input
+    chartTypeChange: output<ChartType>
+    data: computed<ChartConfiguration['data']>
+    options: computed<ChartConfiguration['options']>
+  }
+  class FooterContent {
+  }
+  class LanguageSwitcher {
+    currentLang: string
+    languages: string[]
+    translate: TranslateService
+    useLanguage(language): void
+  }
+  class Layout {
+    iam: IamStore
+    menuOpen: signal
+    groups: computed<NavGroup[]>
+    toggleMenu(): void
+    closeMenu(): void
+  }
+  class About {
+  }
+  class Home {
+    iam: IamStore
+    monitoring: ProcessMonitoringStore
+    traceability: TraceabilityStore
+    equipment: EquipmentStore
+    faults: FaultDiagnosisStore
+    dashboard: DashboardStore
+    translate: TranslateService
+    plantIsEmpty: computed
+    activeSession: computed
+    recentSessions: computed
+    inProgressRecuperations: computed
+    faultLabels: computed
+    faultValues: computed
+    statusLabels: computed
+    statusValues: computed
+    setChartType(code, type): void
+    systemCode(id): string
+    workOrder(id): string
+    openCasesOf(sessionId): number
+  }
+  class PageNotFound {
+    route: ActivatedRoute
+    router: Router
+    ngOnInit(): void
+    navigateToHome(): void
+  }
+  class QuickStart {
+    service: QuickStartService
+    equipment: EquipmentStore
+    traceability: TraceabilityStore
+    iam: IamStore
+    router: Router
+    canProvision: computed
+    checklist: computed
+    completed: computed
+    stepIcon(state): string
+    run(): void
+    openSession(): void
+    go(link): void
+  }
+}
+
+ChartWidget --> ChartType
+DashboardStore --> DashboardWidget
+DashboardWidget --> ChartType
+DashboardWidget --> DashboardWidgetCode
+Home --> DashboardStore
+QuickStart --> QuickStartService
+@enduml

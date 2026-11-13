@@ -1,0 +1,281 @@
+@startuml "Reliant_Frontend_Traceability"
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam packageStyle rectangle
+skinparam defaultFontName Inter
+hide empty members
+title Reliant - Frontend Traceability Class Diagram
+left to right direction
+
+package "Domain" {
+  class RecoveredComponent {
+    id: number
+    serialNumber: string
+    partNumber: string
+    componentType: ComponentType
+    machineManufacturer: string
+    machineModel: string
+    customerId: number
+    pcrTargetHours: number
+    status: ComponentStatus
+  }
+  enum ComponentType {
+    HYDRAULIC_ROD
+    CYLINDER_BLOCK
+    SHAFT
+    IMPELLER
+    OTHER
+  }
+  enum ComponentStatus {
+    RECEIVED
+    IN_RECUPERATION
+    IN_SERVICE
+    RETURNED
+    SCRAPPED
+  }
+  class Customer {
+    id: number
+    supplierOrganizationId: number
+    linkedAssetOwnerOrganizationId: number | null
+    legalName: string
+    ruc: string
+    mineSite: string
+  }
+  class Recuperation {
+    id: number
+    workOrderNumber: string
+    manufacturingOrderNumber: string
+    componentId: number
+    customerId: number
+    supplierOrganizationId: number
+    segment: string
+    operation: string
+    weightValue: number
+    weightUnitSymbol: string
+    hourmeterAtEntry: number
+    powderSupplier: string
+    powderLotNumber: string
+    powderChemicalComposition: string
+    status: RecuperationStatus
+    receivedAt: string
+    completedAt: string | null
+    linkedSessions: LinkedSession[]
+  }
+  interface LinkedSession {
+    sessionId: number
+  }
+  enum RecuperationStatus {
+    RECEIVED
+    IN_PROGRESS
+    COMPLETED
+    DELIVERED
+    REWORK
+  }
+}
+
+package "Application" {
+  class TraceabilityStore {
+    api: TraceabilityApi
+    iam: IamStore
+    customersSignal: signal<Customer[]>
+    customerCount: computed
+    componentsSignal: signal<RecoveredComponent[]>
+    componentCount: computed
+    recuperationsSignal: signal<Recuperation[]>
+    recuperationCount: computed
+    openRecuperations: computed
+    loadingSignal: signal<boolean>
+    errorSignal: signal<string | null>
+    loadedSignal: signal<boolean>
+    reload(): void
+    loadComponents(customers): void
+    getCustomerById(id): Signal<Customer | undefined>
+    customerNameOf(customerId): string
+    updateCustomer(updated): void
+    getComponentById(id): Signal<RecoveredComponent | undefined>
+    componentSerialOf(componentId): string
+    componentsOf(customerId): Signal<RecoveredComponent[]>
+    getRecuperationById(id): Signal<Recuperation | undefined>
+    completeRecuperation(id): void
+    refreshRecuperations(): void
+    formatError(error, fallback): string
+  }
+}
+
+package "Infrastructure" {
+  class ComponentsApiEndpoint {
+  }
+  interface ComponentsResponse {
+    components: ComponentResource[]
+  }
+  interface ComponentResource {
+    id: number
+    serialNumber: string
+    partNumber: string
+    componentType: ComponentType
+    machineManufacturer: string
+    machineModel: string
+    customerId: number
+    pcrTargetHours: number
+    status: ComponentStatus
+  }
+  class CustomersApiEndpoint {
+  }
+  interface CustomersResponse {
+    customers: CustomerResource[]
+  }
+  interface CustomerResource {
+    id: number
+    supplierOrganizationId: number
+    linkedAssetOwnerOrganizationId: number | null
+    legalName: string
+    ruc: string
+    mineSite: string
+  }
+  class RecuperationsApiEndpoint {
+    complete(recuperationId): Observable<Recuperation>
+  }
+  interface RecuperationsResponse {
+    recuperations: RecuperationResource[]
+  }
+  interface RecuperationResource {
+    id: number
+    workOrderNumber: string
+    manufacturingOrderNumber: string
+    componentId: number
+    customerId: number
+    supplierOrganizationId: number
+    segment: string
+    operation: string
+    weightValue: number
+    weightUnitSymbol: string
+    hourmeterAtEntry: number
+    powderSupplier: string
+    powderLotNumber: string
+    powderChemicalComposition: string
+    status: RecuperationStatus
+    receivedAt: string
+    completedAt: string | null
+    linkedSessions: LinkedSession[]
+  }
+  class TraceabilityApi {
+    getCustomers(): Observable<Customer[]>
+    createCustomer(customer): Observable<Customer>
+    updateCustomer(customer): Observable<Customer>
+    getComponentsByCustomerId(customerId): Observable<RecoveredComponent[]>
+    createComponent(component): Observable<RecoveredComponent>
+    getRecuperations(): Observable<Recuperation[]>
+    createRecuperation(recuperation): Observable<Recuperation>
+    completeRecuperation(recuperationId): Observable<Recuperation>
+  }
+}
+
+package "Presentation" {
+  class ComponentForm {
+    fb: FormBuilder
+    route: ActivatedRoute
+    router: Router
+    store: TraceabilityStore
+    componentTypes: ComponentType[]
+    componentId: number | null
+    submit(): void
+    cancel(): void
+  }
+  class ComponentList {
+    store: TraceabilityStore
+    router: Router
+    displayedColumns: string[]
+    sort: viewChild
+    paginator: viewChild
+    dataSource: computed
+    navigateToNew(): void
+  }
+  class CustomerForm {
+    fb: FormBuilder
+    route: ActivatedRoute
+    router: Router
+    store: TraceabilityStore
+    customerId: number | null
+    iam: IamStore
+    submit(): void
+    cancel(): void
+  }
+  class CustomerList {
+    store: TraceabilityStore
+    router: Router
+    displayedColumns: string[]
+    sort: viewChild
+    paginator: viewChild
+    dataSource: computed
+    navigateToNew(): void
+    editCustomer(id): void
+  }
+  class RecuperationForm {
+    fb: FormBuilder
+    route: ActivatedRoute
+    router: Router
+    store: TraceabilityStore
+    iam: IamStore
+    recuperationId: number | null
+    submit(): void
+    cancel(): void
+  }
+  class RecuperationList {
+    store: TraceabilityStore
+    router: Router
+    displayedColumns: string[]
+    sort: viewChild
+    paginator: viewChild
+    dataSource: computed
+    navigateToNew(): void
+    completeRecuperation(id): void
+  }
+}
+
+package "Shared (external)" #EEEEEE {
+  class BaseApi <<shared>>
+  class BaseApiEndpoint <<shared>>
+  class BaseEntity <<shared>>
+  class BaseForm <<shared>>
+  class BaseResource <<shared>>
+  class BaseResponse <<shared>>
+}
+BaseApi <|-- TraceabilityApi
+BaseApiEndpoint <|-- ComponentsApiEndpoint
+BaseApiEndpoint <|-- CustomersApiEndpoint
+BaseApiEndpoint <|-- RecuperationsApiEndpoint
+BaseEntity <|.. Customer
+BaseEntity <|.. RecoveredComponent
+BaseEntity <|.. Recuperation
+BaseForm <|-- ComponentForm
+BaseForm <|-- CustomerForm
+BaseForm <|-- RecuperationForm
+BaseResource <|.. ComponentResource
+BaseResource <|.. CustomerResource
+BaseResource <|.. RecuperationResource
+BaseResponse <|.. ComponentsResponse
+BaseResponse <|.. CustomersResponse
+BaseResponse <|.. RecuperationsResponse
+ComponentForm --> ComponentType
+ComponentForm --> TraceabilityStore
+ComponentList --> TraceabilityStore
+ComponentResource --> ComponentStatus
+ComponentResource --> ComponentType
+ComponentsResponse --> ComponentResource
+CustomerForm --> TraceabilityStore
+CustomerList --> TraceabilityStore
+CustomersResponse --> CustomerResource
+RecoveredComponent --> ComponentStatus
+RecoveredComponent --> ComponentType
+Recuperation --> LinkedSession
+Recuperation --> RecuperationStatus
+RecuperationForm --> TraceabilityStore
+RecuperationList --> TraceabilityStore
+RecuperationResource --> LinkedSession
+RecuperationResource --> RecuperationStatus
+RecuperationsResponse --> RecuperationResource
+TraceabilityStore --> Customer
+TraceabilityStore --> RecoveredComponent
+TraceabilityStore --> Recuperation
+TraceabilityStore --> TraceabilityApi
+@enduml

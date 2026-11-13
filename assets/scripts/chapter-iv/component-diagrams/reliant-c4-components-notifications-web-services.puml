@@ -1,10 +1,10 @@
 @startuml "Components-Notifications"
 !includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
 
-title Reliant - Notifications Component Diagram (Web Services)
+title Reliant - Backend Notifications Components Diagram
 
 Container(webapp, "Web Application", "Angular", "Consumes the REST endpoints of this bounded context")
-ContainerDb(db, "Database", "PostgreSQL 16", "Persistence of this bounded context")
+ContainerDb(db, "Database", "MySQL 8.0", "Persistence of this bounded context")
 System_Ext(mailchimp, "Mailchimp", "E-mail delivery and newsletter audience")
 
 Container_Boundary(bc, "Notifications Bounded Context") {
