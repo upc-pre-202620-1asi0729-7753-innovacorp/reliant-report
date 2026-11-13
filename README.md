@@ -4093,7 +4093,9 @@ El Sprint 3 tuvo como objetivo publicar la primera versión de los Web Services 
 
 La matriz LACX del Sprint 3 distribuye los bounded contexts de los Web Services y los frentes de la Web Application y del Landing Page entre los tres integrantes. Los aspectos de los Web Services corresponden a los bounded contexts implementados en `reliant-platform`; los aspectos de la Web Application agrupan las vistas nuevas de `reliant-webapp`; y el aspecto Landing Page Redesign corresponde a la versión 2.1.0 de `reliant-website`.
 
-| Team Member (Last Name, First Name) | GitHub Username | IAM & Security (Web Services) Leader (L) / Collaborator (C) | Equipment (Web Services) Leader (L) / Collaborator (C) | Traceability (Web Services) Leader (L) / Collaborator (C) | Process Monitoring (Web Services) Leader (L) / Collaborator (C) | Fault Diagnosis (Web Services) Leader (L) / Collaborator (C) | Reporting (Web Services) Leader (L) / Collaborator (C) | Platform Integration & Deployment Leader (L) / Collaborator (C) | Dashboard, Theme & Charts (Web Application) Leader (L) / Collaborator (C) | Session Reports & CSV Export (Web Application) Leader (L) / Collaborator (C) | Fault Diagnosis, Reporting & Quick Start (Web Application) Leader (L) / Collaborator (C) | Landing Page Redesign Leader (L) / Collaborator (C) |
+Leyenda: **L** = Leader, **C** = Collaborator, **–** = sin participación; **WS** = Web Services (`reliant-platform`), **WA** = Web Application (`reliant-webapp`), **LP** = Landing Page (`reliant-website`).
+
+| Team Member (Last Name, First Name) | GitHub Username | IAM & Security (WS) | Equipment (WS) | Traceability (WS) | Process Monitoring (WS) | Fault Diagnosis (WS) | Reporting (WS) | Platform Integration & Deployment | Dashboard, Theme & Charts (WA) | Session Reports & CSV Export (WA) | Fault Diagnosis, Reporting & Quick Start (WA) | Landing Page Redesign (LP) |
 |---|---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 | Navarro Aldoradin, Carolina Celeste | genixmvp | L | C | L | L | L | L | L | C | C | L | L |
 | Rivera Aguilar, Scarlet Josefina | scarletriveraaguilar-spec | – | L | – | – | – | – | C | L | – | – | C |
