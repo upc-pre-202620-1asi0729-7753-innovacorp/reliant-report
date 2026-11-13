@@ -4515,7 +4515,7 @@ El gráfico resume los commits (sin merges) por integrante y repositorio registr
 | `reliant-webapp` | MrBaru | 13 |
 | `reliant-website` | genixmvp | 2 |
 | `reliant-report` | scarletriveraaguilar-spec | 78 |
-| `reliant-report` | genixmvp | {{REPORT_COMMITS_CC}} |
+| `reliant-report` | genixmvp | 2 |
 
 Las capturas de Insights → Contributors de GitHub para cada repositorio se incluyen a continuación:
 
