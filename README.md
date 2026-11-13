@@ -4788,7 +4788,89 @@ Las entrevistas de validación verifican, con usuarios de los dos segmentos obje
 
 ### 5.3.2. Registro de Entrevistas.
 
-Las sesiones de validación con usuarios de los segmentos Recuperation Supplier y Asset Owner se programaron para el cierre del Sprint 3 sobre la Web Application 2.0.2 conectada a los Web Services; el registro de cada entrevista (datos del participante, duración, enlace al video en Microsoft Stream, captura y resumen de los aspectos más y menos valorados) se incorporará en la entrega TB2, junto con el video consolidado `upc-pre-202620-1asi0729-7753-innovacorp-validation-sprint-3`. Los hallazgos de la evaluación por expertos del equipo se presentan en la sección 5.3.3.
+Las sesiones de validación se realizaron sobre la Web Application 2.0.2 conectada a los Web Services, con participantes de los segmentos Recuperation Supplier y Asset Owner. Se registra cada entrevista con los datos del participante, la duración, el enlace al video, la captura y el resumen de los aspectos más y menos valorados; los campos pendientes se completarán con el video consolidado `upc-pre-202620-1asi0729-7753-innovacorp-validation-sprint-3`.
+
+### Segmento 1: Recuperation Supplier
+
+#### Entrevista 1: Cristian Rimac
+
+| Campo | Detalle |
+|---|---|
+| Nombres y apellidos | Cristian Rimac |
+| Edad | 29 años |
+| Distrito | San Miguel |
+| Ocupación | Ingeniero de Proyectos, Desarrollo e Investigación |
+| Duración | 5 minutos |
+| URL | Pendiente de agregar |
+| Screenshot | Pendiente de agregar |
+| **Resumen** | **Lo más valorado:** Pendiente de completar con las respuestas de la entrevista. **Lo menos valorado:** Pendiente de completar. **Comentarios sobre la experiencia:** Pendiente de completar. |
+
+#### Entrevista 2
+
+| Campo | Detalle |
+|---|---|
+| Nombres y apellidos | Pendiente |
+| Edad | Pendiente |
+| Distrito | Pendiente |
+| Ocupación | Pendiente |
+| Duración | Pendiente |
+| URL | Pendiente de agregar |
+| Screenshot | Pendiente de agregar |
+| **Resumen** | **Lo más valorado:** Pendiente. **Lo menos valorado:** Pendiente. **Comentarios sobre la experiencia:** Pendiente. |
+
+#### Entrevista 3
+
+| Campo | Detalle |
+|---|---|
+| Nombres y apellidos | Pendiente |
+| Edad | Pendiente |
+| Distrito | Pendiente |
+| Ocupación | Pendiente |
+| Duración | Pendiente |
+| URL | Pendiente de agregar |
+| Screenshot | Pendiente de agregar |
+| **Resumen** | **Lo más valorado:** Pendiente. **Lo menos valorado:** Pendiente. **Comentarios sobre la experiencia:** Pendiente. |
+
+### Segmento 2: Asset Owner
+
+#### Entrevista 1: Rivaldo Muñoz
+
+| Campo | Detalle |
+|---|---|
+| Nombres y apellidos | Rivaldo Muñoz |
+| Edad | 25 años |
+| Distrito | Lima |
+| Ocupación | Supervisor de equipos y componentes |
+| Duración | 7 minutos |
+| URL | Pendiente de agregar |
+| Screenshot | Pendiente de agregar |
+| **Resumen** | **Lo más valorado:** Consultar el historial y las lecturas de los componentes desde una misma plataforma. **Lo menos valorado:** Algunos datos técnicos podrían presentarse de manera más sencilla. **Comentarios sobre la experiencia:** Consideró sencillo el registro y el inicio de sesión. Sugirió reportes detallados y filtros por fechas, órdenes y estados de recuperación. |
+
+#### Entrevista 2: Christopher
+
+| Campo | Detalle |
+|---|---|
+| Nombres y apellidos | Christopher |
+| Edad | 27 años |
+| Distrito | Surquillo |
+| Ocupación | Analista de gestión de activos y mantenimiento |
+| Duración | 6 minutos |
+| URL | Pendiente de agregar |
+| Screenshot | Pendiente de agregar |
+| **Resumen** | **Lo más valorado:** Consultar el historial de los componentes y tener la información organizada en un solo lugar. **Lo menos valorado:** Algunos datos técnicos podrían ser difíciles de interpretar. **Comentarios sobre la experiencia:** Consideró directo el registro y el inicio de sesión. Sugirió ejemplos en algunos campos, filtros específicos y reportes descargables. |
+
+#### Entrevista 3: Noelia Paquiyauri
+
+| Campo | Detalle |
+|---|---|
+| Nombres y apellidos | Noelia Paquiyauri |
+| Edad | 26 años |
+| Distrito | Centro de Lima |
+| Ocupación | Pendiente de confirmar |
+| Duración | 8 minutos |
+| URL | Pendiente de agregar |
+| Screenshot | Pendiente de agregar |
+| **Resumen** | **Lo más valorado:** Pendiente de confirmar. **Lo menos valorado:** Pendiente de confirmar. **Comentarios sobre la experiencia:** Pendiente de completar con las observaciones de la entrevista. |
 
 ### 5.3.3. Evaluaciones según heurísticas.
 
