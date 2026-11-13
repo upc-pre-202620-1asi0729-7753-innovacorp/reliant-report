@@ -4408,17 +4408,22 @@ URL de la aplicación desplegada: https://reliant-web-application-hsa3asb7axaph6
 
 | Feature · User Story | Evidencia | Descripción |
 |---|---|---|
-| sign-in · US02 | <img src="assets/img/5.chapter-v/5.2.3.5-sign-in.png" width="480"> | Inicio de sesión contra `POST /api/v1/tokens`; el token JWT se adjunta a todas las peticiones siguientes. |
-| quick-start · US65 | <img src="assets/img/5.chapter-v/5.2.3.5-quick-start.png" width="480"> | Quick Start: lista de verificación de la planta de demostración y aprovisionamiento idempotente con un clic. |
-| dashboard · US65 | <img src="assets/img/5.chapter-v/5.2.3.5-dashboard.png" width="480"> | Tablero de operaciones con indicadores en vivo, sesiones recientes y gráficos de casos de falla. |
-| monitor-spray-session · US22 | <img src="assets/img/5.chapter-v/5.2.3.5-session-live.png" width="480"> | Sesión en vivo: lecturas por banda (nominal, advertencia, parada) y pestaña Trends con el gráfico de tendencia por parámetro. |
-| diagnose-faults · US25 · US27 | <img src="assets/img/5.chapter-v/5.2.3.5-fault-cases.png" width="480"> | Casos de falla abiertos automáticamente por el backend, con causa probable, acción recomendada, reconocimiento y resolución. |
-| session-analysis · US24 | <img src="assets/img/5.chapter-v/5.2.3.5-session-analysis.png" width="480"> | Análisis de sesión: estadísticas por parámetro, desviaciones normalizadas, casos asociados y exportación. |
-| report-templates · US59 | <img src="assets/img/5.chapter-v/5.2.3.5-report-template-builder.png" width="480"> | Constructor de plantillas de reporte con vista previa en vivo. |
-| generate-report · US62 | <img src="assets/img/5.chapter-v/5.2.3.5-generated-report-pdf.png" width="480"> | Certificado de calidad generado en PDF desde la plantilla y registrado en la lista de reportes generados. |
-| landing-page · US44 · US47 | <img src="assets/img/5.chapter-v/5.2.3.5-landing-2.1.0.png" width="480"> | Landing Page 2.1.0 con la identidad visual de InnovaCorp; los call-to-action abren el registro de la Web Application con el tipo de organización del segmento. |
+| sign-in · US02 | <img src="assets/img/5.chapter-v/5.2.3.5-sign-in.png" width="520"> | Inicio de sesión contra `POST /api/v1/tokens`; el token JWT se adjunta a todas las peticiones siguientes mediante un interceptor. |
+| quick-start · US65 | <img src="assets/img/5.chapter-v/5.2.3.5-quick-start.png" width="520"> | Quick Start: lista de verificación de la planta y aprovisionamiento idempotente de la planta de demostración FESA (sistema HVOF-01, subsistemas, controlador, receta #12, cliente, componente, orden de recuperación y sesión). |
+| dashboard · US65 | <img src="assets/img/5.chapter-v/5.2.3.5-dashboard.png" width="520"> | Tablero de operaciones con la sesión activa, casos de falla abiertos, sesiones recientes y gráficos configurables por el usuario. |
+| monitor-spray-session · US22 | <img src="assets/img/5.chapter-v/5.2.3.5-session-live.png" width="520"> | Sesión en vivo: lectura actual de cada parámetro clasificada por banda (nominal, fuera de nominal, advertencia, parada) con su setpoint y banda nominal. |
+| monitor-spray-session · US22 | <img src="assets/img/5.chapter-v/5.2.3.5-session-trends.png" width="520"> | Pestaña Trends: tendencia del parámetro sobre las bandas de la receta congeladas al iniciar la sesión. |
+| diagnose-faults · US25 · US30 | <img src="assets/img/5.chapter-v/5.2.3.5-fault-cases.png" width="520"> | Casos de falla abiertos automáticamente por los Web Services a partir de las lecturas fuera de banda, con filtro por estado. |
+| diagnose-faults · US27 | <img src="assets/img/5.chapter-v/5.2.3.5-fault-case-detail.png" width="520"> | Detalle del caso: valor medido, causa probable, acción recomendada, reconocimiento y resolución con notas. |
+| session-analysis · US24 | <img src="assets/img/5.chapter-v/5.2.3.5-session-analysis.png" width="520"> | Análisis de sesión: cumplimiento nominal, estadísticas por parámetro, lecturas fuera de banda, casos asociados y exportación a CSV. |
+| report-templates · US59 | <img src="assets/img/5.chapter-v/5.2.3.5-report-template-builder.png" width="520"> | Constructor de plantillas de reporte: secciones y widgets con vista previa en vivo, identidad de la organización y configuración de página. |
+| generate-report · US62 | <img src="assets/img/5.chapter-v/5.2.3.5-generate-report-dialog.png" width="520"> | Generación de un reporte desde la sesión: tipo de reporte y plantilla; el PDF se renderiza en el navegador con los datos reales de la sesión y se registra en la plataforma. |
+| generate-report · US62 | <img src="assets/img/5.chapter-v/5.2.3.5-generated-report-pdf.png" width="420"> <img src="assets/img/5.chapter-v/5.2.3.5-session-report-pdf.png" width="420"> | Certificado de calidad y reporte de sesión generados en PDF desde las plantillas estándar. |
+| register-hvof-system · US07 | <img src="assets/img/5.chapter-v/5.2.3.5-hvof-systems.png" width="520"> | Sistemas HVOF de la organización persistidos por los Web Services. |
+| landing-page · US44 · US47 | <img src="assets/img/5.chapter-v/5.2.3.5-landing-2.1.0.png" width="520"> | Landing Page 2.1.0 con la identidad visual de InnovaCorp; los call-to-action abren el registro de la Web Application con el tipo de organización del segmento. |
 
-<!-- Capturas pendientes: tomar las nueve imágenes anteriores desde la Web Application desplegada (o desde el entorno local con los Web Services 1.0.0) y guardarlas en assets/img/5.chapter-v con los nombres indicados. -->
+Las capturas se tomaron con la Web Application 2.0.0 ejecutada contra los Web Services 1.0.0 en el entorno de desarrollo, con la planta de demostración del Quick Start y lecturas simuladas desde la propia sesión.
+
 
 #### 5.2.3.6. Services Documentation Evidence for Sprint Review.
 
