@@ -62,6 +62,7 @@ Proyecto
 | 2.1.0 | 2026-11-13 | Navarro Aldoradin, Carolina Celeste | Sección 5.1: herramientas del Sprint 3 y 5.1.4 Software Deployment Configuration de los Web Services en Azure App Service con Azure Database for MySQL. |
 | 2.1.0 | 2026-11-13 | Navarro Aldoradin, Carolina Celeste | Sección 5.2.3 Sprint 3 completa: Sprint Planning, LACX, Sprint Backlog, Development, Execution, Services Documentation y Software Deployment Evidence, y Team Collaboration Insights. |
 | 2.1.0 | 2026-11-13 | Navarro Aldoradin, Carolina Celeste | Sección 5.3.3 evaluación heurística de la Web Application 2.0.0; 5.4 y Video About-the-Team; conclusiones y recomendaciones del Sprint 3; bibliografía; anexos con los enlaces de la plataforma desplegada, Figma y videos. |
+| 2.1.1 | 2026-11-13 | Navarro Aldoradin, Carolina Celeste | Sección 5.3.3 reescrita con el formato de evaluación de User Experience según heurísticas (Anexo D): tareas incluidas y excluidas, escala de severidad, tabla resumen y descripción de 11 problemas con capturas y recomendaciones. |
 
 
 # Project Report Collaboration Insights
@@ -4621,32 +4622,183 @@ Las entrevistas de validación verifican, con usuarios de los dos segmentos obje
 
 ### 5.3.3. Evaluaciones según heurísticas.
 
-La evaluación heurística de la Web Application se realizó sobre la versión 2.0.0 desplegada, conectada a los Web Services 1.0.0, con las diez heurísticas de usabilidad de Nielsen y las tareas de la sección 5.3.1. Cada integrante del equipo evaluó de forma independiente las tareas que no implementó, y luego se consolidaron los hallazgos. Cada problema se registra con su escala de severidad (0: no es un problema; 1: cosmético; 2: menor; 3: mayor; 4: catastrófico) y con la heurística violada; la última columna indica la acción tomada o planificada.
+La evaluación se realizó sobre el Landing Page 2.1.0 y la Web Application 2.0.0 (conectada a los Web Services 1.0.0) siguiendo el formato de evaluación de User Experience según heurísticas del curso (Anexo D del enunciado): heurísticas de usabilidad de Nielsen, principios de Inclusive Design (Microsoft) y los criterios de arquitectura de información del *honeycomb* de Morville (findable, usable, credible, accessible, navigable). Cada integrante evaluó de forma independiente las tareas que no implementó y los hallazgos se consolidaron en una sesión conjunta el 2026-11-12; los problemas corregidos antes del cierre del Sprint 3 se indican en la recomendación.
 
-| Carrera | Ingeniería de Software |
+**UX Heuristics & Principles Evaluation — Usability · Inclusive Design · Information Architecture**
+
+| Campo | Valor |
 |---|---|
-| Curso | Desarrollo de Aplicaciones Open Source |
-| Auditor | Equipo InnovaCorp: Navarro Aldoradin, Carolina Celeste / Rivera Aguilar, Scarlet Josefina / Fernandez Seer, Mario Alonso (cada integrante evaluó las tareas que no implementó) |
-| Cliente(s) | InnovaCorp — Reliant |
-| Site o App a evaluar | Reliant Web Application 2.0.0 — https://reliant-web-application-hsa3asb7axaph6hf.chilecentral-01.azurewebsites.net |
-| Tareas a evaluar | T1 Registro e inicio de sesión; T2 Quick Start y tablero de operaciones; T3 Gestión de clientes, componentes y órdenes de recuperación; T4 Gestión de sistemas HVOF, subsistemas y recetas; T5 Inicio, monitoreo (Live/Trends) y cierre de una sesión de rociado; T6 Revisión y resolución de casos de falla; T7 Análisis de sesión y reporte de sesión; T8 Plantillas de reporte y generación de PDF; T9 Usuarios, roles y suscripción; T10 Cambio de idioma |
-| Escala de severidad | 0 a 4 |
-| Fecha | 2026-11-12 |
+| CARRERA | Ingeniería de Software |
+| CURSO | Desarrollo de Aplicaciones Open Source |
+| SECCIÓN | 7753 |
+| PROFESORES | Bautista Ubillús, Efrain Ricardo |
+| AUDITOR | InnovaCorp (Navarro Aldoradin, Carolina Celeste · Rivera Aguilar, Scarlet Josefina · Fernandez Seer, Mario Alonso) |
+| CLIENTE(S) | Usuarios de los segmentos Recuperation Supplier y Asset Owner que participan en las sesiones de validación (sección 5.3.1); la evaluación consolidada la ejecutó el equipo auditor sobre los user flows definidos para dichas sesiones |
 
-| # | Problema | Escala de severidad | Heurística violada | Tarea | Acción |
-|---|---|---|---|---|---|
-| 1 | El pie de página se superponía al contenido en las vistas largas (lista de sesiones, análisis de sesión), ocultando la última fila de las tablas. | 3 | H8 Diseño estético y minimalista / H1 Visibilidad del estado del sistema | T5, T7 | Corregido en 2.0.0 (`fix/footer-overlap`). |
-| 2 | Al fallar una petición al API, el mensaje mostraba el texto técnico del Problem Detail (p. ej. "Validation failed") sin indicar qué campo corregir. | 3 | H9 Ayudar a reconocer, diagnosticar y recuperarse de errores | T1, T3, T4 | Corregido en 2.0.0: se muestra el `detail` localizado del Problem Detail y se resalta el campo. |
-| 3 | El Quick Start no advierte que, si la planta de demostración ya existe, reutiliza los registros en lugar de crearlos de nuevo; el usuario no sabe si "pasó algo". | 2 | H1 Visibilidad del estado del sistema | T2 | Corregido en 2.0.0: la lista de verificación marca cada elemento como "creado" o "ya existía". |
-| 4 | Resolver un caso de falla es una acción irreversible y se ejecuta con un solo clic, sin confirmación. | 3 | H5 Prevención de errores / H3 Control y libertad del usuario | T6 | Planificado para el Sprint 4: diálogo de confirmación con la nota de resolución obligatoria. |
-| 5 | En la pestaña Trends el color de cada banda (nominal, advertencia, parada) se comunica solo con color; no hay patrón ni etiqueta para usuarios con daltonismo. | 2 | H4 Consistencia y estándares / Accesibilidad | T5 | Planificado para el Sprint 4: leyenda con texto y marcadores distintos por banda. |
-| 6 | Los formularios de receta y de regla de falla no indican las unidades esperadas hasta que se produce un error de validación. | 2 | H6 Reconocimiento antes que recuerdo | T4, T6 | Planificado para el Sprint 4: unidad y rango visibles como texto de ayuda del campo. |
-| 7 | El cambio de idioma no se refleja en los títulos de los PDF ya generados ni en los nombres de las plantillas estándar sembradas por el backend. | 1 | H4 Consistencia y estándares | T8, T10 | Planificado: localizar las plantillas sembradas según `Accept-Language`. |
-| 8 | No existe una ruta de retorno explícita ("Volver a la sesión") desde el análisis de sesión; el usuario depende del botón atrás del navegador. | 2 | H3 Control y libertad del usuario / H7 Flexibilidad y eficiencia | T7 | Planificado para el Sprint 4: migas de pan en las vistas de detalle. |
-| 9 | La sección de suscripción muestra el plan de la organización, pero la acción de cambio de plan no indica que todavía no está disponible en esta versión. | 1 | H1 Visibilidad del estado del sistema | T9 | Planificado: deshabilitar la acción con un texto explicativo hasta implementar Billing en los Web Services. |
-| 10 | Los mensajes de éxito ("Sesión completada", "Reporte generado") desaparecen en 3 segundos y no quedan accesibles para lectores de pantalla si el foco está en otro elemento. | 1 | H1 Visibilidad del estado del sistema / Accesibilidad | T5, T8 | Planificado: región `aria-live` persistente para notificaciones. |
+**SITE o APP A EVALUAR:**
 
-**Conclusiones de la evaluación.** No se encontraron problemas catastróficos. Los tres problemas de severidad mayor (1, 2 y 4) afectan la confianza del usuario en acciones críticas; dos de ellos se corrigieron en la versión 2.0.0 y el tercero se incorporó al Sprint Backlog 4. Los problemas menores y cosméticos se concentran en consistencia, accesibilidad y prevención de errores, y se priorizan en el Sprint 4 junto con las historias del segmento Asset Owner.
+Reliant — Landing Page (https://upc-pre-202620-1asi0729-7753-innovacorp.github.io/reliant-website/) y Reliant Web Application 2.0.0 (https://reliant-web-application-hsa3asb7axaph6hf.chilecentral-01.azurewebsites.net).
+
+**TAREAS A EVALUAR:**
+
+El alcance de esta evaluación incluye la revisión de la usabilidad de las siguientes tareas:
+
+1. Conocer la propuesta de valor, los planes y registrarse desde el Landing Page según el segmento.
+2. Registro de una organización e inicio de sesión en la Web Application.
+3. Puesta en marcha con Quick Start y lectura del tablero de operaciones.
+4. Registro de clientes, componentes y órdenes de recuperación.
+5. Registro de sistemas HVOF, subsistemas y recetas con bandas de umbral.
+6. Inicio, monitoreo (Live / Trends) y cierre de una sesión de rociado.
+7. Revisión, reconocimiento y resolución de casos de falla; administración de reglas.
+8. Análisis de sesión y exportación a CSV.
+9. Creación de plantillas de reporte y generación de certificados en PDF.
+10. Administración de usuarios y roles, consulta de la suscripción y cambio de idioma.
+
+No están incluidas en esta versión de la evaluación las siguientes tareas:
+
+1. Vista consolidada de componentes y seguimiento de PCR del segmento Asset Owner (Sprint 4).
+2. Cambio de plan y pago de la suscripción (Billing en los Web Services, Sprint 4).
+3. Notificaciones por correo o mensajería (Notifications, Sprint 4).
+4. Ingesta de lecturas desde el gateway del PLC (se evaluó con lecturas simuladas).
+
+**ESCALA DE SEVERIDAD:**
+
+Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
+
+| Nivel | Descripción |
+|---|---|
+| 1 | Problema superficial: puede ser fácilmente superado por el usuario o ocurre con muy poca frecuencia. No necesita ser arreglado a no ser que exista disponibilidad de tiempo. |
+| 2 | Problema menor: puede ocurrir un poco más frecuentemente o es un poco más difícil de superar para el usuario. Se le debería asignar una prioridad baja resolverlo de cara al siguiente release. |
+| 3 | Problema mayor: ocurre frecuentemente o los usuarios no son capaces de resolverlo. Es importante que sea corregido y se le debe asignar una prioridad alta. |
+| 4 | Problema muy grave: un error de gran impacto que impide al usuario continuar con el uso de la herramienta. Es imperativo que sea corregido antes del lanzamiento. |
+
+**TABLA RESUMEN:**
+
+| # | Problema | Escala de severidad | Heurística/Principio violada(o) |
+|---|---|:-:|---|
+| 1 | Completar o abortar una sesión de rociado y resolver un caso de falla se ejecutan con un solo clic, sin confirmación, aunque son acciones irreversibles. | 3 | Usability: Prevención de errores |
+| 2 | El pie de página se superponía al contenido en las vistas largas y ocultaba la última fila de las tablas. | 3 | Usability: Estética y diseño minimalista |
+| 3 | Las recetas no tienen entrada propia en el menú lateral; solo se crean desde el detalle del sistema HVOF y la ruta directa devuelve "Page not found". | 2 | Information Architecture: Is it findable? |
+| 4 | En la pestaña Trends el estado de cada punto (nominal, advertencia, parada) se comunica únicamente con el color del marcador. | 2 | Inclusive Design: Proporciona experiencias comparables (no depender solo del color) |
+| 5 | En móvil, el encabezado de la sesión (chips de sistema, orden, receta y botones de acción) ocupa toda la primera pantalla antes de mostrar la primera lectura. | 2 | Inclusive Design: Ofrece experiencias comparables en todos los dispositivos |
+| 6 | El editor de plantillas de reporte no muestra migas de pan ni enlace de retorno a la lista; solo ofrece *Cancel* y *Save*. | 2 | Information Architecture: Is it navigable? |
+| 7 | El Landing Page publica un número de teléfono de contacto genérico (+51 999 999 999). | 2 | Information Architecture: Is it credible? |
+| 8 | El formulario de regla de diagnóstico no explica qué significa *Band* ni ofrece ejemplos de causa probable y acción recomendada; el usuario debe recordar las bandas de la receta. | 1 | Usability: Reconocimiento antes que recuerdo |
+| 9 | La vista de suscripción muestra el plan vigente pero no indica cómo cambiarlo ni que esa acción llegará en una versión posterior. | 1 | Information Architecture: Is it usable? |
+| 10 | El gráfico "Fault cases by parameter" del tablero aparece vacío, sin mensaje de estado, cuando aún no hay casos. | 1 | Usability: Visibilidad del estado del sistema |
+| 11 | Los mensajes de éxito ("Session completed", "Report generated") desaparecen a los tres segundos y no se anuncian a los lectores de pantalla. | 1 | Inclusive Design: Da control al usuario (accesibilidad) |
+
+**DESCRIPCIÓN DE PROBLEMAS:**
+
+**PROBLEMA #1:** Completar o abortar una sesión y resolver un caso de falla no piden confirmación
+
+Severidad: 3
+Heurística violada: Usability – Prevención de errores
+Problema: En el detalle de la sesión los botones *Complete* y *Abort* cambian el estado de la sesión de inmediato; una vez completada ya no se aceptan lecturas ni se puede reabrir. Lo mismo ocurre con *Mark as resolved* en el caso de falla: el caso pasa a resuelto aunque el campo de notas esté vacío. Durante la evaluación un integrante completó la sesión de demostración por error al intentar abrir el menú de acciones.
+
+<p align="center"><img src="assets/img/5.chapter-v/heuristics/p07-complete-dialog.png" width="720" alt="Sesión completada con un clic, sin confirmación"></p>
+
+<p align="center"><img src="assets/img/5.chapter-v/heuristics/p01-resolve-without-confirmation.png" width="720" alt="Resolución de caso de falla sin confirmación"></p>
+
+Recomendación: Mostrar un diálogo de confirmación con el efecto de la acción ("La sesión dejará de recibir lecturas") y, en la resolución del caso, exigir la nota de resolución. Programado para el Sprint 4 (Sprint Backlog 4).
+
+**PROBLEMA #2:** El pie de página se superponía al contenido
+
+Severidad: 3
+Heurística violada: Usability – Estética y diseño minimalista
+Problema: El pie de página estaba posicionado de forma absoluta en la parte inferior de la ventana, de modo que en las vistas largas (lista de sesiones, análisis de sesión) tapaba la última fila de las tablas y el botón de exportación.
+
+Recomendación: Integrar el pie de página en el flujo del layout. **Corregido** en la versión 2.0.0 (rama `fix/footer-overlap`).
+
+**PROBLEMA #3:** Las recetas no son encontrables desde el menú
+
+Severidad: 2
+Heurística violada: Information Architecture – Is it findable?
+Problema: El menú lateral agrupa en *Equipment* únicamente "HVOF Systems"; las recetas solo aparecen dentro del detalle de cada sistema. Un ingeniero de calidad que busca "la receta #12" debe saber primero a qué sistema pertenece, y la ruta `equipment/recipes/new` no existe.
+
+<p align="center"><img src="assets/img/5.chapter-v/heuristics/p04-recipe-form-units.png" width="720" alt="Ruta de recetas no encontrada"></p>
+
+Recomendación: Agregar la entrada *Recipes* al grupo *Equipment* con la lista de recetas de todos los sistemas y filtros por sistema y estado; mantener el acceso desde el sistema HVOF.
+
+**PROBLEMA #4:** El estado de los puntos en Trends depende solo del color
+
+Severidad: 2
+Heurística violada: Inclusive Design – Proporciona experiencias comparables
+Problema: En el gráfico de tendencia las bandas de la receta se dibujan como franjas de color y los puntos fuera de banda se distinguen del resto solo por el color del marcador (naranja y rojo), sin cambio de forma ni etiqueta. Un usuario con deficiencia en la percepción del color no puede identificar qué lecturas fueron de advertencia o parada.
+
+<p align="center"><img src="assets/img/5.chapter-v/heuristics/p03-trends-color-only.png" width="720" alt="Puntos de tendencia diferenciados solo por color"></p>
+
+Recomendación: Usar marcadores distintos por banda (círculo, triángulo, rombo), añadir el texto de la banda en el tooltip y una leyenda con forma y color. Programado para el Sprint 4.
+
+**PROBLEMA #5:** En móvil el encabezado de la sesión desplaza las lecturas fuera de la pantalla
+
+Severidad: 2
+Heurística violada: Inclusive Design – Ofrece experiencias comparables en todos los dispositivos
+Problema: En un ancho de 390 px los chips de sistema, orden, receta, fechas y estado, el resumen de lecturas y los botones de acción se apilan y ocupan toda la primera pantalla; el operador debe desplazarse para ver la primera tarjeta de lectura, que es la información crítica durante la sesión.
+
+<p align="center"><img src="assets/img/5.chapter-v/heuristics/p09-mobile-session.png" width="320" alt="Sesión en vivo en móvil"></p>
+
+Recomendación: Colapsar los metadatos de la sesión en un acordeón en móvil, fijar la barra de acciones en la parte inferior y mostrar primero el resumen de bandas y las tarjetas de lectura.
+
+**PROBLEMA #6:** El editor de plantillas no indica dónde está el usuario
+
+Severidad: 2
+Heurística violada: Information Architecture – Is it navigable?
+Problema: La vista *Edit template* no muestra migas de pan ni un enlace "Volver a plantillas"; las únicas salidas son *Cancel* (que descarta cambios sin avisar) o el menú lateral. Tras editar una plantilla el usuario no sabe si sus cambios se conservarán al salir por el menú.
+
+<p align="center"><img src="assets/img/5.chapter-v/heuristics/p05-template-editor-no-breadcrumb.png" width="720" alt="Editor de plantillas sin migas de pan"></p>
+
+Recomendación: Agregar migas de pan (*Report templates › Certificado de calidad HVOF › Edit*) y un aviso de cambios sin guardar al abandonar la vista. Programado para el Sprint 4.
+
+**PROBLEMA #7:** Teléfono de contacto genérico en el Landing Page
+
+Severidad: 2
+Heurística violada: Information Architecture – Is it credible?
+Problema: El pie de página del Landing Page muestra el número "+51 999 999 999", que un visitante reconoce como un dato de relleno y resta credibilidad al resto de la información de contacto.
+
+<p align="center"><img src="assets/img/5.chapter-v/heuristics/p10-landing-footer.png" width="720" alt="Pie de página del Landing Page"></p>
+
+Recomendación: Publicar el número real de contacto de InnovaCorp o retirar la línea y dejar únicamente el correo y el enlace a la Web Application.
+
+**PROBLEMA #8:** El formulario de regla de diagnóstico no ayuda a completarlo
+
+Severidad: 1
+Heurística violada: Usability – Reconocimiento antes que recuerdo
+Problema: El formulario *New diagnosis rule* pide *Parameter*, *Band*, *Probable cause* y *Recommended action* sin explicar que la banda se refiere a las bandas de umbral de la receta ni mostrar ejemplos de las reglas FESA ya cargadas; solo el campo *Cooldown* tiene texto de ayuda.
+
+<p align="center"><img src="assets/img/5.chapter-v/heuristics/p04b-rule-form.png" width="720" alt="Formulario de regla de diagnóstico"></p>
+
+Recomendación: Añadir texto de ayuda bajo *Band* y *placeholders* con un ejemplo real de causa y acción; ofrecer "Duplicar regla" desde el catálogo.
+
+**PROBLEMA #9:** La suscripción no indica cómo cambiar de plan
+
+Severidad: 1
+Heurística violada: Information Architecture – Is it usable?
+Problema: La vista *Subscription* muestra el plan, la vigencia y el estado, pero no ofrece ninguna acción ni explica que el cambio de plan estará disponible cuando se implemente Billing en los Web Services.
+
+<p align="center"><img src="assets/img/5.chapter-v/heuristics/p06-subscription.png" width="720" alt="Vista de suscripción"></p>
+
+Recomendación: Mostrar la acción "Cambiar de plan" deshabilitada con un texto explicativo y el enlace a los planes del Landing Page.
+
+**PROBLEMA #10:** Gráfico vacío sin estado en el tablero
+
+Severidad: 1
+Heurística violada: Usability – Visibilidad del estado del sistema
+Problema: Cuando la organización aún no tiene casos de falla, la tarjeta "Fault cases by parameter" del tablero muestra únicamente los ejes del gráfico; el usuario no sabe si está cargando, si falló o si no hay datos.
+
+<p align="center"><img src="assets/img/5.chapter-v/heuristics/p08-dashboard-empty-chart.png" width="720" alt="Gráfico vacío en el tablero"></p>
+
+Recomendación: Mostrar un estado vacío con texto ("Sin casos de falla en el período") y un estado de carga explícito.
+
+**PROBLEMA #11:** Notificaciones efímeras no accesibles
+
+Severidad: 1
+Heurística violada: Inclusive Design – Da control al usuario
+Problema: Las notificaciones de éxito se muestran con `MatSnackBar` durante tres segundos; si el foco está en otro elemento, un lector de pantalla no las anuncia y el usuario con baja visión puede no verlas.
+
+Recomendación: Anunciar las notificaciones en una región `aria-live="polite"` persistente y permitir configurar su duración.
+
+**Conclusiones de la evaluación.** No se encontraron problemas de severidad 4. De los dos problemas de severidad 3, uno fue corregido en la versión 2.0.0 (pie de página) y el otro (confirmaciones en acciones irreversibles) se incorporó al Sprint Backlog 4 con prioridad alta. Los problemas de severidad 2 se concentran en arquitectura de información (recetas, migas de pan, credibilidad del Landing Page) y en diseño inclusivo (color y móvil); se priorizan en el Sprint 4 junto con las historias del segmento Asset Owner, antes de las entrevistas de validación del TB2.
 
 ## 5.4. Video About-the-Product.
 
