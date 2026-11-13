@@ -1,7 +1,7 @@
 @startuml "Components-Bounded Contexts"
 !includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
 
-title Reliant - Component Diagram (Single Page Application Bounded Contexts)
+title Reliant - Frontend Components Diagram (Single Page Application Bounded Contexts)
 
 Container(web, "Web Application", "Node.js, PM2, Azure App Service", "Serves the compiled Single Page Application to the user's browser")
 System_Ext(platformapi, "Reliant Platform API", "Stores organizations, users, plans, equipment, recuperations and spray sessions; a json-server fake API in Sprint 2, replaced by the Spring Boot Web Services")

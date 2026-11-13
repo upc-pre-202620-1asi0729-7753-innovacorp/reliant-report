@@ -1,0 +1,221 @@
+@startuml "Reliant_Frontend_FaultDiagnosis"
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam packageStyle rectangle
+skinparam defaultFontName Inter
+hide empty members
+title Reliant - Frontend Fault Diagnosis Class Diagram
+left to right direction
+
+package "Domain" {
+  class FaultCase {
+    id: number
+    organizationId: number
+    spraySessionId: number
+    hvofSystemId: number
+    parameter: string
+    band: FaultBand
+    value: number
+    epochMillis: number
+    probableCause: string
+    recommendedAction: string
+    status: FaultCaseStatus
+    acknowledgedBy: number | null
+    acknowledgedAt: string | null
+    resolvedBy: number | null
+    resolvedAt: string | null
+    resolutionNotes: string | null
+    detectedAt: Date
+    isOpen: boolean
+  }
+  enum FaultBand {
+    warning
+    shutdown
+  }
+  enum FaultCaseStatus {
+    open
+    acknowledged
+    resolved
+  }
+  class FaultRule {
+    id: number
+    organizationId: number
+    parameter: string
+    band: FaultBand
+    probableCause: string
+    recommendedAction: string
+    cooldownSeconds: number
+  }
+}
+
+package "Application" {
+  class FaultDiagnosisStore {
+    api: FaultDiagnosisApi
+    iam: IamStore
+    casesSignal: signal<FaultCase[]>
+    openCases: computed
+    openCount: computed
+    shutdownOpenCount: computed
+    casesByParameter: computed
+    rulesSignal: signal<FaultRule[]>
+    loadingSignal: signal
+    errorSignal: signal<string | null>
+    reload(): void
+    loadFaultCases(): void
+    loadFaultRules(): void
+    getFaultCaseById(id): Signal<FaultCase | undefined>
+    casesOf(spraySessionId): Signal<FaultCase[]>
+    getFaultRuleById(id): Signal<FaultRule | undefined>
+    acknowledge(id): void
+    addFaultRule(rule): void
+    updateFaultRule(rule): void
+    replaceCase(updated): void
+    formatError(error, fallback): string
+  }
+}
+
+package "Infrastructure" {
+  class FaultCasesApiEndpoint {
+    acknowledge(faultCaseId): Observable<FaultCase>
+    resolve(faultCaseId, resolutionNotes): Observable<FaultCase>
+  }
+  interface FaultCasesResponse {
+    faultCases: FaultCaseResource[]
+  }
+  interface FaultCaseResource {
+    id: number
+    organizationId: number
+    spraySessionId: number
+    hvofSystemId: number
+    parameter: string
+    band: FaultBand
+    value: number
+    epochMillis: number
+    probableCause: string
+    recommendedAction: string
+    status: FaultCaseStatus
+    acknowledgedBy: number | null
+    acknowledgedAt: string | null
+    resolvedBy: number | null
+    resolvedAt: string | null
+    resolutionNotes: string | null
+  }
+  class FaultDiagnosisApi {
+    getFaultCases(): Observable<FaultCase[]>
+    getFaultCasesBySessionId(spraySessionId): Observable<FaultCase[]>
+    acknowledgeFaultCase(id): Observable<FaultCase>
+    resolveFaultCase(id, resolutionNotes): Observable<FaultCase>
+    getFaultRules(): Observable<FaultRule[]>
+    createFaultRule(rule): Observable<FaultRule>
+    updateFaultRule(rule): Observable<FaultRule>
+  }
+  class FaultRulesApiEndpoint {
+  }
+  interface FaultRulesResponse {
+    faultRules: FaultRuleResource[]
+  }
+  interface FaultRuleResource {
+    id: number
+    organizationId: number
+    parameter: string
+    band: FaultBand
+    probableCause: string
+    recommendedAction: string
+    cooldownSeconds: number
+  }
+}
+
+package "Presentation" {
+  class FaultCaseDetail {
+    store: FaultDiagnosisStore
+    equipment: EquipmentStore
+    monitoring: ProcessMonitoringStore
+    route: ActivatedRoute
+    router: Router
+    caseId: toSignal
+    faultCase: computed
+    system: computed
+    session: computed
+    recipeParameter: computed
+    resolutionNotes: signal
+    back(): void
+    openSession(): void
+    acknowledge(): void
+    resolve(): void
+  }
+  class FaultCaseList {
+    store: FaultDiagnosisStore
+    equipment: EquipmentStore
+    router: Router
+    route: ActivatedRoute
+    sort: viewChild
+    paginator: viewChild
+    sessionFilter: toSignal
+    statusFilter: signal<FaultCaseStatus | 'all'>
+    statuses: FaultCaseStatus[]
+    filtered: computed
+    dataSource: computed
+    systemCode(id): string
+    clearSession(): void
+    open(id): void
+    acknowledge(id): void
+  }
+  class FaultRuleForm {
+    fb: FormBuilder
+    route: ActivatedRoute
+    router: Router
+    store: FaultDiagnosisStore
+    equipment: EquipmentStore
+    iam: IamStore
+    bands: FaultBand[]
+    parameters: computed
+    ruleId: number | null
+    submit(): void
+    cancel(): void
+  }
+  class FaultRuleList {
+    store: FaultDiagnosisStore
+    iam: IamStore
+    router: Router
+    newRule(): void
+    editRule(id): void
+    back(): void
+  }
+}
+
+package "Shared (external)" #EEEEEE {
+  class BaseApi <<shared>>
+  class BaseApiEndpoint <<shared>>
+  class BaseEntity <<shared>>
+  class BaseForm <<shared>>
+  class BaseResource <<shared>>
+  class BaseResponse <<shared>>
+}
+BaseApi <|-- FaultDiagnosisApi
+BaseApiEndpoint <|-- FaultCasesApiEndpoint
+BaseApiEndpoint <|-- FaultRulesApiEndpoint
+BaseEntity <|.. FaultCase
+BaseEntity <|.. FaultRule
+BaseForm <|-- FaultRuleForm
+BaseResource <|.. FaultCaseResource
+BaseResource <|.. FaultRuleResource
+BaseResponse <|.. FaultCasesResponse
+BaseResponse <|.. FaultRulesResponse
+FaultCase --> FaultBand
+FaultCase --> FaultCaseStatus
+FaultCaseDetail --> FaultDiagnosisStore
+FaultCaseList --> FaultCaseStatus
+FaultCaseList --> FaultDiagnosisStore
+FaultCaseResource --> FaultBand
+FaultCaseResource --> FaultCaseStatus
+FaultCasesResponse --> FaultCaseResource
+FaultDiagnosisStore --> FaultCase
+FaultDiagnosisStore --> FaultDiagnosisApi
+FaultDiagnosisStore --> FaultRule
+FaultRule --> FaultBand
+FaultRuleForm --> FaultBand
+FaultRuleForm --> FaultDiagnosisStore
+FaultRuleList --> FaultDiagnosisStore
+FaultRuleResource --> FaultBand
+FaultRulesResponse --> FaultRuleResource
+@enduml

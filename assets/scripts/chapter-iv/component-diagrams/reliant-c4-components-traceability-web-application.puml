@@ -1,7 +1,7 @@
 @startuml "Components-Traceability-Frontend"
 !includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
 
-title Reliant - Traceability Component Diagram (Web Application)
+title Reliant - Frontend Traceability Components Diagram
 
 Container(api, "Web Services", "Spring Boot", "Exposes /api/v1/customers, /api/v1/components, /api/v1/recuperations")
 Container(shared, "Shared", "Angular", "Layout, navigation, auth interceptor, guards, i18n and unit formatting")
