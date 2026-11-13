@@ -74,12 +74,11 @@ Para la entrega TB1, el informe se actualizó siguiendo el mismo flujo de Git Fl
 
 Para la entrega AV2, el informe se trabajó en la rama `feature/av2-report` creada desde `develop` y se publicó con las ramas `release/2.1.x`. Rivera Aguilar, Scarlet Josefina actualizó los mock-ups del Landing Page y de la Web Application y las evidencias de las entrevistas de validación (78 commits); Navarro Aldoradin, Carolina Celeste reescribió el Student Outcome, unificó los statements del Capítulo I, actualizó los diagramas del Capítulo IV (componentes, clases del Frontend y base de datos), la configuración de despliegue y redactó la sección del Sprint 3, la evaluación heurística, las conclusiones y los anexos; Fernandez Seer, Mario Alonso aportó la documentación del reporte de sesión y las conclusiones de la evaluación heurística.
 
-| Entrega | Insights → Contributors |
+| Entrega | Contribuidores (commits por semana, generado del historial de GitHub) |
 |---|---|
 | TB1 | <img src="assets/img/5.chapter-v/report-contributors-tb1.png" width="720"> |
 | AV2 | <img src="assets/img/5.chapter-v/report-contributors-av2.png" width="720"> |
 
-<!-- Capturas pendientes: GitHub → reliant-report → Insights → Contributors (TB1: 2026-09-01 a 2026-10-05; AV2: 2026-10-06 a 2026-11-13). -->
 
 # Contenido
 
@@ -4066,7 +4065,6 @@ La tabla resume las contribuciones de los integrantes actuales del equipo regist
 
 La concentración del desarrollo de la Web Application en una sola integrante es el principal riesgo de colaboración identificado en este Sprint. Para el Sprint 3 se recomienda distribuir los bounded contexts de los Web Services entre los tres integrantes y mantener el flujo de Git Flow con una rama `feature/*` por historia, de modo que la contribución de cada integrante quede registrada en los repositorios.
 
-<!-- Capturas pendientes: Insights → Contributors de reliant-webapp, reliant-platform-mock, reliant-website y reliant-report con el rango del Sprint 2 (assets/img/5.chapter-v/5.2.2.8-<repositorio>-contributors.png). -->
 
 ### 5.2.3. Sprint 3
 
@@ -4685,10 +4683,7 @@ Las lecturas fuera de banda publican un evento de dominio (`OutOfBandReadingDete
 | Evidencia | Descripción |
 |---|---|
 | <img src="assets/img/5.chapter-v/5.2.3.6-swagger-overview.png" width="720"> | Swagger UI de los Web Services 1.0.0 con los controladores de los seis bounded contexts. |
-| <img src="assets/img/5.chapter-v/5.2.3.6-swagger-sign-in.png" width="720"> | `POST /api/v1/tokens`: respuesta con el token JWT y autorización del esquema Bearer en Swagger. |
-| <img src="assets/img/5.chapter-v/5.2.3.6-swagger-spray-sessions.png" width="720"> | Endpoints de sesiones de rociado y lecturas. |
 
-<!-- Capturas pendientes: Swagger UI del platform desplegado (o local en http://localhost:8080/swagger-ui.html). -->
 
 #### 5.2.3.7. Software Deployment Evidence for Sprint Review.
 
@@ -4715,12 +4710,8 @@ En el Sprint 3 se desplegaron en Microsoft Azure los Web Services (Web App `reli
 | Evidencia | Descripción |
 |---|---|
 | <img src="assets/img/5.chapter-v/5.2.3.7-platform-web-app-overview.png" width="720"> | Web App `reliant-platform` en Azure App Service (Java 21 SE, Linux, West US 3) con el último despliegue exitoso desde GitHub Actions. |
-| <img src="assets/img/5.chapter-v/5.2.3.7-azure-resources.png" width="720"> | Grupo de recursos `rg-reliant` con el servidor MySQL y los Web Apps. |
-| <img src="assets/img/5.chapter-v/5.2.3.7-platform-env-vars.png" width="720"> | Variables de entorno del Web App `reliant-platform`. |
-| <img src="assets/img/5.chapter-v/5.2.3.7-github-actions-platform.png" width="720"> | Workflow `main_reliant-platform.yml` en verde. |
 | <img src="assets/img/5.chapter-v/5.2.3.7-platform-swagger-deployed.png" width="720"> | Swagger UI servido desde Azure. |
-| <img src="assets/img/5.chapter-v/5.2.3.7-webapp-deployed-2.0.0.png" width="720"> | Web Application 2.0.0 desplegada y autenticada contra los Web Services. |
-| <img src="assets/img/5.chapter-v/5.2.3.7-landing-deployed-2.1.0.png" width="720"> | Landing Page 3.0.0 publicado en GitHub Pages. |
+| <img src="assets/img/5.chapter-v/5.2.3.7-landing-deployed-2.1.0.png" width="720"> | Landing Page 3.0.0 publicado en GitHub Pages (https://upc-pre-202620-1asi0729-7753-innovacorp.github.io/reliant-website/). |
 
 <!-- Capturas pendientes: Azure Portal (grupo de recursos, variables de entorno), GitHub Actions del platform, Swagger desplegado, webapp 2.0.0 y landing 3.0.0. -->
 
@@ -4738,23 +4729,22 @@ El gráfico resume los commits (sin merges) por integrante y repositorio registr
 | `reliant-platform` | MrBaru | 123 |
 | `reliant-platform` | genixmvp | 110 |
 | `reliant-webapp` | scarletriveraaguilar-spec | 42 |
-| `reliant-webapp` | genixmvp | 19 |
+| `reliant-webapp` | genixmvp | 25 |
 | `reliant-webapp` | MrBaru | 13 |
-| `reliant-website` | genixmvp | 2 |
+| `reliant-website` | genixmvp | 4 |
 | `reliant-website` | scarletriveraaguilar-spec | 1 |
 | `reliant-report` | scarletriveraaguilar-spec | 173 |
 | `reliant-report` | genixmvp | 8 |
 
-Las capturas de Insights → Contributors de GitHub para cada repositorio se incluyen a continuación:
+Los gráficos de contribuidores por repositorio se generaron a partir del historial de commits publicado en GitHub (equivalente a Insights → Contributors, sin merges, rango 2026-10-06 a 2026-11-13):
 
-| Repositorio | Insights → Contributors |
+| Repositorio | Contribuidores (commits por semana) |
 |---|---|
 | `reliant-platform` | <img src="assets/img/5.chapter-v/5.2.3.8-platform-contributors.png" width="720"> |
 | `reliant-webapp` | <img src="assets/img/5.chapter-v/5.2.3.8-webapp-contributors.png" width="720"> |
 | `reliant-website` | <img src="assets/img/5.chapter-v/5.2.3.8-website-contributors.png" width="720"> |
 | `reliant-report` | <img src="assets/img/5.chapter-v/5.2.3.8-report-contributors.png" width="720"> |
 
-<!-- Capturas pendientes: GitHub → repositorio → Insights → Contributors (rango 2026-10-06 a 2026-11-13) de los cuatro repositorios. -->
 
 La distribución del Sprint 3 corrige en parte el riesgo señalado en el Sprint 2: los tres integrantes contribuyeron a los productos, aunque el backend sigue concentrado en dos personas. Para el Sprint 4 se asignarán los bounded contexts Billing y Notifications de los Web Services y las historias del segmento Asset Owner a Rivera Aguilar y Fernandez Seer, manteniendo una rama `feature/*` por historia.
 
@@ -5178,6 +5168,9 @@ El video About-the-Team presenta al equipo de InnovaCorp, su forma de trabajo y 
 | Video de demostración del prototipo interactivo (Figma) | https://drive.google.com/file/d/1zf1c5jWL4qMQMxFodapUbAed3S3XQiYO/view?usp=sharing |
 | Video About the Product (AV2) | YouTube: https://youtu.be/T1w7KEkz4g0 · Microsoft Stream: https://x.gd/5q1QX |
 | Video About the Team (AV2) | YouTube: https://youtu.be/oeCfkoXPoIM · Microsoft Stream: https://x.gd/SYmY7 |
+| Keynote AV2 (Canva) | https://canva.link/o4bywods5t785eu |
+| Organización de GitHub del Trabajo de Responsabilidad Social (UPC Innovacorp Java) | https://github.com/upc-innovacorp-java |
+| Repositorio del Trabajo de Responsabilidad Social — Fundamentos de Java para Principiantes | https://github.com/upc-innovacorp-java/java-fundamentals-course-innovacorp |
 | Product Backlog en Trello | https://trello.com/b/aDFKmtGp/reliant-product-backlog |
 | Sprint Backlog 2 en Trello | https://trello.com/b/ccOu9yk5/reliant-sprint-2 |
 
