@@ -72,7 +72,7 @@ El URL del repositorio para el Project Report en la organización de github es e
 
 Para la entrega TB1, el informe se actualizó siguiendo el mismo flujo de Git Flow que los demás repositorios del equipo: cada sección se trabajó en una rama `feature/tb1-*` creada desde `develop`, con commits en formato Conventional Commits, y se integró en `develop` mediante merge. Las secciones del Capítulo I y II fueron redactadas principalmente por Rivera Aguilar, Scarlet Josefina; los Capítulos III, IV y V por Navarro Aldoradin, Carolina Celeste; y el Capítulo II (user personas, task matrix y journey maps) y el Product Backlog por Fernandez Seer, Mario Alonso.
 
-Para la entrega AV2, el informe se trabajó en la rama `feature/av2-report` creada desde `develop` y se publicó con la rama `release/2.1.0`. Rivera Aguilar, Scarlet Josefina actualizó los mock-ups del Landing Page y de la Web Application y las evidencias de las entrevistas de validación (78 commits); Navarro Aldoradin, Carolina Celeste reescribió el Student Outcome, unificó los statements del Capítulo I, actualizó los diagramas del Capítulo IV (componentes, clases del Frontend y base de datos), la configuración de despliegue y redactó la sección del Sprint 3, la evaluación heurística, las conclusiones y los anexos; Fernandez Seer, Mario Alonso aportó la documentación del reporte de sesión y las conclusiones de la evaluación heurística.
+Para la entrega AV2, el informe se trabajó en la rama `feature/av2-report` creada desde `develop` y se publicó con las ramas `release/2.1.x`. Rivera Aguilar, Scarlet Josefina actualizó los mock-ups del Landing Page y de la Web Application y las evidencias de las entrevistas de validación (78 commits); Navarro Aldoradin, Carolina Celeste reescribió el Student Outcome, unificó los statements del Capítulo I, actualizó los diagramas del Capítulo IV (componentes, clases del Frontend y base de datos), la configuración de despliegue y redactó la sección del Sprint 3, la evaluación heurística, las conclusiones y los anexos; Fernandez Seer, Mario Alonso aportó la documentación del reporte de sesión y las conclusiones de la evaluación heurística.
 
 | Entrega | Insights → Contributors |
 |---|---|
@@ -2387,11 +2387,11 @@ La sección Servicios distribuye las funcionalidades en bloques informativos y c
 
 <p align="center"><img src="assets/img/chapter-ii/needfinding/mobile-mockup4.png"></p>
 
-**Landing Page 2.1.0 (AV2).** En el Sprint 3 el Landing Page se rediseñó con la identidad visual definitiva de InnovaCorp (tipografía Poppins, paleta azul marino `#060C1F` y naranja `#BF6B0C`, logotipo y fotografía del taller HVOF) a partir de los mock-ups elaborados en Figma por Rivera Aguilar, Scarlet Josefina, conservando la internacionalización, las páginas legales y las secciones por segmento de la versión 2.0.0. Los call-to-action de cada segmento abren el registro de la Web Application con el tipo de organización correspondiente. Diseño en Figma: [https://www.figma.com/design/eJgrioPA9K4FTQD0pXAUI1/Mockup-Innovacor](https://www.figma.com/design/eJgrioPA9K4FTQD0pXAUI1/Mockup-Innovacor).
+**Landing Page 3.0.0 (AV2).** En el Sprint 3 el Landing Page se rediseñó con la identidad visual definitiva de InnovaCorp (tipografía Poppins, paleta azul marino `#060C1F` y naranja `#BF6B0C`, logotipo y fotografía del taller HVOF) a partir de los mock-ups elaborados en Figma por Rivera Aguilar, Scarlet Josefina, conservando la internacionalización, las páginas legales y las secciones por segmento de la versión 2.0.0. Los call-to-action de cada segmento abren el registro de la Web Application con el tipo de organización correspondiente. Diseño en Figma: [https://www.figma.com/design/eJgrioPA9K4FTQD0pXAUI1/Mockup-Innovacor](https://www.figma.com/design/eJgrioPA9K4FTQD0pXAUI1/Mockup-Innovacor).
 
-<p align="center"><img src="assets/img/4.chapter-iv/4.3.landing-page-ui-design/landing-2.1.0-desktop.png" alt="Landing Page 2.1.0 en Desktop Web Browser"></p>
+<p align="center"><img src="assets/img/4.chapter-iv/4.3.landing-page-ui-design/landing-2.1.0-desktop.png" alt="Landing Page 3.0.0 en Desktop Web Browser"></p>
 
-<p align="center"><img src="assets/img/4.chapter-iv/4.3.landing-page-ui-design/landing-2.1.0-mobile.png" alt="Landing Page 2.1.0 en Mobile Web Browser" width="360"></p>
+<p align="center"><img src="assets/img/4.chapter-iv/4.3.landing-page-ui-design/landing-2.1.0-mobile.png" alt="Landing Page 3.0.0 en Mobile Web Browser" width="360"></p>
 
 ## 4.4. Web Applications UX/UI Design
 El diseño UX/UI de la Web Application de Reliant, desarrollada por InnovaCorp, se basa en los resultados obtenidos durante el proceso de investigación de usuarios, los User Stories definidos en el Product Backlog y los lineamientos visuales establecidos previamente. Su propósito es representar la estructura de las interfaces y facilitar la comprensión de las funcionalidades relacionadas con la gestión y el monitoreo de procesos industriales.
@@ -4091,7 +4091,7 @@ El Sprint 3 tuvo como objetivo publicar la primera versión de los Web Services 
 
 #### 5.2.3.2. Aspect Leaders and Collaborators.
 
-La matriz LACX del Sprint 3 distribuye los bounded contexts de los Web Services y los frentes de la Web Application y del Landing Page entre los tres integrantes. Los aspectos de los Web Services corresponden a los bounded contexts implementados en `reliant-platform`; los aspectos de la Web Application agrupan las vistas nuevas de `reliant-webapp`; y el aspecto Landing Page Redesign corresponde a la versión 2.1.0 de `reliant-website`.
+La matriz LACX del Sprint 3 distribuye los bounded contexts de los Web Services y los frentes de la Web Application y del Landing Page entre los tres integrantes. Los aspectos de los Web Services corresponden a los bounded contexts implementados en `reliant-platform`; los aspectos de la Web Application agrupan las vistas nuevas de `reliant-webapp`; y el aspecto Landing Page Redesign corresponde a la versión 3.0.0 de `reliant-website`.
 
 Leyenda: **L** = Leader, **C** = Collaborator, **–** = sin participación; **WS** = Web Services (`reliant-platform`), **WA** = Web Application (`reliant-webapp`), **LP** = Landing Page (`reliant-website`).
 
@@ -4153,17 +4153,17 @@ El tablero del Sprint 3 se gestiona en Trello con las listas To-do, In Progress,
 | US44 | Conocer la propuesta de valor | T141 | Design the new Landing Page | Design the desktop and mobile wireframes and mock-ups of the Landing Page with the InnovaCorp identity (Poppins, navy and orange palette, hero photography) in Figma and prototype them in HTML/CSS. | 6 | Rivera Aguilar, Scarlet Josefina | Done |
 | US44 | Conocer la propuesta de valor | T142 | Rebuild the Landing Page with the new identity | Merge the new design into the main Landing Page keeping the EN/ES internationalization, the legal pages and the segment sections; add Services, Plans, About us and Contact. | 5 | Navarro Aldoradin, Carolina Celeste | Done |
 | US47 | Registro desde call-to-action segmentado | T143 | Point the calls to action to the Web Application | Make every call to action open the deployed Web Application sign-up with the `organizationType` of the segment, and add Sign in / Get started to the header. | 1 | Navarro Aldoradin, Carolina Celeste | Done |
-| US45 | Información para Recuperation Supplier | T144 | Embed the About videos and publish release 2.1.0 | Add the About the Product and About the Team sections with YouTube embeds, update the README and CHANGELOG and publish release 2.1.0 to GitHub Pages. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
+| US45 | Información para Recuperation Supplier | T144 | Embed the About videos and publish release 3.0.0 | Add the About the Product and About the Team sections with YouTube embeds, update the README and CHANGELOG and publish release 3.0.0 to GitHub Pages. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
 
 #### 5.2.3.4. Development Evidence for Sprint Review.
 
-En esta sección se presentan los commits realizados durante el Sprint 3 en los repositorios de la organización. Los Web Services se construyeron en el repositorio `reliant-platform` con una rama `feature/*` por bounded context o capacidad (`feature/sign-up`, `feature/sign-in`, `feature/jwt-authentication-and-authorization`, `feature/list-users-and-assign-roles`, `feature/get-available-roles`, `feature/manage-recipes`, `feature/register-subsystems-and-controllers`, `feature/add-equipment-context-facade`, `feature/manage-customers`, `feature/manage-components`, `feature/manage-recuperations`, `feature/monitor-spray-sessions`, `feature/manage-fault-rules`, `feature/diagnose-faults`, `feature/add-reporting-bounded-context`), integradas en `develop` y publicadas en `main` con la rama `release/1.0.0` y la etiqueta `v1.0.0`. La Web Application continuó en `reliant-webapp` con las ramas `feature/apply-reliant-brand-theme`, `feature/navigate-with-side-menu`, `feature/improve-process-monitoring`, `feature/connect-platform-api`, `feature/diagnose-faults`, `feature/add-quick-start`, `feature/add-reporting`, `feature/add-session-analysis` y `fix/footer-overlap`, publicadas con `release/2.0.0` y la etiqueta `2.0.0`. El Landing Page se rediseñó en `reliant-website` con las ramas `feature/update-landing-page` y `feature/merge-scarlet-design`, publicadas con `release/2.1.0` y la etiqueta `2.1.0`.
+En esta sección se presentan los commits realizados durante el Sprint 3 en los repositorios de la organización. Los Web Services se construyeron en el repositorio `reliant-platform` con una rama `feature/*` por bounded context o capacidad (`feature/sign-up`, `feature/sign-in`, `feature/jwt-authentication-and-authorization`, `feature/list-users-and-assign-roles`, `feature/get-available-roles`, `feature/manage-recipes`, `feature/register-subsystems-and-controllers`, `feature/add-equipment-context-facade`, `feature/manage-customers`, `feature/manage-components`, `feature/manage-recuperations`, `feature/monitor-spray-sessions`, `feature/manage-fault-rules`, `feature/diagnose-faults`, `feature/add-reporting-bounded-context`), integradas en `develop` y publicadas en `main` con la rama `release/1.0.0` y la etiqueta `v1.0.0`. La Web Application continuó en `reliant-webapp` con las ramas `feature/apply-reliant-brand-theme`, `feature/navigate-with-side-menu`, `feature/improve-process-monitoring`, `feature/connect-platform-api`, `feature/diagnose-faults`, `feature/add-quick-start`, `feature/add-reporting`, `feature/add-session-analysis` y `fix/footer-overlap`, publicadas con `release/2.0.0` y la etiqueta `2.0.0`. El Landing Page se rediseñó en `reliant-website` con las ramas `feature/update-landing-page` y `feature/merge-scarlet-design`, publicadas con `release/3.0.0` y la etiqueta `3.0.0`.
 
 | Repositorio | Release del Sprint 3 | Etiqueta | Ramas |
 |---|---|---|---|
 | `reliant-platform` | 1.0.0 — primera versión de los Web Services | `v1.0.0` | `main`, `develop`, `release/1.0.0`, `hotfix/azure-workflow`, 15 ramas `feature/*` (con pull requests de los tres integrantes) |
 | `reliant-webapp` | 2.0.0 — Web Application conectada a los Web Services | `2.0.0` | `main`, `develop`, `release/2.0.0`, 8 ramas `feature/*`, `fix/footer-overlap` |
-| `reliant-website` | 2.1.0 — rediseño del Landing Page | `2.1.0` | `main`, `develop`, `release/2.1.0`, `feature/update-landing-page`, `feature/merge-scarlet-design` |
+| `reliant-website` | 3.0.0 — rediseño del Landing Page y videos About | `3.0.0` | `main`, `develop`, `release/3.0.0`, `feature/update-landing-page`, `feature/merge-scarlet-design`, `feature/add-about-videos` |
 
 **Web Services — `reliant-platform`**
 
@@ -4618,7 +4618,7 @@ En esta sección se presentan los commits realizados durante el Sprint 3 en los 
 | Repositorio | Rama | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
 |---|---|---|---|---|---|
 | reliant-website | develop | 60a2430 | feat(landing): redesign landing page with InnovaCorp visual identity | - Poppins typography, navy/orange palette, logo, hero photo and icon cards - Services, Plans, About us (product/team videos) and Contact sections - CTAs open th | 2026-11-13 |
-| reliant-website | develop | 9d8d403 | chore(release): prepare release 2.1.0 |  | 2026-11-13 |
+| reliant-website | develop | 9d8d403 | chore(release): prepare release 3.0.0 |  | 2026-11-13 |
 
 #### 5.2.3.5. Execution Evidence for Sprint Review.
 
@@ -4640,7 +4640,7 @@ URL de la aplicación desplegada: https://reliant-web-application-hsa3asb7axaph6
 | generate-report · US62 | <img src="assets/img/5.chapter-v/5.2.3.5-generate-report-dialog.png" width="520"> | Generación de un reporte desde la sesión: tipo de reporte y plantilla; el PDF se renderiza en el navegador con los datos reales de la sesión y se registra en la plataforma. |
 | generate-report · US62 | <img src="assets/img/5.chapter-v/5.2.3.5-generated-report-pdf.png" width="420"> <img src="assets/img/5.chapter-v/5.2.3.5-session-report-pdf.png" width="420"> | Certificado de calidad y reporte de sesión generados en PDF desde las plantillas estándar. |
 | register-hvof-system · US07 | <img src="assets/img/5.chapter-v/5.2.3.5-hvof-systems.png" width="520"> | Sistemas HVOF de la organización persistidos por los Web Services. |
-| landing-page · US44 · US47 | <img src="assets/img/5.chapter-v/5.2.3.5-landing-2.1.0.png" width="520"> | Landing Page 2.1.0 con la identidad visual de InnovaCorp; los call-to-action abren el registro de la Web Application con el tipo de organización del segmento. |
+| landing-page · US44 · US47 | <img src="assets/img/5.chapter-v/5.2.3.5-landing-2.1.0.png" width="520"> | Landing Page 3.0.0 con la identidad visual de InnovaCorp; los call-to-action abren el registro de la Web Application con el tipo de organización del segmento. |
 
 Las capturas se tomaron con la Web Application 2.0.0 ejecutada contra los Web Services 1.0.0 en el entorno de desarrollo, con la planta de demostración del Quick Start y lecturas simuladas desde la propia sesión.
 
@@ -4692,13 +4692,13 @@ Las lecturas fuera de banda publican un evento de dominio (`OutOfBandReadingDete
 
 #### 5.2.3.7. Software Deployment Evidence for Sprint Review.
 
-En el Sprint 3 se desplegaron en Microsoft Azure los Web Services (Web App `reliant-platform` sobre Java 21 en West US 3, con base de datos `reliant-os` en Azure Database for MySQL Flexible Server) y la nueva versión de la Web Application, y se publicó la versión 2.1.0 del Landing Page en GitHub Pages. La configuración completa se describe en la sección 5.1.4; la guía paso a paso usada por el equipo está versionada en [`docs/azure-deployment.md`](https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform/blob/main/docs/azure-deployment.md) del repositorio `reliant-platform`.
+En el Sprint 3 se desplegaron en Microsoft Azure los Web Services (Web App `reliant-platform` sobre Java 21 en West US 3, con base de datos `reliant-os` en Azure Database for MySQL Flexible Server) y la nueva versión de la Web Application, y se publicó la versión 3.0.0 del Landing Page en GitHub Pages. La configuración completa se describe en la sección 5.1.4; la guía paso a paso usada por el equipo está versionada en [`docs/azure-deployment.md`](https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform/blob/main/docs/azure-deployment.md) del repositorio `reliant-platform`.
 
 | Producto | Versión | URL pública |
 |---|---|---|
 | Web Services (`reliant-platform`) | 1.0.0 | https://reliant-platform-fubjgrh4hvakahgk.westus3-01.azurewebsites.net/swagger-ui.html |
 | Frontend Web Application (`reliant-webapp`) | 2.0.0 | https://reliant-web-application-hsa3asb7axaph6hf.chilecentral-01.azurewebsites.net |
-| Landing Page (`reliant-website`) | 2.1.1 | https://upc-pre-202620-1asi0729-7753-innovacorp.github.io/reliant-website/ |
+| Landing Page (`reliant-website`) | 3.0.0 | https://upc-pre-202620-1asi0729-7753-innovacorp.github.io/reliant-website/ |
 
 **Paso 1. Preparar el perfil de producción.** El perfil `prod` de Spring Boot lee la conexión a MySQL (`DATABASE_URL`, `DATABASE_PORT`, `DATABASE_NAME`, `DATABASE_USER`, `DATABASE_PASSWORD`), el secreto JWT (`JWT_SECRET`), los orígenes permitidos por CORS (`CORS_ALLOWED_ORIGINS`) y el puerto (`PORT`) de variables de entorno; Hibernate crea y actualiza el esquema al arrancar (`spring.jpa.hibernate.ddl-auto=update`). El proyecto compila con `--release 21` porque App Service no ofrece un runtime de Java más reciente.
 
@@ -4710,7 +4710,7 @@ En el Sprint 3 se desplegaron en Microsoft Azure los Web Services (Web App `reli
 
 **Paso 5. Redesplegar la Web Application.** En `reliant-webapp` se actualizó `environment.ts` con la URL de los Web Services, se publicó el release 2.0.0 y el workflow `main_reliant-web-application.yml` redesplegó el sitio; en el Web App del platform se agregó la URL de la Web Application a `CORS_ALLOWED_ORIGINS`.
 
-**Paso 6. Publicar el Landing Page.** El cierre del release 2.1.0 en `main` publicó la nueva versión en GitHub Pages.
+**Paso 6. Publicar el Landing Page.** El cierre del release 3.0.0 en `main` publicó la nueva versión en GitHub Pages.
 
 | Evidencia | Descripción |
 |---|---|
@@ -4720,9 +4720,9 @@ En el Sprint 3 se desplegaron en Microsoft Azure los Web Services (Web App `reli
 | <img src="assets/img/5.chapter-v/5.2.3.7-github-actions-platform.png" width="720"> | Workflow `main_reliant-platform.yml` en verde. |
 | <img src="assets/img/5.chapter-v/5.2.3.7-platform-swagger-deployed.png" width="720"> | Swagger UI servido desde Azure. |
 | <img src="assets/img/5.chapter-v/5.2.3.7-webapp-deployed-2.0.0.png" width="720"> | Web Application 2.0.0 desplegada y autenticada contra los Web Services. |
-| <img src="assets/img/5.chapter-v/5.2.3.7-landing-deployed-2.1.0.png" width="720"> | Landing Page 2.1.0 publicado en GitHub Pages. |
+| <img src="assets/img/5.chapter-v/5.2.3.7-landing-deployed-2.1.0.png" width="720"> | Landing Page 3.0.0 publicado en GitHub Pages. |
 
-<!-- Capturas pendientes: Azure Portal (grupo de recursos, variables de entorno), GitHub Actions del platform, Swagger desplegado, webapp 2.0.0 y landing 2.1.0. -->
+<!-- Capturas pendientes: Azure Portal (grupo de recursos, variables de entorno), GitHub Actions del platform, Swagger desplegado, webapp 2.0.0 y landing 3.0.0. -->
 
 #### 5.2.3.8. Team Collaboration Insights during Sprint.
 
@@ -4844,7 +4844,7 @@ Las entrevistas de validación verifican, con usuarios de los dos segmentos obje
 
 ### 5.3.3. Evaluaciones según heurísticas.
 
-La evaluación se realizó sobre el Landing Page 2.1.0 y la Web Application 2.0.0 (conectada a los Web Services 1.0.0) siguiendo el formato de evaluación de User Experience según heurísticas del curso (Anexo D del enunciado): heurísticas de usabilidad de Nielsen, principios de Inclusive Design (Microsoft) y los criterios de arquitectura de información del *honeycomb* de Morville (findable, usable, credible, accessible, navigable). Cada integrante evaluó de forma independiente las tareas que no implementó y los hallazgos se consolidaron en una sesión conjunta el 2026-11-12; los problemas corregidos antes del cierre del Sprint 3 se indican en la recomendación.
+La evaluación se realizó sobre el Landing Page 3.0.0 y la Web Application 2.0.0 (conectada a los Web Services 1.0.0) siguiendo el formato de evaluación de User Experience según heurísticas del curso (Anexo D del enunciado): heurísticas de usabilidad de Nielsen, principios de Inclusive Design (Microsoft) y los criterios de arquitectura de información del *honeycomb* de Morville (findable, usable, credible, accessible, navigable). Cada integrante evaluó de forma independiente las tareas que no implementó y los hallazgos se consolidaron en una sesión conjunta el 2026-11-12; los problemas corregidos antes del cierre del Sprint 3 se indican en la recomendación.
 
 **UX Heuristics & Principles Evaluation — Usability · Inclusive Design · Information Architecture**
 
@@ -5057,7 +5057,7 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 
 ## 5.4. Video About-the-Product.
 
-El video About-the-Product presenta Reliant desde la perspectiva de sus usuarios: el problema de trazabilidad del proceso de recubrimiento HVOF, la propuesta de valor para los segmentos Recuperation Supplier y Asset Owner, y un recorrido por el Landing Page 2.1.0 y la Web Application 2.0.0 conectada a los Web Services: registro e inicio de sesión, Quick Start, tablero de operaciones, sesión en vivo con simulación de desviaciones, casos de falla, análisis de sesión y generación del certificado de calidad en PDF.
+El video About-the-Product presenta Reliant desde la perspectiva de sus usuarios: el problema de trazabilidad del proceso de recubrimiento HVOF, la propuesta de valor para los segmentos Recuperation Supplier y Asset Owner, y un recorrido por el Landing Page 3.0.0 y la Web Application 2.0.0 conectada a los Web Services: registro e inicio de sesión, Quick Start, tablero de operaciones, sesión en vivo con simulación de desviaciones, casos de falla, análisis de sesión y generación del certificado de calidad en PDF.
 
 | Video | URL |
 |---|---|
@@ -5168,7 +5168,7 @@ El video About-the-Team presenta al equipo de InnovaCorp, su forma de trabajo y 
 | Repositorio de la Frontend Web Application (`reliant-webapp`) | https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp |
 | Repositorio de los Web Services (`reliant-platform`) | https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform |
 | Repositorio del fake API (`reliant-platform-mock`) | https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform-mock |
-| Landing Page desplegado (2.1.1) | https://upc-pre-202620-1asi0729-7753-innovacorp.github.io/reliant-website/ |
+| Landing Page desplegado (3.0.0) | https://upc-pre-202620-1asi0729-7753-innovacorp.github.io/reliant-website/ |
 | Frontend Web Application desplegada (2.0.2) | https://reliant-web-application-hsa3asb7axaph6hf.chilecentral-01.azurewebsites.net |
 | Web Services desplegados (1.0.0) — Swagger UI | https://reliant-platform-fubjgrh4hvakahgk.westus3-01.azurewebsites.net/swagger-ui/index.html |
 | Fake API desplegado (Sprint 2) | https://reliant-mockapi-ajh4eqgkf7hxg2fx.eastus-01.azurewebsites.net/api/v1 |
