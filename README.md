@@ -3350,17 +3350,17 @@ En el Sprint 3 los Web Services reemplazaron al fake API. El RESTful API en Spri
 
 | Recurso de Azure | Producto | Repositorio | Workflow de GitHub Actions | URL pública |
 |---|---|---|---|---|
-| Web App `reliant-platform` (Java 21, Java SE, Linux) | Web Services (Spring Boot 4) | [`reliant-platform`](https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform) | `.github/workflows/main_reliant-platform.yml` | https://<dominio-del-platform>.azurewebsites.net <!-- reemplazar por el dominio real --> |
-| Azure Database for MySQL Flexible Server `reliant-mysql` | Base de datos `reliant-os` (MySQL 8.0) | — | — | `reliant-mysql.mysql.database.azure.com:3306` |
+| Web App `reliant-platform` (Java 21, Java SE, Linux, West US 3) | Web Services (Spring Boot 4) | [`reliant-platform`](https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform) | `.github/workflows/main_reliant-platform.yml` | https://reliant-platform-fubjgrh4hvakahgk.westus3-01.azurewebsites.net |
+| Azure Database for MySQL Flexible Server `edgewatch-mysql` (compartido) | Base de datos `reliant-os` (MySQL 8.0) | — | — | `edgewatch-mysql.mysql.database.azure.com:3306` |
 
 | Paso | Descripción |
 |---|---|
-| 1 | Se crea el servidor `reliant-mysql` (MySQL 8.0, Burstable B1ms) con acceso público permitido para los servicios de Azure y la base de datos `reliant-os` con juego de caracteres `utf8mb4` |
+| 1 | La suscripción Azure for Students admite un único servidor MySQL Flexible Server gratuito, por lo que se reutiliza el servidor `edgewatch-mysql` (MySQL 8.0, Burstable B1ms, East US) con acceso público permitido para los servicios de Azure, creando en él la base de datos independiente `reliant-os` con juego de caracteres `utf8mb4` |
 | 2 | Se crea el Web App `reliant-platform`: publicación **Code**, runtime **Java 21**, servidor **Java SE (Embedded Web Server)**, sistema operativo **Linux**, grupo de recursos `rg-reliant` |
 | 3 | En Settings → Environment variables se definen `SPRING_PROFILES_ACTIVE=prod`, `DATABASE_URL`, `DATABASE_PORT`, `DATABASE_NAME`, `DATABASE_USER`, `DATABASE_PASSWORD`, `JWT_SECRET` (mínimo 32 caracteres), `CORS_ALLOWED_ORIGINS` (URL de la Web Application desplegada), `PORT=8080` y `WEBSITES_PORT=8080` |
 | 4 | En Deployment Center se conecta el repositorio `reliant-platform` y la rama `main`; Azure genera `main_reliant-platform.yml`, que compila con Maven (`java-version: '21'`) y publica el `.jar` en cada push a `main` |
 | 5 | Al arrancar, Hibernate crea o actualiza el esquema (`spring.jpa.hibernate.ddl-auto=update`) y el `RoleSeeder` registra los siete roles; la documentación OpenAPI queda publicada en `/swagger-ui.html` |
-| 6 | En `reliant-webapp` se apunta `platformProviderApiBaseUrl` a `https://<dominio-del-platform>.azurewebsites.net/api/v1`, se publica el release 2.0.0 y el workflow de la Web Application la redespliega |
+| 6 | En `reliant-webapp` se apunta `platformProviderApiBaseUrl` a `https://reliant-platform-fubjgrh4hvakahgk.westus3-01.azurewebsites.net/api/v1`, se publica el release 2.0.0 y el workflow de la Web Application la redespliega |
 
 **Perfiles de Spring Boot**
 
@@ -4432,7 +4432,7 @@ Las capturas se tomaron con la Web Application 2.0.0 ejecutada contra los Web Se
 
 Los Web Services 1.0.0 exponen su documentación OpenAPI 3 con springdoc en `/swagger-ui.html` (`/v3/api-docs` en JSON). Todos los endpoints viven bajo `/api/v1`; salvo el registro (`POST /users`) y el inicio de sesión (`POST /tokens`), requieren un token `Bearer` y operan dentro de la organización del usuario autenticado, que actúa como límite de tenant. Los mensajes de error siguen RFC 9457 (Problem Details) y se localizan según el header `Accept-Language` (inglés por defecto, español).
 
-URL base: `https://<dominio-del-platform>.azurewebsites.net/api/v1` — documentación: `https://<dominio-del-platform>.azurewebsites.net/swagger-ui.html` <!-- reemplazar por el dominio real del Web App reliant-platform -->
+URL base: `https://reliant-platform-fubjgrh4hvakahgk.westus3-01.azurewebsites.net/api/v1` — documentación: `https://reliant-platform-fubjgrh4hvakahgk.westus3-01.azurewebsites.net/swagger-ui.html`
 
 | Bounded Context | Verbo HTTP | Endpoint (`/api/v1` + ruta) | Descripción | Historia |
 |---|---|---|---|---|
@@ -4475,17 +4475,17 @@ Las lecturas fuera de banda publican un evento de dominio (`OutOfBandReadingDete
 
 #### 5.2.3.7. Software Deployment Evidence for Sprint Review.
 
-En el Sprint 3 se desplegaron en Microsoft Azure los Web Services (Web App `reliant-platform` sobre Java 21 con Azure Database for MySQL Flexible Server) y la nueva versión de la Web Application, y se publicó la versión 2.1.0 del Landing Page en GitHub Pages. La configuración completa se describe en la sección 5.1.4; la guía paso a paso usada por el equipo está versionada en [`docs/azure-deployment.md`](https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform/blob/main/docs/azure-deployment.md) del repositorio `reliant-platform`.
+En el Sprint 3 se desplegaron en Microsoft Azure los Web Services (Web App `reliant-platform` sobre Java 21 en West US 3, con base de datos `reliant-os` en Azure Database for MySQL Flexible Server) y la nueva versión de la Web Application, y se publicó la versión 2.1.0 del Landing Page en GitHub Pages. La configuración completa se describe en la sección 5.1.4; la guía paso a paso usada por el equipo está versionada en [`docs/azure-deployment.md`](https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform/blob/main/docs/azure-deployment.md) del repositorio `reliant-platform`.
 
 | Producto | Versión | URL pública |
 |---|---|---|
-| Web Services (`reliant-platform`) | 1.0.0 | https://<dominio-del-platform>.azurewebsites.net/swagger-ui.html <!-- reemplazar por el dominio real --> |
+| Web Services (`reliant-platform`) | 1.0.0 | https://reliant-platform-fubjgrh4hvakahgk.westus3-01.azurewebsites.net/swagger-ui.html |
 | Frontend Web Application (`reliant-webapp`) | 2.0.0 | https://reliant-web-application-hsa3asb7axaph6hf.chilecentral-01.azurewebsites.net |
 | Landing Page (`reliant-website`) | 2.1.0 | https://upc-pre-202620-1asi0729-7753-innovacorp.github.io/reliant-website/ |
 
 **Paso 1. Preparar el perfil de producción.** El perfil `prod` de Spring Boot lee la conexión a MySQL (`DATABASE_URL`, `DATABASE_PORT`, `DATABASE_NAME`, `DATABASE_USER`, `DATABASE_PASSWORD`), el secreto JWT (`JWT_SECRET`), los orígenes permitidos por CORS (`CORS_ALLOWED_ORIGINS`) y el puerto (`PORT`) de variables de entorno; Hibernate crea y actualiza el esquema al arrancar (`spring.jpa.hibernate.ddl-auto=update`). El proyecto compila con `--release 21` porque App Service no ofrece un runtime de Java más reciente.
 
-**Paso 2. Crear la base de datos.** Se creó el servidor `reliant-mysql` (Azure Database for MySQL Flexible Server 8.0, Burstable B1ms) en el grupo de recursos `rg-reliant`, con acceso público desde los servicios de Azure y la base de datos `reliant-os` en `utf8mb4`.
+**Paso 2. Crear la base de datos.** La suscripción Azure for Students solo permite un servidor MySQL Flexible Server gratuito, por lo que se creó la base de datos `reliant-os` (`utf8mb4`) en el servidor existente `edgewatch-mysql` (MySQL 8.0, Burstable B1ms), con acceso público desde los servicios de Azure; los datos de Reliant quedan aislados en su propia base.
 
 **Paso 3. Crear el Web App de los Web Services.** Se creó el Web App `reliant-platform` (Code, Java 21, Java SE embebido, Linux) con las variables de entorno del paso 1 más `SPRING_PROFILES_ACTIVE=prod` y `WEBSITES_PORT=8080`.
 
@@ -4950,7 +4950,7 @@ El video About-the-Team presenta al equipo de InnovaCorp, su forma de trabajo y 
 | Repositorio del fake API (`reliant-platform-mock`) | https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform-mock |
 | Landing Page desplegado (2.1.0) | https://upc-pre-202620-1asi0729-7753-innovacorp.github.io/reliant-website/ |
 | Frontend Web Application desplegada (2.0.0) | https://reliant-web-application-hsa3asb7axaph6hf.chilecentral-01.azurewebsites.net |
-| Web Services desplegados (1.0.0) — Swagger UI | https://<dominio-del-platform>.azurewebsites.net/swagger-ui.html <!-- reemplazar por el dominio real --> |
+| Web Services desplegados (1.0.0) — Swagger UI | https://reliant-platform-fubjgrh4hvakahgk.westus3-01.azurewebsites.net/swagger-ui.html |
 | Fake API desplegado (Sprint 2) | https://reliant-mockapi-ajh4eqgkf7hxg2fx.eastus-01.azurewebsites.net/api/v1 |
 | Guía de despliegue en Azure de los Web Services | https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform/blob/main/docs/azure-deployment.md |
 | Diseño UX/UI en Figma (wireframes, mock-ups y prototipos) | https://www.figma.com/design/eJgrioPA9K4FTQD0pXAUI1/Mockup-Innovacor |
