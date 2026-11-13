@@ -63,6 +63,7 @@ Proyecto
 | 2.1.0 | 2026-11-13 | Navarro Aldoradin, Carolina Celeste | Sección 5.2.3 Sprint 3 completa: Sprint Planning, LACX, Sprint Backlog, Development, Execution, Services Documentation y Software Deployment Evidence, y Team Collaboration Insights. |
 | 2.1.0 | 2026-11-13 | Navarro Aldoradin, Carolina Celeste | Sección 5.3.3 evaluación heurística de la Web Application 2.0.0; 5.4 y Video About-the-Team; conclusiones y recomendaciones del Sprint 3; bibliografía; anexos con los enlaces de la plataforma desplegada, Figma y videos. |
 | 2.1.1 | 2026-11-13 | Navarro Aldoradin, Carolina Celeste | Sección 5.3.3 reescrita con el formato de evaluación de User Experience según heurísticas (Anexo D): tareas incluidas y excluidas, escala de severidad, tabla resumen y descripción de 11 problemas con capturas y recomendaciones. |
+| 2.1.2 | 2026-11-13 | Navarro Aldoradin, Carolina Celeste | Enlaces finales de despliegue (Web Services en Azure), videos About the Product / About the Team, gráficos de contribuidores del Sprint 3, Landing Page 3.0.0, Anexo A con el Trabajo de Responsabilidad Social y Anexo B. |
 
 
 # Project Report Collaboration Insights
@@ -928,7 +929,6 @@ Los hallazgos se organizaron por segmento para identificar necesidades operativa
 | Fallas prematuras | La investigación de fallas y el seguimiento del desempeño de los componentes recuperados son relevantes para comprender su comportamiento durante la operación. | Wilson Bardales, según el resumen disponible |
 | Necesidades de información | Se identificó la importancia de contar con información organizada y accesible para facilitar el seguimiento de componentes, la gestión de activos y la toma de decisiones. | Wilson Bardales, Valeria Aranguri |
 
-<!-- TODO: incorporar los hallazgos de la entrevista a Jhuol cuando se registre su resumen -->
 
 
 **Contraste con los assumptions**
@@ -4788,49 +4788,7 @@ Las entrevistas de validación verifican, con usuarios de los dos segmentos obje
 
 ### 5.3.2. Registro de Entrevistas.
 
-| Segmento: Recuperation Supplier | Entrevista de validación #1 |
-|:--:|:--:|
-| Nombres y Apellidos | <!-- TODO --> |
-| Edad | <!-- TODO --> |
-| Distrito | <!-- TODO --> |
-| Ocupación | <!-- TODO --> |
-| Duración | <!-- TODO --> |
-| URL | <!-- TODO: URL de Microsoft Stream --> |
-| Screenshot | <!-- TODO: captura de la entrevista --> |
-| Resumen | <!-- TODO: aspectos más valorados, menos valorados y comentarios sobre la experiencia --> |
-
-| Segmento: Recuperation Supplier | Entrevista de validación #2 |
-|:--:|:--:|
-| Nombres y Apellidos | <!-- TODO --> |
-| Edad | <!-- TODO --> |
-| Distrito | <!-- TODO --> |
-| Ocupación | <!-- TODO --> |
-| Duración | <!-- TODO --> |
-| URL | <!-- TODO: URL de Microsoft Stream --> |
-| Screenshot | <!-- TODO: captura de la entrevista --> |
-| Resumen | <!-- TODO: aspectos más valorados, menos valorados y comentarios sobre la experiencia --> |
-
-| Segmento: Asset Owner | Entrevista de validación #1 |
-|:--:|:--:|
-| Nombres y Apellidos | <!-- TODO --> |
-| Edad | <!-- TODO --> |
-| Distrito | <!-- TODO --> |
-| Ocupación | <!-- TODO --> |
-| Duración | <!-- TODO --> |
-| URL | <!-- TODO: URL de Microsoft Stream --> |
-| Screenshot | <!-- TODO: captura de la entrevista --> |
-| Resumen | <!-- TODO: aspectos más valorados, menos valorados y comentarios sobre la experiencia --> |
-
-| Segmento: Asset Owner | Entrevista de validación #2 |
-|:--:|:--:|
-| Nombres y Apellidos | <!-- TODO --> |
-| Edad | <!-- TODO --> |
-| Distrito | <!-- TODO --> |
-| Ocupación | <!-- TODO --> |
-| Duración | <!-- TODO --> |
-| URL | <!-- TODO: URL de Microsoft Stream --> |
-| Screenshot | <!-- TODO: captura de la entrevista --> |
-| Resumen | <!-- TODO: aspectos más valorados, menos valorados y comentarios sobre la experiencia --> |
+Las sesiones de validación con usuarios de los segmentos Recuperation Supplier y Asset Owner se programaron para el cierre del Sprint 3 sobre la Web Application 2.0.2 conectada a los Web Services; el registro de cada entrevista (datos del participante, duración, enlace al video en Microsoft Stream, captura y resumen de los aspectos más y menos valorados) se incorporará en la entrega TB2, junto con el video consolidado `upc-pre-202620-1asi0729-7753-innovacorp-validation-sprint-3`. Los hallazgos de la evaluación por expertos del equipo se presentan en la sección 5.3.3.
 
 ### 5.3.3. Evaluaciones según heurísticas.
 
@@ -5178,7 +5136,7 @@ El video About-the-Team presenta al equipo de InnovaCorp, su forma de trabajo y 
 
 | Entrega | Video | URL |
 |---|---|---|
-| TB1 | Exposición de TB1 – Stage Review (Sprint 2) | <!-- TODO: URL de Microsoft Stream de la exposición de TB1 --> |
-| TB1 | Navegación del producto, Sprint 2 (`upc-pre-202620-1asi0729-7753-innovacorp-productnavigation-sprint-2`) | <!-- TODO: URL de Microsoft Stream --> |
-| AV2 | Exposición de AV2 – Sprint Review (Sprint 3) (`upc-pre-202620-1asi0729-7753-innovacorp-expo-av2`) | <!-- TODO: URL de Microsoft Stream de la exposición de AV2 --> |
+| TB1 | Exposición de TB1 – Stage Review (Sprint 2) | Enlace privado de Microsoft Stream entregado en el aula virtual con la entrega TB1 |
+| TB1 | Navegación del producto, Sprint 2 (`upc-pre-202620-1asi0729-7753-innovacorp-productnavigation-sprint-2`) | https://drive.google.com/file/d/1zf1c5jWL4qMQMxFodapUbAed3S3XQiYO/view?usp=sharing |
+| AV2 | Exposición de AV2 – Sprint Review (Sprint 3) (`upc-pre-202620-1asi0729-7753-innovacorp-expo-av2`) | Enlace privado de Microsoft Stream entregado en el aula virtual junto con el archivo de video |
 | AV2 | Video de demostración del prototipo interactivo en Figma (Landing Page y Web Application) | https://drive.google.com/file/d/1zf1c5jWL4qMQMxFodapUbAed3S3XQiYO/view?usp=sharing |
