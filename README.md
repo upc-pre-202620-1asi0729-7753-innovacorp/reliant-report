@@ -4698,7 +4698,7 @@ En el Sprint 3 se desplegaron en Microsoft Azure los Web Services (Web App `reli
 |---|---|---|
 | Web Services (`reliant-platform`) | 1.0.0 | https://reliant-platform-fubjgrh4hvakahgk.westus3-01.azurewebsites.net/swagger-ui.html |
 | Frontend Web Application (`reliant-webapp`) | 2.0.0 | https://reliant-web-application-hsa3asb7axaph6hf.chilecentral-01.azurewebsites.net |
-| Landing Page (`reliant-website`) | 2.1.0 | https://upc-pre-202620-1asi0729-7753-innovacorp.github.io/reliant-website/ |
+| Landing Page (`reliant-website`) | 2.1.1 | https://upc-pre-202620-1asi0729-7753-innovacorp.github.io/reliant-website/ |
 
 **Paso 1. Preparar el perfil de producción.** El perfil `prod` de Spring Boot lee la conexión a MySQL (`DATABASE_URL`, `DATABASE_PORT`, `DATABASE_NAME`, `DATABASE_USER`, `DATABASE_PASSWORD`), el secreto JWT (`JWT_SECRET`), los orígenes permitidos por CORS (`CORS_ALLOWED_ORIGINS`) y el puerto (`PORT`) de variables de entorno; Hibernate crea y actualiza el esquema al arrancar (`spring.jpa.hibernate.ddl-auto=update`). El proyecto compila con `--release 21` porque App Service no ofrece un runtime de Java más reciente.
 
@@ -5061,9 +5061,9 @@ El video About-the-Product presenta Reliant desde la perspectiva de sus usuarios
 
 | Video | URL |
 |---|---|
-| About the Product — primera versión (AV2) | <!-- TODO: URL del video About the Product en YouTube --> |
+| About the Product — primera versión (AV2) — YouTube | https://youtu.be/T1w7KEkz4g0 |
+| About the Product — primera versión (AV2) — Microsoft Stream | https://x.gd/5q1QX |
 
-<!-- TODO: captura de portada del video en assets/img/5.chapter-v/5.4-about-the-product-cover.png -->
 
 # Conclusiones
 ## Conclusiones y recomendaciones.
@@ -5098,9 +5098,9 @@ El video About-the-Team presenta al equipo de InnovaCorp, su forma de trabajo y 
 
 | Video | URL |
 |---|---|
-| About the Team — primera versión (AV2) | <!-- TODO: URL del video About the Team en YouTube --> |
+| About the Team — primera versión (AV2) — YouTube | https://youtu.be/oeCfkoXPoIM |
+| About the Team — primera versión (AV2) — Microsoft Stream | https://x.gd/SYmY7 |
 
-<!-- TODO: captura de portada del video en assets/img/5.chapter-v/about-the-team-cover.png -->
 
 # Bibliografía
 
@@ -5168,16 +5168,16 @@ El video About-the-Team presenta al equipo de InnovaCorp, su forma de trabajo y 
 | Repositorio de la Frontend Web Application (`reliant-webapp`) | https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp |
 | Repositorio de los Web Services (`reliant-platform`) | https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform |
 | Repositorio del fake API (`reliant-platform-mock`) | https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform-mock |
-| Landing Page desplegado (2.1.0) | https://upc-pre-202620-1asi0729-7753-innovacorp.github.io/reliant-website/ |
-| Frontend Web Application desplegada (2.0.0) | https://reliant-web-application-hsa3asb7axaph6hf.chilecentral-01.azurewebsites.net |
-| Web Services desplegados (1.0.0) — Swagger UI | https://reliant-platform-fubjgrh4hvakahgk.westus3-01.azurewebsites.net/swagger-ui.html |
+| Landing Page desplegado (2.1.1) | https://upc-pre-202620-1asi0729-7753-innovacorp.github.io/reliant-website/ |
+| Frontend Web Application desplegada (2.0.2) | https://reliant-web-application-hsa3asb7axaph6hf.chilecentral-01.azurewebsites.net |
+| Web Services desplegados (1.0.0) — Swagger UI | https://reliant-platform-fubjgrh4hvakahgk.westus3-01.azurewebsites.net/swagger-ui/index.html |
 | Fake API desplegado (Sprint 2) | https://reliant-mockapi-ajh4eqgkf7hxg2fx.eastus-01.azurewebsites.net/api/v1 |
 | Guía de despliegue en Azure de los Web Services | https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform/blob/main/docs/azure-deployment.md |
 | Diseño UX/UI en Figma (wireframes, mock-ups y prototipos) | https://www.figma.com/design/eJgrioPA9K4FTQD0pXAUI1/Mockup-Innovacor |
 | Prototipo interactivo en Figma | https://www.figma.com/proto/eJgrioPA9K4FTQD0pXAUI1/Mockup-Innovacor?node-id=205-460 |
 | Video de demostración del prototipo interactivo (Figma) | https://drive.google.com/file/d/1zf1c5jWL4qMQMxFodapUbAed3S3XQiYO/view?usp=sharing |
-| Video About the Product (AV2) | <!-- TODO: URL en YouTube --> |
-| Video About the Team (AV2) | <!-- TODO: URL en YouTube --> |
+| Video About the Product (AV2) | YouTube: https://youtu.be/T1w7KEkz4g0 · Microsoft Stream: https://x.gd/5q1QX |
+| Video About the Team (AV2) | YouTube: https://youtu.be/oeCfkoXPoIM · Microsoft Stream: https://x.gd/SYmY7 |
 | Product Backlog en Trello | https://trello.com/b/aDFKmtGp/reliant-product-backlog |
 | Sprint Backlog 2 en Trello | https://trello.com/b/ccOu9yk5/reliant-sprint-2 |
 
