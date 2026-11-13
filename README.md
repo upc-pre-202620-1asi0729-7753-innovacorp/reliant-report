@@ -63,6 +63,7 @@ Proyecto
 | 2.1.0 | 2026-11-13 | Navarro Aldoradin, Carolina Celeste | Sección 5.2.3 Sprint 3 completa: Sprint Planning, LACX, Sprint Backlog, Development, Execution, Services Documentation y Software Deployment Evidence, y Team Collaboration Insights. |
 | 2.1.0 | 2026-11-13 | Navarro Aldoradin, Carolina Celeste | Sección 5.3.3 evaluación heurística de la Web Application 2.0.0; 5.4 y Video About-the-Team; conclusiones y recomendaciones del Sprint 3; bibliografía; anexos con los enlaces de la plataforma desplegada, Figma y videos. |
 | 2.1.1 | 2026-11-13 | Navarro Aldoradin, Carolina Celeste | Sección 5.3.3 reescrita con el formato de evaluación de User Experience según heurísticas (Anexo D): tareas incluidas y excluidas, escala de severidad, tabla resumen y descripción de 11 problemas con capturas y recomendaciones. |
+| 2.1.2 | 2026-11-13 | Navarro Aldoradin, Carolina Celeste | Enlaces finales de despliegue (Web Services en Azure), videos About the Product / About the Team, gráficos de contribuidores del Sprint 3, Landing Page 3.0.0, Anexo A con el Trabajo de Responsabilidad Social y Anexo B. |
 
 
 # Project Report Collaboration Insights
@@ -72,14 +73,13 @@ El URL del repositorio para el Project Report en la organización de github es e
 
 Para la entrega TB1, el informe se actualizó siguiendo el mismo flujo de Git Flow que los demás repositorios del equipo: cada sección se trabajó en una rama `feature/tb1-*` creada desde `develop`, con commits en formato Conventional Commits, y se integró en `develop` mediante merge. Las secciones del Capítulo I y II fueron redactadas principalmente por Rivera Aguilar, Scarlet Josefina; los Capítulos III, IV y V por Navarro Aldoradin, Carolina Celeste; y el Capítulo II (user personas, task matrix y journey maps) y el Product Backlog por Fernandez Seer, Mario Alonso.
 
-Para la entrega AV2, el informe se trabajó en la rama `feature/av2-report` creada desde `develop` y se publicó con la rama `release/2.1.0`. Rivera Aguilar, Scarlet Josefina actualizó los mock-ups del Landing Page y de la Web Application y las evidencias de las entrevistas de validación (78 commits); Navarro Aldoradin, Carolina Celeste reescribió el Student Outcome, unificó los statements del Capítulo I, actualizó los diagramas del Capítulo IV (componentes, clases del Frontend y base de datos), la configuración de despliegue y redactó la sección del Sprint 3, la evaluación heurística, las conclusiones y los anexos; Fernandez Seer, Mario Alonso aportó la documentación del reporte de sesión y las conclusiones de la evaluación heurística.
+Para la entrega AV2, el informe se trabajó en la rama `feature/av2-report` creada desde `develop` y se publicó con las ramas `release/2.1.x`. Rivera Aguilar, Scarlet Josefina actualizó los mock-ups del Landing Page y de la Web Application y las evidencias de las entrevistas de validación (78 commits); Navarro Aldoradin, Carolina Celeste reescribió el Student Outcome, unificó los statements del Capítulo I, actualizó los diagramas del Capítulo IV (componentes, clases del Frontend y base de datos), la configuración de despliegue y redactó la sección del Sprint 3, la evaluación heurística, las conclusiones y los anexos; Fernandez Seer, Mario Alonso aportó la documentación del reporte de sesión y las conclusiones de la evaluación heurística.
 
-| Entrega | Insights → Contributors |
+| Entrega | Contribuidores (commits por semana, generado del historial de GitHub) |
 |---|---|
 | TB1 | <img src="assets/img/5.chapter-v/report-contributors-tb1.png" width="720"> |
 | AV2 | <img src="assets/img/5.chapter-v/report-contributors-av2.png" width="720"> |
 
-<!-- Capturas pendientes: GitHub → reliant-report → Insights → Contributors (TB1: 2026-09-01 a 2026-10-05; AV2: 2026-10-06 a 2026-11-13). -->
 
 # Contenido
 
@@ -929,7 +929,6 @@ Los hallazgos se organizaron por segmento para identificar necesidades operativa
 | Fallas prematuras | La investigación de fallas y el seguimiento del desempeño de los componentes recuperados son relevantes para comprender su comportamiento durante la operación. | Wilson Bardales, según el resumen disponible |
 | Necesidades de información | Se identificó la importancia de contar con información organizada y accesible para facilitar el seguimiento de componentes, la gestión de activos y la toma de decisiones. | Wilson Bardales, Valeria Aranguri |
 
-<!-- TODO: incorporar los hallazgos de la entrevista a Jhuol cuando se registre su resumen -->
 
 
 **Contraste con los assumptions**
@@ -2387,11 +2386,11 @@ La sección Servicios distribuye las funcionalidades en bloques informativos y c
 
 <p align="center"><img src="assets/img/chapter-ii/needfinding/mobile-mockup4.png"></p>
 
-**Landing Page 2.1.0 (AV2).** En el Sprint 3 el Landing Page se rediseñó con la identidad visual definitiva de InnovaCorp (tipografía Poppins, paleta azul marino `#060C1F` y naranja `#BF6B0C`, logotipo y fotografía del taller HVOF) a partir de los mock-ups elaborados en Figma por Rivera Aguilar, Scarlet Josefina, conservando la internacionalización, las páginas legales y las secciones por segmento de la versión 2.0.0. Los call-to-action de cada segmento abren el registro de la Web Application con el tipo de organización correspondiente. Diseño en Figma: [https://www.figma.com/design/eJgrioPA9K4FTQD0pXAUI1/Mockup-Innovacor](https://www.figma.com/design/eJgrioPA9K4FTQD0pXAUI1/Mockup-Innovacor).
+**Landing Page 3.0.0 (AV2).** En el Sprint 3 el Landing Page se rediseñó con la identidad visual definitiva de InnovaCorp (tipografía Poppins, paleta azul marino `#060C1F` y naranja `#BF6B0C`, logotipo y fotografía del taller HVOF) a partir de los mock-ups elaborados en Figma por Rivera Aguilar, Scarlet Josefina, conservando la internacionalización, las páginas legales y las secciones por segmento de la versión 2.0.0. Los call-to-action de cada segmento abren el registro de la Web Application con el tipo de organización correspondiente. Diseño en Figma: [https://www.figma.com/design/eJgrioPA9K4FTQD0pXAUI1/Mockup-Innovacor](https://www.figma.com/design/eJgrioPA9K4FTQD0pXAUI1/Mockup-Innovacor).
 
-<p align="center"><img src="assets/img/4.chapter-iv/4.3.landing-page-ui-design/landing-2.1.0-desktop.png" alt="Landing Page 2.1.0 en Desktop Web Browser"></p>
+<p align="center"><img src="assets/img/4.chapter-iv/4.3.landing-page-ui-design/landing-2.1.0-desktop.png" alt="Landing Page 3.0.0 en Desktop Web Browser"></p>
 
-<p align="center"><img src="assets/img/4.chapter-iv/4.3.landing-page-ui-design/landing-2.1.0-mobile.png" alt="Landing Page 2.1.0 en Mobile Web Browser" width="360"></p>
+<p align="center"><img src="assets/img/4.chapter-iv/4.3.landing-page-ui-design/landing-2.1.0-mobile.png" alt="Landing Page 3.0.0 en Mobile Web Browser" width="360"></p>
 
 ## 4.4. Web Applications UX/UI Design
 El diseño UX/UI de la Web Application de Reliant, desarrollada por InnovaCorp, se basa en los resultados obtenidos durante el proceso de investigación de usuarios, los User Stories definidos en el Product Backlog y los lineamientos visuales establecidos previamente. Su propósito es representar la estructura de las interfaces y facilitar la comprensión de las funcionalidades relacionadas con la gestión y el monitoreo de procesos industriales.
@@ -3350,17 +3349,17 @@ En el Sprint 3 los Web Services reemplazaron al fake API. El RESTful API en Spri
 
 | Recurso de Azure | Producto | Repositorio | Workflow de GitHub Actions | URL pública |
 |---|---|---|---|---|
-| Web App `reliant-platform` (Java 21, Java SE, Linux) | Web Services (Spring Boot 4) | [`reliant-platform`](https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform) | `.github/workflows/main_reliant-platform.yml` | https://<dominio-del-platform>.azurewebsites.net <!-- reemplazar por el dominio real --> |
-| Azure Database for MySQL Flexible Server `reliant-mysql` | Base de datos `reliant-os` (MySQL 8.0) | — | — | `reliant-mysql.mysql.database.azure.com:3306` |
+| Web App `reliant-platform` (Java 21, Java SE, Linux, West US 3) | Web Services (Spring Boot 4) | [`reliant-platform`](https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform) | `.github/workflows/main_reliant-platform.yml` | https://reliant-platform-fubjgrh4hvakahgk.westus3-01.azurewebsites.net |
+| Azure Database for MySQL Flexible Server `edgewatch-mysql` (compartido) | Base de datos `reliant-os` (MySQL 8.0) | — | — | `edgewatch-mysql.mysql.database.azure.com:3306` |
 
 | Paso | Descripción |
 |---|---|
-| 1 | Se crea el servidor `reliant-mysql` (MySQL 8.0, Burstable B1ms) con acceso público permitido para los servicios de Azure y la base de datos `reliant-os` con juego de caracteres `utf8mb4` |
+| 1 | La suscripción Azure for Students admite un único servidor MySQL Flexible Server gratuito, por lo que se reutiliza el servidor `edgewatch-mysql` (MySQL 8.0, Burstable B1ms, East US) con acceso público permitido para los servicios de Azure, creando en él la base de datos independiente `reliant-os` con juego de caracteres `utf8mb4` |
 | 2 | Se crea el Web App `reliant-platform`: publicación **Code**, runtime **Java 21**, servidor **Java SE (Embedded Web Server)**, sistema operativo **Linux**, grupo de recursos `rg-reliant` |
 | 3 | En Settings → Environment variables se definen `SPRING_PROFILES_ACTIVE=prod`, `DATABASE_URL`, `DATABASE_PORT`, `DATABASE_NAME`, `DATABASE_USER`, `DATABASE_PASSWORD`, `JWT_SECRET` (mínimo 32 caracteres), `CORS_ALLOWED_ORIGINS` (URL de la Web Application desplegada), `PORT=8080` y `WEBSITES_PORT=8080` |
 | 4 | En Deployment Center se conecta el repositorio `reliant-platform` y la rama `main`; Azure genera `main_reliant-platform.yml`, que compila con Maven (`java-version: '21'`) y publica el `.jar` en cada push a `main` |
 | 5 | Al arrancar, Hibernate crea o actualiza el esquema (`spring.jpa.hibernate.ddl-auto=update`) y el `RoleSeeder` registra los siete roles; la documentación OpenAPI queda publicada en `/swagger-ui.html` |
-| 6 | En `reliant-webapp` se apunta `platformProviderApiBaseUrl` a `https://<dominio-del-platform>.azurewebsites.net/api/v1`, se publica el release 2.0.0 y el workflow de la Web Application la redespliega |
+| 6 | En `reliant-webapp` se apunta `platformProviderApiBaseUrl` a `https://reliant-platform-fubjgrh4hvakahgk.westus3-01.azurewebsites.net/api/v1`, se publica el release 2.0.0 y el workflow de la Web Application la redespliega |
 
 **Perfiles de Spring Boot**
 
@@ -4066,7 +4065,6 @@ La tabla resume las contribuciones de los integrantes actuales del equipo regist
 
 La concentración del desarrollo de la Web Application en una sola integrante es el principal riesgo de colaboración identificado en este Sprint. Para el Sprint 3 se recomienda distribuir los bounded contexts de los Web Services entre los tres integrantes y mantener el flujo de Git Flow con una rama `feature/*` por historia, de modo que la contribución de cada integrante quede registrada en los repositorios.
 
-<!-- Capturas pendientes: Insights → Contributors de reliant-webapp, reliant-platform-mock, reliant-website y reliant-report con el rango del Sprint 2 (assets/img/5.chapter-v/5.2.2.8-<repositorio>-contributors.png). -->
 
 ### 5.2.3. Sprint 3
 
@@ -4091,7 +4089,7 @@ El Sprint 3 tuvo como objetivo publicar la primera versión de los Web Services 
 
 #### 5.2.3.2. Aspect Leaders and Collaborators.
 
-La matriz LACX del Sprint 3 distribuye los bounded contexts de los Web Services y los frentes de la Web Application y del Landing Page entre los tres integrantes. Los aspectos de los Web Services corresponden a los bounded contexts implementados en `reliant-platform`; los aspectos de la Web Application agrupan las vistas nuevas de `reliant-webapp`; y el aspecto Landing Page Redesign corresponde a la versión 2.1.0 de `reliant-website`.
+La matriz LACX del Sprint 3 distribuye los bounded contexts de los Web Services y los frentes de la Web Application y del Landing Page entre los tres integrantes. Los aspectos de los Web Services corresponden a los bounded contexts implementados en `reliant-platform`; los aspectos de la Web Application agrupan las vistas nuevas de `reliant-webapp`; y el aspecto Landing Page Redesign corresponde a la versión 3.0.0 de `reliant-website`.
 
 Leyenda: **L** = Leader, **C** = Collaborator, **–** = sin participación; **WS** = Web Services (`reliant-platform`), **WA** = Web Application (`reliant-webapp`), **LP** = Landing Page (`reliant-website`).
 
@@ -4153,17 +4151,17 @@ El tablero del Sprint 3 se gestiona en Trello con las listas To-do, In Progress,
 | US44 | Conocer la propuesta de valor | T141 | Design the new Landing Page | Design the desktop and mobile wireframes and mock-ups of the Landing Page with the InnovaCorp identity (Poppins, navy and orange palette, hero photography) in Figma and prototype them in HTML/CSS. | 6 | Rivera Aguilar, Scarlet Josefina | Done |
 | US44 | Conocer la propuesta de valor | T142 | Rebuild the Landing Page with the new identity | Merge the new design into the main Landing Page keeping the EN/ES internationalization, the legal pages and the segment sections; add Services, Plans, About us and Contact. | 5 | Navarro Aldoradin, Carolina Celeste | Done |
 | US47 | Registro desde call-to-action segmentado | T143 | Point the calls to action to the Web Application | Make every call to action open the deployed Web Application sign-up with the `organizationType` of the segment, and add Sign in / Get started to the header. | 1 | Navarro Aldoradin, Carolina Celeste | Done |
-| US45 | Información para Recuperation Supplier | T144 | Embed the About videos and publish release 2.1.0 | Add the About the Product and About the Team sections with YouTube embeds, update the README and CHANGELOG and publish release 2.1.0 to GitHub Pages. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
+| US45 | Información para Recuperation Supplier | T144 | Embed the About videos and publish release 3.0.0 | Add the About the Product and About the Team sections with YouTube embeds, update the README and CHANGELOG and publish release 3.0.0 to GitHub Pages. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
 
 #### 5.2.3.4. Development Evidence for Sprint Review.
 
-En esta sección se presentan los commits realizados durante el Sprint 3 en los repositorios de la organización. Los Web Services se construyeron en el repositorio `reliant-platform` con una rama `feature/*` por bounded context o capacidad (`feature/sign-up`, `feature/sign-in`, `feature/jwt-authentication-and-authorization`, `feature/list-users-and-assign-roles`, `feature/get-available-roles`, `feature/manage-recipes`, `feature/register-subsystems-and-controllers`, `feature/add-equipment-context-facade`, `feature/manage-customers`, `feature/manage-components`, `feature/manage-recuperations`, `feature/monitor-spray-sessions`, `feature/manage-fault-rules`, `feature/diagnose-faults`, `feature/add-reporting-bounded-context`), integradas en `develop` y publicadas en `main` con la rama `release/1.0.0` y la etiqueta `v1.0.0`. La Web Application continuó en `reliant-webapp` con las ramas `feature/apply-reliant-brand-theme`, `feature/navigate-with-side-menu`, `feature/improve-process-monitoring`, `feature/connect-platform-api`, `feature/diagnose-faults`, `feature/add-quick-start`, `feature/add-reporting`, `feature/add-session-analysis` y `fix/footer-overlap`, publicadas con `release/2.0.0` y la etiqueta `2.0.0`. El Landing Page se rediseñó en `reliant-website` con las ramas `feature/update-landing-page` y `feature/merge-scarlet-design`, publicadas con `release/2.1.0` y la etiqueta `2.1.0`.
+En esta sección se presentan los commits realizados durante el Sprint 3 en los repositorios de la organización. Los Web Services se construyeron en el repositorio `reliant-platform` con una rama `feature/*` por bounded context o capacidad (`feature/sign-up`, `feature/sign-in`, `feature/jwt-authentication-and-authorization`, `feature/list-users-and-assign-roles`, `feature/get-available-roles`, `feature/manage-recipes`, `feature/register-subsystems-and-controllers`, `feature/add-equipment-context-facade`, `feature/manage-customers`, `feature/manage-components`, `feature/manage-recuperations`, `feature/monitor-spray-sessions`, `feature/manage-fault-rules`, `feature/diagnose-faults`, `feature/add-reporting-bounded-context`), integradas en `develop` y publicadas en `main` con la rama `release/1.0.0` y la etiqueta `v1.0.0`. La Web Application continuó en `reliant-webapp` con las ramas `feature/apply-reliant-brand-theme`, `feature/navigate-with-side-menu`, `feature/improve-process-monitoring`, `feature/connect-platform-api`, `feature/diagnose-faults`, `feature/add-quick-start`, `feature/add-reporting`, `feature/add-session-analysis` y `fix/footer-overlap`, publicadas con `release/2.0.0` y la etiqueta `2.0.0`. El Landing Page se rediseñó en `reliant-website` con las ramas `feature/update-landing-page` y `feature/merge-scarlet-design`, publicadas con `release/3.0.0` y la etiqueta `3.0.0`.
 
 | Repositorio | Release del Sprint 3 | Etiqueta | Ramas |
 |---|---|---|---|
-| `reliant-platform` | 1.0.0 — primera versión de los Web Services | `v1.0.0` | `main`, `develop`, `release/1.0.0`, 15 ramas `feature/*` |
+| `reliant-platform` | 1.0.0 — primera versión de los Web Services | `v1.0.0` | `main`, `develop`, `release/1.0.0`, `hotfix/azure-workflow`, 15 ramas `feature/*` (con pull requests de los tres integrantes) |
 | `reliant-webapp` | 2.0.0 — Web Application conectada a los Web Services | `2.0.0` | `main`, `develop`, `release/2.0.0`, 8 ramas `feature/*`, `fix/footer-overlap` |
-| `reliant-website` | 2.1.0 — rediseño del Landing Page | `2.1.0` | `main`, `develop`, `release/2.1.0`, `feature/update-landing-page`, `feature/merge-scarlet-design` |
+| `reliant-website` | 3.0.0 — rediseño del Landing Page y videos About | `3.0.0` | `main`, `develop`, `release/3.0.0`, `feature/update-landing-page`, `feature/merge-scarlet-design`, `feature/add-about-videos` |
 
 **Web Services — `reliant-platform`**
 
@@ -4261,6 +4259,182 @@ En esta sección se presentan los commits realizados durante el Sprint 3 en los 
 | reliant-platform | develop | ca526ee | feat(equipment): add hvof system resource from entity assembler. |  | 2026-11-06 |
 | reliant-platform | develop | 91e8034 | feat(equipment): add hvof systems controller. |  | 2026-11-06 |
 | reliant-platform | develop | 2f6e9f0 | Complete HVOF subsystems and controllers integration |  | 2026-11-06 |
+| reliant-platform | develop | 1d71e59 | feat(iam): add roles enum, role entity, seed roles command and role repository port. |  | 2026-11-07 |
+| reliant-platform | develop | ee99048 | feat(iam): add roles enum, role entity, seed roles command and role repository port. |  | 2026-11-07 |
+| reliant-platform | develop | ae1b48c | feat(iam): add role persistence repository. |  | 2026-11-07 |
+| reliant-platform | develop | 82832a1 | feat(iam): add role repository implementation. |  | 2026-11-07 |
+| reliant-platform | develop | 7b53753 | feat(iam): add role command service. |  | 2026-11-07 |
+| reliant-platform | develop | 654106c | feat(iam): add role command service implementation. |  | 2026-11-07 |
+| reliant-platform | develop | f10695c | feat(iam): add application ready event handler. |  | 2026-11-07 |
+| reliant-platform | develop | 52e5842 | build: add spring security crypto dependency. |  | 2026-11-07 |
+| reliant-platform | develop | c31cfab | feat(iam): add hashing service. |  | 2026-11-07 |
+| reliant-platform | develop | 7829c6c | feat(iam): add hashing service implementation. |  | 2026-11-07 |
+| reliant-platform | develop | fd6512f | feat(iam): add email address value object. |  | 2026-11-07 |
+| reliant-platform | develop | 427b56c | feat(iam): add ruc value object. |  | 2026-11-07 |
+| reliant-platform | develop | ace63a7 | feat(iam): add organization type value object. |  | 2026-11-07 |
+| reliant-platform | develop | 3180903 | feat(iam): add organization status value object. |  | 2026-11-07 |
+| reliant-platform | develop | ce31673 | feat(iam): add user status value object. |  | 2026-11-07 |
+| reliant-platform | develop | 3100856 | feat(iam): add organization registered event. |  | 2026-11-07 |
+| reliant-platform | develop | 71ccd03 | feat(iam): add user signed up event. |  | 2026-11-07 |
+| reliant-platform | develop | bb1a1ec | feat(iam): add organization aggregate. |  | 2026-11-07 |
+| reliant-platform | develop | 905843e | feat(iam): add user aggregate. |  | 2026-11-07 |
+| reliant-platform | develop | 5a6462b | feat(iam): add sign up command. |  | 2026-11-07 |
+| reliant-platform | develop | 3e64f7c | feat(iam): add organization repository port. |  | 2026-11-07 |
+| reliant-platform | develop | 86a32c3 | feat(iam): add user repository port. |  | 2026-11-07 |
+| reliant-platform | develop | c4c5723 | feat(iam): add email address persistence converter. |  | 2026-11-07 |
+| reliant-platform | develop | df937d1 | feat(iam): add ruc persistence converter. |  | 2026-11-07 |
+| reliant-platform | develop | c0fa06c | feat(iam): add organization persistence entity. |  | 2026-11-07 |
+| reliant-platform | develop | 74cdbac | feat(iam): add user persistence entity. |  | 2026-11-07 |
+| reliant-platform | develop | 39dae1b | feat(iam): add organization persistence assembler. |  | 2026-11-07 |
+| reliant-platform | develop | 2b3fb3f | feat(iam): add user persistence assembler. |  | 2026-11-07 |
+| reliant-platform | develop | b3b486b | feat(iam): add organization persistence repository. |  | 2026-11-07 |
+| reliant-platform | develop | ffe7d41 | feat(iam): add user persistence repository. |  | 2026-11-07 |
+| reliant-platform | develop | ad43892 | feat(iam): add organization repository implementation. |  | 2026-11-07 |
+| reliant-platform | develop | 2067e9a | feat(iam): add user repository implementation. |  | 2026-11-07 |
+| reliant-platform | develop | 1e59b08 | feat(iam): add user command service. |  | 2026-11-07 |
+| reliant-platform | develop | e1c46b8 | feat(iam): add user command service implementation. |  | 2026-11-07 |
+| reliant-platform | develop | 05b3f99 | feat(iam): add sign up resource. |  | 2026-11-07 |
+| reliant-platform | develop | a1ff53e | feat(iam): add role resource. |  | 2026-11-07 |
+| reliant-platform | develop | 4307e0b | feat(iam): add user resource. |  | 2026-11-07 |
+| reliant-platform | develop | 5b7c511 | feat(iam): add sign up command resource assembler. |  | 2026-11-07 |
+| reliant-platform | develop | d4a1fbe | feat(iam): add role resource assembler. |  | 2026-11-07 |
+| reliant-platform | develop | a3854bf | feat(iam): add user resource assembler. |  | 2026-11-07 |
+| reliant-platform | develop | f78b287 | feat(iam): add application ready event handler. |  | 2026-11-07 |
+| reliant-platform | develop | d1d3f2c | feat(iam): add users controller. |  | 2026-11-07 |
+| reliant-platform | develop | 81bbb52 | feat(iam): add sign up message keys. |  | 2026-11-07 |
+| reliant-platform | develop | a8a4085 | feat(iam): add sign up Spanish message keys. |  | 2026-11-07 |
+| reliant-platform | develop | 81b731d | feat(iam): add sign up Spanish message keys. |  | 2026-11-07 |
+| reliant-platform | develop | 242fdd5 | feat(iam): add get all roles query. |  | 2026-11-07 |
+| reliant-platform | develop | b635865 | feat(iam): add role query service. |  | 2026-11-07 |
+| reliant-platform | develop | bc68a1a | feat(iam): add role query service implementation. |  | 2026-11-07 |
+| reliant-platform | develop | 90b03b5 | feat(iam): add roles controller. |  | 2026-11-07 |
+| reliant-platform | develop | 6d5d0c3 | build: add commons lang3 dependency. |  | 2026-11-07 |
+| reliant-platform | develop | 45bbeba | feat(iam): add token service. |  | 2026-11-07 |
+| reliant-platform | develop | 72fe2ae | feat(iam): add token service implementation. |  | 2026-11-07 |
+| reliant-platform | develop | cf59b89 | feat(iam): add sign in command. |  | 2026-11-07 |
+| reliant-platform | develop | ef9158e | feat(iam): add sign in command to user command service. |  | 2026-11-07 |
+| reliant-platform | develop | 738aba9 | feat(iam): add sign in command handling. |  | 2026-11-07 |
+| reliant-platform | develop | 2907da3 | feat(iam): add get organization by id query. |  | 2026-11-07 |
+| reliant-platform | develop | b5c895a | feat(iam): add organization query service interface. |  | 2026-11-07 |
+| reliant-platform | develop | 8797a15 | feat(iam): add organization query service implementation. |  | 2026-11-07 |
+| reliant-platform | develop | 80d5958 | feat(iam): add sign in resource. |  | 2026-11-07 |
+| reliant-platform | develop | cb751ea | feat(iam): add role id resource. |  | 2026-11-07 |
+| reliant-platform | develop | 8c4b9e0 | feat(iam): add authenticated user resource. |  | 2026-11-07 |
+| reliant-platform | develop | 812c269 | feat(iam): add sign in command assembler. |  | 2026-11-07 |
+| reliant-platform | develop | f2770db | feat(iam): add authenticated user resource assembler. |  | 2026-11-07 |
+| reliant-platform | develop | a235340 | feat(iam): add tokens controller. |  | 2026-11-07 |
+| reliant-platform | develop | ec6e89d | feat(iam): add get all users by organization query. |  | 2026-11-07 |
+| reliant-platform | develop | 61b4e61 | feat(iam): add get user by id query. |  | 2026-11-07 |
+| reliant-platform | develop | db33fbb | feat(iam): add get user by email query. |  | 2026-11-07 |
+| reliant-platform | develop | d8527ee | feat(iam): add assign roles to user command. |  | 2026-11-07 |
+| reliant-platform | develop | 3b4d198 | feat(iam): add user query service interface. |  | 2026-11-07 |
+| reliant-platform | develop | 3fd2eb5 | feat(iam): add user query service implementation. |  | 2026-11-07 |
+| reliant-platform | develop | fde2576 | feat(iam): add assign roles command handling. |  | 2026-11-07 |
+| reliant-platform | develop | 935b025 | feat(iam): add assign roles resource and assembler. |  | 2026-11-07 |
+| reliant-platform | develop | 9bdb189 | feat(iam): add list, get by id and assign roles endpoints to users controller. |  | 2026-11-07 |
+| reliant-platform | develop | 32da629 | feat(iam): add user not found message keys. |  | 2026-11-07 |
+| reliant-platform | develop | 29694b6 | build: enable spring security starter. |  | 2026-11-07 |
+| reliant-platform | develop | 7a3a137 | build: enable spring security starter. |  | 2026-11-07 |
+| reliant-platform | develop | cb5c1af | feat(shared): enable bearer auth security scheme in openapi configuration. |  | 2026-11-07 |
+| reliant-platform | develop | b878054 | feat(iam): add bcrypt hashing service contract. |  | 2026-11-07 |
+| reliant-platform | develop | 70b449e | feat(iam): add bearer token service contract and http helpers. |  | 2026-11-07 |
+| reliant-platform | develop | 8767aa5 | feat(iam): add user details model and service. |  | 2026-11-07 |
+| reliant-platform | develop | abe26a6 | feat(iam): add user details model and service. |  | 2026-11-07 |
+| reliant-platform | develop | 937103a | feat(iam): add authentication token builder and unauthorized entry point. |  | 2026-11-07 |
+| reliant-platform | develop | a0b057f | feat(iam): add bearer authorization request filter. |  | 2026-11-07 |
+| reliant-platform | develop | 0e2cc80 | feat(iam): add web security configuration. |  | 2026-11-07 |
+| reliant-platform | develop | 613889e | feat(iam): require bearer token on protected endpoints and admin role on user management. |  | 2026-11-07 |
+| reliant-platform | develop | c3f87fa | feat(iam): require bearer token on protected endpoints and admin role on user management. |  | 2026-11-07 |
+| reliant-platform | develop | e2f98a9 | feat(iam): require bearer token on protected endpoints and admin role on user management. |  | 2026-11-07 |
+| reliant-platform | develop | 57f71aa | feat(iam): add authenticated user endpoint. |  | 2026-11-07 |
+| reliant-platform | develop | cf77900 | feat(shared): add current user context contract. |  | 2026-11-07 |
+| reliant-platform | develop | d6d6291 | feat(iam): add current user provider as acl for other bounded contexts. |  | 2026-11-07 |
+| reliant-platform | develop | ce56a28 | feat(shared): map access denied to a 403 problem detail. |  | 2026-11-07 |
+| reliant-platform | develop | 3fd0caa | fix(shared): finalize access denied exception handling. |  | 2026-11-07 |
+| reliant-platform | develop | b7f8b54 | feat(traceability): add customer RUC value object |  | 2026-11-08 |
+| reliant-platform | develop | 2f859af | feat(traceability): add customer ID value object |  | 2026-11-08 |
+| reliant-platform | develop | e8eaf27 | feat(traceability): add customer registration command |  | 2026-11-08 |
+| reliant-platform | develop | 61a7fc7 | feat(traceability): add customer update command |  | 2026-11-08 |
+| reliant-platform | develop | 432a036 | feat(traceability): add customer aggregate and registration event |  | 2026-11-08 |
+| reliant-platform | develop | 7dbff73 | feat(traceability): add customer lookup query |  | 2026-11-08 |
+| reliant-platform | develop | 0a3c578 | feat(traceability): add supplier customer query |  | 2026-11-08 |
+| reliant-platform | develop | 70abcf1 | feat(traceability): add linked asset owner customer query |  | 2026-11-08 |
+| reliant-platform | develop | ac34649 | feat(traceability): add customer repository port |  | 2026-11-08 |
+| reliant-platform | develop | 3e7ae6f | feat(traceability): add RUC persistence converter |  | 2026-11-08 |
+| reliant-platform | develop | f8dbb82 | feat(traceability): add customer ID persistence converter |  | 2026-11-08 |
+| reliant-platform | develop | edd503b | feat(traceability): add customer persistence entity |  | 2026-11-08 |
+| reliant-platform | develop | 01cfefb | feat(traceability): add customer persistence assembler |  | 2026-11-08 |
+| reliant-platform | develop | 2322000 | feat(traceability): add customer JPA repository |  | 2026-11-08 |
+| reliant-platform | develop | 85bba79 | feat(traceability): add customer repository adapter |  | 2026-11-08 |
+| reliant-platform | develop | ab4bcf7 | feat(traceability): add customer query service |  | 2026-11-08 |
+| reliant-platform | develop | 57e484f | feat(traceability): implement customer query service |  | 2026-11-08 |
+| reliant-platform | develop | d7b9a60 | feat(traceability): add customer command service |  | 2026-11-08 |
+| reliant-platform | develop | d29249b | feat(traceability): implement customer command service |  | 2026-11-08 |
+| reliant-platform | develop | f9cc85f | feat(traceability): add customer registration request |  | 2026-11-08 |
+| reliant-platform | develop | fee1cc5 | feat(traceability): add customer update request |  | 2026-11-08 |
+| reliant-platform | develop | 3d8c02e | feat(traceability): add customer response resource |  | 2026-11-08 |
+| reliant-platform | develop | d1cabf3 | feat(traceability): add customer registration assembler |  | 2026-11-08 |
+| reliant-platform | develop | 88bfa04 | feat(traceability): add customer update assembler |  | 2026-11-08 |
+| reliant-platform | develop | 7fc694c | feat(traceability): add customer response assembler |  | 2026-11-08 |
+| reliant-platform | develop | 13ec9a9 | feat(traceability): add customers REST controller |  | 2026-11-08 |
+| reliant-platform | develop | 6cb8562 | feat(traceability): add English customer messages |  | 2026-11-08 |
+| reliant-platform | develop | 3e3390b | feat(traceability): add Spanish customer messages |  | 2026-11-08 |
+| reliant-platform | develop | 412b254 | fix(traceability): correct RUC value object syntax |  | 2026-11-08 |
+| reliant-platform | develop | ff28054 | feat(traceability): add recovered component types |  | 2026-11-08 |
+| reliant-platform | develop | bce2e8c | feat(traceability): add recovered component statuses |  | 2026-11-08 |
+| reliant-platform | develop | d24d850 | feat(traceability): add component registration command |  | 2026-11-08 |
+| reliant-platform | develop | 7347fd8 | feat(traceability): add recovered component aggregate and registration event |  | 2026-11-08 |
+| reliant-platform | develop | 158deec | feat(traceability): add component lookup query |  | 2026-11-08 |
+| reliant-platform | develop | 3d0ab71 | feat(traceability): add components by customer query |  | 2026-11-08 |
+| reliant-platform | develop | 610f007 | feat(traceability): add recovered component repository port |  | 2026-11-08 |
+| reliant-platform | develop | c203fd6 | feat(traceability): add recovered component persistence entity |  | 2026-11-08 |
+| reliant-platform | develop | 4a5552c | feat(traceability): add recovered component persistence assembler |  | 2026-11-08 |
+| reliant-platform | develop | 32c198e | feat(traceability): add recovered component JPA repository |  | 2026-11-08 |
+| reliant-platform | develop | 65706c9 | feat(traceability): add recovered component repository adapter |  | 2026-11-08 |
+| reliant-platform | develop | 626485f | feat(traceability): add component command service |  | 2026-11-08 |
+| reliant-platform | develop | e78e9e2 | feat(traceability): implement component command service |  | 2026-11-08 |
+| reliant-platform | develop | 6eb1edb | feat(traceability): add component query service |  | 2026-11-08 |
+| reliant-platform | develop | 4fa7e52 | feat(traceability): implement component query service |  | 2026-11-08 |
+| reliant-platform | develop | 12a903d | feat(traceability): add component registration request |  | 2026-11-08 |
+| reliant-platform | develop | 6d227d4 | feat(traceability): add component response resource |  | 2026-11-08 |
+| reliant-platform | develop | 20a73c6 | feat(traceability): add component registration assembler |  | 2026-11-08 |
+| reliant-platform | develop | 3c481ff | feat(traceability): add component response assembler |  | 2026-11-08 |
+| reliant-platform | develop | da23cfc | feat(traceability): add components REST controller |  | 2026-11-08 |
+| reliant-platform | develop | febd1df | feat(traceability): add localized component error messages |  | 2026-11-08 |
+| reliant-platform | develop | 8797544 | feat(traceability): add work order number value object |  | 2026-11-10 |
+| reliant-platform | develop | 05080a9 | feat(traceability): add component ID value object |  | 2026-11-10 |
+| reliant-platform | develop | 43d08a7 | feat(traceability): add recuperation statuses |  | 2026-11-10 |
+| reliant-platform | develop | 0bb7446 | feat(traceability): add open recuperation command |  | 2026-11-10 |
+| reliant-platform | develop | d8c6c7a | feat(traceability): add complete recuperation command |  | 2026-11-10 |
+| reliant-platform | develop | 6c4ef12 | feat(traceability): add link session to recuperation command |  | 2026-11-10 |
+| reliant-platform | develop | f04bae0 | feat(traceability): add recuperation aggregate and lifecycle events |  | 2026-11-10 |
+| reliant-platform | develop | ebac156 | feat(traceability): add recuperation lookup query |  | 2026-11-10 |
+| reliant-platform | develop | 8c8b95c | feat(traceability): add supplier recuperations query |  | 2026-11-10 |
+| reliant-platform | develop | 1e32f81 | feat(traceability): add customer recuperations query |  | 2026-11-10 |
+| reliant-platform | develop | 2bdc0ce | feat(traceability): add recuperation repository port |  | 2026-11-10 |
+| reliant-platform | develop | a6f0e74 | feat(traceability): add work order number persistence converter |  | 2026-11-10 |
+| reliant-platform | develop | 0bc6ce2 | feat(traceability): add component ID persistence converter |  | 2026-11-10 |
+| reliant-platform | develop | 4b54282 | feat(traceability): add recuperation persistence entity |  | 2026-11-10 |
+| reliant-platform | develop | 4b5bdc5 | feat(traceability): add recuperation persistence assembler |  | 2026-11-10 |
+| reliant-platform | develop | b2f2590 | feat(traceability): add recuperation JPA repository |  | 2026-11-10 |
+| reliant-platform | develop | 9160035 | feat(traceability): add recuperation repository adapter |  | 2026-11-10 |
+| reliant-platform | develop | 1393d10 | feat(traceability): add recuperation command service |  | 2026-11-10 |
+| reliant-platform | develop | 2cfbe0f | feat(traceability): implement recuperation command service |  | 2026-11-10 |
+| reliant-platform | develop | 93ede86 | feat(traceability): add recuperation query service |  | 2026-11-10 |
+| reliant-platform | develop | 7a3ab4b | feat(traceability): implement recuperation query service |  | 2026-11-10 |
+| reliant-platform | develop | b50a375 | feat(traceability): add traceability context facade |  | 2026-11-10 |
+| reliant-platform | develop | fa582bc | feat(traceability): implement traceability context facade |  | 2026-11-10 |
+| reliant-platform | develop | ef67cfb | feat(traceability): add open recuperation request |  | 2026-11-10 |
+| reliant-platform | develop | 9bbf81f | feat(traceability): add linked session resource |  | 2026-11-10 |
+| reliant-platform | develop | 4725cf0 | feat(traceability): add recuperation response resource |  | 2026-11-10 |
+| reliant-platform | develop | f3975af | feat(traceability): add open recuperation assembler |  | 2026-11-10 |
+| reliant-platform | develop | 6e5bdb5 | feat(traceability): add recuperation response assembler |  | 2026-11-10 |
+| reliant-platform | develop | abde862 | feat(traceability): add recuperations REST controller |  | 2026-11-10 |
+| reliant-platform | develop | 10a77e8 | feat(traceability): add localized recuperation error messages |  | 2026-11-10 |
+| reliant-platform | develop | 550fee0 | feat(equipment): add recipe band snapshot |  | 2026-11-11 |
+| reliant-platform | develop | 7676db7 | feat(equipment): add equipment context facade |  | 2026-11-11 |
+| reliant-platform | develop | 3923efe | feat(equipment): implement equipment context facade |  | 2026-11-11 |
+| reliant-platform | develop | 433a885 | fix(equipment): use unit category conversion in context facade |  | 2026-11-11 |
 | reliant-platform | develop | e769426 | chore(equipment): keep the datasource in the dev profile and drop the review notes. |  | 2026-11-11 |
 | reliant-platform | develop | 7832aa2 | build: add spring security crypto dependency. |  | 2026-11-11 |
 | reliant-platform | develop | ff90eb7 | feat(iam): add organization, user and role domain model with sign-up and seed roles commands. |  | 2026-11-11 |
@@ -4314,8 +4488,49 @@ En esta sección se presentan los commits realizados durante el Sprint 3 en los 
 | reliant-platform | develop | 896afb2 | feat(reporting): add JPA persistence for report templates and generated reports |  | 2026-11-12 |
 | reliant-platform | develop | 27e8634 | feat(reporting): add report template and generated report services with default templates |  | 2026-11-12 |
 | reliant-platform | develop | ed08f36 | feat(reporting): expose report templates and generated reports endpoints |  | 2026-11-12 |
+| reliant-platform | develop | b15afc2 | feat(processmonitoring): add spray session value objects and recipe band classification |  | 2026-11-12 |
+| reliant-platform | develop | 843d756 | feat(processmonitoring): add spray pass and process reading entities |  | 2026-11-12 |
+| reliant-platform | develop | 234a562 | feat(processmonitoring): add spray session and reading commands |  | 2026-11-12 |
+| reliant-platform | develop | d12b18e | feat(processmonitoring): add spray session aggregate and domain events |  | 2026-11-12 |
+| reliant-platform | develop | 20b9a21 | feat(processmonitoring): add spray session queries and repository ports |  | 2026-11-12 |
+| reliant-platform | develop | 24e5433 | feat(processmonitoring): add HVOF system ID persistence converter |  | 2026-11-12 |
+| reliant-platform | develop | 4e39d03 | feat(processmonitoring): add recuperation ID persistence converter |  | 2026-11-12 |
+| reliant-platform | develop | 81c2661 | feat(processmonitoring): map recipe band snapshots for persistence |  | 2026-11-12 |
+| reliant-platform | develop | 69e3966 | feat(processmonitoring): map spray session and pass entities |  | 2026-11-12 |
+| reliant-platform | develop | cb93547 | feat(processmonitoring): map process reading entity |  | 2026-11-12 |
+| reliant-platform | develop | 3cac321 | feat(processmonitoring): map spray sessions and passes between domain and JPA |  | 2026-11-12 |
+| reliant-platform | develop | de1c4f5 | feat(processmonitoring): map process readings between domain and JPA |  | 2026-11-12 |
+| reliant-platform | develop | 913e879 | feat(processmonitoring): add Spring Data repositories for sessions and readings |  | 2026-11-12 |
+| reliant-platform | develop | 311c48e | feat(processmonitoring): implement spray session repository |  | 2026-11-12 |
+| reliant-platform | develop | 0feb4bd | feat(processmonitoring): implement process reading repository |  | 2026-11-12 |
+| reliant-platform | develop | 2e888ab | feat(processmonitoring): add equipment integration service |  | 2026-11-12 |
+| reliant-platform | develop | 08d3c9d | feat(processmonitoring): add traceability integration service |  | 2026-11-12 |
+| reliant-platform | develop | f3e2192 | feat(processmonitoring): add out-of-band reading integration event |  | 2026-11-12 |
+| reliant-platform | develop | 5eeb901 | feat(processmonitoring): publish out-of-band reading integration event |  | 2026-11-12 |
+| reliant-platform | develop | 72e89bb | feat(processmonitoring): add spray session command service |  | 2026-11-12 |
+| reliant-platform | develop | 54c08a2 | feat(processmonitoring): implement spray session commands |  | 2026-11-12 |
+| reliant-platform | develop | bb590c9 | feat(processmonitoring): add spray session query service |  | 2026-11-12 |
+| reliant-platform | develop | 696c4a9 | feat(processmonitoring): implement spray session queries |  | 2026-11-12 |
+| reliant-platform | develop | 06eaa46 | feat(processmonitoring): add start spray session request |  | 2026-11-12 |
+| reliant-platform | develop | 03be963 | feat(processmonitoring): add abort spray session request |  | 2026-11-12 |
+| reliant-platform | develop | dea377f | feat(processmonitoring): add spray session response |  | 2026-11-12 |
+| reliant-platform | develop | 11f848d | feat(processmonitoring): add process reading request |  | 2026-11-12 |
+| reliant-platform | develop | 2938141 | feat(processmonitoring): add process reading response |  | 2026-11-12 |
+| reliant-platform | develop | ac439f0 | feat(processmonitoring): add register spray pass request |  | 2026-11-12 |
+| reliant-platform | develop | 7df2199 | feat(processmonitoring): add spray pass response |  | 2026-11-12 |
+| reliant-platform | develop | 04e530d | feat(processmonitoring): add deviation counts response |  | 2026-11-12 |
+| reliant-platform | develop | fda1c49 | feat(processmonitoring): map start spray session requests |  | 2026-11-12 |
+| reliant-platform | develop | dc9bf4f | feat(processmonitoring): map spray session responses |  | 2026-11-12 |
+| reliant-platform | develop | 38c07e8 | feat(processmonitoring): map process reading ingestion requests |  | 2026-11-12 |
+| reliant-platform | develop | d0719d0 | feat(processmonitoring): map process reading responses |  | 2026-11-12 |
+| reliant-platform | develop | 7d35195 | feat(processmonitoring): map register spray pass requests |  | 2026-11-12 |
+| reliant-platform | develop | 127758b | feat(processmonitoring): map spray pass responses |  | 2026-11-12 |
+| reliant-platform | develop | 3d43f10 | feat(processmonitoring): expose spray session monitoring endpoints |  | 2026-11-12 |
+| reliant-platform | develop | e9e0215 | feat(processmonitoring): add localized spray session error messages |  | 2026-11-12 |
 | reliant-platform | develop | 62ad123 | chore(release): 1.0.0 with production profile for Azure and updated documentation |  | 2026-11-13 |
 | reliant-platform | develop | 188fced | docs: add the Azure App Service deployment guide |  | 2026-11-13 |
+| reliant-platform | develop | 2903385 | Add or update the Azure App Service build and deployment workflow config |  | 2026-11-13 |
+| reliant-platform | develop | d380070 | ci: skip tests in the Azure build workflow and update setup-java |  | 2026-11-13 |
 
 **Frontend Web Application — `reliant-webapp`**
 
@@ -4401,7 +4616,7 @@ En esta sección se presentan los commits realizados durante el Sprint 3 en los 
 | Repositorio | Rama | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
 |---|---|---|---|---|---|
 | reliant-website | develop | 60a2430 | feat(landing): redesign landing page with InnovaCorp visual identity | - Poppins typography, navy/orange palette, logo, hero photo and icon cards - Services, Plans, About us (product/team videos) and Contact sections - CTAs open th | 2026-11-13 |
-| reliant-website | develop | 9d8d403 | chore(release): prepare release 2.1.0 |  | 2026-11-13 |
+| reliant-website | develop | 9d8d403 | chore(release): prepare release 3.0.0 |  | 2026-11-13 |
 
 #### 5.2.3.5. Execution Evidence for Sprint Review.
 
@@ -4423,7 +4638,7 @@ URL de la aplicación desplegada: https://reliant-web-application-hsa3asb7axaph6
 | generate-report · US62 | <img src="assets/img/5.chapter-v/5.2.3.5-generate-report-dialog.png" width="520"> | Generación de un reporte desde la sesión: tipo de reporte y plantilla; el PDF se renderiza en el navegador con los datos reales de la sesión y se registra en la plataforma. |
 | generate-report · US62 | <img src="assets/img/5.chapter-v/5.2.3.5-generated-report-pdf.png" width="420"> <img src="assets/img/5.chapter-v/5.2.3.5-session-report-pdf.png" width="420"> | Certificado de calidad y reporte de sesión generados en PDF desde las plantillas estándar. |
 | register-hvof-system · US07 | <img src="assets/img/5.chapter-v/5.2.3.5-hvof-systems.png" width="520"> | Sistemas HVOF de la organización persistidos por los Web Services. |
-| landing-page · US44 · US47 | <img src="assets/img/5.chapter-v/5.2.3.5-landing-2.1.0.png" width="520"> | Landing Page 2.1.0 con la identidad visual de InnovaCorp; los call-to-action abren el registro de la Web Application con el tipo de organización del segmento. |
+| landing-page · US44 · US47 | <img src="assets/img/5.chapter-v/5.2.3.5-landing-2.1.0.png" width="520"> | Landing Page 3.0.0 con la identidad visual de InnovaCorp; los call-to-action abren el registro de la Web Application con el tipo de organización del segmento. |
 
 Las capturas se tomaron con la Web Application 2.0.0 ejecutada contra los Web Services 1.0.0 en el entorno de desarrollo, con la planta de demostración del Quick Start y lecturas simuladas desde la propia sesión.
 
@@ -4432,7 +4647,7 @@ Las capturas se tomaron con la Web Application 2.0.0 ejecutada contra los Web Se
 
 Los Web Services 1.0.0 exponen su documentación OpenAPI 3 con springdoc en `/swagger-ui.html` (`/v3/api-docs` en JSON). Todos los endpoints viven bajo `/api/v1`; salvo el registro (`POST /users`) y el inicio de sesión (`POST /tokens`), requieren un token `Bearer` y operan dentro de la organización del usuario autenticado, que actúa como límite de tenant. Los mensajes de error siguen RFC 9457 (Problem Details) y se localizan según el header `Accept-Language` (inglés por defecto, español).
 
-URL base: `https://<dominio-del-platform>.azurewebsites.net/api/v1` — documentación: `https://<dominio-del-platform>.azurewebsites.net/swagger-ui.html` <!-- reemplazar por el dominio real del Web App reliant-platform -->
+URL base: `https://reliant-platform-fubjgrh4hvakahgk.westus3-01.azurewebsites.net/api/v1` — documentación: `https://reliant-platform-fubjgrh4hvakahgk.westus3-01.azurewebsites.net/swagger-ui.html`
 
 | Bounded Context | Verbo HTTP | Endpoint (`/api/v1` + ruta) | Descripción | Historia |
 |---|---|---|---|---|
@@ -4468,24 +4683,21 @@ Las lecturas fuera de banda publican un evento de dominio (`OutOfBandReadingDete
 | Evidencia | Descripción |
 |---|---|
 | <img src="assets/img/5.chapter-v/5.2.3.6-swagger-overview.png" width="720"> | Swagger UI de los Web Services 1.0.0 con los controladores de los seis bounded contexts. |
-| <img src="assets/img/5.chapter-v/5.2.3.6-swagger-sign-in.png" width="720"> | `POST /api/v1/tokens`: respuesta con el token JWT y autorización del esquema Bearer en Swagger. |
-| <img src="assets/img/5.chapter-v/5.2.3.6-swagger-spray-sessions.png" width="720"> | Endpoints de sesiones de rociado y lecturas. |
 
-<!-- Capturas pendientes: Swagger UI del platform desplegado (o local en http://localhost:8080/swagger-ui.html). -->
 
 #### 5.2.3.7. Software Deployment Evidence for Sprint Review.
 
-En el Sprint 3 se desplegaron en Microsoft Azure los Web Services (Web App `reliant-platform` sobre Java 21 con Azure Database for MySQL Flexible Server) y la nueva versión de la Web Application, y se publicó la versión 2.1.0 del Landing Page en GitHub Pages. La configuración completa se describe en la sección 5.1.4; la guía paso a paso usada por el equipo está versionada en [`docs/azure-deployment.md`](https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform/blob/main/docs/azure-deployment.md) del repositorio `reliant-platform`.
+En el Sprint 3 se desplegaron en Microsoft Azure los Web Services (Web App `reliant-platform` sobre Java 21 en West US 3, con base de datos `reliant-os` en Azure Database for MySQL Flexible Server) y la nueva versión de la Web Application, y se publicó la versión 3.0.0 del Landing Page en GitHub Pages. La configuración completa se describe en la sección 5.1.4; la guía paso a paso usada por el equipo está versionada en [`docs/azure-deployment.md`](https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform/blob/main/docs/azure-deployment.md) del repositorio `reliant-platform`.
 
 | Producto | Versión | URL pública |
 |---|---|---|
-| Web Services (`reliant-platform`) | 1.0.0 | https://<dominio-del-platform>.azurewebsites.net/swagger-ui.html <!-- reemplazar por el dominio real --> |
+| Web Services (`reliant-platform`) | 1.0.0 | https://reliant-platform-fubjgrh4hvakahgk.westus3-01.azurewebsites.net/swagger-ui.html |
 | Frontend Web Application (`reliant-webapp`) | 2.0.0 | https://reliant-web-application-hsa3asb7axaph6hf.chilecentral-01.azurewebsites.net |
-| Landing Page (`reliant-website`) | 2.1.0 | https://upc-pre-202620-1asi0729-7753-innovacorp.github.io/reliant-website/ |
+| Landing Page (`reliant-website`) | 3.0.0 | https://upc-pre-202620-1asi0729-7753-innovacorp.github.io/reliant-website/ |
 
 **Paso 1. Preparar el perfil de producción.** El perfil `prod` de Spring Boot lee la conexión a MySQL (`DATABASE_URL`, `DATABASE_PORT`, `DATABASE_NAME`, `DATABASE_USER`, `DATABASE_PASSWORD`), el secreto JWT (`JWT_SECRET`), los orígenes permitidos por CORS (`CORS_ALLOWED_ORIGINS`) y el puerto (`PORT`) de variables de entorno; Hibernate crea y actualiza el esquema al arrancar (`spring.jpa.hibernate.ddl-auto=update`). El proyecto compila con `--release 21` porque App Service no ofrece un runtime de Java más reciente.
 
-**Paso 2. Crear la base de datos.** Se creó el servidor `reliant-mysql` (Azure Database for MySQL Flexible Server 8.0, Burstable B1ms) en el grupo de recursos `rg-reliant`, con acceso público desde los servicios de Azure y la base de datos `reliant-os` en `utf8mb4`.
+**Paso 2. Crear la base de datos.** La suscripción Azure for Students solo permite un servidor MySQL Flexible Server gratuito, por lo que se creó la base de datos `reliant-os` (`utf8mb4`) en el servidor existente `edgewatch-mysql` (MySQL 8.0, Burstable B1ms), con acceso público desde los servicios de Azure; los datos de Reliant quedan aislados en su propia base.
 
 **Paso 3. Crear el Web App de los Web Services.** Se creó el Web App `reliant-platform` (Code, Java 21, Java SE embebido, Linux) con las variables de entorno del paso 1 más `SPRING_PROFILES_ACTIVE=prod` y `WEBSITES_PORT=8080`.
 
@@ -4493,22 +4705,19 @@ En el Sprint 3 se desplegaron en Microsoft Azure los Web Services (Web App `reli
 
 **Paso 5. Redesplegar la Web Application.** En `reliant-webapp` se actualizó `environment.ts` con la URL de los Web Services, se publicó el release 2.0.0 y el workflow `main_reliant-web-application.yml` redesplegó el sitio; en el Web App del platform se agregó la URL de la Web Application a `CORS_ALLOWED_ORIGINS`.
 
-**Paso 6. Publicar el Landing Page.** El cierre del release 2.1.0 en `main` publicó la nueva versión en GitHub Pages.
+**Paso 6. Publicar el Landing Page.** El cierre del release 3.0.0 en `main` publicó la nueva versión en GitHub Pages.
 
 | Evidencia | Descripción |
 |---|---|
-| <img src="assets/img/5.chapter-v/5.2.3.7-azure-resources.png" width="720"> | Grupo de recursos `rg-reliant` con el servidor MySQL y los Web Apps. |
-| <img src="assets/img/5.chapter-v/5.2.3.7-platform-env-vars.png" width="720"> | Variables de entorno del Web App `reliant-platform`. |
-| <img src="assets/img/5.chapter-v/5.2.3.7-github-actions-platform.png" width="720"> | Workflow `main_reliant-platform.yml` en verde. |
+| <img src="assets/img/5.chapter-v/5.2.3.7-platform-web-app-overview.png" width="720"> | Web App `reliant-platform` en Azure App Service (Java 21 SE, Linux, West US 3) con el último despliegue exitoso desde GitHub Actions. |
 | <img src="assets/img/5.chapter-v/5.2.3.7-platform-swagger-deployed.png" width="720"> | Swagger UI servido desde Azure. |
-| <img src="assets/img/5.chapter-v/5.2.3.7-webapp-deployed-2.0.0.png" width="720"> | Web Application 2.0.0 desplegada y autenticada contra los Web Services. |
-| <img src="assets/img/5.chapter-v/5.2.3.7-landing-deployed-2.1.0.png" width="720"> | Landing Page 2.1.0 publicado en GitHub Pages. |
+| <img src="assets/img/5.chapter-v/5.2.3.7-landing-deployed-2.1.0.png" width="720"> | Landing Page 3.0.0 publicado en GitHub Pages (https://upc-pre-202620-1asi0729-7753-innovacorp.github.io/reliant-website/). |
 
-<!-- Capturas pendientes: Azure Portal (grupo de recursos, variables de entorno), GitHub Actions del platform, Swagger desplegado, webapp 2.0.0 y landing 2.1.0. -->
+<!-- Capturas pendientes: Azure Portal (grupo de recursos, variables de entorno), GitHub Actions del platform, Swagger desplegado, webapp 2.0.0 y landing 3.0.0. -->
 
 #### 5.2.3.8. Team Collaboration Insights during Sprint.
 
-Durante el Sprint 3 el trabajo se distribuyó según la matriz LACX de la sección 5.2.3.2 y, a diferencia del Sprint 2, los tres integrantes registraron commits en los repositorios de producto. Navarro Aldoradin, Carolina Celeste construyó los bounded contexts IAM, Traceability, Process Monitoring, Fault Diagnosis y Reporting de los Web Services, la seguridad con JWT, el perfil de producción y la guía de despliegue, y en la Web Application la conexión al platform, el diagnóstico de fallas, el Quick Start, el reporting con PDF y el análisis de sesión, además de integrar el rediseño del Landing Page. Rivera Aguilar, Scarlet Josefina implementó en los Web Services las recetas, los subsistemas y los controladores del bounded context Equipment, y en la Web Application el tema visual de Reliant, la navegación lateral, los gráficos de tendencia y el tablero con preferencias de usuario; además diseñó los wireframes y mock-ups del nuevo Landing Page y actualizó el informe con ellos. Fernandez Seer, Mario Alonso implementó el reporte de sesión con exportación a CSV y las correcciones del sondeo de lecturas en Process Monitoring.
+Durante el Sprint 3 el trabajo se distribuyó según la matriz LACX de la sección 5.2.3.2 y, a diferencia del Sprint 2, los tres integrantes registraron commits en todos los repositorios de producto. Navarro Aldoradin, Carolina Celeste construyó los bounded contexts IAM, Traceability, Process Monitoring, Fault Diagnosis y Reporting de los Web Services, la seguridad con JWT, el perfil de producción, la guía y el despliegue en Azure, y en la Web Application la conexión al platform, el diagnóstico de fallas, el Quick Start, el reporting con PDF y el análisis de sesión, además de integrar el rediseño del Landing Page. Rivera Aguilar, Scarlet Josefina implementó en los Web Services las recetas, los subsistemas y los controladores del bounded context Equipment y los mensajes localizados de Traceability, y en la Web Application el tema visual de Reliant, la navegación lateral, los gráficos de tendencia y el tablero con preferencias de usuario; además diseñó los wireframes y mock-ups del nuevo Landing Page y actualizó el informe con ellos y con las evidencias de las entrevistas. Fernandez Seer, Mario Alonso implementó en los Web Services los mapeos de requests y responses y los mensajes localizados de Process Monitoring y Traceability (integrados mediante pull requests a `develop`), y en la Web Application el reporte de sesión con exportación a CSV y las correcciones del sondeo de lecturas. Las ramas `feature/*` de los Web Services fueron trabajadas por más de un integrante y se integraron en `develop` mediante pull requests y merges, lo que explica que los tres aparezcan como contribuidores del mismo bounded context.
 
 El gráfico resume los commits (sin merges) por integrante y repositorio registrados en las ramas `develop` entre el 6 de octubre y el 13 de noviembre de 2026:
 
@@ -4516,25 +4725,26 @@ El gráfico resume los commits (sin merges) por integrante y repositorio registr
 
 | Repositorio | Contribuidor (usuario de GitHub) | Commits del Sprint 3 |
 |---|---|---|
-| `reliant-platform` | genixmvp | 108 |
-| `reliant-platform` | scarletriveraaguilar-spec | 39 |
+| `reliant-platform` | scarletriveraaguilar-spec | 131 |
+| `reliant-platform` | MrBaru | 123 |
+| `reliant-platform` | genixmvp | 110 |
 | `reliant-webapp` | scarletriveraaguilar-spec | 42 |
-| `reliant-webapp` | genixmvp | 19 |
+| `reliant-webapp` | genixmvp | 25 |
 | `reliant-webapp` | MrBaru | 13 |
-| `reliant-website` | genixmvp | 2 |
-| `reliant-report` | scarletriveraaguilar-spec | 78 |
-| `reliant-report` | genixmvp | 2 |
+| `reliant-website` | genixmvp | 4 |
+| `reliant-website` | scarletriveraaguilar-spec | 1 |
+| `reliant-report` | scarletriveraaguilar-spec | 173 |
+| `reliant-report` | genixmvp | 8 |
 
-Las capturas de Insights → Contributors de GitHub para cada repositorio se incluyen a continuación:
+Los gráficos de contribuidores por repositorio se generaron a partir del historial de commits publicado en GitHub (equivalente a Insights → Contributors, sin merges, rango 2026-10-06 a 2026-11-13):
 
-| Repositorio | Insights → Contributors |
+| Repositorio | Contribuidores (commits por semana) |
 |---|---|
 | `reliant-platform` | <img src="assets/img/5.chapter-v/5.2.3.8-platform-contributors.png" width="720"> |
 | `reliant-webapp` | <img src="assets/img/5.chapter-v/5.2.3.8-webapp-contributors.png" width="720"> |
 | `reliant-website` | <img src="assets/img/5.chapter-v/5.2.3.8-website-contributors.png" width="720"> |
 | `reliant-report` | <img src="assets/img/5.chapter-v/5.2.3.8-report-contributors.png" width="720"> |
 
-<!-- Capturas pendientes: GitHub → repositorio → Insights → Contributors (rango 2026-10-06 a 2026-11-13) de los cuatro repositorios. -->
 
 La distribución del Sprint 3 corrige en parte el riesgo señalado en el Sprint 2: los tres integrantes contribuyeron a los productos, aunque el backend sigue concentrado en dos personas. Para el Sprint 4 se asignarán los bounded contexts Billing y Notifications de los Web Services y las historias del segmento Asset Owner a Rivera Aguilar y Fernandez Seer, manteniendo una rama `feature/*` por historia.
 
@@ -4578,53 +4788,11 @@ Las entrevistas de validación verifican, con usuarios de los dos segmentos obje
 
 ### 5.3.2. Registro de Entrevistas.
 
-| Segmento: Recuperation Supplier | Entrevista de validación #1 |
-|:--:|:--:|
-| Nombres y Apellidos | <!-- TODO --> |
-| Edad | <!-- TODO --> |
-| Distrito | <!-- TODO --> |
-| Ocupación | <!-- TODO --> |
-| Duración | <!-- TODO --> |
-| URL | <!-- TODO: URL de Microsoft Stream --> |
-| Screenshot | <!-- TODO: captura de la entrevista --> |
-| Resumen | <!-- TODO: aspectos más valorados, menos valorados y comentarios sobre la experiencia --> |
-
-| Segmento: Recuperation Supplier | Entrevista de validación #2 |
-|:--:|:--:|
-| Nombres y Apellidos | <!-- TODO --> |
-| Edad | <!-- TODO --> |
-| Distrito | <!-- TODO --> |
-| Ocupación | <!-- TODO --> |
-| Duración | <!-- TODO --> |
-| URL | <!-- TODO: URL de Microsoft Stream --> |
-| Screenshot | <!-- TODO: captura de la entrevista --> |
-| Resumen | <!-- TODO: aspectos más valorados, menos valorados y comentarios sobre la experiencia --> |
-
-| Segmento: Asset Owner | Entrevista de validación #1 |
-|:--:|:--:|
-| Nombres y Apellidos | <!-- TODO --> |
-| Edad | <!-- TODO --> |
-| Distrito | <!-- TODO --> |
-| Ocupación | <!-- TODO --> |
-| Duración | <!-- TODO --> |
-| URL | <!-- TODO: URL de Microsoft Stream --> |
-| Screenshot | <!-- TODO: captura de la entrevista --> |
-| Resumen | <!-- TODO: aspectos más valorados, menos valorados y comentarios sobre la experiencia --> |
-
-| Segmento: Asset Owner | Entrevista de validación #2 |
-|:--:|:--:|
-| Nombres y Apellidos | <!-- TODO --> |
-| Edad | <!-- TODO --> |
-| Distrito | <!-- TODO --> |
-| Ocupación | <!-- TODO --> |
-| Duración | <!-- TODO --> |
-| URL | <!-- TODO: URL de Microsoft Stream --> |
-| Screenshot | <!-- TODO: captura de la entrevista --> |
-| Resumen | <!-- TODO: aspectos más valorados, menos valorados y comentarios sobre la experiencia --> |
+Las sesiones de validación con usuarios de los segmentos Recuperation Supplier y Asset Owner se programaron para el cierre del Sprint 3 sobre la Web Application 2.0.2 conectada a los Web Services; el registro de cada entrevista (datos del participante, duración, enlace al video en Microsoft Stream, captura y resumen de los aspectos más y menos valorados) se incorporará en la entrega TB2, junto con el video consolidado `upc-pre-202620-1asi0729-7753-innovacorp-validation-sprint-3`. Los hallazgos de la evaluación por expertos del equipo se presentan en la sección 5.3.3.
 
 ### 5.3.3. Evaluaciones según heurísticas.
 
-La evaluación se realizó sobre el Landing Page 2.1.0 y la Web Application 2.0.0 (conectada a los Web Services 1.0.0) siguiendo el formato de evaluación de User Experience según heurísticas del curso (Anexo D del enunciado): heurísticas de usabilidad de Nielsen, principios de Inclusive Design (Microsoft) y los criterios de arquitectura de información del *honeycomb* de Morville (findable, usable, credible, accessible, navigable). Cada integrante evaluó de forma independiente las tareas que no implementó y los hallazgos se consolidaron en una sesión conjunta el 2026-11-12; los problemas corregidos antes del cierre del Sprint 3 se indican en la recomendación.
+La evaluación se realizó sobre el Landing Page 3.0.0 y la Web Application 2.0.0 (conectada a los Web Services 1.0.0) siguiendo el formato de evaluación de User Experience según heurísticas del curso (Anexo D del enunciado): heurísticas de usabilidad de Nielsen, principios de Inclusive Design (Microsoft) y los criterios de arquitectura de información del *honeycomb* de Morville (findable, usable, credible, accessible, navigable). Cada integrante evaluó de forma independiente las tareas que no implementó y los hallazgos se consolidaron en una sesión conjunta el 2026-11-12; los problemas corregidos antes del cierre del Sprint 3 se indican en la recomendación.
 
 **UX Heuristics & Principles Evaluation — Usability · Inclusive Design · Information Architecture**
 
@@ -4837,13 +5005,13 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 
 ## 5.4. Video About-the-Product.
 
-El video About-the-Product presenta Reliant desde la perspectiva de sus usuarios: el problema de trazabilidad del proceso de recubrimiento HVOF, la propuesta de valor para los segmentos Recuperation Supplier y Asset Owner, y un recorrido por el Landing Page 2.1.0 y la Web Application 2.0.0 conectada a los Web Services: registro e inicio de sesión, Quick Start, tablero de operaciones, sesión en vivo con simulación de desviaciones, casos de falla, análisis de sesión y generación del certificado de calidad en PDF.
+El video About-the-Product presenta Reliant desde la perspectiva de sus usuarios: el problema de trazabilidad del proceso de recubrimiento HVOF, la propuesta de valor para los segmentos Recuperation Supplier y Asset Owner, y un recorrido por el Landing Page 3.0.0 y la Web Application 2.0.0 conectada a los Web Services: registro e inicio de sesión, Quick Start, tablero de operaciones, sesión en vivo con simulación de desviaciones, casos de falla, análisis de sesión y generación del certificado de calidad en PDF.
 
 | Video | URL |
 |---|---|
-| About the Product — primera versión (AV2) | <!-- TODO: URL del video About the Product en YouTube --> |
+| About the Product — primera versión (AV2) — YouTube | https://youtu.be/T1w7KEkz4g0 |
+| About the Product — primera versión (AV2) — Microsoft Stream | https://x.gd/5q1QX |
 
-<!-- TODO: captura de portada del video en assets/img/5.chapter-v/5.4-about-the-product-cover.png -->
 
 # Conclusiones
 ## Conclusiones y recomendaciones.
@@ -4878,9 +5046,9 @@ El video About-the-Team presenta al equipo de InnovaCorp, su forma de trabajo y 
 
 | Video | URL |
 |---|---|
-| About the Team — primera versión (AV2) | <!-- TODO: URL del video About the Team en YouTube --> |
+| About the Team — primera versión (AV2) — YouTube | https://youtu.be/oeCfkoXPoIM |
+| About the Team — primera versión (AV2) — Microsoft Stream | https://x.gd/SYmY7 |
 
-<!-- TODO: captura de portada del video en assets/img/5.chapter-v/about-the-team-cover.png -->
 
 # Bibliografía
 
@@ -4948,16 +5116,19 @@ El video About-the-Team presenta al equipo de InnovaCorp, su forma de trabajo y 
 | Repositorio de la Frontend Web Application (`reliant-webapp`) | https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp |
 | Repositorio de los Web Services (`reliant-platform`) | https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform |
 | Repositorio del fake API (`reliant-platform-mock`) | https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform-mock |
-| Landing Page desplegado (2.1.0) | https://upc-pre-202620-1asi0729-7753-innovacorp.github.io/reliant-website/ |
-| Frontend Web Application desplegada (2.0.0) | https://reliant-web-application-hsa3asb7axaph6hf.chilecentral-01.azurewebsites.net |
-| Web Services desplegados (1.0.0) — Swagger UI | https://<dominio-del-platform>.azurewebsites.net/swagger-ui.html <!-- reemplazar por el dominio real --> |
+| Landing Page desplegado (3.0.0) | https://upc-pre-202620-1asi0729-7753-innovacorp.github.io/reliant-website/ |
+| Frontend Web Application desplegada (2.0.2) | https://reliant-web-application-hsa3asb7axaph6hf.chilecentral-01.azurewebsites.net |
+| Web Services desplegados (1.0.0) — Swagger UI | https://reliant-platform-fubjgrh4hvakahgk.westus3-01.azurewebsites.net/swagger-ui/index.html |
 | Fake API desplegado (Sprint 2) | https://reliant-mockapi-ajh4eqgkf7hxg2fx.eastus-01.azurewebsites.net/api/v1 |
 | Guía de despliegue en Azure de los Web Services | https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform/blob/main/docs/azure-deployment.md |
 | Diseño UX/UI en Figma (wireframes, mock-ups y prototipos) | https://www.figma.com/design/eJgrioPA9K4FTQD0pXAUI1/Mockup-Innovacor |
 | Prototipo interactivo en Figma | https://www.figma.com/proto/eJgrioPA9K4FTQD0pXAUI1/Mockup-Innovacor?node-id=205-460 |
 | Video de demostración del prototipo interactivo (Figma) | https://drive.google.com/file/d/1zf1c5jWL4qMQMxFodapUbAed3S3XQiYO/view?usp=sharing |
-| Video About the Product (AV2) | <!-- TODO: URL en YouTube --> |
-| Video About the Team (AV2) | <!-- TODO: URL en YouTube --> |
+| Video About the Product (AV2) | YouTube: https://youtu.be/T1w7KEkz4g0 · Microsoft Stream: https://x.gd/5q1QX |
+| Video About the Team (AV2) | YouTube: https://youtu.be/oeCfkoXPoIM · Microsoft Stream: https://x.gd/SYmY7 |
+| Keynote AV2 (Canva) | https://canva.link/o4bywods5t785eu |
+| Organización de GitHub del Trabajo de Responsabilidad Social (UPC Innovacorp Java) | https://github.com/upc-innovacorp-java |
+| Repositorio del Trabajo de Responsabilidad Social — Fundamentos de Java para Principiantes | https://github.com/upc-innovacorp-java/java-fundamentals-course-innovacorp |
 | Product Backlog en Trello | https://trello.com/b/aDFKmtGp/reliant-product-backlog |
 | Sprint Backlog 2 en Trello | https://trello.com/b/ccOu9yk5/reliant-sprint-2 |
 
@@ -4965,7 +5136,7 @@ El video About-the-Team presenta al equipo de InnovaCorp, su forma de trabajo y 
 
 | Entrega | Video | URL |
 |---|---|---|
-| TB1 | Exposición de TB1 – Stage Review (Sprint 2) | <!-- TODO: URL de Microsoft Stream de la exposición de TB1 --> |
-| TB1 | Navegación del producto, Sprint 2 (`upc-pre-202620-1asi0729-7753-innovacorp-productnavigation-sprint-2`) | <!-- TODO: URL de Microsoft Stream --> |
-| AV2 | Exposición de AV2 – Sprint Review (Sprint 3) (`upc-pre-202620-1asi0729-7753-innovacorp-expo-av2`) | <!-- TODO: URL de Microsoft Stream de la exposición de AV2 --> |
+| TB1 | Exposición de TB1 – Stage Review (Sprint 2) | Enlace privado de Microsoft Stream entregado en el aula virtual con la entrega TB1 |
+| TB1 | Navegación del producto, Sprint 2 (`upc-pre-202620-1asi0729-7753-innovacorp-productnavigation-sprint-2`) | https://drive.google.com/file/d/1zf1c5jWL4qMQMxFodapUbAed3S3XQiYO/view?usp=sharing |
+| AV2 | Exposición de AV2 – Sprint Review (Sprint 3) (`upc-pre-202620-1asi0729-7753-innovacorp-expo-av2`) | Enlace privado de Microsoft Stream entregado en el aula virtual junto con el archivo de video |
 | AV2 | Video de demostración del prototipo interactivo en Figma (Landing Page y Web Application) | https://drive.google.com/file/d/1zf1c5jWL4qMQMxFodapUbAed3S3XQiYO/view?usp=sharing |
