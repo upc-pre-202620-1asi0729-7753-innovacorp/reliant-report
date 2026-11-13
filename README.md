@@ -4692,111 +4692,144 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 
 **PROBLEMA #1:** Completar o abortar una sesión y resolver un caso de falla no piden confirmación
 
-Severidad: 3
-Heurística violada: Usability – Prevención de errores
-Problema: En el detalle de la sesión los botones *Complete* y *Abort* cambian el estado de la sesión de inmediato; una vez completada ya no se aceptan lecturas ni se puede reabrir. Lo mismo ocurre con *Mark as resolved* en el caso de falla: el caso pasa a resuelto aunque el campo de notas esté vacío. Durante la evaluación un integrante completó la sesión de demostración por error al intentar abrir el menú de acciones.
+
+**Severidad:** 3
+
+**Heurística violada:** Usability – Prevención de errores
+
+**Problema:** En el detalle de la sesión los botones *Complete* y *Abort* cambian el estado de la sesión de inmediato; una vez completada ya no se aceptan lecturas ni se puede reabrir. Lo mismo ocurre con *Mark as resolved* en el caso de falla: el caso pasa a resuelto aunque el campo de notas esté vacío. Durante la evaluación un integrante completó la sesión de demostración por error al intentar abrir el menú de acciones.
 
 <p align="center"><img src="assets/img/5.chapter-v/heuristics/p07-complete-dialog.png" width="720" alt="Sesión completada con un clic, sin confirmación"></p>
 
 <p align="center"><img src="assets/img/5.chapter-v/heuristics/p01-resolve-without-confirmation.png" width="720" alt="Resolución de caso de falla sin confirmación"></p>
 
-Recomendación: Mostrar un diálogo de confirmación con el efecto de la acción ("La sesión dejará de recibir lecturas") y, en la resolución del caso, exigir la nota de resolución. Programado para el Sprint 4 (Sprint Backlog 4).
+**Recomendación:** Mostrar un diálogo de confirmación con el efecto de la acción ("La sesión dejará de recibir lecturas") y, en la resolución del caso, exigir la nota de resolución. Programado para el Sprint 4 (Sprint Backlog 4).
 
 **PROBLEMA #2:** El pie de página se superponía al contenido
 
-Severidad: 3
-Heurística violada: Usability – Estética y diseño minimalista
-Problema: El pie de página estaba posicionado de forma absoluta en la parte inferior de la ventana, de modo que en las vistas largas (lista de sesiones, análisis de sesión) tapaba la última fila de las tablas y el botón de exportación.
 
-Recomendación: Integrar el pie de página en el flujo del layout. **Corregido** en la versión 2.0.0 (rama `fix/footer-overlap`).
+**Severidad:** 3
+
+**Heurística violada:** Usability – Estética y diseño minimalista
+
+**Problema:** El pie de página estaba posicionado de forma absoluta en la parte inferior de la ventana, de modo que en las vistas largas (lista de sesiones, análisis de sesión) tapaba la última fila de las tablas y el botón de exportación.
+
+**Recomendación:** Integrar el pie de página en el flujo del layout. **Corregido** en la versión 2.0.0 (rama `fix/footer-overlap`).
 
 **PROBLEMA #3:** Las recetas no son encontrables desde el menú
 
-Severidad: 2
-Heurística violada: Information Architecture – Is it findable?
-Problema: El menú lateral agrupa en *Equipment* únicamente "HVOF Systems"; las recetas solo aparecen dentro del detalle de cada sistema. Un ingeniero de calidad que busca "la receta #12" debe saber primero a qué sistema pertenece, y la ruta `equipment/recipes/new` no existe.
+
+**Severidad:** 2
+
+**Heurística violada:** Information Architecture – Is it findable?
+
+**Problema:** El menú lateral agrupa en *Equipment* únicamente "HVOF Systems"; las recetas solo aparecen dentro del detalle de cada sistema. Un ingeniero de calidad que busca "la receta #12" debe saber primero a qué sistema pertenece, y la ruta `equipment/recipes/new` no existe.
 
 <p align="center"><img src="assets/img/5.chapter-v/heuristics/p04-recipe-form-units.png" width="720" alt="Ruta de recetas no encontrada"></p>
 
-Recomendación: Agregar la entrada *Recipes* al grupo *Equipment* con la lista de recetas de todos los sistemas y filtros por sistema y estado; mantener el acceso desde el sistema HVOF.
+**Recomendación:** Agregar la entrada *Recipes* al grupo *Equipment* con la lista de recetas de todos los sistemas y filtros por sistema y estado; mantener el acceso desde el sistema HVOF.
 
 **PROBLEMA #4:** El estado de los puntos en Trends depende solo del color
 
-Severidad: 2
-Heurística violada: Inclusive Design – Proporciona experiencias comparables
-Problema: En el gráfico de tendencia las bandas de la receta se dibujan como franjas de color y los puntos fuera de banda se distinguen del resto solo por el color del marcador (naranja y rojo), sin cambio de forma ni etiqueta. Un usuario con deficiencia en la percepción del color no puede identificar qué lecturas fueron de advertencia o parada.
+
+**Severidad:** 2
+
+**Heurística violada:** Inclusive Design – Proporciona experiencias comparables
+
+**Problema:** En el gráfico de tendencia las bandas de la receta se dibujan como franjas de color y los puntos fuera de banda se distinguen del resto solo por el color del marcador (naranja y rojo), sin cambio de forma ni etiqueta. Un usuario con deficiencia en la percepción del color no puede identificar qué lecturas fueron de advertencia o parada.
 
 <p align="center"><img src="assets/img/5.chapter-v/heuristics/p03-trends-color-only.png" width="720" alt="Puntos de tendencia diferenciados solo por color"></p>
 
-Recomendación: Usar marcadores distintos por banda (círculo, triángulo, rombo), añadir el texto de la banda en el tooltip y una leyenda con forma y color. Programado para el Sprint 4.
+**Recomendación:** Usar marcadores distintos por banda (círculo, triángulo, rombo), añadir el texto de la banda en el tooltip y una leyenda con forma y color. Programado para el Sprint 4.
 
 **PROBLEMA #5:** En móvil el encabezado de la sesión desplaza las lecturas fuera de la pantalla
 
-Severidad: 2
-Heurística violada: Inclusive Design – Ofrece experiencias comparables en todos los dispositivos
-Problema: En un ancho de 390 px los chips de sistema, orden, receta, fechas y estado, el resumen de lecturas y los botones de acción se apilan y ocupan toda la primera pantalla; el operador debe desplazarse para ver la primera tarjeta de lectura, que es la información crítica durante la sesión.
+
+**Severidad:** 2
+
+**Heurística violada:** Inclusive Design – Ofrece experiencias comparables en todos los dispositivos
+
+**Problema:** En un ancho de 390 px los chips de sistema, orden, receta, fechas y estado, el resumen de lecturas y los botones de acción se apilan y ocupan toda la primera pantalla; el operador debe desplazarse para ver la primera tarjeta de lectura, que es la información crítica durante la sesión.
 
 <p align="center"><img src="assets/img/5.chapter-v/heuristics/p09-mobile-session.png" width="320" alt="Sesión en vivo en móvil"></p>
 
-Recomendación: Colapsar los metadatos de la sesión en un acordeón en móvil, fijar la barra de acciones en la parte inferior y mostrar primero el resumen de bandas y las tarjetas de lectura.
+**Recomendación:** Colapsar los metadatos de la sesión en un acordeón en móvil, fijar la barra de acciones en la parte inferior y mostrar primero el resumen de bandas y las tarjetas de lectura.
 
 **PROBLEMA #6:** El editor de plantillas no indica dónde está el usuario
 
-Severidad: 2
-Heurística violada: Information Architecture – Is it navigable?
-Problema: La vista *Edit template* no muestra migas de pan ni un enlace "Volver a plantillas"; las únicas salidas son *Cancel* (que descarta cambios sin avisar) o el menú lateral. Tras editar una plantilla el usuario no sabe si sus cambios se conservarán al salir por el menú.
+
+**Severidad:** 2
+
+**Heurística violada:** Information Architecture – Is it navigable?
+
+**Problema:** La vista *Edit template* no muestra migas de pan ni un enlace "Volver a plantillas"; las únicas salidas son *Cancel* (que descarta cambios sin avisar) o el menú lateral. Tras editar una plantilla el usuario no sabe si sus cambios se conservarán al salir por el menú.
 
 <p align="center"><img src="assets/img/5.chapter-v/heuristics/p05-template-editor-no-breadcrumb.png" width="720" alt="Editor de plantillas sin migas de pan"></p>
 
-Recomendación: Agregar migas de pan (*Report templates › Certificado de calidad HVOF › Edit*) y un aviso de cambios sin guardar al abandonar la vista. Programado para el Sprint 4.
+**Recomendación:** Agregar migas de pan (*Report templates › Certificado de calidad HVOF › Edit*) y un aviso de cambios sin guardar al abandonar la vista. Programado para el Sprint 4.
 
 **PROBLEMA #7:** Teléfono de contacto genérico en el Landing Page
 
-Severidad: 2
-Heurística violada: Information Architecture – Is it credible?
-Problema: El pie de página del Landing Page muestra el número "+51 999 999 999", que un visitante reconoce como un dato de relleno y resta credibilidad al resto de la información de contacto.
+
+**Severidad:** 2
+
+**Heurística violada:** Information Architecture – Is it credible?
+
+**Problema:** El pie de página del Landing Page muestra el número "+51 999 999 999", que un visitante reconoce como un dato de relleno y resta credibilidad al resto de la información de contacto.
 
 <p align="center"><img src="assets/img/5.chapter-v/heuristics/p10-landing-footer.png" width="720" alt="Pie de página del Landing Page"></p>
 
-Recomendación: Publicar el número real de contacto de InnovaCorp o retirar la línea y dejar únicamente el correo y el enlace a la Web Application.
+**Recomendación:** Publicar el número real de contacto de InnovaCorp o retirar la línea y dejar únicamente el correo y el enlace a la Web Application.
 
 **PROBLEMA #8:** El formulario de regla de diagnóstico no ayuda a completarlo
 
-Severidad: 1
-Heurística violada: Usability – Reconocimiento antes que recuerdo
-Problema: El formulario *New diagnosis rule* pide *Parameter*, *Band*, *Probable cause* y *Recommended action* sin explicar que la banda se refiere a las bandas de umbral de la receta ni mostrar ejemplos de las reglas FESA ya cargadas; solo el campo *Cooldown* tiene texto de ayuda.
+
+**Severidad:** 1
+
+**Heurística violada:** Usability – Reconocimiento antes que recuerdo
+
+**Problema:** El formulario *New diagnosis rule* pide *Parameter*, *Band*, *Probable cause* y *Recommended action* sin explicar que la banda se refiere a las bandas de umbral de la receta ni mostrar ejemplos de las reglas FESA ya cargadas; solo el campo *Cooldown* tiene texto de ayuda.
 
 <p align="center"><img src="assets/img/5.chapter-v/heuristics/p04b-rule-form.png" width="720" alt="Formulario de regla de diagnóstico"></p>
 
-Recomendación: Añadir texto de ayuda bajo *Band* y *placeholders* con un ejemplo real de causa y acción; ofrecer "Duplicar regla" desde el catálogo.
+**Recomendación:** Añadir texto de ayuda bajo *Band* y *placeholders* con un ejemplo real de causa y acción; ofrecer "Duplicar regla" desde el catálogo.
 
 **PROBLEMA #9:** La suscripción no indica cómo cambiar de plan
 
-Severidad: 1
-Heurística violada: Information Architecture – Is it usable?
-Problema: La vista *Subscription* muestra el plan, la vigencia y el estado, pero no ofrece ninguna acción ni explica que el cambio de plan estará disponible cuando se implemente Billing en los Web Services.
+
+**Severidad:** 1
+
+**Heurística violada:** Information Architecture – Is it usable?
+
+**Problema:** La vista *Subscription* muestra el plan, la vigencia y el estado, pero no ofrece ninguna acción ni explica que el cambio de plan estará disponible cuando se implemente Billing en los Web Services.
 
 <p align="center"><img src="assets/img/5.chapter-v/heuristics/p06-subscription.png" width="720" alt="Vista de suscripción"></p>
 
-Recomendación: Mostrar la acción "Cambiar de plan" deshabilitada con un texto explicativo y el enlace a los planes del Landing Page.
+**Recomendación:** Mostrar la acción "Cambiar de plan" deshabilitada con un texto explicativo y el enlace a los planes del Landing Page.
 
 **PROBLEMA #10:** Gráfico vacío sin estado en el tablero
 
-Severidad: 1
-Heurística violada: Usability – Visibilidad del estado del sistema
-Problema: Cuando la organización aún no tiene casos de falla, la tarjeta "Fault cases by parameter" del tablero muestra únicamente los ejes del gráfico; el usuario no sabe si está cargando, si falló o si no hay datos.
+
+**Severidad:** 1
+
+**Heurística violada:** Usability – Visibilidad del estado del sistema
+
+**Problema:** Cuando la organización aún no tiene casos de falla, la tarjeta "Fault cases by parameter" del tablero muestra únicamente los ejes del gráfico; el usuario no sabe si está cargando, si falló o si no hay datos.
 
 <p align="center"><img src="assets/img/5.chapter-v/heuristics/p08-dashboard-empty-chart.png" width="720" alt="Gráfico vacío en el tablero"></p>
 
-Recomendación: Mostrar un estado vacío con texto ("Sin casos de falla en el período") y un estado de carga explícito.
+**Recomendación:** Mostrar un estado vacío con texto ("Sin casos de falla en el período") y un estado de carga explícito.
 
 **PROBLEMA #11:** Notificaciones efímeras no accesibles
 
-Severidad: 1
-Heurística violada: Inclusive Design – Da control al usuario
-Problema: Las notificaciones de éxito se muestran con `MatSnackBar` durante tres segundos; si el foco está en otro elemento, un lector de pantalla no las anuncia y el usuario con baja visión puede no verlas.
 
-Recomendación: Anunciar las notificaciones en una región `aria-live="polite"` persistente y permitir configurar su duración.
+**Severidad:** 1
+
+**Heurística violada:** Inclusive Design – Da control al usuario
+
+**Problema:** Las notificaciones de éxito se muestran con `MatSnackBar` durante tres segundos; si el foco está en otro elemento, un lector de pantalla no las anuncia y el usuario con baja visión puede no verlas.
+
+**Recomendación:** Anunciar las notificaciones en una región `aria-live="polite"` persistente y permitir configurar su duración.
 
 **Conclusiones de la evaluación.** No se encontraron problemas de severidad 4. De los dos problemas de severidad 3, uno fue corregido en la versión 2.0.0 (pie de página) y el otro (confirmaciones en acciones irreversibles) se incorporó al Sprint Backlog 4 con prioridad alta. Los problemas de severidad 2 se concentran en arquitectura de información (recetas, migas de pan, credibilidad del Landing Page) y en diseño inclusivo (color y móvil); se priorizan en el Sprint 4 junto con las historias del segmento Asset Owner, antes de las entrevistas de validación del TB2.
 
