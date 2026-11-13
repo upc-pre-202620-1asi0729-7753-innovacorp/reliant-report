@@ -1,0 +1,349 @@
+@startuml "Reliant_Frontend_Reporting"
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam packageStyle rectangle
+skinparam defaultFontName Inter
+hide empty members
+title Reliant - Frontend Reporting Class Diagram
+left to right direction
+
+package "Domain" {
+  class GeneratedReport {
+    id: number
+    reportTemplateId: number
+    organizationId: number
+    generatedByUserId: number
+    subjectType: ReportSubjectType
+    subjectId: number
+    format: string
+    fileName: string
+    periodFrom: string | null
+    periodTo: string | null
+    generatedAt: string
+  }
+  enum ReportSubjectType {
+    spray_session
+    recuperation
+  }
+  class ReportTemplate {
+    id: number
+    organizationId: number
+    ownerUserId: number
+    name: string
+    description: string
+    reportKind: ReportKind
+    primaryColor: string
+    secondaryColor: string
+    headerText: string
+    footerText: string
+    pageSize: PageSize
+    orientation: PageOrientation
+    showSignatureBlock: boolean
+    defaultForKind: boolean
+    status: TemplateStatus
+    sections: ReportSection[]
+    orderedSections: ReportSection[]
+    widgetCount: number
+    ...
+  }
+  interface ReportWidget {
+    position: number
+    variableSource: VariableSource
+    variableCode: string
+    variableLabel: string
+    viewType: WidgetViewType
+    aggregation: Aggregation
+    width: WidgetWidth
+  }
+  interface ReportSection {
+    title: string
+    sectionOrder: number
+    widgets: ReportWidget[]
+  }
+  enum ReportKind {
+    quality_certificate
+    session_report
+    fault_summary
+  }
+  enum PageSize {
+    a4
+    letter
+  }
+  enum PageOrientation {
+    portrait
+    landscape
+  }
+  enum TemplateStatus {
+    active
+    archived
+  }
+  enum VariableSource {
+    process
+    session
+    recuperation
+    fault_cases
+  }
+  enum WidgetViewType {
+    value
+    min_max
+    trend
+    table
+    text
+  }
+  enum Aggregation {
+    avg
+    min
+    max
+    range
+    last
+    count
+  }
+  enum WidgetWidth {
+    half
+    full
+  }
+}
+
+package "Application" {
+  class ReportDataService {
+    monitoringApi: ProcessMonitoringApi
+    faultsApi: FaultDiagnosisApi
+    monitoring: ProcessMonitoringStore
+    equipment: EquipmentStore
+    traceability: TraceabilityStore
+    iam: IamStore
+    translate: TranslateService
+    contextOfSession(sessionId): Observable<ReportContext>
+    resolve(widget, context): ResolvedWidget
+  }
+  interface ReportContext {
+    session: SpraySession
+    system: HvofSystem | undefined
+    recipe: Recipe | undefined
+    recuperation: Recuperation | undefined
+    component: RecoveredComponent | undefined
+    customer: Customer | undefined
+    readings: ProcessReading[]
+    byParameter: Map<string, ProcessReading[]>
+    faultCases: FaultCase[]
+    operatorName: string
+  }
+  interface TrendData {
+    kind: 'trend'
+  }
+  interface TableData {
+    kind: 'table'
+  }
+  class ReportPdfService {
+    data: ReportDataService
+    translate: TranslateService
+    render(template, context): 
+  }
+  class ReportingStore {
+    api: ReportingApi
+    iam: IamStore
+    templatesSignal: signal<ReportTemplate[]>
+    activeTemplates: computed
+    templatesLoadedSignal: signal
+    reportsSignal: signal<GeneratedReport[]>
+    loadingSignal: signal
+    errorSignal: signal<string | null>
+    reload(): void
+    loadTemplates(): void
+    loadGeneratedReports(): void
+    getTemplateById(id): Signal<ReportTemplate | undefined>
+    templateName(id): string
+    templatesOfKind(kind): ReportTemplate[]
+    defaultTemplateOf(kind): ReportTemplate | undefined
+    reportsOf(subjectId): Signal<GeneratedReport[]>
+    changeTemplateStatus(id, status): void
+    clearDefault(list, saved): ReportTemplate[]
+    formatError(error, fallback): string
+  }
+}
+
+package "Infrastructure" {
+  class GeneratedReportsApiEndpoint {
+  }
+  interface GeneratedReportsResponse {
+    generatedReports: GeneratedReportResource[]
+  }
+  interface GeneratedReportResource {
+    id: number
+    reportTemplateId: number
+    organizationId: number
+    generatedByUserId: number
+    subjectType: ReportSubjectType
+    subjectId: number
+    format: string
+    fileName: string
+    periodFrom: string | null
+    periodTo: string | null
+    generatedAt: string
+  }
+  class ReportTemplatesApiEndpoint {
+    changeStatus(reportTemplateId, status): Observable<ReportTemplate>
+  }
+  interface ReportTemplatesResponse {
+    reportTemplates: ReportTemplateResource[]
+  }
+  interface ReportTemplateResource {
+    id: number
+    organizationId: number
+    ownerUserId: number
+    name: string
+    description: string
+    reportKind: ReportKind
+    primaryColor: string
+    secondaryColor: string
+    headerText: string
+    footerText: string
+    pageSize: PageSize
+    orientation: PageOrientation
+    showSignatureBlock: boolean
+    defaultForKind: boolean
+    status: TemplateStatus
+    sections: ReportSection[]
+  }
+  class ReportingApi {
+    getTemplates(): Observable<ReportTemplate[]>
+    createTemplate(template): Observable<ReportTemplate>
+    updateTemplate(template): Observable<ReportTemplate>
+    changeTemplateStatus(id, status): Observable<ReportTemplate>
+    getGeneratedReports(): Observable<GeneratedReport[]>
+    registerGeneratedReport(report): Observable<GeneratedReport>
+  }
+}
+
+package "Presentation" {
+  class GenerateReportDialog {
+    data: MAT_DIALOG_DATA
+    ref: MatDialogRef
+    store: ReportingStore
+    dataService: ReportDataService
+    pdf: ReportPdfService
+    iam: IamStore
+    kind: signal<ReportKind>
+    templateId: signal<number | null>
+    templates: computed
+    selected: computed
+    generating: signal
+    error: signal<string | null>
+    kinds: ReportKind[]
+    setKind(kind): void
+    generate(): void
+    cancel(): void
+  }
+  interface GenerateReportDialogData {
+    sessionId: number
+  }
+  class TemplatePreview {
+    landscape: computed
+    sections: computed
+    isFull(w): boolean
+  }
+  interface PreviewTemplate {
+    name: string
+    headerText: string
+    footerText: string
+    primaryColor: string
+    secondaryColor: string
+    orientation: string
+    showSignatureBlock: boolean
+    sections: ReportSection[]
+  }
+  class GeneratedReportList {
+    store: ReportingStore
+    iam: IamStore
+    router: Router
+    sorted: computed
+    openSubject(subjectType, subjectId): void
+    templates(): void
+  }
+  class ReportTemplateForm {
+    store: ReportingStore
+    equipment: EquipmentStore
+    iam: IamStore
+    route: ActivatedRoute
+    router: Router
+    translate: TranslateService
+    editingId: toSignal
+    submitted: signal
+    saving: signal
+    draft: signal<TemplateDraft>
+    processParameters: computed
+    valid: computed
+    viewsOf(source): void
+    variablesOf(source): string[]
+    variableLabel(source, code): string
+    addSection(): void
+    removeSection(i): void
+    moveSection(i, delta): void
+    setSectionTitle(i, title): void
+    addWidget(i): void
+    removeWidget(i, j): void
+    moveWidget(i, j, delta): void
+    cancel(): void
+    save(): void
+  }
+  class ReportTemplateList {
+    store: ReportingStore
+    iam: IamStore
+    router: Router
+    canEdit: computed
+    sorted: computed
+    newTemplate(): void
+    edit(id): void
+    toggleStatus(id, active): void
+    generated(): void
+  }
+}
+
+package "Shared (external)" #EEEEEE {
+  class BaseApi <<shared>>
+  class BaseApiEndpoint <<shared>>
+  class BaseEntity <<shared>>
+  class BaseResource <<shared>>
+  class BaseResponse <<shared>>
+}
+BaseApi <|-- ReportingApi
+BaseApiEndpoint <|-- GeneratedReportsApiEndpoint
+BaseApiEndpoint <|-- ReportTemplatesApiEndpoint
+BaseEntity <|.. GeneratedReport
+BaseEntity <|.. ReportTemplate
+BaseResource <|.. GeneratedReportResource
+BaseResource <|.. ReportTemplateResource
+BaseResponse <|.. GeneratedReportsResponse
+BaseResponse <|.. ReportTemplatesResponse
+GenerateReportDialog --> ReportDataService
+GenerateReportDialog --> ReportKind
+GenerateReportDialog --> ReportPdfService
+GenerateReportDialog --> ReportingStore
+GeneratedReport --> ReportSubjectType
+GeneratedReportList --> ReportingStore
+GeneratedReportResource --> ReportSubjectType
+GeneratedReportsResponse --> GeneratedReportResource
+PreviewTemplate --> ReportSection
+ReportPdfService --> ReportDataService
+ReportSection --> ReportWidget
+ReportTemplate --> PageOrientation
+ReportTemplate --> PageSize
+ReportTemplate --> ReportKind
+ReportTemplate --> ReportSection
+ReportTemplate --> TemplateStatus
+ReportTemplateForm --> ReportingStore
+ReportTemplateList --> ReportingStore
+ReportTemplateResource --> PageOrientation
+ReportTemplateResource --> PageSize
+ReportTemplateResource --> ReportKind
+ReportTemplateResource --> ReportSection
+ReportTemplateResource --> TemplateStatus
+ReportTemplatesResponse --> ReportTemplateResource
+ReportWidget --> Aggregation
+ReportWidget --> VariableSource
+ReportWidget --> WidgetViewType
+ReportWidget --> WidgetWidth
+ReportingStore --> GeneratedReport
+ReportingStore --> ReportTemplate
+ReportingStore --> ReportingApi
+@enduml

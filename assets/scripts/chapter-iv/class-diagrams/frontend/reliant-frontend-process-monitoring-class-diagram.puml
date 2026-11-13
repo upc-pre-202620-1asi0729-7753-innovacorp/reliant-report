@@ -1,0 +1,291 @@
+@startuml "Reliant_Frontend_ProcessMonitoring"
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam packageStyle rectangle
+skinparam defaultFontName Inter
+hide empty members
+title Reliant - Frontend Process Monitoring Class Diagram
+left to right direction
+
+package "Domain" {
+  class ProcessReading {
+    id: number
+    spraySessionId: number
+    epochMillis: number
+    plcClockOffsetMillis: number
+    tagPath: string
+    parameter: string
+    subsystemId: number | null
+    partId: number | null
+    value: number
+    unitSymbol: string
+    unitCategory: string
+    band: Band
+    derived: boolean
+    mappingPending: boolean
+    timestamp: Date
+  }
+  enum Band {
+    nominal
+    out_of_nominal
+    warning
+    shutdown
+  }
+  interface ReadingStatistics {
+    count: number
+    min: number | null
+    max: number | null
+    mean: number | null
+    stdDev: number | null
+    last: number | null
+  }
+  class SpraySession {
+    id: number
+    hvofSystemId: number
+    recuperationId: number
+    operatorId: number
+    recipeNumber: number
+    startedAt: string
+    endedAt: string | null
+    timeZone: string
+    status: SpraySessionStatus
+    abortReason: string | null
+    isActive: boolean
+  }
+  enum SpraySessionStatus {
+    active
+    completed
+    aborted
+    interrupted
+  }
+}
+
+package "Application" {
+  class ProcessMonitoringStore {
+    api: ProcessMonitoringApi
+    iam: IamStore
+    sessionsSignal: signal<SpraySession[]>
+    activeSessions: computed
+    loadingSignal: signal<boolean>
+    errorSignal: signal<string | null>
+    readingsSignal: signal<ProcessReading[]>
+    lastUpdateSignal: signal<Date | null>
+    polling: Subscription | null
+    latestByParameter: computed
+    parameters: computed
+    bandCounts: computed
+    sessionsByStatus: computed
+    reload(): void
+    getSessionById(id): Signal<SpraySession | undefined>
+    sessionsOf(recuperationId): Signal<SpraySession[]>
+    loadDeviations(sessionId): void
+    completeSession(id): void
+    abortSession(id, reason): void
+    loadReadings(sessionId): void
+    startPolling(sessionId, everyMs = 5000): void
+    stopPolling(): void
+    clearReadings(): void
+    addReading(reading): void
+    formatError(error, fallback): string
+  }
+}
+
+package "Infrastructure" {
+  class ProcessMonitoringApi {
+    getSessions(): Observable<SpraySession[]>
+    getSession(id): Observable<SpraySession>
+    startSession(session): Observable<SpraySession>
+    completeSession(id): Observable<SpraySession>
+    abortSession(id, reason): Observable<SpraySession>
+    getReadingsBySessionId(spraySessionId): Observable<ProcessReading[]>
+    ingestReadings(spraySessionId, readings): Observable<ProcessReading[]>
+    getDeviations(spraySessionId): Observable<DeviationCounts>
+  }
+  interface ProcessReadingsResponse {
+    processReadings: ProcessReadingResource[]
+  }
+  interface ProcessReadingResource {
+    id: number
+    spraySessionId: number
+    epochMillis: number
+    plcClockOffsetMillis: number
+    tagPath: string
+    parameter: string
+    subsystemId: number | null
+    partId: number | null
+    value: number
+    unitSymbol: string
+    unitCategory: string
+    band: Band
+    derived: boolean
+    mappingPending: boolean
+  }
+  class SpraySessionsApiEndpoint {
+    complete(spraySessionId): Observable<SpraySession>
+    abort(spraySessionId, reason): Observable<SpraySession>
+    getReadings(spraySessionId, band?): Observable<ProcessReading[]>
+    ingestReadings(spraySessionId, readings): Observable<ProcessReading[]>
+    getDeviations(spraySessionId): Observable<DeviationCounts>
+  }
+  interface DeviationCounts {
+    warning: number
+    shutdown: number
+  }
+  interface SpraySessionsResponse {
+    spraySessions: SpraySessionResource[]
+  }
+  interface SpraySessionResource {
+    id: number
+    hvofSystemId: number
+    recuperationId: number
+    operatorId: number
+    recipeNumber: number
+    startedAt: string
+    endedAt: string | null
+    timeZone: string
+    status: SpraySessionStatus
+    abortReason: string | null
+  }
+}
+
+package "Presentation" {
+  class AbortSessionDialog {
+    fb: FormBuilder
+    ref: MatDialogRef
+    confirm(): void
+    cancel(): void
+  }
+  class ParameterCard {
+    recipeParameter: input<RecipeParameter | undefined>
+  }
+  class ParameterTrendChart {
+    recipeParameter: input<RecipeParameter | undefined>
+    maxPoints: input
+    series: computed
+    unit: computed
+  }
+  class SpraySessionDetail {
+    store: ProcessMonitoringStore
+    equipment: EquipmentStore
+    traceability: TraceabilityStore
+    route: ActivatedRoute
+    router: Router
+    dialog: MatDialog
+    sessionId: toSignal
+    session: computed
+    system: computed
+    recuperation: computed
+    recipe: computed
+    cards: computed
+    selectedParameter: signal<string | null>
+    trendParameter: computed
+    trendRecipeParameter: computed
+    simulating: signal
+    recipeParameterOf(parameter): void
+    simulateReading(): void
+    simulateBurst(): void
+    reading(p, epochMillis, drift): ProcessReading
+    send(readings): void
+    back(): void
+    analysis(): void
+    generatePdf(): void
+    faultCases(): void
+    ngOnDestroy(): void
+    complete(): void
+    abort(): void
+  }
+  class SpraySessionList {
+    store: ProcessMonitoringStore
+    equipment: EquipmentStore
+    traceability: TraceabilityStore
+    router: Router
+    displayedColumns: string[]
+    sort: viewChild
+    paginator: viewChild
+    filterSystemId: signal<number | null>
+    filterRecuperationId: signal<number | null>
+    filterFrom: signal<Date | null>
+    filterTo: signal<Date | null>
+    filtered: computed
+    dataSource: computed
+    deviationsOf(sessionId): string
+    clearFilters(): void
+    systemCode(id): string
+    workOrder(id): string
+    startSession(): void
+    openSession(id): void
+    openReport(id): void
+  }
+  class SpraySessionReport {
+    route: ActivatedRoute
+    router: Router
+    api: ProcessMonitoringApi
+    faultsApi: FaultDiagnosisApi
+    dialog: MatDialog
+    translate: TranslateService
+    equipment: EquipmentStore
+    traceability: TraceabilityStore
+    state: toSignal
+    ready: computed
+    session: computed
+    readings: computed
+    faultCases: computed
+    system: computed
+    recuperation: computed
+    recipe: computed
+    byParameter: computed
+    parameters: computed
+    ...
+    exportCsv(): void
+    generatePdf(): void
+    openSession(): void
+    faultCasesOf(): void
+  }
+  class SpraySessionStart {
+    fb: FormBuilder
+    router: Router
+    store: ProcessMonitoringStore
+    equipment: EquipmentStore
+    traceability: TraceabilityStore
+    iam: IamStore
+    selectedSystemId: toSignal
+    openRecuperations: computed
+    activeRecipes: computed
+    submit(): void
+    cancel(): void
+  }
+}
+
+package "Shared (external)" #EEEEEE {
+  class BaseApi <<shared>>
+  class BaseApiEndpoint <<shared>>
+  class BaseEntity <<shared>>
+  class BaseForm <<shared>>
+  class BaseResource <<shared>>
+  class BaseResponse <<shared>>
+  class OnDestroy <<shared>>
+}
+BaseApi <|-- ProcessMonitoringApi
+BaseApiEndpoint <|-- SpraySessionsApiEndpoint
+BaseEntity <|.. ProcessReading
+BaseEntity <|.. SpraySession
+BaseForm <|-- SpraySessionStart
+BaseResource <|.. ProcessReadingResource
+BaseResource <|.. SpraySessionResource
+BaseResponse <|.. ProcessReadingsResponse
+BaseResponse <|.. SpraySessionsResponse
+OnDestroy <|.. SpraySessionDetail
+ProcessMonitoringStore --> ProcessMonitoringApi
+ProcessMonitoringStore --> ProcessReading
+ProcessMonitoringStore --> SpraySession
+ProcessReading --> Band
+ProcessReadingResource --> Band
+ProcessReadingsResponse --> ProcessReadingResource
+SpraySession --> SpraySessionStatus
+SpraySessionDetail --> ProcessMonitoringStore
+SpraySessionList --> ProcessMonitoringStore
+SpraySessionReport --> ProcessMonitoringApi
+SpraySessionResource --> SpraySessionStatus
+SpraySessionStart --> ProcessMonitoringStore
+SpraySessionsResponse --> SpraySessionResource
+@enduml

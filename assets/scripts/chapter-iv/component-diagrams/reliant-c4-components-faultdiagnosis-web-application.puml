@@ -1,7 +1,7 @@
 @startuml "Components-FaultDiagnosis-Frontend"
 !includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
 
-title Reliant - Fault Diagnosis Component Diagram (Web Application)
+title Reliant - Frontend Fault Diagnosis Components Diagram
 
 Container(api, "Web Services", "Spring Boot", "Exposes /api/v1/fault-cases, /api/v1/diagnostic-rules")
 Container(shared, "Shared", "Angular", "Layout, navigation, auth interceptor, guards, i18n and unit formatting")

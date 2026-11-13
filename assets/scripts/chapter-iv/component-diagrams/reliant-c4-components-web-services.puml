@@ -1,11 +1,11 @@
 @startuml "Components-Web-Services"
 !includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
 
-title Reliant - Web Services Component Diagram (Bounded Contexts)
+title Reliant - Backend Components Diagram (Bounded Contexts)
 
 Container(webapp, "Web Application", "Angular", "Single Page Application used by platform users")
 Container(landing, "Landing Page", "HTML5, CSS3, JavaScript", "Static site with newsletter subscription")
-ContainerDb(db, "Database", "PostgreSQL 16", "Persistence of every bounded context")
+ContainerDb(db, "Database", "MySQL 8.0", "Persistence of every bounded context")
 System_Ext(gateway, "Telemetry Gateway", "Pushes telemetry batches read from the HVOF controller")
 System_Ext(mailchimp, "Mailchimp", "E-mail delivery and newsletter audience")
 

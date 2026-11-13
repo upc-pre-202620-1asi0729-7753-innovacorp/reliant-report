@@ -1,7 +1,7 @@
 @startuml "Components-Web-Application"
 !includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
 
-title Reliant - Web Application Component Diagram (Bounded Contexts)
+title Reliant - Frontend Components Diagram (Bounded Contexts)
 
 Container(api, "Web Services", "Spring Boot", "RESTful API of the platform")
 Person(user, "Platform User", "Operator, supervisor, quality engineer, reliability engineer or administrator")

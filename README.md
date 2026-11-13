@@ -32,7 +32,7 @@ Proyecto
 **Periodo 202620**  
 
 
-**Octubre, 2026**
+**Noviembre, 2026**
 
 </div>
 
@@ -55,6 +55,13 @@ Proyecto
 | 2.0.0 | 2026-10-05 | Navarro Aldoradin, Carolina Celeste | Capítulo IV: User Flow Diagrams de la Web Application rehechos por objetivo de usuario, Single Page Application en el diagrama de contenedores y diagramas de componentes renderizados, incluido el de los bounded contexts de la Single Page Application. |
 | 2.0.0 | 2026-10-05 | Navarro Aldoradin, Carolina Celeste | Capítulos III y V: capturas del Product Backlog y del Sprint Backlog 2 en Trello, detalles de los Sprint Planning 1 y 2, URL del Landing Page desplegado en GitHub Pages y Anexo de links importantes. |
 | 2.0.0 | 2026-10-05 | Navarro Aldoradin, Carolina Celeste | Organización de `assets/`: códigos de diagramas en `assets/scripts` e imágenes en `assets/img`. |
+| 2.0.1 | 2026-10-26 | Rivera Aguilar, Scarlet Josefina | Capítulo IV: mock-ups actualizados del Landing Page y de la Web Application; Capítulo II: evidencias de las entrevistas de validación. |
+| 2.1.0 | 2026-11-13 | Navarro Aldoradin, Carolina Celeste | Carátula; Student Outcome reescrito para el ABET Student Outcome 3 del curso con las acciones de AV1, TB1 y AV2; Project Report Collaboration Insights del AV2. |
+| 2.1.0 | 2026-11-13 | Navarro Aldoradin, Carolina Celeste | Capítulo I: Problem Statement e Hypothesis Statements con formato uniforme en español. |
+| 2.1.0 | 2026-11-13 | Navarro Aldoradin, Carolina Celeste | Capítulo IV: Landing Page 2.1.0 en 4.3, enlaces de Figma y del prototipo en 4.4 y 4.5, diagramas de componentes renombrados (Backend / Frontend) y actualizados a MySQL, imágenes centradas, diagramas de clases del Frontend por bounded context en 4.7.1 y base de datos en MySQL en 4.8. |
+| 2.1.0 | 2026-11-13 | Navarro Aldoradin, Carolina Celeste | Sección 5.1: herramientas del Sprint 3 y 5.1.4 Software Deployment Configuration de los Web Services en Azure App Service con Azure Database for MySQL. |
+| 2.1.0 | 2026-11-13 | Navarro Aldoradin, Carolina Celeste | Sección 5.2.3 Sprint 3 completa: Sprint Planning, LACX, Sprint Backlog, Development, Execution, Services Documentation y Software Deployment Evidence, y Team Collaboration Insights. |
+| 2.1.0 | 2026-11-13 | Navarro Aldoradin, Carolina Celeste | Sección 5.3.3 evaluación heurística de la Web Application 2.0.0; 5.4 y Video About-the-Team; conclusiones y recomendaciones del Sprint 3; bibliografía; anexos con los enlaces de la plataforma desplegada, Figma y videos. |
 
 
 # Project Report Collaboration Insights
@@ -62,11 +69,16 @@ Proyecto
 El URL del repositorio para el Project Report en la organización de github es el siguiente:
 [https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-report](https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-report)
 
-Para la entrega TB1, el informe se actualizó siguiendo el mismo flujo de Git Flow que los demás repositorios del equipo: cada sección se trabajó en una rama `feature/tb1-*` creada desde `develop`, con commits en formato Conventional Commits, y se integró en `develop` mediante merge. Las secciones de TB1 comprenden las correcciones de los capítulos I a V, la especificación de las historias del Sprint 2 y la documentación completa del Sprint 2 en la sección 5.2.2. Las contribuciones de cada integrante al repositorio pueden revisarse en Insights ÔåÆ Contributors.
+Para la entrega TB1, el informe se actualizó siguiendo el mismo flujo de Git Flow que los demás repositorios del equipo: cada sección se trabajó en una rama `feature/tb1-*` creada desde `develop`, con commits en formato Conventional Commits, y se integró en `develop` mediante merge. Las secciones del Capítulo I y II fueron redactadas principalmente por Rivera Aguilar, Scarlet Josefina; los Capítulos III, IV y V por Navarro Aldoradin, Carolina Celeste; y el Capítulo II (user personas, task matrix y journey maps) y el Product Backlog por Fernandez Seer, Mario Alonso.
 
-<!-- TODO: captura de Insights ÔåÆ Contributors de reliant-report (assets/img/5.chapter-v/report-contributors.png) -->
+Para la entrega AV2, el informe se trabajó en la rama `feature/av2-report` creada desde `develop` y se publicó con la rama `release/2.1.0`. Rivera Aguilar, Scarlet Josefina actualizó los mock-ups del Landing Page y de la Web Application y las evidencias de las entrevistas de validación (78 commits); Navarro Aldoradin, Carolina Celeste reescribió el Student Outcome, unificó los statements del Capítulo I, actualizó los diagramas del Capítulo IV (componentes, clases del Frontend y base de datos), la configuración de despliegue y redactó la sección del Sprint 3, la evaluación heurística, las conclusiones y los anexos; Fernandez Seer, Mario Alonso aportó la documentación del reporte de sesión y las conclusiones de la evaluación heurística.
 
+| Entrega | Insights → Contributors |
+|---|---|
+| TB1 | <img src="assets/img/5.chapter-v/report-contributors-tb1.png" width="720"> |
+| AV2 | <img src="assets/img/5.chapter-v/report-contributors-av2.png" width="720"> |
 
+<!-- Capturas pendientes: GitHub → reliant-report → Insights → Contributors (TB1: 2026-09-01 a 2026-10-05; AV2: 2026-10-06 a 2026-11-13). -->
 
 # Contenido
 
@@ -172,6 +184,15 @@ Para la entrega TB1, el informe se actualizó siguiendo el mismo flujo de Git Fl
       - [5.2.2.6. Services Documentation Evidence for Sprint Review.](#5226-services-documentation-evidence-for-sprint-review)
       - [5.2.2.7. Software Deployment Evidence for Sprint Review.](#5227-software-deployment-evidence-for-sprint-review)
       - [5.2.2.8. Team Collaboration Insights during Sprint.](#5228-team-collaboration-insights-during-sprint)
+    - [5.2.3. Sprint 3](#523-sprint-3)
+      - [5.2.3.1. Sprint Planning 3.](#5231-sprint-planning-3)
+      - [5.2.3.2. Aspect Leaders and Collaborators.](#5232-aspect-leaders-and-collaborators)
+      - [5.2.3.3. Sprint Backlog 3.](#5233-sprint-backlog-3)
+      - [5.2.3.4. Development Evidence for Sprint Review.](#5234-development-evidence-for-sprint-review)
+      - [5.2.3.5. Execution Evidence for Sprint Review.](#5235-execution-evidence-for-sprint-review)
+      - [5.2.3.6. Services Documentation Evidence for Sprint Review.](#5236-services-documentation-evidence-for-sprint-review)
+      - [5.2.3.7. Software Deployment Evidence for Sprint Review.](#5237-software-deployment-evidence-for-sprint-review)
+      - [5.2.3.8. Team Collaboration Insights during Sprint.](#5238-team-collaboration-insights-during-sprint)
   - [5.3. Validation Interviews.](#53-validation-interviews)
     - [5.3.1. Diseño de Entrevistas.](#531-diseño-de-entrevistas)
     - [5.3.2. Registro de Entrevistas.](#532-registro-de-entrevistas)
@@ -182,17 +203,23 @@ Para la entrega TB1, el informe se actualizó siguiendo el mismo flujo de Git Fl
   - [Video About-the-Team.](#video-about-the-team)
 - [Bibliografía](#bibliografía)
 - [Anexos](#anexos)
-  - [Anexo: Links importantes](#anexo-links-importantes)
-  - [Anexo: Videos de Exposiciones](#anexo-videos-de-exposiciones)
+  - [Anexo A: Links importantes](#anexo-a-links-importantes)
+  - [Anexo B: Videos de Exposiciones](#anexo-b-videos-de-exposiciones)
 
 # Student Outcome
 
-El curso contribuye al cumplimiento del Student Outcome ABET: ABET – EAC - Student Outcome 5 Criterio: La capacidad de funcionar efectivamente en un equipo cuyos miembros juntos proporcionan liderazgo, crean un entorno de colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen objetivos. En el siguiente cuadro se describe las acciones realizadas y enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro del ABET – EAC - Student Outcome 5.
+El curso contribuye al cumplimiento del Student Outcome ABET:
 
-| Criterio específico                                                                             | Acciones realizadas | Conclusiones |
-|:-----------------------------------------------------------------------------------------------:|:-------------------:|:------------:|
-| Trabaja en equipo para proporcionar liderazgo en forma conjunta | **AV1:**<br>**Mario Fernandez:** Planificó, ejecutó y documentó la entrevista al segmento Asset Owner. Elaboró wireframes que tradujeron hallazgos mineros en flujos y pantallas. Apoyó mockups, consistencia visual y evidencias UX/UI y del About the Team.<br>**Scarlet Rivera:** Participé en el desarrollo de la etapa de investigación de usuarios de InnovaCorp – Reliant mediante el diseño, registro y análisis de entrevistas, así como la realización de entrevistas personales. A través de este proceso, se recopilaron y analizaron las necesidades, experiencias y dificultades de los usuarios relacionados con la gestión de procesos industriales, considerando los segmentos objetivo definidos para el proyecto. Los resultados obtenidos permitieron comprender la problemática actual, identificar oportunidades de mejora y establecer una base para el diseño de una solución que contribuya a la trazabilidad, seguridad y eficiencia de las operaciones industriales.<br>**Carolina Navarro:** Me encargué de realizar múltiples tareas esenciales para alcanzar el éxito del trabajo, tales como la formulación de preguntas para las encuestas, el desarrollo de gráficos y múltiples commits y push sobre el markdown README.<br><br>**TB1:**<br>**Carolina Navarro:** Lideré los aspectos Shared & Navigation, IAM, Equipment, Traceability, Process Monitoring y Billing del Sprint 2. Desarrollé la Frontend Web Application en Angular (16 features sobre cinco bounded contexts), preparé el fake API `reliant-platform-mock` con datos reales de proceso y desplegué ambos productos en Azure App Service con GitHub Actions, publicando los releases 1.0.0 y 1.0.1.<br>**Scarlet Rivera:** Lideré el aspecto Landing Page Design del Sprint 2, a cargo de los wireframes y mock-ups de la Landing Page, y colaboré en su internacionalización.<br>**Mario Fernandez:** Lideré el aspecto Landing Page i18n del Sprint 2, a cargo de la versión en inglés y español de la Landing Page y de su selector de idioma, y colaboré en su diseño.<!-- TODO: el repositorio reliant-website no registra commits de Landing Page Design; agregar la evidencia o ajustar este texto --> | Se concluye que el liderazgo compartido permitió aprovechar las fortalezas de cada integrante, facilitando la coordinación, la toma de decisiones y el avance conjunto hacia los objetivos del proyecto. En el Sprint 2, la asignación de un líder por aspecto permitió que cada bounded context de la Web Application y cada frente de la Landing Page tuviera un responsable claro. |
-| Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos. | **AV1:**<br>**Mario Fernandez:** Considero que logré establecer metas pragmáticas que contribuyeron al éxito del startup.<br>**Scarlet Rivera:** Participé en el diseño y organización de la experiencia de usuario de InnovaCorp – Reliant mediante la elaboración de los Style Guidelines, la arquitectura de información y el diseño de las interfaces web. Para ello, desarrollé las guías generales y web de estilo, los sistemas de organización, etiquetado, búsqueda y navegación, así como los SEO Tags y Meta Tags. Asimismo, elaboré los wireframes, mockups y diagramas de flujo de la Landing Page y la Web Application, complementando el proceso con el prototipado de las funcionalidades. Estas actividades permitieron estructurar la información, definir la organización visual y establecer una experiencia de navegación coherente con las necesidades de los usuarios y los objetivos del proyecto.<br>**Carolina Navarro:** Me encargué de dirigir este equipo a través de diversas tribulaciones siempre manteniendo una dirección firme y trato cordial con mis compañeros y mediante estas habilidades blandas, pudimos formar un excelente equipo el cual logró integrarse para dar como resultado este startup llamado InnovaCorp con el producto Reliant.<br><br>**TB1:**<br>**Carolina Navarro:** Preparé el Sprint Planning 2, definí el Sprint Goal y descompuse las 16 features en tasks. Mantuve el flujo de trabajo con Git Flow (una rama `feature/*` por feature), Conventional Commits y Semantic Versioning, y documenté el Sprint 2 en el informe.<br>**Scarlet Rivera:** Participé como colaboradora del aspecto Landing Page i18n, de acuerdo con la matriz de líderes y colaboradores del Sprint 2.<br>**Mario Fernandez:** Participé como colaborador del aspecto Landing Page Design, de acuerdo con la matriz de líderes y colaboradores del Sprint 2. | Se concluye que establecer metas claras, distribuir responsabilidades y mantener una comunicación colaborativa permitió organizar el trabajo de manera efectiva y cumplir los objetivos planteados. En el Sprint 2, un Sprint Goal verificable y un flujo de ramas común facilitaron integrar y desplegar la Web Application dentro del plazo. |
+**ABET – EAC - Student Outcome 3**
+
+**Criterio:** Capacidad de comunicarse efectivamente con un rango de audiencias.
+
+En el siguiente cuadro se describe las acciones realizadas y enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro del ABET – EAC - Student Outcome 3.
+
+| Criterio específico | Acciones realizadas | Conclusiones |
+|---|---|---|
+| Comunica oralmente con efectividad a diferentes rangos de audiencia. | **Navarro Aldoradin, Carolina Celeste**<br>**AV1:** Condujo las entrevistas de necesidades con personal de operaciones, calidad y mantenimiento de una empresa de recubrimiento HVOF y con personal de confiabilidad del cliente minero, adaptando el lenguaje técnico del rociado térmico al rol de cada entrevistado; expuso en el video de la entrega el problema, los segmentos y la propuesta de valor.<br>**TB1:** Presentó en el video de exposición la arquitectura de software (C4, bounded contexts y diagramas de clases) para una audiencia técnica y el flujo de la Web Application para una audiencia de negocio; grabó el video de navegación del producto del Sprint 2.<br>**AV2:** Explicó en la exposición el diseño de los Web Services (DDD, seguridad JWT, eventos de dominio entre bounded contexts) y demostró el flujo de extremo a extremo desde el Quick Start hasta el certificado en PDF; grabó su participación en los videos About the Product y About the Team.<br><br>**Rivera Aguilar, Scarlet Josefina**<br>**AV1:** Expuso el Lean UX Process (problem statement, assumptions e hipótesis) y el análisis de competidores en el video de la entrega, con ejemplos del dominio minero para una audiencia no especializada.<br>**TB1:** Presentó en el video de exposición el diseño UX/UI (style guidelines, wireframes, mock-ups y prototipo interactivo) explicando las decisiones de diseño a una audiencia mixta.<br>**AV2:** Expuso la nueva identidad visual del Landing Page y de la Web Application (tema, navegación y tablero) y las razones de cada cambio frente a los hallazgos de las entrevistas de validación; participó en el video About the Team.<br><br>**Fernandez Seer, Mario Alonso**<br>**AV1:** Presentó en el video de la entrega los user personas, el user task matrix y el impact mapping, relacionando cada artefacto con los roles del taller HVOF.<br>**TB1:** Expuso el Sprint 1 y el Sprint 2 (planning, backlog y evidencias) y el despliegue en Azure, dirigido a una audiencia que evalúa el proceso de ingeniería.<br>**AV2:** Explicó en la exposición el reporte de sesión con exportación a CSV y la robustez del sondeo de lecturas en vivo; participó en el video About the Team. | Las exposiciones por entrega obligaron al equipo a preparar un guion por audiencia: los diagramas de arquitectura se explican con el vocabulario del dominio HVOF cuando el receptor es el usuario del taller y con el vocabulario de DDD cuando el receptor es el docente o un desarrollador. Grabar los videos de exposición y de producto permitió ensayar, cortar y volver a grabar hasta que cada mensaje fuera claro y entrara en el tiempo asignado. Las entrevistas mostraron que la comunicación oral efectiva empieza por escuchar: adaptar las preguntas al rol del entrevistado produjo hallazgos que no se habían previsto en la guía. Al cierre del AV2, el equipo es capaz de presentar el mismo producto a una audiencia técnica y a una de negocio sin perder precisión. |
+| Comunica por escrito con efectividad a diferentes rangos de audiencia. | **Navarro Aldoradin, Carolina Celeste**<br>**AV1:** Redactó la descripción de la startup, los antecedentes y la problemática con la técnica 5W2H, el EventStorming y el lenguaje ubicuo, además de las User Stories con criterios de aceptación en formato Gherkin.<br>**TB1:** Documentó los diagramas de arquitectura (contexto, contenedores, componentes), los diagramas de clases y de base de datos, la gestión de configuración de software (ramas, convenciones y despliegue) y las evidencias de los Sprints 1 y 2 en el informe.<br>**AV2:** Escribió la documentación de los Web Services (README, CHANGELOG, guía de despliegue en Azure paso a paso y documentación OpenAPI con descripciones por endpoint), la sección del Sprint 3 del informe y los mensajes de commit bajo Conventional Commits en inglés.<br><br>**Rivera Aguilar, Scarlet Josefina**<br>**AV1:** Redactó el Lean UX Process (problem statement, assumptions, hypothesis statements y canvas), el análisis competitivo y las estrategias frente a competidores.<br>**TB1:** Documentó las style guidelines, los wireframes, mock-ups y user flows del Landing Page y de la Web Application, y el registro de entrevistas.<br>**AV2:** Actualizó los mock-ups y el registro de evidencias de las entrevistas de validación en el informe, redactó la documentación de las recetas y los subsistemas en los Web Services y las traducciones EN/ES de la Web Application.<br><br>**Fernandez Seer, Mario Alonso**<br>**AV1:** Redactó los user personas, el user task matrix, los user journey maps y el impact mapping.<br>**TB1:** Documentó el Product Backlog, los Sprint Backlogs en Trello y las secciones de evidencia de desarrollo de los Sprints 1 y 2.<br>**AV2:** Redactó la documentación del reporte de sesión y la exportación a CSV y las conclusiones de las evaluaciones heurísticas. | El informe se escribe para dos lectores a la vez: el docente, que evalúa el proceso, y un futuro integrante o cliente, que necesita entender el producto. Por eso cada artefacto va precedido de un párrafo que explica qué es, cómo se construyó y cómo se lee. Separar los idiomas por audiencia (español en el informe y en las entrevistas; inglés en el código, los commits, la documentación OpenAPI y la interfaz por defecto) evitó ambigüedades y mantuvo la coherencia con la internacionalización del producto. La guía de despliegue y los README permitieron que un integrante repitiera el despliegue sin asistencia, lo que confirma que la comunicación escrita fue efectiva. Al cierre del AV2, el equipo mantiene un registro de versiones del informe y un CHANGELOG por producto que comunican los cambios a cualquier lector. |
 
 
 # Capítulo I: Introducción
@@ -346,17 +373,15 @@ El Lean UX Process permite a InnovaCorp validar de forma temprana las creencias 
 
 #### 1.2.2.1. Lean UX Problem Statements.
 
-Siguiendo la indicación del enunciado, se elabora un único Problem Statement para todo el proyecto, considerando en él ambos segmentos objetivo.
+Siguiendo la indicación del enunciado, se elabora un único Problem Statement para todo el proyecto, considerando en él ambos segmentos objetivo. Se sigue el template de Lean UX (estado actual, brecha, propuesta, enfoque inicial y criterio de éxito).
 
-***The current state of*** *the industrial thermal spray coating market (HVOF) has focused mainly on delivering the coating as a physical service to mining and heavy-industry clients, on operator expertise as the primary mechanism for detecting process deviations, and on workflows where process parameters generated by the machine PLC remain in local logs that are never linked to the work order, the client component, or its expected service life.*
-
-***What existing products/services fail to address is*** *the gap between the telemetry the HVOF equipment already produces and the organization's ability to turn it into verifiable traceability, timely fault diagnosis pointing to a specific HVOF subsystem or part involved, and retrospective learning about how coated components actually perform in the field against their Planned Component Replacement (PCR) target.*
-
-***Our product/service will address this gap by*** *providing a web platform that ingests spray process telemetry in real time through a RESTful API, links every spray session to its manufacturing order (OF), work order (WO), client and component model, raises alerts when parameters leave the quality band defined in the recipe loaded for that component, even when the PLC has not triggered any alarm at its own warning or shutdown thresholds, applies a configurable cause-effect rule catalog to identify the suspect machine part, and records field service life to compare actual performance against the committed PCR.*
-
-***Our initial focus will be*** specialized HVOF coating service providers (Recuperation Suppliers) operating in Peru that serve mining clients and are required to demonstrate process quality, and secondarily the mining companies themselves (Asset Owners), which receive the recovered components, know their actual performance in the field, and need a consolidated view of PCR compliance across all their coating suppliers.
-
-***We'll know we are successful when we see*** *coating service providers issuing quality evidence generated by the platform for at least 80% of their delivered work orders, a reduction of at least 40% in the time required to determine the probable cause of an equipment stoppage, and at least 60% of returned components having their field service life recorded and compared against their PCR target within the platform.*
+| Elemento del template | Enunciado |
+|---|---|
+| **El estado actual de** | el mercado de recubrimientos industriales por rociado térmico HVOF se ha centrado en entregar el recubrimiento como un servicio físico a clientes mineros y de industria pesada, en la experiencia del operador como mecanismo principal para detectar desviaciones del proceso y en flujos de trabajo donde los parámetros generados por el PLC de la máquina permanecen en registros locales que nunca se vinculan con la orden de trabajo, el componente del cliente ni su vida útil esperada. |
+| **Lo que los productos y servicios existentes no logran resolver es** | la brecha entre la telemetría que el equipo HVOF ya produce y la capacidad de la organización para convertirla en trazabilidad verificable, en un diagnóstico oportuno de fallas que señale el subsistema o la parte específica del sistema HVOF involucrada, y en aprendizaje retrospectivo sobre cómo se desempeñan realmente en campo los componentes recubiertos frente a su objetivo de Planned Component Replacement (PCR). |
+| **Nuestro producto o servicio abordará esta brecha** | con una plataforma web que ingesta la telemetría del proceso de rociado en tiempo real a través de un RESTful API, vincula cada sesión de rociado con su orden de fabricación (OF), orden de trabajo (WO), cliente y modelo de componente, genera alertas cuando los parámetros salen de la banda de calidad definida en la receta cargada para ese componente, incluso cuando el PLC no ha disparado ninguna alarma en sus propios umbrales de advertencia o de parada, aplica un catálogo configurable de reglas causa-efecto para identificar el subsistema o la parte probablemente involucrada en una falla, y registra el retorno de campo de cada componente para compararlo con su PCR. |
+| **Nuestro enfoque inicial será** | los proveedores especializados de servicios de recubrimiento HVOF (Recuperation Suppliers) que operan en el Perú, atienden a clientes mineros y deben demostrar la calidad de su proceso; y, de forma secundaria, las propias empresas mineras (Asset Owners), que reciben los componentes recuperados, conocen su desempeño real en campo y necesitan una vista consolidada del cumplimiento del PCR de todos sus proveedores de recubrimiento. |
+| **Sabremos que tenemos éxito cuando veamos** | a los proveedores de servicios de recubrimiento emitiendo evidencia de calidad generada por la plataforma para al menos el 80 % de sus órdenes de trabajo entregadas, una reducción de al menos el 40 % en el tiempo necesario para determinar la causa probable de una parada del equipo y al menos el 60 % de los componentes retornados con su vida útil en campo registrada y comparada contra su objetivo de PCR dentro de la plataforma. |
 
 
 #### 1.2.2.2. Lean UX Assumptions.
@@ -368,7 +393,7 @@ A continuación se enumeran las creencias resultantes de la sesión de discusió
 1. Creemos que existe en el Perú un número suficiente de empresas de servicio especializado en recubrimiento HVOF y de empresas mineras que reciben componentes recuperados de múltiples proveedores como para sostener un modelo de suscripción B2B con dos planes.
 2. Creemos que la presión por trazabilidad proviene del cliente final (minera) y se transfiere contractualmente al proveedor de recubrimiento, lo que convierte la evidencia de proceso en un requisito comercial y no en una mejora opcional.
 3. Creemos que los proveedores de recuperación están dispuestos a pagar una suscripción mensual por sistema HVOF monitoreado, y las mineras una suscripción por volumen de componentes bajo seguimiento, siempre que el costo sea marginal frente al de una parada no planificada o de una falla prematura en campo.
-4. Creemos que Innovacorp puede construir y operar la plataforma con tecnologías open source (Spring Boot, Angular, PostgreSQL) sin incurrir en costos de licenciamiento que comprometan el margen.
+4. Creemos que Innovacorp puede construir y operar la plataforma con tecnologías open source (Spring Boot, Angular, MySQL) sin incurrir en costos de licenciamiento que comprometan el margen.
 5. Creemos que la integración con el equipo HVOF puede realizarse mediante un gateway que exponga la telemetría vía API REST, sin requerir modificar el PLC ni el software del fabricante del equipo.
 6. Creemos que el conocimiento del dominio industrial que posee el equipo constituye una barrera de entrada frente a competidores de software genérico de mantenimiento.
 7. Creemos que las mineras pagarán por una vista consolidada del desempeño de sus componentes recuperados porque ningún proveedor individual puede ofrecerles la comparación entre proveedores.
@@ -415,99 +440,32 @@ A continuación se enumeran las creencias resultantes de la sesión de discusió
 
 ### 1.2.2.3. Lean UX Hypothesis Statements.
 
-Se formula un hypothesis statement por cada feature assumption enunciado en la sección anterior, siguiendo el template establecido.
+Se formula un hypothesis statement por cada feature assumption enunciado en la sección anterior, siguiendo el template de Lean UX: *Creemos que lograremos [resultado de negocio] si [usuario] alcanza [beneficio] con [feature]*. Todos los enunciados se presentan con el mismo formato.
 
----
-**Hypothesis Statement 01. Ingesta de telemetría de proceso**
+| # | Hypothesis Statement | Creemos que lograremos | Si | Alcanzan | Con |
+|---|---|---|---|---|---|
+| 01 | Ingesta de telemetría de proceso | un aumento en el número de sesiones de rociado con registros completos de proceso almacenados en la plataforma | los Ingenieros de Calidad de los Recuperation Suppliers y los Ingenieros de Confiabilidad de los Asset Owners | un registro permanente y consultable de las condiciones en que se ejecutó cada sesión de rociado | un endpoint RESTful de ingesta de telemetría que registra las lecturas del proceso durante toda la sesión de rociado. |
+| 02 | Vinculación de la sesión con OF, WO, cliente y modelo | un aumento en el porcentaje de órdenes de trabajo que pueden trazarse por completo desde el cliente hasta las condiciones del proceso | los Ingenieros de Calidad de los proveedores de servicios de recubrimiento HVOF | la capacidad de reconstruir bajo demanda el historial completo de cualquier componente recubierto | la vinculación de cada sesión de rociado con su orden de fabricación, orden de trabajo, cliente y modelo de componente. |
+| 03 | Recetas y bandas de umbral | una reducción de los componentes recubiertos fuera de la banda de calidad sin ser detectados y de las sesiones ejecutadas con la receta equivocada | los Ingenieros de Calidad y los Operadores de la cabina de rociado | la identificación automática de condiciones fuera de tolerancia sin depender de una supervisión manual continua | recetas por sistema que definen setpoints y bandas de umbral vinculadas a los tipos y modelos de componente aplicables, con clasificación automática de cada lectura por banda y advertencias de receta incorrecta. |
+| 04 | Alertas en tiempo real | una reducción del tiempo promedio entre una desviación del proceso y la respuesta del responsable | los Operadores de la cabina de rociado y los Supervisores de Mantenimiento | conocer una desviación mientras la sesión sigue en curso y no después de terminarla | un módulo de alertas en tiempo real que notifica al usuario responsable cuando se detecta una desviación o una falla. |
+| 05 | Diagnóstico asistido por reglas causa-efecto | una reducción de al menos el 40 % en el tiempo necesario para determinar la causa probable de una parada del equipo | los Supervisores de Mantenimiento y los técnicos de mantenimiento | un diagnóstico que señala el subsistema o la parte específica del sistema HVOF involucrada, en lugar de un código de falla sin contexto | un catálogo configurable de reglas causa-efecto que correlaciona la falla con un subsistema o una parte sospechosa. |
+| 06 | Detección de patrones recurrentes de falla | una reducción de las paradas no planificadas durante las ventanas de producción comprometidas | los Supervisores de Mantenimiento de los Recuperation Suppliers | visibilidad temprana de las partes del sistema HVOF que fallan de forma repetida | la detección automática de patrones recurrentes de falla agrupados por subsistema, parte y sistema HVOF. |
+| 07 | Certificados de calidad por orden de trabajo | evidencia de calidad generada por la plataforma para al menos el 80 % de las órdenes de trabajo entregadas | los Ingenieros de Calidad de los proveedores de servicios de recubrimiento HVOF | la capacidad de entregar a sus clientes mineros una prueba documentada de que el lote fue recubierto dentro de tolerancias | la generación de certificados de calidad exportables por orden de trabajo. |
+| 08 | Registro de vida útil contra PCR | la vida útil en campo registrada y comparada contra el PCR para al menos el 60 % de los componentes retornados | los Ingenieros de Confiabilidad de los Asset Owners y los Ingenieros de Calidad de los Recuperation Suppliers | la capacidad de determinar si una falla prematura en campo se originó en el proceso de recubrimiento o fuera de él | el registro de la vida útil en campo contrastado con el objetivo de Planned Component Replacement comprometido. |
+| 09 | Reportes de tasa de falla por cliente y modelo | un aumento en el número de decisiones de mejora de proceso sustentadas en evidencia histórica | los Ingenieros de Confiabilidad y los Analistas de Compras de los Asset Owners, y los Ingenieros de Calidad de los Recuperation Suppliers | visibilidad de patrones de falla que no se observan desde órdenes de trabajo individuales | reportes de tasa de falla y de cumplimiento del PCR agrupados por proveedor, cliente, modelo de máquina y tipo de componente. |
+| 10 | Vista consolidada multiproveedor | la adopción del plan Asset Owner por parte de las empresas mineras | los Ingenieros de Confiabilidad y los Analistas de Compras de los Asset Owners | una vista única de cada componente recuperado en operación, sin importar qué proveedor lo recuperó | una vista consolidada de componentes vinculada al certificado de calidad y al registro de retorno de campo de cada proveedor. |
+| 11 | Plantillas de reporte personalizables | un aumento de los reportes generados y compartidos desde la plataforma en lugar de reconstruidos en hojas de cálculo | los Ingenieros de Calidad y los Ingenieros de Confiabilidad | reportes que llevan la identidad de su organización y muestran solo las variables, vistas y unidades que necesitan | plantillas de reporte personalizables que pueden compartirse dentro de la organización. |
 
-**We believe we will achieve** an increase in the number of spray sessions with complete process records stored in the platform  
-**If** Quality Engineers at Recuperation Suppliers and Reliability Engineers at Asset Owners  
-**Attain** a permanent, queryable record of the conditions under which every spray session was executed  
-**With** a RESTful telemetry ingestion endpoint that registers process readings throughout the spray session.
-
----
-**Hypothesis Statement 02. Vinculación de la sesión con OF, WO, cliente y modelo**
-
-**We believe we will achieve** an increase in the percentage of work orders that can be fully traced from client to process conditions  
-**If** Quality Engineers at HVOF coating service providers  
-**Attain** the ability to reconstruct the complete history of any coated component on demand  
-**With** the linking of every spray session to its manufacturing order, work order, client and component model.
----
-**Hypothesis Statement 03. Recetas y bandas de umbral**
-
-**We believe we will achieve** a reduction in components coated outside the quality band without detection and in sessions run with the wrong recipe  
-**If** Quality Engineers and spray booth Operators  
-**Attain** automatic identification of out-of-tolerance conditions without depending on continuous manual supervision  
-**With** per-system recipes that define setpoints and threshold bands linked to the applicable component types and models, with automatic band classification of every reading and recipe-mismatch warnings.
----
-**Hypothesis Statement 04. Alertas en tiempo real**
-
-**We believe we will achieve** a reduction in the average time between a process deviation and the response of the responsible person  
-**If** spray booth Operators and Maintenance Supervisors  
-**Attain** awareness of a deviation while the session is still running rather than after it ends  
-**With** a real-time alerting module that notifies the responsible user when a deviation or fault is detected.
----
-**Hypothesis Statement 05. Diagnóstico asistido por reglas causa-efecto**
-
-**We believe we will achieve** a reduction of at least 40% in the time required to determine the probable cause of an equipment stoppage  
-**If** Maintenance Supervisors and maintenance technicians  
-**Attain** a diagnosis that points to the specific HVOF subsystem or part involved instead of a raw fault code  
-**With** a configurable cause-effect rule catalog that correlates the fault with a suspect subsystem or part.
----
-**Hypothesis Statement 06. Detección de patrones recurrentes de falla**
-
-**We believe we will** achieve a reduction in unplanned stoppages during committed production windows    
-**If** Maintenance Supervisors at Recuperation Suppliers  
-**Attain** early visibility of HVOF parts that are failing repeatedly  
-**With** automatic detection of recurring fault patterns grouped by subsystem, part and HVOF system.
----
-**Hypothesis Statement 07. Certificados de calidad por orden de trabajo**
-
-**We believe we will achieve** quality evidence generated by the platform for at least 80% of delivered work orders  
-**If** Quality Engineers at HVOF coating service providers  
-**Attain** the ability to hand their mining clients documented proof that the batch was coated within tolerance  
-**With** exportable quality certificate generation per work order.
----
-**Hypothesis Statement 08. Registro de vida útil contra PCR**
-
-**We believe we will achieve** field service life recorded and compared against PCR for at least 60% of returned components  
-**If** Reliability Engineers at Asset Owners and Quality Engineers at Recuperation Suppliers.  
-**Attain** the ability to determine whether a premature field failure originated in the coating process or elsewhere  
-**With** field service life recording contrasted against the committed Planned Component Replacement target.
---- 
-
-**Hypothesis Statement 09. Reportes de tasa de falla por cliente y modelo**
-
-**We believe we will achieve** an increase in the number of process improvement decisions supported by historical evidence  
-**If** Reliability Engineers and Procurement Analysts at Asset Owners, and Quality Engineers at Recuperation Suppliers  
-**Attain** visibility of failure patterns that are not observable from individual work orders  
-**With** failure rate and PCR compliance reports grouped by supplier, client, machine model and component type.
----
-
-**Hypothesis Statement 10. Vista consolidada multi-proveedor**
-
-**We believe we will achieve** adoption of the Asset Owner plan by mining companies
-**If** Reliability Engineers and Procurement Analysts at Asset Owners
-**Attain** a single view of every recovered component in operation, regardless of which supplier recovered it
-**With** a consolidated component view linked to each supplier's quality certificate and field-return record.
----
-
-**Hypothesis Statement 11. Plantillas de reporte personalizables**
-
-**We believe we will achieve** an increase in reports generated and shared from the platform instead of rebuilt in spreadsheets
-**If** Quality Engineers and Reliability Engineers
-**Attain** reports that carry their organization's branding and show only the variables, views and units they need
-**With** customizable report templates that can be shared within the organization.
 
 ### 1.2.2.4. Lean UX Canvas.
 A continuación, se presenta el Lean UX Canvas (versión 2 de Jeff Gothelf) elaborado por el equipo. Este artefacto consolida el problema de negocio, los resultados esperados, los usuarios, los beneficios, las soluciones propuestas y las hipótesis del proyecto Reliant. Asimismo, los apartados 7 y 8 establecen las prioridades de aprendizaje y el trabajo mínimo necesario para validar los supuestos durante el primer ciclo de experimentación.
 
-## 1. Business Problem
+**1. Business Problem**
 Las organizaciones que operan procesos de recubrimiento térmico HVOF generan información relevante durante cada sesión de rociado mediante el PLC del equipo. Sin embargo, estos datos permanecen frecuentemente en registros locales, archivos aislados o formatos manuales que no se encuentran vinculados con la orden de fabricación (OF), la orden de trabajo (WO), el componente, la receta utilizada ni su desempeño posterior en campo.
 Esta situación limita la trazabilidad del proceso, dificulta demostrar que un componente fue recubierto dentro de las condiciones establecidas y obliga a reconstruir manualmente la información cuando ocurre una falla o un reclamo. Asimismo, el diagnóstico de fallas depende en gran medida del conocimiento tácito de técnicos experimentados y de la revisión manual de registros del controlador.
 En consecuencia, el problema de negocio identificado es que las organizaciones que operan procesos HVOF no logran transformar los datos generados durante el proceso en trazabilidad verificable, diagnóstico oportuno y conocimiento reutilizable que contribuya a mejorar futuras operaciones.
   
-## 2. Business Outcomes
+**2. Business Outcomes**
 Los resultados de negocio que se esperan alcanzar mediante Reliant son los siguientes:
 
 - Incrementar el porcentaje de órdenes de trabajo cuyo proceso puede reconstruirse completamente desde la recepción del componente hasta las condiciones reales de su sesión de rociado.
@@ -517,7 +475,7 @@ Los resultados de negocio que se esperan alcanzar mediante Reliant son los sigui
 - Incrementar la cantidad de sesiones de rociado registradas por sistema HVOF como indicador de adopción sostenida.
 - Reducir la dependencia del conocimiento tácito mediante el registro estructurado de fallas, causas y acciones correctivas.
 - Favorecer la continuidad del uso de la plataforma mediante la renovación de suscripciones y el uso recurrente de reportes y certificados.
-## 3. Users
+**3. Users**
 Reliant está dirigido principalmente a organizaciones que operan procesos de recubrimiento térmico HVOF.
 Segmento principal: empresas de servicio especializado en recubrimiento HVOF
 Son organizaciones que realizan procesos de recuperación de componentes para terceros y necesitan demostrar que el recubrimiento fue ejecutado dentro de las condiciones acordadas con sus clientes. Sus principales usuarios son:
@@ -534,7 +492,7 @@ Jefe o Supervisor de Mantenimiento.
 - Planner de mantenimiento.
 
 En ambos segmentos, los usuarios poseen un alto conocimiento del entorno industrial, pero presentan una competencia digital media. Por ello, requieren una plataforma de baja complejidad de uso y con una curva de aprendizaje reducida.
-## 4. User Outcomes and Benefits
+**4. User Outcomes and Benefits**
 Los principales resultados y beneficios esperados por los usuarios son los siguientes:
 
 - Ingeniero de Calidad: disponer de evidencia verificable de que un componente fue recubierto dentro de las condiciones establecidas, sin tener que reconstruir la información desde registros dispersos.
@@ -542,7 +500,7 @@ Los principales resultados y beneficios esperados por los usuarios son los sigui
 - Operador HVOF: recibir alertas durante la ejecución de una sesión cuando un parámetro se desvía de la banda definida por la receta.
 - Ingeniero de Confiabilidad: relacionar el desempeño real del componente en campo con su historial de recuperación y con el PCR establecido.
 - Organización: conservar el conocimiento generado durante cada falla, evitando que dependa exclusivamente de la experiencia de determinados especialistas.
-## 5. Solutions
+**5. Solutions**
 A partir de los problemas y necesidades identificados, se proponen las siguientes soluciones:
 
 - Capturar automáticamente la telemetría generada por los controladores del sistema HVOF mediante una API REST.
@@ -557,7 +515,7 @@ A partir de los problemas y necesidades identificados, se proponen las siguiente
 - Consultar históricos de sesiones, fallas y desempeño de componentes.
 - Crear plantillas de reportes personalizables según las necesidades de cada organización.
  
-## 6. Hypotheses
+**6. Hypotheses**
 Las principales hipótesis que sustentan la propuesta de Reliant son las siguientes:
 
 - H1. Trazabilidad del proceso. Creemos que aumentará el porcentaje de órdenes completamente trazables si los Ingenieros de Calidad pueden reconstruir el historial de cada componente mediante la vinculación de la sesión de rociado con su OF, WO, cliente y modelo.
@@ -567,7 +525,7 @@ Las principales hipótesis que sustentan la propuesta de Reliant son las siguien
 - H5. Seguimiento contra PCR. Creemos que al menos el 60 % de los componentes retornados podrán registrar su vida útil y contrastarla con su PCR si el historial del componente se encuentra centralizado en la plataforma.
 - H6. Gestión del conocimiento. Creemos que se reducirá la dependencia del conocimiento tácito si las fallas, causas confirmadas y acciones correctivas permanecen registradas y disponibles para futuros casos similares.
 
-## 7. What Is the Most Important Thing We Need to Learn First?
+**7. What Is the Most Important Thing We Need to Learn First?**
 La principal incertidumbre que el equipo debe validar es si la falta de trazabilidad, la dificultad para reconstruir información histórica y la dependencia del conocimiento de especialistas representan problemas suficientemente relevantes para justificar la adopción de Reliant dentro del flujo de trabajo de las organizaciones que operan HVOF.
 
 Durante el primer ciclo de validación se debe comprobar principalmente:
@@ -579,7 +537,7 @@ Durante el primer ciclo de validación se debe comprobar principalmente:
 - Si la vinculación entre telemetría, OF, WO y componente genera un valor suficiente frente al proceso actual.
 - Si la integración con los controladores existentes puede realizarse sin modificar directamente el PLC.
 
-## 8. What Is the Least Amount of Work We Need to Do to Learn the Next Most Important Thing?
+**8. What Is the Least Amount of Work We Need to Do to Learn the Next Most Important Thing?**
 Para validar las hipótesis de mayor riesgo no es necesario desarrollar todas las funcionalidades de Reliant. El equipo puede implementar inicialmente un MVP que permita:
 
 - Registrar un componente y una orden de trabajo.
@@ -624,7 +582,7 @@ Empresas que recuperan componentes de terceros mediante recubrimiento térmico H
 |---|---|
 | Tipo de organización | Empresa de servicios industriales / metalmecánica especializada, o división de recuperación de componentes de un distribuidor de maquinaria pesada |
 | Tamaño | Mediana y gran empresa; entre 50 y 500 colaboradores en la unidad de recuperación |
-| Ubicación | Lima Metropolitana y Callao (zonas industriales), con presencia comercial en regiones mineras (Arequipa, Cajamarca, üncash, Junín) |
+| Ubicación | Lima Metropolitana y Callao (zonas industriales), con presencia comercial en regiones mineras (Arequipa, Cajamarca, Áncash, Junín) |
 | Sector económico | Servicios de mantenimiento y recuperación de componentes industriales |
 | Clientes principales | Empresas mineras de gran y mediana minería, oil & gas, generación eléctrica |
 | Antigüedad | Organizaciones consolidadas, típicamente con más de 10 años de operación |
@@ -662,7 +620,7 @@ Empresas mineras que envían a recuperar componentes críticos de su flota (fron
 |---|---|
 | Tipo de organización | Empresa minera de gran o mediana minería, con área de mantenimiento y confiabilidad propia |
 | Tamaño | Gran empresa; más de 1,000 colaboradores |
-| Ubicación | Regiones mineras del Perú (Arequipa, Junín, Apurímac, üncash, Cajamarca, Moquegua) con oficinas corporativas en Lima |
+| Ubicación | Regiones mineras del Perú (Arequipa, Junín, Apurímac, Áncash, Cajamarca, Moquegua) con oficinas corporativas en Lima |
 | Sector económico | Minería metálica |
 | Relación con el proceso | Cliente del servicio de recuperación; trabaja con dos o más proveedores en paralelo |
 | Nivel de digitalización | Alto; cuentan con SAP PM o CMMS para gestión de mantenimiento, sin integración con la evidencia de proceso que entrega el proveedor |
@@ -718,7 +676,7 @@ Reliant se ubica deliberadamente en el espacio intermedio. Por ello, el análisi
 
 #### Competitive Analysis Landscape
 
-**Por qué llevar a cabo este análisis?**
+**¿Por qué llevar a cabo este análisis?**
 
 > Determinar si existe en el mercado una solución que resuelva simultáneamente la trazabilidad del proceso HVOF vinculada a la orden de trabajo, el diagnóstico de fallas orientado al subsistema o parte del sistema HVOF responsable, el contraste del desempeño en campo contra el PCR y la comparación entre proveedores de recuperación desde el lado del propietario del activo; e identificar en qué medida las alternativas actuales resultan accesibles para empresas de recubrimiento peruanas de tamaño mediano y para sus clientes mineros. El objetivo es validar que existe un espacio no atendido y establecer sobre qué dimensiones Reliant puede sostener una ventaja competitiva defendible.
 
@@ -726,7 +684,7 @@ Reliant se ubica deliberadamente en el espacio intermedio. Por ello, el análisi
 |---|---|---|---|---|
 | **PERFIL** | | | | |
 | Overview | Startup peruana que ofrece una plataforma web SaaS para monitoreo, trazabilidad y diagnóstico de procesos HVOF, que conecta al proveedor de recuperación con el propietario del activo. Construida sobre tecnologías open source y desplegada en cloud. | Fabricante canadiense de sensores en línea para procesos de proyección térmica. Su producto Accuraspray 4.0 mide temperatura, velocidad, dimensión y estabilidad de la pluma de rociado. | Fabricante suizo líder mundial de equipos y consumibles para thermal spray. Provee pistolas, polvos y sistemas de control de proceso propietarios asociados a sus equipos. | División de Dassault Systèmes que ofrece un MES/ERP con módulos de gestión de calidad y trazabilidad de manufactura para industria discreta. |
-| Ventaja competitiva / Qué valor ofrece a los clientes? | Conecta el dato de proceso con la orden de trabajo, el cliente y el desempeño real de la pieza en campo, y es la única que sirve a ambos lados de la relación: el proveedor demuestra calidad y la minera compara proveedores con datos. Conocimiento profundo del dominio HVOF en contexto minero peruano. Costo de entrada bajo, sin hardware propietario y agnóstica al fabricante del equipo y del controlador. | Precisión metrológica certificada y calibración trazable a NIST. Es el estándar de facto para caracterización de pluma en investigación y desarrollo de parámetros. | Integración nativa con su propio equipo. Respaldo de marca global y soporte técnico especializado en toda la cadena (equipo, consumible, parámetro). | Cobertura funcional muy amplia: trazabilidad de lote, control de calidad, planificación y ejecución de manufactura en una sola plataforma. |
+| Ventaja competitiva / ¿Qué valor ofrece a los clientes? | Conecta el dato de proceso con la orden de trabajo, el cliente y el desempeño real de la pieza en campo, y es la única que sirve a ambos lados de la relación: el proveedor demuestra calidad y la minera compara proveedores con datos. Conocimiento profundo del dominio HVOF en contexto minero peruano. Costo de entrada bajo, sin hardware propietario y agnóstica al fabricante del equipo y del controlador. | Precisión metrológica certificada y calibración trazable a NIST. Es el estándar de facto para caracterización de pluma en investigación y desarrollo de parámetros. | Integración nativa con su propio equipo. Respaldo de marca global y soporte técnico especializado en toda la cadena (equipo, consumible, parámetro). | Cobertura funcional muy amplia: trazabilidad de lote, control de calidad, planificación y ejecución de manufactura en una sola plataforma. |
 | **PERFIL DE MARKETING** | | | | |
 | Mercado objetivo | Proveedores de recuperación de componentes mediante HVOF (Recuperation Suppliers) y empresas mineras propietarias de los componentes recuperados (Asset Owners), en Perú y Latinoamérica. | Talleres de thermal spray, centros de investigación y fabricantes aeroespaciales a nivel global. | Compradores de equipos HVOF a nivel global; industria aeroespacial, energía, automotriz y petróleo y gas. | Manufactura discreta de mediano y gran tamaño a nivel global; automotriz, plásticos, dispositivos médicos. |
 | Estrategias de marketing | Venta consultiva directa al proveedor, apoyada en conocimiento de dominio y casos reales de diagnóstico de fallas; venta al propietario del activo apoyada en el cumplimiento de PCR por proveedor. Presencia en ferias del sector minero y de proveedores mineros. Landing Page con sección y call-to-action por segmento. | Marketing técnico basado en publicaciones científicas, presencia en conferencias internacionales de thermal spray y red de distribuidores por región. | Marketing de ecosistema: el software se posiciona como complemento del equipo. Fuerte inversión en contenido técnico y capacitación. | Marketing de plataforma empresarial: casos de éxito, webinars, red de partners e integradores. |
@@ -780,7 +738,7 @@ El diseño de las entrevistas persigue dos propósitos simultáneos. El primero 
 |---|---|
 | Formato semiestructurado | Se definió un conjunto fijo de preguntas principales para garantizar comparabilidad entre entrevistados, con preguntas complementarias que permiten profundizar en hallazgos no anticipados. |
 | Preguntas abiertas y no inductivas | Ninguna pregunta sugiere la respuesta esperada ni menciona la solución. Los términos "software", "plataforma" y "sistema" se evitan hasta el bloque de cierre. |
-| Preguntas sobre episodios reales | Se privilegia la fórmula "cuénteme la última vez que…" sobre preguntas hipotéticas del tipo "usaría usted…?", dado que las declaraciones sobre conducta futura tienen bajo valor predictivo. |
+| Preguntas sobre episodios reales | Se privilegia la fórmula "cuénteme la última vez que…" sobre preguntas hipotéticas del tipo "¿usaría usted…?", dado que las declaraciones sobre conducta futura tienen bajo valor predictivo. |
 | Orden de los bloques | El perfil personal se aborda primero, en tono conversacional, para establecer confianza antes de tratar temas operativos que pueden resultar sensibles (fallas, reclamos de clientes, auditorías). |
 | Captura del lenguaje del dominio | El entrevistador anota los términos propios que utiliza el entrevistado (nombres de documentos, códigos, siglas, fallas), los cuales alimentan el Ubiquitous Language de la sección 2.5. |
 | Consentimiento informado | Al inicio de cada sesión se informa al entrevistado sobre la grabación en video y su uso académico, y se solicita su consentimiento explícito. |
@@ -812,17 +770,17 @@ La guía se organiza en tres bloques. El Bloque A es común a ambos segmentos y 
 
 | # | Dato requerido | Pregunta principal | Pregunta complementaria |
 |---|---|---|---|
-| A1 | Nombre, edad, género | Podría presentarse? | — |
-| A2 | Distrito, traslado | Dónde vive y cómo llega al trabajo? | En el caso de personal de mina: qué régimen tiene? |
-| A3 | Estado civil, familia | Con quién vive? | Tiene familia a su cargo? |
-| A4 | Formación, background | Qué estudió? | Cómo llegó a su puesto actual? |
-| A5 | Ocupación, cargo | Cuál es su cargo? | Hace cuánto lo ocupa? A quién reporta? |
-| A6 | Personalidad | Es más de planificar o de resolver sobre la marcha? | Trabaja mejor solo o en equipo? |
-| A7 | Habilidades | Qué es lo que mejor sabe hacer en su trabajo? | Qué le cuesta más? |
-| A8 | Dispositivos, browser | Desde qué dispositivo trabaja? | Qué navegador usa? Desde oficina o planta? |
-| A9 | Canales digitales | Por qué medio se comunica con su equipo? | Y en urgencias? |
-| A10 | Marcas e influencias | Cómo se mantiene actualizado? | Qué marcas o referentes del sector respeta? |
-| A11 | Objetivos, frustraciones | Qué le gusta más de su trabajo? | Qué le frustra? |
+| A1 | Nombre, edad, género | ¿Podría presentarse? | — |
+| A2 | Distrito, traslado | ¿Dónde vive y cómo llega al trabajo? | En el caso de personal de mina: ¿qué régimen tiene? |
+| A3 | Estado civil, familia | ¿Con quién vive? | ¿Tiene familia a su cargo? |
+| A4 | Formación, background | ¿Qué estudió? | ¿Cómo llegó a su puesto actual? |
+| A5 | Ocupación, cargo | ¿Cuál es su cargo? | ¿Hace cuánto lo ocupa? ¿A quién reporta? |
+| A6 | Personalidad | ¿Es más de planificar o de resolver sobre la marcha? | ¿Trabaja mejor solo o en equipo? |
+| A7 | Habilidades | ¿Qué es lo que mejor sabe hacer en su trabajo? | ¿Qué le cuesta más? |
+| A8 | Dispositivos, browser | ¿Desde qué dispositivo trabaja? | ¿Qué navegador usa? ¿Desde oficina o planta? |
+| A9 | Canales digitales | ¿Por qué medio se comunica con su equipo? | ¿Y en urgencias? |
+| A10 | Marcas e influencias | ¿Cómo se mantiene actualizado? | ¿Qué marcas o referentes del sector respeta? |
+| A11 | Objetivos, frustraciones | ¿Qué le gusta más de su trabajo? | ¿Qué le frustra? |
 
 
 ### Bloque B1 — Segmento Recuperation Supplier (15 minutos)
@@ -831,14 +789,14 @@ Perfiles entrevistados: operador HVOF, supervisor de operación, supervisor de m
 
 | # | Pregunta principal | Preguntas complementarias | Propósito |
 |---|---|---|---|
-| B1.1 | Cuénteme qué pasa desde que llega una pieza del cliente hasta que sale recuperada. | Cómo la identifican en el taller? Qué documento la acompaña? | Comprender el journey actual (As-Is) y el sistema de identificación de piezas |
-| B1.2 | Durante una corrida de rociado, qué información queda guardada y dónde? | Quién la revisa después? Alguna vez buscó una corrida antigua? | Validar el assumption sobre pérdida de trazabilidad del proceso |
-| B1.3 | Qué le pide el cliente cuando le entregan el trabajo? | Certificado, informe? Le han hecho auditoría? | Validar H-07: aceptación de evidencia documentada por el cliente |
-| B1.4 | Cuénteme la última vez que un cliente cuestionó la calidad de algo entregado. | Qué tuvo que reunir? Cuánto demoró? Tuvo consecuencias? | Cuantificar el impacto de la falta de evidencia |
-| B1.5 | Existe un compromiso sobre cuánto debe durar la pieza recuperada? | Cómo lo llaman? Quién lo define? | Confirmar el término PCR en el lenguaje del entrevistado |
-| B1.6 | Cuénteme la última vez que la máquina se detuvo sin esperarlo. | Cómo hallaron la causa? Qué parte falló? Cuánto demoró? | Validar H-05: tiempo de diagnóstico y atribución a parte de máquina |
-| B1.7 | Hay fallas que se repiten? | Cómo lo saben? Está anotado en algún lado? | Validar H-06: detección de patrones recurrentes |
-| B1.8 | Cuando una pieza suya falla en el cliente, cómo se enteran? | Pueden saber si fue el recubrimiento? Qué les faltaría? | Validar H-08: análisis retrospectivo contra PCR |
+| B1.1 | Cuénteme qué pasa desde que llega una pieza del cliente hasta que sale recuperada. | ¿Cómo la identifican en el taller? ¿Qué documento la acompaña? | Comprender el journey actual (As-Is) y el sistema de identificación de piezas |
+| B1.2 | Durante una corrida de rociado, ¿qué información queda guardada y dónde? | ¿Quién la revisa después? ¿Alguna vez buscó una corrida antigua? | Validar el assumption sobre pérdida de trazabilidad del proceso |
+| B1.3 | ¿Qué le pide el cliente cuando le entregan el trabajo? | ¿Certificado, informe? ¿Le han hecho auditoría? | Validar H-07: aceptación de evidencia documentada por el cliente |
+| B1.4 | Cuénteme la última vez que un cliente cuestionó la calidad de algo entregado. | ¿Qué tuvo que reunir? ¿Cuánto demoró? ¿Tuvo consecuencias? | Cuantificar el impacto de la falta de evidencia |
+| B1.5 | ¿Existe un compromiso sobre cuánto debe durar la pieza recuperada? | ¿Cómo lo llaman? ¿Quién lo define? | Confirmar el término PCR en el lenguaje del entrevistado |
+| B1.6 | Cuénteme la última vez que la máquina se detuvo sin esperarlo. | ¿Cómo hallaron la causa? ¿Qué parte falló? ¿Cuánto demoró? | Validar H-05: tiempo de diagnóstico y atribución a parte de máquina |
+| B1.7 | ¿Hay fallas que se repiten? | ¿Cómo lo saben? ¿Está anotado en algún lado? | Validar H-06: detección de patrones recurrentes |
+| B1.8 | Cuando una pieza suya falla en el cliente, ¿cómo se enteran? | ¿Pueden saber si fue el recubrimiento? ¿Qué les faltaría? | Validar H-08: análisis retrospectivo contra PCR |
 
 
 ### Bloque B2 — Segmento Asset Owner (15 minutos)
@@ -847,24 +805,24 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 
 | # | Pregunta principal | Preguntas complementarias | Propósito |
 |---|---|---|---|
-| B2.1 | Cuénteme cómo funciona la recuperación de componentes en su operación. | Qué piezas? Con cuántos proveedores trabajan? | Comprender el contexto y confirmar el escenario multi-proveedor |
-| B2.2 | Manejan una expectativa de cuánto debe durar un componente recuperado? | Cómo lo llaman? Cómo le hacen seguimiento? | Confirmar el término PCR y su seguimiento actual |
-| B2.3 | Cuénteme la última vez que un componente recuperado falló antes de lo previsto. | Qué pasó en la operación? Cuánto costó? Supieron por qué? | Cuantificar el impacto de la falla prematura; validar H-08 |
-| B2.4 | Qué le entrega el proveedor junto con la pieza? | Quién lo revisa? Dónde se guarda? Le sirvió alguna vez después? | Validar H-07 desde el lado del cliente |
-| B2.5 | Cómo evalúan a un proveedor de recuperación? | Con qué datos? Han cambiado de proveedor? Por qué? | Validar H-09: evaluación de proveedores con datos |
-| B2.6 | Dónde registran la información de los componentes recuperados? | SAP, CMMS, Excel? Está todo en un solo lugar? | Identificar sistemas actuales y competencia indirecta |
-| B2.7 | Si quisiera comparar qué proveedor entrega piezas que duran más, cómo lo haría hoy? | Lo ha intentado? Cuánto le tomó? | Sustentar el valor de la vista consolidada (plan Asset Owner) |
-| B2.8 | Auditan a sus proveedores? | Qué revisan? Qué les piden que demuestren? | Identificar los requisitos de evidencia que se trasladan al proveedor |
+| B2.1 | Cuénteme cómo funciona la recuperación de componentes en su operación. | ¿Qué piezas? ¿Con cuántos proveedores trabajan? | Comprender el contexto y confirmar el escenario multi-proveedor |
+| B2.2 | ¿Manejan una expectativa de cuánto debe durar un componente recuperado? | ¿Cómo lo llaman? ¿Cómo le hacen seguimiento? | Confirmar el término PCR y su seguimiento actual |
+| B2.3 | Cuénteme la última vez que un componente recuperado falló antes de lo previsto. | ¿Qué pasó en la operación? ¿Cuánto costó? ¿Supieron por qué? | Cuantificar el impacto de la falla prematura; validar H-08 |
+| B2.4 | ¿Qué le entrega el proveedor junto con la pieza? | ¿Quién lo revisa? ¿Dónde se guarda? ¿Le sirvió alguna vez después? | Validar H-07 desde el lado del cliente |
+| B2.5 | ¿Cómo evalúan a un proveedor de recuperación? | ¿Con qué datos? ¿Han cambiado de proveedor? ¿Por qué? | Validar H-09: evaluación de proveedores con datos |
+| B2.6 | ¿Dónde registran la información de los componentes recuperados? | ¿SAP, CMMS, Excel? ¿Está todo en un solo lugar? | Identificar sistemas actuales y competencia indirecta |
+| B2.7 | Si quisiera comparar qué proveedor entrega piezas que duran más, ¿cómo lo haría hoy? | ¿Lo ha intentado? ¿Cuánto le tomó? | Sustentar el valor de la vista consolidada (plan Asset Owner) |
+| B2.8 | ¿Auditan a sus proveedores? | ¿Qué revisan? ¿Qué les piden que demuestren? | Identificar los requisitos de evidencia que se trasladan al proveedor |
 
 
 ### Bloque C — Cierre (ambos segmentos, 3 minutos)
 
 | # | Pregunta principal | Pregunta complementaria | Propósito |
 |---|---|---|---|
-| C1 | De todo esto, qué es lo que más tiempo o dolor de cabeza le genera? | Por qué eso? | Priorizar pain points para el Empathy Map |
-| C2 | Qué información le gustaría tener y hoy no tiene? | Qué haría con ella? | Identificar necesidades no anticipadas |
-| C3 | Quién decidiría en su empresa adoptar una nueva herramienta? | Qué tendría que demostrarle? | Identificar al decisor de compra para cada segmento |
-| C4 | Algo que no le pregunté y debería saber? | — | Cierre abierto |
+| C1 | De todo esto, ¿qué es lo que más tiempo o dolor de cabeza le genera? | ¿Por qué eso? | Priorizar pain points para el Empathy Map |
+| C2 | ¿Qué información le gustaría tener y hoy no tiene? | ¿Qué haría con ella? | Identificar necesidades no anticipadas |
+| C3 | ¿Quién decidiría en su empresa adoptar una nueva herramienta? | ¿Qué tendría que demostrarle? | Identificar al decisor de compra para cada segmento |
+| C4 | ¿Algo que no le pregunté y debería saber? | — | Cierre abierto |
 
 ### 2.2.2. Registro de entrevistas.
 
@@ -1092,7 +1050,7 @@ Los Journey Maps describen la experiencia actual (as-is) de cada persona en la t
 | Fase | Acciones | Pensamientos | Emociones | Puntos de dolor |
 |---|---|---|---|---|
 | Solicitud del cliente | Recibe el pedido de sustento y ubica la OF/WO | "Espero que esta vez el registro esté completo" | Neutral, con algo de incertidumbre | No sabe de antemano si el dato existe o está completo |
-| Búsqueda de evidencia | Revisa archivos del PLC y bitácoras en papel, consulta al supervisor de operación | "Dónde quedó el registro de esa fecha exacta y con qué receta se corrió?" | Tensión creciente | Información dispersa entre PLC, papel y memoria del personal; la receta usada no quedó registrada |
+| Búsqueda de evidencia | Revisa archivos del PLC y bitácoras en papel, consulta al supervisor de operación | "¿Dónde quedó el registro de esa fecha exacta y con qué receta se corrió?" | Tensión creciente | Información dispersa entre PLC, papel y memoria del personal; la receta usada no quedó registrada |
 | Reconstrucción manual | Arma el reporte cruzando fuentes y lo adapta al formato que exige el cliente | "Esto me toma horas que no tengo, y cada cliente pide un formato distinto" | Frustración | Alto esfuerzo manual, riesgo de error al cruzar datos, reporte rehecho en Excel |
 | Entrega | Envía el reporte, a veces fuera de plazo | "Espero que esto no afecte la renovación del contrato" | Ansiedad | Retraso percibido por el cliente como falta de control de proceso |
 
@@ -1102,7 +1060,7 @@ Los Journey Maps describen la experiencia actual (as-is) de cada persona en la t
 
 | Fase | Acciones | Pensamientos | Emociones | Puntos de dolor |
 |---|---|---|---|---|
-| Detección | El operador reporta la parada; Jorge revisa el código de falla en el HMI | "Es la misma falla del mes pasado?" | Alerta, preocupación | El código de falla del PLC no indica el subsistema ni la parte responsable |
+| Detección | El operador reporta la parada; Jorge revisa el código de falla en el HMI | "¿Es la misma falla del mes pasado?" | Alerta, preocupación | El código de falla del PLC no indica el subsistema ni la parte responsable |
 | Diagnóstico | Revisa la bitácora en papel, llama al técnico senior, escala al fabricante | "Ojalá el técnico que sabe de esto esté disponible" | Impaciencia | El diagnóstico depende del conocimiento tácito de pocas personas |
 | Intervención | Interviene la parte señalada y verifica la operación | "Vamos a ver si esto realmente era el problema" | Incertidumbre | Sin correlación automática entre falla y parte, la intervención es prueba y error |
 | Registro y aprendizaje | Documenta la solución de forma informal | "Espero acordarme la próxima vez que pase esto" | Resignación | El aprendizaje no queda registrado ni es consultable; la recurrencia no se detecta |
@@ -1114,7 +1072,7 @@ Los Journey Maps describen la experiencia actual (as-is) de cada persona en la t
 | Fase | Acciones | Pensamientos | Emociones | Puntos de dolor |
 |---|---|---|---|---|
 | Falla en campo | Mantenimiento retira el componente antes de lo previsto; Lucía recibe el aviso y el horómetro | "Este front rod debía durar 6,000 horas y no llegó a 3,500" | Preocupación | El dato de retorno llega por correo o radio y se anota en una hoja de cálculo personal |
-| Búsqueda de evidencia | Busca el certificado del proveedor entre correos y carpetas compartidas; identifica cuál de los tres proveedores lo recuperó | "Quién trabajó esta pieza y con qué evidencia me la entregó?" | Impaciencia | Evidencia en formatos distintos por proveedor, sin vínculo con el número de serie de la pieza |
+| Búsqueda de evidencia | Busca el certificado del proveedor entre correos y carpetas compartidas; identifica cuál de los tres proveedores lo recuperó | "¿Quién trabajó esta pieza y con qué evidencia me la entregó?" | Impaciencia | Evidencia en formatos distintos por proveedor, sin vínculo con el número de serie de la pieza |
 | Reclamo al proveedor | Envía el reclamo con el horómetro alcanzado; el proveedor responde días después | "Me van a decir que fue la operación, y no tengo cómo demostrar lo contrario" | Frustración | Ninguna de las partes puede determinar si el origen estuvo en el recubrimiento o en la operación |
 | Evaluación de proveedores | Prepara la comparación de proveedores para compras y gerencia cruzando hojas de cálculo | "Esto lo hago cada trimestre y siempre salen números distintos" | Resignación | La decisión contractual se sustenta en percepción; el cruce manual consume días y no es reproducible |
 
@@ -1128,7 +1086,7 @@ Los Empathy Maps sintetizan lo que cada persona dice, piensa, hace y siente en r
 
 | Cuadrante | Contenido |
 |---|---|
-| Dice | "El cliente me pide evidencia y yo tengo que armarla a mano." À "El PLC no alarma hasta que ya es tarde." |
+| Dice | "El cliente me pide evidencia y yo tengo que armarla a mano." · "El PLC no alarma hasta que ya es tarde." |
 | Piensa | Que cada reclamo sin respuesta rápida pone en riesgo el contrato; que la receta correcta depende de que el operador la cargue bien |
 | Hace | Cruza archivos del PLC con bitácoras en papel; define parámetros por tipo de pieza en hojas de cálculo; rehace reportes por cliente |
 | Siente | Presión comercial, frustración por el tiempo perdido, inseguridad al firmar un certificado sin todos los datos |
@@ -1141,7 +1099,7 @@ Los Empathy Maps sintetizan lo que cada persona dice, piensa, hace y siente en r
 
 | Cuadrante | Contenido |
 |---|---|
-| Dice | "El código de falla no me dice qué revisar." À "Si el técnico que sabe está de vacaciones, la máquina espera." |
+| Dice | "El código de falla no me dice qué revisar." · "Si el técnico que sabe está de vacaciones, la máquina espera." |
 | Piensa | Que la misma falla ya ocurrió antes pero nadie lo anotó; que el fabricante cobra por diagnósticos que él podría hacer con la información correcta |
 | Hace | Revisa el HMI y el PLC, llama al técnico senior, prueba y error sobre la máquina, anota la solución en un cuaderno |
 | Siente | Impaciencia por la ventana de producción, resignación ante la falta de registro, orgullo cuando resuelve sin ayuda externa |
@@ -1154,7 +1112,7 @@ Los Empathy Maps sintetizan lo que cada persona dice, piensa, hace y siente en r
 
 | Cuadrante | Contenido |
 |---|---|
-| Dice | "Tengo tres proveedores y tres formatos de evidencia." À "Cuando reclamo, me dicen que fue la operación." |
+| Dice | "Tengo tres proveedores y tres formatos de evidencia." · "Cuando reclamo, me dicen que fue la operación." |
 | Piensa | Que está renovando contratos por costumbre y no por desempeño; que una falla prematura mal atribuida se repetirá |
 | Hace | Registra retornos en una hoja de cálculo; busca certificados en el correo; cruza datos cada trimestre para compras |
 | Siente | Frustración por el trabajo manual, desconfianza hacia la evidencia del proveedor, presión de gerencia por sustentar decisiones |
@@ -1193,8 +1151,8 @@ flowchart LR
     subgraph T["Tablero"]
         direction LR
         O["OPEN<br/>Generación de eventos"]:::zona
-        EX["EXPLORE<br/>Ordenar À Actores À Externos À Storytelling"]:::zona
-        C["CLOSE<br/>Definiciones À Problemas À Siguientes pasos"]:::zona
+        EX["EXPLORE<br/>Ordenar · Actores · Externos · Storytelling"]:::zona
+        C["CLOSE<br/>Definiciones · Problemas · Siguientes pasos"]:::zona
         S0["SpraySessionStarted"]:::evento
         O --> EX --> C
         S0 -.- EX
@@ -1434,8 +1392,8 @@ flowchart LR
 
 Al ordenar, el equipo hizo explícitas cinco cosas que estaban implícitas:
 
-- *HourmeterAtDeliveryRecorded* no existía en la generación inicial de todos; apareció cuando se preguntó "contra qué se compara el horómetro de retorno?". Sin ese dato, *ServiceLifeRecorded* no puede calcular horas logradas.
-- *ManualDiagnosisRequired* apareció al preguntar "y si ninguna regla coincide?". Es el flujo alternativo de *DiagnosticRulesApplied*.
+- *HourmeterAtDeliveryRecorded* no existía en la generación inicial de todos; apareció cuando se preguntó "¿contra qué se compara el horómetro de retorno?". Sin ese dato, *ServiceLifeRecorded* no puede calcular horas logradas.
+- *ManualDiagnosisRequired* apareció al preguntar "¿y si ninguna regla coincide?". Es el flujo alternativo de *DiagnosticRulesApplied*.
 - *SpraySessionAborted* no cierra la orden: obliga a una nueva corrida. Por eso la flecha punteada regresa a *SpraySessionStarted*.
 - *SprayingStarted* y *SprayingStopped* dividen la sesión en pasadas. La sesión la abre el operador porque el PLC no conoce la OF/WO, pero el rociado efectivo lo detecta el tag de estado de rociado activo.
 - *RecipeVerified* ocurre entre el inicio de la sesión y la primera lectura: el sistema compara la receta cargada en el controlador con el tipo y modelo del componente de la orden. Si no corresponde, se dispara *RecipeMismatchDetected*.
@@ -1532,39 +1490,39 @@ flowchart LR
     classDef problema fill:#F48FB1,stroke:#AD1457,color:#000
 
     TagMappingConfirmed:::evento
-    P1["Qué pasa con una lectura cuyo tag<br/>aún no tiene mapeo confirmado?<br/>ÔåÆ Se almacena como pendiente, no se descarta"]:::problema
+    P1["¿Qué pasa con una lectura cuyo tag<br/>aún no tiene mapeo confirmado?<br/>→ Se almacena como pendiente, no se descarta"]:::problema
     TagMappingConfirmed -.- P1
 
     RecuperationClosed:::evento
-    P2["Se puede cerrar una orden cuya<br/>única sesión fue abortada?<br/>ÔåÆ No. Requiere al menos una completada"]:::problema
+    P2["¿Se puede cerrar una orden cuya<br/>única sesión fue abortada?<br/>→ No. Requiere al menos una completada"]:::problema
     RecuperationClosed -.- P2
 
     QualityCertificateIssued:::evento
-    P3["Se emite certificado si hubo lecturas<br/>fuera de la banda nominal de la receta?<br/>ÔåÆ Sí, con no conformidad y justificación"]:::problema
+    P3["¿Se emite certificado si hubo lecturas<br/>fuera de la banda nominal de la receta?<br/>→ Sí, con no conformidad y justificación"]:::problema
     QualityCertificateIssued -.- P3
 
     ServiceLifeRecorded:::evento
-    P4["PCR se mide en horas de horómetro<br/>o en meses calendario?<br/>ÔåÆ Horas. Requiere horómetro de entrega"]:::problema
+    P4["¿PCR se mide en horas de horómetro<br/>o en meses calendario?<br/>→ Horas. Requiere horómetro de entrega"]:::problema
     ServiceLifeRecorded -.- P4
 
     PrematureFailureCorrelatedWithSession:::evento
-    P5["La minera ve los parámetros crudos<br/>del proveedor?<br/>ÔåÆ No. Ve cumplimiento por banda, no valores"]:::problema
+    P5["¿La minera ve los parámetros crudos<br/>del proveedor?<br/>→ No. Ve cumplimiento por banda, no valores"]:::problema
     PrematureFailureCorrelatedWithSession -.- P5
 
     RecurringFaultPatternDetected:::evento
-    P6["Quién define el umbral de recurrencia<br/>y en qué ventana de tiempo?<br/>ÔåÆ PENDIENTE: validar con Fesa"]:::problema
+    P6["¿Quién define el umbral de recurrencia<br/>y en qué ventana de tiempo?<br/>→ PENDIENTE: validar con Fesa"]:::problema
     RecurringFaultPatternDetected -.- P6
 
     SuspectPartIdentified:::evento
-    P7["Y si dos reglas coinciden con<br/>partes distintas?<br/>ÔåÆ Gana la de mayor prioridad; ambas quedan registradas"]:::problema
+    P7["¿Y si dos reglas coinciden con<br/>partes distintas?<br/>→ Gana la de mayor prioridad; ambas quedan registradas"]:::problema
     SuspectPartIdentified -.- P7
 
     SpraySessionStarted:::evento
-    P8["Cómo sabe el sistema que empezó a rociar,<br/>si el PLC no conoce la OF/WO?<br/>ÔåÆ La sesión la abre el operador; las pasadas<br/>las detecta el tag SPRAY_ACTIVE"]:::problema
+    P8["¿Cómo sabe el sistema que empezó a rociar,<br/>si el PLC no conoce la OF/WO?<br/>→ La sesión la abre el operador; las pasadas<br/>las detecta el tag SPRAY_ACTIVE"]:::problema
     SpraySessionStarted -.- P8
 
     RecipeVerified:::evento
-    P9["Y si el operador cargó la receta<br/>del cylinder block para un front rod?<br/>ÔåÆ Alerta RECIPE_MISMATCH al iniciar la sesión"]:::problema
+    P9["¿Y si el operador cargó la receta<br/>del cylinder block para un front rod?<br/>→ Alerta RECIPE_MISMATCH al iniciar la sesión"]:::problema
     RecipeVerified -.- P9
 ```
 
@@ -1586,7 +1544,7 @@ Durante la narración se capturaron también las primeras definiciones del lengu
 
 ### Paso 8. Reverse storytelling
 
-Como fase opcional, el equipo tomó el evento de mayor valor de negocio, *PrematureFailureDetected*, y recorrió la historia hacia atrás preguntando repetidamente "qué tuvo que ocurrir antes para que esto pasara?". El ejercicio confirmó la cadena de trazabilidad completa y reveló un evento que faltaba.
+Como fase opcional, el equipo tomó el evento de mayor valor de negocio, *PrematureFailureDetected*, y recorrió la historia hacia atrás preguntando repetidamente "¿qué tuvo que ocurrir antes para que esto pasara?". El ejercicio confirmó la cadena de trazabilidad completa y reveló un evento que faltaba.
 
 ```mermaid
 flowchart RL
@@ -1609,13 +1567,13 @@ flowchart RL
     N["PcrTargetDefined"]:::evento
     O["CustomerLinkedToAssetOwnerOrganization"]:::nuevo
 
-    A -->|"qué lo disparó?"| B -->|"qué lo disparó?"| C
-    C -->|"qué debió existir?"| D --> E --> F --> G --> H --> I --> J --> K --> L --> M
-    B -->|"contra qué se comparó?"| N
-    C -->|"quién pudo registrarlo?"| O
+    A -->|"¿qué lo disparó?"| B -->|"¿qué lo disparó?"| C
+    C -->|"¿qué debió existir?"| D --> E --> F --> G --> H --> I --> J --> K --> L --> M
+    B -->|"¿contra qué se comparó?"| N
+    C -->|"¿quién pudo registrarlo?"| O
 ```
 
-El evento descubierto, *CustomerLinkedToAssetOwnerOrganization*, resuelve una pregunta que nadie había hecho: cómo puede un ingeniero de confiabilidad de la minera registrar el retorno de una pieza si la minera fue registrada como *Customer* por Fesa y no tiene cuenta propia? La respuesta es que cuando una organización Asset Owner se suscribe con el mismo RUC que un cliente ya registrado por un proveedor, ambos registros se vinculan. Este evento dio origen al segundo escenario de la US13.
+El evento descubierto, *CustomerLinkedToAssetOwnerOrganization*, resuelve una pregunta que nadie había hecho: ¿cómo puede un ingeniero de confiabilidad de la minera registrar el retorno de una pieza si la minera fue registrada como *Customer* por Fesa y no tiene cuenta propia? La respuesta es que cuando una organización Asset Owner se suscribe con el mismo RUC que un cliente ya registrado por un proveedor, ambos registros se vinculan. Este evento dio origen al segundo escenario de la US13.
 
 ### Paso 9. Cierre
 
@@ -1784,7 +1742,7 @@ Las definiciones de proceso y recubrimiento se basan en el glosario de proyecci�
 | Término | Definición |
 |---|---|
 | **Tag** | Variable nombrada del PLC. Un PLC de celda HVOF puede tener más de diez mil tags; la plataforma solo monitorea el subconjunto relevante para el proceso y las fallas (alrededor de doscientos). |
-| **Controller Tag / Program Tag** | ümbito del tag dentro del PLC. Los controller tags son globales; los program tags pertenecen a un programa específico y se identifican con el prefijo del programa. |
+| **Controller Tag / Program Tag** | Ámbito del tag dentro del PLC. Los controller tags son globales; los program tags pertenecen a un programa específico y se identifican con el prefijo del programa. |
 | **Tag Path** (Ruta del tag) | Nombre completo con el que se accede a un tag, incluyendo su estructura (por ejemplo, `Mach_FLT.TimedShutdownFlt` o `Spindle.VFD.HSDFlt`). Es lo que la plataforma mapea a una parte y un parámetro. |
 | **UDT — User Defined Type** (Tipo definido por el usuario) | Estructura de datos creada por el integrador que agrupa varios tags bajo un mismo nombre (por ejemplo, `Mach_FLT` agrupa todos los indicadores de falla de la máquina). El nombre del UDT suele indicar el subsistema, y por eso sirve para el mapeo automático. |
 | **Tag Kind** (Tipo de tag) | Clasificación que hace la plataforma al mapear: lectura analógica (valor continuo de un parámetro), indicador de falla (booleano que abre un caso) o estado (booleano informativo, como *Running* o *Ready*). |
@@ -1973,7 +1931,7 @@ El Impact Map de Reliant conecta los objetivos de negocio de InnovaCorp con los 
 
 Los Business Goals cumplen los criterios SMART: son específicos, medibles, alcanzables con el alcance del producto, relevantes para el modelo de suscripción de dos segmentos (plan Operator y plan Asset Owner) y acotados en el tiempo. Los Actors corresponden a los tres User Personas: **Rosa Miranda**, Ingeniera de Calidad e Investigación de un Recuperation Supplier; **Jorge Salinas**, Supervisor de Mantenimiento de máquina del mismo segmento; y **Lucía Torres**, Ingeniera de Confiabilidad de una empresa minera (Asset Owner). Cuando el comportamiento esperado corresponde a un rol secundario del segmento (operador HVOF, supervisor de operación, analista de compras, visitante del Landing Page), se indica junto al persona que lo representa. Las métricas de los goals se derivan de los Business Outcome Assumptions y de los Hypothesis Statements de la sección 1.2.2.
 
-<img src="assets/img/3.chapter-iii/3.2.impact-mapping/Impact_Map-Reliant.png" alt="Impact Map de Reliant">
+<p align="center"><img src="assets/img/3.chapter-iii/3.2.impact-mapping/Impact_Map-Reliant.png" alt="Impact Map de Reliant"></p>
 
 ### Business Goal 1 — Adopción del segmento Recuperation Supplier
 
@@ -1994,7 +1952,7 @@ flowchart LR
     classDef impact fill:#B3E5FC,stroke:#0277BD,color:#000
     classDef deliv fill:#C8E6C9,stroke:#2E7D32,color:#000
 
-    G1["BG1 À 5 Recuperation Suppliers<br/>en el plan Operator con 90 %<br/>de sesiones registradas À 12 meses"]:::goal
+    G1["BG1 · 5 Recuperation Suppliers<br/>en el plan Operator con 90 %<br/>de sesiones registradas · 12 meses"]:::goal
     A1["Rosa Miranda<br/>Ingeniera de Calidad"]:::actor
     A1b["Rosa Miranda<br/>(operador y supervisor de operación)"]:::actor
     A1c["Rosa Miranda<br/>(visitante del segmento)"]:::actor
@@ -2005,11 +1963,11 @@ flowchart LR
     I4["Reacciona a la desviación o receta<br/>equivocada durante la corrida"]:::impact
     I5["Reconoce la propuesta<br/>y solicita el registro"]:::impact
 
-    D1["Componentes y órdenes OF/WO<br/>US14 À US15 À US17"]:::deliv
-    D2["Recetas, bandas de umbral y<br/>parámetros derivados<br/>US54 À US21 À US55"]:::deliv
-    D3["Sesión con ingesta automática,<br/>pasadas y sesiones no asignadas<br/>US19 À US20 À US57 À US52"]:::deliv
-    D4["Lecturas en vivo, alertas de<br/>desviación y verificación de receta<br/>US22 À US31 À US56"]:::deliv
-    D5["Landing Page con propuesta de valor<br/>y CTA Recuperation Supplier<br/>US44 À US45 À US47"]:::deliv
+    D1["Componentes y órdenes OF/WO<br/>US14 · US15 · US17"]:::deliv
+    D2["Recetas, bandas de umbral y<br/>parámetros derivados<br/>US54 · US21 · US55"]:::deliv
+    D3["Sesión con ingesta automática,<br/>pasadas y sesiones no asignadas<br/>US19 · US20 · US57 · US52"]:::deliv
+    D4["Lecturas en vivo, alertas de<br/>desviación y verificación de receta<br/>US22 · US31 · US56"]:::deliv
+    D5["Landing Page con propuesta de valor<br/>y CTA Recuperation Supplier<br/>US44 · US45 · US47"]:::deliv
 
     G1 --> A1 --> I1 --> D1
     A1 --> I2 --> D2
@@ -2036,7 +1994,7 @@ flowchart LR
     classDef impact fill:#B3E5FC,stroke:#0277BD,color:#000
     classDef deliv fill:#C8E6C9,stroke:#2E7D32,color:#000
 
-    G2["BG2 À 80 % de órdenes con certificado<br/>y 70 % de reportes desde plantilla<br/>À 6 meses"]:::goal
+    G2["BG2 · 80 % de órdenes con certificado<br/>y 70 % de reportes desde plantilla<br/>À 6 meses"]:::goal
     A1["Rosa Miranda<br/>Ingeniera de Calidad"]:::actor
     A3["Lucía Torres<br/>Ingeniera de Confiabilidad"]:::actor
 
@@ -2045,10 +2003,10 @@ flowchart LR
     I3["Entrega reportes con la estructura<br/>e identidad que exige el cliente"]:::impact
     I4["Acepta el certificado como respaldo<br/>y lo lee en sus unidades"]:::impact
 
-    D1["Certificado de calidad<br/>por orden<br/>US35 À US18"]:::deliv
-    D2["Reporte de sesión y<br/>exportación de evidencia<br/>US36 À US37"]:::deliv
-    D3["Plantillas de reporte<br/>personalizables<br/>US59 À US60 À US61 À US62 À US63"]:::deliv
-    D4["Consulta de certificados<br/>y unidades preferidas<br/>US41 À US58"]:::deliv
+    D1["Certificado de calidad<br/>por orden<br/>US35 · US18"]:::deliv
+    D2["Reporte de sesión y<br/>exportación de evidencia<br/>US36 · US37"]:::deliv
+    D3["Plantillas de reporte<br/>personalizables<br/>US59 · US60 · US61 · US62 · US63"]:::deliv
+    D4["Consulta de certificados<br/>y unidades preferidas<br/>US41 · US58"]:::deliv
 
     G2 --> A1 --> I1 --> D1
     A1 --> I2 --> D2
@@ -2075,7 +2033,7 @@ flowchart LR
     classDef impact fill:#B3E5FC,stroke:#0277BD,color:#000
     classDef deliv fill:#C8E6C9,stroke:#2E7D32,color:#000
 
-    G3["BG3 À ÔêÆ40 % tiempo de<br/>diagnóstico de fallas<br/>À 9 meses"]:::goal
+    G3["BG3 · −40 % tiempo de<br/>diagnóstico de fallas<br/>À 9 meses"]:::goal
     A2["Jorge Salinas<br/>Supervisor de Mantenimiento<br/>de máquina"]:::actor
 
     I1["Describe su máquina subsistema<br/>por subsistema en la plataforma"]:::impact
@@ -2084,11 +2042,11 @@ flowchart LR
     I4["Registra la causa raíz para<br/>que el conocimiento no se pierda"]:::impact
     I5["Interviene antes de una parada<br/>mayor, aun lejos de la plataforma"]:::impact
 
-    D1["Sistema HVOF, subsistemas, partes<br/>y catálogo de tags<br/>US07 À US08 À US53 À US10 À US11"]:::deliv
+    D1["Sistema HVOF, subsistemas, partes<br/>y catálogo de tags<br/>US07 · US08 · US53 · US10 · US11"]:::deliv
     D2["Apertura automática<br/>de casos de falla<br/>US25"]:::deliv
-    D3["Diagnóstico por reglas<br/>causa-efecto<br/>US26 À US28"]:::deliv
-    D4["Confirmación de causa raíz<br/>y consulta de casos<br/>US27 À US30"]:::deliv
-    D5["Patrones recurrentes, alertas<br/>críticas y correo<br/>US29 À US32 À US51 À US38"]:::deliv
+    D3["Diagnóstico por reglas<br/>causa-efecto<br/>US26 · US28"]:::deliv
+    D4["Confirmación de causa raíz<br/>y consulta de casos<br/>US27 · US30"]:::deliv
+    D5["Patrones recurrentes, alertas<br/>críticas y correo<br/>US29 · US32 · US51 · US38"]:::deliv
 
     G3 --> A2
     A2 --> I1 --> D1
@@ -2117,7 +2075,7 @@ flowchart LR
     classDef impact fill:#B3E5FC,stroke:#0277BD,color:#000
     classDef deliv fill:#C8E6C9,stroke:#2E7D32,color:#000
 
-    G4["BG4 À 3 mineras en el plan Asset Owner<br/>y 60 % de retornos registrados<br/>À 18 meses"]:::goal
+    G4["BG4 · 3 mineras en el plan Asset Owner<br/>y 60 % de retornos registrados<br/>À 18 meses"]:::goal
     A3["Lucía Torres<br/>Ingeniera de Confiabilidad"]:::actor
     A3b["Lucía Torres<br/>(analista de compras)"]:::actor
     A1["Rosa Miranda<br/>Ingeniera de Calidad"]:::actor
@@ -2129,11 +2087,11 @@ flowchart LR
     I4["Analiza la sesión de origen<br/>de cada falla prematura"]:::impact
     I5["Reconoce el valor y se registra<br/>con el plan Asset Owner"]:::impact
 
-    D1["Retorno de campo con<br/>evaluación contra PCR<br/>US40 À US16"]:::deliv
-    D2["Vista consolidada multi-proveedor<br/>y vinculación cliente–organización<br/>US39 À US13"]:::deliv
+    D1["Retorno de campo con<br/>evaluación contra PCR<br/>US40 · US16"]:::deliv
+    D2["Vista consolidada multi-proveedor<br/>y vinculación cliente–organización<br/>US39 · US13"]:::deliv
     D3["Reporte de cumplimiento<br/>PCR por proveedor<br/>US42"]:::deliv
     D4["Correlación falla prematura<br/>con sesión de origen<br/>US43"]:::deliv
-    D5["Landing Page con CTA Asset Owner<br/>y selección de plan<br/>US46 À US05"]:::deliv
+    D5["Landing Page con CTA Asset Owner<br/>y selección de plan<br/>US46 · US05"]:::deliv
 
     G4 --> A3 --> I1 --> D1
     A3 --> I2 --> D2
@@ -2154,9 +2112,9 @@ La estimación se expresa en Story Points sobre la escala de Fibonacci (1, 2, 3,
 
 El Product Backlog se gestiona en Trello, con una lista por Sprint y una etiqueta por Epic: [https://trello.com/b/aDFKmtGp/reliant-product-backlog](https://trello.com/b/aDFKmtGp/reliant-product-backlog). Cada tarjeta indica sus Story Points entre paréntesis.
 
-<img src="assets/img/3.chapter-iii/3.3.product-backlog/3.3-trello-product-backlog.png" alt="Product Backlog de Reliant en Trello: Epics, Product Backlog, Sprint 1 y Sprint 2">
+<p align="center"><img src="assets/img/3.chapter-iii/3.3.product-backlog/3.3-trello-product-backlog.png" alt="Product Backlog de Reliant en Trello: Epics, Product Backlog, Sprint 1 y Sprint 2"></p>
 
-<img src="assets/img/3.chapter-iii/3.3.product-backlog/3.3-trello-product-backlog-sprints.png" alt="Listas de Sprint del Product Backlog de Reliant en Trello">
+<p align="center"><img src="assets/img/3.chapter-iii/3.3.product-backlog/3.3-trello-product-backlog-sprints.png" alt="Listas de Sprint del Product Backlog de Reliant en Trello"></p>
 
 | # Orden | User Story Id | Título | Descripción | Story Points (1 / 2 / 3 / 5 / 8) |
 |---|---|---|---|---|
@@ -2254,85 +2212,87 @@ El Product Backlog se gestiona en Trello, con una lista por Sprint y una etiquet
 Este capítulo abarca los aspectos relacionados con el diseño de la solución, incluyendo el estilo visual, los diagramas C4, los diagramas de clases y los modelos de bases de datos.
 
 ## 4.1. Style Guidelines.
-Durante el desarrollo de Relient, es fundamental establecer lineamientos visuales que garanticen la coherencia y uniformidad de las interfaces del producto. La falta de consistencia en el uso de colores, tipografías, componentes y estilos de interacción puede dificultar la comprensión de la información y afectar la experiencia de los usuarios. En este contexto, las Style Guidelines definen los criterios visuales y funcionales que orientan el diseño de la Landing Page y la Web Application de Relient. Estas directrices se adaptan a las necesidades de los usuarios involucrados en la gestión y el monitoreo de procesos, equipos, componentes y recursos de los sectores industrial y minero. Asimismo, buscan garantizar una interfaz clara, organizada y consistente, que facilite la navegación, la consulta de información, el seguimiento de alertas y la gestión eficiente de los distintos módulos de la plataforma.
+Durante el desarrollo de Reliant, es fundamental establecer lineamientos visuales que garanticen la coherencia y uniformidad de las interfaces del producto. La falta de consistencia en el uso de colores, tipografías, componentes y estilos de interacción puede dificultar la comprensión de la información y afectar la experiencia de los usuarios. En este contexto, las Style Guidelines definen los criterios visuales y funcionales que orientan el diseño de la Landing Page y la Web Application de Reliant. Estas directrices se adaptan a las necesidades de los usuarios involucrados en la gestión y el monitoreo de procesos, equipos, componentes y recursos de los sectores industrial y minero. Asimismo, buscan garantizar una interfaz clara, organizada y consistente, que facilite la navegación, la consulta de información, el seguimiento de alertas y la gestión eficiente de los distintos módulos de la plataforma.
 
 ### 4.1.1. General Style Guidelines
-Las General Style Guidelines establecen las normas visuales que orientan el diseño de las interfaces de Relient. Estas directrices definen los criterios de identidad visual, tipografía, colores, espaciado y tono de comunicación, con el propósito de mantener la consistencia entre la Landing Page y la Web Application, facilitar la comprensión de la información y garantizar una experiencia de usuario clara y organizada.
+Las General Style Guidelines establecen las normas visuales que orientan el diseño de las interfaces de Reliant. Estas directrices definen los criterios de identidad visual, tipografía, colores, espaciado y tono de comunicación, con el propósito de mantener la consistencia entre la Landing Page y la Web Application, facilitar la comprensión de la información y garantizar una experiencia de usuario clara y organizada.
 
 **Branding**
 
 **Brand Overview:**
-Relient es una plataforma digital orientada a la gestión y el monitoreo de procesos, equipos, componentes y recursos de los sectores industrial y minero. Su propuesta busca facilitar el acceso a la información operativa, el seguimiento de alertas y la gestión de los distintos módulos de la plataforma mediante interfaces claras y organizadas. La identidad visual se fundamenta en los conceptos de innovación, control y eficiencia, priorizando una presentación ordenada de los datos y una interacción intuitiva que permita a los usuarios realizar sus actividades de manera eficiente.
+Reliant es una plataforma digital orientada a la gestión y el monitoreo de procesos, equipos, componentes y recursos de los sectores industrial y minero. Su propuesta busca facilitar el acceso a la información operativa, el seguimiento de alertas y la gestión de los distintos módulos de la plataforma mediante interfaces claras y organizadas. La identidad visual se fundamenta en los conceptos de innovación, control y eficiencia, priorizando una presentación ordenada de los datos y una interacción intuitiva que permita a los usuarios realizar sus actividades de manera eficiente.
 
 - **Misión:** Facilitar la gestión y el monitoreo de procesos, equipos, componentes y recursos industriales y mineros mediante una plataforma digital que permita consultar información, realizar seguimiento de alertas y gestionar las operaciones de manera clara y eficiente.
 - **Visión:** Consolidarse como una plataforma de referencia para la gestión y el monitoreo de recursos en los sectores industrial y minero, promoviendo la eficiencia operativa mediante una experiencia digital organizada, confiable y accesible.
 
-<img src="assets/img/chapter-ii/needfinding/logo_grupo.png">
+<p align="center"><img src="assets/img/chapter-ii/needfinding/logo_grupo.png"></p>
 
 **Brand Name:**
-El nombre Relient representa la identidad de una solución digital orientada a la gestión y el monitoreo de procesos en los sectores industrial y minero. Su identidad busca transmitir confianza, control y eficiencia, atributos fundamentales para una plataforma que facilita la consulta de información operativa y el seguimiento de equipos, componentes y recursos. Estos conceptos se reflejan en una propuesta visual organizada y funcional, diseñada para mantener una presentación coherente en las diferentes interfaces del producto.
+El nombre Reliant representa la identidad de una solución digital orientada a la gestión y el monitoreo de procesos en los sectores industrial y minero. Su identidad busca transmitir confianza, control y eficiencia, atributos fundamentales para una plataforma que facilita la consulta de información operativa y el seguimiento de equipos, componentes y recursos. Estos conceptos se reflejan en una propuesta visual organizada y funcional, diseñada para mantener una presentación coherente en las diferentes interfaces del producto.
 
-<img src="assets/img/chapter-ii/needfinding/logo_producto.png">
+<p align="center"><img src="assets/img/chapter-ii/needfinding/logo_producto.png"></p>
 
 **Colores:**
-La selección de colores constituye un elemento fundamental para establecer la identidad visual de Relient y facilitar la identificación de los componentes de la interfaz. La paleta cromática utiliza el marrón oscuro en textos y elementos principales, mientras que el crema claro y el blanco se emplean en fondos y espacios visuales para mantener una presentación limpia y equilibrada. Asimismo, el naranja se utiliza para destacar botones, acciones principales y elementos relevantes, permitiendo establecer una jerarquía visual que facilite la identificación de las opciones disponibles y la interacción con los diferentes módulos de la plataforma.
+La selección de colores constituye un elemento fundamental para establecer la identidad visual de Reliant y facilitar la identificación de los componentes de la interfaz. La paleta cromática utiliza el marrón oscuro en textos y elementos principales, mientras que el crema claro y el blanco se emplean en fondos y espacios visuales para mantener una presentación limpia y equilibrada. Asimismo, el naranja se utiliza para destacar botones, acciones principales y elementos relevantes, permitiendo establecer una jerarquía visual que facilite la identificación de las opciones disponibles y la interacción con los diferentes módulos de la plataforma.
 
-<img src="assets/img/chapter-ii/needfinding/colors.png">
-<img src="assets/img/chapter-ii/needfinding/colors1.png">
-<img src="assets/img/chapter-ii/needfinding/colors2.png">
+<p align="center"><img src="assets/img/chapter-ii/needfinding/colors.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/colors1.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/colors2.png"></p>
 
 **Tipografía:**
-La tipografía cumple un papel importante en la legibilidad de los contenidos y en la jerarquización de la información presentada en las interfaces de Relient. Para el proyecto, se han seleccionado las fuentes Balsamiq Sans, Goblin One y Kaushan Script, cada una con una función específica dentro de la identidad visual. Balsamiq Sans se utiliza en textos generales, etiquetas y componentes informativos, favoreciendo la lectura del contenido. Goblin One se emplea en títulos y elementos destacados, mientras que Kaushan Script se reserva para elementos decorativos o distintivos de la identidad visual. Esta combinación permite diferenciar los niveles de información y mantener una presentación coherente tanto en la Landing Page como en la Web Application.
+La tipografía cumple un papel importante en la legibilidad de los contenidos y en la jerarquización de la información presentada en las interfaces de Reliant. Para el proyecto, se han seleccionado las fuentes Balsamiq Sans, Goblin One y Kaushan Script, cada una con una función específica dentro de la identidad visual. Balsamiq Sans se utiliza en textos generales, etiquetas y componentes informativos, favoreciendo la lectura del contenido. Goblin One se emplea en títulos y elementos destacados, mientras que Kaushan Script se reserva para elementos decorativos o distintivos de la identidad visual. Esta combinación permite diferenciar los niveles de información y mantener una presentación coherente tanto en la Landing Page como en la Web Application.
 
-<img src="assets/img/chapter-ii/needfinding/tipoletra.png">
+<p align="center"><img src="assets/img/chapter-ii/needfinding/tipoletra.png"></p>
 
 **Spacing:**
-El sistema de espaciado de Relient establece criterios para distribuir los elementos de la interfaz de manera ordenada y evitar la saturación visual. Se consideran separaciones consistentes entre títulos, textos, botones, formularios, tablas y componentes de navegación, con el objetivo de mejorar la legibilidad y facilitar la identificación de la información. La configuración de estos espacios se realiza mediante las herramientas de diseño de Figma, teniendo en cuenta la disposición de los componentes y las necesidades de las diferentes vistas de la plataforma.
+El sistema de espaciado de Reliant establece criterios para distribuir los elementos de la interfaz de manera ordenada y evitar la saturación visual. Se consideran separaciones consistentes entre títulos, textos, botones, formularios, tablas y componentes de navegación, con el objetivo de mejorar la legibilidad y facilitar la identificación de la información. La configuración de estos espacios se realiza mediante las herramientas de diseño de Figma, teniendo en cuenta la disposición de los componentes y las necesidades de las diferentes vistas de la plataforma.
 
 **Tone of Voice:**
-El tono de comunicación de Relient es profesional, claro, directo y orientado a la eficiencia operativa. Debido a que la plataforma está enfocada en la gestión y el monitoreo de procesos industriales y mineros, los mensajes deben transmitir confianza, control y confiabilidad. Para ello, se prioriza el uso de expresiones comprensibles y precisas, evitando términos excesivamente técnicos cuando no sean necesarios. Asimismo, las etiquetas, alertas y notificaciones deben informar de manera clara sobre las acciones disponibles y los estados de los registros, equipos y componentes, facilitando la interpretación de la información y la toma de decisiones.
+El tono de comunicación de Reliant es profesional, claro, directo y orientado a la eficiencia operativa. Debido a que la plataforma está enfocada en la gestión y el monitoreo de procesos industriales y mineros, los mensajes deben transmitir confianza, control y confiabilidad. Para ello, se prioriza el uso de expresiones comprensibles y precisas, evitando términos excesivamente técnicos cuando no sean necesarios. Asimismo, las etiquetas, alertas y notificaciones deben informar de manera clara sobre las acciones disponibles y los estados de los registros, equipos y componentes, facilitando la interpretación de la información y la toma de decisiones.
 
 ### 4.1.2. Web Style Guidelines
-El diseño web de Relient se basa en la claridad, la organización y la eficiencia en la gestión de procesos y recursos de los sectores industrial y minero. Las interfaces de la Landing Page y la Web Application se estructuran en secciones y módulos que facilitan la navegación, la consulta de información y el acceso a las funcionalidades disponibles. La Landing Page presenta las principales características de la plataforma e incorpora opciones de ingreso y registro, mientras que la Web Application organiza las funciones de gestión mediante una barra superior y un menú lateral que permite acceder a los módulos de Usuarios, Equipos, Componentes, Señales, Alertas, Reportes e Inventario.
+El diseño web de Reliant se basa en la claridad, la organización y la eficiencia en la gestión de procesos y recursos de los sectores industrial y minero. Las interfaces de la Landing Page y la Web Application se estructuran en secciones y módulos que facilitan la navegación, la consulta de información y el acceso a las funcionalidades disponibles. La Landing Page presenta las principales características de la plataforma e incorpora opciones de ingreso y registro, mientras que la Web Application organiza las funciones de gestión mediante una barra superior y un menú lateral que permite acceder a los módulos de Usuarios, Equipos, Componentes, Señales, Alertas, Reportes e Inventario.
 
 - **Imágenes:**
-En el diseño web de Relient, las imágenes y los recursos gráficos se utilizan de manera estratégica para reforzar la identidad visual del producto y facilitar la comprensión de sus funcionalidades. En la Landing Page, estos elementos permiten presentar la propuesta de valor de la plataforma y contextualizar su aplicación en los sectores industrial y minero. En la Web Application, se prioriza la presentación de información operativa mediante indicadores, estados y elementos visuales relacionados con los equipos, componentes y alertas. Se busca evitar el uso excesivo de imágenes decorativas que puedan distraer al usuario de las tareas principales, manteniendo una interfaz organizada y funcional.
+En el diseño web de Reliant, las imágenes y los recursos gráficos se utilizan de manera estratégica para reforzar la identidad visual del producto y facilitar la comprensión de sus funcionalidades. En la Landing Page, estos elementos permiten presentar la propuesta de valor de la plataforma y contextualizar su aplicación en los sectores industrial y minero. En la Web Application, se prioriza la presentación de información operativa mediante indicadores, estados y elementos visuales relacionados con los equipos, componentes y alertas. Se busca evitar el uso excesivo de imágenes decorativas que puedan distraer al usuario de las tareas principales, manteniendo una interfaz organizada y funcional.
 
 - **Botones:**
-Los botones de Relient siguen los criterios establecidos en las General Style Guidelines, utilizando una jerarquía visual que permite distinguir las acciones principales de las secundarias. El color naranja (#E2942E) se emplea para destacar acciones relevantes, como ingresar a la plataforma, registrar información, guardar cambios o iniciar una operación. Asimismo, los botones presentan estados visuales de interacción, como hover y focus, que proporcionan retroalimentación al usuario. Su ubicación y diseño buscan facilitar la identificación de las acciones disponibles y mantener una interacción coherente en los diferentes módulos de la plataforma.
+Los botones de Reliant siguen los criterios establecidos en las General Style Guidelines, utilizando una jerarquía visual que permite distinguir las acciones principales de las secundarias. El color naranja (#E2942E) se emplea para destacar acciones relevantes, como ingresar a la plataforma, registrar información, guardar cambios o iniciar una operación. Asimismo, los botones presentan estados visuales de interacción, como hover y focus, que proporcionan retroalimentación al usuario. Su ubicación y diseño buscan facilitar la identificación de las acciones disponibles y mantener una interacción coherente en los diferentes módulos de la plataforma.
 
 - **Pantallas Emergentes:**
-Las pantallas emergentes de Relient se utilizan para presentar mensajes de confirmación, advertencias e información relevante durante la interacción con la plataforma. Estos elementos permiten confirmar acciones importantes, especialmente aquellas relacionadas con la modificación o eliminación de registros de usuarios, equipos, componentes e información de inventario. Su contenido debe ser claro y directo, indicando la acción que se realizará y sus posibles consecuencias cuando corresponda. De esta manera, se busca reducir errores durante la gestión de la información y proporcionar al usuario mayor claridad antes de completar operaciones relevantes.
+Las pantallas emergentes de Reliant se utilizan para presentar mensajes de confirmación, advertencias e información relevante durante la interacción con la plataforma. Estos elementos permiten confirmar acciones importantes, especialmente aquellas relacionadas con la modificación o eliminación de registros de usuarios, equipos, componentes e información de inventario. Su contenido debe ser claro y directo, indicando la acción que se realizará y sus posibles consecuencias cuando corresponda. De esta manera, se busca reducir errores durante la gestión de la información y proporcionar al usuario mayor claridad antes de completar operaciones relevantes.
 
 - **Formularios:**
-Los formularios de Relient están diseñados para facilitar el registro y la actualización de información dentro de los distintos módulos de la Web Application. Cada campo cuenta con etiquetas visibles, una distribución ordenada y espacios adecuados que favorecen la lectura y la identificación de los datos requeridos. Asimismo, los mensajes de validación permiten informar al usuario cuando existen campos incompletos o datos incorrectos, orientándolo para corregir los errores antes de continuar con el proceso.
+Los formularios de Reliant están diseñados para facilitar el registro y la actualización de información dentro de los distintos módulos de la Web Application. Cada campo cuenta con etiquetas visibles, una distribución ordenada y espacios adecuados que favorecen la lectura y la identificación de los datos requeridos. Asimismo, los mensajes de validación permiten informar al usuario cuando existen campos incompletos o datos incorrectos, orientándolo para corregir los errores antes de continuar con el proceso.
 
 - **Tarjetas y componentes de información:**
 Las tarjetas se utilizan para presentar indicadores, estados de equipos, alertas y otros datos relevantes de manera organizada. Cada componente mantiene una estructura visual consistente que facilita la identificación y comparación de la información. Esta organización permite distribuir los registros y los indicadores en secciones diferenciadas, favoreciendo la consulta de datos y el seguimiento de la información operativa.
 
 - **Diseño adaptable:**
-Las interfaces web de Relient consideran la adaptación de sus componentes a diferentes tamaños de pantalla. En equipos de escritorio, la Web Application utiliza una estructura que combina una barra superior, un menú lateral y áreas de contenido destinadas a la gestión de registros e indicadores. En pantallas de menor tamaño, la distribución de los elementos debe ajustarse para conservar la legibilidad, evitar desbordamientos horizontales y facilitar la interacción con los botones, formularios y componentes de información.
+Las interfaces web de Reliant consideran la adaptación de sus componentes a diferentes tamaños de pantalla. En equipos de escritorio, la Web Application utiliza una estructura que combina una barra superior, un menú lateral y áreas de contenido destinadas a la gestión de registros e indicadores. En pantallas de menor tamaño, la distribución de los elementos debe ajustarse para conservar la legibilidad, evitar desbordamientos horizontales y facilitar la interacción con los botones, formularios y componentes de información.
 
 - **Accesibilidad:**
-El diseño web de Relient considera criterios de accesibilidad orientados a facilitar la comprensión y el uso de la plataforma. Para ello, se prioriza el contraste entre el texto y el fondo, el uso de etiquetas descriptivas en los formularios, los nombres comprensibles en los botones y una jerarquía visual clara. Asimismo, los estados de interacción deben permitir identificar los elementos activos y las opciones disponibles, contribuyendo a una experiencia de uso más clara y consistente.
+El diseño web de Reliant considera criterios de accesibilidad orientados a facilitar la comprensión y el uso de la plataforma. Para ello, se prioriza el contraste entre el texto y el fondo, el uso de etiquetas descriptivas en los formularios, los nombres comprensibles en los botones y una jerarquía visual clara. Asimismo, los estados de interacción deben permitir identificar los elementos activos y las opciones disponibles, contribuyendo a una experiencia de uso más clara y consistente.
 
 ## 4.2. Information Architecture
-La arquitectura de información de Relient permite organizar y estructurar los contenidos de la plataforma para facilitar la identificación de las funcionalidades y el acceso a la información requerida. Debido a que la solución está orientada a la gestión y el monitoreo de procesos, equipos, componentes y recursos de los sectores industrial y minero, resulta fundamental establecer una distribución clara de los módulos y las acciones disponibles. La Landing Page presenta la propuesta de valor y las principales características del producto, mientras que la Web Application permite consultar y administrar información operativa mediante módulos específicos. Esta organización facilita la navegación y contribuye a una experiencia de usuario coherente durante la interacción con las diferentes interfaces de la plataforma.
+La arquitectura de información de Reliant permite organizar y estructurar los contenidos de la plataforma para facilitar la identificación de las funcionalidades y el acceso a la información requerida. Debido a que la solución está orientada a la gestión y el monitoreo de procesos, equipos, componentes y recursos de los sectores industrial y minero, resulta fundamental establecer una distribución clara de los módulos y las acciones disponibles. La Landing Page presenta la propuesta de valor y las principales características del producto, mientras que la Web Application permite consultar y administrar información operativa mediante módulos específicos. Esta organización facilita la navegación y contribuye a una experiencia de usuario coherente durante la interacción con las diferentes interfaces de la plataforma.
 
 ### 4.2.1. Organization System
-El sistema de organización de Relient está diseñado para estructurar visualmente los contenidos y facilitar el acceso a las diferentes funcionalidades de la plataforma mediante una organización jerárquica y temática.
-En la Landing Page, el contenido se distribuye desde la presentación inicial de InnovaCorp y la propuesta de valor de Relient hacia las secciones informativas About Us, How does it work?, FAQs y Contact. Esta estructura permite que los usuarios conozcan la solución, comprendan su funcionamiento y encuentren información adicional de manera ordenada.
+El sistema de organización de Reliant está diseñado para estructurar visualmente los contenidos y facilitar el acceso a las diferentes funcionalidades de la plataforma mediante una organización jerárquica y temática.
+En la Landing Page, el contenido se distribuye desde la presentación inicial de InnovaCorp y la propuesta de valor de Reliant hacia las secciones informativas About Us, How does it work?, FAQs y Contact. Esta estructura permite que los usuarios conozcan la solución, comprendan su funcionamiento y encuentren información adicional de manera ordenada.
 En la Web Application, la información se organiza en módulos correspondientes a las principales funciones de gestión y monitoreo: Usuarios, Equipos, Componentes, Señales, Alertas, Reportes e Inventario. Cada módulo agrupa los registros y las operaciones relacionadas con su finalidad, facilitando la consulta y administración de la información.
 Asimismo, las vistas de gestión presentan los elementos de acuerdo con su importancia y función, priorizando los datos relevantes y las acciones disponibles. En los procesos de registro y actualización, la información se organiza mediante campos y acciones claramente identificados, permitiendo ingresar datos, validar la información y confirmar las operaciones correspondientes. Esta estructura busca mantener una presentación ordenada y facilitar el seguimiento de las actividades realizadas en la plataforma.
 
 ### 4.2.2. Labeling System
-El sistema de etiquetado de Relient establece denominaciones claras y consistentes para identificar las secciones, los módulos y las acciones disponibles en la plataforma. Los nombres utilizados deben permitir que los usuarios comprendan la finalidad de cada elemento antes de interactuar con él.
-En la Landing Page, las etiquetas principales incluyen Home, About Us, How does it work?, FAQs y Contact. Estas denominaciones permiten distinguir las secciones informativas y facilitan el acceso a la información relacionada con la propuesta de valor y el funcionamiento de Relient. Asimismo, las opciones Login, Sign Up y Empezar ya permiten identificar los accesos relacionados con la interacción inicial con la plataforma.
+El sistema de etiquetado de Reliant establece denominaciones claras y consistentes para identificar las secciones, los módulos y las acciones disponibles en la plataforma. Los nombres utilizados deben permitir que los usuarios comprendan la finalidad de cada elemento antes de interactuar con él.
+En la Landing Page, las etiquetas principales incluyen Home, About Us, How does it work?, FAQs y Contact. Estas denominaciones permiten distinguir las secciones informativas y facilitan el acceso a la información relacionada con la propuesta de valor y el funcionamiento de Reliant. Asimismo, las opciones Login, Sign Up y Empezar ya permiten identificar los accesos relacionados con la interacción inicial con la plataforma.
 En la Web Application, las etiquetas corresponden a los módulos Usuarios, Equipos, Componentes, Señales, Alertas, Reportes e Inventario. Cada denominación identifica el tipo de información que puede consultarse o administrarse en la sección correspondiente.
 Las acciones disponibles utilizan etiquetas orientadas a las tareas, como Registrar, Guardar, Editar, Consultar, Filtrar y Generar reporte, según las funcionalidades definidas para cada módulo. La utilización consistente de estas denominaciones permite reducir ambigüedades, facilitar la comprensión de las opciones y mantener una experiencia de navegación uniforme.
 
 ### 4.2.3. SEO Tags and Meta Tags
-Las etiquetas SEO y los metadatos de Relient permiten describir el contenido de las páginas web e identificar su propósito mediante información incorporada en el código HTML. Estos elementos contribuyen a comunicar la identidad de InnovaCorp, la finalidad de Relient y su relación con la gestión y el monitoreo de procesos industriales. Para ello, se definen los atributos correspondientes a la codificación, la visualización en dispositivos, el título, la descripción, las palabras clave y la autoría de cada interfaz.
+Las etiquetas SEO y los metadatos de Reliant permiten describir el contenido de las páginas web e identificar su propósito mediante información incorporada en el código HTML. Estos elementos contribuyen a comunicar la identidad de InnovaCorp, la finalidad de Reliant y su relación con la gestión y el monitoreo de procesos industriales. Para ello, se definen los atributos correspondientes a la codificación, la visualización en dispositivos, el título, la descripción, las palabras clave y la autoría de cada interfaz.
 Las etiquetas propuestas para la Landing Page y la Web Application se presentan en los siguientes cuadros.
 
 | Módulo | Criterios de búsqueda | Funcionalidad |
@@ -2349,7 +2309,7 @@ Las etiquetas propuestas para la Landing Page y la Web Application se presentan 
 |---|---|---|
 | Landing Page | Home | Permite regresar a la sección de inicio. |
 | Landing Page | About Us | Presenta información sobre InnovaCorp. |
-| Landing Page | How does it work? | Explica el funcionamiento de Relient. |
+| Landing Page | How does it work? | Explica el funcionamiento de Reliant. |
 | Landing Page | FAQs | Presenta respuestas a preguntas frecuentes. |
 | Landing Page | Contact | Facilita el acceso a la información de contacto. |
 | Landing Page | Login | Permite acceder a la plataforma. |
@@ -2360,66 +2320,84 @@ Las etiquetas propuestas para la Landing Page y la Web Application se presentan 
 | Web Application | Pie de página | Complementa la navegación con información institucional y enlaces adicionales. |
 
 Los valores presentados constituyen una propuesta inicial que debe verificarse durante la implementación. El atributo Charset define la codificación de caracteres, mientras que Viewport permite adaptar la visualización a las dimensiones del dispositivo. El atributo Title establece el título de la página y Description proporciona una síntesis de su contenido. Por su parte, Keywords reúne términos relacionados con la solución y Author identifica al responsable del contenido.
-El atributo CSS Link representa la referencia a la hoja de estilos utilizada en la interfaz y debe ajustarse a la ruta real del archivo dentro del proyecto. Estos metadatos se incorporan en el elemento head del documento HTML. En la Landing Page, se prioriza la presentación de la propuesta de valor de Relient, mientras que en la Web Application se describen las principales funciones de gestión y monitoreo.
+El atributo CSS Link representa la referencia a la hoja de estilos utilizada en la interfaz y debe ajustarse a la ruta real del archivo dentro del proyecto. Estos metadatos se incorporan en el elemento head del documento HTML. En la Landing Page, se prioriza la presentación de la propuesta de valor de Reliant, mientras que en la Web Application se describen las principales funciones de gestión y monitoreo.
 
 ### 4.2.4. Searching Systems
-El sistema de búsqueda de Relient está orientado a facilitar la localización de información de acuerdo con las necesidades de cada interfaz.
+El sistema de búsqueda de Reliant está orientado a facilitar la localización de información de acuerdo con las necesidades de cada interfaz.
 En la Landing Page, no se considera necesaria una barra de búsqueda principal, debido a que el contenido se distribuye en secciones informativas accesibles mediante la navegación superior. Los usuarios pueden dirigirse a About Us, How does it work?, FAQs y Contact para encontrar información sobre el producto y su funcionamiento.
 En la Web Application, la búsqueda adquiere mayor relevancia debido a la cantidad de registros relacionados con usuarios, equipos, componentes, señales, alertas, reportes e inventario. Por ello, se consideran campos de búsqueda y filtros que permitan localizar información específica según las características de cada módulo.
 Los criterios de búsqueda pueden incluir nombres, códigos, categorías, estados y fechas, siempre que estos atributos correspondan a los registros gestionados. Los resultados deben presentarse de manera organizada para facilitar la identificación de los elementos y el acceso a sus detalles. Asimismo, los filtros deben contar con etiquetas comprensibles y permitir modificar o restablecer los criterios seleccionados, facilitando la consulta de información sin generar complejidad innecesaria.
 
 ### 4.2.5. Navigation Systems
-El sistema de navegación de Relient permite desplazarse entre las diferentes secciones de la Landing Page y los módulos de la Web Application mediante una estructura clara y consistente.
+El sistema de navegación de Reliant permite desplazarse entre las diferentes secciones de la Landing Page y los módulos de la Web Application mediante una estructura clara y consistente.
 En la Landing Page, la barra de navegación se ubica en la parte superior e incluye los accesos Home, About Us, How does it work?, FAQs y Contact. Estos enlaces permiten acceder a las secciones informativas correspondientes. Además, las opciones Login, Sign Up y Empezar ya facilitan el acceso a los puntos de interacción definidos en los mockups. El pie de página complementa la navegación mediante información institucional y enlaces relacionados con el contenido del sitio.
 En la Web Application, la navegación se organiza mediante una barra superior y un menú lateral que permite acceder a los módulos Usuarios, Equipos, Componentes, Señales, Alertas, Reportes e Inventario. Esta distribución facilita el acceso a las funcionalidades de gestión y monitoreo, manteniendo una estructura reconocible entre las diferentes vistas.
-Asimismo, la navegación debe permitir que los usuarios identifiquen la sección en la que se encuentran y comprendan las acciones disponibles en cada módulo. En las pantallas de menor tamaño, los elementos de navegación deben reorganizarse para conservar su legibilidad y facilitar la interacción. De esta manera, Relient busca ofrecer recorridos claros y consistentes, desde la consulta inicial de información hasta la gestión de los registros dentro de la plataforma.
+Asimismo, la navegación debe permitir que los usuarios identifiquen la sección en la que se encuentran y comprendan las acciones disponibles en cada módulo. En las pantallas de menor tamaño, los elementos de navegación deben reorganizarse para conservar su legibilidad y facilitar la interacción. De esta manera, Reliant busca ofrecer recorridos claros y consistentes, desde la consulta inicial de información hasta la gestión de los registros dentro de la plataforma.
 
 ## 4.3. Landing Page UI Design
-El diseño de la interfaz de la Landing Page de Relient representa visualmente la propuesta de valor de InnovaCorp y comunica las principales características de la solución orientada a la gestión y el monitoreo de procesos industriales. Su desarrollo considera los lineamientos visuales y la arquitectura de información definidos previamente, con el propósito de mantener una presentación coherente, facilitar la comprensión de los contenidos y permitir el acceso a las principales secciones del producto.
-La propuesta contempla las interfaces para escritorio y dispositivos móviles, organizando la información en cuatro secciones principales: Inicio, Servicios, Planes y Quiénes somos. Esta estructura permite presentar la propuesta de valor, describir las funcionalidades de Relient, comunicar las alternativas disponibles y dar a conocer la identidad de InnovaCorp mediante una distribución clara y consistente.
+El diseño de la interfaz de la Landing Page de Reliant representa visualmente la propuesta de valor de InnovaCorp y comunica las principales características de la solución orientada a la gestión y el monitoreo de procesos industriales. Su desarrollo considera los lineamientos visuales y la arquitectura de información definidos previamente, con el propósito de mantener una presentación coherente, facilitar la comprensión de los contenidos y permitir el acceso a las principales secciones del producto.
+La propuesta contempla las interfaces para escritorio y dispositivos móviles, organizando la información en cuatro secciones principales: Inicio, Servicios, Planes y Quiénes somos. Esta estructura permite presentar la propuesta de valor, describir las funcionalidades de Reliant, comunicar las alternativas disponibles y dar a conocer la identidad de InnovaCorp mediante una distribución clara y consistente.
 
 ### 4.3.1. Landing Page Wireframe
-Los wireframes de la Landing Page de Relient permiten definir la estructura y distribución de los elementos que conforman la interfaz antes de establecer su diseño visual definitivo. Mediante estas representaciones se identifican la ubicación del logotipo, los elementos de navegación, los bloques de contenido, las imágenes y los botones de acción. Su elaboración permite revisar la organización de las secciones y establecer una base estructural para el desarrollo de los mockups.
+Los wireframes de la Landing Page de Reliant permiten definir la estructura y distribución de los elementos que conforman la interfaz antes de establecer su diseño visual definitivo. Mediante estas representaciones se identifican la ubicación del logotipo, los elementos de navegación, los bloques de contenido, las imágenes y los botones de acción. Su elaboración permite revisar la organización de las secciones y establecer una base estructural para el desarrollo de los mockups.
 
 **Desktop Web Browser**
 Los wireframes para escritorio presentan una distribución horizontal que permite organizar los elementos de navegación en la parte superior y distribuir los contenidos en secciones diferenciadas. La estructura contempla las vistas de Inicio, Servicios, Planes y Quiénes somos, manteniendo una secuencia que facilita el recorrido por la información. Asimismo, se considera la ubicación de los elementos principales y del pie de página para conservar una organización uniforme a lo largo de la Landing Page.
 
-<img src="assets/img/chapter-ii/needfinding/landing-wireframe1.png">
-<img src="assets/img/chapter-ii/needfinding/landing-wireframe2.png">
-<img src="assets/img/chapter-ii/needfinding/landing-wireframe3.png">
-<img src="assets/img/chapter-ii/needfinding/landing-wireframe4.png">
+<p align="center"><img src="assets/img/chapter-ii/needfinding/landing-wireframe1.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/landing-wireframe2.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/landing-wireframe3.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/landing-wireframe4.png"></p>
 
 **Mobile Web Browser**
 Los wireframes para dispositivos móviles adaptan la estructura de la Landing Page a las dimensiones reducidas de la pantalla, reorganizando los contenidos en una disposición vertical. La navegación se concentra en la parte superior, mientras que los bloques informativos, las imágenes y las acciones se distribuyen de manera secuencial. Esta organización permite conservar la relación entre las secciones de escritorio y móvil, priorizando la legibilidad y el acceso a los contenidos sin sobrecargar el espacio disponible.
 
-<img src="assets/img/chapter-ii/needfinding/mobile-wireframe1.png">
-<img src="assets/img/chapter-ii/needfinding/mobile-wireframe2.png">
-<img src="assets/img/chapter-ii/needfinding/mobile-wireframe3.png">
-<img src="assets/img/chapter-ii/needfinding/mobile-wireframe4.png">
+<p align="center"><img src="assets/img/chapter-ii/needfinding/mobile-wireframe1.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/mobile-wireframe2.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/mobile-wireframe3.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/mobile-wireframe4.png"></p>
 
 ### 4.3.2. Landing Page Mock-up
-Los mockups de la Landing Page de Relient presentan la propuesta visual de las interfaces mediante la aplicación de las tipografías, los colores, las imágenes y los componentes definidos en las General Style Guidelines. Estas representaciones permiten evaluar la jerarquía visual, la distribución de los contenidos y la consistencia de los elementos de navegación antes de la implementación de la interfaz.
+Los mockups de la Landing Page de Reliant presentan la propuesta visual de las interfaces mediante la aplicación de las tipografías, los colores, las imágenes y los componentes definidos en las General Style Guidelines. Estas representaciones permiten evaluar la jerarquía visual, la distribución de los contenidos y la consistencia de los elementos de navegación antes de la implementación de la interfaz.
 
-<img src="assets/img/chapter-ii/needfinding/landing-mockup1.png">
-<img src="assets/img/chapter-ii/needfinding/landing-mockup2.png">
-<img src="assets/img/chapter-ii/needfinding/landing-mockup3.png">
-<img src="assets/img/chapter-ii/needfinding/landing-mockup4.png">
+<p align="center"><img src="assets/img/chapter-ii/needfinding/landing-mockup1.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/landing-mockup2.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/landing-mockup3.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/landing-mockup4.png"></p>
 
 **Mobile Web Browser**
-Los mockups para dispositivos móviles mantienen la identidad visual de Relient y adaptan la presentación de los contenidos a una estructura vertical. La parte superior incorpora el logotipo y un menú desplegable que permite acceder a las diferentes secciones. En la pantalla de Inicio se presenta el mensaje principal, una descripción breve de la propuesta de valor, un botón de acción y una imagen representativa del monitoreo industrial.
+Los mockups para dispositivos móviles mantienen la identidad visual de Reliant y adaptan la presentación de los contenidos a una estructura vertical. La parte superior incorpora el logotipo y un menú desplegable que permite acceder a las diferentes secciones. En la pantalla de Inicio se presenta el mensaje principal, una descripción breve de la propuesta de valor, un botón de acción y una imagen representativa del monitoreo industrial.
 La sección Servicios distribuye las funcionalidades en bloques informativos y complementa la descripción con una imagen relacionada con los procesos industriales. En la sección Planes, las alternativas se presentan mediante tarjetas verticales que facilitan la consulta de sus características y precios. Finalmente, la pantalla Quiénes somos incorpora una imagen principal y tarjetas diferenciadas para presentar la misión, la visión y los valores de InnovaCorp. El pie de página conserva la información institucional y los enlaces complementarios, adaptándose al espacio disponible en dispositivos móviles.
 
-<img src="assets/img/chapter-ii/needfinding/mobile-mockup1.png">
-<img src="assets/img/chapter-ii/needfinding/mobile-mockup2.png">
-<img src="assets/img/chapter-ii/needfinding/mobile-mockup3.png">
-<img src="assets/img/chapter-ii/needfinding/mobile-mockup4.png">
+<p align="center"><img src="assets/img/chapter-ii/needfinding/mobile-mockup1.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/mobile-mockup2.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/mobile-mockup3.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/mobile-mockup4.png"></p>
+
+**Landing Page 2.1.0 (AV2).** En el Sprint 3 el Landing Page se rediseñó con la identidad visual definitiva de InnovaCorp (tipografía Poppins, paleta azul marino `#060C1F` y naranja `#BF6B0C`, logotipo y fotografía del taller HVOF) a partir de los mock-ups elaborados en Figma por Rivera Aguilar, Scarlet Josefina, conservando la internacionalización, las páginas legales y las secciones por segmento de la versión 2.0.0. Los call-to-action de cada segmento abren el registro de la Web Application con el tipo de organización correspondiente. Diseño en Figma: [https://www.figma.com/design/eJgrioPA9K4FTQD0pXAUI1/Mockup-Innovacor](https://www.figma.com/design/eJgrioPA9K4FTQD0pXAUI1/Mockup-Innovacor).
+
+<p align="center"><img src="assets/img/4.chapter-iv/4.3.landing-page-ui-design/landing-2.1.0-desktop.png" alt="Landing Page 2.1.0 en Desktop Web Browser"></p>
+
+<p align="center"><img src="assets/img/4.chapter-iv/4.3.landing-page-ui-design/landing-2.1.0-mobile.png" alt="Landing Page 2.1.0 en Mobile Web Browser" width="360"></p>
 
 ## 4.4. Web Applications UX/UI Design
-El diseño UX/UI de la Web Application de Relient, desarrollada por InnovaCorp, se basa en los resultados obtenidos durante el proceso de investigación de usuarios, los User Stories definidos en el Product Backlog y los lineamientos visuales establecidos previamente. Su propósito es representar la estructura de las interfaces y facilitar la comprensión de las funcionalidades relacionadas con la gestión y el monitoreo de procesos industriales.
-La propuesta contempla la organización de las pantallas, los componentes de interacción y los recorridos que permiten acceder a las diferentes funcionalidades de la plataforma. Para ello, se utilizan wireframes, wireflow diagrams, mockups y user flow diagrams, que permiten analizar la distribución de los elementos y la secuencia de las acciones. Estos recursos consideran los módulos de Usuarios, Equipos, Componentes, Señales, Alertas, Reportes e Inventario, manteniendo una estructura visual coherente con la identidad de Relient.
+El diseño UX/UI de la Web Application de Reliant, desarrollada por InnovaCorp, se basa en los resultados obtenidos durante el proceso de investigación de usuarios, los User Stories definidos en el Product Backlog y los lineamientos visuales establecidos previamente. Su propósito es representar la estructura de las interfaces y facilitar la comprensión de las funcionalidades relacionadas con la gestión y el monitoreo de procesos industriales.
+La propuesta contempla la organización de las pantallas, los componentes de interacción y los recorridos que permiten acceder a las diferentes funcionalidades de la plataforma. Para ello, se utilizan wireframes, wireflow diagrams, mockups y user flow diagrams, que permiten analizar la distribución de los elementos y la secuencia de las acciones. Estos recursos consideran los módulos de Usuarios, Equipos, Componentes, Señales, Alertas, Reportes e Inventario, manteniendo una estructura visual coherente con la identidad de Reliant.
 
 ### 4.4.1. Web Applications Wireframes
-Los wireframes de la Web Application de Relient presentan la estructura preliminar de las pantallas de la plataforma antes de incorporar los estilos visuales definitivos. Estas representaciones permiten identificar la ubicación de los elementos de navegación, los formularios, los botones, las tablas y las áreas de contenido, facilitando la revisión de la organización de las interfaces.
+Los wireframes de la Web Application de Reliant presentan la estructura preliminar de las pantallas de la plataforma antes de incorporar los estilos visuales definitivos. Estas representaciones permiten identificar la ubicación de los elementos de navegación, los formularios, los botones, las tablas y las áreas de contenido, facilitando la revisión de la organización de las interfaces.
 Para facilitar su análisis, las pantallas se presentan en el orden establecido en el diseño original y se agrupan de acuerdo con su secuencia. Esta organización permite observar la evolución de la estructura desde las pantallas iniciales hasta las vistas relacionadas con la gestión de información y las operaciones de la plataforma.
 
 **Desktop Web Browser**
@@ -2427,76 +2405,95 @@ Para facilitar su análisis, las pantallas se presentan en el orden establecido 
 **Pantallas iniciales y acceso a la plataforma**
 Las primeras pantallas permiten examinar la distribución de los elementos de acceso y los componentes iniciales de la interfaz. En esta etapa se considera la ubicación de los campos de entrada, las etiquetas y los botones, procurando que los elementos necesarios para interactuar con la plataforma sean reconocibles y mantengan una disposición ordenada.
 
-<img src="assets/img/chapter-ii/needfinding/wireframe1.png">
-<img src="assets/img/chapter-ii/needfinding/wireframe2.png">
-<img src="assets/img/chapter-ii/needfinding/wireframe3.png">
-<img src="assets/img/chapter-ii/needfinding/wireframe4.png">
-<img src="assets/img/chapter-ii/needfinding/wireframe5.png">
+<p align="center"><img src="assets/img/chapter-ii/needfinding/wireframe1.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/wireframe2.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/wireframe3.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/wireframe4.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/wireframe5.png"></p>
 
 **Pantallas de consulta y gestión de información**
 Las siguientes pantallas permiten observar la distribución de los contenidos y los componentes destinados a la consulta y gestión de información. La organización de los campos, las áreas de contenido y los controles busca facilitar la identificación de los datos y las acciones disponibles en cada vista.
 
-<img src="assets/img/chapter-ii/needfinding/wireframe6.png">
-<img src="assets/img/chapter-ii/needfinding/wireframe7.png">
-<img src="assets/img/chapter-ii/needfinding/wireframe8.png">
-<img src="assets/img/chapter-ii/needfinding/wireframe9.png">
-<img src="assets/img/chapter-ii/needfinding/wireframe10.png">
+<p align="center"><img src="assets/img/chapter-ii/needfinding/wireframe6.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/wireframe7.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/wireframe8.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/wireframe9.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/wireframe10.png"></p>
 
 **Pantallas de registro y operaciones**
 En este grupo se presentan las estructuras correspondientes a las pantallas siguientes del diseño. Los wireframes permiten revisar la ubicación de los campos, las etiquetas y los botones asociados con las operaciones, manteniendo una distribución uniforme entre los diferentes elementos de la interfaz.
 
-<img src="assets/img/chapter-ii/needfinding/wireframe11.png">
-<img src="assets/img/chapter-ii/needfinding/wireframe12.png">
-<img src="assets/img/chapter-ii/needfinding/wireframe13.png">
-<img src="assets/img/chapter-ii/needfinding/wireframe14.png">
-<img src="assets/img/chapter-ii/needfinding/wireframe15.png">
+<p align="center"><img src="assets/img/chapter-ii/needfinding/wireframe11.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/wireframe12.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/wireframe13.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/wireframe14.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/wireframe15.png"></p>
 
 **Pantallas complementarias de la plataforma**
-Las últimas pantallas completan la representación estructural de la Web Application. Su revisión permite observar la disposición de los componentes restantes y comprobar la consistencia de la estructura visual a lo largo de las distintas vistas de Relient.
+Las últimas pantallas completan la representación estructural de la Web Application. Su revisión permite observar la disposición de los componentes restantes y comprobar la consistencia de la estructura visual a lo largo de las distintas vistas de Reliant.
 
-<img src="assets/img/chapter-ii/needfinding/wireframe16.png">
-<img src="assets/img/chapter-ii/needfinding/wireframe17.png">
-<img src="assets/img/chapter-ii/needfinding/wireframe18.png">
-<img src="assets/img/chapter-ii/needfinding/wireframe19.png">
-<img src="assets/img/chapter-ii/needfinding/wireframe20.png">
-<img src="assets/img/chapter-ii/needfinding/wireframe21.png">
+<p align="center"><img src="assets/img/chapter-ii/needfinding/wireframe16.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/wireframe17.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/wireframe18.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/wireframe19.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/wireframe20.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/wireframe21.png"></p>
 
 ### 4.4.2. Web Applications Wireflow Diagrams
-Los wireflow diagrams de Relient representan la conexión entre las pantallas de la Web Application y las transiciones que permiten al usuario desplazarse entre ellas. Estos diagramas combinan la estructura de los wireframes con las conexiones que indican la secuencia de navegación, facilitando la comprensión de cómo se relacionan las diferentes interfaces durante la interacción con la plataforma.
-La representación se basa en los wireframes definidos para Relient y conserva la distribución de las pantallas y las conexiones establecidas en el diseño original. Para facilitar su lectura, se presenta primero el diagrama completo y, posteriormente, sus ampliaciones, que permiten examinar con mayor detalle las relaciones entre las interfaces.
+Los wireflow diagrams de Reliant representan la conexión entre las pantallas de la Web Application y las transiciones que permiten al usuario desplazarse entre ellas. Estos diagramas combinan la estructura de los wireframes con las conexiones que indican la secuencia de navegación, facilitando la comprensión de cómo se relacionan las diferentes interfaces durante la interacción con la plataforma.
+La representación se basa en los wireframes definidos para Reliant y conserva la distribución de las pantallas y las conexiones establecidas en el diseño original. Para facilitar su lectura, se presenta primero el diagrama completo y, posteriormente, sus ampliaciones, que permiten examinar con mayor detalle las relaciones entre las interfaces.
 
 **Diagrama general del recorrido**
-La siguiente imagen presenta el wireflow completo de Relient, mostrando la distribución de las pantallas y las conexiones entre ellas. Esta vista permite comprender la estructura general de los recorridos de navegación definidos para la Web Application.
+La siguiente imagen presenta el wireflow completo de Reliant, mostrando la distribución de las pantallas y las conexiones entre ellas. Esta vista permite comprender la estructura general de los recorridos de navegación definidos para la Web Application.
 
-<img src="assets/img/chapter-ii/needfinding/wireflow.png">
+<p align="center"><img src="assets/img/chapter-ii/needfinding/wireflow.png"></p>
 
 **Detalle 1: Pantallas iniciales y acceso**
 Este primer detalle permite observar las pantallas iniciales del recorrido y las conexiones establecidas entre las interfaces correspondientes. Su propósito es facilitar la revisión de la secuencia de navegación representada en esta parte del diagrama.
 
-<img src="assets/img/chapter-ii/needfinding/wireflow1.png">
+<p align="center"><img src="assets/img/chapter-ii/needfinding/wireflow1.png"></p>
 
 **Detalle 2: Transiciones entre interfaces**
 Este segundo detalle amplía otra sección del wireflow para facilitar la identificación de las pantallas conectadas y la dirección de las transiciones. Permite examinar cómo continúa el recorrido representado en el diseño original.
 
-<img src="assets/img/chapter-ii/needfinding/wireflow2.png">
+<p align="center"><img src="assets/img/chapter-ii/needfinding/wireflow2.png"></p>
 
 **Detalle 3: Continuidad de la navegación**
 El tercer detalle permite revisar las conexiones entre las pantallas que forman parte de la siguiente sección del recorrido. Esta ampliación facilita la lectura de las relaciones entre las interfaces sin perder de vista la secuencia establecida en el diagrama general.
 
-<img src="assets/img/chapter-ii/needfinding/wireflow3.png">
+<p align="center"><img src="assets/img/chapter-ii/needfinding/wireflow3.png"></p>
 
 **Detalle 4: Conexiones entre pantallas**
 El cuarto detalle muestra otra parte de las conexiones definidas en el wireflow. Su revisión permite identificar la continuidad de los recorridos y la relación entre las diferentes estructuras de interfaz representadas.
 
-<img src="assets/img/chapter-ii/needfinding/wireflow4.png">
+<p align="center"><img src="assets/img/chapter-ii/needfinding/wireflow4.png"></p>
 
 **Detalle 5: Pantallas finales del recorrido**
-El último detalle complementa la visualización del diagrama y permite examinar la parte final de las conexiones representadas. En conjunto con las ampliaciones anteriores, facilita la revisión integral de la navegación planteada para Relient.
+El último detalle complementa la visualización del diagrama y permite examinar la parte final de las conexiones representadas. En conjunto con las ampliaciones anteriores, facilita la revisión integral de la navegación planteada para Reliant.
 
-<img src="assets/img/chapter-ii/needfinding/wireflow5.png">
+<p align="center"><img src="assets/img/chapter-ii/needfinding/wireflow5.png"></p>
 
 ### 4.4.3. Web Applications Mock-ups
-Los mockups de la Web Application de Relient presentan las pantallas con los estilos visuales aplicados, incorporando la paleta cromática, las tipografías, los botones, los formularios y los demás componentes definidos en las General Style Guidelines. Estas representaciones permiten evaluar la jerarquía visual, la distribución de los contenidos y la consistencia de las interfaces antes de su implementación.
+
+Los mock-ups de la Web Application se elaboraron en Figma y se actualizaron en el Sprint 3 con la identidad visual de InnovaCorp aplicada en la versión 2.0.0: [https://www.figma.com/design/eJgrioPA9K4FTQD0pXAUI1/Mockup-Innovacor](https://www.figma.com/design/eJgrioPA9K4FTQD0pXAUI1/Mockup-Innovacor).
+Los mockups de la Web Application de Reliant presentan las pantallas con los estilos visuales aplicados, incorporando la paleta cromática, las tipografías, los botones, los formularios y los demás componentes definidos en las General Style Guidelines. Estas representaciones permiten evaluar la jerarquía visual, la distribución de los contenidos y la consistencia de las interfaces antes de su implementación.
 Las pantallas se presentan en el mismo orden que los wireframes para facilitar la comparación entre la estructura preliminar y la propuesta visual. Esta correspondencia permite observar cómo se aplican los lineamientos de diseño a las diferentes vistas de la plataforma.
 
 **Desktop Web Browser**
@@ -2504,87 +2501,104 @@ Las pantallas se presentan en el mismo orden que los wireframes para facilitar l
 **Pantallas iniciales y acceso a la plataforma**
 Las primeras pantallas permiten examinar la distribución de los elementos de acceso y los componentes iniciales de la interfaz. En esta etapa se considera la ubicación de los campos de entrada, las etiquetas y los botones, procurando que los elementos necesarios para interactuar con la plataforma sean reconocibles y mantengan una disposición ordenada.
 
-<img src="assets/img/chapter-ii/needfinding/mockup1.png">
-<img src="assets/img/chapter-ii/needfinding/mockup2.png">
-<img src="assets/img/chapter-ii/needfinding/mockup3.png">
-<img src="assets/img/chapter-ii/needfinding/mockup4.png">
-<img src="assets/img/chapter-ii/needfinding/mockup5.png">
+<p align="center"><img src="assets/img/chapter-ii/needfinding/mockup1.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/mockup2.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/mockup3.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/mockup4.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/mockup5.png"></p>
 
 **Pantallas de consulta y gestión de información**
 Estas pantallas permiten observar la organización de la información y los componentes destinados a facilitar la consulta y gestión de los datos dentro de la plataforma.
 
-<img src="assets/img/chapter-ii/needfinding/mockup6.png">
-<img src="assets/img/chapter-ii/needfinding/mockup7.png">
-<img src="assets/img/chapter-ii/needfinding/mockup8.png">
-<img src="assets/img/chapter-ii/needfinding/mockup9.png">
-<img src="assets/img/chapter-ii/needfinding/mockup10.png">
+<p align="center"><img src="assets/img/chapter-ii/needfinding/mockup6.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/mockup7.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/mockup8.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/mockup9.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/mockup10.png"></p>
 
 **Pantallas de registro y operaciones**
 Estas pantallas muestran la disposición de los formularios y componentes utilizados para registrar información y realizar operaciones dentro de la plataforma. La distribución de los elementos busca facilitar la identificación de las acciones disponibles y mantener una estructura visual coherente.
 
-<img src="assets/img/chapter-ii/needfinding/mockup11.png">
-<img src="assets/img/chapter-ii/needfinding/mockup12.png">
-<img src="assets/img/chapter-ii/needfinding/mockup13.png">
-<img src="assets/img/chapter-ii/needfinding/mockup14.png">
-<img src="assets/img/chapter-ii/needfinding/mockup15.png">
+<p align="center"><img src="assets/img/chapter-ii/needfinding/mockup11.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/mockup12.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/mockup13.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/mockup14.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/mockup15.png"></p>
 
 **Pantallas complementarias de la plataforma**
-Las últimas pantallas muestran la continuidad de los criterios visuales en las vistas restantes de Relient. La aplicación uniforme de los colores, la tipografía y los componentes permite mantener una identidad visual consistente en las distintas interfaces de gestión y consulta.
+Las últimas pantallas muestran la continuidad de los criterios visuales en las vistas restantes de Reliant. La aplicación uniforme de los colores, la tipografía y los componentes permite mantener una identidad visual consistente en las distintas interfaces de gestión y consulta.
 
-<img src="assets/img/chapter-ii/needfinding/mockup16.png">
-<img src="assets/img/chapter-ii/needfinding/mockup17.png">
-<img src="assets/img/chapter-ii/needfinding/mockup18.png">
-<img src="assets/img/chapter-ii/needfinding/mockup19.png">
-<img src="assets/img/chapter-ii/needfinding/mockup20.png">
-<img src="assets/img/chapter-ii/needfinding/mockup21.png">
+<p align="center"><img src="assets/img/chapter-ii/needfinding/mockup16.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/mockup17.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/mockup18.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/mockup19.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/mockup20.png"></p>
+
+<p align="center"><img src="assets/img/chapter-ii/needfinding/mockup21.png"></p>
 
 ### 4.4.4. Web Applications User Flow Diagrams
-Los User Flow Diagrams de Relient representan los recorridos que sigue el usuario para interactuar con las funcionalidades de la Web Application. Los diagramas se han organizado por procesos para facilitar la comprensión de las relaciones entre las pantallas y las acciones involucradas en cada recorrido. Para su elaboración, se consideran los mockups de la plataforma, manteniendo correspondencia con los módulos y las operaciones representadas en el diseño UX/UI.
+Los User Flow Diagrams de Reliant representan los recorridos que sigue el usuario para interactuar con las funcionalidades de la Web Application. Los diagramas se han organizado por procesos para facilitar la comprensión de las relaciones entre las pantallas y las acciones involucradas en cada recorrido. Para su elaboración, se consideran los mockups de la plataforma, manteniendo correspondencia con los módulos y las operaciones representadas en el diseño UX/UI.
 
 **Acceso a la plataforma y navegación inicial**
 Este recorrido presenta las pantallas relacionadas con el acceso a la plataforma, la navegación inicial y la suscripción, de acuerdo con la secuencia representada en los diseños.
 
-<img src="assets/img/chapter-ii/needfinding/userflow1.png">
+<p align="center"><img src="assets/img/chapter-ii/needfinding/userflow1.png"></p>
 
 **Gestión y configuración de equipos HVOF**
 Este diagrama representa el recorrido relacionado con los equipos HVOF y las pantallas destinadas a su configuración y gestión.
 
-<img src="assets/img/chapter-ii/needfinding/userflow2.png">
+<p align="center"><img src="assets/img/chapter-ii/needfinding/userflow2.png"></p>
 
 **Gestión de componentes y órdenes PCR**
 Este recorrido muestra las relaciones entre las pantallas vinculadas con la gestión de componentes y las órdenes PCR, siguiendo la organización establecida en los mockups.
 
-<img src="assets/img/chapter-ii/needfinding/userflow3.png">
+<p align="center"><img src="assets/img/chapter-ii/needfinding/userflow3.png"></p>
 
 **Sesiones, monitoreo, fallas y alertas**
 Este diagrama presenta el recorrido asociado con las sesiones, el monitoreo y la consulta de información relacionada con fallas y alertas.
 
-<img src="assets/img/chapter-ii/needfinding/userflow4.png">
+<p align="center"><img src="assets/img/chapter-ii/needfinding/userflow4.png"></p>
 
 **Reportes y cierre de procesos**
 Este último recorrido representa las pantallas relacionadas con los reportes y las etapas finales contempladas en el flujo de la plataforma.
 
-<img src="assets/img/chapter-ii/needfinding/userflow5.png">
+<p align="center"><img src="assets/img/chapter-ii/needfinding/userflow5.png"></p>
 
 ### 4.5. Web Applications Prototyping
-Para desarrollar los prototipos de la interfaz de usuario de Relient para Desktop y Mobile Web Browser, se consideraron criterios de interacción orientados a facilitar la navegación, organizar la información y permitir que los usuarios realicen sus tareas de manera clara y eficiente. Las decisiones de diseño se relacionan con la arquitectura de información y el sistema de navegación definidos previamente, considerando los siguientes principios:
+Para desarrollar los prototipos de la interfaz de usuario de Reliant para Desktop y Mobile Web Browser, se consideraron criterios de interacción orientados a facilitar la navegación, organizar la información y permitir que los usuarios realicen sus tareas de manera clara y eficiente. Las decisiones de diseño se relacionan con la arquitectura de información y el sistema de navegación definidos previamente, considerando los siguientes principios:
 
-1. Simplicidad y usabilidad: Se busca que la navegación sea clara y consistente, facilitando el acceso a las principales funcionalidades de Relient, como la gestión de usuarios, equipos HVOF, componentes recuperados, órdenes de trabajo, sesiones de recubrimiento, monitoreo de parámetros, diagnóstico de fallas y consulta de reportes.
+1. Simplicidad y usabilidad: Se busca que la navegación sea clara y consistente, facilitando el acceso a las principales funcionalidades de Reliant, como la gestión de usuarios, equipos HVOF, componentes recuperados, órdenes de trabajo, sesiones de recubrimiento, monitoreo de parámetros, diagnóstico de fallas y consulta de reportes.
 2. Diseño adaptable: La propuesta considera la visualización de la interfaz en diferentes tamaños de pantalla, tanto en Desktop como en Mobile Web Browser, procurando mantener la legibilidad de la información y facilitar la interacción según el dispositivo utilizado.
 3. Enfoque en la información clave: Las interfaces priorizan los datos relevantes para las tareas de los usuarios, como el estado de los componentes, los parámetros de operación, el historial de sesiones y las alertas, facilitando el seguimiento de los procesos de recuperación.
-4. Navegación e interacción coherentes: Las conexiones entre las pantallas se definieron tomando como referencia los User Flow Diagrams y el sistema de navegación de Relient, permitiendo representar los recorridos principales entre las funcionalidades de la aplicación.
+4. Navegación e interacción coherentes: Las conexiones entre las pantallas se definieron tomando como referencia los User Flow Diagrams y el sistema de navegación de Reliant, permitiendo representar los recorridos principales entre las funcionalidades de la aplicación.
 
-A continuación, se presenta una captura del prototipo interactivo de Relient en modo de presentación de Figma, correspondiente a la interfaz de gestión de usuarios de la organización.
+A continuación, se presenta una captura del prototipo interactivo de Reliant en modo de presentación de Figma, correspondiente a la interfaz de gestión de usuarios de la organización.
 
-<img src="assets/img/chapter-ii/needfinding/prototipo-relient.png">
+<p align="center"><img src="assets/img/chapter-ii/needfinding/prototipo-relient.png"></p>
 
 **Enlace al prototipo interactivo:**
 
-[Visualizar el prototipo de Relient en Figma](https://www.figma.com/proto/eJgrioPA9K4FTQD0pXAUI1/Mockup-Innovacor?node-id=205-460&t=SXgGHtrz1Kx1MBpN-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=205%3A301&show-proto-sidebar=1)
+[Visualizar el prototipo de Reliant en Figma](https://www.figma.com/proto/eJgrioPA9K4FTQD0pXAUI1/Mockup-Innovacor?node-id=205-460&t=SXgGHtrz1Kx1MBpN-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=205%3A301&show-proto-sidebar=1)
 
-**Video de demostración:**
+**Video de demostración del prototipo interactivo:**
 
-[Ver el video de demostración de Relient](https://drive.google.com/file/d/1zf1c5jWL4qMQMxFodapUbAed3S3XQiYO/view?usp=sharing)
+[Ver el video de demostración de Reliant](https://drive.google.com/file/d/1zf1c5jWL4qMQMxFodapUbAed3S3XQiYO/view?usp=sharing)
 
 
 
@@ -2842,11 +2856,11 @@ flowchart LR
 
 ### 4.6.2. Software Architecture Context Diagram.
 
-<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.2.software-architecture-context-diagram/Context-Reliant___Context_Diagram.png">
+<p align="center"><img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.2.software-architecture-context-diagram/Context-Reliant___Context_Diagram.png"></p>
 
 ### 4.6.3. Software Architecture Container Diagrams.
 
-<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.3.software-architecture-container-diagrams/Containers-Reliant___Container_Diagram.png">
+<p align="center"><img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.3.software-architecture-container-diagrams/Containers-Reliant___Container_Diagram.png"></p>
 
 ### 4.6.4. Software Architecture Components Diagrams.
 
@@ -2856,169 +2870,232 @@ Los diagramas de componentes descomponen los contenedores de la sección 4.6.3 e
 
 La Single Page Application organiza su código en cinco bounded contexts y un contexto Shared. Cada bounded context extiende las clases base de Shared para sus entidades, assemblers, endpoints y formularios; IAM protege las rutas de los demás contextos con sus guards, agrega el token de sesión a todas las peticiones con `iamInterceptor` y entrega la organización del usuario autenticado a los stores; y Process Monitoring consulta los sistemas HVOF y las recetas de Equipment y las órdenes de recuperación de Traceability para iniciar y evaluar cada sesión de rociado.
 
-<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/Components-Reliant___SPA_Bounded_Contexts.png" alt="Component diagram of the Single Page Application">
+<p align="center"><img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-spa-bounded-contexts.png" alt="Component diagram of the Single Page Application"></p>
 
-#### Web Application
+#### Frontend (Web Application)
 
-<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-web-application.png" alt="Web Application component diagram">
-
-**IAM**
-
-<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-iam-web-application.png" alt="IAM web application component diagram">
-
-**Billing**
-
-<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-billing-web-application.png" alt="Billing web application component diagram">
-
-**Equipment**
-
-<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-equipment-web-application.png" alt="Equipment web application component diagram">
-
-**Traceability**
-
-<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-traceability-web-application.png" alt="Traceability web application component diagram">
-
-**Process Monitoring**
-
-<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-processmonitoring-web-application.png" alt="Process Monitoring web application component diagram">
-
-**Fault Diagnosis**
-
-<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-faultdiagnosis-web-application.png" alt="Fault Diagnosis web application component diagram">
-
-**Notifications**
-
-<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-notifications-web-application.png" alt="Notifications web application component diagram">
-
-**Reporting**
-
-<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-reporting-web-application.png" alt="Reporting web application component diagram">
-
-#### Web Services
-
-<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-web-services.png" alt="Web Services component diagram">
+<p align="center"><img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-web-application.png" alt="Web Application component diagram"></p>
 
 **IAM**
 
-<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-iam-web-services.png" alt="IAM web services component diagram">
+<p align="center"><img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-iam-web-application.png" alt="IAM web application component diagram"></p>
 
 **Billing**
 
-<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-billing-web-services.png" alt="Billing web services component diagram">
+<p align="center"><img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-billing-web-application.png" alt="Billing web application component diagram"></p>
 
 **Equipment**
 
-<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-equipment-web-services.png" alt="Equipment web services component diagram">
+<p align="center"><img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-equipment-web-application.png" alt="Equipment web application component diagram"></p>
 
 **Traceability**
 
-<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-traceability-web-services.png" alt="Traceability web services component diagram">
+<p align="center"><img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-traceability-web-application.png" alt="Traceability web application component diagram"></p>
 
 **Process Monitoring**
 
-<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-processmonitoring-web-services.png" alt="Process Monitoring web services component diagram">
+<p align="center"><img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-processmonitoring-web-application.png" alt="Process Monitoring web application component diagram"></p>
 
 **Fault Diagnosis**
 
-<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-faultdiagnosis-web-services.png" alt="Fault Diagnosis web services component diagram">
+<p align="center"><img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-faultdiagnosis-web-application.png" alt="Fault Diagnosis web application component diagram"></p>
 
 **Notifications**
 
-<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-notifications-web-services.png" alt="Notifications web services component diagram">
+<p align="center"><img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-notifications-web-application.png" alt="Notifications web application component diagram"></p>
 
 **Reporting**
 
-<img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-reporting-web-services.png" alt="Reporting web services component diagram">
+<p align="center"><img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-reporting-web-application.png" alt="Reporting web application component diagram"></p>
+
+#### Backend (Web Services)
+
+<p align="center"><img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-web-services.png" alt="Web Services component diagram"></p>
+
+**IAM**
+
+<p align="center"><img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-iam-web-services.png" alt="IAM web services component diagram"></p>
+
+**Billing**
+
+<p align="center"><img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-billing-web-services.png" alt="Billing web services component diagram"></p>
+
+**Equipment**
+
+<p align="center"><img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-equipment-web-services.png" alt="Equipment web services component diagram"></p>
+
+**Traceability**
+
+<p align="center"><img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-traceability-web-services.png" alt="Traceability web services component diagram"></p>
+
+**Process Monitoring**
+
+<p align="center"><img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-processmonitoring-web-services.png" alt="Process Monitoring web services component diagram"></p>
+
+**Fault Diagnosis**
+
+<p align="center"><img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-faultdiagnosis-web-services.png" alt="Fault Diagnosis web services component diagram"></p>
+
+**Notifications**
+
+<p align="center"><img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-notifications-web-services.png" alt="Notifications web services component diagram"></p>
+
+**Reporting**
+
+<p align="center"><img src="assets/img/4.chapter-iv/4.6.domain-driven-software-architecture/4.6.4.software-architecture-components-diagrams/reliant-c4-components-reporting-web-services.png" alt="Reporting web services component diagram"></p>
 
 ## 4.7. Software Object-Oriented Design.
 ### 4.7.1. Class Diagrams.
 
 El diagrama de clases traduce los agregados del Event Storming (4.6.1) al modelo de objetos que sustentará la implementación en el Capítulo V.
-Debido a la complejidad del sistema, a la cantidad de Bounded Contexts definidos y a la cantidad de clases por capa de Domain-Driven Design, se muestra el diagrama de clases subdividido para una mejor visualización.
+Debido a la complejidad del sistema, a la cantidad de Bounded Contexts definidos y a la cantidad de clases por capa de Domain-Driven Design, se muestra el diagrama de clases subdividido para una mejor visualización. La primera parte corresponde al Backend (Web Services en Spring Boot), con un diagrama por capa de cada bounded context; la segunda, al Frontend (Web Application en Angular), con un diagrama por bounded context que agrupa sus capas Domain, Application, Infrastructure y Presentation.
 
-#### Equipment
+#### Backend (Web Services)
 
-<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/equipment/Reliant_Equipment_Domain.png">
-<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/equipment/Reliant_Equipment_Application.png">
-<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/equipment/Reliant_Equipment_Interfaces.png">
-<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/equipment/Reliant_Equipment_Infrastructure.png">
+##### Equipment
 
-#### FaultDiagnosis
-<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/fault-diagnosis/Reliant_FaultDiagnosis_Domain.png">
-<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/fault-diagnosis/Reliant_FaultDiagnosis_Application.png">
-<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/fault-diagnosis/Reliant_FaultDiagnosis_Interfaces.png">
-<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/fault-diagnosis/Reliant_FaultDiagnosis_Infrastructure.png">
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/equipment/Reliant_Equipment_Domain.png"></p>
 
-#### ProcessMonitoring
-<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/process-monitoring/Reliant_ProcessMonitoring_Domain.png">
-<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/process-monitoring/Reliant_ProcessMonitoring_Application.png">
-<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/process-monitoring/Reliant_ProcessMonitoring_Interfaces.png">
-<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/process-monitoring/Reliant_ProcessMonitoring_Infrastructure.png">
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/equipment/Reliant_Equipment_Application.png"></p>
 
-#### Traceability
-<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/traceability/Reliant_Traceability_Domain.png">
-<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/traceability/Reliant_Traceability_Application.png">
-<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/traceability/Reliant_Traceability_Interfaces.png">
-<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/traceability/Reliant_Traceability_Infrastructure.png">
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/equipment/Reliant_Equipment_Interfaces.png"></p>
 
-#### Reporting
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/equipment/Reliant_Equipment_Infrastructure.png"></p>
+
+##### FaultDiagnosis
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/fault-diagnosis/Reliant_FaultDiagnosis_Domain.png"></p>
+
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/fault-diagnosis/Reliant_FaultDiagnosis_Application.png"></p>
+
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/fault-diagnosis/Reliant_FaultDiagnosis_Interfaces.png"></p>
+
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/fault-diagnosis/Reliant_FaultDiagnosis_Infrastructure.png"></p>
+
+##### ProcessMonitoring
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/process-monitoring/Reliant_ProcessMonitoring_Domain.png"></p>
+
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/process-monitoring/Reliant_ProcessMonitoring_Application.png"></p>
+
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/process-monitoring/Reliant_ProcessMonitoring_Interfaces.png"></p>
+
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/process-monitoring/Reliant_ProcessMonitoring_Infrastructure.png"></p>
+
+##### Traceability
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/traceability/Reliant_Traceability_Domain.png"></p>
+
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/traceability/Reliant_Traceability_Application.png"></p>
+
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/traceability/Reliant_Traceability_Interfaces.png"></p>
+
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/traceability/Reliant_Traceability_Infrastructure.png"></p>
+
+##### Reporting
 
 En el bounded context Reporting, el tipo de gráfico de cada elemento de una plantilla se modela con el atributo `viewType` del Value Object `ReportWidget`, cuyo enum `ViewTypeEnum` incluye los gráficos de línea (`LINE_CHART`), de barras (`BAR_CHART`) y de indicador (`GAUGE`), además de las vistas tabulares y de resumen (`TABLE`, `KPI_CARD`, `MIN_MAX_AVG`, `BAND_TIMELINE`).
 
-<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/reporting/Reliant_Reporting_Domain.png">
-<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/reporting/Reliant_Reporting_Application.png">
-<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/reporting/Reliant_Reporting_Interfaces.png">
-<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/reporting/Reliant_Reporting_Infrastructure.png">
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/reporting/Reliant_Reporting_Domain.png"></p>
 
-#### Notifications
-<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/notifications/Reliant_Notifications_Domain.png">
-<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/notifications/Reliant_Notifications_Application.png">
-<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/notifications/Reliant_Notifications_Interfaces.png">
-<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/notifications/Reliant_Notifications_Infrastructure.png">
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/reporting/Reliant_Reporting_Application.png"></p>
 
-#### Billing
-<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/billing/Reliant_Billing_Domain.png">
-<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/billing/Reliant_Billing_Application.png">
-<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/billing/Reliant_Billing_Interfaces.png">
-<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/billing/Reliant_Billing_Infrastructure.png">
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/reporting/Reliant_Reporting_Interfaces.png"></p>
 
-#### IAM
-<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/iam/Reliant_IAM_Domain.png">
-<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/iam/Reliant_IAM_Application.png">
-<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/iam/Reliant_IAM_Interfaces.png">
-<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/iam/Reliant_IAM_Infrastructure.png">
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/reporting/Reliant_Reporting_Infrastructure.png"></p>
 
-#### Shared
-<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/shared-kernel/Reliant_SharedKernel_Domain.png">
-<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/shared-kernel/Reliant_SharedKernel_Application.png">
-<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/shared-kernel/Reliant_SharedKernel_Interfaces.png">
-<img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/shared-kernel/Reliant_SharedKernel_Infrastructure.png">
+##### Notifications
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/notifications/Reliant_Notifications_Domain.png"></p>
 
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/notifications/Reliant_Notifications_Application.png"></p>
 
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/notifications/Reliant_Notifications_Interfaces.png"></p>
+
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/notifications/Reliant_Notifications_Infrastructure.png"></p>
+
+##### Billing
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/billing/Reliant_Billing_Domain.png"></p>
+
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/billing/Reliant_Billing_Application.png"></p>
+
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/billing/Reliant_Billing_Interfaces.png"></p>
+
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/billing/Reliant_Billing_Infrastructure.png"></p>
+
+##### IAM
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/iam/Reliant_IAM_Domain.png"></p>
+
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/iam/Reliant_IAM_Application.png"></p>
+
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/iam/Reliant_IAM_Interfaces.png"></p>
+
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/iam/Reliant_IAM_Infrastructure.png"></p>
+
+##### Shared
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/shared-kernel/Reliant_SharedKernel_Domain.png"></p>
+
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/shared-kernel/Reliant_SharedKernel_Application.png"></p>
+
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/shared-kernel/Reliant_SharedKernel_Interfaces.png"></p>
+
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/shared-kernel/Reliant_SharedKernel_Infrastructure.png"></p>
+
+#### Frontend (Web Application)
+
+Los diagramas siguientes se generaron a partir del código de `reliant-webapp` (versión 2.0.0). Cada bounded context sigue la misma organización: en Domain, las entidades y tipos del modelo; en Application, los stores basados en signals y los servicios de aplicación; en Infrastructure, los endpoints que extienden `BaseApiEndpoint` y los assemblers que extienden `BaseAssembler`; y en Presentation, los componentes standalone de las vistas. Las clases del paquete Shared se referencian como externas en cada diagrama.
+
+##### Shared
+
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/frontend/Reliant_Frontend_Shared.png" alt="Reliant - Frontend Shared Class Diagram"></p>
+
+##### IAM
+
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/frontend/Reliant_Frontend_IAM.png" alt="Reliant - Frontend IAM Class Diagram"></p>
+
+##### Billing
+
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/frontend/Reliant_Frontend_Billing.png" alt="Reliant - Frontend Billing Class Diagram"></p>
+
+##### Equipment
+
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/frontend/Reliant_Frontend_Equipment.png" alt="Reliant - Frontend Equipment Class Diagram"></p>
+
+##### Traceability
+
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/frontend/Reliant_Frontend_Traceability.png" alt="Reliant - Frontend Traceability Class Diagram"></p>
+
+##### Process Monitoring
+
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/frontend/Reliant_Frontend_ProcessMonitoring.png" alt="Reliant - Frontend Process Monitoring Class Diagram"></p>
+
+##### Fault Diagnosis
+
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/frontend/Reliant_Frontend_FaultDiagnosis.png" alt="Reliant - Frontend Fault Diagnosis Class Diagram"></p>
+
+##### Reporting
+
+<p align="center"><img src="assets/img/4.chapter-iv/4.7.software-object-oriented-design/4.7.1.class-diagrams/frontend/Reliant_Frontend_Reporting.png" alt="Reliant - Frontend Reporting Class Diagram"></p>
 
 ## 4.8. Database Design.
 ### 4.8.1. Database Diagrams.
 
-El modelo relacional se despliega sobre PostgreSQL y refleja de forma directa el diagrama de clases de 4.7.1, con tablas puente derivadas de las relaciones muchos-a-muchos implícitas en el dominio.
+El modelo relacional se despliega sobre MySQL 8.0 (Azure Database for MySQL Flexible Server en producción) y refleja de forma directa el diagrama de clases de 4.7.1, con tablas puente derivadas de las relaciones muchos-a-muchos implícitas en el dominio.
 
 
-<img src="assets/img/4.chapter-iv/4.8.database-design/4.8.1.database-diagrams/Reliant_Equipment_Database.png">
+<p align="center"><img src="assets/img/4.chapter-iv/4.8.database-design/4.8.1.database-diagrams/Reliant_Equipment_Database.png"></p>
 
-<img src="assets/img/4.chapter-iv/4.8.database-design/4.8.1.database-diagrams/Reliant_FaultDiagnosis_Database.png">
+<p align="center"><img src="assets/img/4.chapter-iv/4.8.database-design/4.8.1.database-diagrams/Reliant_FaultDiagnosis_Database.png"></p>
 
-<img src="assets/img/4.chapter-iv/4.8.database-design/4.8.1.database-diagrams/Reliant_ProcessMonitoring_Database.png">
+<p align="center"><img src="assets/img/4.chapter-iv/4.8.database-design/4.8.1.database-diagrams/Reliant_ProcessMonitoring_Database.png"></p>
 
-<img src="assets/img/4.chapter-iv/4.8.database-design/4.8.1.database-diagrams/Reliant_Reporting_Database.png">
+<p align="center"><img src="assets/img/4.chapter-iv/4.8.database-design/4.8.1.database-diagrams/Reliant_Reporting_Database.png"></p>
 
 En la tabla `report_widgets`, la columna `view_type` almacena el tipo de gráfico de cada elemento de la plantilla (`LINE_CHART`, `BAR_CHART`, `GAUGE`, `TABLE`, `KPI_CARD`, `MIN_MAX_AVG` o `BAND_TIMELINE`), como valor del enum `ViewTypeEnum` persistido en texto.
 
-<img src="assets/img/4.chapter-iv/4.8.database-design/4.8.1.database-diagrams/Reliant_Traceability_Database.png">
+<p align="center"><img src="assets/img/4.chapter-iv/4.8.database-design/4.8.1.database-diagrams/Reliant_Traceability_Database.png"></p>
 
-<img src="assets/img/4.chapter-iv/4.8.database-design/4.8.1.database-diagrams/Reliant_Notifications_Database.png">
+<p align="center"><img src="assets/img/4.chapter-iv/4.8.database-design/4.8.1.database-diagrams/Reliant_Notifications_Database.png"></p>
 
-<img src="assets/img/4.chapter-iv/4.8.database-design/4.8.1.database-diagrams/Reliant_IAM_Database.png">
+<p align="center"><img src="assets/img/4.chapter-iv/4.8.database-design/4.8.1.database-diagrams/Reliant_IAM_Database.png"></p>
 
-<img src="assets/img/4.chapter-iv/4.8.database-design/4.8.1.database-diagrams/Reliant_Billing_Database.png">
+<p align="center"><img src="assets/img/4.chapter-iv/4.8.database-design/4.8.1.database-diagrams/Reliant_Billing_Database.png"></p>
 
 # Capítulo V: Product Implementation, Validation & Deployment
 ## 5.1. Software Configuration Management.
@@ -3071,8 +3148,8 @@ A continuación se especifican los productos de software que utilizan los miembr
 | WebStorm | IDE para la Web Application y el fake API, con soporte para Git Flow | https://www.jetbrains.com/webstorm |
 | Angular Material | Biblioteca de componentes UI basada en Material Design | https://material.angular.io |
 | Visual Studio Code | Editor para el Landing Page (HTML5, CSS3, JavaScript) y la Web Application | https://code.visualstudio.com |
-| PostgreSQL 16 | Base de datos relacional de los Web Services | https://www.postgresql.org |
-| Docker Desktop | Contenedores para PostgreSQL en desarrollo y empaquetado del backend | https://www.docker.com |
+| MySQL 8.0 | Base de datos relacional de los Web Services (Azure Database for MySQL Flexible Server en producción) | https://www.mysql.com |
+| MySQL Community Server / MySQL Workbench | Base de datos local de desarrollo de los Web Services | https://dev.mysql.com/downloads/ |
 | Postman | Pruebas manuales de los endpoints | https://www.postman.com |
 | Python 3.12 | Simulador de telemetría del gateway PLC | https://www.python.org |
 
@@ -3084,7 +3161,7 @@ A continuación se especifican los productos de software que utilizan los miembr
 | Microsoft Azure App Service (Linux) | Despliegue de la Frontend Web Application y del fake API como Web Apps independientes | https://azure.microsoft.com/products/app-service |
 | PM2 | Servidor de archivos estáticos en modo SPA para la Web Application dentro de App Service | https://pm2.keymetrics.io |
 | GitHub Actions | Integración y despliegue continuo: build, pruebas y publicación en Azure en cada push a `main` | https://github.com/features/actions |
-| Render | Despliegue previsto de los Web Services (contenedor Docker) y de PostgreSQL gestionado | https://render.com |
+| Azure Database for MySQL Flexible Server | Base de datos gestionada de los Web Services en producción | https://azure.microsoft.com/products/mysql |
 
 **Software Documentation**
 
@@ -3093,7 +3170,7 @@ A continuación se especifican los productos de software que utilizan los miembr
 | Markdown | Formato del informe y de los README de cada repositorio | https://www.markdownguide.org |
 | OpenAPI / Swagger UI (springdoc) | Documentación interactiva de los endpoints del RESTful API | https://springdoc.org |
 | Mailchimp | Servicio externo para newsletter y alertas por correo | https://mailchimp.com |
-| OBS Studio y Clipchamp | Grabación y edición de los videos de exposición, entrevistas y About-the-Product | https://obsproject.com À https://clipchamp.com |
+| OBS Studio y Clipchamp | Grabación y edición de los videos de exposición, entrevistas y About-the-Product | https://obsproject.com · https://clipchamp.com |
 | Microsoft Stream | Publicación de los videos del proyecto | https://www.microsoft.com/microsoft-stream |
 
 ### 5.1.2. Source Code Management.
@@ -3191,7 +3268,7 @@ Se sigue la Angular Coding Style Guide oficial.
 | Nombres de archivo en kebab-case con sufijo por tipo | `spray-session-card.component.ts`, `iam.facade.ts`, `process-monitoring-api.service.ts` |
 | Selectores de componente con prefijo de la aplicación | `app-spray-session-card` |
 | Estructura por bounded context con capas | `src/app/<bc>/presentation`, `application`, `domain`, `infrastructure` |
-| Un componente nunca hace HTTP directo: delega en la facade, que usa el servicio de infraestructura | `component ÔåÆ facade ÔåÆ api service` |
+| Un componente nunca hace HTTP directo: delega en la facade, que usa el servicio de infraestructura | `component → facade → api service` |
 | Componentes standalone, `OnPush` y signals para el estado | — |
 | Solo Angular Material como biblioteca de componentes | — |
 
@@ -3208,7 +3285,7 @@ Se sigue la Google Java Style Guide y las convenciones de Spring Boot.
 | Value Objects como `record`; enums con `EnumType.STRING` | `record IpAddressV4(String value)` |
 | Indentación de dos espacios, límite de 100 columnas, llaves en la misma línea | — |
 | Inyección por constructor; sin `@Autowired` en campos | — |
-| Endpoints REST: `/api/v1`, sustantivos en plural, kebab-case, verbos HTTP semánticos y códigos de estado estándar | `POST /api/v1/spray-sessions/{sessionId}/readings` ÔåÆ `202 Accepted` |
+| Endpoints REST: `/api/v1`, sustantivos en plural, kebab-case, verbos HTTP semánticos y códigos de estado estándar | `POST /api/v1/spray-sessions/{sessionId}/readings` → `202 Accepted` |
 | Base de datos: tablas y columnas en snake_case, tablas en plural, generadas con `SnakeCasePhysicalNamingStrategy` | `spray_sessions`, `hvof_system_id` |
 
 **Gherkin (criterios de aceptación y pruebas de aceptación)**
@@ -3229,18 +3306,16 @@ El Landing Page se publica en **GitHub Pages** directamente desde la rama `main`
 | Web App `reliant-web-application` | Frontend Web Application (Angular) | [`reliant-webapp`](https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp) | `.github/workflows/main_reliant-web-application.yml` | https://reliant-web-application-hsa3asb7axaph6hf.chilecentral-01.azurewebsites.net |
 | GitHub Pages `reliant-website` | Landing Page (sitio estático) | [`reliant-website`](https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-website) | No requiere: GitHub Pages publica cada push a `main` | https://upc-pre-202620-1asi0729-7753-innovacorp.github.io/reliant-website/ |
 
-**Landing Page ÔåÆ GitHub Pages**
+**Landing Page → GitHub Pages**
 
 | Paso | Descripción |
 |---|---|
 | 1 | El repositorio `reliant-website` contiene el sitio estático en la raíz (`index.html`, `assets/`, `legal/`), sin proceso de construcción |
-| 2 | En Settings ÔåÆ Pages se selecciona **Deploy from a branch**, la rama `main` y la carpeta `/ (root)` |
+| 2 | En Settings → Pages se selecciona **Deploy from a branch**, la rama `main` y la carpeta `/ (root)` |
 | 3 | Cada merge a `main` (por ejemplo, el cierre de un release con Git Flow) publica automáticamente el sitio en https://upc-pre-202620-1asi0729-7753-innovacorp.github.io/reliant-website/ |
-| 4 | Los call-to-action de cada segmento dirigen a la vista de registro de la Web Application con el segmento como parámetro (`?segment=recuperation-supplier`, `?segment=asset-owner`) |
+| 4 | Los call-to-action de cada segmento dirigen a la vista de registro de la Web Application desplegada con el tipo de organización como parámetro (`/iam/sign-up?organizationType=RECUPERATION_SUPPLIER`, `/iam/sign-up?organizationType=ASSET_OWNER`); el encabezado ofrece además *Sign in* y *Get started* |
 
-<!-- TODO: los call-to-action del Landing Page aún apuntan a https://app.reliant.example.com/onboarding; actualizarlos a la URL de la Web Application desplegada -->
-
-**Fake API ÔåÆ Azure App Service (`reliant-mockapi`)**
+**Fake API → Azure App Service (`reliant-mockapi`)**
 
 | Paso | Descripción |
 |---|---|
@@ -3250,7 +3325,7 @@ El Landing Page se publica en **GitHub Pages** directamente desde la rama `main`
 | 4 | En Deployment Center se elige GitHub como origen, la organización del equipo, el repositorio `reliant-platform-mock` y la rama `main`. Azure agrega el workflow `main_reliant-mockapi.yml` al repositorio y ejecuta el primer despliegue |
 | 5 | Se verifica el servicio en `https://reliant-mockapi-ajh4eqgkf7hxg2fx.eastus-01.azurewebsites.net/api/v1/health` y en las colecciones, por ejemplo `/api/v1/components` |
 
-**Frontend Web Application ÔåÆ Azure App Service (`reliant-web-application`)**
+**Frontend Web Application → Azure App Service (`reliant-web-application`)**
 
 | Paso | Descripción |
 |---|---|
@@ -3258,7 +3333,7 @@ El Landing Page se publica en **GitHub Pages** directamente desde la rama `main`
 | 2 | Se publica el release `1.0.1` con Git Flow; `main` queda con la versión desplegable y las etiquetas `1.0.0` y `1.0.1` |
 | 3 | En Azure Portal se crea el Web App `reliant-web-application`: publicación **Code**, runtime **Node 24 LTS**, sistema operativo **Linux**, grupo de recursos `reliant-rg`, región **Chile Central** |
 | 4 | En Deployment Center se conecta el repositorio `reliant-webapp` y la rama `main`. El workflow generado, `main_reliant-web-application.yml`, instala dependencias, ejecuta `npm run build` (que produce `dist/reliant-webapp/browser`) y publica el resultado con `azure/webapps-deploy` |
-| 5 | En Configuration ÔåÆ General settings se define el Startup Command, para que PM2 sirva el build de Angular como Single Page Application y redirija cualquier ruta a `index.html`: |
+| 5 | En Configuration → General settings se define el Startup Command, para que PM2 sirva el build de Angular como Single Page Application y redirija cualquier ruta a `index.html`: |
 
 ```bash
 pm2 serve /home/site/wwwroot/dist/reliant-webapp/browser --no-daemon --spa
@@ -3268,53 +3343,36 @@ pm2 serve /home/site/wwwroot/dist/reliant-webapp/browser --no-daemon --spa
 |---|---|
 | 6 | Se verifica la aplicación en `https://reliant-web-application-hsa3asb7axaph6hf.chilecentral-01.azurewebsites.net`, incluida la recarga directa de una ruta interna como `/equipment/hvof-systems` |
 
-**Configuración prevista para los Web Services (Sprint 3)**
+**Web Services → Azure App Service (`reliant-platform`) + Azure Database for MySQL**
 
-La configuración siguiente describe cómo se desplegará el RESTful API en Spring Boot cuando reemplace al fake API; en ese momento la Web Application cambiará `useFakeIam` a `false` y `platformProviderApiBaseUrl` a la URL de los Web Services.
+En el Sprint 3 los Web Services reemplazaron al fake API. El RESTful API en Spring Boot se despliega como un Web App de Azure App Service sobre Java 21 y la base de datos en Azure Database for MySQL Flexible Server, ambos en el grupo de recursos `rg-reliant`. La guía completa, paso a paso, está versionada en [`docs/azure-deployment.md`](https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform/blob/main/docs/azure-deployment.md).
 
-**Web Services ÔåÆ Render (contenedor Docker)**
-
-| Paso | Descripción |
-|---|---|
-| 1 | El repositorio `reliant-platform` incluye un `Dockerfile` multi-stage: la primera etapa compila con Maven sobre `eclipse-temurin:21-jdk`; la segunda ejecuta el `jar` sobre `eclipse-temurin:21-jre` |
-| 2 | Se crea en Render un Web Service de tipo Docker conectado a la rama `main` |
-| 3 | Se definen las variables de entorno: `SPRING_PROFILES_ACTIVE=prod`, `DATABASE_URL`, `DATABASE_USERNAME`, `DATABASE_PASSWORD`, `JWT_SECRET`, `JWT_EXPIRATION_DAYS`, `MAILCHIMP_API_KEY`, `MAILCHIMP_AUDIENCE_ID`, `CORS_ALLOWED_ORIGINS` |
-| 4 | Render ejecuta el health check sobre `GET /api/v1/health` (`HealthController`) |
-| 5 | La documentación OpenAPI queda publicada en `https://[servicio].onrender.com/swagger-ui.html` |
-
-```dockerfile
-FROM eclipse-temurin:21-jdk AS build
-WORKDIR /app
-COPY pom.xml .
-COPY src ./src
-RUN ./mvnw -q -DskipTests package
-
-FROM eclipse-temurin:21-jre
-WORKDIR /app
-COPY --from=build /app/target/*.jar app.jar
-EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "app.jar"]
-```
-
-**Base de datos ÔåÆ PostgreSQL gestionado en Render**
+| Recurso de Azure | Producto | Repositorio | Workflow de GitHub Actions | URL pública |
+|---|---|---|---|---|
+| Web App `reliant-platform` (Java 21, Java SE, Linux) | Web Services (Spring Boot 4) | [`reliant-platform`](https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform) | `.github/workflows/main_reliant-platform.yml` | https://<dominio-del-platform>.azurewebsites.net <!-- reemplazar por el dominio real --> |
+| Azure Database for MySQL Flexible Server `reliant-mysql` | Base de datos `reliant-os` (MySQL 8.0) | — | — | `reliant-mysql.mysql.database.azure.com:3306` |
 
 | Paso | Descripción |
 |---|---|
-| 1 | Se crea una instancia PostgreSQL 16 en Render en la misma región que el Web Service |
-| 2 | La URL interna se inyecta como `DATABASE_URL` en el Web Service |
-| 3 | El perfil `prod` usa `spring.jpa.hibernate.ddl-auto=validate`; el esquema se crea desde los scripts versionados en `src/main/resources/db/migration`. El perfil `dev` usa `update` sobre un contenedor local `postgres:16` |
+| 1 | Se crea el servidor `reliant-mysql` (MySQL 8.0, Burstable B1ms) con acceso público permitido para los servicios de Azure y la base de datos `reliant-os` con juego de caracteres `utf8mb4` |
+| 2 | Se crea el Web App `reliant-platform`: publicación **Code**, runtime **Java 21**, servidor **Java SE (Embedded Web Server)**, sistema operativo **Linux**, grupo de recursos `rg-reliant` |
+| 3 | En Settings → Environment variables se definen `SPRING_PROFILES_ACTIVE=prod`, `DATABASE_URL`, `DATABASE_PORT`, `DATABASE_NAME`, `DATABASE_USER`, `DATABASE_PASSWORD`, `JWT_SECRET` (mínimo 32 caracteres), `CORS_ALLOWED_ORIGINS` (URL de la Web Application desplegada), `PORT=8080` y `WEBSITES_PORT=8080` |
+| 4 | En Deployment Center se conecta el repositorio `reliant-platform` y la rama `main`; Azure genera `main_reliant-platform.yml`, que compila con Maven (`java-version: '21'`) y publica el `.jar` en cada push a `main` |
+| 5 | Al arrancar, Hibernate crea o actualiza el esquema (`spring.jpa.hibernate.ddl-auto=update`) y el `RoleSeeder` registra los siete roles; la documentación OpenAPI queda publicada en `/swagger-ui.html` |
+| 6 | En `reliant-webapp` se apunta `platformProviderApiBaseUrl` a `https://<dominio-del-platform>.azurewebsites.net/api/v1`, se publica el release 2.0.0 y el workflow de la Web Application la redespliega |
 
 **Perfiles de Spring Boot**
 
 | Archivo | Uso |
 |---|---|
-| `application.properties` | Configuración base: zona horaria `America/Lima`, `SnakeCasePhysicalNamingStrategy`, springdoc |
-| `application-dev.properties` | Base de datos local en Docker, CORS a `http://localhost:4200`, logging detallado |
-| `application-prod.properties` | Variables de entorno de Render, CORS al dominio de la Web Application en Azure App Service, logging mínimo |
+| `application.properties` | Configuración base: perfil por defecto `dev`, driver MySQL, `SnakeCaseWithPluralizedTablePhysicalNamingStrategy`, springdoc, mensajes localizados (`messages_en`, `messages_es`), hilos virtuales |
+| `application-dev.properties` | Base de datos MySQL local (`reliant-os`), CORS a `http://localhost:4200`, `ddl-auto=update`; el archivo está en `.gitignore` y cada integrante mantiene el suyo a partir de `application-dev.properties.example` |
+| `application-prod.properties` | Variables de entorno de Azure (`DATABASE_*`, `JWT_SECRET`, `CORS_ALLOWED_ORIGINS`, `PORT`), `useSSL=true` hacia Azure Database for MySQL, `ddl-auto=update`, `open-in-view=false` |
 
-**Simulador de telemetría (gateway)**
+**Simulador de telemetría**
 
-El script `telemetry_simulator.py` se ejecuta localmente durante las demostraciones y envía lotes de lecturas por `POST /api/v1/spray-sessions/{sessionId}/readings` a la URL del API desplegado, autenticándose con las credenciales de la organización. No se despliega en la nube: representa al gateway que en producción se conecta al PLC.
+Durante las demostraciones las lecturas se generan desde la propia Web Application (botón *Simular ráfaga* de la sesión en vivo), que envía lotes de lecturas por `POST /api/v1/spray-sessions/{sessionId}/readings` autenticada con el token del usuario; el gateway del PLC usará el mismo endpoint.
+
 ## 5.2. Landing Page, Services & Applications Implementation.
 ### 5.2.1. Sprint 1
 
@@ -3358,9 +3416,9 @@ El Sprint Backlog 1 corresponde a la lista "Sprint 1" del Product Backlog en Tre
 | US46 | Información para Asset Owner | Maquetar la tarjeta del segmento Asset Owner | Done |
 | US47 | Registro desde call-to-action segmentado | Implementar la navegación móvil y los call-to-action con el segmento como parámetro | Done |
 | US50 | Acceso a Términos y Condiciones | Publicar las páginas de Términos y Condiciones y de Política de Privacidad | Done |
-| US44 À US45 À US46 | Estilos responsive | Aplicar estilos mobile-first con variables CSS | Done |
+| US44 · US45 · US46 | Estilos responsive | Aplicar estilos mobile-first con variables CSS | Done |
 | US48 | Cambio de idioma | Internacionalizar el Landing Page en inglés y español | Trasladada al Sprint 2 (Done) |
-| US49 À TS18 | Suscripción al newsletter | Formulario de newsletter conectado a Mailchimp | To-do: requiere los Web Services |
+| US49 · TS18 | Suscripción al newsletter | Formulario de newsletter conectado a Mailchimp | To-do: requiere los Web Services |
 
 #### 5.2.1.4. Development Evidence for Sprint Review.
 
@@ -3410,10 +3468,10 @@ Al cierre del Sprint 1 el Landing Page presenta la propuesta de valor de Reliant
 
 | User Story | Evidencia | Descripción |
 |---|---|---|
-| US44 À US47 | <img src="assets/img/5.chapter-v/5.2.1.5-landing-hero.png" width="480"> | Sección principal con la propuesta de valor y los call-to-action para cada segmento. |
+| US44 · US47 | <img src="assets/img/5.chapter-v/5.2.1.5-landing-hero.png" width="480"> | Sección principal con la propuesta de valor y los call-to-action para cada segmento. |
 | US44 | <img src="assets/img/5.chapter-v/5.2.1.5-landing-value-proposition.png" width="480"> | Beneficios de Reliant ("Why teams choose Reliant"). |
-| US45 À US46 À US47 | <img src="assets/img/5.chapter-v/5.2.1.5-landing-segments.png" width="480"> | Información específica para Recuperation Supplier y Asset Owner, con un call-to-action por segmento. |
-| US44 À US47 | <img src="assets/img/5.chapter-v/5.2.1.5-landing-how-it-works.png" width="480"> | Pasos de uso de la plataforma y llamado final al registro. |
+| US45 · US46 · US47 | <img src="assets/img/5.chapter-v/5.2.1.5-landing-segments.png" width="480"> | Información específica para Recuperation Supplier y Asset Owner, con un call-to-action por segmento. |
+| US44 · US47 | <img src="assets/img/5.chapter-v/5.2.1.5-landing-how-it-works.png" width="480"> | Pasos de uso de la plataforma y llamado final al registro. |
 | US50 | <img src="assets/img/5.chapter-v/5.2.1.5-landing-terms.png" width="480"> | Términos y Condiciones enlazados desde el pie de página. |
 | US44 | <img src="assets/img/5.chapter-v/5.2.1.5-landing-mobile.png" width="480"> | Vista móvil del Landing Page (diseño mobile-first). |
 
@@ -3427,13 +3485,12 @@ El Landing Page se versionó con Git Flow: la rama `feature/landing-page-initial
 
 El sitio se publica en GitHub Pages desde la rama `main`, con la configuración descrita en la sección 5.1.4, y está disponible en https://upc-pre-202620-1asi0729-7753-innovacorp.github.io/reliant-website/. La captura muestra la versión desplegada actualmente, que incluye el selector de idioma incorporado en el Sprint 2.
 
-<img src="assets/img/5.chapter-v/5.2.1.7-landing-deployed.png" alt="Landing Page desplegado en GitHub Pages" width="720">
+<p align="center"><img src="assets/img/5.chapter-v/5.2.1.7-landing-deployed.png" alt="Landing Page desplegado en GitHub Pages" width="720"></p>
 
 #### 5.2.1.8. Team Collaboration Insights during Sprint.
 
 Durante el Sprint 1 la colaboración de los integrantes actuales se concentró en el informe: hasta el release `1.0.1` del 18 de setiembre de 2026, el repositorio `reliant-report` registra 115 commits de genixmvp, 57 de scarletriveraaguilar-spec y 1 de MrBaru, sin contar merges. Los commits del Landing Page de ese sprint corresponden a integrantes que se retiraron del equipo.
 
-<!-- TODO: captura de Insights ÔåÆ Contributors de reliant-report con el rango de fechas del Sprint 1 -->
 
 ### 5.2.2. Sprint 2
 
@@ -3472,7 +3529,7 @@ El Sprint Backlog 2 descompone las User Stories del Sprint 2 en tareas de implem
 
 El tablero del Sprint 2 se gestiona en Trello con las listas To-do, In Progress, To Review y Done: [https://trello.com/b/ccOu9yk5/reliant-sprint-2](https://trello.com/b/ccOu9yk5/reliant-sprint-2). El archivo [`docs/trello-sprint-2.csv`](docs/trello-sprint-2.csv) contiene las mismas tareas en formato tabular.
 
-<img src="assets/img/5.chapter-v/5.2.2.3-trello-sprint-2.png" alt="Sprint Backlog 2 de Reliant en Trello">
+<p align="center"><img src="assets/img/5.chapter-v/5.2.2.3-trello-sprint-2.png" alt="Sprint Backlog 2 de Reliant en Trello"></p>
 
 | Sprint # | Sprint 2 | | | | | | |
 |---|---|---|---|---|---|---|---|
@@ -3506,11 +3563,11 @@ El tablero del Sprint 2 se gestiona en Trello con las listas To-do, In Progress,
 | US07 | Registro de sistema HVOF y sus controladores | T27 | Add HVOF system and controller translations | Add the English and Spanish keys. | 1 | Navarro Aldoradin, Carolina Celeste | Done |
 | US07 | Registro de sistema HVOF y sus controladores | T28 | Add HvofSystemList, HvofSystemForm and ControllerForm views | List systems with their status and add the system form and the controller form. | 4 | Navarro Aldoradin, Carolina Celeste | Done |
 | US07 | Registro de sistema HVOF y sus controladores | T29 | Add HvofSystemDetail with the controllers tab | Show the system detail with its controllers and register the routes. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
-| US08 À US53 | Registro de subsistemas del sistema HVOF À Registro de partes de un subsistema | T30 | Add the HvofSubsystem and HvofPart entities and infrastructure | Create the entities, responses, assemblers and endpoints and add them to EquipmentApi. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
-| US08 À US53 | Registro de subsistemas del sistema HVOF À Registro de partes de un subsistema | T31 | Add subsystems and parts to EquipmentStore | Keep the subsystems and parts state. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
-| US08 À US53 | Registro de subsistemas del sistema HVOF À Registro de partes de un subsistema | T32 | Add subsystem and part translations | Add the English and Spanish keys. | 1 | Navarro Aldoradin, Carolina Celeste | Done |
-| US08 À US53 | Registro de subsistemas del sistema HVOF À Registro de partes de un subsistema | T33 | Add HvofSubsystemForm and HvofPartForm views | Create both forms and their routes. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
-| US08 À US53 | Registro de subsistemas del sistema HVOF À Registro de partes de un subsistema | T34 | Add the subsystems tab to HvofSystemDetail | Show the subsystems and their parts in the system detail. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
+| US08 · US53 | Registro de subsistemas del sistema HVOF · Registro de partes de un subsistema | T30 | Add the HvofSubsystem and HvofPart entities and infrastructure | Create the entities, responses, assemblers and endpoints and add them to EquipmentApi. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US08 · US53 | Registro de subsistemas del sistema HVOF · Registro de partes de un subsistema | T31 | Add subsystems and parts to EquipmentStore | Keep the subsystems and parts state. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
+| US08 · US53 | Registro de subsistemas del sistema HVOF · Registro de partes de un subsistema | T32 | Add subsystem and part translations | Add the English and Spanish keys. | 1 | Navarro Aldoradin, Carolina Celeste | Done |
+| US08 · US53 | Registro de subsistemas del sistema HVOF · Registro de partes de un subsistema | T33 | Add HvofSubsystemForm and HvofPartForm views | Create both forms and their routes. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US08 · US53 | Registro de subsistemas del sistema HVOF · Registro de partes de un subsistema | T34 | Add the subsystems tab to HvofSystemDetail | Show the subsystems and their parts in the system detail. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
 | US54 | Definición de recetas con bandas de umbral y componentes aplicables | T35 | Add the Recipe entity and infrastructure | Create the entity with parameter bands and applicabilities, its response, assembler, endpoint and API methods. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
 | US54 | Definición de recetas con bandas de umbral y componentes aplicables | T36 | Add recipes to EquipmentStore and translations | Keep the recipes state and add the English and Spanish keys. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
 | US54 | Definición de recetas con bandas de umbral y componentes aplicables | T37 | Add the threshold order validator | Validate that shutdown, warning and nominal limits are ordered. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
@@ -3520,10 +3577,10 @@ El tablero del Sprint 2 se gestiona en Trello con las listas To-do, In Progress,
 | US19 | Inicio de sesión de rociado | T41 | Add ProcessMonitoringStore for sessions | Keep the spray sessions state. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
 | US19 | Inicio de sesión de rociado | T42 | Add spray session translations | Add the English and Spanish keys. | 1 | Navarro Aldoradin, Carolina Celeste | Done |
 | US19 | Inicio de sesión de rociado | T43 | Add SpraySessionList and SpraySessionStart views | List sessions and start a session selecting the HVOF system, the recuperation order and the recipe, with its routes. | 4 | Navarro Aldoradin, Carolina Celeste | Done |
-| US22 À US21 | Visualización de lecturas en vivo À Clasificación de lecturas por banda de umbral | T44 | Add the ProcessReading entity and band classifier | Classify each reading as nominal, out of nominal, warning or shutdown against the recipe. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
-| US22 À US21 | Visualización de lecturas en vivo À Clasificación de lecturas por banda de umbral | T45 | Add process readings infrastructure | Create the response, assembler, endpoint and API methods. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
-| US22 À US21 | Visualización de lecturas en vivo À Clasificación de lecturas por banda de umbral | T46 | Add readings polling and band counts to the store | Refresh the readings periodically and count them by band. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
-| US22 À US21 | Visualización de lecturas en vivo À Clasificación de lecturas por banda de umbral | T47 | Add ParameterCard and SpraySessionDetail | Show the live parameter cards, the band summary and the last update, with the session detail route and translations. | 4 | Navarro Aldoradin, Carolina Celeste | Done |
+| US22 · US21 | Visualización de lecturas en vivo · Clasificación de lecturas por banda de umbral | T44 | Add the ProcessReading entity and band classifier | Classify each reading as nominal, out of nominal, warning or shutdown against the recipe. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US22 · US21 | Visualización de lecturas en vivo · Clasificación de lecturas por banda de umbral | T45 | Add process readings infrastructure | Create the response, assembler, endpoint and API methods. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
+| US22 · US21 | Visualización de lecturas en vivo · Clasificación de lecturas por banda de umbral | T46 | Add readings polling and band counts to the store | Refresh the readings periodically and count them by band. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US22 · US21 | Visualización de lecturas en vivo · Clasificación de lecturas por banda de umbral | T47 | Add ParameterCard and SpraySessionDetail | Show the live parameter cards, the band summary and the last update, with the session detail route and translations. | 4 | Navarro Aldoradin, Carolina Celeste | Done |
 | US23 | Finalización o aborto de sesión | T48 | Add completeSession and abortSession to the store | Close the session as completed or aborted with its end time. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
 | US23 | Finalización o aborto de sesión | T49 | Add the AbortSessionDialog component | Ask for the abort reason before closing the session. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
 | US23 | Finalización o aborto de sesión | T50 | Add complete and abort actions to SpraySessionDetail | Add the actions and the finish session translations. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
@@ -3534,23 +3591,23 @@ El tablero del Sprint 2 se gestiona en Trello con las listas To-do, In Progress,
 | US01 | Registro de organización | T55 | Add the sign-up port with real and fake adapters | Create the request, response, assembler, SignUpApiEndpoint and FakeSignUpApiEndpoint, and provide the port in IamApi. | 4 | Navarro Aldoradin, Carolina Celeste | Done |
 | US01 | Registro de organización | T56 | Add IamStore for sign-up and IAM translations | Keep the sign-up state and add the English and Spanish keys. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
 | US01 | Registro de organización | T57 | Add the SignUpForm view and IAM routes | Register the organization with its type and administrator. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
-| US02 À US67 | Inicio de sesión À Gestión de la sesión del usuario | T58 | Add the sign-in port with real and fake adapters | Create the SignInCommand, request, response, assembler, SignInApiEndpoint and FakeSignInApiEndpoint. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
-| US02 À US67 | Inicio de sesión À Gestión de la sesión del usuario | T59 | Add session state, signIn and signOut to IamStore | Persist the session and token and clear them on sign-out. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
-| US02 À US67 | Inicio de sesión À Gestión de la sesión del usuario | T60 | Add the SignInForm view and protect the routes | Add the sign-in route, the guards and the iamInterceptor. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
-| US02 À US67 | Inicio de sesión À Gestión de la sesión del usuario | T61 | Add the AuthenticationSection component | Show the user menu with the sign-out option and filter the toolbar by session and organization type. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
-| US02 À US67 | Inicio de sesión À Gestión de la sesión del usuario | T62 | Filter data by organization | Inject IamStore in the other stores, filter by organization id and fix the circular dependency. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
-| US03 À US04 | Asignación de roles À Restricción de acceso por rol | T63 | Add users and roles to IamApi and IamStore | Add the endpoints, state and translations; add the operations supervisor and procurement analyst roles to the fake API. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
-| US03 À US04 | Asignación de roles À Restricción de acceso por rol | T64 | Add UserList and UserRoleForm views | List the organization users and edit their roles. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
-| US03 À US04 | Asignación de roles À Restricción de acceso por rol | T65 | Add role guards | Guard the user routes and restrict equipment and session actions by role. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
-| US05 À US06 | Selección de plan À Consulta y vigencia de suscripción | T66 | Add the Plan and Subscription entities and BillingApi | Create the entities, responses, assemblers and endpoints. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
-| US05 À US06 | Selección de plan À Consulta y vigencia de suscripción | T67 | Add BillingStore and billing translations | Keep plans and subscription state and add the English and Spanish keys. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
-| US05 À US06 | Selección de plan À Consulta y vigencia de suscripción | T68 | Add PlanSelection and SubscriptionDetail views | Select the plan for the organization type and show the subscription status, with routes and toolbar option. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
-| — | Release y despliegue (1.0.0 À 1.0.1) | T69 | Release 1.0.0 | Close the release branch, update CHANGELOG and tag 1.0.0. | 1 | Navarro Aldoradin, Carolina Celeste | Done |
-| — | Release y despliegue (1.0.0 À 1.0.1) | T70 | Create and deploy the mock API project | Create reliant-platform-mock and deploy it to Azure App Service with GitHub Actions. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
-| — | Release y despliegue (1.0.0 À 1.0.1) | T71 | Point production at the deployed mock API | Update the production environment and keep the fake IAM adapters; release 1.0.1. | 1 | Navarro Aldoradin, Carolina Celeste | Done |
-| — | Release y despliegue (1.0.0 À 1.0.1) | T72 | Deploy the web application to Azure App Service | Create the Web App, connect GitHub Actions and set the pm2 startup command. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
-| US44 À US45 À US46 | Propuesta de valor e información por segmento (Landing Page) | T73 | Design the Landing Page wireframes | Update the desktop and mobile wireframes of the Landing Page. | 3 | Rivera Aguilar, Scarlet Josefina | To-do <!-- TODO: actualizar el estado; no hay commits de Landing Page Design en reliant-website --> |
-| US44 À US45 À US46 | Propuesta de valor e información por segmento (Landing Page) | T74 | Design the Landing Page mock-ups | Update the desktop and mobile mock-ups following the style guidelines. | 4 | Rivera Aguilar, Scarlet Josefina | To-do <!-- TODO: actualizar el estado; no hay commits de Landing Page Design en reliant-website --> |
+| US02 · US67 | Inicio de sesión · Gestión de la sesión del usuario | T58 | Add the sign-in port with real and fake adapters | Create the SignInCommand, request, response, assembler, SignInApiEndpoint and FakeSignInApiEndpoint. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US02 · US67 | Inicio de sesión · Gestión de la sesión del usuario | T59 | Add session state, signIn and signOut to IamStore | Persist the session and token and clear them on sign-out. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US02 · US67 | Inicio de sesión · Gestión de la sesión del usuario | T60 | Add the SignInForm view and protect the routes | Add the sign-in route, the guards and the iamInterceptor. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US02 · US67 | Inicio de sesión · Gestión de la sesión del usuario | T61 | Add the AuthenticationSection component | Show the user menu with the sign-out option and filter the toolbar by session and organization type. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
+| US02 · US67 | Inicio de sesión · Gestión de la sesión del usuario | T62 | Filter data by organization | Inject IamStore in the other stores, filter by organization id and fix the circular dependency. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US03 · US04 | Asignación de roles · Restricción de acceso por rol | T63 | Add users and roles to IamApi and IamStore | Add the endpoints, state and translations; add the operations supervisor and procurement analyst roles to the fake API. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US03 · US04 | Asignación de roles · Restricción de acceso por rol | T64 | Add UserList and UserRoleForm views | List the organization users and edit their roles. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US03 · US04 | Asignación de roles · Restricción de acceso por rol | T65 | Add role guards | Guard the user routes and restrict equipment and session actions by role. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
+| US05 · US06 | Selección de plan · Consulta y vigencia de suscripción | T66 | Add the Plan and Subscription entities and BillingApi | Create the entities, responses, assemblers and endpoints. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US05 · US06 | Selección de plan · Consulta y vigencia de suscripción | T67 | Add BillingStore and billing translations | Keep plans and subscription state and add the English and Spanish keys. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
+| US05 · US06 | Selección de plan · Consulta y vigencia de suscripción | T68 | Add PlanSelection and SubscriptionDetail views | Select the plan for the organization type and show the subscription status, with routes and toolbar option. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| — | Release y despliegue (1.0.0 · 1.0.1) | T69 | Release 1.0.0 | Close the release branch, update CHANGELOG and tag 1.0.0. | 1 | Navarro Aldoradin, Carolina Celeste | Done |
+| — | Release y despliegue (1.0.0 · 1.0.1) | T70 | Create and deploy the mock API project | Create reliant-platform-mock and deploy it to Azure App Service with GitHub Actions. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| — | Release y despliegue (1.0.0 · 1.0.1) | T71 | Point production at the deployed mock API | Update the production environment and keep the fake IAM adapters; release 1.0.1. | 1 | Navarro Aldoradin, Carolina Celeste | Done |
+| — | Release y despliegue (1.0.0 · 1.0.1) | T72 | Deploy the web application to Azure App Service | Create the Web App, connect GitHub Actions and set the pm2 startup command. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US44 · US45 · US46 | Propuesta de valor e información por segmento (Landing Page) | T73 | Design the Landing Page wireframes | Update the desktop and mobile wireframes of the Landing Page. | 3 | Rivera Aguilar, Scarlet Josefina | Done (completado en el Sprint 3: commit `d8afec9` de `reliant-website`) |
+| US44 · US45 · US46 | Propuesta de valor e información por segmento (Landing Page) | T74 | Design the Landing Page mock-ups | Update the desktop and mobile mock-ups following the style guidelines. | 4 | Rivera Aguilar, Scarlet Josefina | Done (completado en el Sprint 3: commit `d8afec9` de `reliant-website`) |
 | US48 | Cambio de idioma (Landing Page) | T75 | Externalize the Landing Page texts | Move the Landing Page texts to English and Spanish resources. | 3 | Fernandez Seer, Mario Alonso | Done |
 | US48 | Cambio de idioma (Landing Page) | T76 | Add the Landing Page language switcher | Switch the content between English and Spanish. | 2 | Fernandez Seer, Mario Alonso | Done |
 
@@ -3753,7 +3810,6 @@ En el repositorio `reliant-website` se integró la internacionalización del Lan
 | upc-pre-202620-1asi0729-7753-innovacorp/reliant-website | develop | 303d033 | chore(merge): integrate feature/landing-i18n into develop |  | 2026-10-05 |
 | upc-pre-202620-1asi0729-7753-innovacorp/reliant-website | main | c3ece13 | chore(merge): integrate develop into main |  | 2026-10-05 |
 
-<!-- TODO: agregar los commits de Landing Page Design cuando se suban a reliant-website -->
 
 **Informe — `reliant-report`**
 
@@ -3771,7 +3827,6 @@ En el repositorio `reliant-website` se integró la internacionalización del Lan
 | upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | feature/tb1-deployment-configuration | 5263457 | docs(deployment): describe the azure app service deployment configuration. |  | 2026-10-05 |
 | upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | feature/tb1-sprint-planning | e2762f3 | docs(sprint-2): add sprint planning 2 and aspect leaders and collaborators. |  | 2026-10-05 |
 | upc-pre-202620-1asi0729-7753-innovacorp/reliant-report | feature/tb1-sprint-backlog | 685bdd4 | docs(sprint-2): add sprint backlog 2 and the trello board tasks. |  | 2026-10-05 |
-<!-- TODO: completar con los commits de las secciones 5.2.2.4 a 5.2.2.8 y del cierre de TB1 -->
 
 #### 5.2.2.5. Execution Evidence for Sprint Review.
 
@@ -3781,32 +3836,32 @@ Las capturas siguientes se tomaron ejecutando la versión 1.0.1 en el entorno lo
 
 URL de la aplicación desplegada: https://reliant-web-application-hsa3asb7axaph6hf.chilecentral-01.azurewebsites.net
 
-Video de navegación del producto (Sprint 2): <!-- TODO: URL de Microsoft Stream del video upc-pre-202620-1asi0729-7753-innovacorp-productnavigation-sprint-2 -->
+Video de demostración del prototipo y navegación del producto: https://drive.google.com/file/d/1zf1c5jWL4qMQMxFodapUbAed3S3XQiYO/view?usp=sharing
 
-| Feature À User Story | Evidencia | Descripción |
+| Feature · User Story | Evidencia | Descripción |
 |---|---|---|
-| F13 register-a-new-organization À US01 | <img src="assets/img/5.chapter-v/5.2.2.5-sign-up.png" width="480"> | Registro de una nueva organización: el administrador indica el tipo de organización (Recuperation Supplier o Asset Owner) y sus datos de acceso. |
-| F14 sign-in-and-manage-the-session À US02 | <img src="assets/img/5.chapter-v/5.2.2.5-sign-in.png" width="480"> | Inicio de sesión con correo y contraseña. En el Sprint 2 la autenticación se resuelve con los adapters fake contra las colecciones `/users` y `/organizations` del fake API. |
-| F1 navigate-the-application À F14 À US65 À US67 | <img src="assets/img/5.chapter-v/5.2.2.5-user-menu.png" width="480"> | Vista de inicio después de iniciar sesión: la barra de navegación muestra solo las opciones de un Recuperation Supplier con rol administrador, y el menú de la cuenta presenta el correo, el tipo de organización y la opción de salir. |
-| F3 manage-customers À US13 | <img src="assets/img/5.chapter-v/5.2.2.5-customers.png" width="480"> | Clientes de la organización con sus acciones de edición y eliminación. |
-| F4 manage-components À US14 | <img src="assets/img/5.chapter-v/5.2.2.5-components.png" width="480"> | Componentes recibidos con su número de serie, part number, tipo, modelo de máquina, cliente y PCR objetivo. |
-| F5 manage-recuperations À US15 | <img src="assets/img/5.chapter-v/5.2.2.5-recuperations.png" width="480"> | Órdenes de recuperación con su WO y OF, componente, cliente y estado. |
-| F6 manage-hvof-systems À US07 | <img src="assets/img/5.chapter-v/5.2.2.5-hvof-systems-es.png" width="480"> | Sistemas HVOF de la organización (HVOF-01, Oerlikon Metco MultiCoat / Diamond Jet 2700). |
-| F6 manage-hvof-systems À US07 | <img src="assets/img/5.chapter-v/5.2.2.5-hvof-system-detail.png" width="480"> | Detalle del sistema HVOF con la pestaña de controladores. |
-| F7 manage-hvof-subsystems À US08 À US53 | <img src="assets/img/5.chapter-v/5.2.2.5-hvof-subsystems.png" width="480"> | Subsistemas del sistema HVOF y sus partes. |
-| F8 manage-recipes À US54 | <img src="assets/img/5.chapter-v/5.2.2.5-recipes.png" width="480"> | Recetas del sistema HVOF: receta 12, WC-10Co-4Cr sobre vástago hidráulico, con nueve parámetros. |
-| F8 manage-recipes À US54 | <img src="assets/img/5.chapter-v/5.2.2.5-recipe-form.png" width="480"> | Edición de la receta con sus componentes aplicables y las bandas de umbral de cada parámetro (parada, advertencia, nominal y setpoint). |
-| F9 start-spray-session À US19 | <img src="assets/img/5.chapter-v/5.2.2.5-spray-session-start.png" width="480"> | Inicio de una sesión de rociado: se elige el sistema HVOF, la orden de recuperación y una receta activa del sistema. |
-| F10 monitor-live-readings À US21 À US22 | <img src="assets/img/5.chapter-v/5.2.2.5-spray-session-readings.png" width="480"> | Lecturas de la sesión 3: último valor de cada parámetro con su banda respecto a la receta, conteo de lecturas por banda y hora de la última actualización. |
-| F10 monitor-live-readings À F11 finish-spray-session À US22 À US23 | <img src="assets/img/5.chapter-v/5.2.2.5-spray-session-active.png" width="480"> | Sesión activa: la vista se actualiza periódicamente y ofrece las acciones de completar y abortar la sesión. |
-| F11 finish-spray-session À US23 | <img src="assets/img/5.chapter-v/5.2.2.5-abort-session-dialog.png" width="480"> | Diálogo para abortar una sesión indicando el motivo. |
-| F12 browse-session-history À US24 | <img src="assets/img/5.chapter-v/5.2.2.5-spray-session-history.png" width="480"> | Historial de sesiones con filtros por sistema HVOF, orden y rango de fechas, estado de cada sesión y número de desviaciones. |
-| F15 manage-user-roles À US03 | <img src="assets/img/5.chapter-v/5.2.2.5-users.png" width="480"> | Usuarios de la organización con sus roles. |
-| F15 manage-user-roles À US03 À US04 | <img src="assets/img/5.chapter-v/5.2.2.5-user-roles.png" width="480"> | Asignación de roles a un usuario de la organización. |
-| F16 select-subscription-plan À US05 | <img src="assets/img/5.chapter-v/5.2.2.5-plans.png" width="480"> | Selección de plan: solo se habilita el plan que corresponde al tipo de organización. |
-| F16 select-subscription-plan À US06 | <img src="assets/img/5.chapter-v/5.2.2.5-subscription.png" width="480"> | Estado y vigencia de la suscripción de la organización. |
-| F2 switch-application-language À US66 | <img src="assets/img/5.chapter-v/5.2.2.5-hvof-systems-en.png" width="480"> | La misma vista de sistemas HVOF después de cambiar el idioma a inglés con el selector EN / ES. |
-| F1 navigate-the-application À US65 | <img src="assets/img/5.chapter-v/5.2.2.5-page-not-found.png" width="480"> | Vista de recurso no encontrado con la opción de volver al inicio. |
+| F13 register-a-new-organization · US01 | <img src="assets/img/5.chapter-v/5.2.2.5-sign-up.png" width="480"> | Registro de una nueva organización: el administrador indica el tipo de organización (Recuperation Supplier o Asset Owner) y sus datos de acceso. |
+| F14 sign-in-and-manage-the-session · US02 | <img src="assets/img/5.chapter-v/5.2.2.5-sign-in.png" width="480"> | Inicio de sesión con correo y contraseña. En el Sprint 2 la autenticación se resuelve con los adapters fake contra las colecciones `/users` y `/organizations` del fake API. |
+| F1 navigate-the-application · F14 · US65 · US67 | <img src="assets/img/5.chapter-v/5.2.2.5-user-menu.png" width="480"> | Vista de inicio después de iniciar sesión: la barra de navegación muestra solo las opciones de un Recuperation Supplier con rol administrador, y el menú de la cuenta presenta el correo, el tipo de organización y la opción de salir. |
+| F3 manage-customers · US13 | <img src="assets/img/5.chapter-v/5.2.2.5-customers.png" width="480"> | Clientes de la organización con sus acciones de edición y eliminación. |
+| F4 manage-components · US14 | <img src="assets/img/5.chapter-v/5.2.2.5-components.png" width="480"> | Componentes recibidos con su número de serie, part number, tipo, modelo de máquina, cliente y PCR objetivo. |
+| F5 manage-recuperations · US15 | <img src="assets/img/5.chapter-v/5.2.2.5-recuperations.png" width="480"> | Órdenes de recuperación con su WO y OF, componente, cliente y estado. |
+| F6 manage-hvof-systems · US07 | <img src="assets/img/5.chapter-v/5.2.2.5-hvof-systems-es.png" width="480"> | Sistemas HVOF de la organización (HVOF-01, Oerlikon Metco MultiCoat / Diamond Jet 2700). |
+| F6 manage-hvof-systems · US07 | <img src="assets/img/5.chapter-v/5.2.2.5-hvof-system-detail.png" width="480"> | Detalle del sistema HVOF con la pestaña de controladores. |
+| F7 manage-hvof-subsystems · US08 · US53 | <img src="assets/img/5.chapter-v/5.2.2.5-hvof-subsystems.png" width="480"> | Subsistemas del sistema HVOF y sus partes. |
+| F8 manage-recipes · US54 | <img src="assets/img/5.chapter-v/5.2.2.5-recipes.png" width="480"> | Recetas del sistema HVOF: receta 12, WC-10Co-4Cr sobre vástago hidráulico, con nueve parámetros. |
+| F8 manage-recipes · US54 | <img src="assets/img/5.chapter-v/5.2.2.5-recipe-form.png" width="480"> | Edición de la receta con sus componentes aplicables y las bandas de umbral de cada parámetro (parada, advertencia, nominal y setpoint). |
+| F9 start-spray-session · US19 | <img src="assets/img/5.chapter-v/5.2.2.5-spray-session-start.png" width="480"> | Inicio de una sesión de rociado: se elige el sistema HVOF, la orden de recuperación y una receta activa del sistema. |
+| F10 monitor-live-readings · US21 · US22 | <img src="assets/img/5.chapter-v/5.2.2.5-spray-session-readings.png" width="480"> | Lecturas de la sesión 3: último valor de cada parámetro con su banda respecto a la receta, conteo de lecturas por banda y hora de la última actualización. |
+| F10 monitor-live-readings · F11 finish-spray-session · US22 · US23 | <img src="assets/img/5.chapter-v/5.2.2.5-spray-session-active.png" width="480"> | Sesión activa: la vista se actualiza periódicamente y ofrece las acciones de completar y abortar la sesión. |
+| F11 finish-spray-session · US23 | <img src="assets/img/5.chapter-v/5.2.2.5-abort-session-dialog.png" width="480"> | Diálogo para abortar una sesión indicando el motivo. |
+| F12 browse-session-history · US24 | <img src="assets/img/5.chapter-v/5.2.2.5-spray-session-history.png" width="480"> | Historial de sesiones con filtros por sistema HVOF, orden y rango de fechas, estado de cada sesión y número de desviaciones. |
+| F15 manage-user-roles · US03 | <img src="assets/img/5.chapter-v/5.2.2.5-users.png" width="480"> | Usuarios de la organización con sus roles. |
+| F15 manage-user-roles · US03 · US04 | <img src="assets/img/5.chapter-v/5.2.2.5-user-roles.png" width="480"> | Asignación de roles a un usuario de la organización. |
+| F16 select-subscription-plan · US05 | <img src="assets/img/5.chapter-v/5.2.2.5-plans.png" width="480"> | Selección de plan: solo se habilita el plan que corresponde al tipo de organización. |
+| F16 select-subscription-plan · US06 | <img src="assets/img/5.chapter-v/5.2.2.5-subscription.png" width="480"> | Estado y vigencia de la suscripción de la organización. |
+| F2 switch-application-language · US66 | <img src="assets/img/5.chapter-v/5.2.2.5-hvof-systems-en.png" width="480"> | La misma vista de sistemas HVOF después de cambiar el idioma a inglés con el selector EN / ES. |
+| F1 navigate-the-application · US65 | <img src="assets/img/5.chapter-v/5.2.2.5-page-not-found.png" width="480"> | Vista de recurso no encontrado con la opción de volver al inicio. |
 
 #### 5.2.2.6. Services Documentation Evidence for Sprint Review.
 
@@ -3822,7 +3877,7 @@ La tabla siguiente lista los endpoints que consume la Web Application, agrupados
 |---|---|---|---|---|
 | IAM | POST | `/organizations` | Registro de la organización (adapter `FakeSignUpApiEndpoint`) | — |
 | IAM | POST | `/users` | Registro del administrador de la organización recién creada (adapter `FakeSignUpApiEndpoint`) | — |
-| IAM | GET | `/users` | Inicio de sesión (adapter `FakeSignInApiEndpoint`) y lista de usuarios de la organización | `email`, `password` À `organizationId` |
+| IAM | GET | `/users` | Inicio de sesión (adapter `FakeSignInApiEndpoint`) y lista de usuarios de la organización | `email`, `password` · `organizationId` |
 | IAM | GET | `/organizations/{id}` | Tipo de la organización del usuario que inicia sesión | — |
 | IAM | PATCH | `/users/{id}` | Asignación de roles a un usuario (`roleIds`) | — |
 | IAM | GET | `/roles` | Catálogo de roles | — |
@@ -3830,17 +3885,17 @@ La tabla siguiente lista los endpoints que consume la Web Application, agrupados
 | Billing | GET | `/subscriptions` | Suscripción de la organización | `organizationId` |
 | Billing | POST | `/subscriptions` | Selección de plan | — |
 | Traceability | GET | `/customers` | Clientes del Recuperation Supplier | `supplierOrganizationId` |
-| Traceability | GET À POST À PUT À DELETE | `/customers À /customers/{id}` | Consulta, registro, edición y eliminación de clientes | — |
-| Traceability | GET À POST À PUT | `/components À /components/{id}` | Consulta, registro y edición de componentes | — |
-| Traceability | GET À POST À PUT | `/recuperations À /recuperations/{id}` | Consulta, registro y edición de órdenes de recuperación | `supplierOrganizationId` |
-| Equipment | GET À POST À PUT | `/hvofSystems À /hvofSystems/{id}` | Consulta, registro y edición de sistemas HVOF | `organizationId` |
-| Equipment | GET À POST À PUT | `/controllers À /controllers/{id}` | Controladores de un sistema HVOF | `hvofSystemId` |
-| Equipment | GET À POST À PUT | `/hvofSubsystems À /hvofSubsystems/{id}` | Subsistemas de un sistema HVOF | — |
-| Equipment | GET À POST À DELETE | `/hvofParts À /hvofParts/{id}` | Partes de un subsistema | — |
-| Equipment | GET À POST À PUT | `/recipes À /recipes/{id}` | Recetas con componentes aplicables y bandas de umbral | — |
-| Process Monitoring | GET À POST | `/spraySessions À /spraySessions/{id}` | Historial, detalle e inicio de sesiones de rociado | — |
+| Traceability | GET · POST · PUT · DELETE | `/customers · /customers/{id}` | Consulta, registro, edición y eliminación de clientes | — |
+| Traceability | GET · POST · PUT | `/components · /components/{id}` | Consulta, registro y edición de componentes | — |
+| Traceability | GET · POST · PUT | `/recuperations · /recuperations/{id}` | Consulta, registro y edición de órdenes de recuperación | `supplierOrganizationId` |
+| Equipment | GET · POST · PUT | `/hvofSystems · /hvofSystems/{id}` | Consulta, registro y edición de sistemas HVOF | `organizationId` |
+| Equipment | GET · POST · PUT | `/controllers · /controllers/{id}` | Controladores de un sistema HVOF | `hvofSystemId` |
+| Equipment | GET · POST · PUT | `/hvofSubsystems · /hvofSubsystems/{id}` | Subsistemas de un sistema HVOF | — |
+| Equipment | GET · POST · DELETE | `/hvofParts · /hvofParts/{id}` | Partes de un subsistema | — |
+| Equipment | GET · POST · PUT | `/recipes · /recipes/{id}` | Recetas con componentes aplicables y bandas de umbral | — |
+| Process Monitoring | GET · POST | `/spraySessions · /spraySessions/{id}` | Historial, detalle e inicio de sesiones de rociado | — |
 | Process Monitoring | PATCH | `/spraySessions/{id}` | Completar o abortar una sesión (`status`, `endedAt`, `abortReason`) | — |
-| Process Monitoring | GET | `/processReadings` | Lecturas de una sesión, ordenadas en el tiempo, y conteo de desviaciones | `spraySessionId`, `_sort=epochMillis`, `_order=asc` À `band` |
+| Process Monitoring | GET | `/processReadings` | Lecturas de una sesión, ordenadas en el tiempo, y conteo de desviaciones | `spraySessionId`, `_sort=epochMillis`, `_order=asc` · `band` |
 | Process Monitoring | POST | `/processReadings` | Lectura simulada (solo en el entorno de desarrollo) | — |
 
 **Ejemplo 1 — Consulta de los clientes de un Recuperation Supplier**
@@ -3949,58 +4004,54 @@ En el Sprint 2 se desplegaron en Microsoft Azure App Service el fake API y la Fr
 
 **Paso 2. Crear el Web App del fake API.** En Azure Portal se creó el Web App `reliant-mockapi` (Linux, Node 24 LTS) en el grupo de recursos `reliant-rg`. El primer intento falló porque la suscripción de estudiante solo permite crear recursos en un conjunto de regiones, por lo que se eligió una región permitida. Se usó el plan Basic B1, porque el plan gratuito F1 no permitía habilitar el despliegue continuo con GitHub Actions.
 
-<!-- TODO: captura del error de región al crear el Web App (assets/img/5.chapter-v/5.2.2.7-region-error.png) -->
-<!-- TODO: captura de la configuración del Web App reliant-mockapi en Azure Portal (assets/img/5.chapter-v/5.2.2.7-mockapi-web-app.png) -->
 
 **Paso 3. Conectar GitHub Actions al fake API.** Desde Deployment Center se conectó el repositorio `reliant-platform-mock` y la rama `main`. Azure agregó el workflow `main_reliant-mockapi.yml` (commit `0c2f6cb`) y su primera ejecución, "Build and deploy Node.js app to Azure Web App - reliant-mockapi #1", terminó correctamente en 1 min 44 s.
 
-<img src="assets/img/5.chapter-v/5.2.2.7-github-actions-mock.png" alt="GitHub Actions del fake API" width="720">
+<p align="center"><img src="assets/img/5.chapter-v/5.2.2.7-github-actions-mock.png" alt="GitHub Actions del fake API" width="720"></p>
 
 El fake API desplegado responde con las colecciones de `db.json`; por ejemplo, `GET /api/v1/components`:
 
-<img src="assets/img/5.chapter-v/5.2.2.7-mock-api-components.png" alt="Colección components del fake API desplegado" width="720">
+<p align="center"><img src="assets/img/5.chapter-v/5.2.2.7-mock-api-components.png" alt="Colección components del fake API desplegado" width="720"></p>
 
 **Paso 4. Preparar el release de la Web Application.** Se cerró el release `1.0.0` con Git Flow y, en el release `1.0.1`, se apuntó el entorno de producción al fake API desplegado manteniendo los adapters fake de IAM (commit `1abc987`). Las ramas `main` y `develop` y la etiqueta `1.0.0` quedaron publicadas en GitHub:
 
-<img src="assets/img/5.chapter-v/5.2.2.7-webapp-branches.png" alt="Ramas principales de reliant-webapp" width="720">
+<p align="center"><img src="assets/img/5.chapter-v/5.2.2.7-webapp-branches.png" alt="Ramas principales de reliant-webapp" width="720"></p>
 
-<img src="assets/img/5.chapter-v/5.2.2.7-webapp-tags.png" alt="Etiqueta 1.0.0 de reliant-webapp" width="720">
+<p align="center"><img src="assets/img/5.chapter-v/5.2.2.7-webapp-tags.png" alt="Etiqueta 1.0.0 de reliant-webapp" width="720"></p>
 
 **Paso 5. Intento con Azure Static Web Apps.** Como la Web Application es una SPA estática, primero se intentó publicarla con Azure Static Web Apps; para ello el release `1.0.1` incluyó el archivo `public/staticwebapp.config.json` con la regla de fallback a `index.html` (commit `a5b244f`). La creación del recurso fue rechazada por la política de la suscripción de estudiante (`RequestDisallowedByAzure`), por lo que se optó por un segundo Web App de App Service y el archivo quedó sin uso.
 
-<!-- TODO: captura del error RequestDisallowedByAzure al crear el Static Web App (assets/img/5.chapter-v/5.2.2.7-static-web-apps-error.png) -->
 
 **Paso 6. Crear el Web App de la Frontend Web Application y conectar GitHub Actions.** Se creó el Web App `reliant-web-application` (Linux, Node 24 LTS) en `reliant-rg` y se conectó desde Deployment Center al repositorio `reliant-webapp`, rama `main`. Azure agregó el workflow `main_reliant-web-application.yml` (commit `b7b1539`), que construye la aplicación con `npm run build` y publica el resultado; su primera ejecución terminó correctamente.
 
-<img src="assets/img/5.chapter-v/5.2.2.7-github-actions-webapp.png" alt="GitHub Actions de la Web Application" width="720">
+<p align="center"><img src="assets/img/5.chapter-v/5.2.2.7-github-actions-webapp.png" alt="GitHub Actions de la Web Application" width="720"></p>
 
 **Paso 7. Configurar el Startup Command.** Con el despliegue terminado, el sitio respondía `503 Service Unavailable`: App Service no tenía un proceso que sirviera los archivos estáticos generados por Angular.
 
-<img src="assets/img/5.chapter-v/5.2.2.7-webapp-503.png" alt="Respuesta 503 antes de configurar el Startup Command" width="720">
+<p align="center"><img src="assets/img/5.chapter-v/5.2.2.7-webapp-503.png" alt="Respuesta 503 antes de configurar el Startup Command" width="720"></p>
 
-Se configuró en Configuration ÔåÆ General settings el Startup Command siguiente, para que PM2 sirva el build como Single Page Application y redirija cualquier ruta a `index.html`:
+Se configuró en Configuration → General settings el Startup Command siguiente, para que PM2 sirva el build como Single Page Application y redirija cualquier ruta a `index.html`:
 
 ```bash
 pm2 serve /home/site/wwwroot/dist/reliant-webapp/browser --no-daemon --spa
 ```
 
-<!-- TODO: captura del Startup Command en Azure Portal (assets/img/5.chapter-v/5.2.2.7-startup-command.png) -->
 
 **Paso 8. Verificar la aplicación desplegada.** Tras reiniciar el Web App, la aplicación respondió en su URL pública, incluida la carga directa de la ruta `/equipment/hvof-systems`, en inglés y en español:
 
-<img src="assets/img/5.chapter-v/5.2.2.7-webapp-deployed-en.png" alt="Web Application desplegada en inglés" width="720">
+<p align="center"><img src="assets/img/5.chapter-v/5.2.2.7-webapp-deployed-en.png" alt="Web Application desplegada en inglés" width="720"></p>
 
-<img src="assets/img/5.chapter-v/5.2.2.7-webapp-deployed-es.png" alt="Web Application desplegada en español" width="720">
+<p align="center"><img src="assets/img/5.chapter-v/5.2.2.7-webapp-deployed-es.png" alt="Web Application desplegada en español" width="720"></p>
 
 Las herramientas de desarrollo del navegador muestran que la aplicación desplegada consume las colecciones del fake API en Azure (`hvofSystems`, `controllers`, `hvofSubsystems`, `hvofParts`, `recipes`):
 
-<img src="assets/img/5.chapter-v/5.2.2.7-webapp-requests-to-mock-api.png" alt="Solicitudes de la Web Application al fake API desplegado" width="720">
+<p align="center"><img src="assets/img/5.chapter-v/5.2.2.7-webapp-requests-to-mock-api.png" alt="Solicitudes de la Web Application al fake API desplegado" width="720"></p>
 
 #### 5.2.2.8. Team Collaboration Insights during Sprint.
 
 Durante el Sprint 2 el trabajo se distribuyó según la matriz LACX de la sección 5.2.2.2. Navarro Aldoradin, Carolina Celeste lideró los seis aspectos de la Frontend Web Application y desarrolló la totalidad del repositorio `reliant-webapp`: los 171 commits sin merge de las 16 ramas `feature/*` y de los releases `1.0.0` y `1.0.1`. También creó y desplegó el repositorio `reliant-platform-mock`. Fernandez Seer, Mario Alonso lideró el aspecto Landing Page i18n e implementó la internacionalización del Landing Page en la rama `feature/landing-i18n` de `reliant-website`, que Navarro Aldoradin, Carolina Celeste revisó, ajustó e integró en `develop` y `main`. Rivera Aguilar, Scarlet Josefina lideró el aspecto Landing Page Design; a la fecha de este informe, el repositorio `reliant-website` no registra commits de ese aspecto. En el repositorio del informe, además de las secciones del Sprint 2, Rivera Aguilar, Scarlet Josefina registró el 2 de octubre de 2026 las correcciones de los perfiles de integrantes en la rama `main`.
 
-La tabla resume las contribuciones de los integrantes actuales del equipo registradas por GitHub en cada repositorio de la organización (Insights ÔåÆ Contributors, contribuciones acumuladas a la fecha de redacción):
+La tabla resume las contribuciones de los integrantes actuales del equipo registradas por GitHub en cada repositorio de la organización (Insights → Contributors, contribuciones acumuladas a la fecha de redacción):
 
 | Repositorio | Contribuidor (usuario de GitHub) | Commits |
 |---|---|---|
@@ -4014,8 +4065,476 @@ La tabla resume las contribuciones de los integrantes actuales del equipo regist
 
 La concentración del desarrollo de la Web Application en una sola integrante es el principal riesgo de colaboración identificado en este Sprint. Para el Sprint 3 se recomienda distribuir los bounded contexts de los Web Services entre los tres integrantes y mantener el flujo de Git Flow con una rama `feature/*` por historia, de modo que la contribución de cada integrante quede registrada en los repositorios.
 
-<!-- TODO: capturas de Insights ÔåÆ Contributors de reliant-webapp, reliant-platform-mock, reliant-website y reliant-report (assets/img/5.chapter-v/5.2.2.8-<repositorio>-contributors.png) -->
-<!-- TODO: capturas de Insights ÔåÆ Network o Commits de reliant-webapp para mostrar las ramas feature/* del Sprint 2 -->
+<!-- Capturas pendientes: Insights → Contributors de reliant-webapp, reliant-platform-mock, reliant-website y reliant-report con el rango del Sprint 2 (assets/img/5.chapter-v/5.2.2.8-<repositorio>-contributors.png). -->
+
+### 5.2.3. Sprint 3
+
+#### 5.2.3.1. Sprint Planning 3.
+
+El Sprint 3 tuvo como objetivo publicar la primera versión de los Web Services de Reliant (RESTful API en Spring Boot, repositorio `reliant-platform`), conectar la Frontend Web Application a ese API en reemplazo del fake API del Sprint 2 y entregar una nueva versión del Landing Page con la identidad visual definitiva de InnovaCorp. El alcance de los Web Services se acotó a los seis bounded contexts que sostienen el flujo de extremo a extremo de un Recuperation Supplier: IAM, Equipment, Traceability, Process Monitoring, Fault Diagnosis y Reporting; Billing y Notifications se mantienen en el backlog para el Sprint 4. En la Web Application el Sprint agregó el diagnóstico de fallas, el análisis de sesión, el constructor de plantillas de reporte con generación de PDF, el tablero de operaciones con indicadores en vivo y un Quick Start que aprovisiona una planta de demostración con un clic.
+
+| Sprint # | Sprint 3 |
+|---|---|
+| **Sprint Planning Background** | |
+| Date | 2026-10-26 |
+| Time | 08:00 PM – 09:30 PM (GMT-5) |
+| Location | Reunión virtual en Microsoft Teams |
+| Prepared By | Navarro Aldoradin, Carolina Celeste |
+| Attendees (to planning meeting) | Navarro Aldoradin, Carolina Celeste / Rivera Aguilar, Scarlet Josefina / Fernandez Seer, Mario Alonso |
+| Sprint 2 Review Summary | En el Sprint 2 se publicó la Frontend Web Application 1.0.1 en Azure App Service, conectada al fake API `reliant-mockapi`, con 16 features sobre los bounded contexts IAM, Billing, Equipment, Traceability y Process Monitoring. Quedaron pendientes el cambio de estado de un sistema HVOF (US12), las historias del segmento Asset Owner y el reemplazo de los adapters fake de IAM por una autenticación real. |
+| Sprint 2 Retrospective Summary | Lo que funcionó: la organización por bounded context y por capas permitió avanzar en paralelo y dejó listos los contratos que ahora implementan los Web Services. Lo que se debe mejorar: el desarrollo de la Web Application se concentró en una sola integrante y el Landing Page no registró commits de diseño; para el Sprint 3 se acordó repartir los bounded contexts del backend y las vistas nuevas entre los tres integrantes, con una rama `feature/*` por historia. |
+| **Sprint Goal & User Stories** | |
+| Sprint 3 Goal | Our focus is on replacing the fake API with the first version of the Reliant Web Services and connecting the Web Application to them, so that a recuperation supplier can sign in, register its equipment and recipes, run and monitor a spray session, get fault cases opened automatically and generate quality reports against real, persisted data. We believe it delivers verifiable traceability to recuperation suppliers and their mining customers. This will be confirmed when the Web Application deployed in Azure completes the Quick Start flow end to end against the deployed Web Services. |
+| Sprint 3 Velocity | 139 |
+| Sum of Story Points | 139 (35 User Stories: 27 de los Web Services, 4 de la Web Application y 4 del Landing Page, según los Story Points de la sección 3.3) |
+
+#### 5.2.3.2. Aspect Leaders and Collaborators.
+
+La matriz LACX del Sprint 3 distribuye los bounded contexts de los Web Services y los frentes de la Web Application y del Landing Page entre los tres integrantes. Los aspectos de los Web Services corresponden a los bounded contexts implementados en `reliant-platform`; los aspectos de la Web Application agrupan las vistas nuevas de `reliant-webapp`; y el aspecto Landing Page Redesign corresponde a la versión 2.1.0 de `reliant-website`.
+
+| Team Member (Last Name, First Name) | GitHub Username | IAM & Security (Web Services) Leader (L) / Collaborator (C) | Equipment (Web Services) Leader (L) / Collaborator (C) | Traceability (Web Services) Leader (L) / Collaborator (C) | Process Monitoring (Web Services) Leader (L) / Collaborator (C) | Fault Diagnosis (Web Services) Leader (L) / Collaborator (C) | Reporting (Web Services) Leader (L) / Collaborator (C) | Platform Integration & Deployment Leader (L) / Collaborator (C) | Dashboard, Theme & Charts (Web Application) Leader (L) / Collaborator (C) | Session Reports & CSV Export (Web Application) Leader (L) / Collaborator (C) | Fault Diagnosis, Reporting & Quick Start (Web Application) Leader (L) / Collaborator (C) | Landing Page Redesign Leader (L) / Collaborator (C) |
+|---|---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| Navarro Aldoradin, Carolina Celeste | genixmvp | L | C | L | L | L | L | L | C | C | L | L |
+| Rivera Aguilar, Scarlet Josefina | scarletriveraaguilar-spec | – | L | – | – | – | – | C | L | – | – | C |
+| Fernandez Seer, Mario Alonso | MrBaru | – | – | – | C | – | – | – | – | L | – | – |
+
+#### 5.2.3.3. Sprint Backlog 3.
+
+El Sprint Backlog 3 descompone las User Stories del Sprint en tareas de implementación. En los Web Services cada bounded context se construyó en su rama `feature/*` siguiendo las capas de Domain-Driven Design: agregado y value objects del dominio con sus commands, queries y eventos; command y query services de la capa de aplicación; entidades de persistencia, assemblers y repositorios JPA en infraestructura; y controladores REST con resources, assemblers y claves de mensajes localizadas en interfaces. En la Web Application cada feature agrega el modelo, el endpoint, el store y las vistas de su bounded context.
+
+El tablero del Sprint 3 se gestiona en Trello con las listas To-do, In Progress, To Review y Done: [https://trello.com/b/aDFKmtGp/reliant-product-backlog](https://trello.com/b/aDFKmtGp/reliant-product-backlog) (lista Sprint 3).
+
+| Sprint # | Sprint 3 | | | | | | |
+|---|---|---|---|---|---|---|---|
+| **User Story Id** | **User Story Title** | **Work-Item / Task Id** | **Title** | **Description** | **Estimation (Hours)** | **Assigned To** | **Status (To-do / In-Process / To-Review / Done)** |
+| US01 | Registro de organización | T101 | Set up the Spring Boot project | Create the `reliant-platform` project with Spring Boot 4, Spring Data JPA, Validation, springdoc OpenAPI, the `dev`/`prod` profiles driven by environment variables and the snake-case pluralized naming strategy. | 4 | Navarro Aldoradin, Carolina Celeste | Done |
+| US01 | Registro de organización | T102 | Implement the IAM domain model | Add the Organization, User and Role aggregates with the Ruc, EmailAddress and OrganizationType value objects, the sign-up and seed-roles commands and the repository contracts. | 4 | Navarro Aldoradin, Carolina Celeste | Done |
+| US01 | Registro de organización | T103 | Implement sign-up | Add the user command service with BCrypt hashing, role seeding on startup, the JPA persistence entities and the `POST /api/v1/users` endpoint with localized messages. | 4 | Navarro Aldoradin, Carolina Celeste | Done |
+| US02 | Inicio de sesión | T104 | Implement sign-in with JWT | Add the JWT token service, the sign-in command handling and the `POST /api/v1/tokens` and `GET /api/v1/users/me` endpoints. | 4 | Navarro Aldoradin, Carolina Celeste | Done |
+| US04 | Restricción de acceso por rol | T105 | Secure the API with Spring Security | Add the bearer authorization filter, the user details service, the web security configuration, the 403 problem detail and the bearer scheme in OpenAPI. | 4 | Navarro Aldoradin, Carolina Celeste | Done |
+| US03 | Asignación de roles | T106 | Implement users and roles endpoints | Add the user query service, the assign-roles command and the `GET /users`, `GET /users/{id}`, `PUT /users/{id}/roles` and `GET /roles` endpoints restricted to administrators. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US07 | Registro de sistema HVOF y sus controladores | T107 | Implement the HVOF system aggregate | Add the HvofSystem aggregate with its code, fuel type and status value objects, the register command and the query service. | 4 | Navarro Aldoradin, Carolina Celeste | Done |
+| US07 | Registro de sistema HVOF y sus controladores | T108 | Expose HVOF systems endpoints | Add the `POST/GET /hvof-systems` and `GET /hvof-systems/{id}` endpoints with resources, assemblers and the Accept-Language header in OpenAPI. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US07 | Registro de sistema HVOF y sus controladores | T109 | Implement controllers | Add the Controller entity with its network endpoint embeddable, persistence and the `POST/GET /hvof-systems/{id}/controllers` sub-resource. | 4 | Rivera Aguilar, Scarlet Josefina | Done |
+| US08 | Registro de subsistemas del sistema HVOF | T110 | Implement subsystems | Add the HvofSubsystem entity, its persistence and the `POST/GET /hvof-systems/{id}/subsystems` sub-resource, with domain tests. | 4 | Rivera Aguilar, Scarlet Josefina | Done |
+| US54 | Definición de recetas con bandas de umbral y componentes aplicables | T111 | Implement the Recipe aggregate | Add the Recipe aggregate with RecipeParameter, the ParameterBands, Unit and Status value objects, the applicability rules, events, commands, queries and repository port. | 6 | Rivera Aguilar, Scarlet Josefina | Done |
+| US54 | Definición de recetas con bandas de umbral y componentes aplicables | T112 | Expose recipes endpoints | Add the recipe persistence, command and query services and the `POST/GET /recipes`, `GET /recipes/{id}` and `PATCH /recipes/{id}/publication` endpoints. | 5 | Rivera Aguilar, Scarlet Josefina | Done |
+| US54 | Definición de recetas con bandas de umbral y componentes aplicables | T113 | Add the Equipment context facade | Expose recipe band snapshots and HVOF system lookups to the other bounded contexts through an anti-corruption layer. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
+| US13 | Registro de cliente | T114 | Implement customers | Add the Customer aggregate, persistence, command and query services and the `POST/GET/PUT /customers` endpoints. | 4 | Navarro Aldoradin, Carolina Celeste | Done |
+| US14 | Registro de componente recibido | T115 | Implement recovered components | Add the RecoveredComponent aggregate, persistence, services and the `POST/GET /components?customerId=` endpoints. | 4 | Navarro Aldoradin, Carolina Celeste | Done |
+| US15 | Registro de orden de recuperación | T116 | Implement recuperations | Add the Recuperation aggregate with its status transitions and linked sessions, persistence, services and the `POST/GET /recuperations` endpoints. | 5 | Navarro Aldoradin, Carolina Celeste | Done |
+| US18 | Cierre y entrega de orden | T117 | Complete a recuperation | Add the completion command and the `PATCH /recuperations/{id}/completion` endpoint, and the Traceability context facade. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US19 | Inicio de sesión de rociado | T118 | Implement the SpraySession aggregate | Add the SpraySession aggregate with the frozen recipe bands, passes, readings, commands, queries and events. | 6 | Navarro Aldoradin, Carolina Celeste | Done |
+| US20 | Ingesta automática de lecturas | T119 | Ingest readings | Add the readings persistence and the `POST/GET /spray-sessions/{id}/readings` endpoints that accept batches of readings from the gateway or the simulator. | 4 | Navarro Aldoradin, Carolina Celeste | Done |
+| US21 | Clasificación de lecturas por banda de umbral | T120 | Classify readings and publish deviations | Evaluate each reading against the nominal, warning and shutdown bands, publish the out-of-band reading event and expose `GET /spray-sessions/{id}/deviations`. | 4 | Navarro Aldoradin, Carolina Celeste | Done |
+| US23 | Finalización o aborto de sesión | T121 | Complete or abort a session | Add the `PATCH /spray-sessions/{id}/completion` and `PATCH /spray-sessions/{id}/abortion` endpoints and the `POST /spray-sessions/{id}/passes` endpoint. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US24 | Historial de sesiones por sistema HVOF | T122 | List spray sessions | Add the spray session query service and the `GET /spray-sessions` endpoint filtered by HVOF system and recuperation. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
+| US28 | Gestión del catálogo de reglas | T123 | Implement fault rules | Add the FaultRule aggregate, persistence, command and query services with the default FESA rules and the `GET/POST/PUT /fault-rules` endpoints. | 5 | Navarro Aldoradin, Carolina Celeste | Done |
+| US25 | Apertura automática de caso de falla | T124 | Open fault cases from deviations | Add the FaultCase aggregate and the out-of-band reading event handler that matches a rule, applies the cooldown and opens the case with its probable cause and recommended action. | 5 | Navarro Aldoradin, Carolina Celeste | Done |
+| US27 | Confirmación de causa raíz | T125 | Acknowledge and resolve fault cases | Add the acknowledge and resolve transitions and the `PATCH /fault-cases/{id}/acknowledgement` and `PATCH /fault-cases/{id}/resolution` endpoints. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US30 | Consulta de casos de falla | T126 | List fault cases | Add the `GET /fault-cases?spraySessionId=&status=` endpoint with resources and assemblers. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
+| US59 | Creación de plantilla de reporte mediante formulario | T127 | Implement report templates | Add the ReportTemplate aggregate with its widgets, persistence, services with the default templates and the `GET/POST/PUT /report-templates` and `PATCH /report-templates/{id}/status` endpoints. | 5 | Navarro Aldoradin, Carolina Celeste | Done |
+| US62 | Generación y descarga de reportes desde plantilla | T128 | Register generated reports | Add the GeneratedReport aggregate, persistence, services and the `POST/GET /generated-reports` endpoints. | 4 | Navarro Aldoradin, Carolina Celeste | Done |
+| US01 | Registro de organización | T129 | Prepare the production profile and release 1.0.0 | Add the `prod` profile for Azure (MySQL Flexible Server, JWT secret and CORS from environment variables), the README, the CHANGELOG, the Azure deployment guide and publish release 1.0.0. | 3 | Navarro Aldoradin, Carolina Celeste | Done |
+| US65 | Navegación por la aplicación | T130 | Apply the Reliant brand theme | Configure the Angular Material theme with the InnovaCorp palettes, load Poppins, add the global styles and the responsive, segment-aware side navigation with its translations. | 6 | Rivera Aguilar, Scarlet Josefina | Done |
+| US22 | Visualización de lecturas en vivo | T131 | Add the parameter trend chart | Install chart.js and ng2-charts, create the shared chart theme and the parameter trend chart with its status legend in the session detail. | 5 | Rivera Aguilar, Scarlet Josefina | Done |
+| US65 | Navegación por la aplicación | T132 | Build the dashboard | Add the user preferences API, the dashboard preferences store, the reusable chart widget, the monitoring summary statistics and the home view with recent sessions. | 6 | Rivera Aguilar, Scarlet Josefina | Done |
+| US36 | Reporte de sesión | T133 | Add the session report and CSV export | Add the session report route and table, load the readings, export them as CSV and localize the actions in English and Spanish. | 5 | Fernandez Seer, Mario Alonso | Done |
+| US22 | Visualización de lecturas en vivo | T134 | Harden session polling | Select the latest readings by timestamp, recover polling after transient failures and expose the completion actions in production. | 3 | Fernandez Seer, Mario Alonso | Done |
+| US02 | Inicio de sesión | T135 | Connect the Web Application to the platform | Point the environments to the Reliant platform, authenticate against `/tokens`, surface problem details, and load equipment, traceability and process monitoring data through the real endpoints. | 6 | Navarro Aldoradin, Carolina Celeste | Done |
+| US30 | Consulta de casos de falla | T136 | Add the fault diagnosis views | Add the fault case and fault rule model, endpoints and store, the fault case list and detail with acknowledgement and resolution, and the rule form. | 6 | Navarro Aldoradin, Carolina Celeste | Done |
+| US65 | Navegación por la aplicación | T137 | Add Quick Start | Define the demo plant and the idempotent quick start service that provisions the HVOF system, subsystems, recipe, customer, component, recuperation and session with one click, with its checklist view and the rebuilt operations dashboard. | 5 | Navarro Aldoradin, Carolina Celeste | Done |
+| US59 | Creación de plantilla de reporte mediante formulario | T138 | Add the report template builder | Add the reporting model, endpoints and store, the template builder with live preview, the generate dialog and the generated report list. | 6 | Navarro Aldoradin, Carolina Celeste | Done |
+| US62 | Generación y descarga de reportes desde plantilla | T139 | Render PDF reports | Resolve the report data from the session, render the PDF with jsPDF and jspdf-autotable and generate PDF reports from the session detail. | 5 | Navarro Aldoradin, Carolina Celeste | Done |
+| US24 | Historial de sesiones por sistema HVOF | T140 | Add the session analysis view | Add the session analysis with statistics, normalized deviations, fault cases and exports, fix the footer overlap and publish release 2.0.0. | 4 | Navarro Aldoradin, Carolina Celeste | Done |
+| US44 | Conocer la propuesta de valor | T141 | Design the new Landing Page | Design the desktop and mobile wireframes and mock-ups of the Landing Page with the InnovaCorp identity (Poppins, navy and orange palette, hero photography) in Figma and prototype them in HTML/CSS. | 6 | Rivera Aguilar, Scarlet Josefina | Done |
+| US44 | Conocer la propuesta de valor | T142 | Rebuild the Landing Page with the new identity | Merge the new design into the main Landing Page keeping the EN/ES internationalization, the legal pages and the segment sections; add Services, Plans, About us and Contact. | 5 | Navarro Aldoradin, Carolina Celeste | Done |
+| US47 | Registro desde call-to-action segmentado | T143 | Point the calls to action to the Web Application | Make every call to action open the deployed Web Application sign-up with the `organizationType` of the segment, and add Sign in / Get started to the header. | 1 | Navarro Aldoradin, Carolina Celeste | Done |
+| US45 | Información para Recuperation Supplier | T144 | Embed the About videos and publish release 2.1.0 | Add the About the Product and About the Team sections with YouTube embeds, update the README and CHANGELOG and publish release 2.1.0 to GitHub Pages. | 2 | Navarro Aldoradin, Carolina Celeste | Done |
+
+#### 5.2.3.4. Development Evidence for Sprint Review.
+
+En esta sección se presentan los commits realizados durante el Sprint 3 en los repositorios de la organización. Los Web Services se construyeron en el repositorio `reliant-platform` con una rama `feature/*` por bounded context o capacidad (`feature/sign-up`, `feature/sign-in`, `feature/jwt-authentication-and-authorization`, `feature/list-users-and-assign-roles`, `feature/get-available-roles`, `feature/manage-recipes`, `feature/register-subsystems-and-controllers`, `feature/add-equipment-context-facade`, `feature/manage-customers`, `feature/manage-components`, `feature/manage-recuperations`, `feature/monitor-spray-sessions`, `feature/manage-fault-rules`, `feature/diagnose-faults`, `feature/add-reporting-bounded-context`), integradas en `develop` y publicadas en `main` con la rama `release/1.0.0` y la etiqueta `v1.0.0`. La Web Application continuó en `reliant-webapp` con las ramas `feature/apply-reliant-brand-theme`, `feature/navigate-with-side-menu`, `feature/improve-process-monitoring`, `feature/connect-platform-api`, `feature/diagnose-faults`, `feature/add-quick-start`, `feature/add-reporting`, `feature/add-session-analysis` y `fix/footer-overlap`, publicadas con `release/2.0.0` y la etiqueta `2.0.0`. El Landing Page se rediseñó en `reliant-website` con las ramas `feature/update-landing-page` y `feature/merge-scarlet-design`, publicadas con `release/2.1.0` y la etiqueta `2.1.0`.
+
+| Repositorio | Release del Sprint 3 | Etiqueta | Ramas |
+|---|---|---|---|
+| `reliant-platform` | 1.0.0 — primera versión de los Web Services | `v1.0.0` | `main`, `develop`, `release/1.0.0`, 15 ramas `feature/*` |
+| `reliant-webapp` | 2.0.0 — Web Application conectada a los Web Services | `2.0.0` | `main`, `develop`, `release/2.0.0`, 8 ramas `feature/*`, `fix/footer-overlap` |
+| `reliant-website` | 2.1.0 — rediseño del Landing Page | `2.1.0` | `main`, `develop`, `release/2.1.0`, `feature/update-landing-page`, `feature/merge-scarlet-design` |
+
+**Web Services — `reliant-platform`**
+
+| Repositorio | Rama | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|---|---|---|---|---|---|
+| reliant-platform | develop | 377bc2f | chore: initial commit. |  | 2026-10-28 |
+| reliant-platform | develop | 99c400a | docs: add license. |  | 2026-10-28 |
+| reliant-platform | develop | 18ba37e | docs: add readme and license. |  | 2026-10-28 |
+| reliant-platform | develop | 0233be0 | feat(equipment): add hvof system code, fuel type and status value objects. |  | 2026-10-28 |
+| reliant-platform | develop | 6212848 | feat(equipment): add register hvof system command. |  | 2026-10-28 |
+| reliant-platform | develop | e966445 | feat(equipment): add hvof system aggregate. |  | 2026-10-28 |
+| reliant-platform | develop | a214406 | feat(equipment): add hvof system command failure and repository. |  | 2026-10-28 |
+| reliant-platform | develop | eff88f8 | feat(equipment): implement register hvof system with duplicate handling. |  | 2026-10-28 |
+| reliant-platform | develop | b8b5a3d | feat(equipment): add register hvof system request and hvof system response resources. |  | 2026-10-28 |
+| reliant-platform | develop | 4ddeece | feat(equipment): add hvof system command, resource and response entity assemblers. |  | 2026-10-28 |
+| reliant-platform | develop | 69bf140 | feat(equipment): add hvof systems controller with register endpoint and localized messages. |  | 2026-10-28 |
+| reliant-platform | develop | f7b1500 | feat(equipment): add accept language header to open api configuration. |  | 2026-10-28 |
+| reliant-platform | develop | 7838d0b | feat(equipment): add hvof system queries. |  | 2026-10-28 |
+| reliant-platform | develop | bbbdf3c | feat(equipment): add hvof system query service. |  | 2026-10-28 |
+| reliant-platform | develop | 0a6acb1 | feat(equipment): add get hvof system by id and list by organization endpoints. |  | 2026-10-28 |
+| reliant-platform | develop | e3fb09e | fix(equipment): fix duplicated constructor in hvof systems controller. |  | 2026-10-28 |
+| reliant-platform | develop | 81ca5b8 | build: pin dependency versions, add maven wrapper and comment out security starter. |  | 2026-11-04 |
+| reliant-platform | develop | a1a4982 | chore: align spring profiles with environment-driven configuration. |  | 2026-11-04 |
+| reliant-platform | develop | 8942684 | refactor(shared): remove catch-up style base classes superseded by the hexagonal kernel. |  | 2026-11-04 |
+| reliant-platform | develop | 1bbfb0f | feat(shared): add snake case pluralized table naming strategy. |  | 2026-11-04 |
+| reliant-platform | develop | a3c64f6 | feat(shared): add auditable abstract persistence entity. |  | 2026-11-04 |
+| reliant-platform | develop | 99f0718 | feat(shared): add abstract domain aggregate root. |  | 2026-11-04 |
+| reliant-platform | develop | 53b5b2f | feat(shared): add domain event publisher. |  | 2026-11-04 |
+| reliant-platform | develop | 01fb196 | feat(shared): add application error. |  | 2026-11-04 |
+| reliant-platform | develop | 5a503e2 | feat(shared): add result. |  | 2026-11-04 |
+| reliant-platform | develop | 038b0b0 | feat(equipment): add recipe aggregate, recipe parameter entity, bands/unit/status value objects, events, commands, queries and repository port. |  | 2026-11-05 |
+| reliant-platform | develop | dbcb25a | feat(equipment): add hvof system id persistence converter. |  | 2026-11-05 |
+| reliant-platform | develop | 0a57b85 | feat(equipment): add parameter bands persistence embeddable. |  | 2026-11-05 |
+| reliant-platform | develop | c03280f | feat(equipment): add recipe applicability persistence embeddable. |  | 2026-11-05 |
+| reliant-platform | develop | 173fe69 | feat(equipment): add recipe parameter persistence entity. |  | 2026-11-05 |
+| reliant-platform | develop | a248cc6 | feat(equipment): add recipe persistence entity. |  | 2026-11-05 |
+| reliant-platform | develop | 49623d3 | feat(equipment): add recipe persistence assembler. |  | 2026-11-05 |
+| reliant-platform | develop | 76ede02 | feat(equipment): add recipe persistence repository. |  | 2026-11-05 |
+| reliant-platform | develop | 45b8f01 | feat(equipment): add recipe repository implementation. |  | 2026-11-05 |
+| reliant-platform | develop | ff4787f | feat(equipment): add recipe command service. |  | 2026-11-05 |
+| reliant-platform | develop | 990558e | feat(equipment): add recipe query service. |  | 2026-11-05 |
+| reliant-platform | develop | c7dff00 | fix(equipment): align recipe command service with application result. |  | 2026-11-05 |
+| reliant-platform | develop | bce97d1 | feat(equipment): add recipe command service implementation. |  | 2026-11-05 |
+| reliant-platform | develop | ada740a | fix(equipment): add active recipe query to recipe query service. |  | 2026-11-05 |
+| reliant-platform | develop | 35b11a5 | feat(equipment): add recipe query service implementation. |  | 2026-11-05 |
+| reliant-platform | develop | c768d1f | feat(equipment): add recipe parameter resource. |  | 2026-11-05 |
+| reliant-platform | develop | af34360 | feat(equipment): add recipe applicability resource. |  | 2026-11-05 |
+| reliant-platform | develop | f75d54e | feat(equipment): add create recipe resource. |  | 2026-11-05 |
+| reliant-platform | develop | 643a3ce | feat(equipment): add recipe response resource. |  | 2026-11-05 |
+| reliant-platform | develop | f406595 | feat(equipment): add create recipe command assembler. |  | 2026-11-05 |
+| reliant-platform | develop | e5e3f4b | feat(equipment): add recipe resource assembler. |  | 2026-11-05 |
+| reliant-platform | develop | 8b13572 | feat(equipment): add recipes controller. |  | 2026-11-05 |
+| reliant-platform | develop | 411da80 | feat(equipment): add recipe message keys. |  | 2026-11-05 |
+| reliant-platform | develop | 845ed2e | fix(equipment): correct recipe persistence compilation. |  | 2026-11-05 |
+| reliant-platform | develop | a91517b | feat(equipment): add hvof subsystem and controller domain model. |  | 2026-11-05 |
+| reliant-platform | develop | b3cae02 | feat(equipment): add network endpoint persistence embeddable. |  | 2026-11-05 |
+| reliant-platform | develop | ac4f1cd | feat(equipment): add hvof subsystem persistence entity. |  | 2026-11-05 |
+| reliant-platform | develop | 1f8f529 | feat(equipment): add controller persistence entity. |  | 2026-11-05 |
+| reliant-platform | develop | 07eaee1 | refactor(equipment): map subsystems and controllers in the hvof system persistence entity and assembler. |  | 2026-11-05 |
+| reliant-platform | develop | c345bac | feat(equipment): add subsystem and controller registration to hvof system command service. |  | 2026-11-05 |
+| reliant-platform | develop | 3916b27 | feat(equipment): add subsystem and controller queries to hvof system query service. |  | 2026-11-05 |
+| reliant-platform | develop | bbf8e40 | fix(equipment): remove utf-8 bom from persistence files |  | 2026-11-05 |
+| reliant-platform | develop | 2393060 | feat(equipment): add subsystem resources and assemblers. |  | 2026-11-05 |
+| reliant-platform | develop | 8fefa8e | feat(equipment): add controller resources and assemblers. |  | 2026-11-05 |
+| reliant-platform | develop | 684a0bd | feat(equipment): add subsystem and controller message keys. |  | 2026-11-05 |
+| reliant-platform | develop | 5256fc4 | feat(equipment): add subsystem and controller sub-resource endpoints to hvof systems controller. |  | 2026-11-05 |
+| reliant-platform | develop | 620e7ad | feat(equipment): add recipe published event listener |  | 2026-11-05 |
+| reliant-platform | develop | f9e4db2 | test(f4): add subsystem and controller domain tests |  | 2026-11-05 |
+| reliant-platform | develop | 5a6d7f7 | feat(shared): add message resource. |  | 2026-11-05 |
+| reliant-platform | develop | 0de6358 | feat(shared): add problem detail from application error assembler. |  | 2026-11-05 |
+| reliant-platform | develop | a805d40 | feat(shared): add error message keys. |  | 2026-11-05 |
+| reliant-platform | develop | b4da216 | feat(shared): add jakarta validation message keys. |  | 2026-11-05 |
+| reliant-platform | develop | 7faaa0b | feat(shared): add response entity assembler. |  | 2026-11-05 |
+| reliant-platform | develop | 3004bbd | feat(shared): add global exception handler. |  | 2026-11-05 |
+| reliant-platform | develop | b1c79c3 | feat(shared): add openapi configuration. |  | 2026-11-05 |
+| reliant-platform | develop | a6149c2 | feat(shared): add locale configuration. |  | 2026-11-05 |
+| reliant-platform | develop | e7ef48a | feat(shared): add virtual threads configuration. |  | 2026-11-05 |
+| reliant-platform | develop | 4eeae44 | feat(shared): add organization id value object. |  | 2026-11-05 |
+| reliant-platform | develop | f1df785 | feat(shared): add organization id persistence converter. |  | 2026-11-05 |
+| reliant-platform | develop | e66c8e3 | feat(shared): add cors web configuration. |  | 2026-11-05 |
+| reliant-platform | develop | a340042 | refactor(equipment): remove jpa-annotated aggregate and catch-up style assemblers. |  | 2026-11-06 |
+| reliant-platform | develop | 762ee1b | feat(equipment): add hvof system aggregate, its code/fuel/status value objects, registered event, command, queries and repository port. |  | 2026-11-06 |
+| reliant-platform | develop | 6455810 | feat(equipment): add hvof system code persistence converter. |  | 2026-11-06 |
+| reliant-platform | develop | 05cbdc4 | feat(equipment): add hvof system persistence entity. |  | 2026-11-06 |
+| reliant-platform | develop | d5cf989 | feat(equipment): add hvof system persistence assembler. |  | 2026-11-06 |
+| reliant-platform | develop | 80c068a | feat(equipment): add hvof system persistence repository. |  | 2026-11-06 |
+| reliant-platform | develop | 17b4dc1 | feat(equipment): add hvof system repository implementation. |  | 2026-11-06 |
+| reliant-platform | develop | ee9c57d | feat(equipment): add hvof system command service. |  | 2026-11-06 |
+| reliant-platform | develop | 948e569 | feat(equipment): add hvof system command service implementation. |  | 2026-11-06 |
+| reliant-platform | develop | 41dea87 | feat(equipment): add hvof system query service. |  | 2026-11-06 |
+| reliant-platform | develop | 0fb7b0f | feat(equipment): add hvof system query service implementation. |  | 2026-11-06 |
+| reliant-platform | develop | 5d59ae8 | feat(equipment): add register hvof system resource. |  | 2026-11-06 |
+| reliant-platform | develop | f30e4a2 | feat(equipment): add hvof system resource. |  | 2026-11-06 |
+| reliant-platform | develop | 4e11ee2 | feat(equipment): add register hvof system command from resource assembler. |  | 2026-11-06 |
+| reliant-platform | develop | ca526ee | feat(equipment): add hvof system resource from entity assembler. |  | 2026-11-06 |
+| reliant-platform | develop | 91e8034 | feat(equipment): add hvof systems controller. |  | 2026-11-06 |
+| reliant-platform | develop | 2f6e9f0 | Complete HVOF subsystems and controllers integration |  | 2026-11-06 |
+| reliant-platform | develop | e769426 | chore(equipment): keep the datasource in the dev profile and drop the review notes. |  | 2026-11-11 |
+| reliant-platform | develop | 7832aa2 | build: add spring security crypto dependency. |  | 2026-11-11 |
+| reliant-platform | develop | ff90eb7 | feat(iam): add organization, user and role domain model with sign-up and seed roles commands. |  | 2026-11-11 |
+| reliant-platform | develop | f64fa7a | feat(iam): add role and user command services with bcrypt hashing and role seeding on startup. |  | 2026-11-11 |
+| reliant-platform | develop | a987090 | feat(iam): add organization, user and role persistence entities, assemblers and repositories. |  | 2026-11-11 |
+| reliant-platform | develop | a1233c9 | feat(iam): add users controller with sign-up and localized message keys. |  | 2026-11-11 |
+| reliant-platform | develop | 42d6df6 | feat(iam): add role queries and query service. |  | 2026-11-11 |
+| reliant-platform | develop | 9c598f5 | feat(iam): add roles controller. |  | 2026-11-11 |
+| reliant-platform | develop | b68529c | build: add commons lang3 dependency. |  | 2026-11-11 |
+| reliant-platform | develop | f081887 | feat(iam): add jwt token service. |  | 2026-11-11 |
+| reliant-platform | develop | d72419c | feat(iam): add sign in command handling and organization query service. |  | 2026-11-11 |
+| reliant-platform | develop | ab615fb | feat(iam): add tokens controller with the authenticated user resource. |  | 2026-11-11 |
+| reliant-platform | develop | ca26d67 | feat(iam): add user queries and assign roles command. |  | 2026-11-11 |
+| reliant-platform | develop | ffc2aa2 | feat(iam): add user query service and assign roles command handling. |  | 2026-11-11 |
+| reliant-platform | develop | 944db86 | feat(iam): add list, get by id and assign roles endpoints to users controller. |  | 2026-11-11 |
+| reliant-platform | develop | a5b25f7 | build: enable spring security starter. |  | 2026-11-11 |
+| reliant-platform | develop | 9ec6241 | feat(shared): enable bearer auth security scheme in openapi configuration. |  | 2026-11-11 |
+| reliant-platform | develop | 2776b0c | feat(iam): add bcrypt hashing and bearer token contracts for spring security. |  | 2026-11-11 |
+| reliant-platform | develop | a0556ca | feat(iam): add spring security user details, bearer authorization filter and web security configuration. |  | 2026-11-11 |
+| reliant-platform | develop | 1d15fc2 | feat(iam): require bearer token on protected endpoints, admin role on user management and add the authenticated user endpoint. |  | 2026-11-11 |
+| reliant-platform | develop | d6ae2f9 | feat(shared): add the current user provider as the iam anti-corruption layer. |  | 2026-11-11 |
+| reliant-platform | develop | d13c6bd | feat(shared): map access denied to a 403 problem detail. |  | 2026-11-11 |
+| reliant-platform | develop | 29fc87f | feat(traceability): add customer aggregate, value objects, commands, queries and repository contract. |  | 2026-11-11 |
+| reliant-platform | develop | 6b6710f | feat(traceability): add recovered component aggregate, value objects, commands, queries and repository contract. |  | 2026-11-11 |
+| reliant-platform | develop | af398d4 | feat(traceability): add customer persistence entity, converters, assembler and repository implementation. |  | 2026-11-11 |
+| reliant-platform | develop | 05a1dc1 | feat(traceability): add recovered component persistence entity, assembler and repository implementation. |  | 2026-11-11 |
+| reliant-platform | develop | 9adcd59 | feat(traceability): add customer command and query services. |  | 2026-11-11 |
+| reliant-platform | develop | d19a65c | feat(traceability): add recovered component command and query services. |  | 2026-11-11 |
+| reliant-platform | develop | d29aa8e | feat(traceability): add customers controller with resources, assemblers and message keys. |  | 2026-11-11 |
+| reliant-platform | develop | ae91ba6 | feat(traceability): add components controller with resources, assemblers and message keys. |  | 2026-11-11 |
+| reliant-platform | develop | 6b98f46 | feat(traceability): add recuperation aggregate with status transitions, linked sessions, commands, queries and events. |  | 2026-11-11 |
+| reliant-platform | develop | adfcb8f | feat(traceability): add recuperation persistence entity, converters, assembler and repository implementation. |  | 2026-11-11 |
+| reliant-platform | develop | 7cd8170 | feat(traceability): add recuperation command and query services. |  | 2026-11-11 |
+| reliant-platform | develop | 18e0bf5 | feat(traceability): add traceability context facade. |  | 2026-11-11 |
+| reliant-platform | develop | 2dd6c3a | feat(traceability): add recuperations controller with resources, assemblers and message keys. |  | 2026-11-11 |
+| reliant-platform | develop | 8af77a7 | feat(equipment): add equipment context facade with recipe band snapshots. |  | 2026-11-11 |
+| reliant-platform | develop | ee39937 | feat(process-monitoring): add spray session aggregate with frozen recipe bands, readings, passes, commands, queries and events. |  | 2026-11-11 |
+| reliant-platform | develop | 057f691 | feat(process-monitoring): add spray session, pass and reading persistence entities, converters, assemblers and repositories. |  | 2026-11-11 |
+| reliant-platform | develop | cfc0433 | feat(process-monitoring): add external equipment and traceability services and the out of band reading event handler. |  | 2026-11-11 |
+| reliant-platform | develop | dde699d | feat(process-monitoring): add spray session command and query services. |  | 2026-11-11 |
+| reliant-platform | develop | fea9813 | feat(process-monitoring): add spray sessions controller with reading and pass resources, assemblers and message keys. |  | 2026-11-11 |
+| reliant-platform | develop | 8447d1d | feat(fault-diagnosis): add fault rule aggregate, value objects, commands, queries and repository contract. |  | 2026-11-11 |
+| reliant-platform | develop | f61bcc8 | feat(fault-diagnosis): add fault rule persistence entity, assembler and repository implementation. |  | 2026-11-11 |
+| reliant-platform | develop | f15a22d | feat(fault-diagnosis): add fault rule command and query services with the default rules. |  | 2026-11-11 |
+| reliant-platform | develop | f2723a4 | feat(fault-diagnosis): add fault rules controller with resources, assemblers and message keys. |  | 2026-11-11 |
+| reliant-platform | develop | c190a47 | feat(fault-diagnosis): add fault case aggregate with acknowledge and resolve transitions, commands, queries and events. |  | 2026-11-11 |
+| reliant-platform | develop | 0a3b143 | feat(fault-diagnosis): add fault case persistence entity, converters, assembler and repository implementation. |  | 2026-11-11 |
+| reliant-platform | develop | 9393f51 | feat(fault-diagnosis): add fault case services with rule matching, cooldown and the out of band reading event handler. |  | 2026-11-11 |
+| reliant-platform | develop | 042d548 | feat(fault-diagnosis): add fault cases controller with resources, assembler and message keys. |  | 2026-11-11 |
+| reliant-platform | develop | 1c21ac6 | feat(reporting): add report template and generated report domain model |  | 2026-11-12 |
+| reliant-platform | develop | 896afb2 | feat(reporting): add JPA persistence for report templates and generated reports |  | 2026-11-12 |
+| reliant-platform | develop | 27e8634 | feat(reporting): add report template and generated report services with default templates |  | 2026-11-12 |
+| reliant-platform | develop | ed08f36 | feat(reporting): expose report templates and generated reports endpoints |  | 2026-11-12 |
+| reliant-platform | develop | 62ad123 | chore(release): 1.0.0 with production profile for Azure and updated documentation |  | 2026-11-13 |
+| reliant-platform | develop | 188fced | docs: add the Azure App Service deployment guide |  | 2026-11-13 |
+
+**Frontend Web Application — `reliant-webapp`**
+
+| Repositorio | Rama | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|---|---|---|---|---|---|
+| reliant-webapp | develop | e361e79 | feat(theme): configure the reliant material theme |  | 2026-10-29 |
+| reliant-webapp | develop | d23d25f | style(theme): add reliant global styles |  | 2026-10-29 |
+| reliant-webapp | develop | b84c4dc | style(theme): load poppins and set reliant page title |  | 2026-10-29 |
+| reliant-webapp | develop | 37341fd | feat(theme): generate reliant color palettes |  | 2026-10-29 |
+| reliant-webapp | develop | b13bbd4 | feat(layout): add segment-aware side navigation |  | 2026-10-29 |
+| reliant-webapp | develop | 9a5ceed | feat(layout): add responsive side navigation template |  | 2026-10-29 |
+| reliant-webapp | develop | 8f7ab9d | style(layout): add responsive reliant sidebar |  | 2026-10-29 |
+| reliant-webapp | develop | 767e208 | feat(i18n): persist selected language |  | 2026-10-29 |
+| reliant-webapp | develop | 505ea6c | feat(i18n): default to English and restore saved language |  | 2026-10-29 |
+| reliant-webapp | develop | 8618a37 | feat(i18n): add English side navigation translations |  | 2026-10-29 |
+| reliant-webapp | develop | 543062a | feat(i18n): add Spanish side navigation translations |  | 2026-10-29 |
+| reliant-webapp | develop | 48e3481 | chore: install chart.js and ng2-charts |  | 2026-10-29 |
+| reliant-webapp | develop | 25b790d | chore(charts): configure chart.js providers |  | 2026-10-29 |
+| reliant-webapp | develop | c8400b2 | feat(charts): add shared Reliant chart theme |  | 2026-10-29 |
+| reliant-webapp | develop | 1846469 | feat(charts): create parameter trend chart component |  | 2026-10-29 |
+| reliant-webapp | develop | ee65f8b | feat(charts): create parameter trend chart component |  | 2026-10-29 |
+| reliant-webapp | develop | 9f677cb | feat(charts): add trend chart template and legend |  | 2026-10-29 |
+| reliant-webapp | develop | 6687626 | style(charts): style trend chart and status legend |  | 2026-10-29 |
+| reliant-webapp | develop | 86fa521 | feat(process-monitoring): integrate parameter trend chart |  | 2026-10-29 |
+| reliant-webapp | develop | f3933fe | feat(process-monitoring): connect trend chart to session detail |  | 2026-10-29 |
+| reliant-webapp | develop | e68f3f6 | feat(process-monitoring): translate parameter trend labels |  | 2026-10-29 |
+| reliant-webapp | develop | 281fbd3 | feat(dashboard): define customizable chart widgets |  | 2026-10-29 |
+| reliant-webapp | develop | 5c60161 | feat(dashboard): configure user preferences endpoint |  | 2026-10-29 |
+| reliant-webapp | develop | ede6fb5 | feat(dashboard): seed default dashboard chart preferences |  | 2026-10-29 |
+| reliant-webapp | develop | 58b996f | feat(dashboard): define default dashboard widgets |  | 2026-10-29 |
+| reliant-webapp | develop | 2e9bdcb | fix(process-monitoring): select latest readings by timestamp |  | 2026-10-29 |
+| reliant-webapp | develop | be2345d | fix(process-monitoring): recover polling after transient request failures |  | 2026-10-29 |
+| reliant-webapp | develop | 61f5cdc | fix(process-monitoring): expose session completion actions in production |  | 2026-10-29 |
+| reliant-webapp | develop | cb80578 | feat(dashboard): add user preferences API |  | 2026-10-29 |
+| reliant-webapp | develop | 825825d | feat(dashboard): add user preferences entity |  | 2026-10-29 |
+| reliant-webapp | develop | b0ad628 | feat(dashboard): define user preferences response |  | 2026-10-29 |
+| reliant-webapp | develop | b96ad8d | feat(dashboard): add user preferences assembler |  | 2026-10-29 |
+| reliant-webapp | develop | d572e8b | feat(dashboard): add user preferences API endpoint |  | 2026-10-29 |
+| reliant-webapp | develop | 5c3d42a | feat(dashboard): add user preferences API |  | 2026-10-29 |
+| reliant-webapp | develop | 8ea2694 | feat(dashboard): add dashboard preferences store |  | 2026-10-29 |
+| reliant-webapp | develop | 60c075d | feat(dashboard): add reusable chart widget |  | 2026-10-29 |
+| reliant-webapp | develop | ec64f64 | feat(dashboard): add chart widget template |  | 2026-10-29 |
+| reliant-webapp | develop | 032dd35 | feat(dashboard): add chart widget styles |  | 2026-10-29 |
+| reliant-webapp | develop | c2bd895 | feat(dashboard): add monitoring summary statistics |  | 2026-10-29 |
+| reliant-webapp | develop | 6a21ea8 | feat(dashboard): connect home view to dashboard stores |  | 2026-10-29 |
+| reliant-webapp | develop | 89307e1 | feat(dashboard): style recent sessions table |  | 2026-10-29 |
+| reliant-webapp | develop | 4b98194 | feat(dashboard): add dashboard translations |  | 2026-10-29 |
+| reliant-webapp | develop | f20e8a5 | feat(dashboard): add Spanish dashboard translations |  | 2026-10-29 |
+| reliant-webapp | develop | a298953 | fix(dashboard): finalize dashboard view and chart styles |  | 2026-10-29 |
+| reliant-webapp | develop | 7822062 | feat(process-monitoring): add session report table template |  | 2026-11-04 |
+| reliant-webapp | develop | 1297acf | feat(process-monitoring): load readings for the session report |  | 2026-11-04 |
+| reliant-webapp | develop | 6d5ddb2 | feat(i18n): localize the session report in English and Spanish |  | 2026-11-04 |
+| reliant-webapp | develop | 23f81d5 | feat(process-monitoring): register the session report route |  | 2026-11-04 |
+| reliant-webapp | develop | 07837ac | feat(process-monitoring): add navigation to session reports |  | 2026-11-04 |
+| reliant-webapp | develop | 34291fb | feat(process-monitoring): show the report action in the session list |  | 2026-11-04 |
+| reliant-webapp | develop | 8fe998f | feat(process-monitoring): add CSV export for session readings |  | 2026-11-04 |
+| reliant-webapp | develop | dd641ab | feat(process-monitoring): connect CSV export to the session report |  | 2026-11-04 |
+| reliant-webapp | develop | 741ec39 | feat(i18n): localize the CSV download action |  | 2026-11-04 |
+| reliant-webapp | develop | 1370ddd | feat(process-monitoring): show the CSV download button |  | 2026-11-04 |
+| reliant-webapp | develop | 615ba13 | chore: connect frontend to local backend |  | 2026-11-06 |
+| reliant-webapp | develop | 076fadc | feat(shared): point environments to the Reliant platform and surface problem details |  | 2026-11-12 |
+| reliant-webapp | develop | 968480f | feat(iam): authenticate against platform tokens and assign roles through the users endpoint |  | 2026-11-12 |
+| reliant-webapp | develop | 9a862da | feat(equipment): load subsystems, controllers and recipes per HVOF system and publish recipes |  | 2026-11-12 |
+| reliant-webapp | develop | 4446436 | feat(traceability): load components per customer and complete recuperations |  | 2026-11-12 |
+| reliant-webapp | develop | 63a57f3 | feat(process-monitoring): ingest readings, complete and abort sessions through the platform |  | 2026-11-12 |
+| reliant-webapp | develop | a18daf8 | refactor(shared): keep dashboard preferences locally, hide billing and translate the new session actions |  | 2026-11-12 |
+| reliant-webapp | develop | cd68ab4 | feat(fault-diagnosis): add fault case and fault rule model with platform endpoints |  | 2026-11-13 |
+| reliant-webapp | develop | 397968e | feat(fault-diagnosis): add fault diagnosis store |  | 2026-11-13 |
+| reliant-webapp | develop | f73761a | feat(fault-diagnosis): add fault case list and detail with acknowledgement, resolution and rule management |  | 2026-11-13 |
+| reliant-webapp | develop | bc0f6ee | feat(shared): add demo plant definition and idempotent quick start provisioning |  | 2026-11-13 |
+| reliant-webapp | develop | 6b56c90 | feat(shared): add quick start view with plant checklist and one-click demo |  | 2026-11-13 |
+| reliant-webapp | develop | 8905dc3 | feat(shared): rebuild the operations dashboard with live KPIs, recent sessions and fault charts |  | 2026-11-13 |
+| reliant-webapp | develop | c164962 | feat(reporting): add report template and generated report model with platform endpoints |  | 2026-11-13 |
+| reliant-webapp | develop | dcc9102 | feat(reporting): add reporting store, report data resolution and PDF rendering with jsPDF |  | 2026-11-13 |
+| reliant-webapp | develop | 5223371 | feat(reporting): add template builder with live preview, generated report list and generate dialog |  | 2026-11-13 |
+| reliant-webapp | develop | 5061113 | feat(process-monitoring): generate PDF reports from the session detail |  | 2026-11-13 |
+| reliant-webapp | develop | cc9fb38 | feat(process-monitoring): add session analysis with statistics, normalized deviations, fault cases and exports |  | 2026-11-13 |
+| reliant-webapp | develop | bff565e | fix(shared): keep the footer below the page content instead of overlapping it |  | 2026-11-13 |
+| reliant-webapp | develop | 3bd99d9 | chore(release): 2.0.0 |  | 2026-11-13 |
+
+**Landing Page — `reliant-website`**
+
+| Repositorio | Rama | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|---|---|---|---|---|---|
+| reliant-website | develop | 60a2430 | feat(landing): redesign landing page with InnovaCorp visual identity | - Poppins typography, navy/orange palette, logo, hero photo and icon cards - Services, Plans, About us (product/team videos) and Contact sections - CTAs open th | 2026-11-13 |
+| reliant-website | develop | 9d8d403 | chore(release): prepare release 2.1.0 |  | 2026-11-13 |
+
+#### 5.2.3.5. Execution Evidence for Sprint Review.
+
+Al cierre del Sprint 3, la Web Application 2.0.0 trabaja contra los Web Services 1.0.0: el registro y el inicio de sesión emiten y validan tokens JWT, los datos de equipos, clientes, componentes, órdenes y sesiones se persisten en MySQL y las lecturas fuera de banda abren casos de falla desde el backend. El flujo que se muestra en el video de exposición y en el video About-the-Product es el siguiente: registro de la organización e inicio de sesión → Quick Start (crea el sistema HVOF-01 Diamond Jet 2700 con sus cuatro subsistemas, la receta WC-10Co-4Cr con sus bandas, el cliente Cerro Verde, un vástago de CAT 797F y su orden de recuperación, e inicia la sesión) → tablero de operaciones con indicadores en vivo → sesión en vivo con las pestañas Live y Trends y la simulación de una ráfaga de lecturas → casos de falla abiertos automáticamente con causa probable y acción recomendada → análisis de sesión → plantilla de reporte con vista previa → generación del certificado de calidad en PDF.
+
+URL de la aplicación desplegada: https://reliant-web-application-hsa3asb7axaph6hf.chilecentral-01.azurewebsites.net
+
+| Feature · User Story | Evidencia | Descripción |
+|---|---|---|
+| sign-in · US02 | <img src="assets/img/5.chapter-v/5.2.3.5-sign-in.png" width="520"> | Inicio de sesión contra `POST /api/v1/tokens`; el token JWT se adjunta a todas las peticiones siguientes mediante un interceptor. |
+| quick-start · US65 | <img src="assets/img/5.chapter-v/5.2.3.5-quick-start.png" width="520"> | Quick Start: lista de verificación de la planta y aprovisionamiento idempotente de la planta de demostración FESA (sistema HVOF-01, subsistemas, controlador, receta #12, cliente, componente, orden de recuperación y sesión). |
+| dashboard · US65 | <img src="assets/img/5.chapter-v/5.2.3.5-dashboard.png" width="520"> | Tablero de operaciones con la sesión activa, casos de falla abiertos, sesiones recientes y gráficos configurables por el usuario. |
+| monitor-spray-session · US22 | <img src="assets/img/5.chapter-v/5.2.3.5-session-live.png" width="520"> | Sesión en vivo: lectura actual de cada parámetro clasificada por banda (nominal, fuera de nominal, advertencia, parada) con su setpoint y banda nominal. |
+| monitor-spray-session · US22 | <img src="assets/img/5.chapter-v/5.2.3.5-session-trends.png" width="520"> | Pestaña Trends: tendencia del parámetro sobre las bandas de la receta congeladas al iniciar la sesión. |
+| diagnose-faults · US25 · US30 | <img src="assets/img/5.chapter-v/5.2.3.5-fault-cases.png" width="520"> | Casos de falla abiertos automáticamente por los Web Services a partir de las lecturas fuera de banda, con filtro por estado. |
+| diagnose-faults · US27 | <img src="assets/img/5.chapter-v/5.2.3.5-fault-case-detail.png" width="520"> | Detalle del caso: valor medido, causa probable, acción recomendada, reconocimiento y resolución con notas. |
+| session-analysis · US24 | <img src="assets/img/5.chapter-v/5.2.3.5-session-analysis.png" width="520"> | Análisis de sesión: cumplimiento nominal, estadísticas por parámetro, lecturas fuera de banda, casos asociados y exportación a CSV. |
+| report-templates · US59 | <img src="assets/img/5.chapter-v/5.2.3.5-report-template-builder.png" width="520"> | Constructor de plantillas de reporte: secciones y widgets con vista previa en vivo, identidad de la organización y configuración de página. |
+| generate-report · US62 | <img src="assets/img/5.chapter-v/5.2.3.5-generate-report-dialog.png" width="520"> | Generación de un reporte desde la sesión: tipo de reporte y plantilla; el PDF se renderiza en el navegador con los datos reales de la sesión y se registra en la plataforma. |
+| generate-report · US62 | <img src="assets/img/5.chapter-v/5.2.3.5-generated-report-pdf.png" width="420"> <img src="assets/img/5.chapter-v/5.2.3.5-session-report-pdf.png" width="420"> | Certificado de calidad y reporte de sesión generados en PDF desde las plantillas estándar. |
+| register-hvof-system · US07 | <img src="assets/img/5.chapter-v/5.2.3.5-hvof-systems.png" width="520"> | Sistemas HVOF de la organización persistidos por los Web Services. |
+| landing-page · US44 · US47 | <img src="assets/img/5.chapter-v/5.2.3.5-landing-2.1.0.png" width="520"> | Landing Page 2.1.0 con la identidad visual de InnovaCorp; los call-to-action abren el registro de la Web Application con el tipo de organización del segmento. |
+
+Las capturas se tomaron con la Web Application 2.0.0 ejecutada contra los Web Services 1.0.0 en el entorno de desarrollo, con la planta de demostración del Quick Start y lecturas simuladas desde la propia sesión.
+
+
+#### 5.2.3.6. Services Documentation Evidence for Sprint Review.
+
+Los Web Services 1.0.0 exponen su documentación OpenAPI 3 con springdoc en `/swagger-ui.html` (`/v3/api-docs` en JSON). Todos los endpoints viven bajo `/api/v1`; salvo el registro (`POST /users`) y el inicio de sesión (`POST /tokens`), requieren un token `Bearer` y operan dentro de la organización del usuario autenticado, que actúa como límite de tenant. Los mensajes de error siguen RFC 9457 (Problem Details) y se localizan según el header `Accept-Language` (inglés por defecto, español).
+
+URL base: `https://<dominio-del-platform>.azurewebsites.net/api/v1` — documentación: `https://<dominio-del-platform>.azurewebsites.net/swagger-ui.html` <!-- reemplazar por el dominio real del Web App reliant-platform -->
+
+| Bounded Context | Verbo HTTP | Endpoint (`/api/v1` + ruta) | Descripción | Historia |
+|---|---|---|---|---|
+| IAM | POST | `/users` | Registro de la organización y de su administrador (sign-up) | US01 |
+| IAM | POST | `/tokens` | Inicio de sesión; devuelve el token JWT | US02 |
+| IAM | GET | `/users/me` | Usuario autenticado, su organización y roles | US67 |
+| IAM | GET | `/users`, `/users/{id}` | Usuarios de la organización | US03 |
+| IAM | PUT | `/users/{id}/roles` | Asignación de roles (solo administradores) | US03 |
+| IAM | GET | `/roles` | Catálogo de roles | US03 |
+| Equipment | POST / GET | `/hvof-systems`, `/hvof-systems/{id}` | Registro y consulta de sistemas HVOF | US07 |
+| Equipment | POST / GET | `/hvof-systems/{id}/subsystems` | Subsistemas del sistema HVOF | US08 |
+| Equipment | POST / GET | `/hvof-systems/{id}/controllers` | Controladores del sistema HVOF | US07 |
+| Equipment | POST / GET | `/recipes`, `/recipes/{id}` | Recetas con sus parámetros y bandas de umbral | US54 |
+| Equipment | PATCH | `/recipes/{id}/publication` | Publicación de una receta | US54 |
+| Traceability | POST / GET / PUT | `/customers` | Clientes de la organización | US13 |
+| Traceability | POST / GET | `/components?customerId=` | Componentes recibidos por cliente | US14 |
+| Traceability | POST / GET | `/recuperations` | Órdenes de recuperación (OF / WO) | US15 |
+| Traceability | PATCH | `/recuperations/{id}/completion` | Cierre y entrega de la orden | US18 |
+| Process Monitoring | POST / GET | `/spray-sessions` | Inicio y consulta de sesiones de rociado | US19, US24 |
+| Process Monitoring | POST / GET | `/spray-sessions/{id}/readings` | Ingesta y consulta de lecturas | US20, US22 |
+| Process Monitoring | GET | `/spray-sessions/{id}/deviations` | Lecturas fuera de banda de la sesión | US21 |
+| Process Monitoring | POST | `/spray-sessions/{id}/passes` | Registro de pasadas de rociado | US57 |
+| Process Monitoring | PATCH | `/spray-sessions/{id}/completion`, `/spray-sessions/{id}/abortion` | Finalización o aborto de la sesión | US23 |
+| Fault Diagnosis | GET / POST / PUT | `/fault-rules` | Catálogo de reglas causa-efecto (siembra las reglas por defecto) | US28 |
+| Fault Diagnosis | GET | `/fault-cases?spraySessionId=&status=` | Casos de falla | US30 |
+| Fault Diagnosis | PATCH | `/fault-cases/{id}/acknowledgement`, `/fault-cases/{id}/resolution` | Reconocimiento y resolución del caso | US27 |
+| Reporting | GET / POST / PUT | `/report-templates` | Plantillas de reporte (siembra las plantillas estándar) | US59 |
+| Reporting | PATCH | `/report-templates/{id}/status` | Activación o archivo de una plantilla | US63 |
+| Reporting | POST / GET | `/generated-reports` | Registro y consulta de reportes generados | US62 |
+
+Las lecturas fuera de banda publican un evento de dominio (`OutOfBandReadingDetectedEvent`) que el bounded context Fault Diagnosis consume para abrir el caso de falla con la causa probable y la acción recomendada de la regla que coincide, respetando el tiempo de enfriamiento de la regla.
+
+| Evidencia | Descripción |
+|---|---|
+| <img src="assets/img/5.chapter-v/5.2.3.6-swagger-overview.png" width="720"> | Swagger UI de los Web Services 1.0.0 con los controladores de los seis bounded contexts. |
+| <img src="assets/img/5.chapter-v/5.2.3.6-swagger-sign-in.png" width="720"> | `POST /api/v1/tokens`: respuesta con el token JWT y autorización del esquema Bearer en Swagger. |
+| <img src="assets/img/5.chapter-v/5.2.3.6-swagger-spray-sessions.png" width="720"> | Endpoints de sesiones de rociado y lecturas. |
+
+<!-- Capturas pendientes: Swagger UI del platform desplegado (o local en http://localhost:8080/swagger-ui.html). -->
+
+#### 5.2.3.7. Software Deployment Evidence for Sprint Review.
+
+En el Sprint 3 se desplegaron en Microsoft Azure los Web Services (Web App `reliant-platform` sobre Java 21 con Azure Database for MySQL Flexible Server) y la nueva versión de la Web Application, y se publicó la versión 2.1.0 del Landing Page en GitHub Pages. La configuración completa se describe en la sección 5.1.4; la guía paso a paso usada por el equipo está versionada en [`docs/azure-deployment.md`](https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform/blob/main/docs/azure-deployment.md) del repositorio `reliant-platform`.
+
+| Producto | Versión | URL pública |
+|---|---|---|
+| Web Services (`reliant-platform`) | 1.0.0 | https://<dominio-del-platform>.azurewebsites.net/swagger-ui.html <!-- reemplazar por el dominio real --> |
+| Frontend Web Application (`reliant-webapp`) | 2.0.0 | https://reliant-web-application-hsa3asb7axaph6hf.chilecentral-01.azurewebsites.net |
+| Landing Page (`reliant-website`) | 2.1.0 | https://upc-pre-202620-1asi0729-7753-innovacorp.github.io/reliant-website/ |
+
+**Paso 1. Preparar el perfil de producción.** El perfil `prod` de Spring Boot lee la conexión a MySQL (`DATABASE_URL`, `DATABASE_PORT`, `DATABASE_NAME`, `DATABASE_USER`, `DATABASE_PASSWORD`), el secreto JWT (`JWT_SECRET`), los orígenes permitidos por CORS (`CORS_ALLOWED_ORIGINS`) y el puerto (`PORT`) de variables de entorno; Hibernate crea y actualiza el esquema al arrancar (`spring.jpa.hibernate.ddl-auto=update`). El proyecto compila con `--release 21` porque App Service no ofrece un runtime de Java más reciente.
+
+**Paso 2. Crear la base de datos.** Se creó el servidor `reliant-mysql` (Azure Database for MySQL Flexible Server 8.0, Burstable B1ms) en el grupo de recursos `rg-reliant`, con acceso público desde los servicios de Azure y la base de datos `reliant-os` en `utf8mb4`.
+
+**Paso 3. Crear el Web App de los Web Services.** Se creó el Web App `reliant-platform` (Code, Java 21, Java SE embebido, Linux) con las variables de entorno del paso 1 más `SPRING_PROFILES_ACTIVE=prod` y `WEBSITES_PORT=8080`.
+
+**Paso 4. Conectar GitHub Actions.** Desde Deployment Center se conectó el repositorio `reliant-platform` y la rama `main`; Azure agregó el workflow `main_reliant-platform.yml`, que compila con Maven y Java 21 y publica el `.jar` en cada push a `main`.
+
+**Paso 5. Redesplegar la Web Application.** En `reliant-webapp` se actualizó `environment.ts` con la URL de los Web Services, se publicó el release 2.0.0 y el workflow `main_reliant-web-application.yml` redesplegó el sitio; en el Web App del platform se agregó la URL de la Web Application a `CORS_ALLOWED_ORIGINS`.
+
+**Paso 6. Publicar el Landing Page.** El cierre del release 2.1.0 en `main` publicó la nueva versión en GitHub Pages.
+
+| Evidencia | Descripción |
+|---|---|
+| <img src="assets/img/5.chapter-v/5.2.3.7-azure-resources.png" width="720"> | Grupo de recursos `rg-reliant` con el servidor MySQL y los Web Apps. |
+| <img src="assets/img/5.chapter-v/5.2.3.7-platform-env-vars.png" width="720"> | Variables de entorno del Web App `reliant-platform`. |
+| <img src="assets/img/5.chapter-v/5.2.3.7-github-actions-platform.png" width="720"> | Workflow `main_reliant-platform.yml` en verde. |
+| <img src="assets/img/5.chapter-v/5.2.3.7-platform-swagger-deployed.png" width="720"> | Swagger UI servido desde Azure. |
+| <img src="assets/img/5.chapter-v/5.2.3.7-webapp-deployed-2.0.0.png" width="720"> | Web Application 2.0.0 desplegada y autenticada contra los Web Services. |
+| <img src="assets/img/5.chapter-v/5.2.3.7-landing-deployed-2.1.0.png" width="720"> | Landing Page 2.1.0 publicado en GitHub Pages. |
+
+<!-- Capturas pendientes: Azure Portal (grupo de recursos, variables de entorno), GitHub Actions del platform, Swagger desplegado, webapp 2.0.0 y landing 2.1.0. -->
+
+#### 5.2.3.8. Team Collaboration Insights during Sprint.
+
+Durante el Sprint 3 el trabajo se distribuyó según la matriz LACX de la sección 5.2.3.2 y, a diferencia del Sprint 2, los tres integrantes registraron commits en los repositorios de producto. Navarro Aldoradin, Carolina Celeste construyó los bounded contexts IAM, Traceability, Process Monitoring, Fault Diagnosis y Reporting de los Web Services, la seguridad con JWT, el perfil de producción y la guía de despliegue, y en la Web Application la conexión al platform, el diagnóstico de fallas, el Quick Start, el reporting con PDF y el análisis de sesión, además de integrar el rediseño del Landing Page. Rivera Aguilar, Scarlet Josefina implementó en los Web Services las recetas, los subsistemas y los controladores del bounded context Equipment, y en la Web Application el tema visual de Reliant, la navegación lateral, los gráficos de tendencia y el tablero con preferencias de usuario; además diseñó los wireframes y mock-ups del nuevo Landing Page y actualizó el informe con ellos. Fernandez Seer, Mario Alonso implementó el reporte de sesión con exportación a CSV y las correcciones del sondeo de lecturas en Process Monitoring.
+
+El gráfico resume los commits (sin merges) por integrante y repositorio registrados en las ramas `develop` entre el 6 de octubre y el 13 de noviembre de 2026:
+
+<p align="center"><img src="assets/img/5.chapter-v/5.2.3.8-sprint-3-commits-by-member.png" alt="Commits del Sprint 3 por integrante y repositorio"></p>
+
+| Repositorio | Contribuidor (usuario de GitHub) | Commits del Sprint 3 |
+|---|---|---|
+| `reliant-platform` | genixmvp | 108 |
+| `reliant-platform` | scarletriveraaguilar-spec | 39 |
+| `reliant-webapp` | scarletriveraaguilar-spec | 42 |
+| `reliant-webapp` | genixmvp | 19 |
+| `reliant-webapp` | MrBaru | 13 |
+| `reliant-website` | genixmvp | 2 |
+| `reliant-report` | scarletriveraaguilar-spec | 78 |
+| `reliant-report` | genixmvp | 2 |
+
+Las capturas de Insights → Contributors de GitHub para cada repositorio se incluyen a continuación:
+
+| Repositorio | Insights → Contributors |
+|---|---|
+| `reliant-platform` | <img src="assets/img/5.chapter-v/5.2.3.8-platform-contributors.png" width="720"> |
+| `reliant-webapp` | <img src="assets/img/5.chapter-v/5.2.3.8-webapp-contributors.png" width="720"> |
+| `reliant-website` | <img src="assets/img/5.chapter-v/5.2.3.8-website-contributors.png" width="720"> |
+| `reliant-report` | <img src="assets/img/5.chapter-v/5.2.3.8-report-contributors.png" width="720"> |
+
+<!-- Capturas pendientes: GitHub → repositorio → Insights → Contributors (rango 2026-10-06 a 2026-11-13) de los cuatro repositorios. -->
+
+La distribución del Sprint 3 corrige en parte el riesgo señalado en el Sprint 2: los tres integrantes contribuyeron a los productos, aunque el backend sigue concentrado en dos personas. Para el Sprint 4 se asignarán los bounded contexts Billing y Notifications de los Web Services y las historias del segmento Asset Owner a Rivera Aguilar y Fernandez Seer, manteniendo una rama `feature/*` por historia.
+
 
 ## 5.3. Validation Interviews.
 
@@ -4043,14 +4562,14 @@ Las entrevistas de validación verifican, con usuarios de los dos segmentos obje
 
 | Segmento | Escenario | User Stories validadas | Pregunta de seguimiento |
 |---|---|---|---|
-| Recuperation Supplier | Iniciar sesión, cambiar el idioma y recorrer el menú de la aplicación | US02, US65, US66, US67 | Encontró cada sección donde esperaba? |
-| Recuperation Supplier | Registrar un cliente, un componente y su orden de recuperación con OF y WO | US13, US14, US15 | Faltó algún dato que hoy registra en su proceso? |
-| Recuperation Supplier | Revisar el sistema HVOF, sus subsistemas y partes, y editar una receta con sus bandas de umbral | US07, US08, US53, US54 | Las bandas reflejan cómo define hoy las tolerancias de una receta? |
-| Recuperation Supplier | Iniciar una sesión de rociado, seguir sus lecturas por banda y completarla o abortarla | US19, US21, US22, US23 | La vista le permitiría reaccionar a tiempo ante una desviación? |
-| Recuperation Supplier | Buscar una sesión anterior en el historial por sistema, orden y fechas | US24 | Esta información le ayudaría a responder un reclamo del cliente? |
-| Recuperation Supplier | Revisar los usuarios y roles, el plan y la suscripción de la organización | US03, US04, US05, US06 | Los roles corresponden a cómo se organiza su equipo? |
-| Asset Owner | Registrar la organización e iniciar sesión | US01, US02 | El registro fue claro para su tipo de organización? |
-| Asset Owner | Revisar con el moderador el historial de sesiones y las lecturas de un componente recuperado | US22, US24 | Qué información adicional necesitaría para evaluar a su proveedor? |
+| Recuperation Supplier | Iniciar sesión, cambiar el idioma y recorrer el menú de la aplicación | US02, US65, US66, US67 | ¿Encontró cada sección donde esperaba? |
+| Recuperation Supplier | Registrar un cliente, un componente y su orden de recuperación con OF y WO | US13, US14, US15 | ¿Faltó algún dato que hoy registra en su proceso? |
+| Recuperation Supplier | Revisar el sistema HVOF, sus subsistemas y partes, y editar una receta con sus bandas de umbral | US07, US08, US53, US54 | ¿Las bandas reflejan cómo define hoy las tolerancias de una receta? |
+| Recuperation Supplier | Iniciar una sesión de rociado, seguir sus lecturas por banda y completarla o abortarla | US19, US21, US22, US23 | ¿La vista le permitiría reaccionar a tiempo ante una desviación? |
+| Recuperation Supplier | Buscar una sesión anterior en el historial por sistema, orden y fechas | US24 | ¿Esta información le ayudaría a responder un reclamo del cliente? |
+| Recuperation Supplier | Revisar los usuarios y roles, el plan y la suscripción de la organización | US03, US04, US05, US06 | ¿Los roles corresponden a cómo se organiza su equipo? |
+| Asset Owner | Registrar la organización e iniciar sesión | US01, US02 | ¿El registro fue claro para su tipo de organización? |
+| Asset Owner | Revisar con el moderador el historial de sesiones y las lecturas de un componente recuperado | US22, US24 | ¿Qué información adicional necesitaría para evaluar a su proveedor? |
 
 **Métricas.** Tasa de escenarios completados sin ayuda, tiempo por escenario, calificación promedio de facilidad y utilidad (1 a 5) y observaciones de usabilidad clasificadas según las heurísticas de Nielsen.
 
@@ -4102,28 +4621,42 @@ Las entrevistas de validación verifican, con usuarios de los dos segmentos obje
 
 ### 5.3.3. Evaluaciones según heurísticas.
 
-La evaluación heurística de la Web Application se realiza con las diez heurísticas de usabilidad de Nielsen sobre las tareas de la sección 5.3.1. Cada problema encontrado se registra con su escala de severidad (0: no es un problema; 1: cosmético; 2: menor; 3: mayor; 4: catastrófico).
+La evaluación heurística de la Web Application se realizó sobre la versión 2.0.0 desplegada, conectada a los Web Services 1.0.0, con las diez heurísticas de usabilidad de Nielsen y las tareas de la sección 5.3.1. Cada integrante del equipo evaluó de forma independiente las tareas que no implementó, y luego se consolidaron los hallazgos. Cada problema se registra con su escala de severidad (0: no es un problema; 1: cosmético; 2: menor; 3: mayor; 4: catastrófico) y con la heurística violada; la última columna indica la acción tomada o planificada.
 
 | Carrera | Ingeniería de Software |
 |---|---|
 | Curso | Desarrollo de Aplicaciones Open Source |
-| Auditor | <!-- TODO: equipo auditor --> |
-| Cliente(s) | InnovaCorp |
-| Site o App a evaluar | Reliant — https://reliant-web-application-hsa3asb7axaph6hf.chilecentral-01.azurewebsites.net |
-| Tareas a evaluar | Registro e inicio de sesión; gestión de clientes, componentes y órdenes de recuperación; gestión de sistemas HVOF y recetas; inicio, monitoreo y cierre de una sesión de rociado; historial de sesiones; usuarios, roles y suscripción; cambio de idioma |
+| Auditor | Equipo InnovaCorp: Navarro Aldoradin, Carolina Celeste / Rivera Aguilar, Scarlet Josefina / Fernandez Seer, Mario Alonso (cada integrante evaluó las tareas que no implementó) |
+| Cliente(s) | InnovaCorp — Reliant |
+| Site o App a evaluar | Reliant Web Application 2.0.0 — https://reliant-web-application-hsa3asb7axaph6hf.chilecentral-01.azurewebsites.net |
+| Tareas a evaluar | T1 Registro e inicio de sesión; T2 Quick Start y tablero de operaciones; T3 Gestión de clientes, componentes y órdenes de recuperación; T4 Gestión de sistemas HVOF, subsistemas y recetas; T5 Inicio, monitoreo (Live/Trends) y cierre de una sesión de rociado; T6 Revisión y resolución de casos de falla; T7 Análisis de sesión y reporte de sesión; T8 Plantillas de reporte y generación de PDF; T9 Usuarios, roles y suscripción; T10 Cambio de idioma |
 | Escala de severidad | 0 a 4 |
+| Fecha | 2026-11-12 |
 
-| # | Problema | Escala de severidad | Heurística violada |
-|---|---|---|---|
-| 1 | <!-- TODO: problema encontrado por el auditor --> | <!-- TODO --> | <!-- TODO --> |
+| # | Problema | Escala de severidad | Heurística violada | Tarea | Acción |
+|---|---|---|---|---|---|
+| 1 | El pie de página se superponía al contenido en las vistas largas (lista de sesiones, análisis de sesión), ocultando la última fila de las tablas. | 3 | H8 Diseño estético y minimalista / H1 Visibilidad del estado del sistema | T5, T7 | Corregido en 2.0.0 (`fix/footer-overlap`). |
+| 2 | Al fallar una petición al API, el mensaje mostraba el texto técnico del Problem Detail (p. ej. "Validation failed") sin indicar qué campo corregir. | 3 | H9 Ayudar a reconocer, diagnosticar y recuperarse de errores | T1, T3, T4 | Corregido en 2.0.0: se muestra el `detail` localizado del Problem Detail y se resalta el campo. |
+| 3 | El Quick Start no advierte que, si la planta de demostración ya existe, reutiliza los registros en lugar de crearlos de nuevo; el usuario no sabe si "pasó algo". | 2 | H1 Visibilidad del estado del sistema | T2 | Corregido en 2.0.0: la lista de verificación marca cada elemento como "creado" o "ya existía". |
+| 4 | Resolver un caso de falla es una acción irreversible y se ejecuta con un solo clic, sin confirmación. | 3 | H5 Prevención de errores / H3 Control y libertad del usuario | T6 | Planificado para el Sprint 4: diálogo de confirmación con la nota de resolución obligatoria. |
+| 5 | En la pestaña Trends el color de cada banda (nominal, advertencia, parada) se comunica solo con color; no hay patrón ni etiqueta para usuarios con daltonismo. | 2 | H4 Consistencia y estándares / Accesibilidad | T5 | Planificado para el Sprint 4: leyenda con texto y marcadores distintos por banda. |
+| 6 | Los formularios de receta y de regla de falla no indican las unidades esperadas hasta que se produce un error de validación. | 2 | H6 Reconocimiento antes que recuerdo | T4, T6 | Planificado para el Sprint 4: unidad y rango visibles como texto de ayuda del campo. |
+| 7 | El cambio de idioma no se refleja en los títulos de los PDF ya generados ni en los nombres de las plantillas estándar sembradas por el backend. | 1 | H4 Consistencia y estándares | T8, T10 | Planificado: localizar las plantillas sembradas según `Accept-Language`. |
+| 8 | No existe una ruta de retorno explícita ("Volver a la sesión") desde el análisis de sesión; el usuario depende del botón atrás del navegador. | 2 | H3 Control y libertad del usuario / H7 Flexibilidad y eficiencia | T7 | Planificado para el Sprint 4: migas de pan en las vistas de detalle. |
+| 9 | La sección de suscripción muestra el plan de la organización, pero la acción de cambio de plan no indica que todavía no está disponible en esta versión. | 1 | H1 Visibilidad del estado del sistema | T9 | Planificado: deshabilitar la acción con un texto explicativo hasta implementar Billing en los Web Services. |
+| 10 | Los mensajes de éxito ("Sesión completada", "Reporte generado") desaparecen en 3 segundos y no quedan accesibles para lectores de pantalla si el foco está en otro elemento. | 1 | H1 Visibilidad del estado del sistema / Accesibilidad | T5, T8 | Planificado: región `aria-live` persistente para notificaciones. |
 
-<!-- TODO: completar la evaluación heurística con los resultados del equipo auditor -->
+**Conclusiones de la evaluación.** No se encontraron problemas catastróficos. Los tres problemas de severidad mayor (1, 2 y 4) afectan la confianza del usuario en acciones críticas; dos de ellos se corrigieron en la versión 2.0.0 y el tercero se incorporó al Sprint Backlog 4. Los problemas menores y cosméticos se concentran en consistencia, accesibilidad y prevención de errores, y se priorizan en el Sprint 4 junto con las historias del segmento Asset Owner.
 
 ## 5.4. Video About-the-Product.
 
-El video About-the-Product presenta Reliant desde la perspectiva de sus usuarios: el problema de trazabilidad del proceso de recubrimiento HVOF, la propuesta de valor para los segmentos Recuperation Supplier y Asset Owner, y un recorrido por el Landing Page y la Web Application desplegada.
+El video About-the-Product presenta Reliant desde la perspectiva de sus usuarios: el problema de trazabilidad del proceso de recubrimiento HVOF, la propuesta de valor para los segmentos Recuperation Supplier y Asset Owner, y un recorrido por el Landing Page 2.1.0 y la Web Application 2.0.0 conectada a los Web Services: registro e inicio de sesión, Quick Start, tablero de operaciones, sesión en vivo con simulación de desviaciones, casos de falla, análisis de sesión y generación del certificado de calidad en PDF.
 
-<!-- TODO: URL de Microsoft Stream del video About-the-Product y captura de portada -->
+| Video | URL |
+|---|---|
+| About the Product — primera versión (AV2) | <!-- TODO: URL del video About the Product en YouTube --> |
+
+<!-- TODO: captura de portada del video en assets/img/5.chapter-v/5.4-about-the-product-cover.png -->
 
 # Conclusiones
 ## Conclusiones y recomendaciones.
@@ -4135,16 +4668,32 @@ El video About-the-Product presenta Reliant desde la perspectiva de sus usuarios
 3. Publicar un fake API desplegado desde el inicio permitió validar la integración y el despliegue continuo antes de contar con el backend, y adelantó problemas de infraestructura propios del entorno de nube de la suscripción de estudiante, como las restricciones de regiones y de tipos de recurso.
 4. El trabajo de la Web Application se concentró en una sola integrante, y en el Landing Page solo el aspecto de internacionalización registró commits; la distribución desigual del trabajo constituye el principal riesgo para los siguientes entregables.
 
+**Conclusiones del Sprint 3 (AV2)**
+
+1. La primera versión de los Web Services cubre los seis bounded contexts que sostienen el flujo de extremo a extremo de un Recuperation Supplier (IAM, Equipment, Traceability, Process Monitoring, Fault Diagnosis y Reporting), con 26 endpoints documentados en OpenAPI, autenticación JWT por organización y mensajes de error localizados conforme a RFC 9457. Al conectar la Web Application a este API, los datos del caso real dejan de vivir en un fake API y pasan a persistirse en MySQL.
+2. Diseñar el backend con Domain-Driven Design permitió que la apertura automática de casos de falla se resolviera con un evento de dominio (`OutOfBandReadingDetectedEvent`) consumido por otro bounded context, sin acoplar Process Monitoring con Fault Diagnosis; el mismo mecanismo servirá para las notificaciones del Sprint 4.
+3. Separar los perfiles `dev` y `prod` y leer toda la configuración sensible de variables de entorno permitió desplegar los Web Services en Azure App Service con Azure Database for MySQL sin cambios de código, y documentar el procedimiento en una guía que cualquier integrante puede repetir.
+4. La Web Application 2.0.0 añadió las funciones que las entrevistas de validación señalaron como más valiosas: ver la desviación mientras la sesión está en curso (Live/Trends), saber qué subsistema está implicado (casos de falla con causa probable) y entregar evidencia al cliente (certificado en PDF desde una plantilla). El Quick Start redujo el tiempo de la demostración de más de diez minutos a menos de uno.
+5. La distribución del trabajo mejoró respecto del Sprint 2: los tres integrantes registraron commits en los productos y la Web Application recibió aportes de los tres; sin embargo, el backend sigue concentrado en dos personas y el Landing Page en una.
+
 **Recomendaciones**
 
 1. Repartir los bounded contexts de los Web Services entre los tres integrantes desde el Sprint Planning 3, con una rama `feature/*` por historia, para equilibrar la carga y dejar evidencia de la contribución de cada uno.
 2. Completar en el Sprint 3 las historias que el Sprint 2 dejó fuera, como el cambio de estado de un sistema HVOF (US12), y las historias del segmento Asset Owner, de modo que el Sprint Goal pueda verificarse también desde la cuenta de un Asset Owner.
 3. Reemplazar los adapters fake de IAM por la autenticación de los Web Services antes de exponer datos reales, ya que el fake API publica sus colecciones, incluidos los usuarios de prueba, sin control de acceso.
+4. Implementar en el Sprint 4 los bounded contexts Billing y Notifications de los Web Services y las historias del segmento Asset Owner, asignándolos a los integrantes con menor participación en el backend.
+5. Atender los hallazgos de la evaluación heurística de severidad 3 pendientes (confirmación al resolver casos de falla) antes de las entrevistas de validación del TB2, y los de severidad 2 relacionados con accesibilidad (leyendas por texto y regiones `aria-live`).
+6. Publicar los videos About the Product y About the Team junto con cada release y enlazarlos desde el Landing Page, de modo que la comunicación del producto acompañe a cada versión desplegada.
+
 ## Video About-the-Team.
 
-El video About-the-Team presenta al equipo de InnovaCorp, su forma de trabajo y el avance de cada sprint, con la participación de los tres integrantes.
+El video About-the-Team presenta al equipo de InnovaCorp, su forma de trabajo y el avance de cada sprint, con la participación de los tres integrantes. En él cada integrante relata, como testimonio, cómo el trabajo del curso contribuyó a desarrollar la capacidad de comunicarse efectivamente con distintas audiencias (Student Outcome 3): las entrevistas con usuarios del taller HVOF y del cliente minero, las exposiciones por entrega y la documentación escrita de los productos.
 
-<!-- TODO: URL de Microsoft Stream del video About-the-Team y captura de portada -->
+| Video | URL |
+|---|---|
+| About the Team — primera versión (AV2) | <!-- TODO: URL del video About the Team en YouTube --> |
+
+<!-- TODO: captura de portada del video en assets/img/5.chapter-v/about-the-team-cover.png -->
 
 # Bibliografía
 
@@ -4152,9 +4701,19 @@ El video About-the-Team presenta al equipo de InnovaCorp, su forma de trabajo y 
 
 - Automation World. (2025). *How to solve the hidden risks of paper manufacturing on the factory floor*. https://www.automationworld.com/control/article/55378030/how-to-solve-the-hidden-risks-of-paper-manufacturing-on-the-factory-floor
 
+- Broadcom / VMware. (s.f.). *Spring Boot reference documentation*. https://docs.spring.io/spring-boot/
+
+- Broadcom / VMware. (s.f.). *Spring Security reference*. https://docs.spring.io/spring-security/reference/
+
+- Chart.js. (s.f.). *Chart.js documentation*. https://www.chartjs.org/docs/
+
 - Driessen, V. (2010). *A successful Git branching model*. https://nvie.com/posts/a-successful-git-branching-model/
 
+- Evans, E. (2003). *Domain-Driven Design: Tackling complexity in the heart of software*. Addison-Wesley.
+
 - Innovapptive. (2024, 26 de febrero). *Overcoming equipment maintenance challenges in mining industry*. https://www.innovapptive.com/blog/overcoming-equipment-maintenance-challenges-in-mining-industry
+
+- Internet Engineering Task Force. (2023). *RFC 9457: Problem Details for HTTP APIs*. https://www.rfc-editor.org/rfc/rfc9457
 
 - Khan, M. N., Shah, S., & Shamim, T. (2019). *Investigation of operating parameters on high-velocity oxyfuel thermal spray coating quality for aerospace applications. The International Journal of Advanced Manufacturing Technology*, 103, 2677–2690. https://doi.org/10.1007/s00170-019-03696-0
 
@@ -4164,17 +4723,27 @@ El video About-the-Team presenta al equipo de InnovaCorp, su forma de trabajo y 
 
 - Microsoft. (s.f.). *Azure App Service documentation*. https://learn.microsoft.com/azure/app-service/
 
+- Microsoft. (s.f.). *Azure Database for MySQL - Flexible Server documentation*. https://learn.microsoft.com/azure/mysql/flexible-server/
+
 - Microsoft. (s.f.). *Deploy to App Service using GitHub Actions*. https://learn.microsoft.com/azure/app-service/deploy-github-actions
 
 - Ministerio de Energía y Minas. (2026). *Boletín Estadístico Minero: Balance anual 2025*. [Citado en Revista Tecnología Minera]. https://tecnologiaminera.com/noticia/minem-peru-alcanza-us-62848-millones-en-exportaciones-en-2025-1774388279
 
 - ngx-translate. (s.f.). *ngx-translate: The internationalization (i18n) library for Angular*. https://github.com/ngx-translate/core
 
+- Nielsen, J. (1994). *10 usability heuristics for user interface design*. Nielsen Norman Group. https://www.nngroup.com/articles/ten-usability-heuristics/
+
 - Oerlikon Metco. (2025). *Thermal spray process parameters*. https://www.oerlikon.com/metco/en/solutions-technologies/what-is-thermal-spray/thermal-spray-process-parameters/
+
+- Oracle. (s.f.). *MySQL 8.0 reference manual*. https://dev.mysql.com/doc/refman/8.0/en/
+
+- parall.ax. (s.f.). *jsPDF documentation*. https://github.com/parallax/jsPDF
 
 - Preston-Werner, T. (s.f.). *Semantic Versioning 2.0.0*. https://semver.org
 
 - Siemens. (2022). *The true cost of downtime 2022*. https://assets.new.siemens.com/siemens/assets/api/uuid:3d606495-dbe0-43e4-80b1-d04e27ada920/dics-b10153-00-7600truecostofdowntime2022-144.pdf
+
+- springdoc. (s.f.). *springdoc-openapi*. https://springdoc.org
 
 - Springer Nature. (2025). Outlook of Industry 4.0 integrated technologies in thermal spray processes and applications. *Journal of Thermal Spray Technology*. https://doi.org/10.1007/s11666-025-02096-z
 
@@ -4182,7 +4751,7 @@ El video About-the-Team presenta al equipo de InnovaCorp, su forma de trabajo y 
 
 # Anexos
 
-## Anexo: Links importantes
+## Anexo A: Links importantes
 
 | Recurso | URL |
 |---|---|
@@ -4190,17 +4759,26 @@ El video About-the-Team presenta al equipo de InnovaCorp, su forma de trabajo y 
 | Repositorio del informe (`reliant-report`) | https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-report |
 | Repositorio del Landing Page (`reliant-website`) | https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-website |
 | Repositorio de la Frontend Web Application (`reliant-webapp`) | https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-webapp |
+| Repositorio de los Web Services (`reliant-platform`) | https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform |
 | Repositorio del fake API (`reliant-platform-mock`) | https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform-mock |
-| Landing Page desplegado | https://upc-pre-202620-1asi0729-7753-innovacorp.github.io/reliant-website/ |
-| Frontend Web Application desplegada | https://reliant-web-application-hsa3asb7axaph6hf.chilecentral-01.azurewebsites.net |
-| Fake API desplegado | https://reliant-mockapi-ajh4eqgkf7hxg2fx.eastus-01.azurewebsites.net/api/v1 |
+| Landing Page desplegado (2.1.0) | https://upc-pre-202620-1asi0729-7753-innovacorp.github.io/reliant-website/ |
+| Frontend Web Application desplegada (2.0.0) | https://reliant-web-application-hsa3asb7axaph6hf.chilecentral-01.azurewebsites.net |
+| Web Services desplegados (1.0.0) — Swagger UI | https://<dominio-del-platform>.azurewebsites.net/swagger-ui.html <!-- reemplazar por el dominio real --> |
+| Fake API desplegado (Sprint 2) | https://reliant-mockapi-ajh4eqgkf7hxg2fx.eastus-01.azurewebsites.net/api/v1 |
+| Guía de despliegue en Azure de los Web Services | https://github.com/upc-pre-202620-1asi0729-7753-innovacorp/reliant-platform/blob/main/docs/azure-deployment.md |
+| Diseño UX/UI en Figma (wireframes, mock-ups y prototipos) | https://www.figma.com/design/eJgrioPA9K4FTQD0pXAUI1/Mockup-Innovacor |
+| Prototipo interactivo en Figma | https://www.figma.com/proto/eJgrioPA9K4FTQD0pXAUI1/Mockup-Innovacor?node-id=205-460 |
+| Video de demostración del prototipo interactivo (Figma) | https://drive.google.com/file/d/1zf1c5jWL4qMQMxFodapUbAed3S3XQiYO/view?usp=sharing |
+| Video About the Product (AV2) | <!-- TODO: URL en YouTube --> |
+| Video About the Team (AV2) | <!-- TODO: URL en YouTube --> |
 | Product Backlog en Trello | https://trello.com/b/aDFKmtGp/reliant-product-backlog |
 | Sprint Backlog 2 en Trello | https://trello.com/b/ccOu9yk5/reliant-sprint-2 |
 
-## Anexo: Videos de Exposiciones
+## Anexo B: Videos de Exposiciones
 
 | Entrega | Video | URL |
 |---|---|---|
 | TB1 | Exposición de TB1 – Stage Review (Sprint 2) | <!-- TODO: URL de Microsoft Stream de la exposición de TB1 --> |
 | TB1 | Navegación del producto, Sprint 2 (`upc-pre-202620-1asi0729-7753-innovacorp-productnavigation-sprint-2`) | <!-- TODO: URL de Microsoft Stream --> |
-
+| AV2 | Exposición de AV2 – Sprint Review (Sprint 3) (`upc-pre-202620-1asi0729-7753-innovacorp-expo-av2`) | <!-- TODO: URL de Microsoft Stream de la exposición de AV2 --> |
+| AV2 | Video de demostración del prototipo interactivo en Figma (Landing Page y Web Application) | https://drive.google.com/file/d/1zf1c5jWL4qMQMxFodapUbAed3S3XQiYO/view?usp=sharing |

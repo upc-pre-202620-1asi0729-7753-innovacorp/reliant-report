@@ -1,0 +1,384 @@
+@startuml "Reliant_Frontend_Equipment"
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam packageStyle rectangle
+skinparam defaultFontName Inter
+hide empty members
+title Reliant - Frontend Equipment Class Diagram
+left to right direction
+
+package "Domain" {
+  class Controller {
+    id: number
+    hvofSystemId: number
+    controllerNumber: number
+    deviceType: DeviceType
+    serialNumber: string
+    manufacturer: string
+    model: string
+    partNumber: string
+    ipAddress: string
+    port: number
+    rack: number
+    slot: number
+    endpointUrl: string | null
+    tagCatalogId: number | null
+    supportedProtocols
+  }
+  enum DeviceType {
+    PLC
+    OPC_UA_SERVER
+    GATEWAY
+  }
+  enum Protocol {
+    ETHERNET_IP
+    OPC_UA
+    MODBUS_TCP
+    S7
+  }
+  class HvofSubsystem {
+    id: number
+    hvofSystemId: number
+    subsystemType: SubsystemType
+    name: string
+    alias: string
+    parameters
+  }
+  enum SubsystemType {
+    GAS_CONSOLE
+    POWDER_FEEDER
+    COOLING_UNIT
+    MANIPULATOR
+    DUST_COLLECTOR
+    SPRAY_GUN
+  }
+  class HvofSystem {
+    id: number
+    code: string
+    organizationId: number
+    serialNumber: string
+    status: HvofSystemStatus
+    systemManufacturer: string
+    systemModel: string
+    fuelType: FuelType
+    tagMappings: TagMapping[]
+  }
+  interface TagMapping {
+    tagPath: string
+    controllerId: number
+    subsystemId: number | null
+    partId: number | null
+    parameter: string | null
+    tagKind: 'ACTUAL' | 'SETPOINT' | 'STATUS' | 'FAUL
+    statusRole: string | null
+    matchedRuleId: number | null
+    confirmed: boolean
+  }
+  enum HvofSystemStatus {
+    ACTIVE
+    MAINTENANCE
+    OUT_OF_SERVICE
+  }
+  enum FuelType {
+    HYDROGEN
+    PROPANE
+    KEROSENE
+    NATURAL_GAS
+  }
+  class Recipe {
+    id: number
+    hvofSystemId: number
+    recipeNumber: number
+    name: string
+    powderSpecification: string
+    status: RecipeStatus
+    applicabilities: RecipeApplicability[]
+    parameters: RecipeParameter[]
+    parameterFor(parameter): RecipeParameter | undefined
+  }
+  interface RecipeApplicability {
+    componentType: string
+    machineModel: string
+    position: string
+  }
+  interface RecipeParameter {
+    parameter: string
+    setpoint: number
+    lowerShutdown: number
+    lowerWarning: number
+    nominalMin: number
+    nominalMax: number
+    upperWarning: number
+    upperShutdown: number
+    unitSymbol: string
+    unitCategory: string
+  }
+  enum RecipeStatus {
+    DRAFT
+    ACTIVE
+    RETIRED
+  }
+}
+
+package "Application" {
+  class EquipmentStore {
+    api: EquipmentApi
+    iam: IamStore
+    hvofSystemsSignal: signal<HvofSystem[]>
+    activeHvofSystems: computed
+    controllersSignal: signal<Controller[]>
+    subsystemsSignal: signal<HvofSubsystem[]>
+    recipesSignal: signal<Recipe[]>
+    loadingSignal: signal<boolean>
+    errorSignal: signal<string | null>
+    loadedSignal: signal<boolean>
+    reload(): void
+    loadChildren(systems): void
+    getHvofSystemById(id): Signal<HvofSystem | undefined>
+    controllersOf(hvofSystemId): Signal<Controller[]>
+    getControllerById(id): Signal<Controller | undefined>
+    subsystemsOf(hvofSystemId): Signal<HvofSubsystem[]>
+    getSubsystemById(id): Signal<HvofSubsystem | undefined>
+    parametersOf(hvofSystemId): Signal<string[]>
+    subsystemOfParameter(hvofSystemId, parameter): HvofSubsystem | undefined
+    recipesOf(hvofSystemId): Signal<Recipe[]>
+    activeRecipesOf(hvofSystemId): Signal<Recipe[]>
+    getRecipeById(id): Signal<Recipe | undefined>
+    recipeByNumber(hvofSystemId, recipeNumber): Signal<Recipe | undefined>
+    addController(controller): void
+    ...()
+  }
+}
+
+package "Infrastructure" {
+  class ControllersApiEndpoint {
+    getAllBySystemId(hvofSystemId): Observable<Controller[]>
+    create(controller): Observable<Controller>
+  }
+  interface ControllersResponse {
+    controllers: ControllerResource[]
+  }
+  interface ControllerResource {
+    id: number
+    hvofSystemId: number
+    controllerNumber: number
+    deviceType: DeviceType
+    serialNumber: string
+    manufacturer: string
+    model: string
+    partNumber: string
+    ipAddress: string
+    port: number
+    rack: number
+    slot: number
+    endpointUrl: string | null
+    tagCatalogId: number | null
+    supportedProtocols: { protocol: Protocol }[]
+  }
+  class EquipmentApi {
+    getHvofSystemsByOrganizationId(organizationId): Observable<HvofSystem[]>
+    getHvofSystem(id): Observable<HvofSystem>
+    createHvofSystem(system): Observable<HvofSystem>
+    getControllersBySystemId(hvofSystemId): Observable<Controller[]>
+    createController(controller): Observable<Controller>
+    getSubsystemsBySystemId(hvofSystemId): Observable<HvofSubsystem[]>
+    createSubsystem(subsystem): Observable<HvofSubsystem>
+    getRecipesBySystemId(hvofSystemId): Observable<Recipe[]>
+    createRecipe(recipe): Observable<Recipe>
+    publishRecipe(recipeId): Observable<Recipe>
+  }
+  class HvofSubsystemsApiEndpoint {
+    getAllBySystemId(hvofSystemId): Observable<HvofSubsystem[]>
+    create(subsystem): Observable<HvofSubsystem>
+  }
+  interface HvofSubsystemsResponse {
+    hvofSubsystems: HvofSubsystemResource[]
+  }
+  interface HvofSubsystemResource {
+    id: number
+    hvofSystemId: number
+    subsystemType: SubsystemType
+    name: string
+    alias: string
+    parameters: { parameter: string }[]
+  }
+  class HvofSystemsApiEndpoint {
+  }
+  interface HvofSystemsResponse {
+    hvofSystems: HvofSystemResource[]
+  }
+  interface HvofSystemResource {
+    id: number
+    code: string
+    organizationId: number
+    serialNumber: string
+    status: HvofSystemStatus
+    systemManufacturer: string
+    systemModel: string
+    fuelType: FuelType
+    tagMappings: TagMapping[]
+  }
+  class RecipesApiEndpoint {
+    publish(recipeId): Observable<Recipe>
+  }
+  interface RecipesResponse {
+    recipes: RecipeResource[]
+  }
+  interface RecipeResource {
+    id: number
+    hvofSystemId: number
+    recipeNumber: number
+    name: string
+    powderSpecification: string
+    status: RecipeStatus
+    applicabilities: RecipeApplicability[]
+    parameters: RecipeParameter[]
+  }
+}
+
+package "Presentation" {
+  class ControllerForm {
+    fb: FormBuilder
+    route: ActivatedRoute
+    router: Router
+    store: EquipmentStore
+    deviceTypes: DeviceType[]
+    protocols: Protocol[]
+    controllerId: number | null
+    submit(): void
+    back(): void
+  }
+  class HvofSubsystemForm {
+    fb: FormBuilder
+    route: ActivatedRoute
+    router: Router
+    store: EquipmentStore
+    subsystemTypes: SubsystemType[]
+    parameters: signal<string[]>
+    subsystemId: number | null
+    addParameter(event): void
+    removeParameter(value): void
+    submit(): void
+    back(): void
+  }
+  class HvofSystemDetail {
+    store: EquipmentStore
+    route: ActivatedRoute
+    router: Router
+    systemId: toSignal
+    system: computed
+    controllers: computed
+    subsystems: computed
+    recipes: computed
+    newRecipe(): void
+    publishRecipe(recipeId): void
+    back(): void
+    newController(): void
+    newSubsystem(): void
+  }
+  class HvofSystemForm {
+    fb: FormBuilder
+    route: ActivatedRoute
+    router: Router
+    store: EquipmentStore
+    fuelTypes: FuelType[]
+    iam: IamStore
+    systemId: number | null
+    submit(): void
+    cancel(): void
+  }
+  class HvofSystemList {
+    store: EquipmentStore
+    router: Router
+    displayedColumns: string[]
+    sort: viewChild
+    paginator: viewChild
+    dataSource: computed
+    navigateToNew(): void
+    viewSystem(id): void
+  }
+  class RecipeForm {
+    fb: FormBuilder
+    route: ActivatedRoute
+    router: Router
+    store: EquipmentStore
+    recipeId: number | null
+    availableParameters: computed
+    applicabilities: FormArray<ApplicabilityGroup>
+    parameters: FormArray<ParameterGroup>
+    addApplicability(a?): void
+    removeApplicability(index): void
+    addParameter(p?): void
+    removeParameter(index): void
+    submit(): void
+    back(): void
+  }
+}
+
+package "Shared (external)" #EEEEEE {
+  class BaseApi <<shared>>
+  class BaseApiEndpoint <<shared>>
+  class BaseEntity <<shared>>
+  class BaseForm <<shared>>
+  class BaseResource <<shared>>
+  class BaseResponse <<shared>>
+  class ErrorHandlingEnabledBaseType <<shared>>
+}
+BaseApi <|-- EquipmentApi
+BaseApiEndpoint <|-- HvofSystemsApiEndpoint
+BaseApiEndpoint <|-- RecipesApiEndpoint
+BaseEntity <|.. Controller
+BaseEntity <|.. HvofSubsystem
+BaseEntity <|.. HvofSystem
+BaseEntity <|.. Recipe
+BaseForm <|-- ControllerForm
+BaseForm <|-- HvofSubsystemForm
+BaseForm <|-- HvofSystemForm
+BaseForm <|-- RecipeForm
+BaseResource <|.. ControllerResource
+BaseResource <|.. HvofSubsystemResource
+BaseResource <|.. HvofSystemResource
+BaseResource <|.. RecipeResource
+BaseResponse <|.. ControllersResponse
+BaseResponse <|.. HvofSubsystemsResponse
+BaseResponse <|.. HvofSystemsResponse
+BaseResponse <|.. RecipesResponse
+Controller --> DeviceType
+ControllerForm --> DeviceType
+ControllerForm --> EquipmentStore
+ControllerForm --> Protocol
+ControllerResource --> DeviceType
+ControllerResource --> Protocol
+ControllersResponse --> ControllerResource
+EquipmentStore --> Controller
+EquipmentStore --> EquipmentApi
+EquipmentStore --> HvofSubsystem
+EquipmentStore --> HvofSystem
+EquipmentStore --> Recipe
+ErrorHandlingEnabledBaseType <|-- ControllersApiEndpoint
+ErrorHandlingEnabledBaseType <|-- HvofSubsystemsApiEndpoint
+HvofSubsystem --> SubsystemType
+HvofSubsystemForm --> EquipmentStore
+HvofSubsystemForm --> SubsystemType
+HvofSubsystemResource --> SubsystemType
+HvofSubsystemsResponse --> HvofSubsystemResource
+HvofSystem --> FuelType
+HvofSystem --> HvofSystemStatus
+HvofSystem --> TagMapping
+HvofSystemDetail --> EquipmentStore
+HvofSystemForm --> EquipmentStore
+HvofSystemForm --> FuelType
+HvofSystemList --> EquipmentStore
+HvofSystemResource --> FuelType
+HvofSystemResource --> HvofSystemStatus
+HvofSystemResource --> TagMapping
+HvofSystemsResponse --> HvofSystemResource
+Recipe --> RecipeApplicability
+Recipe --> RecipeParameter
+Recipe --> RecipeStatus
+RecipeForm --> EquipmentStore
+RecipeResource --> RecipeApplicability
+RecipeResource --> RecipeParameter
+RecipeResource --> RecipeStatus
+RecipesResponse --> RecipeResource
+@enduml

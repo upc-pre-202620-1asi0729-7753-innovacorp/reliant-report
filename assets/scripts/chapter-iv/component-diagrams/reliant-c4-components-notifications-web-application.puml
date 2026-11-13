@@ -1,7 +1,7 @@
 @startuml "Components-Notifications-Frontend"
 !includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
 
-title Reliant - Notifications Component Diagram (Web Application)
+title Reliant - Frontend Notifications Components Diagram
 
 Container(api, "Web Services", "Spring Boot", "Exposes /api/v1/alerts, /api/v1/notification-preferences")
 Container(shared, "Shared", "Angular", "Layout, navigation, auth interceptor, guards, i18n and unit formatting")

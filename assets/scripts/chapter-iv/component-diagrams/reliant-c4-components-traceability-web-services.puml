@@ -1,10 +1,10 @@
 @startuml "Components-Traceability"
 !includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
 
-title Reliant - Traceability Component Diagram (Web Services)
+title Reliant - Backend Traceability Components Diagram
 
 Container(webapp, "Web Application", "Angular", "Consumes the REST endpoints of this bounded context")
-ContainerDb(db, "Database", "PostgreSQL 16", "Persistence of this bounded context")
+ContainerDb(db, "Database", "MySQL 8.0", "Persistence of this bounded context")
 Container(downstream, "Process Monitoring, Reporting", "Spring Boot", "Check recuperation status and component spec through TraceabilityContextFacade")
 
 Container_Boundary(bc, "Traceability Bounded Context") {

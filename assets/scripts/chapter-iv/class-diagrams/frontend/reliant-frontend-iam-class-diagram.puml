@@ -1,0 +1,258 @@
+@startuml "Reliant_Frontend_IAM"
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam packageStyle rectangle
+skinparam defaultFontName Inter
+hide empty members
+title Reliant - Frontend IAM Class Diagram
+left to right direction
+
+package "Domain" {
+  class Organization {
+    id: number
+    name: string
+    ruc: string
+    organizationType: OrganizationType
+    status: string
+    timeZone: string
+  }
+  enum OrganizationType {
+    RECUPERATION_SUPPLIER
+    ASSET_OWNER
+  }
+  class Role {
+    id: number
+    name: string
+  }
+  class SignIn {
+  }
+  class SignInCommand {
+    email: string
+    password: string
+  }
+  class SignUpCommand {
+    organizationName: string
+    ruc: string
+    organizationType: OrganizationType
+    fullName: string
+    email: string
+    password: string
+  }
+  class User {
+    id: number
+    fullName: string
+    email: string
+    organizationId: number
+    status: string
+    roleIds
+    hasRole(roleId): boolean
+  }
+}
+
+package "Application" {
+  class IamStore {
+    iamApi: IamApi
+    router: Router
+    injector: Injector
+    sessionSignal: signal<StoredSession | null>
+    errorSignal: signal<string | null>
+    isSignedIn: computed
+    userId: computed
+    email: computed
+    fullName: computed
+    organizationId: computed
+    organizationType: computed
+    roleIds: computed
+    isSupplier: computed
+    isAssetOwner: computed
+    isAdmin: computed
+    currentToken: computed
+    usersSignal: signal<User[]>
+    rolesSignal: signal<Role[]>
+    ...
+    loadUsersAndRoles(): void
+    roleName(roleId): string
+    updateUserRoles(userId, roleIds): void
+    hasRole(...roleIds): boolean
+    signIn(signInCommand): void
+    signUp(signUpCommand): void
+    signOut(): void
+    clear(): void
+    reloadStores(): void
+  }
+}
+
+package "Infrastructure" {
+  class IamApi {
+    signUpEndpoint: SIGN_UP_PORT
+    signInEndpoint: SIGN_IN_PORT
+    signUp(signUpCommand): Observable<SignUpResource>
+    signIn(signInCommand): Observable<SignInResource>
+    getRoles(): Observable<Role[]>
+    getUsersByOrganizationId(organizationId): Observable<User[]>
+    updateUserRoles(userId, roleIds): Observable<User>
+  }
+  class RolesApiEndpoint {
+  }
+  interface RolesResponse {
+    roles: RoleResource[]
+  }
+  interface RoleResource {
+    id: number
+  }
+  class SignInApiEndpoint {
+    http: HttpClient
+    signIn(signInCommand): Observable<SignInResource>
+  }
+  class SignInAssembler {
+    toRequestFromCommand(command): SignInRequest
+    toResourceFromResponse(response): SignInResource
+  }
+  interface SignInResponse {
+  }
+  interface SignInResource {
+    id: number
+    email: string
+    fullName: string
+    organizationId: number
+    organizationType: OrganizationType
+    roleIds: { roleId: number }[]
+    token: string
+  }
+  interface SignInPort {
+  }
+  interface SignInRequest {
+    email: string
+    password: string
+  }
+  class SignUpApiEndpoint {
+    http: HttpClient
+    signUp(signUpCommand): Observable<SignUpResource>
+  }
+  class SignUpAssembler {
+    toResourceFromResponse(response): SignUpResource
+    toRequestFromCommand(command): SignUpRequest
+  }
+  interface SignUpResponse {
+  }
+  interface SignUpResource {
+    id: number
+    email: string
+    fullName: string
+    organizationId: number
+  }
+  interface SignUpPort {
+  }
+  interface SignUpRequest {
+    organizationName: string
+    ruc: string
+    organizationType: OrganizationType
+    fullName: string
+    email: string
+    password: string
+  }
+  class UsersApiEndpoint {
+    assignRoles(userId, roleIds): Observable<User>
+  }
+  interface UsersResponse {
+    users: UserResource[]
+  }
+  interface UserResource {
+    id: number
+    fullName: string
+    email: string
+    organizationId: number
+    status: string
+    roles: { id: number
+    roleIds: { roleId: number }[]
+  }
+}
+
+package "Presentation" {
+  class AuthenticationSection {
+    router: Router
+    store: IamStore
+    performSignIn(): void
+    performSignUp(): void
+    performSignOut(): void
+  }
+  class SignInForm {
+    fb: FormBuilder
+    store: IamStore
+    submit(): void
+  }
+  class SignUpForm {
+    fb: FormBuilder
+    store: IamStore
+    submit(): void
+  }
+  class UserList {
+    store: IamStore
+    router: Router
+    ngOnInit(): void
+    editRoles(userId): void
+  }
+  class UserRoleForm {
+    store: IamStore
+    route: ActivatedRoute
+    router: Router
+    userId: toSignal
+    user: computed
+    selected: signal<number[]>
+    ngOnInit(): void
+    toggle(roleId, checked): void
+    isSelected(roleId): boolean
+    save(): void
+    back(): void
+  }
+}
+
+package "Shared (external)" #EEEEEE {
+  class BaseApi <<shared>>
+  class BaseApiEndpoint <<shared>>
+  class BaseEntity <<shared>>
+  class BaseForm <<shared>>
+  class BaseResource <<shared>>
+  class BaseResponse <<shared>>
+  class ErrorHandlingEnabledBaseType <<shared>>
+  class OnInit <<shared>>
+}
+AuthenticationSection --> IamStore
+BaseApi <|-- IamApi
+BaseApiEndpoint <|-- RolesApiEndpoint
+BaseApiEndpoint <|-- UsersApiEndpoint
+BaseEntity <|.. Organization
+BaseEntity <|.. Role
+BaseEntity <|.. User
+BaseForm <|-- SignInForm
+BaseForm <|-- SignUpForm
+BaseResource <|.. RoleResource
+BaseResource <|.. SignInResource
+BaseResource <|.. SignUpResource
+BaseResource <|.. UserResource
+BaseResponse <|.. RolesResponse
+BaseResponse <|.. SignInResponse
+BaseResponse <|.. SignUpResponse
+BaseResponse <|.. UsersResponse
+ErrorHandlingEnabledBaseType <|-- SignInApiEndpoint
+ErrorHandlingEnabledBaseType <|-- SignUpApiEndpoint
+IamStore --> IamApi
+IamStore --> Role
+IamStore --> User
+OnInit <|.. UserList
+OnInit <|.. UserRoleForm
+Organization --> OrganizationType
+RolesResponse --> RoleResource
+SignInForm --> IamStore
+SignInPort <|.. SignInApiEndpoint
+SignInResource --> OrganizationType
+SignInResource <|.. SignInResponse
+SignUpCommand --> OrganizationType
+SignUpForm --> IamStore
+SignUpPort <|.. SignUpApiEndpoint
+SignUpRequest --> OrganizationType
+SignUpResource <|.. SignUpResponse
+UserList --> IamStore
+UserRoleForm --> IamStore
+UsersResponse --> UserResource
+@enduml
