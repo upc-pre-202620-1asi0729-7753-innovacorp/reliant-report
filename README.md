@@ -4161,7 +4161,7 @@ En esta sección se presentan los commits realizados durante el Sprint 3 en los 
 
 | Repositorio | Release del Sprint 3 | Etiqueta | Ramas |
 |---|---|---|---|
-| `reliant-platform` | 1.0.0 — primera versión de los Web Services | `v1.0.0` | `main`, `develop`, `release/1.0.0`, 15 ramas `feature/*` |
+| `reliant-platform` | 1.0.0 — primera versión de los Web Services | `v1.0.0` | `main`, `develop`, `release/1.0.0`, `hotfix/azure-workflow`, 15 ramas `feature/*` (con pull requests de los tres integrantes) |
 | `reliant-webapp` | 2.0.0 — Web Application conectada a los Web Services | `2.0.0` | `main`, `develop`, `release/2.0.0`, 8 ramas `feature/*`, `fix/footer-overlap` |
 | `reliant-website` | 2.1.0 — rediseño del Landing Page | `2.1.0` | `main`, `develop`, `release/2.1.0`, `feature/update-landing-page`, `feature/merge-scarlet-design` |
 
@@ -4261,6 +4261,182 @@ En esta sección se presentan los commits realizados durante el Sprint 3 en los 
 | reliant-platform | develop | ca526ee | feat(equipment): add hvof system resource from entity assembler. |  | 2026-11-06 |
 | reliant-platform | develop | 91e8034 | feat(equipment): add hvof systems controller. |  | 2026-11-06 |
 | reliant-platform | develop | 2f6e9f0 | Complete HVOF subsystems and controllers integration |  | 2026-11-06 |
+| reliant-platform | develop | 1d71e59 | feat(iam): add roles enum, role entity, seed roles command and role repository port. |  | 2026-11-07 |
+| reliant-platform | develop | ee99048 | feat(iam): add roles enum, role entity, seed roles command and role repository port. |  | 2026-11-07 |
+| reliant-platform | develop | ae1b48c | feat(iam): add role persistence repository. |  | 2026-11-07 |
+| reliant-platform | develop | 82832a1 | feat(iam): add role repository implementation. |  | 2026-11-07 |
+| reliant-platform | develop | 7b53753 | feat(iam): add role command service. |  | 2026-11-07 |
+| reliant-platform | develop | 654106c | feat(iam): add role command service implementation. |  | 2026-11-07 |
+| reliant-platform | develop | f10695c | feat(iam): add application ready event handler. |  | 2026-11-07 |
+| reliant-platform | develop | 52e5842 | build: add spring security crypto dependency. |  | 2026-11-07 |
+| reliant-platform | develop | c31cfab | feat(iam): add hashing service. |  | 2026-11-07 |
+| reliant-platform | develop | 7829c6c | feat(iam): add hashing service implementation. |  | 2026-11-07 |
+| reliant-platform | develop | fd6512f | feat(iam): add email address value object. |  | 2026-11-07 |
+| reliant-platform | develop | 427b56c | feat(iam): add ruc value object. |  | 2026-11-07 |
+| reliant-platform | develop | ace63a7 | feat(iam): add organization type value object. |  | 2026-11-07 |
+| reliant-platform | develop | 3180903 | feat(iam): add organization status value object. |  | 2026-11-07 |
+| reliant-platform | develop | ce31673 | feat(iam): add user status value object. |  | 2026-11-07 |
+| reliant-platform | develop | 3100856 | feat(iam): add organization registered event. |  | 2026-11-07 |
+| reliant-platform | develop | 71ccd03 | feat(iam): add user signed up event. |  | 2026-11-07 |
+| reliant-platform | develop | bb1a1ec | feat(iam): add organization aggregate. |  | 2026-11-07 |
+| reliant-platform | develop | 905843e | feat(iam): add user aggregate. |  | 2026-11-07 |
+| reliant-platform | develop | 5a6462b | feat(iam): add sign up command. |  | 2026-11-07 |
+| reliant-platform | develop | 3e64f7c | feat(iam): add organization repository port. |  | 2026-11-07 |
+| reliant-platform | develop | 86a32c3 | feat(iam): add user repository port. |  | 2026-11-07 |
+| reliant-platform | develop | c4c5723 | feat(iam): add email address persistence converter. |  | 2026-11-07 |
+| reliant-platform | develop | df937d1 | feat(iam): add ruc persistence converter. |  | 2026-11-07 |
+| reliant-platform | develop | c0fa06c | feat(iam): add organization persistence entity. |  | 2026-11-07 |
+| reliant-platform | develop | 74cdbac | feat(iam): add user persistence entity. |  | 2026-11-07 |
+| reliant-platform | develop | 39dae1b | feat(iam): add organization persistence assembler. |  | 2026-11-07 |
+| reliant-platform | develop | 2b3fb3f | feat(iam): add user persistence assembler. |  | 2026-11-07 |
+| reliant-platform | develop | b3b486b | feat(iam): add organization persistence repository. |  | 2026-11-07 |
+| reliant-platform | develop | ffe7d41 | feat(iam): add user persistence repository. |  | 2026-11-07 |
+| reliant-platform | develop | ad43892 | feat(iam): add organization repository implementation. |  | 2026-11-07 |
+| reliant-platform | develop | 2067e9a | feat(iam): add user repository implementation. |  | 2026-11-07 |
+| reliant-platform | develop | 1e59b08 | feat(iam): add user command service. |  | 2026-11-07 |
+| reliant-platform | develop | e1c46b8 | feat(iam): add user command service implementation. |  | 2026-11-07 |
+| reliant-platform | develop | 05b3f99 | feat(iam): add sign up resource. |  | 2026-11-07 |
+| reliant-platform | develop | a1ff53e | feat(iam): add role resource. |  | 2026-11-07 |
+| reliant-platform | develop | 4307e0b | feat(iam): add user resource. |  | 2026-11-07 |
+| reliant-platform | develop | 5b7c511 | feat(iam): add sign up command resource assembler. |  | 2026-11-07 |
+| reliant-platform | develop | d4a1fbe | feat(iam): add role resource assembler. |  | 2026-11-07 |
+| reliant-platform | develop | a3854bf | feat(iam): add user resource assembler. |  | 2026-11-07 |
+| reliant-platform | develop | f78b287 | feat(iam): add application ready event handler. |  | 2026-11-07 |
+| reliant-platform | develop | d1d3f2c | feat(iam): add users controller. |  | 2026-11-07 |
+| reliant-platform | develop | 81bbb52 | feat(iam): add sign up message keys. |  | 2026-11-07 |
+| reliant-platform | develop | a8a4085 | feat(iam): add sign up Spanish message keys. |  | 2026-11-07 |
+| reliant-platform | develop | 81b731d | feat(iam): add sign up Spanish message keys. |  | 2026-11-07 |
+| reliant-platform | develop | 242fdd5 | feat(iam): add get all roles query. |  | 2026-11-07 |
+| reliant-platform | develop | b635865 | feat(iam): add role query service. |  | 2026-11-07 |
+| reliant-platform | develop | bc68a1a | feat(iam): add role query service implementation. |  | 2026-11-07 |
+| reliant-platform | develop | 90b03b5 | feat(iam): add roles controller. |  | 2026-11-07 |
+| reliant-platform | develop | 6d5d0c3 | build: add commons lang3 dependency. |  | 2026-11-07 |
+| reliant-platform | develop | 45bbeba | feat(iam): add token service. |  | 2026-11-07 |
+| reliant-platform | develop | 72fe2ae | feat(iam): add token service implementation. |  | 2026-11-07 |
+| reliant-platform | develop | cf59b89 | feat(iam): add sign in command. |  | 2026-11-07 |
+| reliant-platform | develop | ef9158e | feat(iam): add sign in command to user command service. |  | 2026-11-07 |
+| reliant-platform | develop | 738aba9 | feat(iam): add sign in command handling. |  | 2026-11-07 |
+| reliant-platform | develop | 2907da3 | feat(iam): add get organization by id query. |  | 2026-11-07 |
+| reliant-platform | develop | b5c895a | feat(iam): add organization query service interface. |  | 2026-11-07 |
+| reliant-platform | develop | 8797a15 | feat(iam): add organization query service implementation. |  | 2026-11-07 |
+| reliant-platform | develop | 80d5958 | feat(iam): add sign in resource. |  | 2026-11-07 |
+| reliant-platform | develop | cb751ea | feat(iam): add role id resource. |  | 2026-11-07 |
+| reliant-platform | develop | 8c4b9e0 | feat(iam): add authenticated user resource. |  | 2026-11-07 |
+| reliant-platform | develop | 812c269 | feat(iam): add sign in command assembler. |  | 2026-11-07 |
+| reliant-platform | develop | f2770db | feat(iam): add authenticated user resource assembler. |  | 2026-11-07 |
+| reliant-platform | develop | a235340 | feat(iam): add tokens controller. |  | 2026-11-07 |
+| reliant-platform | develop | ec6e89d | feat(iam): add get all users by organization query. |  | 2026-11-07 |
+| reliant-platform | develop | 61b4e61 | feat(iam): add get user by id query. |  | 2026-11-07 |
+| reliant-platform | develop | db33fbb | feat(iam): add get user by email query. |  | 2026-11-07 |
+| reliant-platform | develop | d8527ee | feat(iam): add assign roles to user command. |  | 2026-11-07 |
+| reliant-platform | develop | 3b4d198 | feat(iam): add user query service interface. |  | 2026-11-07 |
+| reliant-platform | develop | 3fd2eb5 | feat(iam): add user query service implementation. |  | 2026-11-07 |
+| reliant-platform | develop | fde2576 | feat(iam): add assign roles command handling. |  | 2026-11-07 |
+| reliant-platform | develop | 935b025 | feat(iam): add assign roles resource and assembler. |  | 2026-11-07 |
+| reliant-platform | develop | 9bdb189 | feat(iam): add list, get by id and assign roles endpoints to users controller. |  | 2026-11-07 |
+| reliant-platform | develop | 32da629 | feat(iam): add user not found message keys. |  | 2026-11-07 |
+| reliant-platform | develop | 29694b6 | build: enable spring security starter. |  | 2026-11-07 |
+| reliant-platform | develop | 7a3a137 | build: enable spring security starter. |  | 2026-11-07 |
+| reliant-platform | develop | cb5c1af | feat(shared): enable bearer auth security scheme in openapi configuration. |  | 2026-11-07 |
+| reliant-platform | develop | b878054 | feat(iam): add bcrypt hashing service contract. |  | 2026-11-07 |
+| reliant-platform | develop | 70b449e | feat(iam): add bearer token service contract and http helpers. |  | 2026-11-07 |
+| reliant-platform | develop | 8767aa5 | feat(iam): add user details model and service. |  | 2026-11-07 |
+| reliant-platform | develop | abe26a6 | feat(iam): add user details model and service. |  | 2026-11-07 |
+| reliant-platform | develop | 937103a | feat(iam): add authentication token builder and unauthorized entry point. |  | 2026-11-07 |
+| reliant-platform | develop | a0b057f | feat(iam): add bearer authorization request filter. |  | 2026-11-07 |
+| reliant-platform | develop | 0e2cc80 | feat(iam): add web security configuration. |  | 2026-11-07 |
+| reliant-platform | develop | 613889e | feat(iam): require bearer token on protected endpoints and admin role on user management. |  | 2026-11-07 |
+| reliant-platform | develop | c3f87fa | feat(iam): require bearer token on protected endpoints and admin role on user management. |  | 2026-11-07 |
+| reliant-platform | develop | e2f98a9 | feat(iam): require bearer token on protected endpoints and admin role on user management. |  | 2026-11-07 |
+| reliant-platform | develop | 57f71aa | feat(iam): add authenticated user endpoint. |  | 2026-11-07 |
+| reliant-platform | develop | cf77900 | feat(shared): add current user context contract. |  | 2026-11-07 |
+| reliant-platform | develop | d6d6291 | feat(iam): add current user provider as acl for other bounded contexts. |  | 2026-11-07 |
+| reliant-platform | develop | ce56a28 | feat(shared): map access denied to a 403 problem detail. |  | 2026-11-07 |
+| reliant-platform | develop | 3fd0caa | fix(shared): finalize access denied exception handling. |  | 2026-11-07 |
+| reliant-platform | develop | b7f8b54 | feat(traceability): add customer RUC value object |  | 2026-11-08 |
+| reliant-platform | develop | 2f859af | feat(traceability): add customer ID value object |  | 2026-11-08 |
+| reliant-platform | develop | e8eaf27 | feat(traceability): add customer registration command |  | 2026-11-08 |
+| reliant-platform | develop | 61a7fc7 | feat(traceability): add customer update command |  | 2026-11-08 |
+| reliant-platform | develop | 432a036 | feat(traceability): add customer aggregate and registration event |  | 2026-11-08 |
+| reliant-platform | develop | 7dbff73 | feat(traceability): add customer lookup query |  | 2026-11-08 |
+| reliant-platform | develop | 0a3c578 | feat(traceability): add supplier customer query |  | 2026-11-08 |
+| reliant-platform | develop | 70abcf1 | feat(traceability): add linked asset owner customer query |  | 2026-11-08 |
+| reliant-platform | develop | ac34649 | feat(traceability): add customer repository port |  | 2026-11-08 |
+| reliant-platform | develop | 3e7ae6f | feat(traceability): add RUC persistence converter |  | 2026-11-08 |
+| reliant-platform | develop | f8dbb82 | feat(traceability): add customer ID persistence converter |  | 2026-11-08 |
+| reliant-platform | develop | edd503b | feat(traceability): add customer persistence entity |  | 2026-11-08 |
+| reliant-platform | develop | 01cfefb | feat(traceability): add customer persistence assembler |  | 2026-11-08 |
+| reliant-platform | develop | 2322000 | feat(traceability): add customer JPA repository |  | 2026-11-08 |
+| reliant-platform | develop | 85bba79 | feat(traceability): add customer repository adapter |  | 2026-11-08 |
+| reliant-platform | develop | ab4bcf7 | feat(traceability): add customer query service |  | 2026-11-08 |
+| reliant-platform | develop | 57e484f | feat(traceability): implement customer query service |  | 2026-11-08 |
+| reliant-platform | develop | d7b9a60 | feat(traceability): add customer command service |  | 2026-11-08 |
+| reliant-platform | develop | d29249b | feat(traceability): implement customer command service |  | 2026-11-08 |
+| reliant-platform | develop | f9cc85f | feat(traceability): add customer registration request |  | 2026-11-08 |
+| reliant-platform | develop | fee1cc5 | feat(traceability): add customer update request |  | 2026-11-08 |
+| reliant-platform | develop | 3d8c02e | feat(traceability): add customer response resource |  | 2026-11-08 |
+| reliant-platform | develop | d1cabf3 | feat(traceability): add customer registration assembler |  | 2026-11-08 |
+| reliant-platform | develop | 88bfa04 | feat(traceability): add customer update assembler |  | 2026-11-08 |
+| reliant-platform | develop | 7fc694c | feat(traceability): add customer response assembler |  | 2026-11-08 |
+| reliant-platform | develop | 13ec9a9 | feat(traceability): add customers REST controller |  | 2026-11-08 |
+| reliant-platform | develop | 6cb8562 | feat(traceability): add English customer messages |  | 2026-11-08 |
+| reliant-platform | develop | 3e3390b | feat(traceability): add Spanish customer messages |  | 2026-11-08 |
+| reliant-platform | develop | 412b254 | fix(traceability): correct RUC value object syntax |  | 2026-11-08 |
+| reliant-platform | develop | ff28054 | feat(traceability): add recovered component types |  | 2026-11-08 |
+| reliant-platform | develop | bce2e8c | feat(traceability): add recovered component statuses |  | 2026-11-08 |
+| reliant-platform | develop | d24d850 | feat(traceability): add component registration command |  | 2026-11-08 |
+| reliant-platform | develop | 7347fd8 | feat(traceability): add recovered component aggregate and registration event |  | 2026-11-08 |
+| reliant-platform | develop | 158deec | feat(traceability): add component lookup query |  | 2026-11-08 |
+| reliant-platform | develop | 3d0ab71 | feat(traceability): add components by customer query |  | 2026-11-08 |
+| reliant-platform | develop | 610f007 | feat(traceability): add recovered component repository port |  | 2026-11-08 |
+| reliant-platform | develop | c203fd6 | feat(traceability): add recovered component persistence entity |  | 2026-11-08 |
+| reliant-platform | develop | 4a5552c | feat(traceability): add recovered component persistence assembler |  | 2026-11-08 |
+| reliant-platform | develop | 32c198e | feat(traceability): add recovered component JPA repository |  | 2026-11-08 |
+| reliant-platform | develop | 65706c9 | feat(traceability): add recovered component repository adapter |  | 2026-11-08 |
+| reliant-platform | develop | 626485f | feat(traceability): add component command service |  | 2026-11-08 |
+| reliant-platform | develop | e78e9e2 | feat(traceability): implement component command service |  | 2026-11-08 |
+| reliant-platform | develop | 6eb1edb | feat(traceability): add component query service |  | 2026-11-08 |
+| reliant-platform | develop | 4fa7e52 | feat(traceability): implement component query service |  | 2026-11-08 |
+| reliant-platform | develop | 12a903d | feat(traceability): add component registration request |  | 2026-11-08 |
+| reliant-platform | develop | 6d227d4 | feat(traceability): add component response resource |  | 2026-11-08 |
+| reliant-platform | develop | 20a73c6 | feat(traceability): add component registration assembler |  | 2026-11-08 |
+| reliant-platform | develop | 3c481ff | feat(traceability): add component response assembler |  | 2026-11-08 |
+| reliant-platform | develop | da23cfc | feat(traceability): add components REST controller |  | 2026-11-08 |
+| reliant-platform | develop | febd1df | feat(traceability): add localized component error messages |  | 2026-11-08 |
+| reliant-platform | develop | 8797544 | feat(traceability): add work order number value object |  | 2026-11-10 |
+| reliant-platform | develop | 05080a9 | feat(traceability): add component ID value object |  | 2026-11-10 |
+| reliant-platform | develop | 43d08a7 | feat(traceability): add recuperation statuses |  | 2026-11-10 |
+| reliant-platform | develop | 0bb7446 | feat(traceability): add open recuperation command |  | 2026-11-10 |
+| reliant-platform | develop | d8c6c7a | feat(traceability): add complete recuperation command |  | 2026-11-10 |
+| reliant-platform | develop | 6c4ef12 | feat(traceability): add link session to recuperation command |  | 2026-11-10 |
+| reliant-platform | develop | f04bae0 | feat(traceability): add recuperation aggregate and lifecycle events |  | 2026-11-10 |
+| reliant-platform | develop | ebac156 | feat(traceability): add recuperation lookup query |  | 2026-11-10 |
+| reliant-platform | develop | 8c8b95c | feat(traceability): add supplier recuperations query |  | 2026-11-10 |
+| reliant-platform | develop | 1e32f81 | feat(traceability): add customer recuperations query |  | 2026-11-10 |
+| reliant-platform | develop | 2bdc0ce | feat(traceability): add recuperation repository port |  | 2026-11-10 |
+| reliant-platform | develop | a6f0e74 | feat(traceability): add work order number persistence converter |  | 2026-11-10 |
+| reliant-platform | develop | 0bc6ce2 | feat(traceability): add component ID persistence converter |  | 2026-11-10 |
+| reliant-platform | develop | 4b54282 | feat(traceability): add recuperation persistence entity |  | 2026-11-10 |
+| reliant-platform | develop | 4b5bdc5 | feat(traceability): add recuperation persistence assembler |  | 2026-11-10 |
+| reliant-platform | develop | b2f2590 | feat(traceability): add recuperation JPA repository |  | 2026-11-10 |
+| reliant-platform | develop | 9160035 | feat(traceability): add recuperation repository adapter |  | 2026-11-10 |
+| reliant-platform | develop | 1393d10 | feat(traceability): add recuperation command service |  | 2026-11-10 |
+| reliant-platform | develop | 2cfbe0f | feat(traceability): implement recuperation command service |  | 2026-11-10 |
+| reliant-platform | develop | 93ede86 | feat(traceability): add recuperation query service |  | 2026-11-10 |
+| reliant-platform | develop | 7a3ab4b | feat(traceability): implement recuperation query service |  | 2026-11-10 |
+| reliant-platform | develop | b50a375 | feat(traceability): add traceability context facade |  | 2026-11-10 |
+| reliant-platform | develop | fa582bc | feat(traceability): implement traceability context facade |  | 2026-11-10 |
+| reliant-platform | develop | ef67cfb | feat(traceability): add open recuperation request |  | 2026-11-10 |
+| reliant-platform | develop | 9bbf81f | feat(traceability): add linked session resource |  | 2026-11-10 |
+| reliant-platform | develop | 4725cf0 | feat(traceability): add recuperation response resource |  | 2026-11-10 |
+| reliant-platform | develop | f3975af | feat(traceability): add open recuperation assembler |  | 2026-11-10 |
+| reliant-platform | develop | 6e5bdb5 | feat(traceability): add recuperation response assembler |  | 2026-11-10 |
+| reliant-platform | develop | abde862 | feat(traceability): add recuperations REST controller |  | 2026-11-10 |
+| reliant-platform | develop | 10a77e8 | feat(traceability): add localized recuperation error messages |  | 2026-11-10 |
+| reliant-platform | develop | 550fee0 | feat(equipment): add recipe band snapshot |  | 2026-11-11 |
+| reliant-platform | develop | 7676db7 | feat(equipment): add equipment context facade |  | 2026-11-11 |
+| reliant-platform | develop | 3923efe | feat(equipment): implement equipment context facade |  | 2026-11-11 |
+| reliant-platform | develop | 433a885 | fix(equipment): use unit category conversion in context facade |  | 2026-11-11 |
 | reliant-platform | develop | e769426 | chore(equipment): keep the datasource in the dev profile and drop the review notes. |  | 2026-11-11 |
 | reliant-platform | develop | 7832aa2 | build: add spring security crypto dependency. |  | 2026-11-11 |
 | reliant-platform | develop | ff90eb7 | feat(iam): add organization, user and role domain model with sign-up and seed roles commands. |  | 2026-11-11 |
@@ -4314,8 +4490,49 @@ En esta sección se presentan los commits realizados durante el Sprint 3 en los 
 | reliant-platform | develop | 896afb2 | feat(reporting): add JPA persistence for report templates and generated reports |  | 2026-11-12 |
 | reliant-platform | develop | 27e8634 | feat(reporting): add report template and generated report services with default templates |  | 2026-11-12 |
 | reliant-platform | develop | ed08f36 | feat(reporting): expose report templates and generated reports endpoints |  | 2026-11-12 |
+| reliant-platform | develop | b15afc2 | feat(processmonitoring): add spray session value objects and recipe band classification |  | 2026-11-12 |
+| reliant-platform | develop | 843d756 | feat(processmonitoring): add spray pass and process reading entities |  | 2026-11-12 |
+| reliant-platform | develop | 234a562 | feat(processmonitoring): add spray session and reading commands |  | 2026-11-12 |
+| reliant-platform | develop | d12b18e | feat(processmonitoring): add spray session aggregate and domain events |  | 2026-11-12 |
+| reliant-platform | develop | 20b9a21 | feat(processmonitoring): add spray session queries and repository ports |  | 2026-11-12 |
+| reliant-platform | develop | 24e5433 | feat(processmonitoring): add HVOF system ID persistence converter |  | 2026-11-12 |
+| reliant-platform | develop | 4e39d03 | feat(processmonitoring): add recuperation ID persistence converter |  | 2026-11-12 |
+| reliant-platform | develop | 81c2661 | feat(processmonitoring): map recipe band snapshots for persistence |  | 2026-11-12 |
+| reliant-platform | develop | 69e3966 | feat(processmonitoring): map spray session and pass entities |  | 2026-11-12 |
+| reliant-platform | develop | cb93547 | feat(processmonitoring): map process reading entity |  | 2026-11-12 |
+| reliant-platform | develop | 3cac321 | feat(processmonitoring): map spray sessions and passes between domain and JPA |  | 2026-11-12 |
+| reliant-platform | develop | de1c4f5 | feat(processmonitoring): map process readings between domain and JPA |  | 2026-11-12 |
+| reliant-platform | develop | 913e879 | feat(processmonitoring): add Spring Data repositories for sessions and readings |  | 2026-11-12 |
+| reliant-platform | develop | 311c48e | feat(processmonitoring): implement spray session repository |  | 2026-11-12 |
+| reliant-platform | develop | 0feb4bd | feat(processmonitoring): implement process reading repository |  | 2026-11-12 |
+| reliant-platform | develop | 2e888ab | feat(processmonitoring): add equipment integration service |  | 2026-11-12 |
+| reliant-platform | develop | 08d3c9d | feat(processmonitoring): add traceability integration service |  | 2026-11-12 |
+| reliant-platform | develop | f3e2192 | feat(processmonitoring): add out-of-band reading integration event |  | 2026-11-12 |
+| reliant-platform | develop | 5eeb901 | feat(processmonitoring): publish out-of-band reading integration event |  | 2026-11-12 |
+| reliant-platform | develop | 72e89bb | feat(processmonitoring): add spray session command service |  | 2026-11-12 |
+| reliant-platform | develop | 54c08a2 | feat(processmonitoring): implement spray session commands |  | 2026-11-12 |
+| reliant-platform | develop | bb590c9 | feat(processmonitoring): add spray session query service |  | 2026-11-12 |
+| reliant-platform | develop | 696c4a9 | feat(processmonitoring): implement spray session queries |  | 2026-11-12 |
+| reliant-platform | develop | 06eaa46 | feat(processmonitoring): add start spray session request |  | 2026-11-12 |
+| reliant-platform | develop | 03be963 | feat(processmonitoring): add abort spray session request |  | 2026-11-12 |
+| reliant-platform | develop | dea377f | feat(processmonitoring): add spray session response |  | 2026-11-12 |
+| reliant-platform | develop | 11f848d | feat(processmonitoring): add process reading request |  | 2026-11-12 |
+| reliant-platform | develop | 2938141 | feat(processmonitoring): add process reading response |  | 2026-11-12 |
+| reliant-platform | develop | ac439f0 | feat(processmonitoring): add register spray pass request |  | 2026-11-12 |
+| reliant-platform | develop | 7df2199 | feat(processmonitoring): add spray pass response |  | 2026-11-12 |
+| reliant-platform | develop | 04e530d | feat(processmonitoring): add deviation counts response |  | 2026-11-12 |
+| reliant-platform | develop | fda1c49 | feat(processmonitoring): map start spray session requests |  | 2026-11-12 |
+| reliant-platform | develop | dc9bf4f | feat(processmonitoring): map spray session responses |  | 2026-11-12 |
+| reliant-platform | develop | 38c07e8 | feat(processmonitoring): map process reading ingestion requests |  | 2026-11-12 |
+| reliant-platform | develop | d0719d0 | feat(processmonitoring): map process reading responses |  | 2026-11-12 |
+| reliant-platform | develop | 7d35195 | feat(processmonitoring): map register spray pass requests |  | 2026-11-12 |
+| reliant-platform | develop | 127758b | feat(processmonitoring): map spray pass responses |  | 2026-11-12 |
+| reliant-platform | develop | 3d43f10 | feat(processmonitoring): expose spray session monitoring endpoints |  | 2026-11-12 |
+| reliant-platform | develop | e9e0215 | feat(processmonitoring): add localized spray session error messages |  | 2026-11-12 |
 | reliant-platform | develop | 62ad123 | chore(release): 1.0.0 with production profile for Azure and updated documentation |  | 2026-11-13 |
 | reliant-platform | develop | 188fced | docs: add the Azure App Service deployment guide |  | 2026-11-13 |
+| reliant-platform | develop | 2903385 | Add or update the Azure App Service build and deployment workflow config |  | 2026-11-13 |
+| reliant-platform | develop | d380070 | ci: skip tests in the Azure build workflow and update setup-java |  | 2026-11-13 |
 
 **Frontend Web Application — `reliant-webapp`**
 
@@ -4509,7 +4726,7 @@ En el Sprint 3 se desplegaron en Microsoft Azure los Web Services (Web App `reli
 
 #### 5.2.3.8. Team Collaboration Insights during Sprint.
 
-Durante el Sprint 3 el trabajo se distribuyó según la matriz LACX de la sección 5.2.3.2 y, a diferencia del Sprint 2, los tres integrantes registraron commits en los repositorios de producto. Navarro Aldoradin, Carolina Celeste construyó los bounded contexts IAM, Traceability, Process Monitoring, Fault Diagnosis y Reporting de los Web Services, la seguridad con JWT, el perfil de producción y la guía de despliegue, y en la Web Application la conexión al platform, el diagnóstico de fallas, el Quick Start, el reporting con PDF y el análisis de sesión, además de integrar el rediseño del Landing Page. Rivera Aguilar, Scarlet Josefina implementó en los Web Services las recetas, los subsistemas y los controladores del bounded context Equipment, y en la Web Application el tema visual de Reliant, la navegación lateral, los gráficos de tendencia y el tablero con preferencias de usuario; además diseñó los wireframes y mock-ups del nuevo Landing Page y actualizó el informe con ellos. Fernandez Seer, Mario Alonso implementó el reporte de sesión con exportación a CSV y las correcciones del sondeo de lecturas en Process Monitoring.
+Durante el Sprint 3 el trabajo se distribuyó según la matriz LACX de la sección 5.2.3.2 y, a diferencia del Sprint 2, los tres integrantes registraron commits en todos los repositorios de producto. Navarro Aldoradin, Carolina Celeste construyó los bounded contexts IAM, Traceability, Process Monitoring, Fault Diagnosis y Reporting de los Web Services, la seguridad con JWT, el perfil de producción, la guía y el despliegue en Azure, y en la Web Application la conexión al platform, el diagnóstico de fallas, el Quick Start, el reporting con PDF y el análisis de sesión, además de integrar el rediseño del Landing Page. Rivera Aguilar, Scarlet Josefina implementó en los Web Services las recetas, los subsistemas y los controladores del bounded context Equipment y los mensajes localizados de Traceability, y en la Web Application el tema visual de Reliant, la navegación lateral, los gráficos de tendencia y el tablero con preferencias de usuario; además diseñó los wireframes y mock-ups del nuevo Landing Page y actualizó el informe con ellos y con las evidencias de las entrevistas. Fernandez Seer, Mario Alonso implementó en los Web Services los mapeos de requests y responses y los mensajes localizados de Process Monitoring y Traceability (integrados mediante pull requests a `develop`), y en la Web Application el reporte de sesión con exportación a CSV y las correcciones del sondeo de lecturas. Las ramas `feature/*` de los Web Services fueron trabajadas por más de un integrante y se integraron en `develop` mediante pull requests y merges, lo que explica que los tres aparezcan como contribuidores del mismo bounded context.
 
 El gráfico resume los commits (sin merges) por integrante y repositorio registrados en las ramas `develop` entre el 6 de octubre y el 13 de noviembre de 2026:
 
@@ -4517,14 +4734,16 @@ El gráfico resume los commits (sin merges) por integrante y repositorio registr
 
 | Repositorio | Contribuidor (usuario de GitHub) | Commits del Sprint 3 |
 |---|---|---|
-| `reliant-platform` | genixmvp | 108 |
-| `reliant-platform` | scarletriveraaguilar-spec | 39 |
+| `reliant-platform` | scarletriveraaguilar-spec | 131 |
+| `reliant-platform` | MrBaru | 123 |
+| `reliant-platform` | genixmvp | 110 |
 | `reliant-webapp` | scarletriveraaguilar-spec | 42 |
 | `reliant-webapp` | genixmvp | 19 |
 | `reliant-webapp` | MrBaru | 13 |
 | `reliant-website` | genixmvp | 2 |
-| `reliant-report` | scarletriveraaguilar-spec | 78 |
-| `reliant-report` | genixmvp | 2 |
+| `reliant-website` | scarletriveraaguilar-spec | 1 |
+| `reliant-report` | scarletriveraaguilar-spec | 173 |
+| `reliant-report` | genixmvp | 8 |
 
 Las capturas de Insights → Contributors de GitHub para cada repositorio se incluyen a continuación:
 
